@@ -1,0 +1,405 @@
+﻿<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shavonne Wong — Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="scroll-narrative.css?v=20260516-fluid-lens-strong">
+</head>
+<body>
+  <canvas class="sn-fluid-canvas" data-fluid-renderer aria-hidden="true"></canvas>
+
+  <!-- ============================================================
+       STICKY HEADER — sits above the strip
+       ============================================================ -->
+  <header class="sn-nav" data-nav>
+    <a href="#hero" class="sn-mark" data-jump="hero">
+      <span>Shavonne Wong</span>
+    </a>
+    <nav class="sn-links">
+      <a href="#hero" data-jump="hero">Home</a>
+      <a href="about.html"><span class="sn-num">II.</span> About</a>
+      <a href="works.html"><span class="sn-num">III.</span> Works</a>
+      <a href="writing.html"><span class="sn-num">IV.</span> Writing</a>
+      <a href="about.html#press"><span class="sn-num">V.</span> Press</a>
+      <a href="#contact" data-jump="contact"><span class="sn-num">VI.</span> Contact</a>
+    </nav>
+    <div class="sn-meta-right">
+      <span class="sn-scroll-readout" data-scroll-readout>00 / 100</span>
+    </div>
+    <div class="sn-progress"><div class="sn-progress-bar" data-progress></div></div>
+  </header>
+
+  <!-- ============================================================
+       FIXED STAGE — the strip translates X driven by window scrollY
+       ============================================================ -->
+  <main class="sn-stage" data-stage>
+    <div class="sn-strip" data-strip>
+
+      <!-- ========================================================
+           PANEL 1 — HERO (parallax)
+           ======================================================== -->
+      <section class="sn-panel sn-hero" id="hero" data-panel="hero">
+        <div class="sn-hero-plate" data-parallax="0">
+          <div class="sn-plate sn-plate-video">
+            <video src="assets/videos/Whirlwind%20of%20the%20Waking%20Dream.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          </div>
+        </div>
+
+        <div class="sn-hero-stack" data-parallax="-0.20">
+          <div class="sn-hero-overline">
+            <span>New media artist</span>
+            <span>AI, 3D, and interactive installation.</span>
+          </div>
+          <h1 class="sn-hero-name">
+            <span class="sn-hero-word">Shavonne</span>
+            <span class="sn-hero-word italic">Wong<span class="sn-hero-dot">.</span></span>
+          </h1>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           PANEL 3 — CAREER TIMELINE (the three eras · separate from Works)
+           ======================================================== -->
+      <section class="sn-panel sn-eras" id="eras" data-panel="eras" data-eras>
+        <div class="sn-eras-head">
+          <div>
+            <span class="sn-eyebrow">Practice</span>
+            <h2 class="sn-eras-title">
+              <em>Three eras</em>
+            </h2>
+          </div>
+        </div>
+
+        <div class="sn-era-timeline">
+          <div class="sn-eras-track" aria-live="polite">
+          <article class="sn-era is-active" data-era data-era-id="I">
+            <div class="sn-era-range">
+              <span>2010</span><span class="sn-era-dash"></span><span>2020</span>
+            </div>
+            <h3 class="sn-era-title-h">Photography</h3>
+            <div class="sn-era-plate sn-era-video">
+              <video src="assets/videos/Jean_Blue_FB.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            </div>
+          </article>
+
+          <article class="sn-era" data-era data-era-id="II">
+            <div class="sn-era-range">
+              <span>2020</span><span class="sn-era-dash"></span><span>2023</span>
+            </div>
+            <h3 class="sn-era-title-h">3D &amp; Virtual Humans</h3>
+            <div class="sn-era-plate sn-era-video">
+              <video src="assets/videos/A%20Life%20Short%20Lived.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            </div>
+          </article>
+
+          <article class="sn-era" data-era data-era-id="III">
+            <div class="sn-era-range sn-era-range-now">
+              <span>2023</span><span class="sn-era-dash"></span><span>NOW</span>
+            </div>
+            <h3 class="sn-era-title-h">Interactive AI</h3>
+            <div class="sn-era-plate sn-era-image">
+              <img src="assets/videos/DSC00661.jpg" alt="Interactive AI artwork">
+            </div>
+          </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           PANEL 4 — ROTATING BADGE INTERLUDE
+           ======================================================== -->
+      <section class="sn-panel sn-about" id="about" data-panel="about" data-panel-link="about.html">
+        <div class="sn-about-main">
+          <span class="sn-eyebrow">II. About</span>
+          <h2 class="sn-about-title">
+            Shavonne <em>Wong</em>
+          </h2>
+          <div class="sn-about-sub">
+            b. 1990, Singapore. Lives and works between Singapore and Bangkok.
+          </div>
+          <p>
+            Shavonne Wong is a new media artist whose work examines experiences we share but do
+            not always have words for. She started out in fashion and advertising photography,
+            and over time shifted from building hyperreal digital images to creating interactive
+            projects that ask people to recognize something in themselves.
+          </p>
+          <p>
+            Her recent projects use AI, 3D rendering, and participatory frameworks to sit with
+            the contradictions of how we live today.
+          </p>
+          <a href="about.html" class="sn-section-link" data-no-panel-link>Full about →</a>
+        </div>
+        <div class="sn-about-side">
+          <figure class="sn-about-photo">
+            <img src="assets/profile/profilephoto.png" alt="Portrait of Shavonne Wong">
+          </figure>
+          <div class="sn-about-card">
+            <span class="sn-eyebrow">Selected highlights</span>
+            <ul class="sn-about-list">
+              <li><span>Recognition</span><span>Forbes 30 Under 30 Asia - Arts · Prestige 40 Under 40</span></li>
+              <li><span>Shown at</span><span>ArtScience Museum · Venice Biennale · ART SG · Taipei Dangdai</span></li>
+              <li><span>Brand projects</span><span>Vogue Singapore · Shu Uemura · Bang &amp; Olufsen</span></li>
+              <li><span>Communities</span><span>Co-founder, NFT Asia · Member, BLOOM</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sn-about-contexts" aria-label="Selected contexts">
+          <span class="sn-eyebrow">Selected Contexts</span>
+          <div class="sn-ticker sn-context-ticker" aria-hidden="true">
+            <div class="sn-ticker-track" data-ticker-track>
+              <span>ArtScience Museum</span><span class="sn-ticker-dot">◆</span>
+              <span>Venice Biennale</span><span class="sn-ticker-dot">◆</span>
+              <span>ART SG</span><span class="sn-ticker-dot">◆</span>
+              <span>Taipei Dangdai</span><span class="sn-ticker-dot">◆</span>
+              <span>Art Central Hong Kong</span><span class="sn-ticker-dot">◆</span>
+              <span>Paris Photo</span><span class="sn-ticker-dot">◆</span>
+              <span>Forbes 30 Under 30</span><span class="sn-ticker-dot">◆</span>
+              <span>TIMEPieces</span><span class="sn-ticker-dot">◆</span>
+              <span>Vogue Singapore</span><span class="sn-ticker-dot">◆</span>
+              <span>Tatler Asia</span><span class="sn-ticker-dot">◆</span>
+              <span>Bang &amp; Olufsen</span><span class="sn-ticker-dot">◆</span>
+              <span>Shu Uemura</span><span class="sn-ticker-dot">◆</span>
+              <span>Meet Eva Here archive</span><span class="sn-ticker-dot">◆</span>
+              <span>ArtScience Museum</span><span class="sn-ticker-dot">◆</span>
+              <span>Venice Biennale</span><span class="sn-ticker-dot">◆</span>
+              <span>ART SG</span><span class="sn-ticker-dot">◆</span>
+              <span>Taipei Dangdai</span><span class="sn-ticker-dot">◆</span>
+              <span>Art Central Hong Kong</span><span class="sn-ticker-dot">◆</span>
+              <span>Paris Photo</span><span class="sn-ticker-dot">◆</span>
+              <span>Forbes 30 Under 30</span><span class="sn-ticker-dot">◆</span>
+              <span>TIMEPieces</span><span class="sn-ticker-dot">◆</span>
+              <span>Vogue Singapore</span><span class="sn-ticker-dot">◆</span>
+              <span>Tatler Asia</span><span class="sn-ticker-dot">◆</span>
+              <span>Bang &amp; Olufsen</span><span class="sn-ticker-dot">◆</span>
+              <span>Shu Uemura</span><span class="sn-ticker-dot">◆</span>
+              <span>Meet Eva Here archive</span><span class="sn-ticker-dot">◆</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           PANEL 5 — WORKS (the artworks themselves)
+           ======================================================== -->
+      <section class="sn-panel sn-works" id="works" data-panel="works" data-works>
+        <div class="sn-works-head">
+          <div>
+            <span class="sn-eyebrow">III. Works</span>
+            <h2 class="sn-works-title"><em>Artworks</em></h2>
+          </div>
+        </div>
+
+        <div class="sn-works-track">
+          <article class="sn-work" data-work data-panel-link="after-ophelia.html">
+            <div class="sn-work-num">N° 01</div>
+            <div class="sn-work-plate">
+              <div class="sn-plate sn-plate-figure sn-plate-image">
+                <img src="assets/after-ophelia/01-ophelia-reassembled-print.jpg" alt="After Ophelia artwork preview">
+              </div>
+            </div>
+            <div class="sn-work-meta">
+              <div class="sn-work-title">After Ophelia</div>
+              <div class="sn-work-sub sn-italic">3D &amp; AI video works on identity</div>
+              <p class="sn-work-copy">
+                A two-part video project following Ophelia from Shakespeare and Millais through
+                art history, online commentary, and AI summaries.
+              </p>
+              <div class="sn-work-foot">
+                <span class="sn-italic small">2025</span>
+                <span class="sn-eyebrow">Artverse Paris · Paris Photo</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="sn-work" data-work data-panel-link="meet-eva-here.html">
+            <div class="sn-work-num">N° 02</div>
+            <div class="sn-work-plate">
+              <div class="sn-plate sn-plate-installation sn-plate-image">
+                <img src="assets/meet-eva-here/06-dsc00661.jpg" alt="Meet Eva Here installation preview">
+              </div>
+            </div>
+            <div class="sn-work-meta">
+              <div class="sn-work-title">Meet Eva Here</div>
+              <div class="sn-work-sub sn-italic">AI companion · chatbot · public archive</div>
+              <p class="sn-work-copy">
+                A fifteen-month AI companion archive with 2,363 conversations across a museum,
+                art fairs, and a public diary project.
+              </p>
+              <div class="sn-work-foot">
+                <span class="sn-italic small">2024 — 2025</span>
+                <span class="sn-eyebrow">ArtScience Museum · Art SG</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="sn-work" data-work data-panel-link="the-ties-that-bind.html">
+            <div class="sn-work-num">N° 03</div>
+            <div class="sn-work-plate">
+              <div class="sn-plate sn-plate-render sn-plate-image">
+                <img src="assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.jpg" alt="The Ties That Bind exhibition preview">
+              </div>
+            </div>
+            <div class="sn-work-meta">
+              <div class="sn-work-title">The Ties That Bind</div>
+              <div class="sn-work-sub sn-italic">3D video installation</div>
+              <p class="sn-work-copy">
+                A solo exhibition asking what gets passed down through bodies: inherited gesture,
+                posture, and small rituals rendered as looping 3D video.
+              </p>
+              <div class="sn-work-foot">
+                <span class="sn-italic small">2023</span>
+                <span class="sn-eyebrow">UltraSuperNew · Singapore</span>
+              </div>
+            </div>
+          </article>
+
+          <a href="works.html" class="sn-work-end sn-work-more" data-no-panel-link>
+            <div class="sn-work-end-num">All works</div>
+            <div class="sn-work-end-meta">
+              <span class="sn-eyebrow u">Open works page →</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           PANEL 6 — WRITING (essays, back from the prototype)
+           ======================================================== -->
+      <section class="sn-panel sn-writing" id="writing" data-panel="writing" data-writing data-panel-link="writing.html">
+        <div class="sn-writing-head">
+          <div>
+            <span class="sn-eyebrow">IV. Writing</span>
+            <h2 class="sn-writing-title"><em>Notes from</em> the studio.</h2>
+          </div>
+          <div class="sn-writing-cue">
+            <div class="sn-writing-dots" data-writing-dots aria-label="Writing notes">
+              <button type="button" data-writing-dot aria-label="Show writing note 1"><span>01</span></button>
+              <button type="button" data-writing-dot aria-label="Show writing note 2"><span>02</span></button>
+              <button type="button" data-writing-dot aria-label="Show writing note 3"><span>03</span></button>
+            </div>
+            <a href="writing.html" class="sn-section-link sn-writing-link" data-no-panel-link>Full writing →</a>
+          </div>
+        </div>
+
+        <div class="sn-writing-track" data-writing-track>
+          <article class="sn-essay" data-essay>
+            <div class="sn-essay-plate">
+              <div class="sn-plate sn-plate-image">
+                <img src="assets/newsletters/update2025jun/02.jpg" alt="June 2025 studio update image">
+              </div>
+            </div>
+            <div class="sn-essay-meta">
+              <div class="sn-eyebrow">N° 01 · June 2025</div>
+              <h3 class="sn-essay-title">
+                Meet Eva Here, new exhibitions, and a half-year studio recap.
+              </h3>
+              <p class="sn-essay-excerpt">
+                A recap across Digital Rhythm, ART SG, Taipei Dangdai, Art Central,
+                and the evolving public life of Eva.
+              </p>
+              <a href="update2025jun.html" class="sn-eyebrow u" data-no-panel-link>Read update →</a>
+            </div>
+          </article>
+
+          <article class="sn-essay" data-essay>
+            <div class="sn-essay-plate">
+              <div class="sn-plate sn-plate-image">
+                <img src="assets/newsletters/update2025jan/02.jpg" alt="January 2025 studio update image">
+              </div>
+            </div>
+            <div class="sn-essay-meta">
+              <div class="sn-eyebrow">N° 02 · January 2025</div>
+              <h3 class="sn-essay-title">
+                Meet Eva Here debuts at ArtScience Museum and Art SG.
+              </h3>
+              <p class="sn-essay-excerpt">
+                A look back at Eva&apos;s first public moments, the launch of her chatbot,
+                and the exhibitions opening the year.
+              </p>
+              <a href="update2025jan.html" class="sn-eyebrow u" data-no-panel-link>Read update →</a>
+            </div>
+          </article>
+
+          <article class="sn-essay" data-essay>
+            <div class="sn-essay-plate">
+              <div class="sn-plate sn-plate-image">
+                <img src="assets/newsletters/update2024jun/02.jpg" alt="June 2024 studio update image">
+              </div>
+            </div>
+            <div class="sn-essay-meta">
+              <div class="sn-eyebrow">N° 03 · June 2024</div>
+              <h3 class="sn-essay-title">
+                Bang &amp; Olufsen, Art SG, Beijing, and new experiments.
+              </h3>
+              <p class="sn-essay-excerpt">
+                A mid-year update on exhibitions, an award win, Bangkok, and the
+                projects moving between screens and rooms.
+              </p>
+              <a href="update2024jun.html" class="sn-eyebrow u" data-no-panel-link>Read update →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           PANEL 8 — CONTACT (dark palette)
+           ======================================================== -->
+      <section class="sn-panel sn-contact" id="contact" data-panel="contact">
+        <div class="sn-contact-bg" aria-hidden="true"></div>
+
+        <div class="sn-contact-sigil" data-parallax-contact="0.20" aria-hidden="true">
+          <svg viewBox="0 0 600 600">
+            <circle cx="300" cy="300" r="260" fill="none" stroke="currentColor" stroke-width="0.6" />
+            <circle cx="300" cy="300" r="200" fill="none" stroke="currentColor" stroke-width="0.6" />
+            <circle cx="300" cy="300" r="140" fill="none" stroke="currentColor" stroke-width="0.6" />
+            <line x1="40" y1="300" x2="560" y2="300" stroke="currentColor" stroke-width="0.4" />
+            <line x1="300" y1="40" x2="300" y2="560" stroke="currentColor" stroke-width="0.4" />
+          </svg>
+        </div>
+
+        <div class="sn-contact-inner">
+          <div class="sn-contact-head">
+            <span class="sn-eyebrow on-dark">VI. Contact</span>
+            <span class="sn-eyebrow on-dark muted">— end of strip</span>
+          </div>
+
+          <h2 class="sn-contact-title">
+            Contact.
+          </h2>
+
+          <div class="sn-contact-grid">
+            <div class="sn-contact-col">
+              <div class="sn-eyebrow on-dark">Studio</div>
+              <a href="mailto:studio@shavonnewong.art" class="sn-contact-link u">
+                studio@shavonnewong.art
+              </a>
+              <div class="sn-eyebrow on-dark muted">Singapore / Bangkok · GMT+8</div>
+            </div>
+            <div class="sn-contact-col">
+              <div class="sn-eyebrow on-dark">Elsewhere</div>
+              <a href="https://www.instagram.com/shavonne.wong/" class="sn-contact-line u" target="_blank" rel="noreferrer">Instagram ↗</a>
+              <a href="https://twitter.com/shavonnewong_" class="sn-contact-line u" target="_blank" rel="noreferrer">X ↗</a>
+              <a href="https://sg.linkedin.com/in/shavonnew" class="sn-contact-line u" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+              <a href="https://en.wikipedia.org/wiki/Shavonne_Wong" class="sn-contact-line u" target="_blank" rel="noreferrer">Wikipedia ↗</a>
+            </div>
+          </div>
+          <div class="sn-contact-foot">
+            <span class="sn-eyebrow on-dark">© Shavonne Wong</span>
+            <a href="#hero" data-jump="hero" class="sn-eyebrow on-dark u">return to start ←</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="scroll-narrative.js?v=20260516-fluid-lens-strong"></script>
+  <script src="fluid-renderer.js?v=20260516-fluid-lens-strong"></script>
+</body>
+</html>
+
+
