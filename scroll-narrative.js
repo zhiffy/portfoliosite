@@ -33,6 +33,7 @@
   const heroVideo = document.querySelector('.sn-plate-video video');
   const heroFrame = document.querySelector('[data-video-frame]');
   const statementPanel = document.querySelector('[data-panel="statement"]');
+  const statementBody = document.querySelector('.sn-statement-body');
   const erasPanel = document.querySelector('[data-eras]');
   const erasTrack = document.querySelector('.sn-eras-track');
   const eraFill = document.querySelector('[data-era-fill]');
@@ -70,6 +71,8 @@
   let eraPinDistance = 0;
   let aboutPinStart = 0;
   let aboutPinDistance = 0;
+  let statementPinStart = 0;
+  let statementPinDistance = 0;
   let worksPinStart = 0;
   let worksPinDistance = 0;
   let writingPinStart = 0;
@@ -87,6 +90,7 @@
   let lastPressIdx = -1;
   let lastEraIdx = -1;
   let lastPanelId = '';
+  let aboutProgress = 0;
   let narrow = isNarrow();
   const heroFrameCount = 45;
   const heroFrames = Array.from({ length: heroFrameCount }, (_, i) => {
@@ -170,21 +174,27 @@
     baseTotalScroll = Math.max(0, stripWidth - vw);
 
     if (erasPanel && erasTrack && eraEls.length) {
-      const eraViewport = erasTrack.parentElement || erasPanel;
-      const lastEraCard = eraEls[eraEls.length - 1];
-      const naturalTravel = Math.max(0, erasTrack.scrollHeight - eraViewport.clientHeight);
-      const lastCardTravel = lastEraCard ? Math.max(0, lastEraCard.offsetTop - 8) : 0;
-      eraPinDistance = Math.max(vh * 0.75, naturalTravel, lastCardTravel);
-      eraPinStart = clamp(erasPanel.offsetLeft, 0, baseTotalScroll);
+      const fullEraTravel = getEraTravel();
+      eraPinDistance = Math.max(vh * 2.25, fullEraTravel * 1.6);
+      const leftAlignedX = erasPanel.offsetLeft;
+      const aboutHalfVisibleX = aboutPanel
+        ? aboutPanel.offsetLeft - vw * 0.5
+        : leftAlignedX;
+      eraPinStart = clamp(Math.max(leftAlignedX, aboutHalfVisibleX), 0, baseTotalScroll);
     } else {
       eraPinDistance = 0;
       eraPinStart = 0;
     }
 
-    aboutPinDistance = aboutPanel ? Math.max(vh * 0.9, 720) : 0;
+    aboutPinDistance = aboutPanel ? Math.max(vh * 3.2, 2600) : 0;
     aboutPinStart = aboutPanel
       ? clamp(aboutPanel.offsetLeft, 0, baseTotalScroll)
       : 0;
+
+    statementPinDistance = statementPanel ? Math.max(vh * 1.45, 1320) : 0;
+    statementPinStart = aboutPanel
+      ? aboutPinStart
+      : (statementPanel ? clamp(statementPanel.offsetLeft, 0, baseTotalScroll) : 0);
 
     worksPinDistance = worksPanel
       ? Math.max(0, worksPanel.scrollHeight - worksPanel.clientHeight)
@@ -224,6 +234,14 @@
           setAboutProgress(progress);
         }
       } : null,
+      statementPanel && statementPinDistance > 0 ? {
+        id: 'statement',
+        x: statementPinStart,
+        distance: statementPinDistance,
+        apply(progress) {
+          setStatementProgress(progress);
+        }
+      } : null,
       worksPanel && worksPinDistance > 0 ? {
         id: 'works',
         x: worksPinStart,
@@ -259,8 +277,6 @@
     ].filter(Boolean).sort((a, b) => a.x - b.x);
 
     totalScroll = baseTotalScroll + pinSections.reduce((sum, pin) => sum + pin.distance, 0);
-    // body height = total horizontal distance + one viewport (so the last
-    // scroll position equals stripWidth and the strip ends fully visible)
     document.body.style.height = (totalScroll + vh) + 'px';
   }
 
@@ -355,6 +371,7 @@
     const targetPin = pinSections.find((pin) => {
       return (pin.id === 'eras' && el === erasPanel) ||
         (pin.id === 'about' && el === aboutPanel) ||
+        (pin.id === 'statement' && el === statementPanel) ||
         (pin.id === 'works' && el === worksPanel) ||
         (pin.id === 'writing' && el === writingPanel) ||
         (pin.id === 'press' && el === pressPanel);
@@ -372,14 +389,65 @@
 
   function setAboutProgress(progress) {
     if (!aboutPanel) return;
-    const local = easeInOut(clamp(progress));
-    const cardLocal = easeInOut(clamp((progress - 0.18) / 0.82));
-    aboutPanel.style.setProperty('--about-photo-alpha', local.toFixed(4));
-    aboutPanel.style.setProperty('--about-card-alpha', cardLocal.toFixed(4));
-    aboutPanel.style.setProperty('--about-photo-x', ((1 - local) * 160).toFixed(2) + 'px');
-    aboutPanel.style.setProperty('--about-card-x', ((1 - cardLocal) * 160).toFixed(2) + 'px');
-    aboutPanel.classList.toggle('is-intro-ready', progress >= 0.995);
-    aboutPanel.classList.toggle('is-about-pinned', progress > 0 && progress < 1);
+    const p = clamp(progress);
+    aboutProgress = p;
+    // Phase 1 (0 → 0.45): entry — photo + card slide in
+    // Phase 2 (0.45 → 0.55): hold (intro is fully ready)
+    // Phase 3 (0.55 → 1): exit — about lifts UPWARD off-screen,
+    //                      revealing the artist-statement panel beneath.
+    const entry = easeInOut(clamp(p / 0.28));
+    const cardEntry = easeInOut(clamp((p - 0.08) / 0.30));
+    const exit = easeInOut(clamp((p - 0.42) / 0.18));
+    aboutPanel.style.setProperty('--about-photo-alpha', entry.toFixed(4));
+    aboutPanel.style.setProperty('--about-card-alpha', cardEntry.toFixed(4));
+    aboutPanel.style.setProperty('--about-photo-x', ((1 - entry) * 160).toFixed(2) + 'px');
+    aboutPanel.style.setProperty('--about-card-x', ((1 - cardEntry) * 160).toFixed(2) + 'px');
+    aboutPanel.style.setProperty('--about-exit-y', (exit * -100).toFixed(3) + '%');
+    if (statementPanel) {
+      statementPanel.style.setProperty('--statement-y', ((1 - exit) * 100).toFixed(3) + '%');
+      if (p < 0.999) setStatementTextProgress(0);
+    }
+    aboutPanel.classList.toggle('is-intro-ready', p >= 0.45 && p <= 0.6);
+    aboutPanel.classList.toggle('is-about-pinned', p > 0 && p < 1);
+    aboutPanel.classList.toggle('is-about-exited', p >= 0.999);
+  }
+
+  // The statement panel sits directly beneath the About panel in the same
+  // horizontal slot (z-1, with About on top at z-2). Sliding About upward
+  // reveals it. No vertical motion needed on the statement itself — clear
+  // any legacy transform so it stays at translateY(0).
+  function updateStatementPosition() {
+    if (!statementPanel) return;
+    if (narrow) {
+      statementPanel.style.removeProperty('--statement-y');
+      statementPanel.style.removeProperty('--statement-copy-y');
+      statementPanel.classList.remove('is-revealing', 'is-revealed');
+      return;
+    }
+    const exit = easeInOut(clamp((aboutProgress - 0.42) / 0.18));
+    statementPanel.style.setProperty('--statement-y', ((1 - exit) * 100).toFixed(3) + '%');
+    const r = statementPanel.getBoundingClientRect();
+    statementPanel.classList.toggle('is-revealing', r.left < vw && r.right > 0);
+    statementPanel.classList.toggle('is-revealed', r.left <= 0 && r.right > 0);
+  }
+
+  function setStatementProgress(progress) {
+    if (!statementPanel) return;
+    statementPanel.style.setProperty('--statement-y', '0%');
+    setStatementTextProgress(progress);
+  }
+
+  function setStatementTextProgress(progress) {
+    if (!statementPanel || !statementBody) return;
+    const input = clamp(progress);
+    const local = clamp(0.08 + input * 0.92);
+    const windowH = Math.max(1, statementBody.clientHeight || vh * 0.45);
+    const contentH = Math.max(windowH, statementBody.scrollHeight || windowH);
+    const startY = windowH * 0.055;
+    const endY = windowH * 0.72 - contentH;
+    const y = lerp(startY, endY, local);
+    statementPanel.style.setProperty('--statement-copy-y', y.toFixed(2) + 'px');
+    statementPanel.style.setProperty('--statement-copy-progress', local.toFixed(4));
   }
 
   function setEraProgress(progress) {
@@ -407,12 +475,19 @@
   function applyEraScroll(progress) {
     if (!erasTrack || !eraEls.length) return;
     const local = clamp(progress);
+    const travel = getEraTravel();
+    erasTrack.style.transform = 'translate3d(0,' + (-travel * local).toFixed(2) + 'px,0)';
+  }
+
+  function getEraTravel() {
+    if (!erasTrack || !eraEls.length) return 0;
     const viewport = erasTrack.parentElement || erasPanel;
     const naturalTravel = Math.max(0, erasTrack.scrollHeight - viewport.clientHeight);
     const lastCard = eraEls[eraEls.length - 1];
-    const lastCardTravel = lastCard ? Math.max(0, lastCard.offsetTop - 8) : 0;
-    const travel = Math.max(naturalTravel, lastCardTravel);
-    erasTrack.style.transform = 'translate3d(0,' + (-travel * local).toFixed(2) + 'px,0)';
+    const lastCardTravel = lastCard
+      ? Math.max(0, lastCard.offsetTop + lastCard.offsetHeight - viewport.clientHeight)
+      : 0;
+    return Math.max(naturalTravel, lastCardTravel);
   }
 
   function setActiveEra(index) {
@@ -568,6 +643,7 @@
     }
 
     setPanelStates();
+    updateStatementPosition();
 
     // ---------- HERO frame scrub + parallax ----------
     if (heroPanel) {
@@ -664,8 +740,10 @@
     const delta = Math.abs(ev.deltaX) > Math.abs(ev.deltaY) ? ev.deltaX : ev.deltaY;
     if (!delta) return;
     ev.preventDefault();
-    const next = clamp((window.scrollY || window.pageYOffset) + delta, 0, totalScroll);
+    const maxScroll = totalScroll;
+    const next = clamp((window.scrollY || window.pageYOffset) + delta, 0, maxScroll);
     window.scrollTo({ top: next, behavior: 'auto' });
+    onScroll();
   }
 
   function onResize() {
@@ -680,6 +758,17 @@
     if (narrow) {
       // vertical layout: scroll element into view normally
       window.scrollTo({ top: el.offsetTop - 60, behavior: 'smooth' });
+      return;
+    }
+    if (id === 'about' && aboutPanel && aboutPinDistance > 0) {
+      window.scrollTo({ top: aboutPinStart + aboutPinDistance * 0.45, behavior: 'smooth' });
+      return;
+    }
+    if (id === 'statement' && aboutPanel && aboutPinDistance > 0) {
+      window.scrollTo({
+        top: aboutPinStart + aboutPinDistance + statementPinDistance * 0.42,
+        behavior: 'smooth'
+      });
       return;
     }
     const target = scrollTargetForPanel(el);

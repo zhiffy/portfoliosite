@@ -1,0 +1,313 @@
+/* ============================================================
+   Shavonne Wong — Writing (compact 3×2 grid, low scroll)
+   Loaded on top of scroll-narrative.css + scroll-pages.css.
+   `.wr-` classes are namespaced.
+   ============================================================ */
+
+.wr-body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+.wr-main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: calc(var(--nav-h) + 44px) clamp(20px, 3vw, 64px) 68px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================================
+   MASTHEAD
+   ============================================================ */
+.wr-head {
+  display: block;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--hairline-strong);
+  margin-bottom: 28px;
+}
+.wr-head-l { display: grid; gap: 14px; }
+.wr-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-2);
+}
+.wr-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(58px, 8vw, 128px);
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+.wr-title em {
+  font-style: italic;
+  color: var(--accent-deep);
+}
+
+.wr-head-r { display: grid; gap: 16px; }
+.wr-intro {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(16px, 1.35vw, 20px);
+  line-height: 1.45;
+  color: var(--text-2);
+  text-wrap: pretty;
+  max-width: 56ch;
+}
+
+.wr-meta-row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+  gap: clamp(20px, 2.4vw, 40px);
+  flex-wrap: wrap;
+  border-top: 1px dotted var(--hairline-strong);
+  padding-top: 14px;
+}
+.wr-meta-row li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.wr-meta-n {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 24px;
+  color: var(--accent-deep);
+  line-height: 1;
+}
+.wr-meta-lbl {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text-2);
+}
+.wr-meta-mail {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-deep);
+  padding-bottom: 1px;
+  transition: color .25s ease;
+}
+.wr-meta-mail:hover { color: var(--accent-deep); }
+
+/* ============================================================
+   GRID
+   ============================================================ */
+.wr-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 1.6vw, 24px);
+}
+.wr-card {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 10px;
+  padding: 16px;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  text-decoration: none;
+  color: inherit;
+  transition: background .25s ease, border-color .25s ease, transform .35s cubic-bezier(.2,.7,.3,1);
+}
+.wr-card:hover {
+  background: var(--bg-warm);
+  border-color: var(--text);
+  transform: translateY(-3px);
+}
+.wr-card-num {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--accent-deep);
+  padding-bottom: 8px;
+  border-bottom: 1px dotted var(--hairline);
+}
+.wr-card-thumb {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--surface);
+}
+.wr-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.1) contrast(1.02);
+  transform: scale(1.02);
+  transition: transform .7s cubic-bezier(.2,.7,.3,1), filter .35s ease;
+}
+.wr-card:hover .wr-card-thumb img {
+  transform: scale(1.06);
+  filter: grayscale(0) contrast(1.04);
+}
+.wr-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+.wr-card-date {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text-2);
+}
+.wr-card-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(17px, 1.25vw, 21px);
+  line-height: 1.15;
+  letter-spacing: -0.003em;
+  color: var(--text);
+  text-wrap: pretty;
+  transition: color .25s ease;
+  /* clamp to 2 lines so the archive stays image-led */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.wr-card:hover .wr-card-title { color: var(--accent-deep); }
+
+/* ============================================================
+   COMPACT FOOTER STRIP (replaces the 3 secondary cards)
+   ============================================================ */
+.wr-foot {
+  margin-top: clamp(40px, 4vw, 56px);
+  padding: 24px 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 56px);
+  border-top: 1px solid var(--hairline-strong);
+  border-bottom: 1px solid var(--hairline);
+}
+.wr-foot-line {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.wr-foot-val {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(16px, 1.3vw, 20px);
+  line-height: 1.35;
+  color: var(--text);
+  text-wrap: pretty;
+}
+.wr-foot-link {
+  font-style: italic;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-deep);
+  padding-bottom: 1px;
+  display: inline-block;
+  transition: color .25s ease;
+  width: max-content;
+}
+.wr-foot-link:hover { color: var(--accent-deep); }
+
+/* ============================================================
+   PAGE NAV
+   ============================================================ */
+.wr-footer-nav {
+  margin-top: 42px;
+  padding-top: 24px;
+  border-top: 1px solid var(--text);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.wr-footer-nav a {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 1.8vw, 28px);
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--hairline-strong);
+  padding-bottom: 2px;
+  transition: color .25s ease, border-color .25s ease;
+}
+.wr-footer-nav a:hover {
+  color: var(--accent-deep);
+  border-bottom-color: var(--accent-deep);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1080px) {
+  .wr-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .wr-grid { grid-template-columns: 1fr; }
+  .wr-foot { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .wr-main {
+    padding: calc(var(--nav-h) + 38px) 20px 60px;
+    overflow-x: hidden;
+  }
+  .wr-head {
+    padding-bottom: 20px;
+    margin-bottom: 22px;
+  }
+  .wr-title {
+    font-size: clamp(46px, 17vw, 78px);
+    line-height: 0.96;
+  }
+  .wr-intro {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .wr-meta-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .wr-meta-row li {
+    min-width: 0;
+  }
+  .wr-meta-mail {
+    overflow-wrap: anywhere;
+  }
+  .wr-card {
+    padding: 14px;
+  }
+  .wr-card-title {
+    font-size: clamp(18px, 5.8vw, 24px);
+    overflow-wrap: anywhere;
+  }
+  .wr-foot-val {
+    overflow-wrap: anywhere;
+  }
+  .wr-footer-nav {
+    padding-top: 28px;
+  }
+}

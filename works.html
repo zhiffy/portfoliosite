@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
@@ -6,16 +6,43 @@
   <title>Shavonne Wong — Works</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="scroll-narrative.css?v=20260515-tune2">
-  <link rel="stylesheet" href="scroll-pages.css?v=20260515-tune2">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="scroll-narrative.css?v=20260521-surface-hero-gap-tight">
+  <link rel="stylesheet" href="scroll-pages.css?v=20260520-mobile-pass">
+  <link rel="stylesheet" href="works-redesign.css?v=20260520-mobile-pass">
 </head>
-<body class="sn-page-body">
+<body class="sn-page-body wk-body">
+  <svg id="cursorMaskSvg" class="sn-cursor-mask" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <radialGradient id="cursorMaskGradient" cx="50%" cy="50%" r="100" gradientUnits="userSpaceOnUse">
+        <stop offset="0%"   stop-color="#808080" stop-opacity="1"/>
+        <stop offset="55%"  stop-color="#808080" stop-opacity="0.45"/>
+        <stop offset="100%" stop-color="#808080" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#cursorMaskGradient)"/>
+  </svg>
+  <svg class="sn-fx-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="cursorWarp" x="-2%" y="-2%" width="104%" height="104%"
+              color-interpolation-filters="sRGB"
+              filterUnits="objectBoundingBox"
+              primitiveUnits="userSpaceOnUse">
+        <feTurbulence type="fractalNoise" baseFrequency="0.007 0.010" numOctaves="2" seed="3" result="noise">
+          <animate attributeName="baseFrequency" dur="22s"
+                   values="0.007 0.010;0.010 0.007;0.007 0.010"
+                   repeatCount="indefinite"/>
+        </feTurbulence>
+        <feImage href="#cursorMaskSvg" result="mask" preserveAspectRatio="none"/>
+        <feComposite in="noise" in2="mask" operator="in" result="local"/>
+        <feDisplacementMap in="SourceGraphic" in2="local" scale="10"
+                           xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
   <header class="sn-nav" data-page-nav>
-    <a href="index.html#hero" class="sn-mark">
-      <span class="sn-dot"></span>
-      <span>Shavonne Wong</span>
-    </a>
+    <a href="index.html#hero" class="sn-mark"><img class="sn-mark-logo" src="assets/brand/wordmark-slate.png" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
       <a href="index.html#hero">Home</a>
       <a href="about.html"><span class="sn-num">II.</span> About</a>
@@ -26,171 +53,398 @@
     </nav>
     <div class="sn-meta-right">
       <span>Works</span>
-      <span>Full page</span>
+      <span>Archive</span>
     </div>
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
   </header>
 
-  <main class="sp-main">
-    <section class="sp-hero">
-      <div>
-        <div class="sp-kicker">III. Works · full archive</div>
-        <h1 class="sp-title"><em>The</em> works.</h1>
-      </div>
-      <div>
-        <p class="sp-intro">
-          A fuller view of projects across interactive AI, 3D figuration, video, and photography.
-          The scroll narrative shows three featured works; this page holds the wider archive.
+  <main class="wk-main">
+
+    <!-- HEADER + FILTER BAR -->
+    <header class="wk-header">
+      <div class="wk-header-l">
+        <span class="wk-eyebrow">III. Works · full archive</span>
+        <h1 class="wk-title"><em>The</em> works.</h1>
+        <p class="wk-intro">
+          Projects across interactive AI, 3D figuration, video, and photography.
+          The scroll narrative shows three featured; this page holds the wider archive.
         </p>
-        <div class="sp-meta-row">
-          <span class="sp-chip">Interactive</span>
-          <span class="sp-chip">3D &amp; Rendered</span>
-          <span class="sp-chip">Video</span>
-          <span class="sp-chip">Photography</span>
+      </div>
+      <div class="wk-header-r">
+        <div class="wk-count">
+          <span class="wk-count-n">07</span>
+          <span class="wk-count-lbl">works in view<br>2021 — 2025</span>
         </div>
       </div>
+    </header>
+
+    <div class="wk-filterbar">
+      <div class="wk-filters" role="tablist">
+        <button class="wk-chip is-active" data-filter="all">All <span>· 7</span></button>
+        <button class="wk-chip" data-filter="interactive">Interactive <span>· 2</span></button>
+        <button class="wk-chip" data-filter="3d">3D &amp; rendered <span>· 3</span></button>
+        <button class="wk-chip" data-filter="video">Video</button>
+        <button class="wk-chip" data-filter="photo">Photography</button>
+        <button class="wk-chip" data-filter="cover">Covers &amp; editions <span>· 2</span></button>
+      </div>
+      <div class="wk-viewtoggle" role="tablist" aria-label="Layout">
+        <button class="wk-view is-active" data-view="grid" aria-pressed="true">
+          <svg viewBox="0 0 16 16" width="14" height="14"><rect x="1" y="1" width="6" height="6" fill="currentColor"/><rect x="9" y="1" width="6" height="6" fill="currentColor"/><rect x="1" y="9" width="6" height="6" fill="currentColor"/><rect x="9" y="9" width="6" height="6" fill="currentColor"/></svg>
+          <span>Grid</span>
+        </button>
+        <button class="wk-view" data-view="list" aria-pressed="false">
+          <svg viewBox="0 0 16 16" width="14" height="14"><rect x="1" y="2" width="14" height="2" fill="currentColor"/><rect x="1" y="7" width="14" height="2" fill="currentColor"/><rect x="1" y="12" width="14" height="2" fill="currentColor"/></svg>
+          <span>List</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         GRID
+         ============================================================ -->
+    <section class="wk-grid" data-grid aria-label="Works grid">
+
+      <!-- 01 — After Ophelia (feature/spans 2 columns) -->
+      <a class="wk-card wk-feature" href="after-ophelia.html"
+         data-tag="interactive 3d" data-num="01">
+        <figure class="wk-media">
+          <img src="assets/after-ophelia/01-ophelia-reassembled-print.jpg" alt="After Ophelia print" loading="lazy">
+          <div class="wk-media-scrim" aria-hidden="true"></div>
+          <span class="wk-pill wk-pill-now">On view · 2025</span>
+        </figure>
+        <div class="wk-meta">
+          <div class="wk-meta-top">
+            <span class="wk-meta-num">1.</span>
+            <span class="wk-meta-year">2025</span>
+          </div>
+          <h3 class="wk-meta-title">After Ophelia</h3>
+          <div class="wk-meta-medium">Interactive AI installation · 3D print series</div>
+          <p class="wk-meta-copy">
+            A printed series and interactive AI installation examining the automation of
+            personal image — what your likeness means when it is built, revised, and returned
+            by a system.
+          </p>
+          <div class="wk-meta-foot">
+            <span class="wk-tag">Interactive</span>
+            <span class="wk-tag">3D print</span>
+            <span class="wk-cta">View project →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 02 — Meet Eva Here -->
+      <a class="wk-card" href="meet-eva-here.html"
+         data-tag="interactive" data-num="02">
+        <figure class="wk-media">
+          <img src="assets/meet-eva-here/06-dsc00661.jpg" alt="Meet Eva Here installation" loading="lazy">
+          <div class="wk-media-scrim" aria-hidden="true"></div>
+          <span class="wk-pill">Concluded · Nov 2025</span>
+        </figure>
+        <div class="wk-meta">
+          <div class="wk-meta-top">
+            <span class="wk-meta-num">2.</span>
+            <span class="wk-meta-year">2024 — 2025</span>
+          </div>
+          <h3 class="wk-meta-title">Meet Eva Here</h3>
+          <div class="wk-meta-medium">AI companion · chatbot · public archive</div>
+          <p class="wk-meta-copy">
+            Fifteen months across a museum, art fairs, and a chatbot — 2,363 conversations
+            distilled into 100 public diary entries.
+          </p>
+          <div class="wk-meta-foot">
+            <span class="wk-tag">Interactive</span>
+            <span class="wk-cta">View project →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 03 — The Ties That Bind -->
+      <a class="wk-card" href="the-ties-that-bind.html"
+         data-tag="3d video" data-num="03">
+        <figure class="wk-media">
+          <img src="assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.jpg" alt="The Ties That Bind exhibition" loading="lazy">
+          <div class="wk-media-scrim" aria-hidden="true"></div>
+          <span class="wk-pill">2022</span>
+        </figure>
+        <div class="wk-meta">
+          <div class="wk-meta-top">
+            <span class="wk-meta-num">3.</span>
+            <span class="wk-meta-year">2022</span>
+          </div>
+          <h3 class="wk-meta-title">The Ties That Bind</h3>
+          <div class="wk-meta-medium">3D video installation — three rooms</div>
+          <p class="wk-meta-copy">
+            A solo exhibition asking what gets passed down through bodies: inherited gesture,
+            posture, and small rituals as looping 3D video.
+          </p>
+          <div class="wk-meta-foot">
+            <span class="wk-tag">3D · Video</span>
+            <span class="wk-cta">View project →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 04 — By Proxy -->
+      <a class="wk-card" href="by-proxy.html"
+         data-tag="3d video" data-num="04">
+        <figure class="wk-media">
+          <img src="assets/by-proxy/01-1920px-web-len-4101.jpg" alt="By Proxy still" loading="lazy">
+          <div class="wk-media-scrim" aria-hidden="true"></div>
+          <span class="wk-pill">2022</span>
+        </figure>
+        <div class="wk-meta">
+          <div class="wk-meta-top">
+            <span class="wk-meta-num">4.</span>
+            <span class="wk-meta-year">2022</span>
+          </div>
+          <h3 class="wk-meta-title">By Proxy</h3>
+          <div class="wk-meta-medium">3D video series</div>
+          <p class="wk-meta-copy">
+            Digital figures as stand-ins — surrogates performing on behalf of someone,
+            somewhere, no longer in the room.
+          </p>
+          <div class="wk-meta-foot">
+            <span class="wk-tag">Video</span>
+            <span class="wk-cta">View project →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 05 — Love is Love -->
+      <a class="wk-card" href="works.html"
+         data-tag="3d cover" data-num="05">
+        <figure class="wk-media">
+          <img src="assets/the-ties-that-bind/02-asset-1-copy.png" alt="Love is Love render" loading="lazy">
+          <div class="wk-media-scrim" aria-hidden="true"></div>
+          <span class="wk-pill">2021 · Venice Biennale</span>
+        </figure>
+        <div class="wk-meta">
+          <div class="wk-meta-top">
+            <span class="wk-meta-num">5.</span>
+            <span class="wk-meta-year">2021</span>
+          </div>
+          <h3 class="wk-meta-title">Love is Love</h3>
+          <div class="wk-meta-medium">Generative 3D series — twelve plates</div>
+          <p class="wk-meta-copy">
+            Twelve unique pulls of a single generative system. First shown at the Venice
+            Biennale; later a Tatler Hong Kong cover work.
+          </p>
+          <div class="wk-meta-foot">
+            <span class="wk-tag">Generative</span>
+            <span class="wk-cta">View details →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 06 — Vogue Singapore NFT Cover -->
+      <a class="wk-card" href="works.html"
+         data-tag="cover photo" data-num="06">
+        <figure class="wk-media">
+          <img src="assets/by-proxy/06-1920px-web-len-4541.jpg" alt="Vogue Singapore NFT cover" loading="lazy">
+          <div class="wk-media-scrim" aria-hidden="true"></div>
+          <span class="wk-pill">2021 · Cover</span>
+        </figure>
+        <div class="wk-meta">
+          <div class="wk-meta-top">
+            <span class="wk-meta-num">6.</span>
+            <span class="wk-meta-year">2021</span>
+          </div>
+          <h3 class="wk-meta-title">Vogue Singapore — NFT Cover</h3>
+          <div class="wk-meta-medium">With The Fabricant · September issue</div>
+          <p class="wk-meta-copy">
+            Singapore's first NFT cover: a digital garment on a rendered body in motion,
+            co-created with The Fabricant.
+          </p>
+          <div class="wk-meta-foot">
+            <span class="wk-tag">Cover</span>
+            <span class="wk-cta">View details →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 07 — 6529 Meme Card -->
+      <a class="wk-card" href="works.html"
+         data-tag="cover" data-num="07">
+        <figure class="wk-media">
+          <img src="assets/by-proxy/11-1920px-web-len-5791.jpg" alt="6529 Meme Card" loading="lazy">
+          <div class="wk-media-scrim" aria-hidden="true"></div>
+          <span class="wk-pill">2022 · Edition</span>
+        </figure>
+        <div class="wk-meta">
+          <div class="wk-meta-top">
+            <span class="wk-meta-num">7.</span>
+            <span class="wk-meta-year">2022</span>
+          </div>
+          <h3 class="wk-meta-title">6529 Meme Card</h3>
+          <div class="wk-meta-medium">Digital edition · Paris</div>
+          <p class="wk-meta-copy">
+            A single-frame edition commissioned for the 6529 collection, shown as part of
+            the project's Paris programming.
+          </p>
+          <div class="wk-meta-foot">
+            <span class="wk-tag">Edition</span>
+            <span class="wk-cta">View details →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 08 — Editorial photography (placeholder for the era) -->
+      <a class="wk-card" href="works.html"
+         data-tag="photo" data-num="08">
+        <figure class="wk-media">
+          <img src="assets/by-proxy/04-1920px-web-len-3989-2.jpg" alt="Editorial photography selections" loading="lazy">
+          <div class="wk-media-scrim" aria-hidden="true"></div>
+          <span class="wk-pill">2015 — 2019</span>
+        </figure>
+        <div class="wk-meta">
+          <div class="wk-meta-top">
+            <span class="wk-meta-num">8.</span>
+            <span class="wk-meta-year">2015 — 2019</span>
+          </div>
+          <h3 class="wk-meta-title">Editorial — Selected</h3>
+          <div class="wk-meta-medium">Photography · Vogue · Tatler · campaigns</div>
+          <p class="wk-meta-copy">
+            Five years in fashion and advertising photography — the foundation the rest of
+            the practice was built on.
+          </p>
+          <div class="wk-meta-foot">
+            <span class="wk-tag">Photography</span>
+            <span class="wk-cta">View archive →</span>
+          </div>
+        </div>
+      </a>
+
     </section>
 
-    <section class="sp-section" aria-label="Works archive">
-      <article class="sp-work">
-        <div class="sp-num">01.</div>
-        <div class="sp-plate">
-          <div class="sn-plate sn-plate-figure sn-plate-image">
-            <img src="assets/after-ophelia/01-ophelia-reassembled-print.jpg" alt="After Ophelia artwork preview">
-            <div class="sn-plate-caption">After Ophelia / 2025</div>
-          </div>
-        </div>
-        <div class="sp-work-text">
-          <h2 class="sp-work-title">After Ophelia</h2>
-          <div class="sp-sub">Interactive AI installation &middot; 3D print series</div>
-          <a href="after-ophelia.html" class="sn-section-link">Open project &rarr;</a>
-          <p class="sp-copy">A printed series and interactive AI installation examining the automation of personal image: what it means when your likeness is built, revised, and returned by a system.</p>
-          <p class="sp-copy">Visitors feed a still of themselves into an automated portrait process and watch it iterate the image back through different versions. The prints are residues from that same process, run on the artist's own likeness across two years.</p>
-          <dl class="sp-detail-grid">
-            <dt>Year</dt><dd>2025</dd>
-            <dt>Status</dt><dd>Current project &middot; studio enquiries direct</dd>
-            <dt>Components</dt><dd>Twelve large-format prints &middot; portrait station &middot; discarded render set</dd>
-          </dl>
-        </div>
-      </article>
-
-      <article class="sp-work">
-        <div class="sp-num">02.</div>
-        <div class="sp-plate">
-          <div class="sn-plate sn-plate-installation sn-plate-image">
-            <img src="assets/meet-eva-here/06-dsc00661.jpg" alt="Meet Eva Here installation preview">
-            <div class="sn-plate-caption">Meet Eva Here / installation</div>
-          </div>
-        </div>
-        <div class="sp-work-text">
-          <h2 class="sp-work-title">Meet Eva Here</h2>
-          <div class="sp-sub">Interactive AI installation · chatbot · public archive</div>
-          <a href="meet-eva-here.html" class="sn-section-link">Open project &rarr;</a>
-          <p class="sp-copy">A fifteen-month AI companion archive across a museum, art fairs, and a public diary project. Eva listened, responded, and, with consent, kept diary entries about the encounters she had.</p>
-          <p class="sp-copy">The project concluded in November 2025 after 2,363 conversations and 100 public diary entries.</p>
-          <dl class="sp-detail-grid">
-            <dt>Year</dt><dd>2024 — 2025</dd>
-            <dt>Shown at</dt><dd>ArtScience Museum Singapore · Art SG · Taipei Dangdai · Art Central Hong Kong</dd>
-            <dt>Scale</dt><dd>2,363 conversations · 100 diary entries · 1 avatar</dd>
-          </dl>
-        </div>
-      </article>
-
-      <article class="sp-work">
-        <div class="sp-num">03.</div>
-        <div class="sp-plate">
-          <div class="sn-plate sn-plate-render sn-plate-image">
-            <img src="assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.jpg" alt="The Ties That Bind exhibition preview">
-            <div class="sn-plate-caption">The Ties That Bind / exhibition</div>
-          </div>
-        </div>
-        <div class="sp-work-text">
-          <h2 class="sp-work-title">The Ties That Bind</h2>
-          <div class="sp-sub">3D video installation</div>
-          <a href="the-ties-that-bind.html" class="sn-section-link">Open project &rarr;</a>
-          <p class="sp-copy">A solo exhibition asking what gets passed down through bodies: inherited gesture, posture, and small rituals rendered as looping 3D video.</p>
-          <dl class="sp-detail-grid">
-            <dt>Year</dt><dd>2022</dd>
-            <dt>Venue</dt><dd>UltraSuperNew Gallery · Singapore</dd>
-            <dt>Format</dt><dd>Three-room video installation</dd>
-          </dl>
-        </div>
-      </article>
-
-      <article class="sp-work">
-        <div class="sp-num">04.</div>
-        <div class="sp-plate">
-          <div class="sn-plate sn-plate-still sn-plate-image">
-            <img src="assets/by-proxy/01-1920px-web-len-4101.jpg" alt="By Proxy artwork preview">
-            <div class="sn-plate-caption">By Proxy / still</div>
-          </div>
-        </div>
-        <div class="sp-work-text">
-          <h2 class="sp-work-title">By Proxy</h2>
-          <div class="sp-sub">3D video series</div>
-          <a href="by-proxy.html" class="sn-section-link">Open project &rarr;</a>
-          <p class="sp-copy">A series staging digital figures as stand-ins: surrogates performing on behalf of someone, somewhere, no longer in the room.</p>
-          <dl class="sp-detail-grid">
-            <dt>Year</dt><dd>2022</dd>
-            <dt>Status</dt><dd>Available · multiple editions</dd>
-            <dt>Question</dt><dd>If a body stands in for you, does its presence still count as care?</dd>
-          </dl>
-        </div>
-      </article>
-
-      <article class="sp-work">
-        <div class="sp-num">05.</div>
-        <div class="sp-plate"><div class="sn-plate sn-plate-render"><div class="sn-plate-caption">Love is Love / generative 3D</div></div></div>
-        <div class="sp-work-text">
-          <h2 class="sp-work-title">Love is Love</h2>
-          <div class="sp-sub">Generative 3D series</div>
-          <p class="sp-copy">Twelve plates of a single generative system, each render a unique pull from the same set of parameters. First shown at the Venice Biennale and later appearing as a Tatler Hong Kong cover work.</p>
-          <dl class="sp-detail-grid">
-            <dt>Year</dt><dd>2021</dd>
-            <dt>Contexts</dt><dd>Venice Biennale · Tatler Hong Kong</dd>
-            <dt>Status</dt><dd>Available · editions remaining</dd>
-          </dl>
-        </div>
-      </article>
-
-      <article class="sp-work">
-        <div class="sp-num">06.</div>
-        <div class="sp-plate"><div class="sn-plate sn-plate-still"><div class="sn-plate-caption">6529 Meme Card / digital edition</div></div></div>
-        <div class="sp-work-text">
-          <h2 class="sp-work-title">6529 Meme Card</h2>
-          <div class="sp-sub">Digital edition</div>
-          <p class="sp-copy">A single-frame edition commissioned for the 6529 collection and exhibited as part of the project's Paris programming.</p>
-          <dl class="sp-detail-grid">
-            <dt>Year</dt><dd>2022</dd>
-            <dt>Format</dt><dd>Digital edition</dd>
-            <dt>Status</dt><dd>Edition concluded</dd>
-          </dl>
-        </div>
-      </article>
-
-      <article class="sp-work">
-        <div class="sp-num">07.</div>
-        <div class="sp-plate"><div class="sn-plate sn-plate-portrait"><div class="sn-plate-caption">Vogue Singapore NFT Cover / portrait</div></div></div>
-        <div class="sp-work-text">
-          <h2 class="sp-work-title">Vogue Singapore NFT Cover</h2>
-          <div class="sp-sub">Cover collaboration with The Fabricant</div>
-          <p class="sp-copy">Vogue Singapore's first NFT cover, co-created with The Fabricant: a digital garment on a rendered body, in motion.</p>
-          <dl class="sp-detail-grid">
-            <dt>Year</dt><dd>2021</dd>
-            <dt>Publication</dt><dd>Vogue Singapore</dd>
-            <dt>Status</dt><dd>Edition concluded</dd>
-          </dl>
-        </div>
-      </article>
+    <!-- ============================================================
+         LIST VIEW (the same works as a dense table)
+         ============================================================ -->
+    <section class="wk-list" data-list aria-label="Works list" hidden>
+      <div class="wk-list-head">
+        <span>No.</span>
+        <span>Title</span>
+        <span>Medium</span>
+        <span>Year</span>
+        <span>Status</span>
+        <span></span>
+      </div>
+      <a class="wk-list-row" href="after-ophelia.html" data-tag="interactive 3d">
+        <span class="wk-list-num">1.</span>
+        <span class="wk-list-title">After Ophelia</span>
+        <span class="wk-list-medium">Interactive AI · 3D print series</span>
+        <span class="wk-list-year">2025</span>
+        <span class="wk-list-status wk-list-status-on">On view</span>
+        <span class="wk-list-arrow">→</span>
+      </a>
+      <a class="wk-list-row" href="meet-eva-here.html" data-tag="interactive">
+        <span class="wk-list-num">2.</span>
+        <span class="wk-list-title">Meet Eva Here</span>
+        <span class="wk-list-medium">AI companion · chatbot · archive</span>
+        <span class="wk-list-year">2024 — 2025</span>
+        <span class="wk-list-status">Concluded</span>
+        <span class="wk-list-arrow">→</span>
+      </a>
+      <a class="wk-list-row" href="the-ties-that-bind.html" data-tag="3d video">
+        <span class="wk-list-num">3.</span>
+        <span class="wk-list-title">The Ties That Bind</span>
+        <span class="wk-list-medium">3D video installation</span>
+        <span class="wk-list-year">2022</span>
+        <span class="wk-list-status">Solo · USN, SG</span>
+        <span class="wk-list-arrow">→</span>
+      </a>
+      <a class="wk-list-row" href="by-proxy.html" data-tag="3d video">
+        <span class="wk-list-num">4.</span>
+        <span class="wk-list-title">By Proxy</span>
+        <span class="wk-list-medium">3D video series</span>
+        <span class="wk-list-year">2022</span>
+        <span class="wk-list-status">Available</span>
+        <span class="wk-list-arrow">→</span>
+      </a>
+      <a class="wk-list-row" href="works.html" data-tag="3d cover">
+        <span class="wk-list-num">5.</span>
+        <span class="wk-list-title">Love is Love</span>
+        <span class="wk-list-medium">Generative 3D · twelve plates</span>
+        <span class="wk-list-year">2021</span>
+        <span class="wk-list-status">Venice Biennale</span>
+        <span class="wk-list-arrow">→</span>
+      </a>
+      <a class="wk-list-row" href="works.html" data-tag="cover photo">
+        <span class="wk-list-num">6.</span>
+        <span class="wk-list-title">Vogue Singapore — NFT Cover</span>
+        <span class="wk-list-medium">With The Fabricant</span>
+        <span class="wk-list-year">2021</span>
+        <span class="wk-list-status">Cover</span>
+        <span class="wk-list-arrow">→</span>
+      </a>
+      <a class="wk-list-row" href="works.html" data-tag="cover">
+        <span class="wk-list-num">7.</span>
+        <span class="wk-list-title">6529 Meme Card</span>
+        <span class="wk-list-medium">Digital edition · Paris</span>
+        <span class="wk-list-year">2022</span>
+        <span class="wk-list-status">Edition concluded</span>
+        <span class="wk-list-arrow">→</span>
+      </a>
+      <a class="wk-list-row" href="works.html" data-tag="photo">
+        <span class="wk-list-num">8.</span>
+        <span class="wk-list-title">Editorial — Selected</span>
+        <span class="wk-list-medium">Photography · Vogue · Tatler</span>
+        <span class="wk-list-year">2015 — 2019</span>
+        <span class="wk-list-status">Archive</span>
+        <span class="wk-list-arrow">→</span>
+      </a>
     </section>
 
-    <nav class="sp-footer-nav">
-      <a href="index.html#works" class="sn-section-link">Return to narrative</a>
-      <a href="writing.html" class="sn-section-link">Next: writing →</a>
+    <nav class="wk-footer-nav">
+      <a href="index.html#works">← Return to narrative</a>
+      <a href="writing.html">Writing →</a>
     </nav>
   </main>
+
+  <script>
+    // Filters + view toggle
+    (function () {
+      const chips = document.querySelectorAll('.wk-chip');
+      const views = document.querySelectorAll('.wk-view');
+      const grid = document.querySelector('[data-grid]');
+      const list = document.querySelector('[data-list]');
+      const allCards = () => document.querySelectorAll('.wk-card, .wk-list-row');
+      const countEl = document.querySelector('.wk-count-n');
+
+      function applyFilter(tag) {
+        let shown = 0;
+        allCards().forEach((el) => {
+          const tags = (el.getAttribute('data-tag') || '').split(/\s+/);
+          const match = tag === 'all' || tags.includes(tag);
+          el.style.display = match ? '' : 'none';
+          if (match && el.matches('.wk-card')) shown++;
+        });
+        if (countEl) {
+          countEl.textContent = String(shown).padStart(2, '0');
+        }
+      }
+
+      chips.forEach(c => c.addEventListener('click', () => {
+        chips.forEach(x => x.classList.toggle('is-active', x === c));
+        applyFilter(c.getAttribute('data-filter'));
+      }));
+
+      views.forEach(v => v.addEventListener('click', () => {
+        views.forEach(x => {
+          const on = x === v;
+          x.classList.toggle('is-active', on);
+          x.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        const which = v.getAttribute('data-view');
+        if (which === 'list') {
+          grid.hidden = true;
+          list.hidden = false;
+        } else {
+          grid.hidden = false;
+          list.hidden = true;
+        }
+      }));
+    })();
+  </script>
+  <script src="fluid-renderer.js?v=20260516-fluid-lens-strong"></script>
 </body>
 </html>
-
-
-

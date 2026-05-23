@@ -1,70 +1,123 @@
-﻿<!doctype html>
-<html lang="en" data-theme="light">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shavonne Wong — Index</title>
+<!doctype html>
+<html lang="en" data-theme="light"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shavonne Wong - Index</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="scroll-narrative.css?v=20260516-fluid-lens-strong">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="scroll-narrative.css?v=20260521-surface-hero-gap-tight">
 </head>
 <body>
-  <canvas class="sn-fluid-canvas" data-fluid-renderer aria-hidden="true"></canvas>
+  <!-- ============================================================
+       CURSOR WARP — invisible SVG that drives a feDisplacementMap.
+       The mask SVG below paints a tiny radial gradient at the cursor
+       position (updated via JS); the filter samples that as the
+       displacement source, so only pixels near the cursor warp.
+       No DOM overlay, no circular mask, no visible boundary.
+       ============================================================ -->
+  <svg id="cursorMaskSvg" class="sn-cursor-mask" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <radialGradient id="cursorMaskGradient" cx="246.65" cy="158.16" r="100" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#808080" stop-opacity="1"></stop>
+        <stop offset="55%" stop-color="#808080" stop-opacity="0.45"></stop>
+        <stop offset="100%" stop-color="#808080" stop-opacity="0"></stop>
+      </radialGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#cursorMaskGradient)"></rect>
+  </svg>
+
+  <svg class="sn-fx-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="cursorWarp" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+        <feTurbulence type="fractalNoise" baseFrequency="0.007 0.010" numOctaves="2" seed="3" result="noise">
+          <animate attributeName="baseFrequency" dur="22s" values="0.007 0.010;0.010 0.007;0.007 0.010" repeatCount="indefinite"></animate>
+        </feTurbulence>
+        <feImage href="#cursorMaskSvg" result="mask" preserveAspectRatio="none"></feImage>
+        <feComposite in="noise" in2="mask" operator="in" result="local"></feComposite>
+        <feDisplacementMap in="SourceGraphic" in2="local" scale="10" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+      </filter>
+    </defs>
+  </svg>
 
   <!-- ============================================================
        STICKY HEADER — sits above the strip
        ============================================================ -->
-  <header class="sn-nav" data-nav>
-    <a href="#hero" class="sn-mark" data-jump="hero">
-      <span>Shavonne Wong</span>
-    </a>
+  <header class="sn-nav" data-nav="">
+    <a href="#hero" class="sn-mark" data-jump="hero"><img class="sn-mark-logo" src="assets/brand/wordmark-slate.png" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
-      <a href="#hero" data-jump="hero">Home</a>
+      <a href="#hero" data-jump="hero" class="">Home</a>
       <a href="about.html"><span class="sn-num">II.</span> About</a>
       <a href="works.html"><span class="sn-num">III.</span> Works</a>
       <a href="writing.html"><span class="sn-num">IV.</span> Writing</a>
       <a href="about.html#press"><span class="sn-num">V.</span> Press</a>
-      <a href="#contact" data-jump="contact"><span class="sn-num">VI.</span> Contact</a>
+      <a href="#contact" data-jump="contact" class="is-active"><span class="sn-num">VI.</span> Contact</a>
     </nav>
     <div class="sn-meta-right">
-      <span class="sn-scroll-readout" data-scroll-readout>00 / 100</span>
+      <span class="sn-scroll-readout" data-scroll-readout="">100 / 100</span>
     </div>
-    <div class="sn-progress"><div class="sn-progress-bar" data-progress></div></div>
+    <div class="sn-progress"><div class="sn-progress-bar" data-progress=""></div></div>
   </header>
 
   <!-- ============================================================
        FIXED STAGE — the strip translates X driven by window scrollY
        ============================================================ -->
-  <main class="sn-stage" data-stage>
-    <div class="sn-strip" data-strip>
+  <main class="sn-stage" data-stage="">
+    <div class="sn-strip" data-strip="">
 
       <!-- ========================================================
-           PANEL 1 — HERO (parallax)
+           PANEL 1 — HERO (editorial split: cream type, dark media tile)
            ======================================================== -->
       <section class="sn-panel sn-hero" id="hero" data-panel="hero">
-        <div class="sn-hero-plate" data-parallax="0">
-          <div class="sn-plate sn-plate-video">
-            <video src="assets/videos/Whirlwind%20of%20the%20Waking%20Dream.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="sn-hero-frame">
+          <!-- LEFT: editorial type column on cream -->
+          <div class="sn-hero-type sn-hero-type-base" data-parallax="-0.10">
+            <div class="sn-hero-name-stack" aria-label="Shavonne Wong">
+              <h1 class="sn-hero-name sn-hero-name-base">
+                <span class="sn-hero-word">Shavonne</span>
+                <span class="sn-hero-word italic">Wong<span class="sn-hero-dot">.</span></span>
+              </h1>
+              <h1 class="sn-hero-name sn-hero-name-invert" aria-hidden="true">
+                <span class="sn-hero-word">Shavonne</span>
+                <span class="sn-hero-word italic">Wong<span class="sn-hero-dot">.</span></span>
+              </h1>
+            </div>
+            <p class="sn-hero-sub">
+              <em>3D, AI and interactive installations.</em>
+            </p>
           </div>
-        </div>
+          <div class="sn-hero-type sn-hero-type-invert" data-parallax="-0.10" aria-hidden="true">
+            <div class="sn-hero-name-stack">
+              <h1 class="sn-hero-name sn-hero-name-base">
+                <span class="sn-hero-word">Shavonne</span>
+                <span class="sn-hero-word italic">Wong<span class="sn-hero-dot">.</span></span>
+              </h1>
+            </div>
+            <p class="sn-hero-sub">
+              <em>3D, AI and interactive installations.</em>
+            </p>
+          </div>
 
-        <div class="sn-hero-stack" data-parallax="-0.20">
-          <div class="sn-hero-overline">
-            <span>New media artist</span>
-            <span>AI, 3D, and interactive installation.</span>
-          </div>
-          <h1 class="sn-hero-name">
-            <span class="sn-hero-word">Shavonne</span>
-            <span class="sn-hero-word italic">Wong<span class="sn-hero-dot">.</span></span>
-          </h1>
+          <!-- RIGHT: media tile (dark-tolerant) -->
+          <figure class="sn-hero-media" data-parallax="0.10">
+            <div class="sn-plate sn-plate-video sn-hero-plate-tile">
+              <video autoplay muted loop playsinline preload="metadata" poster="assets/videos/everything-yet-nothing-frames/everything-yet-nothing-05.png" aria-label="Whirlwind of the Waking Dream - 3D generative video">
+                <source src="assets/videos/whirlwind-of-the-waking-dream.mp4" type="video/mp4">
+              </video>
+              <div class="sn-hero-media-scrim" aria-hidden="true"></div>
+              <figcaption class="sn-hero-media-cap">
+                <span>Whirlwind of the Waking Dream</span>
+                <span>2024 / 3D / generative</span>
+              </figcaption>
+            </div>
+          </figure>
         </div>
       </section>
 
       <!-- ========================================================
            PANEL 3 — CAREER TIMELINE (the three eras · separate from Works)
            ======================================================== -->
-      <section class="sn-panel sn-eras" id="eras" data-panel="eras" data-eras>
+      <section class="sn-panel sn-eras" id="eras" data-panel="eras" data-eras="" data-era-dir="next">
         <div class="sn-eras-head">
           <div>
             <span class="sn-eyebrow">Practice</span>
@@ -76,34 +129,118 @@
 
         <div class="sn-era-timeline">
           <div class="sn-eras-track" aria-live="polite">
-          <article class="sn-era is-active" data-era data-era-id="I">
+          <article class="sn-era" data-era="" data-era-id="I">
             <div class="sn-era-range">
               <span>2010</span><span class="sn-era-dash"></span><span>2020</span>
             </div>
             <h3 class="sn-era-title-h">Photography</h3>
-            <div class="sn-era-plate sn-era-video">
-              <video src="assets/videos/Jean_Blue_FB.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            <div class="sn-era-collage" data-collage="">
+              <a class="sn-era-piece" href="works.html" style="--r:-2deg;--x:-6%;--y:8%;--w:72%;--a:3/2;--z:2">
+                <img src="assets/eras/photography/Cosmopolitan_HK_Power_Woman_Shavonne_Wong (1).jpg" alt="Cosmopolitan fashion editorial in the photography era" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Power Woman / editorial</span>
+              </a>
+              <a class="sn-era-piece" href="works.html" style="--r:4deg;--x:54%;--y:0%;--w:48%;--a:2/3;--z:4">
+                <img src="assets/eras/photography/Glamour_South_Africa_Heavy_Duty_Shavonne_Wong (1).jpg" alt="Beauty portrait from the photography era" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Beauty / portrait</span>
+              </a>
+              <a class="sn-era-piece" href="works.html" style="--r:-5deg;--x:2%;--y:48%;--w:46%;--a:2/3;--z:5">
+                <img src="assets/eras/photography/Layla_Ong_Red_Shavonne_Wong (1).jpg" alt="Red fashion portrait from the photography era" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Layla Ong / red</span>
+              </a>
+              <a class="sn-era-piece" href="works.html" style="--r:3deg;--x:40%;--y:54%;--w:66%;--a:3/2;--z:3">
+                <img src="assets/eras/photography/Cosmopolitah_HK_Brides_With_Style_Stockholm_Shavonne_Wong (5).jpg" alt="Horizontal bridal editorial from the photography era" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Brides with Style</span>
+              </a>
+              <a class="sn-era-piece" href="works.html" style="--r:-3deg;--x:68%;--y:36%;--w:38%;--a:2/3;--z:6">
+                <img src="assets/eras/photography/Cleo_Malaysia_Cindy_Bishop_Shavonne_Wong (1).jpg" alt="Cleo Malaysia fashion portrait from the photography era" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Cleo Malaysia</span>
+              </a>
+              <a class="sn-era-piece" href="works.html" style="--r:-4deg;--x:-10%;--y:76%;--w:52%;--a:3/2;--z:1">
+                <img src="assets/eras/photography/Cosmopolitan_HK_Chasing_Daylight_Shavonne_Wong (3).jpg" alt="Chasing Daylight editorial image from the photography era" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Chasing Daylight</span>
+              </a>
+              <a class="sn-era-piece" href="works.html" style="--r:2deg;--x:34%;--y:82%;--w:66%;--a:3/2;--z:4">
+                <img src="assets/eras/photography/Noa_Sror_Israel_Shavonne_Wong (9).jpg" alt="Noa Sror editorial image from the photography era" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Editorial archive</span>
+              </a>
             </div>
+            <a class="sn-era-link" href="works.html">All photography -></a>
           </article>
 
-          <article class="sn-era" data-era data-era-id="II">
+          <article class="sn-era" data-era="" data-era-id="II">
             <div class="sn-era-range">
               <span>2020</span><span class="sn-era-dash"></span><span>2023</span>
             </div>
             <h3 class="sn-era-title-h">3D &amp; Virtual Humans</h3>
-            <div class="sn-era-plate sn-era-video">
-              <video src="assets/videos/A%20Life%20Short%20Lived.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            <div class="sn-era-collage" data-collage="">
+              <a class="sn-era-piece" href="the-ties-that-bind.html" style="--r:-2deg;--x:-6%;--y:8%;--w:76%;--a:16/9;--z:2">
+                <img src="assets/eras/3d/Whirlwind of the Waking Dream copy 2.jpg" alt="Whirlwind of the Waking Dream 3D still" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Whirlwind / 2024</span>
+              </a>
+              <a class="sn-era-piece" href="the-ties-that-bind.html" style="--r:5deg;--x:50%;--y:0%;--w:48%;--a:9/16;--z:4">
+                <img src="assets/eras/3d/The Loneliness of an Orchid copy.jpg" alt="Vertical 3D still from The Loneliness of an Orchid" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Loneliness of an Orchid</span>
+              </a>
+              <a class="sn-era-piece" href="the-ties-that-bind.html" style="--r:-4deg;--x:0%;--y:48%;--w:46%;--a:2/3;--z:5">
+                <img src="assets/eras/3d/MarieClaire_Nature_highres_still.jpg" alt="Marie Claire synthetic human artwork" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Marie Claire / nature</span>
+              </a>
+              <a class="sn-era-piece" href="the-ties-that-bind.html" style="--r:3deg;--x:38%;--y:58%;--w:68%;--a:16/9;--z:3">
+                <img src="assets/eras/3d/The Mirror World.jpg" alt="The Mirror World 3D scene" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">The Mirror World</span>
+              </a>
+              <a class="sn-era-piece" href="the-ties-that-bind.html" style="--r:4deg;--x:68%;--y:34%;--w:36%;--a:2/3;--z:6">
+                <img src="assets/eras/3d/A Life Short Lived copy.jpg" alt="A Life Short Lived 3D artwork still" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">A Life Short Lived</span>
+              </a>
+              <a class="sn-era-piece" href="the-ties-that-bind.html" style="--r:-3deg;--x:-8%;--y:78%;--w:50%;--a:3/2;--z:1">
+                <img src="assets/eras/3d/emotion_lilium_packed2 copy.jpg" alt="Synthetic lilium 3D artwork still" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Lilium study</span>
+              </a>
+              <a class="sn-era-piece" href="the-ties-that-bind.html" style="--r:2deg;--x:36%;--y:82%;--w:62%;--a:3/2;--z:4">
+                <img src="assets/eras/3d/The Mirror World.jpg" alt="The Mirror World 3D artwork scene" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Mirror World</span>
+              </a>
             </div>
+            <a class="sn-era-link" href="works.html">All 3D works -></a>
           </article>
 
-          <article class="sn-era" data-era data-era-id="III">
+          <article class="sn-era is-active" data-era="" data-era-id="III">
             <div class="sn-era-range sn-era-range-now">
               <span>2023</span><span class="sn-era-dash"></span><span>NOW</span>
             </div>
             <h3 class="sn-era-title-h">Interactive AI</h3>
-            <div class="sn-era-plate sn-era-image">
-              <img src="assets/videos/DSC00661.jpg" alt="Interactive AI artwork">
+            <div class="sn-era-collage" data-collage="">
+              <a class="sn-era-piece" href="meet-eva-here.html" style="--r:-2deg;--x:-6%;--y:7%;--w:72%;--a:3/2;--z:2">
+                <img src="assets/eras/interactive installations/15-exhibition-history-taipei-dangdai-installation.jpg" alt="Taipei Dangdai interactive installation view" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Taipei Dangdai / 2025</span>
+              </a>
+              <a class="sn-era-piece" href="meet-eva-here.html" style="--r:4deg;--x:54%;--y:0%;--w:46%;--a:3/4;--z:4">
+                <img src="assets/eras/interactive installations/09-exhibition-history-living-room-installation-view.jpg" alt="Living room style Meet Eva Here installation view" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Living room installation</span>
+              </a>
+              <a class="sn-era-piece" href="meet-eva-here.html" style="--r:-4deg;--x:0%;--y:48%;--w:56%;--a:4/3;--z:5">
+                <img src="assets/eras/interactive installations/18-exhibition-view-audience-with-eva-screen.jpg" alt="Audience gathered around an interactive Eva screen" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Audience with Eva</span>
+              </a>
+              <a class="sn-era-piece" href="meet-eva-here.html" style="--r:3deg;--x:46%;--y:58%;--w:58%;--a:4/3;--z:3">
+                <img src="assets/eras/interactive installations/11-exhibition-history-art-central-audience-talk.jpg" alt="Art Central audience talk for interactive installation work" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Art Central / talk</span>
+              </a>
+              <a class="sn-era-piece" href="meet-eva-here.html" style="--r:-3deg;--x:68%;--y:34%;--w:36%;--a:3/4;--z:6">
+                <img src="assets/eras/interactive installations/Beijing_798ArtDistrict.jpg" alt="Beijing 798 Art District installation context" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Beijing 798</span>
+              </a>
+              <a class="sn-era-piece" href="meet-eva-here.html" style="--r:-4deg;--x:-8%;--y:78%;--w:50%;--a:3/2;--z:1">
+                <img src="assets/eras/interactive installations/Gemini_Generated_Image_yd9h6wyd9h6wyd9h.png" alt="AI generated installation visual for interactive work" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">AI installation</span>
+              </a>
+              <a class="sn-era-piece" href="meet-eva-here.html" style="--r:2deg;--x:36%;--y:82%;--w:62%;--a:3/2;--z:4">
+                <img src="assets/eras/interactive installations/09-exhibition-history-living-room-installation-view.jpg" alt="Living room installation view from interactive AI work" loading="eager" decoding="async">
+                <span class="sn-era-piece-tag">Living room</span>
+              </a>
             </div>
+            <a class="sn-era-link" href="works.html">All interactive works -></a>
           </article>
           </div>
         </div>
@@ -112,7 +249,7 @@
       <!-- ========================================================
            PANEL 4 — ROTATING BADGE INTERLUDE
            ======================================================== -->
-      <section class="sn-panel sn-about" id="about" data-panel="about" data-panel-link="about.html">
+      <section class="sn-panel sn-about" id="about" data-panel="about" data-panel-link="about.html" tabindex="0">
         <div class="sn-about-main">
           <span class="sn-eyebrow">II. About</span>
           <h2 class="sn-about-title">
@@ -131,7 +268,7 @@
             Her recent projects use AI, 3D rendering, and participatory frameworks to sit with
             the contradictions of how we live today.
           </p>
-          <a href="about.html" class="sn-section-link" data-no-panel-link>Full about →</a>
+          <a href="about.html" class="sn-section-link" data-no-panel-link="">Full about -></a>
         </div>
         <div class="sn-about-side">
           <figure class="sn-about-photo">
@@ -140,43 +277,104 @@
           <div class="sn-about-card">
             <span class="sn-eyebrow">Selected highlights</span>
             <ul class="sn-about-list">
-              <li><span>Recognition</span><span>Forbes 30 Under 30 Asia - Arts · Prestige 40 Under 40</span></li>
-              <li><span>Shown at</span><span>ArtScience Museum · Venice Biennale · ART SG · Taipei Dangdai</span></li>
-              <li><span>Brand projects</span><span>Vogue Singapore · Shu Uemura · Bang &amp; Olufsen</span></li>
-              <li><span>Communities</span><span>Co-founder, NFT Asia · Member, BLOOM</span></li>
+              <li><span>Recognition</span><span>Forbes 30 Under 30 Asia - Arts / Prestige 40 Under 40</span></li>
+              <li><span>Shown at</span><span>ArtScience Museum / Venice Biennale / ART SG / Taipei Dangdai</span></li>
+              <li><span>Brand projects</span><span>Vogue Singapore / Shu Uemura / Bang &amp; Olufsen</span></li>
+              <li><span>Communities</span><span>Co-founder, NFT Asia / Member, BLOOM</span></li>
             </ul>
           </div>
         </div>
         <div class="sn-about-contexts" aria-label="Selected contexts">
           <span class="sn-eyebrow">Selected Contexts</span>
           <div class="sn-ticker sn-context-ticker" aria-hidden="true">
-            <div class="sn-ticker-track" data-ticker-track>
-              <span>ArtScience Museum</span><span class="sn-ticker-dot">◆</span>
-              <span>Venice Biennale</span><span class="sn-ticker-dot">◆</span>
-              <span>ART SG</span><span class="sn-ticker-dot">◆</span>
-              <span>Taipei Dangdai</span><span class="sn-ticker-dot">◆</span>
-              <span>Art Central Hong Kong</span><span class="sn-ticker-dot">◆</span>
-              <span>Paris Photo</span><span class="sn-ticker-dot">◆</span>
-              <span>Forbes 30 Under 30</span><span class="sn-ticker-dot">◆</span>
-              <span>TIMEPieces</span><span class="sn-ticker-dot">◆</span>
-              <span>Vogue Singapore</span><span class="sn-ticker-dot">◆</span>
-              <span>Tatler Asia</span><span class="sn-ticker-dot">◆</span>
-              <span>Bang &amp; Olufsen</span><span class="sn-ticker-dot">◆</span>
-              <span>Shu Uemura</span><span class="sn-ticker-dot">◆</span>
-              <span>Meet Eva Here archive</span><span class="sn-ticker-dot">◆</span>
-              <span>ArtScience Museum</span><span class="sn-ticker-dot">◆</span>
-              <span>Venice Biennale</span><span class="sn-ticker-dot">◆</span>
-              <span>ART SG</span><span class="sn-ticker-dot">◆</span>
-              <span>Taipei Dangdai</span><span class="sn-ticker-dot">◆</span>
-              <span>Art Central Hong Kong</span><span class="sn-ticker-dot">◆</span>
-              <span>Paris Photo</span><span class="sn-ticker-dot">◆</span>
-              <span>Forbes 30 Under 30</span><span class="sn-ticker-dot">◆</span>
-              <span>TIMEPieces</span><span class="sn-ticker-dot">◆</span>
-              <span>Vogue Singapore</span><span class="sn-ticker-dot">◆</span>
-              <span>Tatler Asia</span><span class="sn-ticker-dot">◆</span>
-              <span>Bang &amp; Olufsen</span><span class="sn-ticker-dot">◆</span>
-              <span>Shu Uemura</span><span class="sn-ticker-dot">◆</span>
-              <span>Meet Eva Here archive</span><span class="sn-ticker-dot">◆</span>
+            <div class="sn-ticker-track" data-ticker-track="">
+              <span>ArtScience Museum</span><span class="sn-ticker-dot">/</span>
+              <span>Venice Biennale</span><span class="sn-ticker-dot">/</span>
+              <span>ART SG</span><span class="sn-ticker-dot">/</span>
+              <span>Taipei Dangdai</span><span class="sn-ticker-dot">/</span>
+              <span>Art Central Hong Kong</span><span class="sn-ticker-dot">/</span>
+              <span>Paris Photo</span><span class="sn-ticker-dot">/</span>
+              <span>Forbes 30 Under 30</span><span class="sn-ticker-dot">/</span>
+              <span>TIMEPieces</span><span class="sn-ticker-dot">/</span>
+              <span>Vogue Singapore</span><span class="sn-ticker-dot">/</span>
+              <span>Tatler Asia</span><span class="sn-ticker-dot">/</span>
+              <span>Bang &amp; Olufsen</span><span class="sn-ticker-dot">/</span>
+              <span>Shu Uemura</span><span class="sn-ticker-dot">/</span>
+              <span>Meet Eva Here archive</span><span class="sn-ticker-dot">/</span>
+              <span>ArtScience Museum</span><span class="sn-ticker-dot">/</span>
+              <span>Venice Biennale</span><span class="sn-ticker-dot">/</span>
+              <span>ART SG</span><span class="sn-ticker-dot">/</span>
+              <span>Taipei Dangdai</span><span class="sn-ticker-dot">/</span>
+              <span>Art Central Hong Kong</span><span class="sn-ticker-dot">/</span>
+              <span>Paris Photo</span><span class="sn-ticker-dot">/</span>
+              <span>Forbes 30 Under 30</span><span class="sn-ticker-dot">/</span>
+              <span>TIMEPieces</span><span class="sn-ticker-dot">/</span>
+              <span>Vogue Singapore</span><span class="sn-ticker-dot">/</span>
+              <span>Tatler Asia</span><span class="sn-ticker-dot">/</span>
+              <span>Bang &amp; Olufsen</span><span class="sn-ticker-dot">/</span>
+              <span>Shu Uemura</span><span class="sn-ticker-dot">/</span>
+              <span>Meet Eva Here archive</span><span class="sn-ticker-dot">/</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           PANEL 4½ — ARTIST STATEMENT (sits between About and Works
+           in the horizontal flow; a quiet text-only page)
+           ======================================================== -->
+      <section class="sn-panel sn-statement-panel" id="statement" data-panel="statement">
+        <div class="sn-statement-inner">
+          <span class="sn-eyebrow sn-statement-eyebrow">Artist statement</span>
+          <div class="sn-statement-body">
+            <div class="sn-statement-copy">
+            <p class="sn-statement-lede">
+              I make work about experiences I think we share but do not always
+              have words for.
+            </p>
+            <p>
+              My practice began in fashion and advertising photography, where I
+              learned to construct images with precision and control. I was good
+              at making things look a certain way, but for a long time I did not
+              know how to think about what that beauty meant. I made a lot of
+              very pretty, very boring work.
+            </p>
+            <p>
+              In recent years, I have become interested in the things we do that
+              do not quite make sense. We say we value privacy but choose
+              convenience every time. We hate AI while using it for everything.
+              We build identities online and then discover those identities are
+              shaped by what others have said about us, by algorithms we do not
+              understand, and by archives we cannot access.
+            </p>
+            <p>
+              I am not interested in proving these contradictions are bad or
+              good. I am interested in the moment when you notice you are doing
+              it too, and you realize there is no easy answer, and you keep
+              going anyway because what else can you do.
+            </p>
+            <p>
+              I use digital tools like 3D rendering, AI, and interactive systems
+              because they make visible something that has always been true. We
+              have never had as much control as we pretend. We have always
+              formed attachments to things that cannot reciprocate.
+            </p>
+            <p>
+              In <em>Meet Eva Here</em>, people talk to an AI companion knowing
+              their words might become public art. They do it anyway because the
+              need to be heard outweighs the awareness of extraction. In
+              <em>After Ophelia</em>, I showed how a character who spoke fewer
+              than 400 words in <em>Hamlet</em> has been buried under centuries
+              of other people's interpretations.
+            </p>
+            <p>
+              I am not trying to solve anything. I am trying to point at things
+              we have normalized without naming them, creating a moment where
+              someone might think "oh, I do that too" or "I
+              have felt that but did not know how to say it."
+              <span class="sn-statement-sign">- Shavonne Wong</span>
+            </p>
+              <a href="about.html" class="sn-statement-about-link" data-no-panel-link>About page</a>
             </div>
           </div>
         </div>
@@ -185,7 +383,7 @@
       <!-- ========================================================
            PANEL 5 — WORKS (the artworks themselves)
            ======================================================== -->
-      <section class="sn-panel sn-works" id="works" data-panel="works" data-works>
+      <section class="sn-panel sn-works" id="works" data-panel="works" data-works="">
         <div class="sn-works-head">
           <div>
             <span class="sn-eyebrow">III. Works</span>
@@ -194,8 +392,8 @@
         </div>
 
         <div class="sn-works-track">
-          <article class="sn-work" data-work data-panel-link="after-ophelia.html">
-            <div class="sn-work-num">N° 01</div>
+          <article class="sn-work" data-work="" data-panel-link="after-ophelia.html" tabindex="0">
+            <div class="sn-work-num">1.</div>
             <div class="sn-work-plate">
               <div class="sn-plate sn-plate-figure sn-plate-image">
                 <img src="assets/after-ophelia/01-ophelia-reassembled-print.jpg" alt="After Ophelia artwork preview">
@@ -210,13 +408,13 @@
               </p>
               <div class="sn-work-foot">
                 <span class="sn-italic small">2025</span>
-                <span class="sn-eyebrow">Artverse Paris · Paris Photo</span>
+                <span class="sn-eyebrow">Artverse Paris / Paris Photo</span>
               </div>
             </div>
           </article>
 
-          <article class="sn-work" data-work data-panel-link="meet-eva-here.html">
-            <div class="sn-work-num">N° 02</div>
+          <article class="sn-work" data-work="" data-panel-link="meet-eva-here.html" tabindex="0">
+            <div class="sn-work-num">2.</div>
             <div class="sn-work-plate">
               <div class="sn-plate sn-plate-installation sn-plate-image">
                 <img src="assets/meet-eva-here/06-dsc00661.jpg" alt="Meet Eva Here installation preview">
@@ -224,20 +422,20 @@
             </div>
             <div class="sn-work-meta">
               <div class="sn-work-title">Meet Eva Here</div>
-              <div class="sn-work-sub sn-italic">AI companion · chatbot · public archive</div>
+              <div class="sn-work-sub sn-italic">AI companion / chatbot / public archive</div>
               <p class="sn-work-copy">
                 A fifteen-month AI companion archive with 2,363 conversations across a museum,
                 art fairs, and a public diary project.
               </p>
               <div class="sn-work-foot">
-                <span class="sn-italic small">2024 — 2025</span>
-                <span class="sn-eyebrow">ArtScience Museum · Art SG</span>
+                <span class="sn-italic small">2024 - 2025</span>
+                <span class="sn-eyebrow">ArtScience Museum / Art SG</span>
               </div>
             </div>
           </article>
 
-          <article class="sn-work" data-work data-panel-link="the-ties-that-bind.html">
-            <div class="sn-work-num">N° 03</div>
+          <article class="sn-work" data-work="" data-panel-link="the-ties-that-bind.html" tabindex="0">
+            <div class="sn-work-num">3.</div>
             <div class="sn-work-plate">
               <div class="sn-plate sn-plate-render sn-plate-image">
                 <img src="assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.jpg" alt="The Ties That Bind exhibition preview">
@@ -252,15 +450,15 @@
               </p>
               <div class="sn-work-foot">
                 <span class="sn-italic small">2023</span>
-                <span class="sn-eyebrow">UltraSuperNew · Singapore</span>
+                <span class="sn-eyebrow">UltraSuperNew / Singapore</span>
               </div>
             </div>
           </article>
 
-          <a href="works.html" class="sn-work-end sn-work-more" data-no-panel-link>
+          <a href="works.html" class="sn-work-end sn-work-more" data-no-panel-link="">
             <div class="sn-work-end-num">All works</div>
             <div class="sn-work-end-meta">
-              <span class="sn-eyebrow u">Open works page →</span>
+              <span class="sn-eyebrow u">Open works page -></span>
             </div>
           </a>
         </div>
@@ -269,31 +467,31 @@
       <!-- ========================================================
            PANEL 6 — WRITING (essays, back from the prototype)
            ======================================================== -->
-      <section class="sn-panel sn-writing" id="writing" data-panel="writing" data-writing data-panel-link="writing.html">
+      <section class="sn-panel sn-writing" id="writing" data-panel="writing" data-writing="" data-panel-link="writing.html" tabindex="0" data-writing-dir="next">
         <div class="sn-writing-head">
           <div>
             <span class="sn-eyebrow">IV. Writing</span>
             <h2 class="sn-writing-title"><em>Notes from</em> the studio.</h2>
           </div>
           <div class="sn-writing-cue">
-            <div class="sn-writing-dots" data-writing-dots aria-label="Writing notes">
-              <button type="button" data-writing-dot aria-label="Show writing note 1"><span>01</span></button>
-              <button type="button" data-writing-dot aria-label="Show writing note 2"><span>02</span></button>
-              <button type="button" data-writing-dot aria-label="Show writing note 3"><span>03</span></button>
+            <div class="sn-writing-dots" data-writing-dots="" aria-label="Writing notes">
+              <button type="button" data-writing-dot="" aria-label="Show writing note 1" class=""><span>01</span></button>
+              <button type="button" data-writing-dot="" aria-label="Show writing note 2" class=""><span>02</span></button>
+              <button type="button" data-writing-dot="" aria-label="Show writing note 3" class=""><span>03</span></button>
             </div>
-            <a href="writing.html" class="sn-section-link sn-writing-link" data-no-panel-link>Full writing →</a>
+            <a href="writing.html" class="sn-section-link sn-writing-link" data-no-panel-link="">Full writing -></a>
           </div>
         </div>
 
-        <div class="sn-writing-track" data-writing-track>
-          <article class="sn-essay" data-essay>
+        <div class="sn-writing-track" data-writing-track="">
+          <article class="sn-essay" data-essay="" data-preview-slot="1" aria-label="Show writing note 1">
             <div class="sn-essay-plate">
               <div class="sn-plate sn-plate-image">
                 <img src="assets/newsletters/update2025jun/02.jpg" alt="June 2025 studio update image">
               </div>
             </div>
             <div class="sn-essay-meta">
-              <div class="sn-eyebrow">N° 01 · June 2025</div>
+              <div class="sn-eyebrow">1. June 2025</div>
               <h3 class="sn-essay-title">
                 Meet Eva Here, new exhibitions, and a half-year studio recap.
               </h3>
@@ -301,37 +499,37 @@
                 A recap across Digital Rhythm, ART SG, Taipei Dangdai, Art Central,
                 and the evolving public life of Eva.
               </p>
-              <a href="update2025jun.html" class="sn-eyebrow u" data-no-panel-link>Read update →</a>
+              <a href="update2025jun.html" class="sn-eyebrow u" data-no-panel-link="">Read update -></a>
             </div>
           </article>
 
-          <article class="sn-essay" data-essay>
+          <article class="sn-essay" data-essay="" data-preview-slot="2" aria-label="Show writing note 2">
             <div class="sn-essay-plate">
               <div class="sn-plate sn-plate-image">
                 <img src="assets/newsletters/update2025jan/02.jpg" alt="January 2025 studio update image">
               </div>
             </div>
             <div class="sn-essay-meta">
-              <div class="sn-eyebrow">N° 02 · January 2025</div>
+              <div class="sn-eyebrow">2. January 2025</div>
               <h3 class="sn-essay-title">
                 Meet Eva Here debuts at ArtScience Museum and Art SG.
               </h3>
               <p class="sn-essay-excerpt">
-                A look back at Eva&apos;s first public moments, the launch of her chatbot,
+                A look back at Eva's first public moments, the launch of her chatbot,
                 and the exhibitions opening the year.
               </p>
-              <a href="update2025jan.html" class="sn-eyebrow u" data-no-panel-link>Read update →</a>
+              <a href="update2025jan.html" class="sn-eyebrow u" data-no-panel-link="">Read update -></a>
             </div>
           </article>
 
-          <article class="sn-essay" data-essay>
+          <article class="sn-essay" data-essay="" data-preview-slot="0" aria-label="Show writing note 3">
             <div class="sn-essay-plate">
               <div class="sn-plate sn-plate-image">
                 <img src="assets/newsletters/update2024jun/02.jpg" alt="June 2024 studio update image">
               </div>
             </div>
             <div class="sn-essay-meta">
-              <div class="sn-eyebrow">N° 03 · June 2024</div>
+              <div class="sn-eyebrow">3. June 2024</div>
               <h3 class="sn-essay-title">
                 Bang &amp; Olufsen, Art SG, Beijing, and new experiments.
               </h3>
@@ -339,67 +537,71 @@
                 A mid-year update on exhibitions, an award win, Bangkok, and the
                 projects moving between screens and rooms.
               </p>
-              <a href="update2024jun.html" class="sn-eyebrow u" data-no-panel-link>Read update →</a>
+              <a href="update2024jun.html" class="sn-eyebrow u" data-no-panel-link="">Read update -></a>
             </div>
           </article>
         </div>
       </section>
 
       <!-- ========================================================
-           PANEL 8 — CONTACT (dark palette)
+           PANEL 8 — CONTACT (dark palette · editorial closer)
            ======================================================== -->
       <section class="sn-panel sn-contact" id="contact" data-panel="contact">
         <div class="sn-contact-bg" aria-hidden="true"></div>
 
-        <div class="sn-contact-sigil" data-parallax-contact="0.20" aria-hidden="true">
-          <svg viewBox="0 0 600 600">
-            <circle cx="300" cy="300" r="260" fill="none" stroke="currentColor" stroke-width="0.6" />
-            <circle cx="300" cy="300" r="200" fill="none" stroke="currentColor" stroke-width="0.6" />
-            <circle cx="300" cy="300" r="140" fill="none" stroke="currentColor" stroke-width="0.6" />
-            <line x1="40" y1="300" x2="560" y2="300" stroke="currentColor" stroke-width="0.4" />
-            <line x1="300" y1="40" x2="300" y2="560" stroke="currentColor" stroke-width="0.4" />
-          </svg>
-        </div>
-
         <div class="sn-contact-inner">
+          <!-- top: section meta -->
           <div class="sn-contact-head">
-            <span class="sn-eyebrow on-dark">VI. Contact</span>
-            <span class="sn-eyebrow on-dark muted">— end of strip</span>
+            <span class="sn-eyebrow on-dark">VI.</span>
+            <span class="sn-eyebrow on-dark">Contact</span>
           </div>
 
+          <!-- middle: title -->
           <h2 class="sn-contact-title">
-            Contact.
+            Get in touch!
           </h2>
 
-          <div class="sn-contact-grid">
-            <div class="sn-contact-col">
-              <div class="sn-eyebrow on-dark">Studio</div>
-              <a href="mailto:studio@shavonnewong.art" class="sn-contact-link u">
-                studio@shavonnewong.art
+          <!-- big email card (the primary CTA) -->
+          <a href="mailto:studio@shavonnewong.art" class="sn-contact-email">
+            <span class="sn-contact-email-lbl">Write to the studio</span>
+            <span class="sn-contact-email-addr">studio@shavonnewong.art</span>
+          </a>
+
+          <!-- social: simple row -->
+          <ul class="sn-contact-social" aria-label="Find me elsewhere">
+            <li>
+              <a href="https://www.instagram.com/shavonne.wong/" target="_blank" rel="noreferrer">
+                <span class="sn-contact-social-name">Instagram</span>
+                <span class="sn-contact-social-handle">@shavonne.wong</span>
               </a>
-              <div class="sn-eyebrow on-dark muted">Singapore / Bangkok · GMT+8</div>
-            </div>
-            <div class="sn-contact-col">
-              <div class="sn-eyebrow on-dark">Elsewhere</div>
-              <a href="https://www.instagram.com/shavonne.wong/" class="sn-contact-line u" target="_blank" rel="noreferrer">Instagram ↗</a>
-              <a href="https://twitter.com/shavonnewong_" class="sn-contact-line u" target="_blank" rel="noreferrer">X ↗</a>
-              <a href="https://sg.linkedin.com/in/shavonnew" class="sn-contact-line u" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-              <a href="https://en.wikipedia.org/wiki/Shavonne_Wong" class="sn-contact-line u" target="_blank" rel="noreferrer">Wikipedia ↗</a>
-            </div>
-          </div>
-          <div class="sn-contact-foot">
-            <span class="sn-eyebrow on-dark">© Shavonne Wong</span>
-            <a href="#hero" data-jump="hero" class="sn-eyebrow on-dark u">return to start ←</a>
-          </div>
+            </li>
+            <li>
+              <a href="https://twitter.com/shavonnewong_" target="_blank" rel="noreferrer">
+                <span class="sn-contact-social-name">X</span>
+                <span class="sn-contact-social-handle">@shavonnewong_</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://sg.linkedin.com/in/shavonnew" target="_blank" rel="noreferrer">
+                <span class="sn-contact-social-name">LinkedIn</span>
+                <span class="sn-contact-social-handle">/in/shavonnew</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Shavonne_Wong" target="_blank" rel="noreferrer">
+                <span class="sn-contact-social-name">Wikipedia</span>
+                <span class="sn-contact-social-handle">/Shavonne_Wong</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
 
     </div>
   </main>
 
-  <script src="scroll-narrative.js?v=20260516-fluid-lens-strong"></script>
+  <script src="scroll-narrative.js?v=20260520-eras-collage-overlap"></script>
   <script src="fluid-renderer.js?v=20260516-fluid-lens-strong"></script>
-</body>
-</html>
 
 
+</body><div id="codex-browser-sidebar-comments-root"></div></html>
