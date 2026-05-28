@@ -1,10 +1,10 @@
-/* ============================================================
-   Shavonne Wong — Scroll Narrative
+﻿/* ============================================================
+   Shavonne Wong - Scroll Narrative
    Horizontal site engine:
    - Body height is inflated to match the strip width.
    - On scroll, the strip translates X by -scrollY.
-   - Per-section "horizontal progress" drives parallax, era-rail
-     fill, press crossfade, and the dark contact flip.
+   - Per-section "horizontal progress" drives parallax,
+     press crossfade, and the dark contact flip.
    ============================================================ */
 
 (function () {
@@ -13,12 +13,54 @@
   const lerp = (a, b, t) => a + (b - a) * t;
   const clamp = (v, lo = 0, hi = 1) => Math.max(lo, Math.min(hi, v));
   const easeInOut = (t) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-  const isNarrow = () => window.matchMedia('(max-width: 900px)').matches;
+  const docEl = document.documentElement;
+  const scrollModeKey = 'sw-home-scroll-mode';
+  const mouseEffectKey = 'sw-mouse-effect';
+  const readSetting = (key) => {
+    try { return window.localStorage.getItem(key); } catch (error) { return null; }
+  };
+  const writeSetting = (key, value) => {
+    try { window.localStorage.setItem(key, value); } catch (error) {}
+  };
+  // Scroll mode resolution:
+  //   1. Explicit user preference in localStorage ('vertical' or 'horizontal') always wins.
+  //   2. Otherwise, auto-default to vertical ONLY when the device is clearly unsuited
+  //      for horizontal-scroll: narrow viewport (phones / small tablets in portrait),
+  //      or the user has asked for reduced motion at the OS level.
+  //      Horizontal stays the default everywhere else — including touchscreen laptops,
+  //      windowed desktops, and tablets in landscape — because that is the signature
+  //      of this site.
+  const autoPrefersVertical = () => {
+    try {
+      if (window.matchMedia('(max-width: 900px)').matches) return true;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return true;
+    } catch (error) {}
+    return false;
+  };
+  const storedScrollMode = readSetting(scrollModeKey);
+  let forceVertical;
+  if (storedScrollMode === 'vertical' || storedScrollMode === 'horizontal') {
+    forceVertical = storedScrollMode === 'vertical';
+  } else {
+    forceVertical = docEl.classList.contains('sn-vertical-mode') || autoPrefersVertical();
+  }
+  let mouseEffectEnabled = readSetting(mouseEffectKey) !== 'off' && !docEl.classList.contains('sn-mouse-effect-off');
+  const isNarrow = () => forceVertical || window.matchMedia('(max-width: 900px)').matches;
+  const i18n = () => window.SW_I18N;
+  const text = (key, fallback, vars) => {
+    const api = i18n();
+    if (!api || typeof api.t !== 'function') return fallback;
+    return api.t(key, vars) || fallback;
+  };
 
   // ---------- DOM refs ----------
   const nav = document.querySelector('[data-nav]');
   const progressBar = document.querySelector('[data-progress]');
   const scrollReadout = document.querySelector('[data-scroll-readout]');
+  const scrollModeToggle = document.querySelector('[data-scroll-mode-toggle]');
+  const scrollModeLabel = document.querySelector('[data-scroll-mode-label]');
+  const mouseEffectToggle = document.querySelector('[data-mouse-effect-toggle]');
+  const mouseEffectLabel = document.querySelector('[data-mouse-effect-label]');
 
   const stage = document.querySelector('[data-stage]');
   const strip = document.querySelector('[data-strip]');
@@ -29,16 +71,22 @@
   const stmtWords = Array.from(document.querySelectorAll('.sn-stmt-body [data-reveal]'));
 
   const heroPanel = document.querySelector('[data-panel="hero"]');
-  const heroPlateVideo = document.querySelector('.sn-plate-video');
-  const heroVideo = document.querySelector('.sn-plate-video video');
-  const heroFrame = document.querySelector('[data-video-frame]');
+  const heroFrameEl = document.querySelector('.sn-hero-frame');
+  const heroMediaTile = document.querySelector('[data-hero-media-tile]');
+  const heroMediaLayers = Array.from(document.querySelectorAll('[data-hero-media-layer]'));
+  const heroMediaTitle = document.querySelector('[data-hero-media-title]');
+  const heroMediaMeta = document.querySelector('[data-hero-media-meta]');
+  const heroMediaToggle = document.querySelector('[data-hero-media-toggle]');
+  // Defaults: pause the hero autoplay when the user has asked for reduced motion
+  // or reduced data at the OS level. Stays an explicit toggle either way.
+  let userPausedHero = false;
+  try {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) userPausedHero = true;
+    if (window.matchMedia('(prefers-reduced-data: reduce)').matches) userPausedHero = true;
+  } catch (error) {}
+  const erasPanel = document.querySelector('[data-panel="eras"]');
   const statementPanel = document.querySelector('[data-panel="statement"]');
   const statementBody = document.querySelector('.sn-statement-body');
-  const erasPanel = document.querySelector('[data-eras]');
-  const erasTrack = document.querySelector('.sn-eras-track');
-  const eraFill = document.querySelector('[data-era-fill]');
-  const eraEls = Array.from(document.querySelectorAll('[data-era]'));
-  const eraMarkers = Array.from(document.querySelectorAll('[data-era-marker]'));
   const aboutPanel = document.querySelector('[data-panel="about"]');
   const worksPanel = document.querySelector('[data-works]');
   const worksCounter = document.querySelector('[data-works-counter]');
@@ -67,8 +115,8 @@
   let stripWidth = 0;
   let baseTotalScroll = 0;
   let totalScroll = 0;
-  let eraPinStart = 0;
-  let eraPinDistance = 0;
+  let erasPinStart = 0;
+  let erasPinDistance = 0;
   let aboutPinStart = 0;
   let aboutPinDistance = 0;
   let statementPinStart = 0;
@@ -88,64 +136,361 @@
   let scrollVel = 0;
   let lastWritingIdx = -1;
   let lastPressIdx = -1;
-  let lastEraIdx = -1;
   let lastPanelId = '';
   let aboutProgress = 0;
   let narrow = isNarrow();
-  const heroFrameCount = 45;
-  const heroFrames = Array.from({ length: heroFrameCount }, (_, i) => {
-    return 'assets/videos/everything-yet-nothing-scrub/everything-yet-nothing-' +
-      String(i + 1).padStart(3, '0') + '.jpg';
-  });
-  const heroStartFrame = 1;
-  const heroStartIdx = Math.min(heroFrames.length - 1, Math.max(0, heroStartFrame - 1));
-  let heroFrameBuildStarted = false;
-  let heroFramesReady = false;
-  let lastHeroFrameIdx = -1;
+  const heroMediaItems = [
+    {
+      type: 'video',
+      src: 'assets/videos/whirlwind-of-the-waking-dream.mp4',
+      poster: 'assets/eras/3d/Whirlwind of the Waking Dream copy 2.jpg',
+      title: 'Whirlwind of the Waking Dream',
+      titleKey: 'home.heroMedia.whirlwind.title',
+      meta: '2024 / 3D / generative',
+      metaKey: 'home.heroMedia.whirlwind.meta',
+      ratioW: 16,
+      ratioH: 9,
+      label: 'Whirlwind of the Waking Dream - 3D generative video',
+      labelKey: 'home.heroMedia.whirlwind.label'
+    },
+    {
+      type: 'image',
+      src: 'assets/after-ophelia/01-ophelia-reassembled-print.jpg',
+      title: 'After Ophelia',
+      titleKey: 'home.heroMedia.afterOphelia.title',
+      meta: '2025 / interactive AI / print series',
+      metaKey: 'home.heroMedia.afterOphelia.meta',
+      ratioW: 1500,
+      ratioH: 844,
+      label: 'After Ophelia print',
+      labelKey: 'home.heroMedia.afterOphelia.label'
+    },
+    {
+      type: 'image',
+      src: 'assets/meet-eva-here/06-dsc00661.jpg',
+      title: 'Meet Eva Here',
+      titleKey: 'home.heroMedia.meetEva.title',
+      meta: '2024-2025 / AI companion / installation',
+      metaKey: 'home.heroMedia.meetEva.meta',
+      ratioW: 2500,
+      ratioH: 1666,
+      label: 'Meet Eva Here installation',
+      labelKey: 'home.heroMedia.meetEva.label'
+    },
+    {
+      type: 'image',
+      src: 'assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.jpg',
+      title: 'The Ties That Bind',
+      titleKey: 'home.heroMedia.ties.title',
+      meta: '2022 / 3D video installation',
+      metaKey: 'home.heroMedia.ties.meta',
+      ratioW: 2500,
+      ratioH: 1667,
+      label: 'The Ties That Bind exhibition',
+      labelKey: 'home.heroMedia.ties.label'
+    },
+    {
+      type: 'image',
+      src: 'assets/by-proxy/01-1920px-web-len-4101.jpg',
+      title: 'By Proxy',
+      titleKey: 'home.heroMedia.proxy.title',
+      meta: '2022 / 3D video series',
+      metaKey: 'home.heroMedia.proxy.meta',
+      ratioW: 1920,
+      ratioH: 1281,
+      label: 'By Proxy still',
+      labelKey: 'home.heroMedia.proxy.label'
+    }
+  ];
+  let heroMediaIndex = 0;
+  let heroLayerIndex = 0;
+  let heroWasVisible = null;
   let lastHeroProgress = 0;
 
-  function buildHeroFrames() {
-    if (!heroFrame || heroFrameBuildStarted) return;
-    heroFrameBuildStarted = true;
-    heroFramesReady = true;
-    heroFrame.src = heroFrames[heroStartIdx];
-    heroFrame.setAttribute('data-frame-count', String(heroFrames.length));
-    heroFrame.setAttribute('data-frame-index', String(heroStartIdx + 1));
-    if (heroPlateVideo) heroPlateVideo.classList.add('is-frame-ready');
-    heroFrames.forEach((src, idx) => {
-      if (idx === heroStartIdx) return;
-      const img = new Image();
-      img.src = src;
-    });
-    setHeroFrameProgress(lastHeroProgress);
+  function syncDisplayOptions() {
+    docEl.classList.toggle('sn-vertical-mode', forceVertical);
+    docEl.classList.toggle('sn-mouse-effect-off', !mouseEffectEnabled);
+    if (scrollModeToggle) {
+      scrollModeToggle.setAttribute('aria-pressed', forceVertical ? 'true' : 'false');
+      scrollModeToggle.setAttribute('title', text('controls.scrollModeTitle', 'Switch homepage scroll mode'));
+      scrollModeToggle.classList.toggle('is-on', forceVertical);
+    }
+    if (scrollModeLabel) scrollModeLabel.textContent = text('controls.vertical', 'Vertical');
+    if (mouseEffectToggle) {
+      mouseEffectToggle.setAttribute('aria-pressed', mouseEffectEnabled ? 'true' : 'false');
+      mouseEffectToggle.setAttribute('title', text('controls.mouseEffectTitle', 'Toggle mouse effect'));
+      mouseEffectToggle.classList.toggle('is-on', mouseEffectEnabled);
+    }
+    if (mouseEffectLabel) {
+      mouseEffectLabel.textContent = mouseEffectEnabled
+        ? text('controls.mouseOn', 'Mouse on')
+        : text('controls.mouseOff', 'Mouse off');
+    }
   }
 
-  function setHeroFrameProgress(progress) {
-    lastHeroProgress = clamp(progress);
-    if (heroFrame) {
-      const scale = (1 + lastHeroProgress * 0.035).toFixed(4);
-      const lift = (-2.4 * lastHeroProgress).toFixed(3) + '%';
-      heroFrame.style.transform = 'translate3d(0,' + lift + ',0) scale(' + scale + ')';
+  function heroItemText(item, field) {
+    if (!item) return '';
+    return text(item[field + 'Key'], item[field] || '');
+  }
+
+  function makeHeroMediaNode(item) {
+    if (item.type === 'video') {
+      const video = document.createElement('video');
+      video.className = 'sn-hero-media-asset';
+      video.autoplay = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.preload = 'auto';
+      video.setAttribute('aria-label', heroItemText(item, 'label'));
+      if (item.poster) video.poster = item.poster;
+
+      const source = document.createElement('source');
+      source.src = item.src;
+      source.type = 'video/mp4';
+      video.appendChild(source);
+      return video;
     }
-    if (heroFramesReady && heroFrames.length && heroFrame) {
-      const scrubRange = Math.max(0, heroFrames.length - 1 - heroStartIdx);
-      const idx = Math.min(
-        heroFrames.length - 1,
-        heroStartIdx + Math.round(lastHeroProgress * scrubRange)
-      );
-      if (idx !== lastHeroFrameIdx) {
-        heroFrame.src = heroFrames[idx];
-        heroFrame.setAttribute('data-frame-index', String(idx + 1));
-        lastHeroFrameIdx = idx;
-      }
+
+    const img = document.createElement('img');
+    img.className = 'sn-hero-media-asset';
+    img.src = item.src;
+    img.alt = heroItemText(item, 'label');
+    img.loading = 'eager';
+    img.decoding = 'async';
+    return img;
+  }
+
+  function renderHeroMediaLayer(layer, item) {
+    if (!layer || !item) return;
+    layer.replaceChildren(makeHeroMediaNode(item));
+    layer.dataset.heroMediaType = item.type;
+  }
+
+  function setHeroMediaText(item) {
+    if (heroMediaTitle) heroMediaTitle.textContent = heroItemText(item, 'title');
+    if (heroMediaMeta) heroMediaMeta.textContent = heroItemText(item, 'meta');
+  }
+
+  function setHeroMediaRatio(item) {
+    if (!heroFrameEl || !item) return;
+    heroFrameEl.style.setProperty('--hero-media-ratio-w', String(item.ratioW));
+    heroFrameEl.style.setProperty('--hero-media-ratio-h', String(item.ratioH));
+  }
+
+  function clearHeroMediaLayout() {
+    if (!heroFrameEl) return;
+    ['--hero-media-w', '--hero-media-h', '--hero-media-left', '--hero-media-top'].forEach((prop) => {
+      heroFrameEl.style.removeProperty(prop);
+    });
+  }
+
+  function setHeroMediaLayoutVar(name, value) {
+    if (heroFrameEl) heroFrameEl.style.setProperty(name, value);
+  }
+
+  function applyHeroMediaLayout() {
+    const item = heroMediaItems[heroMediaIndex];
+    if (!heroFrameEl || !item) return;
+    setHeroMediaRatio(item);
+
+    if (narrow) {
+      clearHeroMediaLayout();
       return;
     }
 
-    if (heroVideo) {
-      const scale = (1 + lastHeroProgress * 0.025).toFixed(4);
-      const lift = (-1.6 * lastHeroProgress).toFixed(3) + '%';
-      heroVideo.style.transform = 'translate3d(0,' + lift + ',0) scale(' + scale + ')';
+    const ratio = item.ratioW / Math.max(1, item.ratioH);
+    const frameRect = heroFrameEl.getBoundingClientRect();
+    const frameW = Math.max(1, frameRect.width);
+    const frameH = Math.max(1, frameRect.height);
+    const tabletPortrait = window.matchMedia('(min-width: 901px) and (max-width: 1100px) and (orientation: portrait)').matches;
+
+    if (tabletPortrait) {
+      const fitW = frameW;
+      const fitH = fitW / ratio;
+      const top = clamp(vh * 0.25, 300, 350);
+      setHeroMediaLayoutVar('--hero-media-w', fitW.toFixed(2) + 'px');
+      setHeroMediaLayoutVar('--hero-media-h', fitH.toFixed(2) + 'px');
+      setHeroMediaLayoutVar('--hero-media-left', '0px');
+      setHeroMediaLayoutVar('--hero-media-top', top.toFixed(2) + 'px');
+      return;
     }
+
+    const desiredW = Math.min(Math.max(960, vw * 0.64), 1280, frameW);
+    const maxH = Math.max(1, frameH - 8);
+    const fitW = Math.max(1, Math.min(desiredW, maxH * ratio));
+    const fitH = fitW / ratio;
+    const left = Math.max(0, frameW - fitW);
+    const top = Math.max(0, frameH - fitH);
+
+    setHeroMediaLayoutVar('--hero-media-w', fitW.toFixed(2) + 'px');
+    setHeroMediaLayoutVar('--hero-media-h', fitH.toFixed(2) + 'px');
+    setHeroMediaLayoutVar('--hero-media-left', left.toFixed(2) + 'px');
+    setHeroMediaLayoutVar('--hero-media-top', top.toFixed(2) + 'px');
+  }
+
+  function playActiveHeroVideo() {
+    if (userPausedHero) return;
+    const activeLayer = heroMediaLayers[heroLayerIndex];
+    const video = activeLayer ? activeLayer.querySelector('video') : null;
+    if (!video || document.hidden || typeof video.play !== 'function') return;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === 'function') playPromise.catch(() => {});
+  }
+
+  function pauseAllHeroVideos() {
+    heroMediaLayers.forEach((layer) => {
+      const video = layer ? layer.querySelector('video') : null;
+      if (video && typeof video.pause === 'function') {
+        try { video.pause(); } catch (error) {}
+      }
+    });
+  }
+
+  function syncHeroToggleState() {
+    if (!heroMediaToggle) return;
+    const state = userPausedHero ? 'paused' : 'playing';
+    heroMediaToggle.setAttribute('data-state', state);
+    const label = userPausedHero ? 'Play hero video' : 'Pause hero video';
+    heroMediaToggle.setAttribute('aria-label', label);
+    heroMediaToggle.setAttribute('aria-pressed', userPausedHero ? 'true' : 'false');
+  }
+
+  function detachHeroVideoSources() {
+    // Under reduced-data / reduced-motion, don't fetch the video bytes at all.
+    // Clear the <source> src and force the video to drop its load.
+    heroMediaLayers.forEach((layer) => {
+      const video = layer ? layer.querySelector('video') : null;
+      if (!video) return;
+      const source = video.querySelector('source[data-hero-video-source]');
+      if (source && source.getAttribute('src')) {
+        // Store the original src on the source element so it can be re-attached
+        // if the user explicitly hits play.
+        source.setAttribute('data-hero-video-src-deferred', source.getAttribute('src'));
+        source.removeAttribute('src');
+        try { video.load(); } catch (error) {}
+      }
+    });
+  }
+
+  function reattachHeroVideoSources() {
+    heroMediaLayers.forEach((layer) => {
+      const video = layer ? layer.querySelector('video') : null;
+      if (!video) return;
+      const source = video.querySelector('source[data-hero-video-source]');
+      if (source && !source.getAttribute('src')) {
+        const deferred = source.getAttribute('data-hero-video-src-deferred') || video.getAttribute('data-hero-video-src');
+        if (deferred) {
+          source.setAttribute('src', deferred);
+          try { video.load(); } catch (error) {}
+        }
+      }
+    });
+  }
+
+  function setupHeroMediaToggle() {
+    if (!heroMediaToggle) return;
+    syncHeroToggleState();
+    if (userPausedHero) {
+      detachHeroVideoSources();
+      pauseAllHeroVideos();
+    }
+    heroMediaToggle.addEventListener('click', () => {
+      userPausedHero = !userPausedHero;
+      if (userPausedHero) {
+        pauseAllHeroVideos();
+      } else {
+        reattachHeroVideoSources();
+        playActiveHeroVideo();
+      }
+      syncHeroToggleState();
+    });
+  }
+
+  function pauseInactiveHeroVideos() {
+    heroMediaLayers.forEach((layer, index) => {
+      if (index === heroLayerIndex) return;
+      const video = layer.querySelector('video');
+      if (video && typeof video.pause === 'function') video.pause();
+    });
+  }
+
+  function setHeroMediaProgress(progress) {
+    lastHeroProgress = clamp(progress);
+    const scale = (1 + lastHeroProgress * 0.025).toFixed(4);
+    const lift = (-1.6 * lastHeroProgress).toFixed(3) + '%';
+    heroMediaLayers.forEach((layer) => {
+      layer.style.transform = 'translate3d(0,' + lift + ',0) scale(' + scale + ')';
+    });
+  }
+
+  function setHeroMedia(index, immediate = false) {
+    if (!heroMediaLayers.length || !heroMediaItems.length) return;
+    const safeIndex = (index + heroMediaItems.length) % heroMediaItems.length;
+    const item = heroMediaItems[safeIndex];
+    const nextLayerIndex = immediate || heroMediaLayers.length === 1
+      ? heroLayerIndex
+      : (heroLayerIndex + 1) % heroMediaLayers.length;
+    const nextLayer = heroMediaLayers[nextLayerIndex];
+
+    heroMediaIndex = safeIndex;
+    renderHeroMediaLayer(nextLayer, item);
+    setHeroMediaText(item);
+    applyHeroMediaLayout();
+    setHeroMediaProgress(lastHeroProgress);
+
+    heroMediaLayers.forEach((layer, index) => {
+      const active = index === nextLayerIndex;
+      layer.classList.toggle('is-active', active);
+      layer.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+    heroLayerIndex = nextLayerIndex;
+    window.setTimeout(playActiveHeroVideo, 60);
+    window.setTimeout(pauseInactiveHeroVideos, 480);
+  }
+
+  function advanceHeroMedia() {
+    setHeroMedia(heroMediaIndex + 1);
+  }
+
+  function preloadHeroMedia() {
+    heroMediaItems.forEach((item) => {
+      if (item.type !== 'image') return;
+      const img = new Image();
+      img.src = item.src;
+    });
+  }
+
+  function setupHeroMedia() {
+    if (!heroMediaLayers.length || !heroMediaItems.length) return;
+    setHeroMedia(0, true);
+    preloadHeroMedia();
+    if (heroPanel && 'IntersectionObserver' in window) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => updateHeroExitState(entry.isIntersecting));
+      }, { threshold: 0 });
+      heroObserver.observe(heroPanel);
+    }
+    document.addEventListener('visibilitychange', playActiveHeroVideo);
+    window.addEventListener('pointermove', playActiveHeroVideo, { passive: true });
+    window.addEventListener('touchstart', playActiveHeroVideo, { passive: true });
+    window.setInterval(() => {
+      const activeLayer = heroMediaLayers[heroLayerIndex];
+      const activeVideo = activeLayer ? activeLayer.querySelector('video') : null;
+      if (activeVideo && activeVideo.paused) playActiveHeroVideo();
+    }, 1200);
+  }
+
+  function updateHeroExitState(isVisible) {
+    if (heroWasVisible === null) {
+      heroWasVisible = isVisible;
+      return;
+    }
+    if (heroWasVisible && !isVisible) advanceHeroMedia();
+    heroWasVisible = isVisible;
   }
 
   // ---------- setup body height to match strip ----------
@@ -158,33 +503,30 @@
       // mobile: revert to natural vertical layout
       document.body.style.height = '';
       strip.style.transform = '';
-      if (erasTrack) erasTrack.style.transform = '';
       totalScroll = 0;
       pinSections = [];
       setAboutProgress(1);
-      eraEls.forEach((era) => {
-        era.style.transform = '';
-        era.style.opacity = '';
-        era.style.zIndex = '';
-      });
+      applyHeroMediaLayout();
       return;
     }
+
+    applyHeroMediaLayout();
 
     stripWidth = strip.scrollWidth;
     baseTotalScroll = Math.max(0, stripWidth - vw);
 
-    if (erasPanel && erasTrack && eraEls.length) {
-      const fullEraTravel = getEraTravel();
-      eraPinDistance = Math.max(vh * 2.25, fullEraTravel * 1.6);
-      const leftAlignedX = erasPanel.offsetLeft;
-      const aboutHalfVisibleX = aboutPanel
-        ? aboutPanel.offsetLeft - vw * 0.5
-        : leftAlignedX;
-      eraPinStart = clamp(Math.max(leftAlignedX, aboutHalfVisibleX), 0, baseTotalScroll);
-    } else {
-      eraPinDistance = 0;
-      eraPinStart = 0;
-    }
+    const erasScrollable = erasPanel
+      ? Math.max(0, erasPanel.scrollHeight - erasPanel.clientHeight)
+      : 0;
+    const erasHoldDistance = erasScrollable > 0
+      ? Math.max(vh * 0.85, 720)
+      : 0;
+    erasPinDistance = erasScrollable > 0
+      ? Math.max(erasScrollable + erasHoldDistance, vh * 1.7)
+      : 0;
+    erasPinStart = erasPanel
+      ? clamp(erasPanel.offsetLeft, 0, baseTotalScroll)
+      : 0;
 
     aboutPinDistance = aboutPanel ? Math.max(vh * 3.2, 2600) : 0;
     aboutPinStart = aboutPanel
@@ -218,12 +560,16 @@
       : 0;
 
     pinSections = [
-      erasPanel && eraPinDistance > 0 ? {
+      erasPanel && erasPinDistance > 0 ? {
         id: 'eras',
-        x: eraPinStart,
-        distance: eraPinDistance,
+        x: erasPinStart,
+        distance: erasPinDistance,
         apply(progress) {
-          setEraProgress(progress);
+          const erasScrollMax = Math.max(0, erasPanel.scrollHeight - erasPanel.clientHeight);
+          const scrollPhase = erasScrollMax > 0
+            ? clamp(erasScrollMax / Math.max(1, erasPinDistance))
+            : 1;
+          erasPanel.scrollTop = clamp(progress / Math.max(0.001, scrollPhase)) * erasScrollMax;
         }
       } : null,
       aboutPanel && aboutPinDistance > 0 ? {
@@ -287,7 +633,7 @@
       return;
     }
     // For horizontal mode the IO root is the viewport (which is the stage),
-    // but words live inside the translated strip — IO still fires correctly
+    // but words live inside the translated strip - IO still fires correctly
     // because IntersectionObserver tracks intersection with the visual viewport.
     const wordObs = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -313,14 +659,6 @@
     if (r.left > vw) return 0;
     const denom = vw + r.width;
     return clamp((vw - r.left) / denom);
-  }
-
-  function eraPanelProgress(el) {
-    if (!el) return 0;
-    const r = el.getBoundingClientRect();
-    if (r.right < 0) return 1;
-    if (r.left > vw) return 0;
-    return clamp((vw - r.left) / Math.max(1, vw * 0.82));
   }
 
   function panelLocal(el) {
@@ -383,17 +721,13 @@
     return clamp(targetX + extraDistance, 0, totalScroll);
   }
 
-  function hasPin(id) {
-    return pinSections.some(pin => pin.id === id);
-  }
-
   function setAboutProgress(progress) {
     if (!aboutPanel) return;
     const p = clamp(progress);
     aboutProgress = p;
-    // Phase 1 (0 → 0.45): entry — photo + card slide in
-    // Phase 2 (0.45 → 0.55): hold (intro is fully ready)
-    // Phase 3 (0.55 → 1): exit — about lifts UPWARD off-screen,
+    // Phase 1 (0 -> 0.45): entry - photo + card slide in
+    // Phase 2 (0.45 -> 0.55): hold (intro is fully ready)
+    // Phase 3 (0.55 -> 1): exit - about lifts UPWARD off-screen,
     //                      revealing the artist-statement panel beneath.
     const entry = easeInOut(clamp(p / 0.28));
     const cardEntry = easeInOut(clamp((p - 0.08) / 0.30));
@@ -414,7 +748,7 @@
 
   // The statement panel sits directly beneath the About panel in the same
   // horizontal slot (z-1, with About on top at z-2). Sliding About upward
-  // reveals it. No vertical motion needed on the statement itself — clear
+  // reveals it. No vertical motion needed on the statement itself - clear
   // any legacy transform so it stays at translateY(0).
   function updateStatementPosition() {
     if (!statementPanel) return;
@@ -450,71 +784,36 @@
     statementPanel.style.setProperty('--statement-copy-progress', local.toFixed(4));
   }
 
-  function setEraProgress(progress) {
-    if (!erasPanel) return;
-    const local = clamp(progress);
-    erasPanel.style.setProperty('--era-progress', local.toFixed(4));
-    if (eraFill) {
-      const pct = (local * 100).toFixed(2) + '%';
-      eraFill.style.width = pct;
-      eraFill.style.height = '100%';
+  function writingNoteLabel(index) {
+    return text('home.writing.noteAria', 'Show writing note {n}', { n: String(index + 1) });
+  }
+
+  function syncWritingLabels() {
+    writingDots.forEach((dot, index) => dot.setAttribute('aria-label', writingNoteLabel(index)));
+    writingEls.forEach((essay, index) => essay.setAttribute('aria-label', writingNoteLabel(index)));
+  }
+
+  function syncActiveHeroMediaLabel() {
+    const item = heroMediaItems[heroMediaIndex];
+    const activeLayer = heroMediaLayers[heroLayerIndex];
+    if (!item || !activeLayer) return;
+    const asset = activeLayer.querySelector('.sn-hero-media-asset');
+    if (!asset) return;
+    const label = heroItemText(item, 'label');
+    if (asset.tagName === 'IMG') {
+      asset.alt = label;
+    } else {
+      asset.setAttribute('aria-label', label);
     }
-
-    if (eraEls.length) {
-      applyEraScroll(local);
-      const position = local * Math.max(1, eraEls.length - 1);
-      const i = Math.min(
-        eraEls.length - 1,
-        Math.round(position)
-      );
-      setActiveEra(i);
-      applyEraScroll(local);
-    }
   }
 
-  function applyEraScroll(progress) {
-    if (!erasTrack || !eraEls.length) return;
-    const local = clamp(progress);
-    const travel = getEraTravel();
-    erasTrack.style.transform = 'translate3d(0,' + (-travel * local).toFixed(2) + 'px,0)';
-  }
-
-  function getEraTravel() {
-    if (!erasTrack || !eraEls.length) return 0;
-    const viewport = erasTrack.parentElement || erasPanel;
-    const naturalTravel = Math.max(0, erasTrack.scrollHeight - viewport.clientHeight);
-    const lastCard = eraEls[eraEls.length - 1];
-    const lastCardTravel = lastCard
-      ? Math.max(0, lastCard.offsetTop + lastCard.offsetHeight - viewport.clientHeight)
-      : 0;
-    return Math.max(naturalTravel, lastCardTravel);
-  }
-
-  function setActiveEra(index) {
-    if (!eraEls.length || index === lastEraIdx) return;
-    const previousIdx = lastEraIdx;
-    const direction = previousIdx < 0 || index >= previousIdx ? 'next' : 'prev';
-    if (erasPanel) erasPanel.dataset.eraDir = direction;
-    eraEls.forEach((era, ei) => {
-      const active = ei === index;
-      const offset = ei - index;
-      era.style.setProperty('--era-offset', String(offset));
-      era.classList.toggle('is-active', active);
-      era.classList.toggle('is-next', offset === 1);
-      era.classList.toggle('is-prev', offset < 0);
-      era.classList.remove('is-entering');
-      era.setAttribute('aria-hidden', active ? 'false' : 'true');
-    });
-    eraMarkers.forEach((marker, mi) => {
-      const active = mi === index;
-      marker.classList.toggle('is-active', active);
-      if (active) {
-        marker.setAttribute('aria-current', 'true');
-      } else {
-        marker.removeAttribute('aria-current');
-      }
-    });
-    lastEraIdx = index;
+  function syncLocalizedDynamicText() {
+    syncDisplayOptions();
+    setHeroMediaText(heroMediaItems[heroMediaIndex]);
+    syncActiveHeroMediaLabel();
+    syncWritingLabels();
+    recompute();
+    update();
   }
 
   function setActiveWriting(index) {
@@ -552,7 +851,7 @@
         }
         essay.setAttribute('tabindex', '0');
         essay.setAttribute('role', 'button');
-        essay.setAttribute('aria-label', 'Show writing note ' + String(ei + 1));
+        essay.setAttribute('aria-label', writingNoteLabel(ei));
       }
     });
     writingDots.forEach((dot, di) => {
@@ -597,10 +896,12 @@
 
     panels.forEach((panel) => {
       const r = panel.getBoundingClientRect();
-      const visible = r.right > 0 && r.left < vw;
-      const center = r.left + r.width / 2;
-      const dist = Math.abs(center - vw / 2);
-      const local = clamp((vw - r.left) / Math.max(1, vw + r.width));
+      const visible = narrow ? (r.bottom > 0 && r.top < vh) : (r.right > 0 && r.left < vw);
+      const center = narrow ? r.top + r.height / 2 : r.left + r.width / 2;
+      const dist = Math.abs(center - (narrow ? vh : vw) / 2);
+      const local = narrow
+        ? clamp((vh - r.top) / Math.max(1, vh + r.height))
+        : clamp((vw - r.left) / Math.max(1, vw + r.width));
 
       panel.style.setProperty('--panel-local', local.toFixed(3));
       panel.classList.toggle('is-near', visible);
@@ -635,7 +936,12 @@
       strip.style.transform = 'translate3d(' + (-currentX).toFixed(2) + 'px,0,0)';
     }
 
-    const progress = totalScroll > 0 ? clamp(scrollY / totalScroll) : 0;
+    const verticalMaxScroll = Math.max(
+      0,
+      Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) - vh
+    );
+    const progressMax = narrow ? verticalMaxScroll : totalScroll;
+    const progress = progressMax > 0 ? clamp(scrollY / progressMax) : 0;
     if (progressBar) progressBar.style.width = (progress * 100) + '%';
     if (scrollReadout) {
       scrollReadout.textContent =
@@ -645,16 +951,19 @@
     setPanelStates();
     updateStatementPosition();
 
-    // ---------- HERO frame scrub + parallax ----------
+    // ---------- HERO media rotation + parallax ----------
     if (heroPanel) {
       const r = heroPanel.getBoundingClientRect();
-      const heroTravel = Math.max(1, Math.min(r.width, vw) * 0.72);
-      const heroScrub = r.right <= 0
-        ? 1
-        : r.left >= 0
-          ? 0
-          : clamp(-r.left / heroTravel);
-      setHeroFrameProgress(heroScrub);
+      const heroVisible = narrow
+        ? r.bottom > 0 && r.top < vh
+        : r.right > 0 && r.left < vw;
+      updateHeroExitState(heroVisible);
+
+      const heroTravel = Math.max(1, Math.min(narrow ? r.height : r.width, narrow ? vh : vw) * 0.72);
+      const heroScrub = narrow
+        ? (r.bottom <= 0 ? 1 : r.top >= 0 ? 0 : clamp(-r.top / heroTravel))
+        : (r.right <= 0 ? 1 : r.left >= 0 ? 0 : clamp(-r.left / heroTravel));
+      setHeroMediaProgress(heroScrub);
 
       if (r.right > -200 && r.left < vw + 200) {
         // amount of horizontal scroll INTO this panel (0..panelWidth)
@@ -679,11 +988,6 @@
       }
     });
 
-    // ---------- CAREER TIMELINE — era-rail fill ----------
-    if (!narrow && erasPanel && erasTrack && !hasPin('eras')) {
-      setEraProgress(eraPanelProgress(erasPanel));
-    }
-
     // ---------- WORKS counter ----------
     if (worksPanel && worksCounter && workEls.length) {
       const scrollable = Math.max(0, worksPanel.scrollHeight - worksPanel.clientHeight);
@@ -704,17 +1008,18 @@
     // ---------- CONTACT parallax + nav flip ----------
     if (contactPanel) {
       const r = contactPanel.getBoundingClientRect();
-      if (r.right > 0 && r.left < vw) {
-        const local = clamp(1 - (r.left / vw));
+      const contactVisible = narrow ? (r.bottom > 0 && r.top < vh) : (r.right > 0 && r.left < vw);
+      if (contactVisible) {
+        const local = narrow ? clamp(1 - (r.top / vh)) : clamp(1 - (r.left / vw));
         if (contactSigil) {
           const k = parseFloat(contactSigil.getAttribute('data-parallax-contact')) || 0;
-          // sigil drifts horizontally inside the panel
-          const x = (local - 0.5) * 240 * k;
+          // sigil drifts inside the panel
+          const x = narrow ? 0 : (local - 0.5) * 240 * k;
           contactSigil.style.transform = 'translate3d(' + x.toFixed(2) + 'px,0,0)';
           contactSigil.style.opacity = clamp(local * 1.5).toFixed(3);
         }
         // flip nav to dark when contact dominates the viewport
-        if (r.left < vw * 0.4) {
+        if (narrow ? r.top < vh * 0.42 : r.left < vw * 0.4) {
           nav && nav.setAttribute('data-mode', 'dark');
         } else {
           nav && nav.setAttribute('data-mode', 'light');
@@ -735,8 +1040,28 @@
     }
   }
 
+  function scrollableWheelTarget(target, deltaY) {
+    if (Math.abs(deltaY) <= 0) return null;
+    let node = target;
+    while (node && node !== document.body && node !== document.documentElement) {
+      if (node.nodeType === 1) {
+        if (node === erasPanel) return null;
+        const style = window.getComputedStyle(node);
+        const canScrollY = /(auto|scroll)/.test(style.overflowY) && node.scrollHeight > node.clientHeight + 1;
+        if (canScrollY) {
+          const atTop = node.scrollTop <= 0;
+          const atBottom = node.scrollTop + node.clientHeight >= node.scrollHeight - 1;
+          if ((deltaY < 0 && !atTop) || (deltaY > 0 && !atBottom)) return node;
+        }
+      }
+      node = node.parentElement;
+    }
+    return null;
+  }
+
   function onWheel(ev) {
     if (narrow || ev.ctrlKey) return;
+    if (Math.abs(ev.deltaY) > Math.abs(ev.deltaX) && scrollableWheelTarget(ev.target, ev.deltaY)) return;
     const delta = Math.abs(ev.deltaX) > Math.abs(ev.deltaY) ? ev.deltaX : ev.deltaY;
     if (!delta) return;
     ev.preventDefault();
@@ -747,6 +1072,17 @@
   }
 
   function onResize() {
+    // If the user hasn't pinned a preference, re-evaluate auto-default
+    // when the viewport changes (rotation, window resize, etc.).
+    const stored = readSetting(scrollModeKey);
+    if (stored !== 'vertical' && stored !== 'horizontal') {
+      const want = autoPrefersVertical();
+      if (want !== forceVertical) {
+        forceVertical = want;
+        syncDisplayOptions();
+      }
+    }
+    narrow = isNarrow();
     recompute();
     update();
   }
@@ -782,30 +1118,6 @@
     });
   });
 
-  function jumpToEra(index) {
-    if (!erasPanel || !eraEls[index]) return;
-    if (narrow) {
-      eraEls[index].scrollIntoView({ block: 'start', behavior: 'smooth' });
-      return;
-    }
-
-    const panelRect = erasPanel.getBoundingClientRect();
-    const local = eraEls.length <= 1 ? 0 : index / (eraEls.length - 1);
-    const eraPin = pinSections.find(pin => pin.id === 'eras');
-    const start = eraPin ? scrollTargetForPanel(erasPanel) : scrollY + panelRect.left;
-    const travel = eraPin ? eraPin.distance : Math.max(0, panelRect.width - vw);
-    const target = clamp(start + travel * local, 0, totalScroll);
-    window.scrollTo({ top: target, behavior: 'smooth' });
-  }
-
-  eraMarkers.forEach((marker) => {
-    marker.addEventListener('click', () => {
-      const index = Number(marker.getAttribute('data-era-index')) || 0;
-      setActiveEra(index);
-      jumpToEra(index);
-    });
-  });
-
   pressIndex.forEach((item) => {
     const index = Number(item.getAttribute('data-press-idx')) || 0;
     item.addEventListener('mouseenter', () => setActivePress(index));
@@ -829,10 +1141,11 @@
       writingEls[index].scrollIntoView({ block: 'start', behavior: 'smooth' });
       return;
     }
-
     const local = writingCount <= 1 ? 0 : index / (writingCount - 1);
-    const writingPin = pinSections.find(pin => pin.id === 'writing');
-    const start = writingPin ? scrollTargetForPanel(writingPanel) : scrollY + writingPanel.getBoundingClientRect().left;
+    const writingPin = pinSections.find((pin) => pin.id === 'writing');
+    const start = writingPin
+      ? scrollTargetForPanel(writingPanel)
+      : (window.scrollY || window.pageYOffset) + writingPanel.getBoundingClientRect().left;
     const travel = writingPin ? writingPin.distance : Math.max(0, writingPanel.scrollWidth - vw);
     const target = clamp(start + travel * local, 0, totalScroll);
     window.scrollTo({ top: target, behavior: 'smooth' });
@@ -850,33 +1163,33 @@
   writingEls.forEach((essay, index) => {
     essay.addEventListener('click', (ev) => {
       if (essay.classList.contains('is-on') || narrow) return;
+      if (shouldIgnorePanelOpen(ev.target)) return;
       ev.preventDefault();
-      ev.stopPropagation();
       setActiveWriting(index);
       jumpToWriting(index);
     });
     essay.addEventListener('keydown', (ev) => {
       if (essay.classList.contains('is-on') || narrow) return;
       if (ev.key !== 'Enter' && ev.key !== ' ') return;
+      if (shouldIgnorePanelOpen(ev.target)) return;
       ev.preventDefault();
-      ev.stopPropagation();
       setActiveWriting(index);
       jumpToWriting(index);
     });
   });
 
   function shouldIgnorePanelOpen(target) {
-    return !!(target && target.closest && target.closest('a, button, input, textarea, select, [data-no-panel-link]'));
+    if (!target || target.nodeType !== 1) return false;
+    return !!target.closest('a, button, input, select, textarea, label, [data-no-panel-link]');
   }
 
   function openPanel(panel) {
-    const url = panel.getAttribute('data-panel-link');
-    if (!url) return;
-    window.location.href = url;
+    const href = panel.getAttribute('data-panel-link');
+    if (href) window.location.href = href;
   }
 
   panelLinks.forEach((panel) => {
-    panel.setAttribute('tabindex', '0');
+    if (!panel.hasAttribute('tabindex')) panel.setAttribute('tabindex', '0');
     panel.addEventListener('click', (ev) => {
       if (shouldIgnorePanelOpen(ev.target)) return;
       openPanel(panel);
@@ -889,13 +1202,40 @@
     });
   });
 
+  function setupDisplayOptions() {
+    syncDisplayOptions();
+    if (scrollModeToggle) {
+      scrollModeToggle.addEventListener('click', () => {
+        forceVertical = !forceVertical;
+        writeSetting(scrollModeKey, forceVertical ? 'vertical' : 'horizontal');
+        syncDisplayOptions();
+        narrow = isNarrow();
+        recompute();
+        update();
+      });
+    }
+    if (mouseEffectToggle) {
+      mouseEffectToggle.addEventListener('click', () => {
+        mouseEffectEnabled = !mouseEffectEnabled;
+        writeSetting(mouseEffectKey, mouseEffectEnabled ? 'on' : 'off');
+        syncDisplayOptions();
+        window.dispatchEvent(new CustomEvent('sw:ripple-toggle', {
+          detail: { enabled: mouseEffectEnabled }
+        }));
+      });
+    }
+  }
+
   // ---------- init ----------
   function init() {
+    setupDisplayOptions();
+    window.addEventListener('sw:i18n-change', syncLocalizedDynamicText);
     setupReveals();
-    buildHeroFrames();
-    setActiveEra(0);
+    setupHeroMedia();
+    setupHeroMediaToggle();
     setActiveWriting(0);
     setActivePress(0);
+    syncWritingLabels();
 
     recompute();
     update();

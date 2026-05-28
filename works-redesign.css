@@ -1,6 +1,6 @@
 /* ============================================================
    Shavonne Wong — Works (dense gallery + list view)
-   Loaded on top of scroll-narrative.css + scroll-pages.css.
+   Loaded on top of scroll-narrative.css on the Works index.
    All `.wk-` classes are namespaced; no other styles affected.
    ============================================================ */
 
@@ -8,6 +8,18 @@
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
+}
+
+.wk-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .wk-main {
@@ -59,10 +71,10 @@
   margin: 0;
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(17px, 1.5vw, 22px);
+  font-size: clamp(15px, 1.1vw, 18px);
   line-height: 1.4;
   color: var(--text-2);
-  max-width: 60ch;
+  max-width: 44ch;
   text-wrap: pretty;
 }
 
@@ -104,6 +116,28 @@
   margin-bottom: 32px;
   flex-wrap: wrap;
 }
+.wk-search {
+  padding: 18px 0 0;
+}
+.wk-search-input {
+  width: min(560px, 100%);
+  border: 1px solid var(--hairline-strong);
+  background: rgba(255,255,255,0.28);
+  color: var(--text);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.2;
+  padding: 12px 14px;
+  border-radius: 2px;
+}
+.wk-search-input::placeholder {
+  color: var(--text-3);
+}
+.wk-search-input:focus {
+  outline: 1px solid var(--accent-deep);
+  outline-offset: 2px;
+}
 .wk-filters {
   display: flex;
   gap: 8px;
@@ -116,7 +150,8 @@
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
-  padding: 8px 14px;
+  min-height: 44px;
+  padding: 11px 16px;
   background: transparent;
   border: 1px solid var(--hairline-strong);
   border-radius: 999px;
@@ -214,6 +249,11 @@
 .wk-feature .wk-media {
   aspect-ratio: 16 / 10;
 }
+.wk-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .wk-media img {
   width: 100%;
   height: 100%;
@@ -226,34 +266,6 @@
 .wk-card:hover .wk-media img {
   transform: scale(1.06);
   filter: grayscale(0) contrast(1.05);
-}
-.wk-media-scrim {
-  position: absolute; inset: 0;
-  pointer-events: none;
-  background: linear-gradient(180deg, transparent 55%, rgba(24,25,43,0.55) 100%);
-  opacity: 0.85;
-  transition: opacity .3s ease;
-}
-.wk-card:hover .wk-media-scrim { opacity: 1; }
-
-.wk-pill {
-  position: absolute;
-  left: 12px; top: 12px;
-  z-index: 2;
-  padding: 5px 11px;
-  background: rgba(24,25,43,0.78);
-  color: rgba(237,237,244,0.92);
-  font-family: var(--sans);
-  font-size: 9.5px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 500;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-.wk-pill-now {
-  background: var(--accent-deep);
-  color: #EDEDF4;
 }
 
 /* META */
@@ -310,21 +322,28 @@
   margin-top: 2px;
 }
 .wk-meta-copy {
-  margin: 6px 0 0;
+  margin: 2px 0 0;
+  font-family: var(--serif);
+  font-style: italic;
   font-size: 13px;
-  line-height: 1.55;
+  line-height: 1.45;
   color: var(--text-2);
-  text-wrap: pretty;
-  /* clamp to 3 lines on regular cards, 4 on feature */
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
-.wk-feature .wk-meta-copy {
-  -webkit-line-clamp: 4;
-  font-size: 14px;
-  max-width: 60ch;
+.wk-meta-status {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 1px;
+}
+.wk-status-label,
+.wk-status-onview {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-3);
+  line-height: 1.5;
 }
 .wk-meta-foot {
   margin-top: 8px;
@@ -343,30 +362,30 @@
   font-weight: 500;
   color: var(--text-2);
 }
-.wk-cta {
-  font-family: var(--sans);
-  font-size: 9.5px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--text);
-  position: relative;
-  padding-bottom: 2px;
-  transition: color .2s ease;
-}
-.wk-cta::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(.4);
-  transform-origin: left;
-  transition: transform .35s cubic-bezier(.2,.7,.3,1);
-}
-.wk-card:hover .wk-cta { color: var(--accent-deep); }
-.wk-card:hover .wk-cta::after { transform: scaleX(1); }
 
+.wk-commissions {
+  margin-top: clamp(38px, 5vw, 70px);
+  padding-top: 18px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 22px;
+}
+
+.wk-commissions .wk-eyebrow {
+  margin: 0;
+  flex-basis: 100%;
+}
+
+.wk-commissions a {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: clamp(17px, 1.6vw, 24px);
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 0.5px solid currentColor;
+}
 /* ============================================================
    LIST VIEW — dense data table
    ============================================================ */
@@ -493,6 +512,7 @@
   .wk-count { justify-self: flex-start; text-align: left; }
   .wk-card.wk-feature { grid-column: span 1; }
   .wk-feature .wk-media { aspect-ratio: 4 / 5; }
+  .wk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .wk-list-head { display: none; }
   .wk-list-row {
     grid-template-columns: 40px 1fr 70px;
@@ -563,7 +583,8 @@
   .wk-filters::-webkit-scrollbar { display: none; }
   .wk-chip {
     flex: 0 0 auto;
-    padding: 7px 10px;
+    min-height: 44px;
+    padding: 11px 14px;
     font-size: 10px;
     white-space: nowrap;
   }
@@ -572,10 +593,6 @@
     width: max-content;
     max-width: 100%;
   }
-  .wk-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
   .wk-media {
     aspect-ratio: 4 / 5;
   }
@@ -583,8 +600,7 @@
     padding: 16px;
   }
   .wk-meta-title,
-  .wk-list-title,
-  .wk-meta-copy {
+  .wk-list-title {
     overflow-wrap: anywhere;
   }
   .wk-list-row {
@@ -594,4 +610,1357 @@
   .wk-footer-nav {
     padding-top: 28px;
   }
+}
+
+@media (max-width: 600px) {
+  .wk-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* ============================================================
+   AVAILABLE WORKS
+   ============================================================ */
+.av-body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+.av-main {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: calc(var(--nav-h) + 56px) clamp(20px, 3vw, 64px) 96px;
+  position: relative;
+  z-index: 2;
+}
+
+.av-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(24px, 4vw, 72px);
+  align-items: end;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--hairline-strong);
+}
+
+.av-header-copy {
+  display: grid;
+  gap: 14px;
+}
+
+.av-eyebrow,
+.av-count,
+.av-filter-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.av-title {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(54px, 7vw, 112px);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.av-title em {
+  color: var(--accent-deep);
+  font-style: italic;
+}
+
+.av-intro {
+  max-width: 64ch;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(17px, 1.45vw, 22px);
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.av-intro a,
+.av-empty a,
+.av-foot a {
+  color: var(--text);
+  border-bottom: 0.5px solid currentColor;
+  text-decoration: none;
+}
+
+.av-count {
+  align-self: end;
+  text-align: right;
+  line-height: 1.5;
+  max-width: 230px;
+}
+
+/* Collector primer above the filter bar */
+.av-primer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 18px;
+  margin: 12px 0 18px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 4px;
+  background: var(--sw-haze-elev);
+  max-width: 760px;
+}
+.av-primer-copy {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.av-primer-copy em {
+  font-style: italic;
+  color: var(--accent-deep);
+}
+
+/* Collapsible Provenance / chain filter */
+.av-provenance {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  border-top: 1px dashed var(--hairline-strong);
+  padding-top: 10px;
+}
+.av-provenance-summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+  user-select: none;
+}
+.av-provenance-summary::-webkit-details-marker { display: none; }
+.av-provenance-label {
+  font-size: 12px;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+.av-provenance-chev {
+  font-size: 12px;
+  color: var(--text-3);
+  transition: transform 0.18s ease;
+}
+.av-provenance[open] .av-provenance-chev { transform: rotate(180deg); }
+.av-provenance-chips { padding-top: 8px; }
+.av-provenance-summary:focus-visible {
+  outline: 2px solid var(--sw-iris);
+  outline-offset: 4px;
+}
+
+.av-filterbar {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr) auto;
+  gap: 14px 18px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 32px;
+}
+
+.av-filterbar-primary,
+.av-filterbar-secondary,
+.av-filter-group,
+.av-filterbar-tools,
+.av-filterbar-mobile-toggle {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.av-filterbar-secondary {
+  justify-content: flex-start;
+}
+
+.av-filterbar-tools {
+  justify-content: flex-end;
+}
+
+.av-chip {
+  position: relative;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  min-height: 40px;
+  padding: 10px 14px;
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.av-chip:hover,
+.av-chip:focus-visible {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.av-chip.is-active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.av-chip[hidden],
+.av-filter-group[hidden],
+.av-chain-separator[hidden] {
+  display: none !important;
+}
+
+.av-chain-separator {
+  color: var(--text-3);
+  padding: 0 2px;
+}
+
+.av-chip[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: #1B1B1B;
+  color: #F1EBDE;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 6px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.av-select {
+  min-height: 40px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-2);
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0 34px 0 14px;
+}
+
+.av-hide-sold {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-2);
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.av-hide-sold input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--text);
+}
+
+.av-menu {
+  position: relative;
+}
+
+.av-menu-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: min(86vw, 320px);
+  padding: 10px;
+  background: var(--bg);
+  border: 1px solid var(--hairline-strong);
+  box-shadow: 0 18px 44px rgba(24,25,43,0.14);
+  z-index: 20;
+}
+
+.av-menu.is-open .av-menu-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.av-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: clamp(18px, 2vw, 30px);
+}
+
+.av-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 14px;
+  min-width: 0;
+}
+
+.av-card-media {
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+}
+
+.av-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.05) contrast(1.02);
+  transform: scale(1.01);
+  transition: transform 700ms cubic-bezier(.2,.7,.3,1), opacity 200ms ease, filter 250ms ease;
+}
+
+.av-card:hover .av-card-media img {
+  transform: scale(1.04);
+  filter: grayscale(0) contrast(1.04);
+}
+
+.av-card-meta {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.av-card-parent {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-3);
+  line-height: 1.5;
+}
+
+.av-card-parent a {
+  color: var(--text-2);
+  border-bottom: 0.5px solid transparent;
+  text-decoration: none;
+}
+
+.av-card-parent a:hover {
+  border-bottom-color: currentColor;
+}
+
+.av-card-title {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(24px, 2vw, 34px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: 0;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.av-card-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: baseline;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(27,27,27,0.68);
+}
+
+.av-card-year {
+  color: var(--accent-deep);
+}
+
+.av-card-status {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(27,27,27,0.62);
+  line-height: 1.5;
+}
+
+.av-card-priceband {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(27,27,27,0.6);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.av-card-actions {
+  margin-top: 4px;
+}
+
+.av-card-primary {
+  display: inline;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  border-bottom: 0.5px solid currentColor;
+  text-decoration: none;
+}
+
+.av-card-primary:hover {
+  color: var(--accent-deep);
+}
+
+.av-card-verify {
+  margin: 2px 0 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(27,27,27,0.58);
+}
+
+.av-card-verify a {
+  color: inherit;
+  border-bottom: 0.5px solid currentColor;
+  text-decoration: none;
+}
+
+.av-card-signal {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(27,27,27,0.5);
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+  margin: 6px 0 0;
+}
+
+.av-card.is-sold .av-card-media img {
+  opacity: 0.6;
+  transition: opacity 200ms;
+}
+
+.av-card.is-sold .av-card-status::before {
+  content: "\00d7 ";
+  color: rgba(27,27,27,0.5);
+}
+
+.av-card.is-sold .av-card-primary {
+  font-style: italic;
+  color: rgba(27,27,27,0.55);
+  font-size: 12px;
+  border-bottom: 0.5px solid currentColor;
+}
+
+.av-empty {
+  margin: 42px 0 0;
+  padding: 28px 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: clamp(18px, 1.6vw, 24px);
+  color: var(--text-2);
+}
+
+.av-foot {
+  margin: 66px 0 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--text);
+  max-width: 72ch;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: clamp(18px, 1.6vw, 25px);
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+@media (max-width: 980px) {
+  .av-header,
+  .av-filterbar {
+    grid-template-columns: 1fr;
+  }
+
+  .av-count,
+  .av-filterbar-tools {
+    justify-self: start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 720px) {
+  .av-main {
+    padding: calc(var(--nav-h) + 38px) 20px 64px;
+    overflow-x: hidden;
+  }
+
+  .av-title {
+    font-size: clamp(46px, 15vw, 72px);
+  }
+
+  .av-intro {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 600px) {
+  .av-filterbar {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .av-filterbar-primary {
+    width: 100%;
+  }
+
+  .av-filterbar-secondary {
+    display: none;
+  }
+
+  .av-filterbar-mobile-toggle {
+    display: flex;
+  }
+
+  .av-filterbar-tools {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .av-select {
+    max-width: 170px;
+    font-size: 9px;
+  }
+
+  .av-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+@media (min-width: 601px) {
+  .av-filterbar-mobile-toggle {
+    display: none;
+  }
+}
+
+/* ============================================================
+   ZONES — Works landing two-zone-plus-editions structure
+   Zone 01: Projects (multi-form, large cards)
+   Zone 02: 3D Single Works (loops preview grid)
+   Zone 03: Editions & Commissions (smaller catalog cards)
+   ============================================================ */
+
+.wk-zone {
+  margin-top: clamp(48px, 6vw, 96px);
+}
+
+.wk-zone:first-of-type {
+  margin-top: clamp(28px, 3vw, 44px);
+}
+
+.wk-zone-header {
+  display: grid;
+  gap: 8px;
+  max-width: 880px;
+  margin-bottom: clamp(20px, 2.4vw, 36px);
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.wk-zone-header .wk-eyebrow {
+  margin: 0;
+}
+
+.wk-zone-title {
+  margin: 4px 0 0;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(34px, 4.2vw, 60px);
+  line-height: 0.96;
+  letter-spacing: -0.012em;
+  color: var(--text);
+}
+
+.wk-zone-title em {
+  font-style: italic;
+  color: var(--accent-deep);
+}
+
+.wk-zone-titlelink {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  border-bottom: 0.5px solid transparent;
+  transition: border-color .25s ease;
+}
+
+.wk-zone-titlelink:hover {
+  border-bottom-color: var(--accent-deep);
+}
+
+.wk-zone-sub {
+  margin: 8px 0 0;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.5;
+  color: var(--text-2);
+  text-wrap: pretty;
+  max-width: 68ch;
+}
+
+.wk-zone-counts {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+/* ============================================================
+   AVAILABLE WORKS CTA in page header (top right)
+   ============================================================ */
+
+.wk-available-cta {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  align-self: end;
+  padding: 14px 20px 14px 22px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--bg);
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+  position: relative;
+  min-width: 200px;
+}
+
+.wk-available-cta:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  color: var(--bg);
+}
+
+.wk-available-eyebrow {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-3);
+  transition: color .2s ease;
+}
+
+.wk-available-cta:hover .wk-available-eyebrow {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.wk-available-label {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.wk-available-arrow {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* ============================================================
+   AVAILABILITY DOT + LABEL — used everywhere works are listed
+   Variants: --available, --sold, --not-for-sale, --on-view,
+            --ongoing, --edition-available
+   ============================================================ */
+
+.wk-avail {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+
+.wk-avail-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-3);
+  flex-shrink: 0;
+}
+
+.wk-avail-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 30ch;
+}
+
+.wk-avail--available .wk-avail-dot {
+  background: var(--accent-deep);
+  box-shadow: 0 0 0 2px rgba(84, 92, 158, 0.16);
+}
+
+.wk-avail--available {
+  color: var(--accent-deep);
+}
+
+.wk-avail--edition-available .wk-avail-dot {
+  background: var(--accent-deep);
+  box-shadow: 0 0 0 2px rgba(84, 92, 158, 0.12);
+}
+
+.wk-avail--edition-available {
+  color: var(--text);
+}
+
+.wk-avail--sold .wk-avail-dot {
+  background: transparent;
+  border: 1.2px solid var(--text-3);
+  box-shadow: none;
+}
+
+.wk-avail--sold {
+  color: var(--text-3);
+}
+
+.wk-avail--not-for-sale .wk-avail-dot {
+  background: var(--text-3);
+  opacity: 0.6;
+}
+
+.wk-avail--not-for-sale {
+  color: var(--text-3);
+}
+
+.wk-avail--on-view .wk-avail-dot {
+  background: var(--text);
+}
+
+.wk-avail--on-view {
+  color: var(--text);
+}
+
+.wk-avail--ongoing .wk-avail-dot {
+  background: var(--text);
+  animation: wk-pulse 2.4s ease-in-out infinite;
+}
+
+.wk-avail--ongoing {
+  color: var(--text);
+}
+
+@keyframes wk-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wk-avail--ongoing .wk-avail-dot { animation: none; }
+}
+
+/* ============================================================
+   CARD COUNT LINE — "N works · M available"
+   ============================================================ */
+
+.wk-card-counts {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.wk-count-works {
+  color: var(--text-2);
+}
+
+.wk-count-sep {
+  color: var(--text-3);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.wk-card-cta {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.005em;
+  text-transform: none;
+  font-weight: 400;
+  color: var(--accent-deep);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.wk-card:hover .wk-card-cta {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================================
+   PROJECTS GRID — Zone 01
+   Override the base wk-grid to give feature cards more presence
+   ============================================================ */
+
+.wk-grid--projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 2.2vw, 36px);
+}
+
+@media (max-width: 720px) {
+  .wk-grid--projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wk-grid--projects .wk-card {
+  grid-column: span 1;
+}
+
+/* ============================================================
+   LOOPS GRID — Zone 02
+   Smaller tiles, denser layout, less metadata per tile
+   ============================================================ */
+
+.wk-grid--loops {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: clamp(14px, 1.4vw, 22px);
+}
+
+.wk-loop {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.wk-loop-media {
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+}
+
+.wk-loop-media img,
+.wk-loop-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.05) contrast(1.02);
+  transform: scale(1.02);
+  transition: transform .7s cubic-bezier(.2,.7,.3,1), filter .35s ease;
+}
+
+.wk-loop:hover .wk-loop-media img,
+.wk-loop:hover .wk-loop-media video {
+  transform: scale(1.06);
+  filter: grayscale(0) contrast(1.05);
+}
+
+.wk-loop-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0 1px;
+}
+
+.wk-loop-year {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text-3);
+}
+
+.wk-loop-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: -0.003em;
+  color: var(--text);
+  text-wrap: pretty;
+  transition: color .25s ease;
+}
+
+.wk-loop:hover .wk-loop-title {
+  color: var(--accent-deep);
+}
+
+.wk-loop-note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 11.5px;
+  color: var(--text-3);
+  line-height: 1.4;
+  margin-top: 1px;
+}
+
+.wk-loop .wk-avail {
+  margin-top: 5px;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+}
+
+.wk-loop .wk-avail-dot {
+  width: 6px;
+  height: 6px;
+}
+
+/* +N more tile — keeps the user oriented to the full body of work */
+.wk-loop-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  background: var(--surface);
+  border: 1px dashed var(--hairline-strong);
+  text-decoration: none;
+  color: inherit;
+  transition: background .25s ease, border-color .25s ease, color .25s ease;
+  padding: 20px;
+  position: relative;
+}
+
+.wk-loop-more:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  color: var(--bg);
+}
+
+.wk-loop-more-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.wk-loop-more-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1;
+  color: var(--accent-deep);
+  transition: color .25s ease;
+}
+
+.wk-loop-more:hover .wk-loop-more-num {
+  color: var(--bg);
+}
+
+.wk-loop-more-label {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--text-2);
+  max-width: 22ch;
+  transition: color .25s ease;
+}
+
+.wk-loop-more:hover .wk-loop-more-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.wk-loop-more-arrow {
+  margin-top: 6px;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text);
+  transition: color .25s ease;
+}
+
+.wk-loop-more:hover .wk-loop-more-arrow {
+  color: var(--bg);
+}
+
+/* ============================================================
+   EDITIONS GRID — Zone 03
+   ============================================================ */
+
+.wk-grid--editions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: clamp(16px, 1.8vw, 28px);
+}
+
+.wk-media--square {
+  aspect-ratio: 1 / 1;
+}
+
+.wk-card--edition .wk-meta-title {
+  font-size: clamp(19px, 1.4vw, 24px);
+}
+
+/* ============================================================
+   FOOTER NAV — primary highlight
+   ============================================================ */
+
+.wk-footer-nav-primary {
+  font-weight: 600;
+  color: var(--accent-deep);
+}
+
+/* ============================================================
+   MOBILE adjustments for the new structure
+   ============================================================ */
+
+@media (max-width: 720px) {
+  .wk-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .wk-available-cta {
+    width: 100%;
+    min-width: 0;
+    align-self: stretch;
+  }
+
+  .wk-grid--loops {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wk-grid--editions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   ZONES — Works landing two-zone-plus-editions structure
+   Zone 01: Projects (multi-form, large cards)
+   Zone 02: 3D Single Works (loops preview grid)
+   Zone 03: Editions & Commissions (smaller catalog cards)
+   ============================================================ */
+
+.wk-zone {
+  margin-top: clamp(48px, 6vw, 96px);
+}
+
+.wk-zone:first-of-type {
+  margin-top: clamp(28px, 3vw, 44px);
+}
+
+.wk-zone-header {
+  display: grid;
+  gap: 8px;
+  max-width: 880px;
+  margin-bottom: clamp(20px, 2.4vw, 36px);
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.wk-zone-header .wk-eyebrow {
+  margin: 0;
+}
+
+.wk-zone-title {
+  margin: 4px 0 0;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(34px, 4.2vw, 60px);
+  line-height: 0.96;
+  letter-spacing: -0.012em;
+  color: var(--text);
+}
+
+.wk-zone-title em {
+  font-style: italic;
+  color: var(--accent-deep);
+}
+
+.wk-zone-titlelink {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  border-bottom: 0.5px solid transparent;
+  transition: border-color .25s ease;
+}
+
+.wk-zone-titlelink:hover {
+  border-bottom-color: var(--accent-deep);
+}
+
+.wk-zone-sub {
+  margin: 8px 0 0;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.5;
+  color: var(--text-2);
+  text-wrap: pretty;
+  max-width: 68ch;
+}
+
+.wk-zone-counts {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+/* ============================================================
+   AVAILABLE WORKS CTA in page header
+   ============================================================ */
+
+.wk-available-cta {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  align-self: end;
+  padding: 14px 20px 14px 22px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--bg);
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+  position: relative;
+  min-width: 200px;
+}
+.wk-available-cta:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  color: var(--bg);
+}
+.wk-available-eyebrow {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-3);
+  transition: color .2s ease;
+}
+.wk-available-cta:hover .wk-available-eyebrow {
+  color: rgba(255, 255, 255, 0.75);
+}
+.wk-available-label {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+}
+.wk-available-arrow {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* ============================================================
+   BY PROXY — Series catalog (filterable 60-work grid)
+   ============================================================ */
+
+.bp-filterbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 18px;
+}
+.bp-filterbar .wk-chip {
+  min-height: 40px;
+  padding: 10px 14px;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+}
+.bp-series-grid {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+}
+.bp-tile button {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  font: inherit;
+}
+.bp-tile figure {
+  margin: 0;
+  background: rgba(255,255,255,0.28);
+  border: 1px solid var(--hairline);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+}
+.sp-by-proxy-page .bp-tile img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: rgba(255,255,255,0.28);
+  display: block;
+  transition: transform 300ms ease, filter 300ms ease;
+}
+.bp-tile button:hover img {
+  transform: scale(1.04);
+}
+.bp-tile[data-status="sold"] img {
+  filter: grayscale(0.35) brightness(0.95);
+}
+.bp-tile[data-status="sold"] button:hover img {
+  filter: grayscale(0) brightness(1);
+}
+.bp-tile figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 2px 0;
+}
+.bp-tile-num {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text-3);
+}
+.bp-tile-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.bp-tile .wk-avail {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  margin-top: 2px;
+}
+.bp-tile .wk-avail-dot { width: 5px; height: 5px; }
+
+.sw-modal-acquire {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--text-2);
+  margin: 12px 0 6px;
+}
+.sw-modal-avail { margin: 8px 0 4px; }
+
+@media (max-width: 720px) {
+  .bp-series-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ============================================================
+   SP-PLATE-STATUS dot prefix
+   Adds a subtle availability dot before existing status text on
+   Suite project pages (meet-eva, after-ophelia, ties-that-bind).
+   Variants are inferred from text content via attribute hooks
+   where the markup provides them; otherwise the neutral dot
+   applies (good for "Installation documentation", "Archive",
+   "Ongoing project", etc.).
+   ============================================================ */
+
+.sp-plate-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.sp-plate-status::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-3);
+  flex-shrink: 0;
+}
+
+/* Available / edition-available — accent dot */
+.sp-plate-status[data-status~="available"]::before {
+  background: var(--accent-deep);
+  box-shadow: 0 0 0 2px rgba(84, 92, 158, 0.16);
+}
+
+/* Sold — hollow ring */
+.sp-plate-status[data-status~="sold"]::before {
+  background: transparent;
+  border: 1.2px solid var(--text-3);
+}
+
+/* Not for sale — muted solid */
+.sp-plate-status[data-status~="nfs"]::before {
+  background: var(--text-3);
+  opacity: 0.55;
 }

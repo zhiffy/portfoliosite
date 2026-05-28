@@ -7,39 +7,82 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="scroll-narrative.css?v=20260521-surface-hero-gap-tight">
+  <link rel="stylesheet" href="scroll-narrative.css?v=20260527-site-ripple-normal">
   <link rel="stylesheet" href="scroll-pages.css?v=20260520-mobile-pass">
 </head>
 <body class="sn-page-body">
-  <header class="sn-nav" data-page-nav>
+  <a class="sn-skip-link" href="#main-content">Skip to content</a>
+<header class="sn-nav" data-page-nav>
     <a href="index.html#hero" class="sn-mark"><img class="sn-mark-logo" src="assets/brand/wordmark-slate.png" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
-      <a href="index.html#hero">Home</a>
-      <a href="about.html"><span class="sn-num">II.</span> About</a>
-      <a href="works.html"><span class="sn-num">III.</span> Works</a>
-      <a href="writing.html"><span class="sn-num">IV.</span> Writing</a>
-      <a href="about.html#press"><span class="sn-num">V.</span> Press</a>
-      <a href="index.html#contact"><span class="sn-num">VI.</span> Contact</a>
+      <a href="index.html#hero" data-i18n="nav.home">Home</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="/works/" data-i18n="nav.works">Works</a>
+      <a href="writing.html" data-i18n="nav.writing">Writing</a>
+      <a href="press.html" data-i18n="nav.press">Press</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="sn-meta-right">
-      <span>Press</span>
-      <span>Full page</span>
+      <label class="sn-lang-switcher" data-language-switcher>
+              <span class="sn-lang-kicker" data-i18n="ui.languageLabel">Language</span>
+              <select class="sn-lang-select" data-language-select aria-label="Language" data-i18n-aria-label="ui.languageLabel" title="Language"></select>
+            </label>
+      <span data-i18n="page.press">Press</span>
+      <span data-i18n="page.fullPage">Full page</span>
     </div>
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
   </header>
 
-  <main class="sp-main">
+  <main id="main-content" class="sp-main">
     <section class="sp-hero">
       <div>
-        <div class="sp-kicker">V. Press · archive</div>
+        <div class="sp-kicker">Press · archive</div>
         <h1 class="sp-title">As <em>read elsewhere.</em></h1>
       </div>
       <p class="sp-intro">
         Selected profiles, reviews, interviews, and features across art, technology, fashion,
-        and culture.
+        and culture. The shortlist below is the editorial weight class — bylined long-form
+        pieces. The complete archive holds everything else.
       </p>
     </section>
 
+    <!-- ============================================================
+         SELECTED PRESS — a hand-picked dozen of bylined long-form
+         features. Surfaced first so curators, writers, and bookers
+         see institutional weight before NFT-era roundups.
+         ============================================================ -->
+    <section class="sp-section sp-press-selected" aria-label="Selected press">
+      <header class="sp-press-section-head">
+        <div class="sp-kicker">Selected</div>
+        <h2 class="sp-press-section-title">Long-form profiles &amp; reviews</h2>
+      </header>
+      <ul class="sp-press-list sp-press-list-selected">
+        <li><a class="sp-press-item" href="https://cntrfld.art/in-conversation-shavonne-wong/" target="_blank" rel="noreferrer"><div><div class="sp-kicker">CNTRFLD.ART · 2025</div><div class="sp-press-title">Shavonne Wong: Inside the Bubble</div></div><div class="sp-press-pub">CNTRFLD.ART</div><div class="sp-date">Jul 2025 ↗</div></a></li>
+        <li><a class="sp-press-item" href="https://www.brandinginasia.com/shavonne-wong-each-medium-has-taught-me-something-different-about-creativity-itself/" target="_blank" rel="noreferrer"><div><div class="sp-kicker">Bobby McGill · 2025</div><div class="sp-press-title">Shavonne Wong — ‘Each medium has taught me something different about creativity itself’</div></div><div class="sp-press-pub">Branding In Asia</div><div class="sp-date">Oct 2025 ↗</div></a></li>
+        <li><a class="sp-press-item" href="https://www.straitstimes.com/life/arts/chat-with-an-ai-influencer-view-van-gogh-high-end-works-at-art-sg-s-e-a-focus-and-sothebys-show" target="_blank" rel="noreferrer"><div><div class="sp-kicker">Clement Yong · 2025</div><div class="sp-press-title">Chat with an AI influencer, view van Gogh: High-end works at Art SG, S.E.A. Focus and Sotheby's show</div></div><div class="sp-press-pub">The Straits Times</div><div class="sp-date">Jan 2025 ↗</div></a></li>
+        <li><a class="sp-press-item" href="https://www.herworld.com/pov/shavonne-wong-new-media-artist-blurring-line-between-reality-and-surreal" target="_blank" rel="noreferrer"><div><div class="sp-kicker">Ying Rui · 2025</div><div class="sp-press-title">Shavonne Wong: The new media artist blurring the line between reality and the surreal</div></div><div class="sp-press-pub">Her World</div><div class="sp-date">Mar 2025 ↗</div></a></li>
+        <li><a class="sp-press-item" href="https://www.coindesk.com/consensus-magazine/2024/04/23/web3-artist-shavonne-wong-on-the-future-of-nfts/" target="_blank" rel="noreferrer"><div><div class="sp-kicker">Jeff Wilser · 2024</div><div class="sp-press-title">Web3 Artist Shavonne Wong on the Future of NFTs</div></div><div class="sp-press-pub">CoinDesk · Consensus Magazine</div><div class="sp-date">Apr 2024 ↗</div></a></li>
+        <li><a class="sp-press-item" href="https://grazia.sg/culture/grazia-game-changers-shavonne-wong-digital-art-fashion-photography/" target="_blank" rel="noreferrer"><div><div class="sp-kicker">Pameyla Cambe · 2024</div><div class="sp-press-title">GRAZIA Game Changers: Shavonne Wong On Making The NFT World More Inclusive And Diverse</div></div><div class="sp-press-pub">Grazia SG</div><div class="sp-date">2024 ↗</div></a></li>
+        <li><a class="sp-press-item" href="https://nftnow.com/features/shavonne-wong-on-art-and-fostering-diversity-in-web3/" target="_blank" rel="noreferrer"><div><div class="sp-kicker">Arthur Parkhouse · 2023</div><div class="sp-press-title">Shavonne Wong On Art and Fostering Diversity in Web3</div></div><div class="sp-press-pub">NFT Now</div><div class="sp-date">Sep 2023 ↗</div></a></li>
+        <li><a class="sp-press-item" href="https://www.iconsingapore.com/people/photographer-turned-digital-artist-shavonne-wong-is-making-waves-in-the-region/" target="_blank" rel="noreferrer"><div><div class="sp-kicker">Dion Tang · 2023</div><div class="sp-press-title">Photographer Turned Digital Artist Shavonne Wong Is Making Waves In The Region</div></div><div class="sp-press-pub">ICON Magazine</div><div class="sp-date">Jul 2023 ↗</div></a></li>
+        <li><a class="sp-press-item" href="https://www.culture3.com/posts/stepping-across-the-uncanny-valley-with-shavonne-wong" target="_blank" rel="noreferrer"><div><div class="sp-kicker">Clara Peh · 2022</div><div class="sp-press-title">Stepping across the Uncanny Valley with Shavonne Wong</div></div><div class="sp-press-pub">Culture3</div><div class="sp-date">Sep 2022 ↗</div></a></li>
+        <li><a class="sp-press-item" href="https://fliphtml5.com/grzod/pvmy/basic" target="_blank" rel="noreferrer"><div><div class="sp-kicker">Natalya Xavier · 2022</div><div class="sp-press-title">Meet Shavonne Wong, the Award-winning 3D Virtual Model Creator Designing the Future</div></div><div class="sp-press-pub">Tatler Asia</div><div class="sp-date">Jul 2022 ↗</div></a></li>
+        <li><a class="sp-press-item" href="https://www.vogue.it/news/article/shavonne-wong-3d-makeup" target="_blank" rel="noreferrer"><div><div class="sp-kicker">Chiara Bardelli Nonino · 2022</div><div class="sp-press-title">Make-up 3D, abbiamo incontrato Shavonne Wong, l'artista digitale che esplora bellezze virtuali diverse</div></div><div class="sp-press-pub">Vogue Italia</div><div class="sp-date">May 2022 ↗</div></a></li>
+        <li><a class="sp-press-item" href="https://news.artnet.com/art-world/venice-biennale-nft-cameroon-pavilion-2075164" target="_blank" rel="noreferrer"><div><div class="sp-kicker">Vivienne Chow · 2022</div><div class="sp-press-title">The Venice Biennale Is Getting Its First NFT Art Exhibition Courtesy of Cameroon's First-Ever Pavilion</div></div><div class="sp-press-pub">Artnet</div><div class="sp-date">Feb 2022 ↗</div></a></li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         COMPLETE ARCHIVE — collapsed by default. Holds the full
+         year-by-year list including NFT-era roundups and shorter
+         features. Open by anyone who wants the long tail.
+         ============================================================ -->
+    <details class="sp-press-archive" aria-label="Complete press archive">
+      <summary class="sp-press-archive-summary">
+        <span class="sp-kicker">Complete archive</span>
+        <span class="sp-press-archive-label">All features, year by year</span>
+        <span class="sp-press-archive-chev" aria-hidden="true">▾</span>
+      </summary>
     <section class="sp-section" aria-label="Press archive">
       <div class="sp-press-year">
         <div>
@@ -118,11 +161,15 @@
         </ul>
       </div>
     </section>
+    </details>
 
     <nav class="sp-footer-nav">
       <a href="writing.html" class="sn-section-link">← Writing</a>
-      <a href="about.html#press" class="sn-section-link">Return to narrative</a>
+      <a href="press.html" class="sn-section-link">Return to narrative</a>
     </nav>
   </main>
+  <script src="site-i18n.js?v=20260526-global-ten"></script>
+  <script src="fluid-renderer.js?v=20260527-site-ripple-wide"></script>
 </body>
 </html>
+

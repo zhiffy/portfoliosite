@@ -1,0 +1,1404 @@
+{
+  "generated_at": "1970-01-01T00:00:00Z",
+  "items": [
+    {
+      "id": "whirlwind-of-the-waking-dream",
+      "edition_type": "unique",
+      "title": "Whirlwind of the Waking Dream",
+      "year": 2024,
+      "medium": "3D generative video · 0:27 loop",
+      "image": "/assets/videos/whirlwind-cover.jpg",
+      "parent_project": {
+        "title": "Whirlwind of the Waking Dream",
+        "url": "/works/whirlwind-of-the-waking-dream/"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "marketplace",
+        "label": "View on Manifold",
+        "url": "https://gallery.manifold.xyz/whirlwindofthewakingdream"
+      },
+      "verification": {
+        "label": "Verify on Optimistic Etherscan",
+        "url": "https://optimistic.etherscan.io/token/0x937714da10894Aa0721f7ed0221c98989A33F822?a=1"
+      },
+      "chain": "Optimism",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2024-01-12"
+    },
+    {
+      "id": "the-illusion-of-connection-i",
+      "edition_type": "unique",
+      "title": "The Illusion of Connection I",
+      "year": 2024,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/the-illusion-of-connection-i.jpg",
+      "image_alt": "The Illusion of Connection I",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": "5 ETH",
+      "status": "available",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Acquisition%20%E2%80%94%20The%20Illusion%20of%20Connection%20I"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2024-02-23",
+      "source_page": "https://www.shavonnewong.art/nfts/v/the-illusion-of-connection-i",
+      "marketplace_url": "https://foundation.app/@shavonnewong/shasha/12"
+    },
+    {
+      "id": "the-mirror-world",
+      "edition_type": "unique",
+      "title": "The Mirror World",
+      "year": 2024,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/the-mirror-world.jpg",
+      "image_alt": "The Mirror World",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20The%20Mirror%20World"
+      },
+      "chain": "Avalanche",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2024-01-12",
+      "source_page": "https://www.shavonnewong.art/nfts/v/the-mirror-world",
+      "marketplace_url": "https://superchief.io/series/0x6d15a7192f8e9ad55a72b997df0986d712c31cbf/54"
+    },
+    {
+      "id": "panopticon",
+      "edition_type": "unique",
+      "title": "Panopticon",
+      "year": 2024,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/panopticon.jpg",
+      "image_alt": "Panopticon",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Panopticon"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2024-01-12",
+      "source_page": "https://www.shavonnewong.art/nfts/v/panopticon",
+      "marketplace_url": "https://opensea.io/assets/ethereum/0xe56f28e23c6172703f024f0ce4ac7ba171907fde/1"
+    },
+    {
+      "id": "stargazers-dream",
+      "edition_type": "unique",
+      "title": "Stargazer’s Dream",
+      "year": 2023,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/stargazers-dream.jpg",
+      "image_alt": "Stargazer’s Dream",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": "5 ETH",
+      "status": "available",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Acquisition%20%E2%80%94%20Stargazer%E2%80%99s%20Dream"
+      },
+      "chain": null,
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2023-09-09",
+      "source_page": "https://www.shavonnewong.art/nfts/v/stargazers-dream"
+    },
+    {
+      "id": "oceans-whisper",
+      "edition_type": "unique",
+      "title": "Ocean's Whisper",
+      "year": 2023,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/oceans-whisper.jpg",
+      "image_alt": "Ocean's Whisper",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Ocean's%20Whisper"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2023-09-09",
+      "source_page": "https://www.shavonnewong.art/nfts/v/oceans-whisper",
+      "marketplace_url": "https://foundation.app/@shavonnewong/shasha/11"
+    },
+    {
+      "id": "natures-muse",
+      "edition_type": "unique",
+      "title": "Nature’s Muse",
+      "year": 2023,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/natures-muse.jpg",
+      "image_alt": "Nature’s Muse",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": "5 ETH",
+      "status": "available",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Acquisition%20%E2%80%94%20Nature%E2%80%99s%20Muse"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2023-09-09",
+      "source_page": "https://www.shavonnewong.art/nfts/v/natures-muse",
+      "marketplace_url": "https://foundation.app/mint/eth/0x72e991768e09D8d82BdE9334cCCD7f4beC8c433D/9"
+    },
+    {
+      "id": "duality-of-eth-extrovert",
+      "edition_type": "unique",
+      "title": "Duality of ETH - Extrovert",
+      "year": 2023,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/duality-of-eth-extrovert.jpg",
+      "image_alt": "Duality of ETH - Extrovert",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": "6 ETH",
+      "status": "available",
+      "primary_action": {
+        "type": "marketplace",
+        "label": "View on SuperRare",
+        "url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2023-06-19",
+      "source_page": "https://www.shavonnewong.art/nfts/v/6gwmhj423z6h2nys2gz394sjeygjwn",
+      "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2"
+    },
+    {
+      "id": "duality-of-eth-introvert",
+      "edition_type": "unique",
+      "title": "Duality of ETH - Introvert",
+      "year": 2023,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/duality-of-eth-introvert.jpg",
+      "image_alt": "Duality of ETH - Introvert",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Duality%20of%20ETH%20-%20Introvert"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2023-06-19",
+      "source_page": "https://www.shavonnewong.art/nfts/v/c3fppsja2hpkldx25tsax2kmjalhkz",
+      "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---introvert-1"
+    },
+    {
+      "id": "the-invisible-march-of-time-ii",
+      "edition_type": "unique",
+      "title": "The Invisible March of Time II",
+      "year": 2023,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/the-invisible-march-of-time-ii.jpg",
+      "image_alt": "The Invisible March of Time II",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20The%20Invisible%20March%20of%20Time%20II"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2023-06-19",
+      "source_page": "https://www.shavonnewong.art/nfts/v/st6d52tkah5tyw589kyhl5gez7bj6l",
+      "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-ii-3"
+    },
+    {
+      "id": "the-invisible-march-of-time-i",
+      "edition_type": "unique",
+      "title": "The Invisible March of Time I",
+      "year": 2023,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/the-invisible-march-of-time-i.jpg",
+      "image_alt": "The Invisible March of Time I",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20The%20Invisible%20March%20of%20Time%20I"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2023-06-19",
+      "source_page": "https://www.shavonnewong.art/nfts/v/the-invisible-march-of-time-i",
+      "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-i-4"
+    },
+    {
+      "id": "in-suspension",
+      "edition_type": "unique",
+      "title": "In Suspension",
+      "year": 2023,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/in-suspension.jpg",
+      "image_alt": "In Suspension",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": "8 ETH",
+      "status": "available",
+      "primary_action": {
+        "type": "marketplace",
+        "label": "View on SuperRare",
+        "url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2023-06-19",
+      "source_page": "https://www.shavonnewong.art/nfts/v/6lnpe8mhg7rmzmk82arkpd449tfhj5",
+      "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5"
+    },
+    {
+      "id": "beyond-the-surface",
+      "edition_type": "unique",
+      "title": "Beyond The Surface",
+      "year": 2023,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/beyond-the-surface.jpg",
+      "image_alt": "Beyond The Surface",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Beyond%20The%20Surface"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2023-06-19",
+      "source_page": "https://www.shavonnewong.art/nfts/v/fhyxxbpcegn4shrbdmynh6k5cr9hdl",
+      "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/beyond-the-surface-6"
+    },
+    {
+      "id": "a-life-short-lived",
+      "edition_type": "unique",
+      "title": "A Life Short Lived",
+      "year": 2023,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/a-life-short-lived.jpg",
+      "image_alt": "A Life Short Lived",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20A%20Life%20Short%20Lived"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2023-06-19",
+      "source_page": "https://www.shavonnewong.art/nfts/v/n7r2ly4z7kmjzpslzzcy6mzpnjkgdb",
+      "marketplace_url": "https://superrare.com/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/a-life-short-lived-8"
+    },
+    {
+      "id": "ice-and-fire",
+      "edition_type": "unique",
+      "title": "Ice and Fire",
+      "year": 2023,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/ice-and-fire.jpg",
+      "image_alt": "Ice and Fire",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Ice%20and%20Fire"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2023-06-21",
+      "source_page": "https://www.shavonnewong.art/nfts/v/ice-and-fire",
+      "marketplace_url": "https://www.niftygateway.com/itemdetail/primary/0x7eeb0cdad2d695cbd2bf8fb96a6a20ad5309a2dd/1"
+    },
+    {
+      "id": "the-shimmering-veil-i",
+      "edition_type": "unique",
+      "title": "The Shimmering Veil I",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/the-shimmering-veil-i.jpg",
+      "image_alt": "The Shimmering Veil I",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20The%20Shimmering%20Veil%20I"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-11-06",
+      "source_page": "https://www.shavonnewong.art/nfts/v/the-shimmering-veil-i",
+      "marketplace_url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-i-43"
+    },
+    {
+      "id": "the-shimmering-veil-ii",
+      "edition_type": "unique",
+      "title": "The Shimmering Veil II",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/the-shimmering-veil-ii.jpg",
+      "image_alt": "The Shimmering Veil II",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": "5 ETH",
+      "status": "available",
+      "primary_action": {
+        "type": "marketplace",
+        "label": "View on SuperRare",
+        "url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-11-06",
+      "source_page": "https://www.shavonnewong.art/nfts/v/the-shimmering-veil-ii",
+      "marketplace_url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45"
+    },
+    {
+      "id": "the-shimmering-veil-iii",
+      "edition_type": "unique",
+      "title": "The Shimmering Veil III",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/the-shimmering-veil-iii.jpg",
+      "image_alt": "The Shimmering Veil III",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": "5 ETH",
+      "status": "available",
+      "primary_action": {
+        "type": "marketplace",
+        "label": "View on SuperRare",
+        "url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-11-06",
+      "source_page": "https://www.shavonnewong.art/nfts/v/the-shimmering-veil-iii",
+      "marketplace_url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45"
+    },
+    {
+      "id": "everything-yet-nothing",
+      "edition_type": "unique",
+      "title": "Everything, Yet Nothing",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/everything-yet-nothing.jpg",
+      "image_alt": "Everything, Yet Nothing",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Everything%2C%20Yet%20Nothing"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-11-06",
+      "source_page": "https://www.shavonnewong.art/nfts/v/everything-yet-nothing",
+      "marketplace_url": "https://superrare.com/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/everything,-yet-nothing-7"
+    },
+    {
+      "id": "the-loneliness-of-an-orchid",
+      "edition_type": "unique",
+      "title": "The Loneliness of an Orchid",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/the-loneliness-of-an-orchid.jpg",
+      "image_alt": "The Loneliness of an Orchid",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20The%20Loneliness%20of%20an%20Orchid"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-07-30",
+      "source_page": "https://www.shavonnewong.art/nfts/v/the-loneliness-of-an-orchid",
+      "marketplace_url": "https://superrare.com/0x6583afe5f8eda8178877fb819b63c6f605c4f692/the-loneliness-of-an-orchid-28"
+    },
+    {
+      "id": "the-legend-of-the-white-snake",
+      "edition_type": "unique",
+      "title": "The Legend Of The White Snake",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/the-legend-of-the-white-snake.jpg",
+      "image_alt": "The Legend Of The White Snake",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20The%20Legend%20Of%20The%20White%20Snake"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-03-16",
+      "source_page": "https://www.shavonnewong.art/nfts/v/legend-of-the-white-snake",
+      "marketplace_url": "https://foundation.app/@shavonnewong/shasha/6"
+    },
+    {
+      "id": "year-of-the-tiger",
+      "edition_type": "unique",
+      "title": "Year of the Tiger",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/year-of-the-tiger.jpg",
+      "image_alt": "Year of the Tiger",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Year%20of%20the%20Tiger"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-03-16",
+      "source_page": "https://www.shavonnewong.art/nfts/v/year-of-the-tiger",
+      "marketplace_url": "https://www.shavonnewong.art/projects/yearofthetiger"
+    },
+    {
+      "id": "year-of-the-tiger-3",
+      "edition_type": "unique",
+      "title": "Year of the Tiger 3",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/year-of-the-tiger-3.jpg",
+      "image_alt": "Year of the Tiger 3",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Year%20of%20the%20Tiger%203"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-03-16",
+      "source_page": "https://www.shavonnewong.art/nfts/v/year-of-the-tiger-3",
+      "marketplace_url": "https://tiger3.shavonnewong.art"
+    },
+    {
+      "id": "year-of-the-tiger-2",
+      "edition_type": "unique",
+      "title": "Year of the Tiger 2",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/year-of-the-tiger-2.jpg",
+      "image_alt": "Year of the Tiger 2",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Year%20of%20the%20Tiger%202"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-03-16",
+      "source_page": "https://www.shavonnewong.art/nfts/v/year-of-the-tiger-2",
+      "marketplace_url": "https://tiger2.shavonnewong.art"
+    },
+    {
+      "id": "goldfish",
+      "edition_type": "unique",
+      "title": "Goldfish",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/goldfish.jpg",
+      "image_alt": "Goldfish",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Goldfish"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/new-video",
+      "marketplace_url": "https://opensea.io/assets/ethereum/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/1"
+    },
+    {
+      "id": "the-hug",
+      "edition_type": "unique",
+      "title": "The Hug",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/the-hug.jpg",
+      "image_alt": "The Hug",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20The%20Hug"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/the-hug",
+      "marketplace_url": "https://superrare.com/artwork-v2/the-hug-30550"
+    },
+    {
+      "id": "i-am-not-happy",
+      "edition_type": "unique",
+      "title": "I Am (Not) Happy",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/i-am-not-happy.jpg",
+      "image_alt": "I Am (Not) Happy",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20I%20Am%20(Not)%20Happy"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/i-am-not-happy",
+      "marketplace_url": "https://foundation.app/@shavonnewong/concealedemotions/3"
+    },
+    {
+      "id": "i-am-not-confident",
+      "edition_type": "unique",
+      "title": "I Am (Not) Confident",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/i-am-not-confident.jpg",
+      "image_alt": "I Am (Not) Confident",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20I%20Am%20(Not)%20Confident"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/i-am-not-confident",
+      "marketplace_url": "https://foundation.app/@shavonnewong/concealedemotions/4"
+    },
+    {
+      "id": "i-am-not-zen",
+      "edition_type": "unique",
+      "title": "I Am (Not) Zen",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/i-am-not-zen.jpg",
+      "image_alt": "I Am (Not) Zen",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20I%20Am%20(Not)%20Zen"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/i-am-not-zen",
+      "marketplace_url": "https://foundation.app/@shavonnewong/concealedemotions/1"
+    },
+    {
+      "id": "the-kiss",
+      "edition_type": "unique",
+      "title": "The Kiss",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/the-kiss.jpg",
+      "image_alt": "The Kiss",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20The%20Kiss"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/the-kiss",
+      "marketplace_url": "https://superrare.com/artwork-v2/the-kiss-28474"
+    },
+    {
+      "id": "uplift",
+      "edition_type": "unique",
+      "title": "Uplift",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/uplift.jpg",
+      "image_alt": "Uplift",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Uplift"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/uplift",
+      "marketplace_url": "https://superrare.com/artwork-v2/uplift-25511"
+    },
+    {
+      "id": "beauty",
+      "edition_type": "unique",
+      "title": "Beauty",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/beauty.jpg",
+      "image_alt": "Beauty",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Beauty"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/new-video-1",
+      "marketplace_url": "https://superrare.com/artwork-v2/beauty-26661"
+    },
+    {
+      "id": "glow",
+      "edition_type": "unique",
+      "title": "Glow",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/glow.jpg",
+      "image_alt": "Glow",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Glow"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/glow",
+      "marketplace_url": "https://foundation.app/@shavonnewong/foundation/73504"
+    },
+    {
+      "id": "suspense",
+      "edition_type": "unique",
+      "title": "Suspense",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/suspense.jpg",
+      "image_alt": "Suspense",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Suspense"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/suspense",
+      "marketplace_url": "https://suspendedsoul.com/marketplace/f0dd7e7c0cd2143dfeedfa7e7d465d74180c5f5ef4516458960354478a4d2e3a"
+    },
+    {
+      "id": "stellae-iii",
+      "edition_type": "unique",
+      "title": "Stellae III",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/stellae-iii.jpg",
+      "image_alt": "Stellae III",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Stellae%20III"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/stellae-iii",
+      "marketplace_url": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272440951144185857"
+    },
+    {
+      "id": "stellae-ii",
+      "edition_type": "unique",
+      "title": "Stellae II",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/stellae-ii.jpg",
+      "image_alt": "Stellae II",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Stellae%20II"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/stellae-ii",
+      "marketplace_url": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272439851632558081"
+    },
+    {
+      "id": "stellae-i",
+      "edition_type": "unique",
+      "title": "Stellae I",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/stellae-i.jpg",
+      "image_alt": "Stellae I",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Stellae%20I"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/stellae-i",
+      "marketplace_url": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272438752120930305"
+    },
+    {
+      "id": "kin-i",
+      "edition_type": "unique",
+      "title": "Kin I",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/kin-i.jpg",
+      "image_alt": "Kin I",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Kin%20I"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/kin-i",
+      "marketplace_url": "https://foundation.app/@shavonnewong/foundation/36162"
+    },
+    {
+      "id": "kin-ii",
+      "edition_type": "unique",
+      "title": "Kin II",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/kin-ii.jpg",
+      "image_alt": "Kin II",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "10k_plus",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Kin%20II"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/new-video-2",
+      "marketplace_url": "https://foundation.app/@shavonnewong/foundation/36422"
+    },
+    {
+      "id": "lunah-moon-iii",
+      "edition_type": "unique",
+      "title": "Lunah Moon III",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/lunah-moon-iii.jpg",
+      "image_alt": "Lunah Moon III",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Lunah%20Moon%20III"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/lunah-moon-iii",
+      "marketplace_url": "https://foundation.app/@shavonnewong/foundation/11479"
+    },
+    {
+      "id": "lunah-moon-ii",
+      "edition_type": "unique",
+      "title": "Lunah Moon II",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/lunah-moon-ii.jpg",
+      "image_alt": "Lunah Moon II",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Lunah%20Moon%20II"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/lunah-moon-ii",
+      "marketplace_url": "https://foundation.app/@shavonnewong/foundation/9193"
+    },
+    {
+      "id": "lunah-moon-i",
+      "edition_type": "unique",
+      "title": "Lunah Moon I",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/lunah-moon-i.jpg",
+      "image_alt": "Lunah Moon I",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Lunah%20Moon%20I"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/lunah-moon-i",
+      "marketplace_url": "https://foundation.app/@shavonnewong/foundation/7419"
+    },
+    {
+      "id": "lilium-in-pearls-iii",
+      "edition_type": "unique",
+      "title": "Lilium in Pearls III",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/lilium-in-pearls-iii.jpg",
+      "image_alt": "Lilium in Pearls III",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Lilium%20in%20Pearls%20III"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/lilium-in-pearls-iii",
+      "marketplace_url": "https://foundation.app/@shavonnewong/foundation/2813"
+    },
+    {
+      "id": "lilium-in-pearls-ii",
+      "edition_type": "unique",
+      "title": "Lilium in Pearls II",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/lilium-in-pearls-ii.jpg",
+      "image_alt": "Lilium in Pearls II",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Lilium%20in%20Pearls%20II"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-01-27",
+      "source_page": "https://www.shavonnewong.art/nfts/v/lilium-in-pearls-ii",
+      "marketplace_url": "https://foundation.app/@shavonnewong/foundation/1713"
+    },
+    {
+      "id": "lilium-in-pearls-i",
+      "edition_type": "unique",
+      "title": "Lilium in Pearls I",
+      "year": 2022,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/lilium-in-pearls-i.jpg",
+      "image_alt": "Lilium in Pearls I",
+      "parent_project": {
+        "title": "1/1 Art"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "status": "sold",
+      "primary_action": {
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20Lilium%20in%20Pearls%20I"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2022-04-30",
+      "source_page": "https://www.shavonnewong.art/nfts/v/lilium-in-pearls-i",
+      "marketplace_url": "https://foundation.app/@shavonnewong/foundation/1253"
+    },
+    {
+      "id": "by-proxy",
+      "edition_type": "series",
+      "title": "By Proxy",
+      "year": 2022,
+      "medium": "60 unique works · CGI and digital photography",
+      "image": "/assets/by-proxy/01-1920px-web-len-4101.jpg",
+      "parent_project": {
+        "title": "By Proxy",
+        "url": "/works/by-proxy/"
+      },
+      "price_band": "under_2k",
+      "price_display": null,
+      "series_total": 60,
+      "series_available_fallback": 1,
+      "fallback_updated": "2026-05-27",
+      "series_section_url": "/works/by-proxy/#available",
+      "primary_action": {
+        "type": "marketplace",
+        "label": "Browse the series",
+        "url": "/works/by-proxy/#available"
+      },
+      "verification": {
+        "label": "Verify contract on Etherscan",
+        "url": "https://etherscan.io/token/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "3d",
+        "photography"
+      ],
+      "availability_source": {
+        "provider": "opensea",
+        "collection_slug": "by-proxy-by-shavonne-wong-and-lenne-chai",
+        "contract": "0x46ac8540d698167fcbb9e846511beb8cf8af9bd8",
+        "chain": "ethereum"
+      },
+      "added": "2026-05-27"
+    },
+    {
+      "id": "love-is-love",
+      "edition_type": "series",
+      "title": "Love is Love",
+      "year": 2021,
+      "medium": "500 unique generative works · digital",
+      "image": "/assets/love-is-love/01-love-is-love-combi.gif",
+      "parent_project": {
+        "title": "Love is Love",
+        "url": "/works/love-is-love/"
+      },
+      "price_band": "under_2k",
+      "price_display": null,
+      "series_total": 500,
+      "series_available_fallback": null,
+      "series_section_url": "/works/love-is-love/#available",
+      "primary_action": {
+        "type": "marketplace",
+        "label": "Browse the series",
+        "url": "/works/love-is-love/#available"
+      },
+      "verification": {
+        "label": "Verify contract on Etherscan",
+        "url": "https://etherscan.io/address/0x30de3508e1f826910a254719258346570b27627e"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "3d"
+      ],
+      "availability_source": {
+        "provider": "opensea",
+        "collection_slug": "love-is-love-shavonnewong",
+        "contract": "0x30de3508e1f826910a254719258346570b27627e",
+        "chain": "ethereum"
+      },
+      "added": "2026-05-27"
+    },
+    {
+      "id": "the-weight-of-the-world",
+      "edition_type": "edition",
+      "title": "The Weight of the World",
+      "year": 2023,
+      "medium": "Dynamic digital artwork · blockchain-linked edition",
+      "image": "/assets/the-ties-that-bind/17-weightoftheworld-1.jpg",
+      "parent_project": {
+        "title": "The Ties That Bind",
+        "url": "/works/the-ties-that-bind/"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "edition_total": 50,
+      "edition_remaining_fallback": null,
+      "primary_action": {
+        "type": "marketplace",
+        "label": "View on OpenSea",
+        "url": "https://opensea.io/collection/the-weight-of-the-world-1"
+      },
+      "verification": {
+        "label": "Verify on Etherscan",
+        "url": "https://etherscan.io/token/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2026-05-27"
+    },
+    {
+      "id": "faces-of-freedom",
+      "edition_type": "edition",
+      "title": "Faces of Freedom",
+      "year": 2023,
+      "medium": "3D digital artwork · ERC-1155 meme card",
+      "image": "/assets/6529-meme-card/02-freedom-to-transact-still.jpg",
+      "parent_project": {
+        "title": "6529 Meme Card",
+        "url": "/works/6529-meme-card/"
+      },
+      "price_band": "under_2k",
+      "price_display": null,
+      "edition_total": 300,
+      "edition_remaining_fallback": 0,
+      "fallback_updated": "2026-05-27",
+      "primary_action": {
+        "type": "marketplace",
+        "label": "View on OpenSea",
+        "url": "https://opensea.io/item/ethereum/0x33fd426905f149f8376e227d0c9d3340aad17af1/72"
+      },
+      "verification": {
+        "label": "Verify on Etherscan",
+        "url": "https://etherscan.io/token/0x33fd426905f149f8376e227d0c9d3340aad17af1?a=72"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "3d"
+      ],
+      "added": "2026-05-27"
+    }
+  ]
+}

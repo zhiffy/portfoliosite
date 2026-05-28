@@ -221,6 +221,21 @@
   font-style: italic;
   color: var(--text);
 }
+.ab-chronology {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: clamp(13px, 0.95vw, 15px);
+  letter-spacing: 0.01em;
+  border-left: 1px solid var(--hairline-strong);
+  padding-left: 14px;
+}
+.ab-chronology strong {
+  display: block;
+  font-weight: 500;
+  color: var(--text);
+}
 
 .ab-tag-row {
   list-style: none;
@@ -373,6 +388,61 @@
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-3);
+}
+.ab-year-note {
+  margin-top: 6px;
+  font-family: var(--sans);
+  font-size: 11px;
+  line-height: 1.45;
+  font-style: italic;
+  color: var(--text-3);
+  max-width: 220px;
+}
+.ab-year-subhead {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--accent-deep);
+  margin: 0 0 6px;
+}
+.ab-year-archive {
+  margin-top: 18px;
+  border-top: 1px dashed var(--hairline-strong);
+  padding-top: 4px;
+}
+.ab-year-archive-summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text);
+  user-select: none;
+}
+.ab-year-archive-summary::-webkit-details-marker { display: none; }
+.ab-year-archive-count {
+  color: var(--text-3);
+  font-size: 11px;
+}
+.ab-year-archive-chev {
+  margin-left: auto;
+  color: var(--text-3);
+  font-size: 12px;
+  transition: transform 0.18s ease;
+}
+.ab-year-archive[open] .ab-year-archive-chev { transform: rotate(180deg); }
+.ab-year-archive-summary:hover { color: var(--accent-deep); }
+.ab-year-archive-summary:focus-visible {
+  outline: 2px solid var(--sw-iris);
+  outline-offset: 4px;
 }
 
 .ab-event-list {

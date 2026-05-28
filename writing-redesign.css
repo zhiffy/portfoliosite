@@ -231,6 +231,77 @@
 .wr-foot-link:hover { color: var(--accent-deep); }
 
 /* ============================================================
+   STAY IN TOUCH (newsletter)
+   ============================================================ */
+.wr-subscribe {
+  margin-top: clamp(42px, 5vw, 64px);
+  padding: clamp(22px, 3vw, 36px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(220px, 1fr);
+  gap: clamp(20px, 3vw, 36px);
+  align-items: center;
+  border: 1px solid var(--hairline-strong);
+  background: var(--bg-warm);
+}
+.wr-subscribe-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.wr-subscribe-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(24px, 2.4vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.012em;
+  color: var(--text);
+}
+.wr-subscribe-line {
+  margin: 0;
+  font-size: clamp(13px, 1vw, 15px);
+  line-height: 1.6;
+  color: var(--text-2);
+  max-width: 54ch;
+}
+.wr-subscribe-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 22px;
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+.wr-subscribe-cta:hover,
+.wr-subscribe-cta:focus-visible {
+  background: var(--accent-deep);
+  transform: translateY(-1px);
+}
+.wr-subscribe-cta:focus-visible {
+  outline: 2px solid var(--sw-iris);
+  outline-offset: 3px;
+}
+.wr-subscribe-cta-label {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.wr-subscribe-cta-addr {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  opacity: 0.85;
+  word-break: break-all;
+}
+@media (max-width: 720px) {
+  .wr-subscribe { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    PAGE NAV
    ============================================================ */
 .wr-footer-nav {

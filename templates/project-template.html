@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- SECTION 0: head metadata - REQUIRED -->
+  <title>[Project name] - Shavonne Wong</title>
+  <meta name="description" content="[Hand-written description under 160 characters.]" />
+  <link rel="canonical" href="https://shavonnewong.art/works/[project-slug]/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://shavonnewong.art/works/[project-slug]/" />
+  <meta property="og:title" content="[Project name] - Shavonne Wong" />
+  <meta property="og:description" content="[Same or tighter hand-written description.]" />
+  <meta property="og:image" content="https://shavonnewong.art/assets/[project-slug]/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260527-site-ripple-normal">
+  <link rel="stylesheet" href="/scroll-pages.css?v=YYYYMMDD">
+  <!-- SECTION 0A: Schema.org CreativeWork JSON-LD - REQUIRED -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "[Project name]",
+    "creator": { "@type": "Person", "name": "Shavonne Wong", "sameAs": "https://en.wikipedia.org/wiki/Shavonne_Wong" },
+    "dateCreated": "[YYYY]",
+    "datePublished": "[YYYY]",
+    "artMedium": "[medium list]",
+    "url": "https://shavonnewong.art/works/[project-slug]/",
+    "image": "https://shavonnewong.art/assets/[project-slug]/og-image.jpg",
+    "description": "[description]",
+    "exhibitionEvent": [],
+    "hasPart": []
+  }
+  </script>
+</head>
+<body class="sn-page-body">
+  <!-- SECTION 1: nav - REQUIRED -->
+  <header class="sn-nav" data-page-nav>
+    <a href="/index.html#hero" class="sn-mark"><img class="sn-mark-logo" src="/assets/brand/wordmark-slate.png" alt="Shavonne Wong" width="120" height="42"></a>
+    <nav class="sn-links">
+      <a href="/index.html#hero">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/works/" class="is-active">Works</a>
+      <a href="/writing.html">Writing</a>
+      <a href="/press.html">Press</a>
+      <a href="/index.html#contact">Contact</a>
+    </nav>
+    <div class="sn-meta-right"><span>[Project name]</span><span>Project page</span></div>
+    <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
+  </header>
+
+  <!-- SECTION 1A: sticky in-page sub-nav - REQUIRED; include only anchors that exist on this page -->
+  <nav class="sp-subnav" aria-label="Page sections">
+    <a href="#overview">Overview</a>
+    <a href="#work">Works</a>
+    <a href="#process">Process</a>
+    <a href="#statement">Statement</a>
+    <a href="#supporting-texts">Reading</a>
+    <a href="#exhibitions">Exhibitions</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main class="sp-main sp-project-main">
+    <!-- SECTION 2: hero - REQUIRED -->
+    <section class="sp-project-hero" aria-label="[Project name] overview">
+      <div class="sp-project-hero-copy">
+        <div class="sp-kicker">[Medium] &middot; [Year/status]</div>
+        <h1 class="sp-title">[Project <em>Name.</em>]</h1>
+        <!-- Optional current showing only; remove if stale or unknown. -->
+        <p class="sp-project-onview" data-end-date="YYYY-MM-DD">On view at [venue], through [month year] &middot; <span class="sp-updated">Updated [Month YYYY]</span></p>
+        <p class="sp-intro">[One-sentence project introduction.]</p>
+        <p class="sp-project-line">[Short project line.]</p>
+      </div>
+      <figure class="sp-project-hero-media">
+        <img src="/assets/[project-slug]/[hero-image].jpg" alt="[Specific description]" />
+        <figcaption>[Project name], [year]</figcaption>
+      </figure>
+    </section>
+
+    <!-- SECTION 3: lede - REQUIRED; two paragraphs answering what this is and why it exists -->
+    <section class="sp-section sp-project-grid" id="overview">
+      <div><h2 class="sp-kicker">Overview</h2></div>
+      <div class="sp-text-stack">
+        <p class="sp-copy">[Paragraph 1.]</p>
+        <p class="sp-copy">[Paragraph 2.]</p>
+      </div>
+    </section>
+
+    <!-- SECTION 4: works - REQUIRED; use sp-plate, sp-edition-summary, or sp-series-index -->
+    <section class="sp-section sp-project-grid" id="work">
+      <div><h2 class="sp-kicker">Works</h2></div>
+      <div class="sp-text-stack">
+        <article class="sp-plate" id="[work-slug]">
+          <figure class="sp-plate-media">
+            <img src="/assets/[project-slug]/[work-image].jpg" alt="[Specific description]">
+          </figure>
+          <div class="sp-plate-caption">
+            <div class="sp-plate-num">01.</div>
+            <h3 class="sp-plate-title">[Work title]</h3>
+            <div class="sp-plate-meta"><span class="sp-plate-year">[Year]</span><span class="sp-plate-medium">[Medium/specs]</span></div>
+            <div class="sp-plate-status">[Approved status string]</div>
+            <p class="sp-plate-body">[50+ word context paragraph.]</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 5: process - OMIT only if there is no real process context -->
+    <section class="sp-section sp-project-grid" id="process">
+      <div><h2 class="sp-kicker">Process</h2></div>
+      <div class="sp-text-stack"><p class="sp-copy">[Process context.]</p></div>
+    </section>
+
+    <!-- SECTION 6: statement - KEEP when present -->
+    <section class="sp-section sp-project-grid" id="statement">
+      <div><h2 class="sp-kicker">Artist statement</h2></div>
+      <div class="sp-text-stack"><p class="sp-copy">[Statement.]</p></div>
+    </section>
+
+    <!-- SECTION 7: supporting texts - KEEP when present -->
+    <section class="sp-section sp-project-grid" id="supporting-texts">
+      <div><h2 class="sp-kicker">Supporting texts</h2></div>
+      <div class="sp-text-stack"><p class="sp-copy">[Supporting text or press links.]</p></div>
+    </section>
+
+    <!-- SECTION 8: exhibitions - REQUIRED when there is exhibition history -->
+    <section class="sp-section sp-project-grid" id="exhibitions">
+      <div><h2 class="sp-kicker">Exhibitions</h2></div>
+      <div class="sp-text-stack"><dl class="sp-detail-grid"><dt>[Year]</dt><dd>[Venue/context. Include shown work if different from project.]</dd></dl></div>
+    </section>
+
+    <!-- SECTION 9: related - REQUIRED; prev/next follows Works grid sequence -->
+    <section class="sp-section sp-project-grid" id="related">
+      <div><h2 class="sp-kicker">Related projects</h2></div>
+      <div class="sp-text-stack">
+        <nav class="sp-prev-next" aria-label="Project navigation">
+          <a class="sp-prev" href="/works/[prev-project]/">&larr; [Previous project name]</a>
+          <a class="sp-next" href="/works/[next-project]/">[Next project name] &rarr;</a>
+        </nav>
+        <div class="sp-related-grid">[2-3 related project cards]</div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: contact - REQUIRED -->
+    <section class="sp-section sp-project-grid" id="contact">
+      <div><h2 class="sp-kicker">Contact</h2></div>
+      <div class="sp-text-stack">
+        <p class="sp-contact-line">For acquisitions: <a href="mailto:studio@shavonnewong.art">studio@shavonnewong.art</a></p>
+        <p class="sp-contact-line">For loans and exhibition inquiries: <a href="mailto:studio@shavonnewong.art">studio@shavonnewong.art</a></p>
+      </div>
+    </section>
+  </main>
+  <script src="/assets/js/sustainability.js?v=YYYYMMDD"></script>
+  <script src="/assets/js/subnav.js?v=YYYYMMDD"></script>
+  <script src="/site-i18n.js?v=YYYYMMDD"></script>
+  <script src="/fluid-renderer.js?v=20260527-site-ripple-wide"></script>
+</body>
+</html>

@@ -1,0 +1,605 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/works/",
+      "destination": "/works.html"
+    },
+    {
+      "source": "/works/available/",
+      "destination": "/works-available.html"
+    },
+    {
+      "source": "/works/after-ophelia/",
+      "destination": "/after-ophelia.html"
+    },
+    {
+      "source": "/works/meet-eva-here/",
+      "destination": "/meet-eva-here.html"
+    },
+    {
+      "source": "/works/the-ties-that-bind/",
+      "destination": "/the-ties-that-bind.html"
+    },
+    {
+      "source": "/works/whirlwind-of-the-waking-dream/",
+      "destination": "/whirlwind-of-the-waking-dream.html"
+    },
+    {
+      "source": "/works/3d-single-works/",
+      "destination": "/3d-single-works.html"
+    },
+    {
+      "source": "/works/love-is-love/",
+      "destination": "/love-is-love.html"
+    },
+    {
+      "source": "/works/vogue-singapore/",
+      "destination": "/vogue-singapore.html"
+    },
+    {
+      "source": "/works/6529-meme-card/",
+      "destination": "/6529-meme-card.html"
+    },
+    {
+      "source": "/works/by-proxy/",
+      "destination": "/by-proxy.html"
+    },
+    {
+      "source": "/works/meet-eva-here/chatbot/",
+      "destination": "/meet-eva-here-chatbot.html"
+    },
+    {
+      "source": "/works/meet-eva-here/diary/",
+      "destination": "/meet-eva-here-diary.html"
+    },
+    {
+      "source": "/works/after-ophelia/ophelia-retold/",
+      "destination": "/after-ophelia-ophelia-retold.html"
+    },
+    {
+      "source": "/works/after-ophelia/ophelia-reassembled/",
+      "destination": "/after-ophelia-ophelia-reassembled.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/works.html",
+      "destination": "/works/",
+      "permanent": true
+    },
+    {
+      "source": "/works-available.html",
+      "destination": "/works/available/",
+      "permanent": true
+    },
+    {
+      "source": "/after-ophelia.html",
+      "destination": "/works/after-ophelia/",
+      "permanent": true
+    },
+    {
+      "source": "/after-ophelia-notes.html",
+      "destination": "/works/after-ophelia/#process",
+      "permanent": true
+    },
+    {
+      "source": "/meet-eva-here.html",
+      "destination": "/works/meet-eva-here/",
+      "permanent": true
+    },
+    {
+      "source": "/meet-eva-here-notes.html",
+      "destination": "/works/meet-eva-here/#process",
+      "permanent": true
+    },
+    {
+      "source": "/the-ties-that-bind.html",
+      "destination": "/works/the-ties-that-bind/",
+      "permanent": true
+    },
+    {
+      "source": "/works/after-ophelia/notes/",
+      "destination": "/works/after-ophelia/#process",
+      "permanent": true
+    },
+    {
+      "source": "/works/meet-eva-here/notes/",
+      "destination": "/works/meet-eva-here/#process",
+      "permanent": true
+    },
+    {
+      "source": "/whirlwind-of-the-waking-dream.html",
+      "destination": "/works/whirlwind-of-the-waking-dream/",
+      "permanent": true
+    },
+    {
+      "source": "/3d-single-works.html",
+      "destination": "/works/3d-single-works/",
+      "permanent": true
+    },
+    {
+      "source": "/love-is-love.html",
+      "destination": "/works/love-is-love/",
+      "permanent": true
+    },
+    {
+      "source": "/vogue-singapore.html",
+      "destination": "/works/vogue-singapore/",
+      "permanent": true
+    },
+    {
+      "source": "/6529-meme-card.html",
+      "destination": "/works/6529-meme-card/",
+      "permanent": true
+    },
+    {
+      "source": "/by-proxy.html",
+      "destination": "/works/by-proxy/",
+      "permanent": true
+    },
+    {
+      "source": "/meet-eva-here-chatbot.html",
+      "destination": "/works/meet-eva-here/chatbot/",
+      "permanent": true
+    },
+    {
+      "source": "/meet-eva-here-diary.html",
+      "destination": "/works/meet-eva-here/diary/",
+      "permanent": true
+    },
+    {
+      "source": "/after-ophelia-ophelia-retold.html",
+      "destination": "/works/after-ophelia/ophelia-retold/",
+      "permanent": true
+    },
+    {
+      "source": "/after-ophelia-ophelia-reassembled.html",
+      "destination": "/works/after-ophelia/ophelia-reassembled/",
+      "permanent": true
+    },
+    {
+      "source": "/digital-art-catalog",
+      "destination": "/works/",
+      "permanent": true
+    },
+    {
+      "source": "/projects",
+      "destination": "/works/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/after-ophelia",
+      "destination": "/works/after-ophelia/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/meet-eva-here",
+      "destination": "/works/meet-eva-here/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/the-ties-that-bind",
+      "destination": "/works/the-ties-that-bind/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/love-is-love",
+      "destination": "/works/love-is-love/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/by-proxy",
+      "destination": "/works/by-proxy/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/vogue-singapore",
+      "destination": "/works/vogue-singapore/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/6529-meme-card",
+      "destination": "/works/6529-meme-card/",
+      "permanent": true
+    },
+    {
+      "source": "/nfts",
+      "destination": "/works/available/",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/available",
+      "destination": "/works/available/",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/foundation",
+      "destination": "/works/available/",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/manifold-contract",
+      "destination": "/works/available/",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/opensea",
+      "destination": "/works/available/",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/sold",
+      "destination": "/works/available/",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/superrare",
+      "destination": "/works/available/",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/suspended-soul",
+      "destination": "/works/available/",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/95h8fy3655a9lf9rr6pygpafddasjy",
+      "destination": "/works/whirlwind-of-the-waking-dream/",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/6gwmhj423z6h2nys2gz394sjeygjwn",
+      "destination": "/works/3d-single-works/#duality-of-eth-extrovert",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/6lnpe8mhg7rmzmk82arkpd449tfhj5",
+      "destination": "/works/3d-single-works/#in-suspension",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/c3fppsja2hpkldx25tsax2kmjalhkz",
+      "destination": "/works/3d-single-works/#duality-of-eth-introvert",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/everything-yet-nothing",
+      "destination": "/works/3d-single-works/#everything-yet-nothing",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/fhyxxbpcegn4shrbdmynh6k5cr9hdl",
+      "destination": "/works/3d-single-works/#beyond-the-surface",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/glow",
+      "destination": "/works/3d-single-works/#glow",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/i-am-not-confident",
+      "destination": "/works/3d-single-works/#i-am-not-confident",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/i-am-not-happy",
+      "destination": "/works/3d-single-works/#i-am-not-happy",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/i-am-not-zen",
+      "destination": "/works/3d-single-works/#i-am-not-zen",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/ice-and-fire",
+      "destination": "/works/3d-single-works/#ice-and-fire",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/kin-i",
+      "destination": "/works/3d-single-works/#kin-i",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/legend-of-the-white-snake",
+      "destination": "/works/3d-single-works/#the-legend-of-the-white-snake",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/lilium-in-pearls-i",
+      "destination": "/works/3d-single-works/#lilium-in-pearls-i",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/lilium-in-pearls-ii",
+      "destination": "/works/3d-single-works/#lilium-in-pearls-ii",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/lilium-in-pearls-iii",
+      "destination": "/works/3d-single-works/#lilium-in-pearls-iii",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/lunah-moon-i",
+      "destination": "/works/3d-single-works/#lunah-moon-i",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/lunah-moon-ii",
+      "destination": "/works/3d-single-works/#lunah-moon-ii",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/lunah-moon-iii",
+      "destination": "/works/3d-single-works/#lunah-moon-iii",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/n7r2ly4z7kmjzpslzzcy6mzpnjkgdb",
+      "destination": "/works/3d-single-works/#a-life-short-lived",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/natures-muse",
+      "destination": "/works/3d-single-works/#natures-muse",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/new-video",
+      "destination": "/works/3d-single-works/#goldfish",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/new-video-1",
+      "destination": "/works/3d-single-works/#beauty",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/new-video-2",
+      "destination": "/works/3d-single-works/#kin-ii",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/oceans-whisper",
+      "destination": "/works/3d-single-works/#oceans-whisper",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/panopticon",
+      "destination": "/works/3d-single-works/#panopticon",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/st6d52tkah5tyw589kyhl5gez7bj6l",
+      "destination": "/works/3d-single-works/#the-invisible-march-of-time-ii",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/stargazers-dream",
+      "destination": "/works/3d-single-works/#stargazers-dream",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/stellae-i",
+      "destination": "/works/3d-single-works/#stellae-i",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/stellae-ii",
+      "destination": "/works/3d-single-works/#stellae-ii",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/stellae-iii",
+      "destination": "/works/3d-single-works/#stellae-iii",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/suspense",
+      "destination": "/works/3d-single-works/#suspense",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/the-hug",
+      "destination": "/works/3d-single-works/#the-hug",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/the-illusion-of-connection-i",
+      "destination": "/works/3d-single-works/#the-illusion-of-connection-i",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/the-invisible-march-of-time-i",
+      "destination": "/works/3d-single-works/#the-invisible-march-of-time-i",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/the-kiss",
+      "destination": "/works/3d-single-works/#the-kiss",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/the-loneliness-of-an-orchid",
+      "destination": "/works/3d-single-works/#the-loneliness-of-an-orchid",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/the-mirror-world",
+      "destination": "/works/3d-single-works/#the-mirror-world",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/the-shimmering-veil-i",
+      "destination": "/works/3d-single-works/#the-shimmering-veil-i",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/the-shimmering-veil-ii",
+      "destination": "/works/3d-single-works/#the-shimmering-veil-ii",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/the-shimmering-veil-iii",
+      "destination": "/works/3d-single-works/#the-shimmering-veil-iii",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/uplift",
+      "destination": "/works/3d-single-works/#uplift",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/year-of-the-tiger",
+      "destination": "/works/3d-single-works/#year-of-the-tiger",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/year-of-the-tiger-2",
+      "destination": "/works/3d-single-works/#year-of-the-tiger-2",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/year-of-the-tiger-3",
+      "destination": "/works/3d-single-works/#year-of-the-tiger-3",
+      "permanent": true
+    },
+    {
+      "source": "/nfts/v/:slug*",
+      "destination": "/works/3d-single-works/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*).jpg",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*).jpeg",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*).png",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*).webp",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*).mp4",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/data/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
