@@ -1,6 +1,6 @@
 (function () {
-  const DATA_URL = '/assets/data/available.json';
-  const MERGED_URL = '/assets/data/available.merged.json';
+  const DATA_URL = 'assets/data/available.json';
+  const MERGED_URL = 'assets/data/available.merged.json';
   const CACHE_KEY = 'sw-available-merged-v3';
   const CACHE_TTL = 24 * 60 * 60 * 1000;
   const FALLBACK_COUNT_MAX_AGE = 92 * 24 * 60 * 60 * 1000;

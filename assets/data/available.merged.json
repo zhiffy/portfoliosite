@@ -7,7 +7,7 @@
       "title": "Whirlwind of the Waking Dream",
       "year": 2024,
       "medium": "3D generative video · 0:27 loop",
-      "image": "/assets/videos/whirlwind-cover.jpg",
+      "image": "assets/videos/whirlwind-cover.jpg",
       "parent_project": {
         "title": "Whirlwind of the Waking Dream",
         "url": "whirlwind-of-the-waking-dream.html"
@@ -37,7 +37,7 @@
       "title": "The Illusion of Connection I",
       "year": 2024,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/the-illusion-of-connection-i.jpg",
+      "image": "assets/one-of-ones/the-illusion-of-connection-i.jpg",
       "image_alt": "The Illusion of Connection I",
       "parent_project": {
         "title": "1/1 Art"
@@ -65,7 +65,7 @@
       "title": "The Mirror World",
       "year": 2024,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/the-mirror-world.jpg",
+      "image": "assets/one-of-ones/the-mirror-world.jpg",
       "image_alt": "The Mirror World",
       "parent_project": {
         "title": "1/1 Art"
@@ -93,7 +93,7 @@
       "title": "Panopticon",
       "year": 2024,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/panopticon.jpg",
+      "image": "assets/one-of-ones/panopticon.jpg",
       "image_alt": "Panopticon",
       "parent_project": {
         "title": "1/1 Art"
@@ -121,7 +121,7 @@
       "title": "Stargazer’s Dream",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/stargazers-dream.jpg",
+      "image": "assets/one-of-ones/stargazers-dream.jpg",
       "image_alt": "Stargazer’s Dream",
       "parent_project": {
         "title": "1/1 Art"
@@ -148,7 +148,7 @@
       "title": "Ocean's Whisper",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/oceans-whisper.jpg",
+      "image": "assets/one-of-ones/oceans-whisper.jpg",
       "image_alt": "Ocean's Whisper",
       "parent_project": {
         "title": "1/1 Art"
@@ -176,7 +176,7 @@
       "title": "Nature’s Muse",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/natures-muse.jpg",
+      "image": "assets/one-of-ones/natures-muse.jpg",
       "image_alt": "Nature’s Muse",
       "parent_project": {
         "title": "1/1 Art"
@@ -204,7 +204,7 @@
       "title": "Duality of ETH - Extrovert",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/duality-of-eth-extrovert.jpg",
+      "image": "assets/one-of-ones/duality-of-eth-extrovert.jpg",
       "image_alt": "Duality of ETH - Extrovert",
       "parent_project": {
         "title": "1/1 Art"
@@ -232,7 +232,7 @@
       "title": "Duality of ETH - Introvert",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/duality-of-eth-introvert.jpg",
+      "image": "assets/one-of-ones/duality-of-eth-introvert.jpg",
       "image_alt": "Duality of ETH - Introvert",
       "parent_project": {
         "title": "1/1 Art"
@@ -260,7 +260,7 @@
       "title": "The Invisible March of Time II",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/the-invisible-march-of-time-ii.jpg",
+      "image": "assets/one-of-ones/the-invisible-march-of-time-ii.jpg",
       "image_alt": "The Invisible March of Time II",
       "parent_project": {
         "title": "1/1 Art"
@@ -288,7 +288,7 @@
       "title": "The Invisible March of Time I",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/the-invisible-march-of-time-i.jpg",
+      "image": "assets/one-of-ones/the-invisible-march-of-time-i.jpg",
       "image_alt": "The Invisible March of Time I",
       "parent_project": {
         "title": "1/1 Art"
@@ -316,7 +316,7 @@
       "title": "In Suspension",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/in-suspension.jpg",
+      "image": "assets/one-of-ones/in-suspension.jpg",
       "image_alt": "In Suspension",
       "parent_project": {
         "title": "1/1 Art"
@@ -344,7 +344,7 @@
       "title": "Beyond The Surface",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/beyond-the-surface.jpg",
+      "image": "assets/one-of-ones/beyond-the-surface.jpg",
       "image_alt": "Beyond The Surface",
       "parent_project": {
         "title": "1/1 Art"
@@ -372,7 +372,7 @@
       "title": "A Life Short Lived",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/a-life-short-lived.jpg",
+      "image": "assets/one-of-ones/a-life-short-lived.jpg",
       "image_alt": "A Life Short Lived",
       "parent_project": {
         "title": "1/1 Art"
@@ -400,7 +400,7 @@
       "title": "Ice and Fire",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/ice-and-fire.jpg",
+      "image": "assets/one-of-ones/ice-and-fire.jpg",
       "image_alt": "Ice and Fire",
       "parent_project": {
         "title": "1/1 Art"
@@ -428,7 +428,7 @@
       "title": "The Shimmering Veil I",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/the-shimmering-veil-i.jpg",
+      "image": "assets/one-of-ones/the-shimmering-veil-i.jpg",
       "image_alt": "The Shimmering Veil I",
       "parent_project": {
         "title": "1/1 Art"
@@ -456,7 +456,7 @@
       "title": "The Shimmering Veil II",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/the-shimmering-veil-ii.jpg",
+      "image": "assets/one-of-ones/the-shimmering-veil-ii.jpg",
       "image_alt": "The Shimmering Veil II",
       "parent_project": {
         "title": "1/1 Art"
@@ -484,7 +484,7 @@
       "title": "The Shimmering Veil III",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/the-shimmering-veil-iii.jpg",
+      "image": "assets/one-of-ones/the-shimmering-veil-iii.jpg",
       "image_alt": "The Shimmering Veil III",
       "parent_project": {
         "title": "1/1 Art"
@@ -512,7 +512,7 @@
       "title": "Everything, Yet Nothing",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/everything-yet-nothing.jpg",
+      "image": "assets/one-of-ones/everything-yet-nothing.jpg",
       "image_alt": "Everything, Yet Nothing",
       "parent_project": {
         "title": "1/1 Art"
@@ -540,7 +540,7 @@
       "title": "The Loneliness of an Orchid",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/the-loneliness-of-an-orchid.jpg",
+      "image": "assets/one-of-ones/the-loneliness-of-an-orchid.jpg",
       "image_alt": "The Loneliness of an Orchid",
       "parent_project": {
         "title": "1/1 Art"
@@ -568,7 +568,7 @@
       "title": "The Legend Of The White Snake",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/the-legend-of-the-white-snake.jpg",
+      "image": "assets/one-of-ones/the-legend-of-the-white-snake.jpg",
       "image_alt": "The Legend Of The White Snake",
       "parent_project": {
         "title": "1/1 Art"
@@ -596,7 +596,7 @@
       "title": "Year of the Tiger",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/year-of-the-tiger.jpg",
+      "image": "assets/one-of-ones/year-of-the-tiger.jpg",
       "image_alt": "Year of the Tiger",
       "parent_project": {
         "title": "1/1 Art"
@@ -624,7 +624,7 @@
       "title": "Year of the Tiger 3",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/year-of-the-tiger-3.jpg",
+      "image": "assets/one-of-ones/year-of-the-tiger-3.jpg",
       "image_alt": "Year of the Tiger 3",
       "parent_project": {
         "title": "1/1 Art"
@@ -652,7 +652,7 @@
       "title": "Year of the Tiger 2",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/year-of-the-tiger-2.jpg",
+      "image": "assets/one-of-ones/year-of-the-tiger-2.jpg",
       "image_alt": "Year of the Tiger 2",
       "parent_project": {
         "title": "1/1 Art"
@@ -680,7 +680,7 @@
       "title": "Goldfish",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/goldfish.jpg",
+      "image": "assets/one-of-ones/goldfish.jpg",
       "image_alt": "Goldfish",
       "parent_project": {
         "title": "1/1 Art"
@@ -708,7 +708,7 @@
       "title": "The Hug",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/the-hug.jpg",
+      "image": "assets/one-of-ones/the-hug.jpg",
       "image_alt": "The Hug",
       "parent_project": {
         "title": "1/1 Art"
@@ -736,7 +736,7 @@
       "title": "I Am (Not) Happy",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/i-am-not-happy.jpg",
+      "image": "assets/one-of-ones/i-am-not-happy.jpg",
       "image_alt": "I Am (Not) Happy",
       "parent_project": {
         "title": "1/1 Art"
@@ -764,7 +764,7 @@
       "title": "I Am (Not) Confident",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/i-am-not-confident.jpg",
+      "image": "assets/one-of-ones/i-am-not-confident.jpg",
       "image_alt": "I Am (Not) Confident",
       "parent_project": {
         "title": "1/1 Art"
@@ -792,7 +792,7 @@
       "title": "I Am (Not) Zen",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/i-am-not-zen.jpg",
+      "image": "assets/one-of-ones/i-am-not-zen.jpg",
       "image_alt": "I Am (Not) Zen",
       "parent_project": {
         "title": "1/1 Art"
@@ -820,7 +820,7 @@
       "title": "The Kiss",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/the-kiss.jpg",
+      "image": "assets/one-of-ones/the-kiss.jpg",
       "image_alt": "The Kiss",
       "parent_project": {
         "title": "1/1 Art"
@@ -848,7 +848,7 @@
       "title": "Uplift",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/uplift.jpg",
+      "image": "assets/one-of-ones/uplift.jpg",
       "image_alt": "Uplift",
       "parent_project": {
         "title": "1/1 Art"
@@ -876,7 +876,7 @@
       "title": "Beauty",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/beauty.jpg",
+      "image": "assets/one-of-ones/beauty.jpg",
       "image_alt": "Beauty",
       "parent_project": {
         "title": "1/1 Art"
@@ -904,7 +904,7 @@
       "title": "Glow",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/glow.jpg",
+      "image": "assets/one-of-ones/glow.jpg",
       "image_alt": "Glow",
       "parent_project": {
         "title": "1/1 Art"
@@ -932,7 +932,7 @@
       "title": "Suspense",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/suspense.jpg",
+      "image": "assets/one-of-ones/suspense.jpg",
       "image_alt": "Suspense",
       "parent_project": {
         "title": "1/1 Art"
@@ -960,7 +960,7 @@
       "title": "Stellae III",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/stellae-iii.jpg",
+      "image": "assets/one-of-ones/stellae-iii.jpg",
       "image_alt": "Stellae III",
       "parent_project": {
         "title": "1/1 Art"
@@ -988,7 +988,7 @@
       "title": "Stellae II",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/stellae-ii.jpg",
+      "image": "assets/one-of-ones/stellae-ii.jpg",
       "image_alt": "Stellae II",
       "parent_project": {
         "title": "1/1 Art"
@@ -1016,7 +1016,7 @@
       "title": "Stellae I",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/stellae-i.jpg",
+      "image": "assets/one-of-ones/stellae-i.jpg",
       "image_alt": "Stellae I",
       "parent_project": {
         "title": "1/1 Art"
@@ -1044,7 +1044,7 @@
       "title": "Kin I",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/kin-i.jpg",
+      "image": "assets/one-of-ones/kin-i.jpg",
       "image_alt": "Kin I",
       "parent_project": {
         "title": "1/1 Art"
@@ -1072,7 +1072,7 @@
       "title": "Kin II",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/kin-ii.jpg",
+      "image": "assets/one-of-ones/kin-ii.jpg",
       "image_alt": "Kin II",
       "parent_project": {
         "title": "1/1 Art"
@@ -1100,7 +1100,7 @@
       "title": "Lunah Moon III",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/lunah-moon-iii.jpg",
+      "image": "assets/one-of-ones/lunah-moon-iii.jpg",
       "image_alt": "Lunah Moon III",
       "parent_project": {
         "title": "1/1 Art"
@@ -1128,7 +1128,7 @@
       "title": "Lunah Moon II",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/lunah-moon-ii.jpg",
+      "image": "assets/one-of-ones/lunah-moon-ii.jpg",
       "image_alt": "Lunah Moon II",
       "parent_project": {
         "title": "1/1 Art"
@@ -1156,7 +1156,7 @@
       "title": "Lunah Moon I",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/lunah-moon-i.jpg",
+      "image": "assets/one-of-ones/lunah-moon-i.jpg",
       "image_alt": "Lunah Moon I",
       "parent_project": {
         "title": "1/1 Art"
@@ -1184,7 +1184,7 @@
       "title": "Lilium in Pearls III",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/lilium-in-pearls-iii.jpg",
+      "image": "assets/one-of-ones/lilium-in-pearls-iii.jpg",
       "image_alt": "Lilium in Pearls III",
       "parent_project": {
         "title": "1/1 Art"
@@ -1212,7 +1212,7 @@
       "title": "Lilium in Pearls II",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/lilium-in-pearls-ii.jpg",
+      "image": "assets/one-of-ones/lilium-in-pearls-ii.jpg",
       "image_alt": "Lilium in Pearls II",
       "parent_project": {
         "title": "1/1 Art"
@@ -1240,7 +1240,7 @@
       "title": "Lilium in Pearls I",
       "year": 2022,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/lilium-in-pearls-i.jpg",
+      "image": "assets/one-of-ones/lilium-in-pearls-i.jpg",
       "image_alt": "Lilium in Pearls I",
       "parent_project": {
         "title": "1/1 Art"
@@ -1268,7 +1268,7 @@
       "title": "By Proxy",
       "year": 2022,
       "medium": "60 unique works · CGI and digital photography",
-      "image": "/assets/by-proxy/01-1920px-web-len-4101.jpg",
+      "image": "assets/by-proxy/01-1920px-web-len-4101.jpg",
       "parent_project": {
         "title": "By Proxy",
         "url": "by-proxy.html"
@@ -1307,7 +1307,7 @@
       "title": "Love is Love",
       "year": 2021,
       "medium": "500 unique generative works · digital",
-      "image": "/assets/love-is-love/01-love-is-love-combi.gif",
+      "image": "assets/love-is-love/01-love-is-love-combi.gif",
       "parent_project": {
         "title": "Love is Love",
         "url": "love-is-love.html"
@@ -1344,7 +1344,7 @@
       "title": "The Weight of the World",
       "year": 2023,
       "medium": "Dynamic digital artwork · blockchain-linked edition",
-      "image": "/assets/the-ties-that-bind/17-weightoftheworld-1.jpg",
+      "image": "assets/the-ties-that-bind/17-weightoftheworld-1.jpg",
       "parent_project": {
         "title": "The Ties That Bind",
         "url": "the-ties-that-bind.html"
@@ -1375,7 +1375,7 @@
       "title": "Faces of Freedom",
       "year": 2023,
       "medium": "3D digital artwork · ERC-1155 meme card",
-      "image": "/assets/6529-meme-card/02-freedom-to-transact-still.jpg",
+      "image": "assets/6529-meme-card/02-freedom-to-transact-still.jpg",
       "parent_project": {
         "title": "6529 Meme Card",
         "url": "6529-meme-card.html"

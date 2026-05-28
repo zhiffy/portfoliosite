@@ -1,5 +1,5 @@
 (function () {
-  const DATA_URL = '/assets/data/3d-single-works.json';
+  const DATA_URL = 'assets/data/3d-single-works.json';
   const els = {
     filters: document.querySelector('[data-single-work-filters]'),
     grid: document.querySelector('[data-single-work-groups]'),

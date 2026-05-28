@@ -1,18 +1,18 @@
 (function () {
   // ============================================================
   // By Proxy — Series catalog
-  // Populates the #available grid from /assets/data/by-proxy.json
+  // Populates the #available grid from assets/data/by-proxy.json
   // with status filters and a per-work detail modal. Mirrors the
   // 3d-single-works.js pattern.
   // ============================================================
 
   const grid = document.querySelector('[data-series-src], [data-bp-series-src]');
   if (!grid) return;
-  const DATA_URL = grid.getAttribute('data-series-src') || grid.getAttribute('data-bp-series-src') || '/assets/data/by-proxy.json';
+  const DATA_URL = grid.getAttribute('data-series-src') || grid.getAttribute('data-bp-series-src') || 'assets/data/by-proxy.json';
   const filterHost = document.querySelector('[data-series-filterbar]');
   const countHost = document.querySelector('[data-series-count]');
 
-  const ASSET_BASE = '/assets/by-proxy/';
+  const ASSET_BASE = 'assets/by-proxy/';
 
   const state = {
     items: [],

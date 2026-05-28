@@ -161,7 +161,7 @@
           grid.innerHTML = items.map((item, index) => {
             const image = item.image.startsWith('/') || item.image.startsWith('http')
               ? item.image
-              : `/assets/by-proxy/${item.image}`;
+              : `assets/by-proxy/${item.image}`;
             const url = item.marketplace_url || 'https://opensea.io/collection/by-proxy-by-shavonne-wong-and-lenne-chai';
             const num = String(index + 1).padStart(2, '0');
             return `
