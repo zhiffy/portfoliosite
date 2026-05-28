@@ -10,7 +10,7 @@
       "image": "/assets/videos/whirlwind-cover.jpg",
       "parent_project": {
         "title": "Whirlwind of the Waking Dream",
-        "url": "/works/whirlwind-of-the-waking-dream/"
+        "url": "whirlwind-of-the-waking-dream.html"
       },
       "price_band": "10k_plus",
       "price_display": null,
@@ -1271,18 +1271,18 @@
       "image": "/assets/by-proxy/01-1920px-web-len-4101.jpg",
       "parent_project": {
         "title": "By Proxy",
-        "url": "/works/by-proxy/"
+        "url": "by-proxy.html"
       },
       "price_band": "under_2k",
       "price_display": null,
       "series_total": 60,
       "series_available_fallback": 1,
       "fallback_updated": "2026-05-27",
-      "series_section_url": "/works/by-proxy/#available",
+      "series_section_url": "by-proxy.html#available",
       "primary_action": {
         "type": "marketplace",
         "label": "Browse the series",
-        "url": "/works/by-proxy/#available"
+        "url": "by-proxy.html#available"
       },
       "verification": {
         "label": "Verify contract on Etherscan",
@@ -1310,17 +1310,17 @@
       "image": "/assets/love-is-love/01-love-is-love-combi.gif",
       "parent_project": {
         "title": "Love is Love",
-        "url": "/works/love-is-love/"
+        "url": "love-is-love.html"
       },
       "price_band": "under_2k",
       "price_display": null,
       "series_total": 500,
       "series_available_fallback": null,
-      "series_section_url": "/works/love-is-love/#available",
+      "series_section_url": "love-is-love.html#available",
       "primary_action": {
         "type": "marketplace",
         "label": "Browse the series",
-        "url": "/works/love-is-love/#available"
+        "url": "love-is-love.html#available"
       },
       "verification": {
         "label": "Verify contract on Etherscan",
@@ -1347,7 +1347,7 @@
       "image": "/assets/the-ties-that-bind/17-weightoftheworld-1.jpg",
       "parent_project": {
         "title": "The Ties That Bind",
-        "url": "/works/the-ties-that-bind/"
+        "url": "the-ties-that-bind.html"
       },
       "price_band": "2k_10k",
       "price_display": null,
@@ -1378,7 +1378,7 @@
       "image": "/assets/6529-meme-card/02-freedom-to-transact-still.jpg",
       "parent_project": {
         "title": "6529 Meme Card",
-        "url": "/works/6529-meme-card/"
+        "url": "6529-meme-card.html"
       },
       "price_band": "under_2k",
       "price_display": null,

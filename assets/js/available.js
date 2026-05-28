@@ -453,7 +453,7 @@
       const sold = isSold(item);
       const url = item.edition_type === 'series'
         ? item.series_section_url
-        : (item.primary_action?.url || item.parent_project?.url || '/works/available/');
+        : (item.primary_action?.url || item.parent_project?.url || 'works-available.html');
       const offer = {
         '@type': 'Offer',
         availability: sold ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
