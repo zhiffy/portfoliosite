@@ -1,27 +1,26 @@
 <!doctype html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>By Proxy - Shavonne Wong</title>
-  <meta name="description" content="A 60-work CGI and photography series by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images." />
-  <link rel="canonical" href="https://shavonnewong.art/works/by-proxy/" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://shavonnewong.art/works/by-proxy/" />
-  <meta property="og:title" content="By Proxy - Shavonne Wong" />
-  <meta property="og:description" content="A 60-work CGI and photography series by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images." />
-  <meta property="og:image" content="https://shavonnewong.art/assets/by-proxy/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>By Proxy. Shavonne Wong</title>
+  <meta name="description" content="By Proxy, a 60-work CGI and photography series by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images.">
+  <meta name="author" content="Shavonne Wong">
+  <link rel="canonical" href="https://shavonnewong.art/works/by-proxy/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="By Proxy. Shavonne Wong">
+  <meta property="og:description" content="A 60-work CGI and photography series by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images.">
+  <meta property="og:image" content="https://shavonnewong.art/assets/by-proxy/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/scroll-narrative.css?v=20260527-site-ripple-normal">
-  <link rel="stylesheet" href="/scroll-pages.css?v=20260527-works-catalog">
+  <link rel="stylesheet" href="scroll-narrative.css?v=20260531-sb2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CreativeWorkSeries",
+    "@type": "CreativeWork",
     "name": "By Proxy",
     "creator": [
       { "@type": "Person", "name": "Shavonne Wong", "sameAs": "https://en.wikipedia.org/wiki/Shavonne_Wong" },
@@ -29,182 +28,1232 @@
     ],
     "dateCreated": "2022",
     "datePublished": "2022",
-    "artMedium": "CGI, digital photography, 3D virtual modeling, NFT series",
+    "artMedium": "CGI and photography",
     "url": "https://shavonnewong.art/works/by-proxy/",
     "image": "https://shavonnewong.art/assets/by-proxy/og-image.jpg",
-    "description": "A 60-work CGI and photography series by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images.",
-    "hasPart": [
-      { "@type": "VisualArtwork", "name": "Listen to the ocean crying" },
-      { "@type": "VisualArtwork", "name": "Feeling Small" },
-      { "@type": "VisualArtwork", "name": "Cassette Tapes" },
-      { "@type": "VisualArtwork", "name": "Mama Shop" },
-      { "@type": "VisualArtwork", "name": "Daydreams" },
-      { "@type": "VisualArtwork", "name": "Through the looking glass" },
-      { "@type": "VisualArtwork", "name": "When the crows came II" },
-      { "@type": "VisualArtwork", "name": "Vitamin D" }
+    "description": "By Proxy, a series of 60 unique CGI and photography works by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images.",
+    "isPartOf": { "@type": "CollectionPage", "name": "Works", "url": "https://shavonnewong.art/works/" }
+  }
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#18192B',
+            fog: '#595E78',
+            mist: '#9094AB',
+            iris: '#545C9E',
+            hair: 'rgba(24,25,43,0.10)',
+            hairStrong: 'rgba(24,25,43,0.22)'
+          },
+          fontFamily: {
+            sans: ['Mulish', 'Helvetica Neue', 'Arial', 'sans-serif']
+          },
+          maxWidth: {
+            page: '1320px',
+            text: '64ch'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Mulish', 'Helvetica Neue', Arial, sans-serif; color: #18192B; background: #FFFFFF; }
+    /* The page sits beneath the site nav (fixed at top, 56px tall). */
+    main { padding-top: 56px; }
+    .bp2-italic { font-style: italic; font-weight: 300; }
+    .bp2-eyebrow {
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #595E78;
+    }
+    .bp2-rule { height: 1px; background: rgba(24,25,43,0.10); }
+
+    /* Hero */
+    .bp2-hero { padding: clamp(80px,12vh,140px) clamp(24px,5vw,80px) clamp(48px,7vh,96px); }
+    .bp2-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px,5vw,72px); align-items: end; max-width: var(--site-max); margin: 0 auto; }
+    .bp2-hero-title { font-size: clamp(64px, 10vw, 156px); line-height: 0.9; letter-spacing: -0.025em; margin: 0; font-weight: 300; }
+    .bp2-hero-title em { font-style: italic; color: #545C9E; font-weight: 300; }
+    .bp2-hero-tag {
+      font-style: italic; font-weight: 300;
+      font-size: clamp(20px, 2.2vw, 28px);
+      line-height: 1.35; color: #18192B; margin: 28px 0 0; max-width: 30ch;
+    }
+    .bp2-hero-meta {
+      margin: 28px 0 0;
+      font-size: 12px; color: #595E78;
+      letter-spacing: 0.02em;
+    }
+    .bp2-hero-meta strong { font-weight: 500; color: #18192B; }
+    .bp2-hero-desc {
+      margin: 28px 0 0;
+      font-size: 15px; line-height: 1.65; color: #18192B; max-width: 56ch;
+    }
+    .bp2-hero-actions {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin: 28px 0 0;
+    }
+    .bp2-action-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 40px; padding: 10px 14px;
+      border: 1px solid rgba(24,25,43,0.22);
+      color: #18192B; text-decoration: none;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .bp2-action-link:hover, .bp2-action-link:focus-visible {
+      background: #18192B; color: #FFFFFF; border-color: #18192B; outline: 0;
+    }
+    .bp2-hero-cover {
+      position: relative;
+      aspect-ratio: 2/3;
+      max-height: 80vh;
+      background: #EDEDF4;
+      overflow: hidden;
+    }
+    .bp2-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .bp2-hero-cover figcaption {
+      position: absolute; left: 16px; bottom: 16px;
+      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: #FFFFFF; background: rgba(24,25,43,0.7); padding: 6px 10px;
+    }
+
+    /* Sticky project sub-nav. Sits BELOW the global site nav. */
+    .bp2-stick {
+      position: fixed; top: 56px; left: 0; right: 0; z-index: 60;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(24,25,43,0.10);
+      transform: translateY(-110%);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .bp2-stick.is-visible { transform: translateY(0); }
+    .bp2-stick-inner {
+      max-width: var(--site-max); margin: 0 auto;
+      display: grid; grid-template-columns: auto 1fr auto;
+      align-items: center; gap: 16px;
+      padding: 12px clamp(24px,5vw,80px);
+    }
+    .bp2-stick-title { font-size: 13px; font-weight: 500; letter-spacing: 0; color: #18192B; }
+    .bp2-stick-title em { font-style: italic; font-weight: 300; color: #545C9E; }
+    .bp2-stick-current {
+      font-size: 12px; color: #595E78;
+      font-style: italic;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      transition: opacity 0.2s ease;
+    }
+    .bp2-stick-current-prefix {
+      font-style: normal;
+      color: #9094AB;
+      margin-right: 8px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 10px;
+    }
+    .bp2-stick-back {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #18192B;
+      border: 1px solid rgba(24,25,43,0.22); padding: 8px 14px;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      cursor: pointer;
+    }
+    .bp2-stick-back:hover, .bp2-stick-back:focus-visible {
+      background: #18192B; color: #FFFFFF; border-color: #18192B; outline: 0;
+    }
+
+    /* Description / index intro */
+    .bp2-intro {
+      max-width: var(--site-max); margin: 0 auto;
+      padding: 0 clamp(24px,5vw,80px);
+    }
+    .bp2-intro-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: clamp(24px, 5vw, 64px);
+      padding: clamp(40px,6vh,72px) 0;
+      border-top: 1px solid rgba(24,25,43,0.10);
+    }
+    .bp2-intro-body p { font-size: 15px; line-height: 1.65; color: #18192B; margin: 0; max-width: 60ch; }
+    .bp2-intro-body p + p { margin-top: 14px; }
+
+    /* Story and source gallery */
+    .bp2-source {
+      max-width: var(--site-max); margin: 0 auto;
+      padding: clamp(24px,4vh,48px) clamp(24px,5vw,80px) clamp(56px,8vh,112px);
+    }
+    .bp2-source-lead {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: end;
+      padding: clamp(40px,6vh,72px) 0;
+      border-top: 1px solid rgba(24,25,43,0.10);
+    }
+    .bp2-source-title {
+      font-size: clamp(34px, 4vw, 64px);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-weight: 300;
+      margin: 12px 0 0;
+    }
+    .bp2-source-title em { color: #545C9E; font-style: italic; font-weight: 300; }
+    .bp2-source-summary {
+      margin: 20px 0 0;
+      max-width: 58ch;
+      color: #18192B;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .bp2-source-meta {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0 0;
+      max-width: 58ch;
+    }
+    .bp2-source-meta p {
+      margin: 0;
+      color: #595E78;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .bp2-source-meta strong { color: #18192B; font-weight: 500; }
+    .bp2-source-meta a { color: #545C9E; text-decoration: underline; text-underline-offset: 3px; }
+    .bp2-source-media {
+      margin: 0;
+      background: #EDEDF4;
+      overflow: hidden;
+    }
+    .bp2-source-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .bp2-story {
+      display: grid;
+      grid-template-columns: 200px minmax(0, 1fr);
+      gap: clamp(24px, 5vw, 64px);
+      padding: clamp(44px,7vh,84px) 0;
+      border-top: 1px solid rgba(24,25,43,0.10);
+    }
+    .bp2-story-copy {
+      max-width: 76ch;
+      columns: 2 320px;
+      column-gap: clamp(28px, 4vw, 54px);
+    }
+    .bp2-story-copy p {
+      break-inside: avoid;
+      margin: 0 0 16px;
+      color: #18192B;
+      font-size: 15px;
+      line-height: 1.72;
+    }
+    .bp2-story-copy a { color: #545C9E; text-decoration: underline; text-underline-offset: 3px; }
+    .bp2-source-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(8px, 1.4vw, 18px);
+      padding-top: clamp(16px,3vh,32px);
+    }
+    .bp2-source-gallery figure {
+      margin: 0;
+      background: #EDEDF4;
+      overflow: hidden;
+    }
+    .bp2-source-gallery img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+    .bp2-source-gallery figure:nth-child(4),
+    .bp2-source-gallery figure:nth-child(9) {
+      grid-column: span 2;
+    }
+
+    /* Contact sheet */
+    .bp2-index {
+      max-width: var(--site-max); margin: 0 auto;
+      padding: clamp(40px,6vh,80px) clamp(24px,5vw,80px) clamp(56px,8vh,112px);
+    }
+    .bp2-index-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 16px;
+      margin-bottom: clamp(20px, 3vh, 32px);
+      flex-wrap: wrap;
+    }
+    .bp2-index-title { font-style: italic; font-weight: 300; font-size: clamp(22px, 2.4vw, 30px); margin: 0; }
+    .bp2-index-help { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9094AB; }
+    .bp2-sheet {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(0, 1fr));
+      gap: 4px;
+    }
+    .bp2-cell {
+      position: relative;
+      aspect-ratio: 3/4;
+      background: #EDEDF4;
+      overflow: hidden;
+      transition: filter 0.2s ease, transform 0.2s ease;
+    }
+    .bp2-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .bp2-cell-overlay {
+      position: absolute; inset: 0;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 4px;
+      padding: 6px 8px;
+      background: linear-gradient(180deg, rgba(24,25,43,0) 45%, rgba(24,25,43,0.78) 100%);
+      color: #FFFFFF;
+      opacity: 0; transition: opacity 0.2s ease;
+      font-size: 10px; letter-spacing: 0.06em;
+    }
+    .bp2-cell:hover .bp2-cell-overlay,
+    .bp2-cell:focus-visible .bp2-cell-overlay { opacity: 1; }
+    .bp2-cell:focus-visible { outline: 2px solid #545C9E; outline-offset: 2px; }
+    .bp2-cell-num { font-feature-settings: "tnum"; opacity: 0.8; }
+    .bp2-cell-title { flex: 1; padding: 0 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+    .bp2-cell-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; align-self: flex-end; margin-bottom: 2px; }
+    .bp2-cell-dot--available { background: #2E7D5B; }
+    .bp2-cell-dot--sold { background: rgba(255,255,255,0.55); }
+
+    /* Featured sequence */
+    .bp2-seq {
+      display: grid;
+      gap: clamp(80px, 12vh, 160px);
+      padding: clamp(40px,6vh,80px) clamp(24px,5vw,80px) clamp(80px,12vh,140px);
+      max-width: var(--site-max); margin: 0 auto;
+    }
+    .bp2-work { scroll-margin-top: 80px; display: grid; gap: clamp(24px, 3vh, 40px); }
+    .bp2-work-full { grid-template-columns: 1fr; justify-items: center; }
+    .bp2-work-full .bp2-cap { justify-self: start; }
+    .bp2-work-cap-above .bp2-cap { order: -1; justify-self: start; }
+    .bp2-work-half {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      align-items: start;
+      gap: clamp(32px, 5vw, 72px);
+    }
+    .bp2-work-half-reverse {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    }
+    .bp2-work-half-reverse .bp2-cap { order: -1; }
+    .bp2-work-half .bp2-cap { padding-top: clamp(8px, 3vh, 24px); }
+
+    /* Figure base. Image renders at natural aspect ratio, never cropped. */
+    .bp2-fig { margin: 0; display: block; text-align: center; }
+    .bp2-fig img {
+      display: inline-block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 92vh;
+    }
+    /* Full-bleed: image centered in column at natural ratio,
+       capped by column width and 92vh so portraits do not dominate. */
+    .bp2-fig-full { width: 100%; }
+    /* Half-width: image fills the column width unless taller than 92vh. */
+    .bp2-fig-half img { max-height: 88vh; }
+    /* Diptych: paired columns, each image at natural ratio capped at 78vh. */
+    .bp2-diptych {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(8px, 1.5vw, 16px);
+      align-items: start;
+    }
+    .bp2-diptych .bp2-fig img { max-height: 78vh; }
+
+    .bp2-cap { max-width: 52ch; }
+    .bp2-cap-num { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #9094AB; margin-bottom: 14px; font-feature-settings: "tnum"; }
+    .bp2-cap-title { font-style: italic; font-weight: 300; font-size: clamp(22px, 2.6vw, 32px); margin: 0; line-height: 1.15; letter-spacing: -0.01em; }
+    .bp2-cap-body { font-size: 15px; line-height: 1.6; color: #18192B; margin: 14px 0 0; }
+    .bp2-badges { margin-top: 18px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .bp2-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border: 1px solid rgba(24,25,43,0.22); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #18192B; }
+    .bp2-badge::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #595E78; }
+    .bp2-badge:nth-of-type(2)::before { background: #545C9E; }
+
+    /* Related */
+    .bp2-related {
+      max-width: var(--site-max); margin: 0 auto;
+      padding: clamp(56px,8vh,112px) clamp(24px,5vw,80px) clamp(56px,8vh,96px);
+      border-top: 1px solid rgba(24,25,43,0.10);
+    }
+    .bp2-related-head {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+      margin-bottom: clamp(28px, 4vh, 44px);
+    }
+    .bp2-related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 36px); }
+    .bp2-related-card { display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: inherit; }
+    .bp2-related-fig { aspect-ratio: 4/3; overflow: hidden; background: #EDEDF4; }
+    .bp2-related-fig img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+    .bp2-related-card:hover .bp2-related-fig img { transform: scale(1.025); }
+    .bp2-related-card h3 { font-size: 16px; font-weight: 500; margin: 0; }
+    .bp2-related-card:hover h3 { color: #545C9E; }
+    .bp2-related-card p { font-size: 12px; color: #595E78; margin: 0; }
+
+    /* Colophon */
+    .bp2-colo {
+      max-width: var(--site-max); margin: 0 auto;
+      padding: clamp(40px,6vh,72px) clamp(24px,5vw,80px) clamp(80px,12vh,140px);
+      border-top: 1px solid rgba(24,25,43,0.10);
+    }
+    .bp2-colo-grid { display: grid; grid-template-columns: 200px 1fr; gap: clamp(24px, 5vw, 64px); }
+    .bp2-colo-list { font-size: 13px; line-height: 1.8; color: #18192B; max-width: 70ch; }
+    .bp2-colo-list dt { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9094AB; margin-top: 8px; }
+    .bp2-colo-list dt:first-child { margin-top: 0; }
+    .bp2-colo-list dd { margin: 0 0 14px; }
+    .bp2-colo-list a { color: #545C9E; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .bp2-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .bp2-stick-current { display: none; }
+      .bp2-intro-grid, .bp2-colo-grid, .bp2-source-lead, .bp2-story { grid-template-columns: 1fr; gap: 16px; }
+      .bp2-story-copy { columns: 1; }
+      .bp2-source-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .bp2-source-gallery figure:nth-child(4),
+      .bp2-source-gallery figure:nth-child(9) { grid-column: span 1; }
+      .bp2-sheet { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; }
+      .bp2-work-half, .bp2-work-half-reverse { grid-template-columns: 1fr; }
+      .bp2-related-grid { grid-template-columns: 1fr; }
+      .bp2-seq { gap: 72px; }
+    }
+    @media (max-width: 540px) {
+      .bp2-sheet { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .bp2-source-gallery { grid-template-columns: 1fr; }
+      .bp2-source-gallery img { min-height: 220px; }
+      .bp2-stick-back { padding: 7px 10px; font-size: 10px; letter-spacing: 0.12em; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shavonnewong.art/" },
+      { "@type": "ListItem", "position": 2, "name": "Works", "item": "https://shavonnewong.art/works/" },
+      { "@type": "ListItem", "position": 3, "name": "By Proxy", "item": "https://shavonnewong.art/works/by-proxy/" }
     ]
   }
   </script>
 </head>
-<body class="sn-page-body">
-  <a class="sn-skip-link" href="#main-content">Skip to content</a>
-<header class="sn-nav" data-page-nav>
-    <a href="/index.html#hero" class="sn-mark"><img class="sn-mark-logo" src="/assets/brand/wordmark-slate.png" alt="Shavonne Wong" width="120" height="42"></a>
+<body>
+  <a class="sn-skip-link" href="#main">Skip to content</a>
+
+  <header class="sn-nav" data-page-nav>
+    <a href="index.html#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
-      <a href="/index.html#hero" data-i18n="nav.home">Home</a>
-      <a href="/about.html" data-i18n="nav.about">About</a>
-      <a href="/works/" class="is-active" data-i18n="nav.works">Works</a>
-      <a href="/writing.html" data-i18n="nav.writing">Writing</a>
-      <a href="/press.html" data-i18n="nav.press">Press</a>
-      <a href="/index.html#contact" data-i18n="nav.contact">Contact</a>
+      <a href="index.html#hero">Home</a>
+      <a href="about.html">About</a>
+      <a href="works.html" class="is-active">Works</a>
+      <a href="writing.html">Writing</a>
+      <a href="press.html">Press</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
-    <div class="sn-meta-right"><span>By Proxy</span><span data-i18n="page.projectPage">Project page</span></div>
+    <div class="sn-meta-right"><span>By Proxy</span><span>Project page</span></div>
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
   </header>
 
-  <nav class="sp-subnav" aria-label="Page sections">
-    <a href="#overview">Overview</a>
-    <a href="#work">Works</a>
-    <a href="#available">Available</a>
-    <a href="#process">Process</a>
-    <a href="#statement">Statement</a>
-    <a href="#supporting-texts">Reading</a>
-    <a href="#exhibitions">Exhibitions</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <main id="main-content" class="sp-main sp-project-main sp-by-proxy-page">
-    <section class="sp-project-hero" aria-label="By Proxy overview">
-      <div class="sp-project-hero-copy">
-        <div class="sp-kicker">CGI and photography series &middot; 2022</div>
-        <h1 class="sp-title">By <em>Proxy.</em></h1>
-        <p class="sp-intro">A 60-piece collaborative series by Shavonne Wong and Lenne Chai, dropped on Quantum Art in April 2022.</p>
-        <p class="sp-project-line">Can memories, just like images, be manipulated?</p>
-        <div class="sp-project-actions"><a href="#work" class="sn-section-link">Featured works &rarr;</a><a href="#available" class="sn-section-link">Complete series &rarr;</a><a href="https://opensea.io/collection/by-proxy-by-shavonne-wong-and-lenne-chai" class="sn-section-link">OpenSea collection &rarr;</a><a href="/works/" class="sn-section-link">Back to works</a></div>
+  <!-- Sticky nav. Vanilla JS toggles .is-visible after scrolling past hero,
+       and updates the current-work label via IntersectionObserver. -->
+  <div class="bp2-stick" data-stick aria-hidden="true">
+    <div class="bp2-stick-inner">
+      <div class="bp2-stick-title">By <em>Proxy.</em></div>
+      <div class="bp2-stick-current" data-stick-current>
+        <span class="bp2-stick-current-prefix">In view</span><span data-stick-current-label>Listen to the ocean crying</span>
       </div>
-      <figure class="sp-project-hero-media is-media-native">
-        <img src="/assets/by-proxy/by-proxy-617-listen-to-the-ocean-crying.jpg" alt="By Proxy - Listen to the ocean crying artwork still with a virtual adolescent figure" />
-        <figcaption>Listen to the ocean crying, By Proxy, 2022</figcaption>
-      </figure>
-    </section>
-
-    <section class="sp-section sp-project-grid" id="overview">
-      <div><h2 class="sp-kicker">Overview</h2></div>
-      <div class="sp-text-stack">
-        <p class="sp-copy">Created with photographer and director Lenne Chai, By Proxy follows an imaginary young girl's transition from girlhood to adolescence. The central figure is digitally sculpted as an amalgamation of the artists' younger selves and their shared upbringing in Singapore.</p>
-        <p class="sp-copy">The series blends Wong's 3D virtual modeling and NFT practice with Chai's evocative photographic language. Together, they built a body of images that deliberately blurs what was captured in-camera, what was constructed in CGI, and what was remembered into being.</p>
-      </div>
-    </section>
-
-    <section class="sp-section sp-project-grid" id="work">
-      <div><h2 class="sp-kicker">Featured works</h2></div>
-      <div class="sp-text-stack">
-        <article class="sp-plate" id="listen-to-the-ocean-crying">
-          <figure class="sp-plate-media"><img src="/assets/by-proxy/by-proxy-617-listen-to-the-ocean-crying.jpg" alt="By Proxy Listen to the ocean crying artwork still"></figure>
-          <div class="sp-plate-caption"><div class="sp-plate-num">03.</div><h3 class="sp-plate-title">Listen to the ocean crying</h3><div class="sp-plate-meta"><span class="sp-plate-year">2022</span><span class="sp-plate-medium">CGI and digital photography &middot; unique 1/1</span></div><div class="sp-plate-status">Unique &middot; sold</div><p class="sp-plate-body">Listen to the ocean crying sets the series at the edge of private feeling and open landscape. The title gives the scene an emotional weather rather than a literal narrative, letting the figure become a stand-in for how adolescent memory gathers sound, atmosphere, and distance. It works as a quiet threshold in By Proxy: intimate, cinematic, and never fully resolved.</p><div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20By%20Proxy%20Listen%20to%20the%20ocean%20crying">studio@shavonnewong.art</a></p><p class="sp-plate-market">Marketplace: <a href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320002">View on OpenSea &rarr;</a> &middot; <a href="https://etherscan.io/token/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8">Verify on Etherscan &rarr;</a> &middot; Chain: Ethereum</p></div></div>
-        </article>
-
-        <article class="sp-plate" id="feeling-small">
-          <figure class="sp-plate-media"><img src="/assets/by-proxy/by-proxy-619-feeling-small.jpg" alt="By Proxy Feeling Small artwork still"></figure>
-          <div class="sp-plate-caption"><div class="sp-plate-num">05.</div><h3 class="sp-plate-title">Feeling Small</h3><div class="sp-plate-meta"><span class="sp-plate-year">2022</span><span class="sp-plate-medium">CGI and digital photography &middot; unique 1/1</span></div><div class="sp-plate-status">Unique &middot; sold</div><p class="sp-plate-body">Feeling Small gives the virtual figure a scale that feels emotional as much as physical. The image lets environment press gently around the body, turning adolescence into a question of proportion: how large the world feels, how uncertain the self can become, and how memory enlarges small moments until they seem to contain an entire season of growing up.</p><div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20By%20Proxy%20Feeling%20Small">studio@shavonnewong.art</a></p><p class="sp-plate-market">Marketplace: <a href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320004">View on OpenSea &rarr;</a> &middot; <a href="https://etherscan.io/token/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8">Verify on Etherscan &rarr;</a> &middot; Chain: Ethereum</p></div></div>
-        </article>
-
-        <article class="sp-plate" id="cassette-tapes">
-          <figure class="sp-plate-media"><img src="/assets/by-proxy/by-proxy-620-cassette-tapes.jpg" alt="By Proxy Cassette Tapes artwork still"></figure>
-          <div class="sp-plate-caption"><div class="sp-plate-num">06.</div><h3 class="sp-plate-title">Cassette Tapes</h3><div class="sp-plate-meta"><span class="sp-plate-year">2022</span><span class="sp-plate-medium">CGI and digital photography &middot; unique 1/1</span></div><div class="sp-plate-status">Unique &middot; sold</div><p class="sp-plate-body">Cassette Tapes anchors the series in the textures of remembered media. The title points to analog recording, mixtapes, and the private rituals of replaying a feeling until it becomes part of identity. Within a digitally sculpted project, that older technology matters: it lets By Proxy hold nostalgia and simulation in the same frame without making either feel simple.</p><div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20By%20Proxy%20Cassette%20Tapes">studio@shavonnewong.art</a></p><p class="sp-plate-market">Marketplace: <a href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320005">View on OpenSea &rarr;</a> &middot; <a href="https://etherscan.io/token/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8">Verify on Etherscan &rarr;</a> &middot; Chain: Ethereum</p></div></div>
-        </article>
-
-        <article class="sp-plate" id="mama-shop">
-          <figure class="sp-plate-media"><img src="/assets/by-proxy/by-proxy-624-mama-shop.jpg" alt="By Proxy Mama Shop artwork still"></figure>
-          <div class="sp-plate-caption"><div class="sp-plate-num">10.</div><h3 class="sp-plate-title">Mama Shop</h3><div class="sp-plate-meta"><span class="sp-plate-year">2022</span><span class="sp-plate-medium">CGI and digital photography &middot; unique 1/1</span></div><div class="sp-plate-status">Unique &middot; sold</div><p class="sp-plate-body">Mama Shop brings the series into a specifically Singaporean everyday space. The work uses a familiar neighborhood reference as a container for memory, making adolescence feel social, local, and tactile rather than abstract. It is one of the clearest examples of how By Proxy builds a constructed image that still carries the texture of real places and routines.</p><div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20By%20Proxy%20Mama%20Shop">studio@shavonnewong.art</a></p><p class="sp-plate-market">Marketplace: <a href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320009">View on OpenSea &rarr;</a> &middot; <a href="https://etherscan.io/token/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8">Verify on Etherscan &rarr;</a> &middot; Chain: Ethereum</p></div></div>
-        </article>
-
-        <article class="sp-plate" id="daydreams">
-          <figure class="sp-plate-media"><img src="/assets/by-proxy/by-proxy-3422-daydreams.jpg" alt="By Proxy Daydreams artwork still"></figure>
-          <div class="sp-plate-caption"><div class="sp-plate-num">15.</div><h3 class="sp-plate-title">Daydreams</h3><div class="sp-plate-meta"><span class="sp-plate-year">2022</span><span class="sp-plate-medium">CGI and digital photography &middot; unique 1/1</span></div><div class="sp-plate-status">Unique &middot; sold</div><p class="sp-plate-body">Daydreams holds the drifting quality that gives By Proxy its title. The work feels like a scene remembered indirectly, through another person's image or an invented stand-in. It shows how the series uses a virtual girl not as a replacement for the artists, but as a proxy for things remembered imperfectly and emotionally. The result is soft but uneasy, suspended between recollection, fiction, and staged photographic desire.</p><div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20By%20Proxy%20Daydreams">studio@shavonnewong.art</a></p><p class="sp-plate-market">Marketplace: <a href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320014">View on OpenSea &rarr;</a> &middot; <a href="https://etherscan.io/token/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8">Verify on Etherscan &rarr;</a> &middot; Chain: Ethereum</p></div></div>
-        </article>
-
-        <article class="sp-plate" id="through-the-looking-glass">
-          <figure class="sp-plate-media"><img src="/assets/by-proxy/by-proxy-636-through-the-looking-glass.jpg" alt="By Proxy Through the looking glass artwork still"></figure>
-          <div class="sp-plate-caption"><div class="sp-plate-num">23.</div><h3 class="sp-plate-title">Through the looking glass</h3><div class="sp-plate-meta"><span class="sp-plate-year">2022</span><span class="sp-plate-medium">CGI and digital photography &middot; unique 1/1</span></div><div class="sp-plate-status">Unique &middot; sold</div><p class="sp-plate-body">Through the looking glass makes the series' interest in image-making feel explicit. The title suggests reflection, doubling, and a world entered through surfaces, which suits a project built from both photography and CGI. It lets the figure appear caught between looking and being looked at, a condition that feels central to adolescence and to digital portraiture alike.</p><div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20By%20Proxy%20Through%20the%20looking%20glass">studio@shavonnewong.art</a></p><p class="sp-plate-market">Marketplace: <a href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320022">View on OpenSea &rarr;</a> &middot; <a href="https://etherscan.io/token/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8">Verify on Etherscan &rarr;</a> &middot; Chain: Ethereum</p></div></div>
-        </article>
-
-        <article class="sp-plate" id="when-the-crows-came-ii">
-          <figure class="sp-plate-media"><img src="/assets/by-proxy/by-proxy-661-when-the-crows-came-ii.jpg" alt="By Proxy When the crows came II artwork still"></figure>
-          <div class="sp-plate-caption"><div class="sp-plate-num">51.</div><h3 class="sp-plate-title">When the crows came II</h3><div class="sp-plate-meta"><span class="sp-plate-year">2022</span><span class="sp-plate-medium">CGI and digital photography &middot; unique 1/1</span></div><div class="sp-plate-status">Unique &middot; sold</div><p class="sp-plate-body">When the crows came II shifts the series into a sharper, more ominous register. The title gives the image a sense of visitation, as if memory has been interrupted by something outside the frame. That pressure is important to By Proxy because childhood here is not only sweet or nostalgic; it can also be strange, watchful, and charged with the unknown.</p><div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20By%20Proxy%20When%20the%20crows%20came%20II">studio@shavonnewong.art</a></p><p class="sp-plate-market">Marketplace: <a href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320050">View on OpenSea &rarr;</a> &middot; <a href="https://etherscan.io/token/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8">Verify on Etherscan &rarr;</a> &middot; Chain: Ethereum</p></div></div>
-        </article>
-
-        <article class="sp-plate" id="vitamin-d">
-          <figure class="sp-plate-media"><img src="/assets/by-proxy/by-proxy-663-vitamin-d.jpg" alt="By Proxy Vitamin D artwork still"></figure>
-          <div class="sp-plate-caption"><div class="sp-plate-num">53.</div><h3 class="sp-plate-title">Vitamin D</h3><div class="sp-plate-meta"><span class="sp-plate-year">2022</span><span class="sp-plate-medium">CGI and digital photography &middot; unique 1/1</span></div><div class="sp-plate-status">Unique &middot; sold</div><p class="sp-plate-body">Vitamin D reads like sunlight turned into a title: ordinary, bodily, and quietly necessary. The work brings warmth into the sequence without making it purely comforting, because the figure still belongs to a constructed memory world. It gives the series one of its gentler emotional notes, where health, light, and exposure sit close to vulnerability.</p><div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20By%20Proxy%20Vitamin%20D">studio@shavonnewong.art</a></p><p class="sp-plate-market">Marketplace: <a href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320052">View on OpenSea &rarr;</a> &middot; <a href="https://etherscan.io/token/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8">Verify on Etherscan &rarr;</a> &middot; Chain: Ethereum</p></div></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="sp-section sp-project-grid" id="available">
-      <div><h2 class="sp-kicker">Complete series &middot; <span data-series-count>60 works</span></h2></div>
-      <div class="sp-text-stack">
-        <p class="sp-copy">The complete series contains sixty unique 1/1 works. That scale lets By Proxy behave like an archive rather than a single scene: school rituals, neighborhood spaces, first intimacies, boredom, small rebellions, and half-remembered places form a wider coming-of-age world. Click any work to view its full metadata and acquisition path.</p>
-        <div class="bp-filterbar" role="group" aria-label="Filter the series by availability" data-series-filterbar></div>
-        <ol class="sp-series-grid bp-series-grid" aria-label="All works in the By Proxy series" data-series-src="/assets/data/by-proxy.json"></ol>
-        <p class="sp-series-marketplace"><a href="https://opensea.io/collection/by-proxy-by-shavonne-wong-and-lenne-chai">Browse the complete series on OpenSea &rarr;</a> &middot; <a href="https://etherscan.io/token/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8">Verify contract on Etherscan &rarr;</a> &middot; Chain: Ethereum</p>
-      </div>
-    </section>
-
-    <section class="sp-section sp-project-grid" id="process">
-      <div><h2 class="sp-kicker">Process</h2></div>
-      <div class="sp-text-stack">
-        <p class="sp-copy">The project merged Wong's virtual modeling with Chai's photographic sensibility. The protagonist was sculpted digitally, then placed into scenes that use the visual grammar of photography: gesture, light, staging, and familiarity. The result is neither documentary nor pure fantasy, but a hybrid memory system.</p>
-      </div>
-    </section>
-
-    <section class="sp-section sp-project-grid" id="statement">
-      <div><h2 class="sp-kicker">Statement</h2></div>
-      <div class="sp-text-stack"><p class="sp-copy">By Proxy asks whether childhood is remembered as it happened or rebuilt by the adult self into something that feels true. The series uses a digitally constructed proxy not to falsify memory, but to show how memory already behaves like an image: edited, staged, softened, and sometimes invented.</p></div>
-    </section>
-
-    <section class="sp-section sp-project-grid" id="supporting-texts">
-      <div><h2 class="sp-kicker">Supporting texts</h2></div>
-      <div class="sp-text-stack"><p class="sp-copy">The series sits in conversation with coming-of-age photography, family archives, and digital identity. It uses the NFT format as provenance for sixty discrete works while keeping the emotional grammar closer to memory, friendship, and image-making than to collectible mechanics.</p></div>
-    </section>
-
-    <section class="sp-section sp-project-grid" id="exhibitions">
-      <div><h2 class="sp-kicker">Exhibitions</h2></div>
-      <div class="sp-text-stack"><dl class="sp-detail-grid"><dt>2022</dt><dd>Quantum Art release, April 13, 2022. Shown works: complete 60-piece By Proxy series.</dd><dt>2022</dt><dd>Proof of Concept, Singapore. Shown work: selected works from By Proxy by Shavonne Wong and Lenne Chai.</dd></dl></div>
-    </section>
-
-    <section class="sp-section sp-project-grid" id="related">
-      <div><h2 class="sp-kicker">Related projects</h2></div>
-      <div class="sp-text-stack">
-        <nav class="sp-prev-next" aria-label="Project navigation"><a class="sp-prev" href="/works/6529-meme-card/">&larr; 6529 Meme Card</a><a class="sp-next" href="/works/after-ophelia/">After Ophelia &rarr;</a></nav>
-        <div class="sp-related-grid">
-          <article class="sp-related-card"><figure><img src="/assets/after-ophelia/01-ophelia-reassembled-print.jpg" alt="After Ophelia"></figure><h3>After Ophelia</h3><p>Constructed images and interpretation.</p><a href="/works/after-ophelia/">View project</a></article>
-          <article class="sp-related-card"><figure><img src="/assets/love-is-love/01-love-is-love-combi.gif" alt="Love is Love"></figure><h3>Love is Love</h3><p>Editioned generative work.</p><a href="/works/love-is-love/">View project</a></article>
-          <article class="sp-related-card"><figure><img src="/assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.jpg" alt="The Ties That Bind"></figure><h3>The Ties That Bind</h3><p>Interactive 3D bodies.</p><a href="/works/the-ties-that-bind/">View project</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="sp-section sp-project-grid" id="contact">
-      <div><h2 class="sp-kicker">Contact</h2></div>
-      <div class="sp-text-stack">
-        <p class="sp-contact-line">For acquisitions: <a href="mailto:studio@shavonnewong.art">studio@shavonnewong.art</a></p>
-        <p class="sp-contact-line">For loans and exhibition inquiries: <a href="mailto:studio@shavonnewong.art">studio@shavonnewong.art</a></p>
-      </div>
-    </section>
-  </main>
-
-
-  <div class="sw-modal bp-modal" data-bp-modal hidden>
-    <div class="sw-modal-backdrop" data-bp-modal-backdrop></div>
-    <div class="sw-modal-panel" data-bp-modal-body role="dialog" aria-modal="true" aria-label="Work details"></div>
+      <a href="#index" class="bp2-stick-back" data-stick-back>Back to index</a>
+    </div>
   </div>
 
-  <script src="/assets/js/by-proxy.js?v=20260527-series"></script>
-  <script src="/assets/js/plate-status.js?v=20260527-plate-status"></script>
-  <script src="/assets/js/sustainability.js?v=20260527-works-catalog"></script>
-  <script src="/assets/js/subnav.js?v=20260527-subnav"></script>
-  <script src="/site-i18n.js?v=20260526-global-ten"></script>
-  <script src="/fluid-renderer.js?v=20260527-site-ripple-wide"></script>
+  <main id="main">
+
+    <!-- ============================================================
+         HERO. Title + tagline + metadata + 3-sentence description +
+         distinct cover image (not part of the 60-work body).
+         ============================================================ -->
+    <section class="bp2-hero" aria-label="By Proxy overview">
+      <div class="bp2-hero-grid">
+        <div>
+          <p class="bp2-eyebrow">Project. 2022</p>
+          <h1 class="bp2-hero-title">By <em>Proxy.</em></h1>
+          <p class="bp2-hero-tag">Can memories, just like images, be manipulated?</p>
+          <p class="bp2-hero-meta">
+            <strong>2022</strong> . 60 works . CGI and digital photography . with Lenne Chai
+          </p>
+          <p class="bp2-hero-desc">
+            Created with photographer Lenne Chai, By Proxy follows an imaginary young girl
+            through girlhood into adolescence in Singapore. The central figure is sculpted
+            in 3D as an amalgamation of the artists’ younger selves. Each image deliberately
+            blurs what was captured in-camera, what was constructed in CGI, and what was
+            remembered into being.
+          </p>
+          <div class="bp2-hero-actions" aria-label="Project links">
+            <a class="bp2-action-link" href="https://opensea.io/collection/by-proxy-by-shavonne-wong-and-lenne-chai" target="_blank" rel="noreferrer">OpenSea</a>
+            <a class="bp2-action-link" href="#story">The story</a>
+            <a class="bp2-action-link" href="#source-gallery">Media gallery</a>
+          </div>
+        </div>
+        <figure class="bp2-hero-cover">
+          <img decoding="async" src="assets/by-proxy/02-1920px-web-len-5295.webp" alt="By Proxy, cover image">
+          <figcaption>By Proxy, cover image</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STORY. Mirrors the original project page's amount of context:
+         release note, collaborator credit, full story, exhibition note,
+         and the complete process/gallery media set.
+         ============================================================ -->
+    <section class="bp2-source" id="story" aria-label="By Proxy story and media">
+      <div class="bp2-source-lead">
+        <div>
+          <p class="bp2-eyebrow">Shavonne Wong &amp; <a href="https://lenne.photography/" target="_blank" rel="noreferrer">Lenne Chai</a></p>
+          <h2 class="bp2-source-title">A memory made by <em>two younger selves.</em></h2>
+          <p class="bp2-source-summary">
+            Dropped on Quantum Art on April 13, 2022, By Proxy is a collaborative 60-piece
+            3D and photography project about adolescence, nostalgia, and the slippery
+            distance between what happened and what we later remember.
+          </p>
+          <div class="bp2-source-meta">
+            <p><strong>Premise.</strong> The series imagines a young girl moving from childhood toward adolescence, shaped by Shavonne and Lenne's shared Singaporean upbringing.</p>
+            <p><strong>Question.</strong> Can memories, like photographs, be altered, softened, staged, or rebuilt?</p>
+          </div>
+        </div>
+        <figure class="bp2-source-media">
+          <img decoding="async" src="assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy series image with a digitally sculpted adolescent figure" loading="lazy">
+        </figure>
+      </div>
+
+      <div class="bp2-story">
+        <p class="bp2-eyebrow">The story</p>
+        <div class="bp2-story-copy">
+          <p>By Proxy combines photography and 3D virtual modeling to explore how memory can bend, blur, and recompose the past. The project grew from Shavonne Wong and Lenne Chai's parallel histories in Singapore, their long friendship, and their shared background in fashion image-making.</p>
+          <p>The collaboration joined two practices at a moment when they were moving through different tools. Shavonne was deepening her work in 3D virtual modeling and NFTs, while Lenne brought an emotionally charged photographic language. Together they built a world that feels personal, surreal, and familiar without settling into documentary certainty.</p>
+          <p>At the center of the work is a virtual teenage girl whose face merges features from both artists' childhood selves. She appears inside scenes that read as half observed and half reconstructed, with each frame refusing to fully reveal what came from a camera, what came from a render, and what came from memory.</p>
+          <p>That uncertainty is the point. Memories overlap, borrow from images, and sometimes become more convincing after they have been retold. By Proxy treats the remembered past as something intimate but unstable, full of gaps, substitutions, and details that may have been invented after the fact.</p>
+          <p>The series is both a visual experiment and a study of identity, nostalgia, and technology. It asks viewers to step into a world that feels close but slightly displaced, then consider how much of their own past has been preserved, edited, or remembered into existence.</p>
+          <p>By Proxy was exhibited at <a href="https://proofofconcept.sg/" target="_blank" rel="noreferrer">Proof of Concept</a> in Singapore.</p>
+        </div>
+      </div>
+
+      <figure class="bp2-source-media">
+        <img decoding="async" src="assets/by-proxy/03-by-proxy-bts-high.gif" alt="Behind-the-scenes process animation from By Proxy" loading="lazy">
+      </figure>
+
+      <div class="bp2-source-gallery" id="source-gallery" aria-label="By Proxy media gallery">
+        <figure><img decoding="async" src="assets/by-proxy/04-1920px-web-len-3989-2.webp" alt="By Proxy media gallery image 1" loading="lazy"></figure>
+        <figure><img decoding="async" src="assets/by-proxy/05-1920px-web-len-4319.webp" alt="By Proxy media gallery image 2" loading="lazy"></figure>
+        <figure><img decoding="async" src="assets/newsletters/update2023jan/02.webp" alt="By Proxy media gallery image 3" loading="lazy"></figure>
+        <figure><img decoding="async" src="assets/by-proxy/07-1920px-web-len-4766.webp" alt="By Proxy media gallery image 4" loading="lazy"></figure>
+        <figure><img decoding="async" src="assets/by-proxy/08-1920px-web-len-4923.webp" alt="By Proxy media gallery image 5" loading="lazy"></figure>
+        <figure><img decoding="async" src="assets/by-proxy/09-1920px-web-len-5571.webp" alt="By Proxy media gallery image 6" loading="lazy"></figure>
+        <figure><img decoding="async" src="assets/by-proxy/10-1920px-web-len-5673.webp" alt="By Proxy media gallery image 7" loading="lazy"></figure>
+        <figure><img decoding="async" src="assets/by-proxy/11-1920px-web-len-5791.webp" alt="By Proxy media gallery image 8" loading="lazy"></figure>
+        <figure><img decoding="async" src="assets/by-proxy/12-1920px-web-len-6343.webp" alt="By Proxy media gallery image 9" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INDEX. Contact sheet of all 60 works at small uniform scale,
+         placed near the top so the body is visible before sequencing.
+         Each cell deep-links to its featured anchor (when one exists)
+         or to its marketplace page.
+         ============================================================ -->
+    <section class="bp2-index" id="index" aria-label="Index. all sixty works">
+      <header class="bp2-index-head">
+        <h2 class="bp2-index-title">Index. all <em>sixty</em> works.</h2>
+        <p class="bp2-index-help">Hover for title. Click to jump to a featured work or its marketplace listing.</p>
+      </header>
+      <div class="bp2-rule"></div>
+      <div class="bp2-sheet" role="list" aria-label="Contact sheet, 60 works in release order">
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320000" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Just A Little Underage Smoking">
+          <img decoding="async" src="assets/by-proxy/by-proxy-615-just-a-little-underage-smoking.webp" alt="Just A Little Underage Smoking" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">01</span>
+            <span class="bp2-cell-title">Just A Little Underage Smoking</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320001" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="All The Things She Said I">
+          <img decoding="async" src="assets/by-proxy/by-proxy-616-all-the-things-she-said-i.webp" alt="All The Things She Said I" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">02</span>
+            <span class="bp2-cell-title">All The Things She Said I</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="#listen-to-the-ocean-crying" data-cell data-status="sold" data-title="Listen to the ocean crying">
+          <img decoding="async" src="assets/by-proxy/by-proxy-617-listen-to-the-ocean-crying.webp" alt="Listen to the ocean crying" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">03</span>
+            <span class="bp2-cell-title">Listen to the ocean crying</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320003" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Meet me by the water">
+          <img decoding="async" src="assets/by-proxy/by-proxy-618-meet-me-by-the-water.webp" alt="Meet me by the water" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">04</span>
+            <span class="bp2-cell-title">Meet me by the water</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="#feeling-small" data-cell data-status="sold" data-title="Feeling Small">
+          <img decoding="async" src="assets/by-proxy/by-proxy-619-feeling-small.webp" alt="Feeling Small" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">05</span>
+            <span class="bp2-cell-title">Feeling Small</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="#cassette-tapes-bubble-tea" data-cell data-status="sold" data-title="Cassette Tapes">
+          <img decoding="async" src="assets/by-proxy/by-proxy-620-cassette-tapes.webp" alt="Cassette Tapes" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">06</span>
+            <span class="bp2-cell-title">Cassette Tapes</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320006" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="After School Blues I">
+          <img decoding="async" src="assets/by-proxy/by-proxy-621-after-school-blues-i.webp" alt="After School Blues I" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">07</span>
+            <span class="bp2-cell-title">After School Blues I</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320007" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="See You Downstairs II">
+          <img decoding="async" src="assets/by-proxy/by-proxy-622-see-you-downstairs-ii.webp" alt="See You Downstairs II" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">08</span>
+            <span class="bp2-cell-title">See You Downstairs II</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320008" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Pattern more than Badminton">
+          <img decoding="async" src="assets/by-proxy/by-proxy-623-pattern-more-than-badminton.webp" alt="Pattern more than Badminton" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">09</span>
+            <span class="bp2-cell-title">Pattern more than Badminton</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="#mama-shop" data-cell data-status="sold" data-title="Mama Shop">
+          <img decoding="async" src="assets/by-proxy/by-proxy-624-mama-shop.webp" alt="Mama Shop" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">10</span>
+            <span class="bp2-cell-title">Mama Shop</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320010" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="When Is Mom Coming Home?">
+          <img decoding="async" src="assets/by-proxy/by-proxy-625-when-is-mom-coming-home.webp" alt="When Is Mom Coming Home?" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">11</span>
+            <span class="bp2-cell-title">When Is Mom Coming Home?</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320011" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Lepak">
+          <img decoding="async" src="assets/by-proxy/by-proxy-626-lepak.webp" alt="Lepak" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">12</span>
+            <span class="bp2-cell-title">Lepak</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320012" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Just A Little Shoplifting">
+          <img decoding="async" src="assets/by-proxy/by-proxy-627-just-a-little-shoplifting.webp" alt="Just A Little Shoplifting" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">13</span>
+            <span class="bp2-cell-title">Just A Little Shoplifting</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320013" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Daytona">
+          <img decoding="async" src="assets/by-proxy/by-proxy-628-daytona.webp" alt="Daytona" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">14</span>
+            <span class="bp2-cell-title">Daytona</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320015" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="When the crows came I">
+          <img decoding="async" src="assets/by-proxy/by-proxy-629-when-the-crows-came-i.webp" alt="When the crows came I" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">15</span>
+            <span class="bp2-cell-title">When the crows came I</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320016" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Milo Dinosaur">
+          <img decoding="async" src="assets/by-proxy/by-proxy-630-milo-dinosaur.webp" alt="Milo Dinosaur" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">16</span>
+            <span class="bp2-cell-title">Milo Dinosaur</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320017" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Existential Crisis I">
+          <img decoding="async" src="assets/by-proxy/by-proxy-631-existential-crisis-i.webp" alt="Existential Crisis I" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">17</span>
+            <span class="bp2-cell-title">Existential Crisis I</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="#first-love-heartbreak" data-cell data-status="sold" data-title="Heartbreak">
+          <img decoding="async" src="assets/by-proxy/by-proxy-632-heartbreak.webp" alt="Heartbreak" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">18</span>
+            <span class="bp2-cell-title">Heartbreak</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320019" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="All The Things She Said II, Shot on Film">
+          <img decoding="async" src="assets/by-proxy/by-proxy-633-all-the-things-she-said-ii-shot-on-film.webp" alt="All The Things She Said II, Shot on Film" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">19</span>
+            <span class="bp2-cell-title">All The Things She Said II, Shot on Film</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320020" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Waiting">
+          <img decoding="async" src="assets/by-proxy/by-proxy-634-waiting.webp" alt="Waiting" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">20</span>
+            <span class="bp2-cell-title">Waiting</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320021" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Ten Year Series, Shot on Film">
+          <img decoding="async" src="assets/by-proxy/by-proxy-635-ten-year-series-shot-on-film.webp" alt="Ten Year Series, Shot on Film" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">21</span>
+            <span class="bp2-cell-title">Ten Year Series, Shot on Film</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320022" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Through the looking glass">
+          <img decoding="async" src="assets/by-proxy/by-proxy-636-through-the-looking-glass.webp" alt="Through the looking glass" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">22</span>
+            <span class="bp2-cell-title">Through the looking glass</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320023" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Playground II">
+          <img decoding="async" src="assets/by-proxy/by-proxy-637-playground-ii.webp" alt="Playground II" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">23</span>
+            <span class="bp2-cell-title">Playground II</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320024" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Longing">
+          <img decoding="async" src="assets/by-proxy/by-proxy-638-longing.webp" alt="Longing" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">24</span>
+            <span class="bp2-cell-title">Longing</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320025" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Plastic Bubbles">
+          <img decoding="async" src="assets/by-proxy/by-proxy-639-plastic-bubbles.webp" alt="Plastic Bubbles" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">25</span>
+            <span class="bp2-cell-title">Plastic Bubbles</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320026" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Paktor">
+          <img decoding="async" src="assets/by-proxy/by-proxy-640-paktor.webp" alt="Paktor" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">26</span>
+            <span class="bp2-cell-title">Paktor</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320027" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="How are you feeling">
+          <img decoding="async" src="assets/by-proxy/by-proxy-641-how-are-you-feeling.webp" alt="How are you feeling" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">27</span>
+            <span class="bp2-cell-title">How are you feeling</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320029" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="MRT, Shot on Film">
+          <img decoding="async" src="assets/by-proxy/by-proxy-642-mrt-shot-on-film.webp" alt="MRT, Shot on Film" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">28</span>
+            <span class="bp2-cell-title">MRT, Shot on Film</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320030" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Sungei Api Api I">
+          <img decoding="async" src="assets/by-proxy/by-proxy-643-sungei-api-api-i.webp" alt="Sungei Api Api I" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">29</span>
+            <span class="bp2-cell-title">Sungei Api Api I</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="#first-love-heartbreak" data-cell data-status="sold" data-title="First Love">
+          <img decoding="async" src="assets/by-proxy/by-proxy-644-first-love.webp" alt="First Love" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">30</span>
+            <span class="bp2-cell-title">First Love</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320032" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="These Damn Shoelaces">
+          <img decoding="async" src="assets/by-proxy/by-proxy-645-these-damn-shoelaces.webp" alt="These Damn Shoelaces" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">31</span>
+            <span class="bp2-cell-title">These Damn Shoelaces</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="#cassette-tapes-bubble-tea" data-cell data-status="sold" data-title="Bubble Tea">
+          <img decoding="async" src="assets/by-proxy/by-proxy-646-bubble-tea.webp" alt="Bubble Tea" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">32</span>
+            <span class="bp2-cell-title">Bubble Tea</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320035" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Write A Letter To Me">
+          <img decoding="async" src="assets/by-proxy/by-proxy-647-write-a-letter-to-me.webp" alt="Write A Letter To Me" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">33</span>
+            <span class="bp2-cell-title">Write A Letter To Me</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320036" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="When you said you were leaving me">
+          <img decoding="async" src="assets/by-proxy/by-proxy-648-when-you-said-you-were-leaving-me.webp" alt="When you said you were leaving me" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">34</span>
+            <span class="bp2-cell-title">When you said you were leaving me</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320037" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Playground I">
+          <img decoding="async" src="assets/by-proxy/by-proxy-649-playground-i.webp" alt="Playground I" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">35</span>
+            <span class="bp2-cell-title">Playground I</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320038" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Existential Crisis II">
+          <img decoding="async" src="assets/by-proxy/by-proxy-650-existential-crisis-ii.webp" alt="Existential Crisis II" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">36</span>
+            <span class="bp2-cell-title">Existential Crisis II</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320039" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Bubbles">
+          <img decoding="async" src="assets/by-proxy/by-proxy-651-bubbles.webp" alt="Bubbles" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">37</span>
+            <span class="bp2-cell-title">Bubbles</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320040" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="After School Blues II">
+          <img decoding="async" src="assets/by-proxy/by-proxy-652-after-school-blues-ii.webp" alt="After School Blues II" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">38</span>
+            <span class="bp2-cell-title">After School Blues II</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320041" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Midday Nap, Shot on Film">
+          <img decoding="async" src="assets/by-proxy/by-proxy-653-midday-nap-shot-on-film.webp" alt="Midday Nap, Shot on Film" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">39</span>
+            <span class="bp2-cell-title">Midday Nap, Shot on Film</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320042" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Checkmate">
+          <img decoding="async" src="assets/by-proxy/by-proxy-654-checkmate.webp" alt="Checkmate" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">40</span>
+            <span class="bp2-cell-title">Checkmate</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320044" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Block 507">
+          <img decoding="async" src="assets/by-proxy/by-proxy-655-block-507.webp" alt="Block 507" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">41</span>
+            <span class="bp2-cell-title">Block 507</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320045" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Taekwondo Class">
+          <img decoding="async" src="assets/by-proxy/by-proxy-656-taekwondo-class.webp" alt="Taekwondo Class" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">42</span>
+            <span class="bp2-cell-title">Taekwondo Class</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320046" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Next Stop">
+          <img decoding="async" src="assets/by-proxy/by-proxy-657-next-stop.webp" alt="Next Stop" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">43</span>
+            <span class="bp2-cell-title">Next Stop</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320047" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="See You Downstairs I">
+          <img decoding="async" src="assets/by-proxy/by-proxy-658-see-you-downstairs-i.webp" alt="See You Downstairs I" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">44</span>
+            <span class="bp2-cell-title">See You Downstairs I</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320048" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Yes, I'll Be There Soon">
+          <img decoding="async" src="assets/by-proxy/by-proxy-659-yes-i-ll-be-there-soon.webp" alt="Yes, I'll Be There Soon" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">45</span>
+            <span class="bp2-cell-title">Yes, I'll Be There Soon</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320049" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Sungei Api Api II, Shot on Film">
+          <img decoding="async" src="assets/by-proxy/by-proxy-660-sungei-api-api-ii-shot-on-film.webp" alt="Sungei Api Api II, Shot on Film" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">46</span>
+            <span class="bp2-cell-title">Sungei Api Api II, Shot on Film</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="#when-the-crows-came-ii" data-cell data-status="sold" data-title="When the crows came II">
+          <img decoding="async" src="assets/by-proxy/by-proxy-661-when-the-crows-came-ii.webp" alt="When the crows came II" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">47</span>
+            <span class="bp2-cell-title">When the crows came II</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320051" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="The Picture of Dorian Gray, Shot on Film">
+          <img decoding="async" src="assets/by-proxy/by-proxy-662-the-picture-of-dorian-gray-shot-on-film.webp" alt="The Picture of Dorian Gray, Shot on Film" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">48</span>
+            <span class="bp2-cell-title">The Picture of Dorian Gray, Shot on Film</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="#vitamin-d" data-cell data-status="sold" data-title="Vitamin D">
+          <img decoding="async" src="assets/by-proxy/by-proxy-663-vitamin-d.webp" alt="Vitamin D" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">49</span>
+            <span class="bp2-cell-title">Vitamin D</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320053" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="The World Passing By, Shot on Film">
+          <img decoding="async" src="assets/by-proxy/by-proxy-664-the-world-passing-by-shot-on-film.webp" alt="The World Passing By, Shot on Film" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">50</span>
+            <span class="bp2-cell-title">The World Passing By, Shot on Film</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320054" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="A Hazy Afternoon">
+          <img decoding="async" src="assets/by-proxy/by-proxy-665-a-hazy-afternoon.webp" alt="A Hazy Afternoon" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">51</span>
+            <span class="bp2-cell-title">A Hazy Afternoon</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320055" target="_blank" rel="noreferrer" data-cell data-status="available" data-title="Ponteng">
+          <img decoding="async" src="assets/by-proxy/by-proxy-666-ponteng.webp" alt="Ponteng" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">52</span>
+            <span class="bp2-cell-title">Ponteng</span>
+            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320056" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Void Deck, Shot on Film">
+          <img decoding="async" src="assets/by-proxy/by-proxy-667-void-deck-shot-on-film.webp" alt="Void Deck, Shot on Film" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">53</span>
+            <span class="bp2-cell-title">Void Deck, Shot on Film</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320057" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Are We There Yet?">
+          <img decoding="async" src="assets/by-proxy/by-proxy-668-are-we-there-yet.webp" alt="Are We There Yet?" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">54</span>
+            <span class="bp2-cell-title">Are We There Yet?</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320058" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Stare what stare, Shot on Film">
+          <img decoding="async" src="assets/by-proxy/by-proxy-669-stare-what-stare-shot-on-film.webp" alt="Stare what stare, Shot on Film" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">55</span>
+            <span class="bp2-cell-title">Stare what stare, Shot on Film</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="#daydreams" data-cell data-status="sold" data-title="Daydreams">
+          <img decoding="async" src="assets/by-proxy/by-proxy-3422-daydreams.webp" alt="Daydreams" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">56</span>
+            <span class="bp2-cell-title">Daydreams</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320028" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Innocence">
+          <img decoding="async" src="assets/by-proxy/by-proxy-3423-innocence.webp" alt="Innocence" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">57</span>
+            <span class="bp2-cell-title">Innocence</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320034" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Friendship">
+          <img decoding="async" src="assets/by-proxy/by-proxy-3424-friendship.webp" alt="Friendship" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">58</span>
+            <span class="bp2-cell-title">Friendship</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320043" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Existential Crisis III">
+          <img decoding="async" src="assets/by-proxy/by-proxy-3425-existential-crisis-iii.webp" alt="Existential Crisis III" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">59</span>
+            <span class="bp2-cell-title">Existential Crisis III</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x46ac8540d698167fcbb9e846511beb8cf8af9bd8/320059" target="_blank" rel="noreferrer" data-cell data-status="sold" data-title="Friendship Band">
+          <img decoding="async" src="assets/by-proxy/by-proxy-3426-friendship-band.webp" alt="Friendship Band" loading="lazy">
+          <span class="bp2-cell-overlay">
+            <span class="bp2-cell-num">60</span>
+            <span class="bp2-cell-title">Friendship Band</span>
+            <span class="bp2-cell-dot bp2-cell-dot--sold" aria-hidden="true"></span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEQUENCE. Eight featured works with varied pacing.
+         Full bleed, half-width, diptych, caption-above. Photo book.
+         ============================================================ -->
+    <section class="bp2-seq" aria-label="Selected works">
+
+      <article id="listen-to-the-ocean-crying" class="bp2-work bp2-work-full" data-work data-title="Listen to the ocean crying">
+        <figure class="bp2-fig bp2-fig-full">
+          <img decoding="async" src="assets/by-proxy/by-proxy-617-listen-to-the-ocean-crying.webp" alt="Listen to the ocean crying" loading="lazy">
+        </figure>
+        
+        <div class="bp2-cap">
+          <div class="bp2-cap-num">01</div>
+          <h3 class="bp2-cap-title">Listen to the ocean crying</h3>
+          <p class="bp2-cap-body">A figure caught between landscape and feeling, where the title gives the scene an emotional weather rather than a literal narrative.</p>
+          <div class="bp2-badges"><span class="bp2-badge">Sold</span></div>
+        </div>
+      </article>
+
+      <article id="mama-shop" class="bp2-work bp2-work-half" data-work data-title="Mama Shop">
+        <figure class="bp2-fig bp2-fig-half">
+          <img decoding="async" src="assets/by-proxy/by-proxy-624-mama-shop.webp" alt="Mama Shop" loading="lazy">
+        </figure>
+        
+        <div class="bp2-cap">
+          <div class="bp2-cap-num">02</div>
+          <h3 class="bp2-cap-title">Mama Shop</h3>
+          <p class="bp2-cap-body">A Singaporean corner shop rebuilt from memory, with the fluorescent flatness that only afternoons after school seemed to have.</p>
+          <div class="bp2-badges"><span class="bp2-badge">Sold</span></div>
+        </div>
+      </article>
+
+      <article id="cassette-tapes-bubble-tea" class="bp2-work bp2-work-diptych" data-work data-title="Cassette Tapes / Bubble Tea">
+        <div class="bp2-diptych">
+          <figure class="bp2-fig"><img decoding="async" src="assets/by-proxy/by-proxy-620-cassette-tapes.webp" alt="Cassette Tapes" loading="lazy"></figure>
+          <figure class="bp2-fig"><img decoding="async" src="assets/by-proxy/by-proxy-646-bubble-tea.webp" alt="Bubble Tea" loading="lazy"></figure>
+        </div>
+        
+        <div class="bp2-cap">
+          <div class="bp2-cap-num">03</div>
+          <h3 class="bp2-cap-title">Cassette Tapes / Bubble Tea</h3>
+          <p class="bp2-cap-body">Two objects that hold time differently. Analog rewinding and sweet placebo, both routes back to the same year.</p>
+          <div class="bp2-badges"><span class="bp2-badge">Sold</span></div>
+        </div>
+      </article>
+
+      <article id="feeling-small" class="bp2-work bp2-work-cap-above" data-work data-title="Feeling Small">
+        
+        <div class="bp2-cap">
+          <div class="bp2-cap-num">04</div>
+          <h3 class="bp2-cap-title">Feeling Small</h3>
+          <p class="bp2-cap-body">The figure given a scale that feels emotional as much as physical, the world pressing gently around the body.</p>
+          <div class="bp2-badges"><span class="bp2-badge">Sold</span></div>
+        </div>
+        <figure class="bp2-fig bp2-fig-full">
+          <img decoding="async" src="assets/by-proxy/by-proxy-619-feeling-small.webp" alt="Feeling Small" loading="lazy">
+        </figure>
+      </article>
+
+      <article id="daydreams" class="bp2-work bp2-work-half bp2-work-half-reverse" data-work data-title="Daydreams">
+        
+        <div class="bp2-cap">
+          <div class="bp2-cap-num">05</div>
+          <h3 class="bp2-cap-title">Daydreams</h3>
+          <p class="bp2-cap-body">A scene remembered indirectly, through someone else’s stand-in.</p>
+          <div class="bp2-badges"><span class="bp2-badge">Sold</span><span class="bp2-badge">Exhibited</span></div>
+        </div>
+        <figure class="bp2-fig bp2-fig-half">
+          <img decoding="async" src="assets/by-proxy/by-proxy-3422-daydreams.webp" alt="Daydreams" loading="lazy">
+        </figure>
+      </article>
+
+      <article id="first-love-heartbreak" class="bp2-work bp2-work-diptych" data-work data-title="First Love / Heartbreak">
+        <div class="bp2-diptych">
+          <figure class="bp2-fig"><img decoding="async" src="assets/by-proxy/by-proxy-644-first-love.webp" alt="First Love" loading="lazy"></figure>
+          <figure class="bp2-fig"><img decoding="async" src="assets/by-proxy/by-proxy-632-heartbreak.webp" alt="Heartbreak" loading="lazy"></figure>
+        </div>
+        
+        <div class="bp2-cap">
+          <div class="bp2-cap-num">06</div>
+          <h3 class="bp2-cap-title">First Love / Heartbreak</h3>
+          <p class="bp2-cap-body">The same year, before and after.</p>
+          <div class="bp2-badges"><span class="bp2-badge">Sold</span></div>
+        </div>
+      </article>
+
+      <article id="when-the-crows-came-ii" class="bp2-work bp2-work-full" data-work data-title="When the crows came II">
+        <figure class="bp2-fig bp2-fig-full">
+          <img decoding="async" src="assets/by-proxy/by-proxy-661-when-the-crows-came-ii.webp" alt="When the crows came II" loading="lazy">
+        </figure>
+        
+        <div class="bp2-cap">
+          <div class="bp2-cap-num">07</div>
+          <h3 class="bp2-cap-title">When the crows came II</h3>
+          <p class="bp2-cap-body">Memory interrupted by something outside the frame.</p>
+          <div class="bp2-badges"><span class="bp2-badge">Sold</span></div>
+        </div>
+      </article>
+
+      <article id="vitamin-d" class="bp2-work bp2-work-half" data-work data-title="Vitamin D">
+        <figure class="bp2-fig bp2-fig-half">
+          <img decoding="async" src="assets/by-proxy/by-proxy-663-vitamin-d.webp" alt="Vitamin D" loading="lazy">
+        </figure>
+        
+        <div class="bp2-cap">
+          <div class="bp2-cap-num">08</div>
+          <h3 class="bp2-cap-title">Vitamin D</h3>
+          <p class="bp2-cap-body">Sunlight rendered as a title. Ordinary, bodily, and quietly necessary.</p>
+          <div class="bp2-badges"><span class="bp2-badge">Sold</span></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============================================================
+         RELATED. Three other projects, surfaced before colophon.
+         ============================================================ -->
+    <section class="bp2-related" aria-label="Other projects">
+      <header class="bp2-related-head">
+        <h2 class="bp2-index-title">Other <em>projects</em>.</h2>
+        <a href="works.html" class="bp2-eyebrow" style="text-decoration: underline; text-underline-offset: 3px;">All works</a>
+      </header>
+      <div class="bp2-related-grid">
+        <a class="bp2-related-card" href="after-ophelia.html">
+          <figure class="bp2-related-fig"><img decoding="async" src="assets/after-ophelia/01-ophelia-reassembled-print.webp" alt="After Ophelia"></figure>
+          <h3>After Ophelia</h3>
+          <p>Two-part AI video on identity and inherited interpretation.</p>
+        </a>
+        <a class="bp2-related-card" href="meet-eva-here.html">
+          <figure class="bp2-related-fig"><img decoding="async" src="assets/meet-eva-here/06-dsc00661.webp" alt="Meet Eva Here"></figure>
+          <h3>Meet Eva Here</h3>
+          <p>Interactive AI companion across installation, video, and diary.</p>
+        </a>
+        <a class="bp2-related-card" href="the-ties-that-bind.html">
+          <figure class="bp2-related-fig"><img decoding="async" src="assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.webp" alt="The Ties That Bind"></figure>
+          <h3>The Ties That Bind</h3>
+          <p>Solo exhibition of seven dynamic digital works on inheritance.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COLOPHON. Credits, release info, contact.
+         ============================================================ -->
+    <section class="bp2-colo" aria-label="Colophon">
+      <div class="bp2-colo-grid">
+        <p class="bp2-eyebrow">Colophon</p>
+        <dl class="bp2-colo-list">
+          <dt>Year</dt><dd>2022</dd>
+          <dt>Collaborator</dt><dd>Lenne Chai, photographer and director</dd>
+          <dt>Release</dt><dd>Quantum Art, April 13, 2022. Complete 60-piece series.</dd>
+          <dt>Medium</dt><dd>CGI and digital photography. Sixty unique 1/1 works on Ethereum.</dd>
+          <dt>Exhibitions</dt><dd>Proof of Concept, Singapore, 2022.</dd>
+          <dt>Marketplace</dt><dd><a href="https://opensea.io/collection/by-proxy-by-shavonne-wong-and-lenne-chai">Browse on OpenSea</a></dd>
+          <dt>Acquisitions</dt><dd><a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20By%20Proxy">studio@shavonnewong.art</a></dd>
+        </dl>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    (function () {
+      const stick = document.querySelector('[data-stick]');
+      const currentLabel = document.querySelector('[data-stick-current-label]');
+      const hero = document.querySelector('.bp2-hero');
+      const works = Array.from(document.querySelectorAll('[data-work]'));
+
+      // Show sticky nav once hero is offscreen.
+      function syncStick() {
+        if (!hero || !stick) return;
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        const visible = heroBottom < 8;
+        stick.classList.toggle('is-visible', visible);
+        stick.setAttribute('aria-hidden', visible ? 'false' : 'true');
+      }
+      syncStick();
+      window.addEventListener('scroll', syncStick, { passive: true });
+      window.addEventListener('resize', syncStick);
+
+      // Scroll-spy. Update current label to the work whose top is nearest the
+      // upper third of the viewport.
+      function syncCurrent() {
+        if (!currentLabel || !works.length) return;
+        const anchor = window.innerHeight * 0.33;
+        let active = works[0];
+        let bestDist = Infinity;
+        for (const w of works) {
+          const top = w.getBoundingClientRect().top;
+          if (top < anchor + 1) {
+            const dist = anchor - top;
+            if (dist < bestDist) { bestDist = dist; active = w; }
+          }
+        }
+        const title = active && active.dataset.title;
+        if (title && currentLabel.textContent !== title) {
+          currentLabel.textContent = title;
+        }
+      }
+      syncCurrent();
+      window.addEventListener('scroll', syncCurrent, { passive: true });
+      window.addEventListener('resize', syncCurrent);
+    })();
+  </script>
+  <script src="site-header.js?v=20260531-scroll2"></script>
+  <script src="site-i18n.js?v=20260530-header-bar"></script>
+  <script src="fluid-renderer.js?v=20260527-site-ripple-wide"></script>
 </body>
 </html>

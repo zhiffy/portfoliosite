@@ -12,7 +12,7 @@
 }
 
 .ab-main {
-  max-width: 1320px;
+  max-width: var(--site-max);
   margin: 0 auto;
   padding: calc(var(--nav-h) + 64px) clamp(24px, 4vw, 80px) 80px;
   position: relative;
@@ -462,7 +462,7 @@
 }
 .ab-event:first-child { border-top: 0; }
 .ab-event:hover {
-  background: linear-gradient(90deg, transparent, rgba(84,92,158,0.06) 30%, rgba(84,92,158,0.06) 70%, transparent);
+  background: rgba(24,25,43,0.04);
 }
 .ab-event strong {
   font-family: var(--serif);
@@ -754,7 +754,7 @@
 }
 .ab-press-list li:first-child .ab-press-item { border-top: 0; }
 .ab-press-item:hover {
-  background: linear-gradient(90deg, transparent, rgba(84,92,158,0.06) 20%, rgba(84,92,158,0.06) 80%, transparent);
+  background: rgba(24,25,43,0.04);
 }
 .ab-press-byline {
   font-family: var(--sans);

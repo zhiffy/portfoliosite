@@ -23,7 +23,7 @@
 }
 
 .wk-main {
-  max-width: 1480px;
+  max-width: var(--site-max);
   margin: 0 auto;
   padding: calc(var(--nav-h) + 56px) clamp(20px, 3vw, 64px) 96px;
   position: relative;
@@ -379,7 +379,7 @@
 }
 
 .wk-commissions a {
-  font-family: Georgia, serif;
+  font-family: var(--serif);
   font-style: italic;
   font-size: clamp(17px, 1.6vw, 24px);
   color: var(--text);
@@ -418,7 +418,7 @@
   transition: background .25s ease;
 }
 .wk-list-row:hover {
-  background: linear-gradient(90deg, transparent, rgba(84,92,158,0.06) 30%, rgba(84,92,158,0.06) 70%, transparent);
+  background: rgba(24,25,43,0.04);
 }
 .wk-list-num {
   font-family: var(--serif);
@@ -629,7 +629,7 @@
 }
 
 .av-main {
-  max-width: 1480px;
+  max-width: var(--site-max);
   margin: 0 auto;
   padding: calc(var(--nav-h) + 56px) clamp(20px, 3vw, 64px) 96px;
   position: relative;
@@ -663,7 +663,7 @@
 
 .av-title {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--serif);
   font-size: clamp(54px, 7vw, 112px);
   font-weight: 300;
   line-height: 0.95;
@@ -678,7 +678,7 @@
 .av-intro {
   max-width: 64ch;
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--serif);
   font-size: clamp(17px, 1.45vw, 22px);
   line-height: 1.5;
   color: var(--text-2);
@@ -966,7 +966,7 @@
 
 .av-card-title {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--serif);
   font-size: clamp(24px, 2vw, 34px);
   font-weight: 400;
   line-height: 1.08;
@@ -980,7 +980,7 @@
   flex-wrap: wrap;
   gap: 8px 12px;
   align-items: baseline;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--serif);
   font-style: italic;
   font-size: 13px;
   line-height: 1.45;
@@ -1016,7 +1016,7 @@
 
 .av-card-primary {
   display: inline;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--serif);
   font-style: italic;
   font-size: 14px;
   line-height: 1.5;
@@ -1031,7 +1031,7 @@
 
 .av-card-verify {
   margin: 2px 0 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--serif);
   font-style: italic;
   font-size: 12px;
   line-height: 1.55;
@@ -1050,7 +1050,7 @@
   text-transform: uppercase;
   color: rgba(27,27,27,0.5);
   font-style: italic;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--serif);
   margin: 6px 0 0;
 }
 
@@ -1076,7 +1076,7 @@
   padding: 28px 0;
   border-top: 1px solid var(--hairline);
   border-bottom: 1px solid var(--hairline);
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--serif);
   font-style: italic;
   font-size: clamp(18px, 1.6vw, 24px);
   color: var(--text-2);
@@ -1087,7 +1087,7 @@
   padding-top: 28px;
   border-top: 1px solid var(--text);
   max-width: 72ch;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--serif);
   font-style: italic;
   font-size: clamp(18px, 1.6vw, 25px);
   line-height: 1.45;
@@ -1906,7 +1906,7 @@
 .bp-tile .wk-avail-dot { width: 5px; height: 5px; }
 
 .sw-modal-acquire {
-  font-family: Georgia, serif;
+  font-family: var(--serif);
   font-style: italic;
   font-size: 14px;
   color: var(--text-2);

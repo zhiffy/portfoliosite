@@ -1,13 +1,16 @@
+# dependencies & build output
+node_modules/
+dist/
+.vite/
+
+# heavy unreferenced video frame sources (kept out of the site too, see .vercelignore)
+assets/videos/everything-yet-nothing-frames/
+assets/videos/everything-yet-nothing-scrub/
+
+# editor / sync temp + backup files (these caused the truncation issues)
+*.tmp
+*.tmp.*
+*\ v1.html
 .DS_Store
 Thumbs.db
-desktop.ini
-node_modules/
-.env
-.env.*
 *.log
-site-screenshots/
-screenshots/
-_codex-http*.log
-uploads/draw-*.png
-uploads/figma_screens-*.png
-uploads/pasted-*.png

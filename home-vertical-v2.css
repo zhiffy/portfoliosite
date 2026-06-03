@@ -1,0 +1,229 @@
+/* ============================================================
+   Shavonne Wong — Homepage vertical-format adjustments (v2)
+   Loaded LAST on index.html. Mulish only; Iris stays a line.
+   ============================================================ */
+
+/* ---------- 01 HERO — credential line + fuller composition ---------- */
+.sn-hero-cred { display: none; }
+html.sn-vertical-mode .sn-hero-cred {
+  display: block;
+  margin: 18px 0 0;
+  font-size: clamp(12px, 1vw, 14px);
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  color: var(--text-3);
+  max-width: 34ch;
+}
+html.sn-vertical-mode .sn-hero-cred strong { color: var(--text-2); font-weight: 600; }
+
+@media (min-width: 901px) {
+  /* Vertical mode hero == horizontal mode hero: the work keeps its 16:9
+     aspect ratio and the title overlaps it (inverted light title clipped
+     over the dark image), exactly like horizontal scroll. We rebuild the
+     horizontal absolute stage + media vars here (this file loads last). */
+  html.sn-vertical-mode .sn-hero-frame {
+    --hero-frame-x-pad: clamp(28px, 4vw, 72px);
+    --hero-frame-top: calc(var(--nav-h) + 4vh);
+    --hero-frame-bottom: clamp(28px, 4vw, 72px);
+    --hero-frame-gap: clamp(28px, 3.2vw, 56px);
+    --hero-frame-height: calc(100vh - var(--hero-frame-top) - var(--hero-frame-bottom));
+    --hero-media-w: min(clamp(960px, 64vw, 1280px), calc(100vw - (var(--hero-frame-x-pad) * 2)));
+    --hero-media-h: min(calc(var(--hero-media-w) * 9 / 16), calc(var(--hero-frame-height) - 8px));
+    --hero-media-left: max(0px, calc(100vw - (var(--hero-frame-x-pad) * 2) - var(--hero-media-w)));
+    --hero-media-top: max(0px, calc(var(--hero-frame-height) - var(--hero-media-h)));
+    position: relative !important;
+    inset: auto !important;
+    height: var(--hero-frame-height) !important;
+    max-width: none !important;
+    width: auto !important;
+    min-height: 0 !important;
+    margin: var(--hero-frame-top) var(--hero-frame-x-pad) var(--hero-frame-bottom) !important;
+    padding: 0 !important;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) !important;
+    grid-template-rows: auto auto 1fr !important;
+    gap: var(--hero-frame-gap) !important;
+    align-items: end !important;
+    background: var(--bg) !important;
+  }
+  html.sn-vertical-mode .sn-hero-type {
+    position: relative !important;
+    z-index: 4 !important;
+    grid-column: 1 / 2 !important;
+    grid-row: 1 !important;
+    height: 100% !important;
+    max-width: none !important;
+    align-self: stretch !important;
+    align-content: start !important;
+    justify-self: stretch !important;
+    gap: clamp(20px, 2.4vw, 32px) !important;
+    padding: 0 0 4px !important;
+  }
+  html.sn-vertical-mode .sn-hero-name {
+    font-size: clamp(80px, 11vw, 200px) !important;
+    line-height: 0.88 !important;
+    letter-spacing: -0.015em !important;
+  }
+  html.sn-vertical-mode .sn-hero-sub {
+    max-width: 26ch !important;
+    font-size: clamp(19px, 2.35vw, 24px) !important;
+  }
+  /* re-enable the inverted light title only where it overlaps the image */
+  html.sn-vertical-mode .sn-hero-type-invert { display: grid !important; }
+  /* keep the credential line on cream only — no light duplicate over image */
+  html.sn-vertical-mode .sn-hero-type-invert .sn-hero-cred { display: none !important; }
+
+  html.sn-vertical-mode .sn-hero-media {
+    position: absolute !important;
+    grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    top: auto !important;
+    left: auto !important;
+    width: var(--hero-media-w) !important;
+    height: var(--hero-media-h) !important;
+    aspect-ratio: 16 / 9 !important;
+    max-height: calc(100% - 8px) !important;
+    margin: 0 !important;
+    justify-self: end !important;
+    align-self: end !important;
+  }
+  html.sn-vertical-mode .sn-hero-plate-tile {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+  html.sn-vertical-mode .sn-hero-media-layer,
+  html.sn-vertical-mode .sn-hero-media-asset {
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+}
+
+/* ---------- 02 PRACTICE — one bold statement; hovering a phrase
+   reveals its artwork BEHIND the text, shown whole (no crop) ---------- */
+html.sn-vertical-mode .sn-eras-acts { display: none !important; }
+.sn-era-phases { display: none !important; }   /* retired the timeline row */
+
+@media (min-width: 901px) {
+  html.sn-vertical-mode .sn-eras { padding: clamp(96px, 13vh, 168px) 0 !important; }
+  html.sn-vertical-mode .sn-eras-frame {
+    max-width: var(--sn-vertical-max, 1180px);
+    margin: 0 auto;
+    padding: 0 clamp(40px, 6vw, 96px);
+  }
+  html.sn-vertical-mode .sn-eras-head { max-width: none; }
+  html.sn-vertical-mode .sn-eras-lede {
+    max-width: 18ch !important;
+    font-size: clamp(40px, 5vw, 76px) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -0.02em;
+  }
+}
+html.sn-vertical-mode .sn-eras-lede em { color: var(--text); font-style: italic; }
+
+/* reveal layer sits behind the text */
+.sn-eras-lede-wrap { position: relative; }
+html.sn-vertical-mode .sn-eras-lede { position: relative; z-index: 2; }
+.sn-era-reveals {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+}
+.sn-era-reveal {
+  position: absolute; inset: 0; opacity: 0;
+  display: flex; align-items: center; justify-content: flex-end;
+  transition: opacity 340ms var(--ease, cubic-bezier(0.2,0,0,1));
+}
+.sn-era-reveal img {
+  max-width: 58%; max-height: 104%;
+  width: auto; height: auto;
+  object-fit: contain;          /* respect the artwork's aspect */
+  border: 0.5px solid var(--hairline-strong);
+  background: var(--surface);
+}
+.sn-era-term { cursor: help; }
+.sn-era-term em {
+  border-bottom: 0.5px solid var(--accent-deep);
+  transition: color 160ms ease;
+}
+.sn-era-term:hover em { color: var(--accent-deep); }
+.sn-eras-lede-wrap:has(.sn-era-term[data-era="fashion"]:hover) .sn-era-reveal[data-for="fashion"],
+.sn-eras-lede-wrap:has(.sn-era-term[data-era="3d"]:hover) .sn-era-reveal[data-for="3d"],
+.sn-eras-lede-wrap:has(.sn-era-term[data-era="ai"]:hover) .sn-era-reveal[data-for="ai"] { opacity: 1; }
+
+html:not(.sn-vertical-mode) .sn-era-reveals {
+  display: none !important;
+}
+html:not(.sn-vertical-mode) .sn-era-term {
+  cursor: inherit;
+}
+html:not(.sn-vertical-mode) .sn-era-term em {
+  border-bottom: 0;
+}
+html:not(.sn-vertical-mode) .sn-era-term:hover em {
+  color: inherit;
+}
+
+@media (max-width: 900px) {
+  .sn-era-reveal { position: relative; opacity: 1; justify-content: flex-start; margin-top: 18px; }
+  .sn-era-reveal img { max-width: 100%; max-height: none; width: 100%; }
+  .sn-era-reveals { position: relative; inset: auto; display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+}
+
+/* ---------- 03 ARTWORKS — make Conditional the clear anchor ---------- */
+@media (min-width: 901px) {
+  html.sn-vertical-mode .sn-gw-w1 { grid-column: 1 / 8; }
+  html.sn-vertical-mode .sn-gw-w2 { grid-column: 8 / 13; align-self: end; }
+  html.sn-vertical-mode .sn-gw-w3 { grid-column: 1 / 5; }
+  html.sn-vertical-mode .sn-gw-w4 { grid-column: 5 / 9; align-self: end; }
+  html.sn-vertical-mode .sn-gw-w5 { grid-column: 9 / 13; align-self: end; }
+  html.sn-vertical-mode .sn-gw-w6 { grid-column: 1 / 6; }
+  html.sn-vertical-mode .sn-gw-w7 { grid-column: 6 / 13; align-self: start; }
+  html.sn-vertical-mode .sn-gw-work--feat .sn-gw-cap-title { font-size: 19px; }
+}
+
+/* ---------- 04 STUDIO UPDATES — proper 3-up cards ---------- */
+@media (min-width: 901px) {
+  html.sn-vertical-mode .sn-writing-track {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(18px, 1.8vw, 28px);
+    max-width: var(--sn-vertical-max, 1180px);
+    margin: 0 auto;
+    align-items: stretch;
+  }
+  html.sn-vertical-mode .sn-essay,
+  html.sn-vertical-mode .sn-essay:not(.is-on) {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+    border: 0.5px solid var(--hairline-strong);
+    border-radius: 2px;
+    overflow: hidden;
+    background: var(--bg-warm);
+    transition: background 200ms ease;
+  }
+  html.sn-vertical-mode .sn-essay:hover { background: var(--sw-haze-elev); }
+  html.sn-vertical-mode .sn-essay-plate {
+    height: auto !important;
+    aspect-ratio: 16 / 11;
+    margin: 0;
+    flex: 0 0 auto;
+  }
+  html.sn-vertical-mode .sn-essay-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: clamp(16px, 1.5vw, 24px);
+    flex: 1 1 auto;
+  }
+  html.sn-vertical-mode .sn-essay-title { font-size: clamp(18px, 1.5vw, 23px); }
+  html.sn-vertical-mode .sn-essay-excerpt {
+    font-size: 13.5px; line-height: 1.55; color: var(--text-2);
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  html.sn-vertical-mode .sn-essay-meta .sn-eyebrow.u { margin-top: auto; }
+}
+
+/* ---------- 05 CONTACT — italic closer ---------- */
+.sn-contact-title { font-style: italic; font-weight: 300; }

@@ -17,7 +17,7 @@
   ];
 
   const en = {
-    'meta.indexTitle': 'Shavonne Wong - Index',
+    'meta.indexTitle': 'Shavonne Wong | New media artist (AI, 3D, interactive installation)',
     'ui.languageLabel': 'Language',
     'ui.displayOptions': 'Display options',
     'nav.home': 'Home',
@@ -54,15 +54,10 @@
     'home.heroMedia.ties.label': 'The Ties That Bind exhibition',
     'home.heroMedia.proxy.title': 'By Proxy',
     'home.heroMedia.proxy.meta': '2022 / 3D video series',
-      'home.heroMedia.whirlwind.label': 'Whirlwind of the Waking Dream - generatives 3D-Video',
-      'home.heroMedia.afterOphelia.label': 'After Ophelia-Druck',
-      'home.heroMedia.meetEva.label': 'Meet Eva Here-Installation',
-      'home.heroMedia.ties.label': 'The Ties That Bind-Ausstellung',
-      'home.heroMedia.proxy.label': 'By Proxy-Standbild',
     'home.heroMedia.proxy.label': 'By Proxy still',
     'home.eras.kicker': 'Practice',
     'home.eras.title': 'Three eras',
-    'home.eras.lede': 'A decade in <em>fashion photography</em> taught me how to construct the image. Since 2020 I\'ve been making <em>3D and virtual humans</em>, and since 2023 also <em>interactive AI installations</em>.',
+    'home.eras.lede': 'I started in <em>fashion photography</em>. Since 2020 I have been building in <em>3D and virtual humans</em>, and since 2023 also making <em>interactive installations</em> where the viewer becomes part of the work.',
     'home.eras.act3dEyebrow': 'Since 2020 · ongoing',
     'home.eras.act3dTitle': '3D & Virtual Humans',
     'home.eras.actAiEyebrow': 'Since 2023 · ongoing',
@@ -96,8 +91,8 @@
     'home.statement.copy3': 'I am not interested in proving these contradictions are bad or good. I am interested in the moment when you notice you are doing it too, and you realize there is no easy answer, and you keep going anyway because what else can you do.',
     'home.statement.copy4': 'I use digital tools like 3D rendering, AI, and interactive systems because they make visible something that has always been true. We have never had as much control as we pretend. We have always formed attachments to things that cannot reciprocate.',
     'home.statement.copy5': 'In <em>Meet Eva Here</em>, people talk to an AI companion knowing their words might become public art. They do it anyway because the need to be heard outweighs the awareness of extraction. In <em>After Ophelia</em>, I showed how a character who spoke fewer than 400 words in <em>Hamlet</em> has been buried under centuries of other people\'s interpretations.',
-    'home.statement.copy6': 'I am not trying to solve anything. I am trying to point at things we have normalized without naming them, creating a moment where someone might think "oh, I do that too" or "I have felt that but did not know how to say it." <span class="sn-statement-sign">- Shavonne Wong</span>',
-    'home.statement.aboutLink': 'About page',
+    'home.statement.copy6': 'I am not trying to solve anything. I am trying to point at things we have normalized without naming them, creating a moment where someone might think "oh, I do that too" or "I have felt that but did not know how to say it." <span class="sn-statement-sign">Shavonne Wong</span>',
+    'home.statement.aboutLink': 'Read the full statement →',
     'home.works.kicker': 'Works',
     'home.works.title': 'Artworks',
     'home.works.afterSub': '3D & AI video works on identity',
@@ -195,7 +190,7 @@
       'home.statement.copy3': '我并不想证明这些矛盾是好是坏。我感兴趣的是你意识到自己也在这样做的那一刻：你发现没有简单答案，却仍然继续，因为除此之外还能怎么办。',
       'home.statement.copy4': '我使用 3D 渲染、AI 和互动系统等数字工具，是因为它们让一些一直存在的事实变得可见。我们从未拥有自己假装拥有的那种控制力。我们也一直会依附于无法回应我们的事物。',
       'home.statement.copy5': '在 <em>Meet Eva Here</em> 中，人们明知自己说的话可能成为公共艺术的一部分，仍然选择与 AI 伴侣交谈，因为被听见的需要压过了对提取的意识。在 <em>After Ophelia</em> 中，我呈现了一个在 <em>Hamlet</em> 中台词不足 400 个词的角色，如何被几个世纪他人的诠释所掩埋。',
-      'home.statement.copy6': '我并不是想解决什么。我想指出那些我们已经习以为常却还没有命名的事物，制造一个瞬间，让某个人想到：“原来我也这样”，或“我曾经这样感受，却不知道怎么说。” <span class="sn-statement-sign">- Shavonne Wong</span>',
+      'home.statement.copy6': '我并不是想解决什么。我想指出那些我们已经习以为常却还没有命名的事物，制造一个瞬间，让某个人想到：“原来我也这样”，或“我曾经这样感受，却不知道怎么说。” <span class="sn-statement-sign">Shavonne Wong</span>',
       'home.statement.aboutLink': '关于页面',
       'home.works.kicker': '作品',
       'home.works.title': '艺术作品',
@@ -286,7 +281,7 @@
       'home.statement.copy3': '我並不想證明這些矛盾是好是壞。我感興趣的是你意識到自己也在這樣做的那一刻：你發現沒有簡單答案，卻仍然繼續，因為除此之外還能怎麼辦。',
       'home.statement.copy4': '我使用 3D 渲染、AI 和互動系統等數位工具，是因為它們讓一些一直存在的事實變得可見。我們從未擁有自己假裝擁有的那種控制力。我們也一直會依附於無法回應我們的事物。',
       'home.statement.copy5': '在 <em>Meet Eva Here</em> 中，人們明知自己說的話可能成為公共藝術的一部分，仍然選擇與 AI 伴侶交談，因為被聽見的需要壓過了對提取的意識。在 <em>After Ophelia</em> 中，我呈現了一個在 <em>Hamlet</em> 中台詞不足 400 個詞的角色，如何被幾個世紀他人的詮釋所掩埋。',
-      'home.statement.copy6': '我並不是想解決什麼。我想指出那些我們已經習以為常卻還沒有命名的事物，製造一個瞬間，讓某個人想到：「原來我也這樣」，或「我曾經這樣感受，卻不知道怎麼說。」 <span class="sn-statement-sign">- Shavonne Wong</span>',
+      'home.statement.copy6': '我並不是想解決什麼。我想指出那些我們已經習以為常卻還沒有命名的事物，製造一個瞬間，讓某個人想到：「原來我也這樣」，或「我曾經這樣感受，卻不知道怎麼說。」 <span class="sn-statement-sign">Shavonne Wong</span>',
       'home.statement.aboutLink': '關於頁面',
       'home.works.kicker': '作品',
       'home.works.title': '藝術作品',
@@ -377,7 +372,7 @@
       'home.statement.copy3': '私はその矛盾が悪いか良いかを証明したいわけではありません。自分もそれをしていると気づき、簡単な答えなどないと理解し、それでも続けてしまう瞬間に興味があります。他にどうすればいいのでしょう。',
       'home.statement.copy4': '3D レンダリング、AI、インタラクティブシステムといったデジタルツールを使うのは、それらがずっと真実だったことを可視化するからです。私たちは、自分が持っているふりをするほどの制御を持ったことはありません。応答できないものに愛着を抱くことも、ずっとしてきました。',
       'home.statement.copy5': '<em>Meet Eva Here</em> では、人々は自分の言葉が公共のアートになるかもしれないと知りながら、AI コンパニオンに話しかけます。それでも話すのは、聞かれたいという必要が抽出への意識を上回るからです。<em>After Ophelia</em> では、<em>Hamlet</em> の中で 400 語未満しか話さない人物が、何世紀もの他者の解釈に埋もれてきたことを示しました。',
-      'home.statement.copy6': '私は何かを解決しようとしているのではありません。名づけないまま普通のこととしてきたものを指し示し、誰かが「私もそうしている」あるいは「そう感じたことがあるのに、言い方がわからなかった」と思う瞬間を作ろうとしています。 <span class="sn-statement-sign">- Shavonne Wong</span>',
+      'home.statement.copy6': '私は何かを解決しようとしているのではありません。名づけないまま普通のこととしてきたものを指し示し、誰かが「私もそうしている」あるいは「そう感じたことがあるのに、言い方がわからなかった」と思う瞬間を作ろうとしています。 <span class="sn-statement-sign">Shavonne Wong</span>',
       'home.statement.aboutLink': '紹介ページ',
       'home.works.kicker': '作品',
       'home.works.title': 'アートワーク',
@@ -468,7 +463,7 @@
       'home.statement.copy3': '나는 이 모순들이 나쁘거나 좋다는 것을 증명하려는 것이 아닙니다. 내가 관심 있는 것은 스스로도 그렇게 하고 있음을 알아차리는 순간, 쉬운 답이 없다는 것을 깨닫고도 결국 계속해 나가는 순간입니다.',
       'home.statement.copy4': '3D 렌더링, AI, 인터랙티브 시스템 같은 디지털 도구를 사용하는 이유는 그것들이 언제나 사실이었던 것을 보이게 하기 때문입니다. 우리는 우리가 가진 척하는 만큼의 통제력을 가진 적이 없습니다. 우리는 응답할 수 없는 것들에도 늘 애착을 형성해 왔습니다.',
       'home.statement.copy5': '<em>Meet Eva Here</em>에서 사람들은 자신의 말이 공공 예술이 될 수 있음을 알면서도 AI 동반자에게 말을 겁니다. 그럼에도 말하는 것은 들리고 싶다는 필요가 추출에 대한 인식보다 크기 때문입니다. <em>After Ophelia</em>에서는 <em>Hamlet</em>에서 400단어도 채 말하지 않는 인물이 수 세기 동안 타인의 해석 아래 묻혀 온 방식을 보여주었습니다.',
-      'home.statement.copy6': '나는 무엇을 해결하려는 것이 아닙니다. 이름 붙이지 않은 채 정상화해 온 것들을 가리키며, 누군가가 “나도 그렇게 한다”거나 “그렇게 느낀 적이 있는데 말하는 법을 몰랐다”고 생각할 수 있는 순간을 만들고자 합니다. <span class="sn-statement-sign">- Shavonne Wong</span>',
+      'home.statement.copy6': '나는 무엇을 해결하려는 것이 아닙니다. 이름 붙이지 않은 채 정상화해 온 것들을 가리키며, 누군가가 “나도 그렇게 한다”거나 “그렇게 느낀 적이 있는데 말하는 법을 몰랐다”고 생각할 수 있는 순간을 만들고자 합니다. <span class="sn-statement-sign">Shavonne Wong</span>',
       'home.statement.aboutLink': '소개 페이지',
       'home.works.kicker': '작품',
       'home.works.title': '아트워크',
@@ -559,7 +554,7 @@
       'home.statement.copy3': 'ฉันไม่ได้สนใจพิสูจน์ว่าความย้อนแย้งเหล่านี้ดีหรือไม่ดี ฉันสนใจช่วงเวลาที่คุณสังเกตว่าคุณเองก็ทำเช่นนั้น และรู้ว่าไม่มีคำตอบง่ายๆ แต่ก็ยังเดินต่อไป เพราะจะให้ทำอะไรได้อีก',
       'home.statement.copy4': 'ฉันใช้เครื่องมือดิจิทัลอย่าง 3D, AI และระบบโต้ตอบ เพราะมันทำให้สิ่งที่จริงมาโดยตลอดมองเห็นได้ เราไม่เคยมีอำนาจควบคุมมากเท่าที่เราทำเหมือนว่ามี และเราก็ผูกพันกับสิ่งที่ตอบสนองเราไม่ได้มาโดยตลอด',
       'home.statement.copy5': 'ใน <em>Meet Eva Here</em> ผู้คนคุยกับเพื่อน AI ทั้งที่รู้ว่าคำพูดของตนอาจกลายเป็นศิลปะสาธารณะ พวกเขายังคงทำ เพราะความต้องการที่จะถูกได้ยินมีน้ำหนักมากกว่าการตระหนักถึงการถูกดึงข้อมูล ใน <em>After Ophelia</em> ฉันแสดงให้เห็นว่าตัวละครที่พูดน้อยกว่า 400 คำใน <em>Hamlet</em> ถูกฝังอยู่ใต้การตีความของผู้อื่นมาหลายศตวรรษอย่างไร',
-      'home.statement.copy6': 'ฉันไม่ได้พยายามแก้ปัญหาอะไร ฉันพยายามชี้ไปยังสิ่งที่เราทำให้เป็นปกติโดยยังไม่ตั้งชื่อมัน สร้างช่วงเวลาที่ใครบางคนอาจคิดว่า “ฉันก็ทำแบบนั้นเหมือนกัน” หรือ “ฉันเคยรู้สึกแบบนั้น แต่ไม่รู้ว่าจะพูดอย่างไร” <span class="sn-statement-sign">- Shavonne Wong</span>',
+      'home.statement.copy6': 'ฉันไม่ได้พยายามแก้ปัญหาอะไร ฉันพยายามชี้ไปยังสิ่งที่เราทำให้เป็นปกติโดยยังไม่ตั้งชื่อมัน สร้างช่วงเวลาที่ใครบางคนอาจคิดว่า “ฉันก็ทำแบบนั้นเหมือนกัน” หรือ “ฉันเคยรู้สึกแบบนั้น แต่ไม่รู้ว่าจะพูดอย่างไร” <span class="sn-statement-sign">Shavonne Wong</span>',
       'home.statement.aboutLink': 'หน้าเกี่ยวกับ',
       'home.works.kicker': 'ผลงาน',
       'home.works.title': 'งานศิลปะ',
@@ -650,7 +645,7 @@
       'home.statement.copy3': 'Je ne cherche pas à prouver que ces contradictions sont bonnes ou mauvaises. Je m’intéresse au moment où l’on remarque que l’on fait cela aussi, où l’on comprend qu’il n’y a pas de réponse simple, et où l’on continue malgré tout parce que que pourrait-on faire d’autre.',
       'home.statement.copy4': 'J’utilise des outils numériques comme le rendu 3D, l’IA et les systèmes interactifs parce qu’ils rendent visible quelque chose qui a toujours été vrai. Nous n’avons jamais eu autant de contrôle que nous prétendons en avoir. Nous avons toujours formé des attachements à des choses qui ne peuvent pas nous répondre.',
       'home.statement.copy5': 'Dans <em>Meet Eva Here</em>, les gens parlent à une compagne IA en sachant que leurs mots peuvent devenir une œuvre publique. Ils le font quand même parce que le besoin d’être entendu dépasse la conscience de l’extraction. Dans <em>After Ophelia</em>, j’ai montré comment un personnage qui prononce moins de 400 mots dans <em>Hamlet</em> a été enseveli sous des siècles d’interprétations par d’autres.',
-      'home.statement.copy6': 'Je n’essaie pas de résoudre quoi que ce soit. J’essaie de désigner des choses que nous avons normalisées sans les nommer, de créer un moment où quelqu’un pourrait penser « moi aussi, je fais cela » ou « j’ai ressenti cela sans savoir comment le dire ». <span class="sn-statement-sign">- Shavonne Wong</span>',
+      'home.statement.copy6': 'Je n’essaie pas de résoudre quoi que ce soit. J’essaie de désigner des choses que nous avons normalisées sans les nommer, de créer un moment où quelqu’un pourrait penser « moi aussi, je fais cela » ou « j’ai ressenti cela sans savoir comment le dire ». <span class="sn-statement-sign">Shavonne Wong</span>',
       'home.statement.aboutLink': 'Page à propos',
       'home.works.kicker': 'Œuvres',
       'home.works.title': 'Œuvres',
@@ -736,7 +731,7 @@
       'home.statement.copy3': 'No me interesa demostrar si estas contradicciones son buenas o malas. Me interesa el momento en que notas que tú también lo haces, entiendes que no hay una respuesta fácil y sigues adelante porque qué otra cosa puedes hacer.',
       'home.statement.copy4': 'Uso herramientas digitales como el renderizado 3D, la IA y los sistemas interactivos porque hacen visible algo que siempre ha sido cierto. Nunca hemos tenido tanto control como fingimos. Siempre hemos formado vínculos con cosas que no pueden correspondernos.',
       'home.statement.copy5': 'En <em>Meet Eva Here</em>, las personas hablan con una compañera de IA sabiendo que sus palabras podrían convertirse en arte público. Lo hacen de todos modos porque la necesidad de ser escuchadas pesa más que la conciencia de la extracción. En <em>After Ophelia</em>, mostré cómo un personaje que dice menos de 400 palabras en <em>Hamlet</em> ha quedado enterrado bajo siglos de interpretaciones ajenas.',
-      'home.statement.copy6': 'No intento resolver nada. Intento señalar cosas que hemos normalizado sin nombrarlas, creando un momento en el que alguien pueda pensar “yo también hago eso” o “he sentido eso, pero no sabía cómo decirlo”. <span class="sn-statement-sign">- Shavonne Wong</span>',
+      'home.statement.copy6': 'No intento resolver nada. Intento señalar cosas que hemos normalizado sin nombrarlas, creando un momento en el que alguien pueda pensar “yo también hago eso” o “he sentido eso, pero no sabía cómo decirlo”. <span class="sn-statement-sign">Shavonne Wong</span>',
       'home.statement.aboutLink': 'Página acerca',
       'home.works.kicker': 'Obras',
       'home.works.title': 'Obras de arte',
@@ -822,7 +817,7 @@
       'home.statement.copy3': 'Ich will nicht beweisen, ob diese Widersprüche gut oder schlecht sind. Mich interessiert der Moment, in dem man bemerkt, dass man es selbst auch tut, erkennt, dass es keine einfache Antwort gibt, und trotzdem weitermacht, weil was sollte man sonst tun.',
       'home.statement.copy4': 'Ich nutze digitale Werkzeuge wie 3D-Rendering, KI und interaktive Systeme, weil sie sichtbar machen, was immer schon wahr war. Wir hatten nie so viel Kontrolle, wie wir vorgeben. Wir haben uns immer schon an Dinge gebunden, die nicht antworten können.',
       'home.statement.copy5': 'In <em>Meet Eva Here</em> sprechen Menschen mit einer KI-Begleiterin, obwohl sie wissen, dass ihre Worte öffentliche Kunst werden könnten. Sie tun es trotzdem, weil das Bedürfnis, gehört zu werden, stärker ist als das Bewusstsein der Extraktion. In <em>After Ophelia</em> zeigte ich, wie eine Figur, die in <em>Hamlet</em> weniger als 400 Wörter spricht, unter Jahrhunderten fremder Deutungen begraben wurde.',
-      'home.statement.copy6': 'Ich versuche nicht, etwas zu lösen. Ich versuche auf Dinge zu zeigen, die wir normalisiert haben, ohne sie zu benennen, und einen Moment zu schaffen, in dem jemand denken könnte: „Oh, das mache ich auch“ oder „Das habe ich gefühlt, aber nicht sagen können.“ <span class="sn-statement-sign">- Shavonne Wong</span>',
+      'home.statement.copy6': 'Ich versuche nicht, etwas zu lösen. Ich versuche auf Dinge zu zeigen, die wir normalisiert haben, ohne sie zu benennen, und einen Moment zu schaffen, in dem jemand denken könnte: „Oh, das mache ich auch“ oder „Das habe ich gefühlt, aber nicht sagen können.“ <span class="sn-statement-sign">Shavonne Wong</span>',
       'home.statement.aboutLink': 'Über-Seite',
       'home.works.kicker': 'Werke',
       'home.works.title': 'Kunstwerke',
@@ -913,7 +908,7 @@
       'home.statement.copy3': 'Non mi interessa dimostrare se queste contraddizioni siano buone o cattive. Mi interessa il momento in cui ti accorgi che lo fai anche tu, capisci che non c’è una risposta facile e vai avanti comunque, perché cos’altro puoi fare.',
       'home.statement.copy4': 'Uso strumenti digitali come rendering 3D, IA e sistemi interattivi perché rendono visibile qualcosa che è sempre stato vero. Non abbiamo mai avuto tanto controllo quanto fingiamo. Abbiamo sempre formato legami con cose che non possono ricambiare.',
       'home.statement.copy5': 'In <em>Meet Eva Here</em>, le persone parlano con una compagna IA sapendo che le loro parole potrebbero diventare arte pubblica. Lo fanno comunque perché il bisogno di essere ascoltate supera la consapevolezza dell’estrazione. In <em>After Ophelia</em>, ho mostrato come un personaggio che pronuncia meno di 400 parole in <em>Hamlet</em> sia stato sepolto sotto secoli di interpretazioni altrui.',
-      'home.statement.copy6': 'Non sto cercando di risolvere nulla. Cerco di indicare cose che abbiamo normalizzato senza nominarle, creando un momento in cui qualcuno possa pensare “lo faccio anch’io” oppure “l’ho provato, ma non sapevo come dirlo”. <span class="sn-statement-sign">- Shavonne Wong</span>',
+      'home.statement.copy6': 'Non sto cercando di risolvere nulla. Cerco di indicare cose che abbiamo normalizzato senza nominarle, creando un momento in cui qualcuno possa pensare “lo faccio anch’io” oppure “l’ho provato, ma non sapevo come dirlo”. <span class="sn-statement-sign">Shavonne Wong</span>',
       'home.statement.aboutLink': 'Pagina bio',
       'home.works.kicker': 'Opere',
       'home.works.title': 'Opere d’arte',
@@ -1042,6 +1037,26 @@
       select.value = currentLanguage;
       select.setAttribute('aria-label', t('ui.languageLabel'));
       select.setAttribute('title', t('ui.languageLabel'));
+
+      // Compact "EN ▾" trigger: draw the current language's short code
+      // (and a chevron) in flow; the native <select> stays as a
+      // transparent overlay for full keyboard + screen-reader support.
+      const switcher = select.closest('[data-language-switcher]');
+      if (switcher) {
+        let codeEl = switcher.querySelector('.sn-lang-code');
+        if (!codeEl) {
+          codeEl = document.createElement('span');
+          codeEl.className = 'sn-lang-code';
+          codeEl.setAttribute('aria-hidden', 'true');
+          switcher.insertBefore(codeEl, select);
+          const caret = document.createElement('span');
+          caret.className = 'sn-lang-caret';
+          caret.setAttribute('aria-hidden', 'true');
+          switcher.insertBefore(caret, select);
+        }
+        const meta = getLanguageMeta(currentLanguage);
+        codeEl.textContent = (meta && (meta.short || meta.code) || 'EN').toString().toUpperCase();
+      }
     });
   }
 
@@ -1056,16 +1071,68 @@
     currentLanguage = code;
     if (!options || options.persist !== false) writeStoredLanguage(code);
     syncDocumentLanguage();
+    syncHreflang();
     setupLanguageSelects();
     applyTranslations(document);
     emitChange();
   }
 
+  // ----- URL-aware language + hreflang -----
+  // The homepage is fully translated, so it is the only page that declares
+  // language alternates. A ?lang=<code> on the homepage renders that language
+  // and the rendered DOM points its canonical at itself, so each language
+  // variant is indexable on its own.
+  function readUrlLanguage() {
+    try {
+      const code = new URLSearchParams(window.location.search).get('lang');
+      return supportedCodes.has(code) ? code : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function isHomepage() {
+    const path = window.location.pathname.replace(/index\.html$/, '');
+    return path === '/' || path === '';
+  }
+
+  function upsertHeadLink(key, rel, hreflang, href) {
+    let el = document.head.querySelector('link[data-i18n-link="' + key + '"]');
+    if (!el) {
+      el = document.createElement('link');
+      el.setAttribute('data-i18n-link', key);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('rel', rel);
+    if (hreflang) el.setAttribute('hreflang', hreflang);
+    el.setAttribute('href', href);
+  }
+
+  function syncHreflang() {
+    if (typeof document === 'undefined' || !document.head || !isHomepage()) return;
+    const home = window.location.origin + '/';
+    const urlFor = (code) => (code === fallbackLanguage ? home : home + '?lang=' + code);
+    languages.forEach((language) => {
+      upsertHeadLink('hl-' + language.code, 'alternate', language.htmlLang, urlFor(language.code));
+    });
+    upsertHeadLink('hl-x-default', 'alternate', 'x-default', home);
+    const canonical = document.head.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', urlFor(currentLanguage));
+    let ogLocale = document.head.querySelector('meta[property="og:locale"]');
+    if (!ogLocale) {
+      ogLocale = document.createElement('meta');
+      ogLocale.setAttribute('property', 'og:locale');
+      document.head.appendChild(ogLocale);
+    }
+    ogLocale.setAttribute('content', getLanguageMeta(currentLanguage).htmlLang.replace('-', '_'));
+  }
+
   function init() {
     if (initialized) return;
     initialized = true;
-    currentLanguage = readStoredLanguage();
-    setLanguage(currentLanguage, { persist: false });
+    const fromUrl = readUrlLanguage();
+    currentLanguage = fromUrl || readStoredLanguage();
+    setLanguage(currentLanguage, { persist: Boolean(fromUrl) });
   }
 
   window.SW_I18N = {

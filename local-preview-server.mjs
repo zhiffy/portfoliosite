@@ -1,0 +1,99 @@
+import { createReadStream, existsSync, statSync } from "node:fs";
+import { createServer } from "node:http";
+import path from "node:path";
+
+const root = process.cwd();
+const port = Number(process.argv[2] || 4174);
+const host = process.argv[3] || "127.0.0.1";
+
+const contentTypes = {
+  ".css": "text/css; charset=utf-8",
+  ".gif": "image/gif",
+  ".html": "text/html; charset=utf-8",
+  ".ico": "image/x-icon",
+  ".jpeg": "image/jpeg",
+  ".jpg": "image/jpeg",
+  ".js": "application/javascript; charset=utf-8",
+  ".json": "application/json; charset=utf-8",
+  ".mp4": "video/mp4",
+  ".png": "image/png",
+  ".svg": "image/svg+xml",
+  ".txt": "text/plain; charset=utf-8",
+  ".webp": "image/webp",
+  ".xml": "application/xml; charset=utf-8",
+};
+
+const routes = {
+  "/": "index.html",
+  "/about/": "about.html",
+  "/press/": "press.html",
+  "/writing/": "writing.html",
+  "/works/": "works.html",
+  "/works/after-ophelia/": "after-ophelia.html",
+  "/works/available/": "works-available.html",
+  "/works/by-proxy/": "by-proxy.html",
+  "/works/conditional/": "conditional.html",
+  "/works/love-is-love/": "love-is-love.html",
+  "/works/meet-eva-here/": "meet-eva-here.html",
+  "/works/the-ties-that-bind/": "the-ties-that-bind.html",
+  "/works/whirlwind-of-the-waking-dream/": "whirlwind-of-the-waking-dream.html",
+  "/update2023jan/": "update2023jan.html",
+  "/update2023june/": "update2023june.html",
+  "/update2024jan/": "update2024jan.html",
+  "/update2024jun/": "update2024jun.html",
+  "/update2025jan/": "update2025jan.html",
+  "/update2025jun/": "update2025jun.html",
+  "/update2026jun/": "update2026jun.html",
+};
+
+function respond(response, status, body, type = "text/plain; charset=utf-8") {
+  response.writeHead(status, {
+    "Cache-Control": "no-store",
+    "Content-Type": type,
+  });
+  response.end(body);
+}
+
+function resolveFile(requestPath) {
+  const mappedRoute = routes[requestPath] || routes[`${requestPath}/`];
+  const relativePath = mappedRoute || requestPath.replace(/^\/+/, "") || "index.html";
+  let filePath = path.resolve(root, relativePath);
+
+  if (!filePath.startsWith(root)) return null;
+  if (existsSync(filePath) && statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, "index.html");
+  }
+  if (!existsSync(filePath) && !path.extname(filePath)) {
+    filePath = path.resolve(root, `${relativePath}.html`);
+  }
+
+  if (!filePath.startsWith(root) || !existsSync(filePath) || statSync(filePath).isDirectory()) {
+    return null;
+  }
+  return filePath;
+}
+
+const server = createServer((request, response) => {
+  try {
+    const url = new URL(request.url || "/", `http://${host}:${port}`);
+    const filePath = resolveFile(decodeURIComponent(url.pathname));
+
+    if (!filePath) {
+      respond(response, 404, "Not found");
+      return;
+    }
+
+    const extension = path.extname(filePath).toLowerCase();
+    response.writeHead(200, {
+      "Cache-Control": "no-store",
+      "Content-Type": contentTypes[extension] || "application/octet-stream",
+    });
+    createReadStream(filePath).pipe(response);
+  } catch (error) {
+    respond(response, 500, error instanceof Error ? error.message : String(error));
+  }
+});
+
+server.listen(port, host, () => {
+  console.log(`Preview server running at http://${host}:${port}/`);
+});

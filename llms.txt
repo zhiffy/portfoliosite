@@ -1,0 +1,18 @@
+# Shavonne Wong
+
+> Shavonne Wong (b. 1990, Singapore) is a Singaporean new media artist working in AI, 3D rendering, and interactive installation, based between Singapore and Bangkok. Her work examines identity, image systems, and human-AI relationships. She has exhibited at the Venice Biennale, ArtScience Museum Singapore, Art SG, Taipei Dangdai, Art Central Hong Kong, and Paris Photo. Recognition includes Forbes 30 Under 30 Asia (2020) and Prestige 40 Under 40 (2023). She co-founded NFT Asia and is a member of the artist collective BLOOM.
+
+## Key pages
+- [About](https://shavonnewong.art/about/): Biography, artist statement, full exhibition history, collaborations, recognition, talks and press.
+- [Works](https://shavonnewong.art/works/): Catalogue of projects, single works, editions, and commissions.
+- [Conditional](https://shavonnewong.art/works/conditional/): Current work, 2026. A real-time generative AI installation in which a screen shows a live feed of the room with the viewer continuously removed; holding still lets you fade back, colour-shifted, as a version the scene will accept.
+- [Meet Eva Here](https://shavonnewong.art/works/meet-eva-here/): Interactive AI companion artwork shown at ArtScience Museum, Art SG, and Taipei Dangdai.
+- [After Ophelia](https://shavonnewong.art/works/after-ophelia/): Two-part AI video work on identity and inherited interpretation, Paris Photo 2025.
+- [The Ties That Bind](https://shavonnewong.art/works/the-ties-that-bind/): Solo exhibition of seven dynamic digital works, Singapore, 2023.
+- [By Proxy](https://shavonnewong.art/works/by-proxy/): Series of 60 unique CGI and photography works with Lenne Chai, 2022.
+- [Love is Love](https://shavonnewong.art/works/love-is-love/): Generative digital artwork with a 500-piece edition, collected by Idris Elba, 2021.
+- [Press](https://shavonnewong.art/press/): Selected press, profiles, and features.
+- [Writing](https://shavonnewong.art/writing/): Studio notes, published twice a year.
+
+## Contact
+- Studio enquiries: studio@shavonnewong.art

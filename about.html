@@ -3,13 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shavonne Wong — About</title>
+  <title>About | Shavonne Wong</title>
+  <meta name="description" content="Shavonne Wong is a new media artist working between photography and machine-generated image. Biography, artist statement, full exhibition history, collaborations, talks, and press.">
+  <meta name="author" content="Shavonne Wong">
+  <link rel="canonical" href="https://shavonnewong.art/about/">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://shavonnewong.art/about/">
+  <meta property="og:title" content="About | Shavonne Wong">
+  <meta property="og:description" content="New media artist working in AI, 3D, and interactive installation. Exhibited at the Venice Biennale, ArtScience Museum, Paris Photo, ART SG, and Taipei Dangdai.">
+  <meta property="og:image" content="https://shavonnewong.art/assets/profile/profilephoto.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About | Shavonne Wong">
+  <meta name="twitter:description" content="New media artist working in AI, 3D, and interactive installation.">
+  <meta name="twitter:image" content="https://shavonnewong.art/assets/profile/profilephoto.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="scroll-narrative.css?v=20260527-site-ripple-normal">
-  <link rel="stylesheet" href="scroll-pages.css?v=20260520-mobile-pass">
-  <link rel="stylesheet" href="about-redesign.css?v=20260520-mobile-pass">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="scroll-narrative.css?v=20260531-sb2">
+  <link rel="stylesheet" href="scroll-pages.css?v=20260531-scroll2">
+  <link rel="stylesheet" href="about-redesign.css?v=20260531-width">
+  <link rel="stylesheet" href="about-v2.css?v=20260601-recogcards2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,7 +58,10 @@
     "sameAs": [
       "https://en.wikipedia.org/wiki/Shavonne_Wong",
       "https://www.instagram.com/shavonne.wong/",
-      "https://x.com/shavonnewong_"
+      "https://x.com/shavonnewong_",
+      "https://sg.linkedin.com/in/shavonnew",
+      "https://ocula.com/artists/shavonne-wong/",
+      "https://seafocus.sg/artists/shavonne-wong/"
     ]
   }
   </script>
@@ -51,11 +69,11 @@
 <body class="sn-page-body ab-body">
   <a class="sn-skip-link" href="#main-content">Skip to content</a>
 <header class="sn-nav" data-page-nav>
-    <a href="index.html#hero" class="sn-mark"><img class="sn-mark-logo" src="assets/brand/wordmark-slate.png" alt="Shavonne Wong" width="120" height="42"></a>
+    <a href="index.html#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
       <a href="index.html#hero" data-i18n="nav.home">Home</a>
       <a href="about.html" class="is-active" data-i18n="nav.about">About</a>
-      <a href="/works/" data-i18n="nav.works">Works</a>
+      <a href="works.html" data-i18n="nav.works">Works</a>
       <a href="writing.html" data-i18n="nav.writing">Writing</a>
       <a href="press.html" data-i18n="nav.press">Press</a>
       <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
@@ -70,372 +88,509 @@
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
   </header>
 
-  <main id="main-content" class="ab-main">
+  <main id="main-content" class="abv-main" data-abv-main>
 
     <!-- ========================================================
-         01 — IDENTITY / HERO
+         01 — HERO
          ======================================================== -->
-    <section class="ab-hero">
-      <div class="ab-hero-stamp">
-        <span class="ab-hero-stamp-rule"></span>
+    <section class="abv-section abv-hero">
+      <div class="abv-hero-stamp">
+        <span class="abv-hero-stamp-rule"></span>
         <span>About — Shavonne Wong</span>
-        <span class="ab-hero-stamp-rule"></span>
+        <span class="abv-hero-stamp-rule"></span>
       </div>
 
-      <h1 class="ab-hero-title">
-        <span class="ab-hero-title-w1">Shavonne</span>
-        <span class="ab-hero-title-w2"><em>Wong.</em></span>
+      <h1 class="abv-hero-title">
+        <span class="w1">Shavonne</span>
+        <span class="w2">Wong<span class="dot">.</span></span>
       </h1>
 
-      <div class="ab-hero-grid">
-        <!-- LEFT: identity card with photo -->
-        <div class="ab-identity">
-          <figure class="ab-photo">
-            <img src="assets/profile/profilephoto.png" alt="Portrait of Shavonne Wong">
-            <figcaption>
-              <span>Shavonne, 2025</span>
-              <span>Singapore</span>
-            </figcaption>
-          </figure>
+      <div class="abv-hero-grid">
+        <figure class="abv-portrait abv-hero-fig">
+          <img decoding="async" src="assets/profile/profilephoto.webp" alt="Portrait of Shavonne Wong" fetchpriority="high">
+          <figcaption><span>Shavonne Wong, 2025</span><span>Singapore</span></figcaption>
+        </figure>
 
-          <dl class="ab-facts">
-            <div><dt>Born</dt><dd>1990, Singapore</dd></div>
-            <div><dt>Based</dt><dd>Singapore / Bangkok</dd></div>
-            <div><dt>Practice</dt><dd>New media · AI · 3D · participatory installation</dd></div>
-            <div><dt>Memberships</dt><dd>BLOOM · NFT Asia (co-founder)</dd></div>
-            <div><dt>Studio</dt><dd><a href="mailto:studio@shavonnewong.art" class="ab-link">studio@shavonnewong.art</a></dd></div>
-          </dl>
-        </div>
-
-        <!-- RIGHT: bio -->
-        <div class="ab-bio">
-          <p class="ab-lede">
-            <span class="ab-drop">S</span>havonne Wong is a new media artist working in
-            AI, 3D rendering, and interactive installation.
+        <div class="abv-hero-bio">
+          <p class="abv-hero-lede">
+            Shavonne Wong is a Singaporean new media artist working in <em>AI, 3D rendering, and interactive installation.</em>
           </p>
-          <p class="ab-copy ab-chronology">
-            <strong>Fashion and advertising photography, 2010 — 2019.</strong>
-            <strong>3D and virtual humans, since 2020.</strong>
-            <strong>Interactive AI installations, since 2023.</strong>
+          <p>
+            She began in fashion and advertising photography, then moved into synthetic
+            humans in 3D, and from there into interactive work. Her work is interested in
+            the <em>conditions under which we extend trust to images and systems,</em> and
+            what we reveal in the process.
           </p>
-          <p class="ab-copy">
-            She began in fashion and advertising photography, then moved into synthetic humans
-            in 3D, and from there into interactive work. Her work is interested in the
-            <em>conditions under which we extend trust to images and systems,</em> and what
-            we reveal in the process.
-          </p>
-          <p class="ab-copy">
+          <p>
             Wong's work has been presented at <strong>ArtScience Museum Singapore</strong>,
             <strong>Art SG</strong>, <strong>Taipei Dangdai</strong>, <strong>Art Central
-            Hong Kong</strong>, and the <strong>Venice Biennale</strong>.
-            <strong>Forbes 30 Under 30 Asia (2020)</strong>.
-            <strong>Prestige 40 Under 40 (2023)</strong>.
+            Hong Kong</strong>, and the <strong>Venice Biennale</strong>. Forbes 30 Under 30
+            Asia (2020). Prestige 40 Under 40 (2023). She co-founded NFT Asia and is a member
+            of BLOOM.
           </p>
-          <p class="ab-copy">
+          <p>
             In her most recent work <em>Meet Eva Here</em> (2024), thousands of people spoke
             with a synthetic character through video-call installations and an online chatbot.
             Those conversations were distilled into 100 Instagram diary posts.
           </p>
-          <p class="ab-copy">
-            She is currently developing a participatory installation in which a digital mirror
-            renders the room in full but erases every human from it. You reappear only if you
-            follow the conditions and allow yourself to be color-corrected back into the scene.
+          <p>
+            She is currently developing a participatory installation in which a digital
+            mirror renders the room in full but erases every human from it. You reappear only
+            if you follow the conditions and allow yourself to be color-corrected back into
+            the scene.
           </p>
+          <p>
+            Shavonne is a member of <strong>BLOOM</strong>, an artist collective, alongside
+            being one of the Co-Founders of <strong>NFT Asia</strong>, a community dedicated
+            to Asian artists in the NFT space.
+          </p>
+        </div>
 
-          <ul class="ab-tag-row" aria-label="At a glance">
+        <aside class="abv-hero-meta">
+          <dl class="abv-facts">
+            <div><dt>Born</dt><dd>1990, Singapore</dd></div>
+            <div><dt>Based</dt><dd>Singapore / Bangkok</dd></div>
+            <div><dt>Practice</dt><dd>New media · AI · 3D · participatory installation</dd></div>
+            <div><dt>Memberships</dt><dd>BLOOM · NFT Asia (co-founder)</dd></div>
+            <div><dt>Studio</dt><dd><a href="mailto:studio@shavonnewong.art?subject=Studio%20enquiry" class="abv-link">studio@shavonnewong.art</a></dd></div>
+          </dl>
+
+          <ul class="abv-tags" aria-label="At a glance">
             <li>AI installations</li>
             <li>3D &amp; virtual humans</li>
             <li>Fashion photography</li>
             <li>Participatory frameworks</li>
             <li>Generative</li>
           </ul>
-        </div>
+        </aside>
       </div>
     </section>
 
     <!-- ========================================================
-         02 — EXHIBITIONS
+         02 — ARTIST STATEMENT
          ======================================================== -->
-    <section class="ab-section" aria-label="Exhibitions">
-      <header class="ab-section-head">
-        <span class="ab-section-num">02</span>
-        <h2 class="ab-section-title">Exhibitions</h2>
-        <span class="ab-section-meta">2021 — 2025 · selected</span>
+    <section class="abv-section abv-statement abv-band" aria-label="Artist statement">
+      <header class="abv-section-head">
+        <span class="abv-section-num">02</span>
+        <h2 class="abv-section-title">Artist statement</h2>
+        <span class="abv-section-meta">In her words</span>
+      </header>
+      <div class="abv-statement-inner">
+        <p class="abv-statement-lede">
+          I make work about experiences I think we share but do not always have words for.
+        </p>
+        <div class="abv-statement-body">
+          <p>
+            My practice began in fashion and advertising photography, where I learned to
+            construct images with precision and control. I was good at making things look a
+            certain way, but for a long time I did not know how to think about what that
+            beauty meant. I made a lot of very pretty, very boring work.
+          </p>
+          <p>
+            In recent years, I have become interested in the things we do that do not quite
+            make sense. We say we value privacy but choose convenience every time. We hate AI
+            while using it for everything. We build identities online and then discover those
+            identities are shaped by what others have said about us, by algorithms we do not
+            understand, and by archives we cannot access.
+          </p>
+          <p>
+            I am not interested in proving these contradictions are bad or good. I am
+            interested in the moment when you notice you are doing it too, and you realize
+            there is no easy answer, and you keep going anyway because what else can you do.
+          </p>
+          <p>
+            I use digital tools like 3D rendering, AI, and interactive systems because they
+            make visible something that has always been true. We have never had as much
+            control as we pretend. We have always formed attachments to things that cannot
+            reciprocate.
+          </p>
+          <p>
+            In <em>Meet Eva Here</em>, people talk to an AI companion knowing their words
+            might become public art. They do it anyway because the need to be heard outweighs
+            the awareness of extraction. In <em>After Ophelia</em>, I showed how a character
+            who spoke fewer than 400 words in <em>Hamlet</em> has been buried under centuries
+            of other people's interpretations.
+          </p>
+          <p>
+            I am not trying to solve anything. I am trying to point at things we have
+            normalized without naming them, creating a moment where someone might think
+            "oh, I do that too" or "I have felt that but did not know how to say it."
+            <span class="abv-statement-sign">Shavonne Wong</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- full-bleed work band — visual breath between text sections -->
+    <figure class="abv-feature">
+      <img decoding="async" loading="lazy" src="assets/eras/3d/Whirlwind of the Waking Dream copy 2.webp" alt="Whirlwind of the Waking Dream, a 3D generative work by Shavonne Wong">
+      <figcaption>
+        <span class="abv-feature-title"><em>Whirlwind of the Waking Dream</em>, 2024</span>
+        <span class="abv-feature-meta">3D · generative</span>
+      </figcaption>
+    </figure>
+
+    <!-- ========================================================
+         03 — SELECTED EXHIBITIONS (+ full archive toggle)
+         ======================================================== -->
+    <section class="abv-section" aria-label="Selected exhibitions">
+      <header class="abv-section-head">
+        <span class="abv-section-num">03</span>
+        <h2 class="abv-section-title">Exhibitions</h2>
+        <span class="abv-section-meta">2021 to 2025 · full archive</span>
+        <button type="button" class="abv-exh-toggle" data-exh-toggle aria-pressed="false">
+          <span data-exh-toggle-label>Selected only</span>
+        </button>
       </header>
 
-      <div class="ab-year-block">
-        <div class="ab-year-col"><span class="ab-year">2025</span><span class="ab-year-count">8 shows</span></div>
-        <ol class="ab-event-list">
-          <li class="ab-event"><strong>Scenes: The Sensory and Remembered Image in the Digital Age</strong><span>Artverse Paris · Paris Photo, Paris</span></li>
-          <li class="ab-event"><strong>Artist's Proof: Singapore at 60</strong><span>The Culture Story, Singapore</span></li>
-          <li class="ab-event"><strong>Meet Eva Here</strong><span>Platform Project, Taipei Dangdai, Taipei</span><em>solo</em></li>
-          <li class="ab-event"><strong>Talking to Machines: When AI Becomes More Than a Tool</strong><span>Performance Lecture, Art Central, Hong Kong</span></li>
-          <li class="ab-event"><strong>EVA</strong><span>The Columns Gallery, Singapore</span><em>solo</em></li>
-          <li class="ab-event"><strong>Meet Eva Here</strong><span>Platform Project, ART SG 2025, Singapore</span><em>solo</em></li>
-          <li class="ab-event"><strong>ART SG</strong><span>The Columns Gallery, Singapore</span></li>
-          <li class="ab-event"><strong>Digital Rhythm</strong><span>Digital Art Fair · Ora-Ora Galerie, Hong Kong</span></li>
-        </ol>
-      </div>
-
-      <div class="ab-year-block">
-        <div class="ab-year-col"><span class="ab-year">2024</span><span class="ab-year-count">9 shows</span></div>
-        <ol class="ab-event-list">
-          <li class="ab-event"><strong>Canal St Show</strong><span>Subjective Art Festival, New York, NY</span></li>
-          <li class="ab-event"><strong>In The Ether</strong><span>ArtScience Museum, Singapore</span></li>
-          <li class="ab-event"><strong>Tokyo Solid</strong><span>NOX Gallery, Kyoto, Japan</span></li>
-          <li class="ab-event"><strong>Imagined Realities: Perspectives on Change</strong><span>Edge Esmeralda, Healdsburg, CA</span></li>
-          <li class="ab-event"><strong>24 Hours of Art</strong><span>Digital Art Week, Outernet London, London, UK</span></li>
-          <li class="ab-event"><strong>Phosphorescence</strong><span>Benzi Studio, Miami</span></li>
-          <li class="ab-event"><strong>Lux</strong><span>NFT Factory, Paris, France</span></li>
-          <li class="ab-event"><strong>Lux</strong><span>IHAM Gallery, Paris, France</span></li>
-          <li class="ab-event"><strong>Bang &amp; Olufsen Art Showcase ft. Shavonne Wong</strong><span>Bang &amp; Olufsen, Singapore</span><em>solo</em></li>
-        </ol>
-      </div>
-
-      <div class="ab-year-block">
-        <div class="ab-year-col"><span class="ab-year">2023</span><span class="ab-year-count">8 shows</span></div>
-        <ol class="ab-event-list">
-          <li class="ab-event"><strong>Sound and Vision II</strong><span>Lume Studios, NYC, USA</span></li>
-          <li class="ab-event"><strong>Infinite Games: Hello World!</strong><span>Neal Gallery, 798 Art District, Beijing</span></li>
-          <li class="ab-event"><strong>The Bloom: Equinox</strong><span>C Future City, Shenzhen, China</span></li>
-          <li class="ab-event"><strong>The Cultural Kaleidoscope</strong><span>Seattle NFT Museum, Seattle, USA</span></li>
-          <li class="ab-event"><strong>Shavonne Wong</strong><span>NFT Factory, Paris, France</span><em>solo</em></li>
-          <li class="ab-event"><strong>FOR THE CULTURE</strong><span>6529 × artpoint_xyz × NFTFactoryParis, Paris, France</span></li>
-          <li class="ab-event"><strong>W1 Curates X Canary Labs</strong><span>W1 Curates, London, UK</span></li>
-          <li class="ab-event"><strong>Vivatech</strong><span>Artpoint, Paris, France</span></li>
-        </ol>
-      </div>
-
-      <div class="ab-year-block">
-        <div class="ab-year-col"><span class="ab-year">2022</span><span class="ab-year-count">22 shows</span><span class="ab-year-note">Solo, institutional &amp; selected fairs surfaced; community / pop-up shows below.</span></div>
-        <div class="ab-year-body">
-          <div class="ab-year-subhead">Solo, institutional &amp; selected fairs</div>
-          <ol class="ab-event-list">
-            <li class="ab-event"><strong>The Ties That Bind</strong><span>UltraSuperNew Gallery, Singapore</span><em>solo</em></li>
-            <li class="ab-event"><strong>The Times of Chimeras</strong><span>Cameroon Pavilion · 59th Venice Biennale, Venice, Italy</span></li>
-            <li class="ab-event"><strong>ART SG</strong><span>The Columns Gallery, Singapore</span></li>
-            <li class="ab-event"><strong>Columns Gallery</strong><span>SEA Focus, Singapore</span></li>
-            <li class="ab-event"><strong>International Women's Exhibition</strong><span>Creative Debuts and Adidas, London, UK</span></li>
-            <li class="ab-event"><strong>Beijing Contemporary</strong><span>Neal Digital Gallery, Beijing, China</span></li>
-            <li class="ab-event"><strong>Digital Art Fair Asia</strong><span>Hong Kong</span></li>
-            <li class="ab-event"><strong>Royal House of Medici M 1563</strong><span>Miami Art Week, Miami, USA</span></li>
-            <li class="ab-event"><strong>Reaching for the Future</strong><span>UltraSuperNew Gallery, Tokyo, Japan</span></li>
+      <div class="abv-exh-ledger" data-exh-ledger>
+        <div class="abv-exh-yr">
+          <div class="abv-exh-yr-head"><span class="abv-exh-yr-num">2025</span><span class="abv-exh-yr-count">8 shows</span></div>
+          <ol class="abv-exh-entries">
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">Meet Eva Here</span><span class="abv-exh-v">Platform Project, Taipei Dangdai — Taipei</span><span class="abv-exh-solo">Solo</span></li>
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">EVA</span><span class="abv-exh-v">The Columns Gallery — Singapore</span><span class="abv-exh-solo">Solo</span></li>
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">Meet Eva Here</span><span class="abv-exh-v">Platform Project, ART SG 2025 — Singapore</span><span class="abv-exh-solo">Solo</span></li>
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">Scenes: The Sensory and Remembered Image</span><span class="abv-exh-v">Artverse · Paris Photo — Paris</span></li>
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">Artist's Proof: Singapore at 60</span><span class="abv-exh-v">The Culture Story — Singapore</span></li>
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">Talking to Machines</span><span class="abv-exh-v">Performance Lecture, Art Central — Hong Kong</span></li>
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">ART SG</span><span class="abv-exh-v">The Columns Gallery — Singapore</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Digital Rhythm</span><span class="abv-exh-v">Digital Art Fair · Ora-Ora — Hong Kong</span></li>
           </ol>
-
-          <details class="ab-year-archive">
-            <summary class="ab-year-archive-summary">
-              <span>Group, community &amp; pop-up shows</span>
-              <span class="ab-year-archive-count">13 more</span>
-              <span class="ab-year-archive-chev" aria-hidden="true">▾</span>
-            </summary>
-            <ol class="ab-event-list">
-              <li class="ab-event"><strong>Like to Get to Snow You Well</strong><span>unpaired.Gallery, Switzerland</span></li>
-              <li class="ab-event"><strong>Digital Art Week Exhibition</strong><span>Outernet, London</span></li>
-              <li class="ab-event"><strong>Bloom</strong><span>OP.ΞNSPACE, Amsterdam, Netherlands</span></li>
-              <li class="ab-event"><strong>A Screen of One's Own</strong><span>NFT Asia · Superchief Gallery, New York, NY</span></li>
-              <li class="ab-event"><strong>The Crypt Gallery</strong><span>New York, NY</span></li>
-              <li class="ab-event"><strong>A l22k at CryptoArt</strong><span>Calgary Contemporary, Calgary, Canada</span></li>
-              <li class="ab-event"><strong>NFT Asia</strong><span>Art Dubai 2022, Dubai</span></li>
-              <li class="ab-event"><strong>6060 Exhibition</strong><span>NFC Summit, Lisbon, Portugal</span></li>
-              <li class="ab-event"><strong>Digital Paradise</strong><span>Neal Digital Gallery, Sanya, China</span></li>
-              <li class="ab-event"><strong>NFT Korea Festival</strong><span>Seoul, Korea</span></li>
-              <li class="ab-event"><strong>Future C</strong><span>Neal Digital Gallery, Shenzhen, China</span></li>
-              <li class="ab-event"><strong>Forever Frame #DANY2023</strong><span>Neal Digital Gallery, Beijing, China</span></li>
-              <li class="ab-event"><strong>Proof of Concept</strong><span>Co Museum, Singapore</span></li>
-            </ol>
-          </details>
+        </div>
+        <div class="abv-exh-yr">
+          <div class="abv-exh-yr-head"><span class="abv-exh-yr-num">2024</span><span class="abv-exh-yr-count">9 shows</span></div>
+          <ol class="abv-exh-entries">
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">Bang & Olufsen Art Showcase ft. Shavonne Wong</span><span class="abv-exh-v">Bang & Olufsen — Singapore</span><span class="abv-exh-solo">Solo</span></li>
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">In The Ether</span><span class="abv-exh-v">ArtScience Museum — Singapore</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Imagined Realities: Perspectives on Change</span><span class="abv-exh-v">Edge Esmeralda — Healdsburg, CA</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Canal St Show</span><span class="abv-exh-v">Subjective Art Festival — New York, NY</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Tokyo Solid</span><span class="abv-exh-v">NOX Gallery — Kyoto, Japan</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">24 Hours of Art</span><span class="abv-exh-v">Digital Art Week, Outernet — London, UK</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Phosphorescence</span><span class="abv-exh-v">Benzi Studio — Miami, FL</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Lux</span><span class="abv-exh-v">NFT Factory — Paris, France</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Lux</span><span class="abv-exh-v">IHAM Gallery — Paris, France</span></li>
+          </ol>
+        </div>
+        <div class="abv-exh-yr">
+          <div class="abv-exh-yr-head"><span class="abv-exh-yr-num">2023</span><span class="abv-exh-yr-count">8 shows</span></div>
+          <ol class="abv-exh-entries">
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">Shavonne Wong</span><span class="abv-exh-v">NFT Factory — Paris, France</span><span class="abv-exh-solo">Solo</span></li>
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">Infinite Games: Hello World!</span><span class="abv-exh-v">Neal Gallery, 798 Art District — Beijing</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Sound and Vision II</span><span class="abv-exh-v">Lume Studios — New York, NY</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">The Bloom: Equinox</span><span class="abv-exh-v">C Future City — Shenzhen, China</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">The Cultural Kaleidoscope</span><span class="abv-exh-v">Seattle NFT Museum — Seattle, WA</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">FOR THE CULTURE</span><span class="abv-exh-v">6529 × artpoint_xyz — Paris, France</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">W1 Curates × Canary Labs</span><span class="abv-exh-v">W1 Curates — London, UK</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Vivatech</span><span class="abv-exh-v">Artpoint — Paris, France</span></li>
+          </ol>
+        </div>
+        <div class="abv-exh-yr">
+          <div class="abv-exh-yr-head"><span class="abv-exh-yr-num">2022</span><span class="abv-exh-yr-count">22 shows</span></div>
+          <ol class="abv-exh-entries">
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">The Ties That Bind</span><span class="abv-exh-v">UltraSuperNew Gallery — Singapore</span><span class="abv-exh-solo">Solo</span></li>
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">The Times of Chimeras</span><span class="abv-exh-v">Cameroon Pavilion · 59th Venice Biennale — Venice</span></li>
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">ART SG</span><span class="abv-exh-v">The Columns Gallery — Singapore</span></li>
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">SEA Focus</span><span class="abv-exh-v">The Columns Gallery — Singapore</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">International Women's Exhibition</span><span class="abv-exh-v">Creative Debuts × Adidas — London, UK</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Beijing Contemporary</span><span class="abv-exh-v">Neal Digital Gallery — Beijing, China</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Digital Art Fair Asia</span><span class="abv-exh-v">Hong Kong</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Royal House of Medici M 1563</span><span class="abv-exh-v">Miami Art Week — Miami, FL</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Reaching for the Future</span><span class="abv-exh-v">UltraSuperNew Gallery — Tokyo, Japan</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">A Screen of One’s Own</span><span class="abv-exh-v">NFT Asia · Superchief Gallery — New York, NY</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">6060 Exhibition</span><span class="abv-exh-v">NFC Summit — Lisbon, Portugal</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">NFT Asia</span><span class="abv-exh-v">Art Dubai 2022 — Dubai, UAE</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Bloom</span><span class="abv-exh-v">OP.ΞNSPACE — Amsterdam, Netherlands</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Digital Paradise</span><span class="abv-exh-v">Neal Digital Gallery — Sanya, China</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">NFT Korea Festival</span><span class="abv-exh-v">Seoul, Korea</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Future C</span><span class="abv-exh-v">Neal Digital Gallery — Shenzhen, China</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Forever Frame #DANY2023</span><span class="abv-exh-v">Neal Digital Gallery — Beijing, China</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">A l22k at CryptoArt</span><span class="abv-exh-v">Calgary Contemporary — Calgary, Canada</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">The Crypt Gallery</span><span class="abv-exh-v">New York, NY</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Like to Get to Snow You Well</span><span class="abv-exh-v">unpaired.Gallery — Switzerland</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Digital Art Week</span><span class="abv-exh-v">Outernet — London, UK</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Proof of Concept</span><span class="abv-exh-v">Co Museum — Singapore</span></li>
+          </ol>
+        </div>
+        <div class="abv-exh-yr">
+          <div class="abv-exh-yr-head"><span class="abv-exh-yr-num">2021</span><span class="abv-exh-yr-count">3 shows</span></div>
+          <ol class="abv-exh-entries">
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">Material Sense</span><span class="abv-exh-v">The Columns Gallery — Singapore</span></li>
+            <li class="abv-exh-entry" data-selected><span class="abv-exh-t">The Columns Gallery</span><span class="abv-exh-v">Kiaf Plus — Seoul, Korea</span></li>
+            <li class="abv-exh-entry"><span class="abv-exh-t">Maybank Foundation × ASEAN</span><span class="abv-exh-v">Virtual exhibition</span></li>
+          </ol>
         </div>
       </div>
 
-      <div class="ab-year-block">
-        <div class="ab-year-col"><span class="ab-year">2021</span><span class="ab-year-count">3 shows</span></div>
-        <ol class="ab-event-list">
-          <li class="ab-event"><strong>MAYBANK FOUNDATION × ASEAN virtual exhibition</strong><span>Virtual exhibition</span></li>
-          <li class="ab-event"><strong>Material Sense</strong><span>The Columns Gallery, Singapore</span></li>
-          <li class="ab-event"><strong>The Columns Gallery</strong><span>Kiaf Plus, Seoul, Korea</span></li>
-        </ol>
+    </section>
+
+    <!-- ========================================================
+         04 — COLLABORATIONS (hover reveals the campaign image)
+         ======================================================== -->
+    <section class="abv-section abv-collabs-section" aria-label="Notable collaborations">
+      <header class="abv-section-head">
+        <span class="abv-section-num">04</span>
+        <h2 class="abv-section-title">Collaborations</h2>
+        <span class="abv-section-meta">Hover to view · 2021 — 2025</span>
+      </header>
+
+      <div class="abv-collabs">
+        <a class="abv-collab" href="https://www.shuuemura.jp/" target="_blank" rel="noreferrer">
+          <span class="abv-collab-media"><img decoding="async" loading="lazy" src="assets/one-of-ones/beauty.webp" alt="Shavonne Wong digital artwork"></span>
+          <span class="abv-collab-year">2025</span>
+          <h3 class="abv-collab-name">Shu Uemura S/S 2025 Campaign</h3>
+          <p class="abv-collab-copy">Digital art for Shu Uemura's Spring / Summer 2025 cosmetics campaign in Japan.</p>
+          <span class="abv-collab-link">Official site ↗</span>
+        </a>
+        <a class="abv-collab" href="https://www.marieclairearabia.com/" target="_blank" rel="noreferrer">
+          <span class="abv-collab-media"><img decoding="async" loading="lazy" src="assets/eras/3d/MarieClaire_Underwater_highres_still.webp" alt="Marie Claire Arabia 3D artwork by Shavonne Wong"></span>
+          <span class="abv-collab-year">2023</span>
+          <h3 class="abv-collab-name">Marie Claire Arabia Collaboration</h3>
+          <p class="abv-collab-copy">A series of new 3D artworks unveiled during her NFT Factory Paris solo exhibition.</p>
+          <span class="abv-collab-link">Official site ↗</span>
+        </a>
+        <a class="abv-collab" href="https://www.bang-olufsen.com/en/int/story/nft" target="_blank" rel="noreferrer">
+          <span class="abv-collab-media"><img decoding="async" loading="lazy" src="assets/one-of-ones/the-shimmering-veil-i.webp" alt="Shavonne Wong digital artwork"></span>
+          <span class="abv-collab-year">2022</span>
+          <h3 class="abv-collab-name">Bang &amp; Olufsen "DNA" Collection</h3>
+          <p class="abv-collab-copy">Partnered with the Danish audio brand on its first NFT collection — 1,925 collectibles fusing art and music.</p>
+          <span class="abv-collab-link">Official page ↗</span>
+        </a>
+        <a class="abv-collab" href="https://codegreen.earth/davos" target="_blank" rel="noreferrer">
+          <span class="abv-collab-media"><img decoding="async" loading="lazy" src="assets/one-of-ones/oceans-whisper.webp" alt="Ocean's Whisper by Shavonne Wong"></span>
+          <span class="abv-collab-year">2022</span>
+          <h3 class="abv-collab-name">World Economic Forum × WoW · Davos</h3>
+          <p class="abv-collab-copy">Contributed artwork to <em>Women &amp; Climate,</em> a charitable NFT drop announced at WEF Davos with World of Women.</p>
+          <span class="abv-collab-link">Official page ↗</span>
+        </a>
+        <a class="abv-collab" href="https://vogue.sg/september-2021-digital-covers-nft/" target="_blank" rel="noreferrer">
+          <span class="abv-collab-media"><img decoding="async" loading="lazy" src="assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt="Vogue Singapore NFT cover"></span>
+          <span class="abv-collab-year">2021</span>
+          <h3 class="abv-collab-name">Vogue Singapore NFT Cover</h3>
+          <p class="abv-collab-copy">Co-creator of Vogue Singapore's first NFT cover art, <em>The Renaixance Rising</em>, with The Fabricant.</p>
+          <span class="abv-collab-link">Official page ↗</span>
+        </a>
+        <a class="abv-collab" href="https://www.tatlerasia.com/power-purpose/technology/meta-versed-shavonne-wong-virtual-model-creator" target="_blank" rel="noreferrer">
+          <span class="abv-collab-media"><img decoding="async" loading="lazy" src="assets/love-is-love/og-image.webp" alt="Love is Love, featured on Hong Kong Tatler"></span>
+          <span class="abv-collab-year">2021</span>
+          <h3 class="abv-collab-name">Hong Kong Tatler Cover</h3>
+          <p class="abv-collab-copy">Tatler Hong Kong featured Wong's NFT art <em>Love is Love</em> on its cover.</p>
+          <span class="abv-collab-link">Official page ↗</span>
+        </a>
+        <a class="abv-collab" href="https://www.bloomberg.com/digitaloriginals" target="_blank" rel="noreferrer">
+          <span class="abv-collab-media"><img decoding="async" loading="lazy" src="assets/one-of-ones/kin-i.webp" alt="Kin I by Shavonne Wong"></span>
+          <span class="abv-collab-year">2021</span>
+          <h3 class="abv-collab-name">Bloomberg Quicktake Feature</h3>
+          <p class="abv-collab-copy">Featured in a story on the rise of NFT art, highlighting her virtual modeling work.</p>
+          <span class="abv-collab-link">Official site ↗</span>
+        </a>
+        <a class="abv-collab" href="https://nft.time.com/collection/shavonne-wong/" target="_blank" rel="noreferrer">
+          <span class="abv-collab-media"><img decoding="async" loading="lazy" src="assets/one-of-ones/the-kiss.webp" alt="The Kiss by Shavonne Wong"></span>
+          <span class="abv-collab-year">2021</span>
+          <h3 class="abv-collab-name">Times Square &amp; Shibuya Billboards</h3>
+          <p class="abv-collab-copy">Digital art shown on Times Square billboards in New York and at Shibuya Crossing in Tokyo.</p>
+          <span class="abv-collab-link">Official page ↗</span>
+        </a>
       </div>
     </section>
 
     <!-- ========================================================
-         03 — RECOGNITION / MEMBERSHIP / CONTACT (cards row)
+         05 — RECOGNITION
          ======================================================== -->
-    <section class="ab-section" aria-label="Recognition, membership, and contact">
-      <header class="ab-section-head">
-        <span class="ab-section-num">03</span>
-        <h2 class="ab-section-title">Recognition</h2>
-        <span class="ab-section-meta">Awards, memberships &amp; studio</span>
+    <section class="abv-section abv-recognition" aria-label="Recognition">
+      <header class="abv-section-head">
+        <span class="abv-section-num">05</span>
+        <h2 class="abv-section-title">Recognition</h2>
+        <span class="abv-section-meta">Awards, memberships &amp; studio</span>
       </header>
 
-      <div class="ab-card-row">
-        <article class="ab-card ab-card-awards">
-          <span class="ab-card-eyebrow">Awards &amp; recognition</span>
-          <ul class="ab-award-list">
-            <li><span>Forbes 30 Under 30 Asia · Arts</span><time>2020</time></li>
-            <li><span>Optimism &ldquo;We Love The Art&rdquo; Competition · Top Prize</span><time>2024</time></li>
-            <li><span>Prestige 40 Under 40</span><time>2023</time></li>
-            <li><span>TIMEPieces Artist</span><time>2022</time></li>
+      <div class="abv-recog-cards">
+        <div class="abv-recog-card">
+          <span class="abv-card-eyebrow">Awards &amp; recognition</span>
+          <ul class="abv-recog-list">
+            <li><span class="abv-recog-name">Forbes 30 Under 30 Asia · Arts</span><span class="abv-recog-year">2020</span></li>
+            <li><span class="abv-recog-name">Optimism "We Love The Art" Competition · Top Prize</span><span class="abv-recog-year">2024</span></li>
+            <li><span class="abv-recog-name">Prestige 40 Under 40</span><span class="abv-recog-year">2023</span></li>
+            <li><span class="abv-recog-name">TIMEPieces Artist</span><span class="abv-recog-year">2022</span></li>
           </ul>
-        </article>
+        </div>
 
-        <article class="ab-card ab-card-membership">
-          <span class="ab-card-eyebrow">Communities</span>
-          <p class="ab-card-line"><em>Member,</em> BLOOM, an artist collective.</p>
-          <p class="ab-card-line"><em>Co-founder,</em> NFT Asia, a community dedicated to Asian artists in the NFT space.</p>
-        </article>
+        <div class="abv-recog-card">
+          <span class="abv-card-eyebrow">Communities</span>
+          <p class="abv-recog-p"><em>Member,</em> BLOOM — an artist collective.</p>
+          <p class="abv-recog-p"><em>Co-founder,</em> NFT Asia — a community dedicated to Asian artists in the NFT space.</p>
+        </div>
 
-        <article class="ab-card ab-card-contact">
-          <span class="ab-card-eyebrow">Get in touch</span>
-          <a href="mailto:studio@shavonnewong.art" class="ab-card-email">studio@shavonnewong.art</a>
-          <span class="ab-card-meta">Singapore / Bangkok · GMT +8</span>
-          <a href="index.html#contact" class="ab-card-cta">Full contact card →</a>
-        </article>
+        <div class="abv-recog-card">
+          <span class="abv-card-eyebrow">Get in touch</span>
+          <a class="abv-recog-email" href="mailto:studio@shavonnewong.art?subject=Studio%20enquiry">studio@shavonnewong.art</a>
+          <p class="abv-recog-loc">Singapore / Bangkok · GMT +8</p>
+          <a class="abv-recog-more" href="index.html#contact">Full contact card <span aria-hidden="true">&rarr;</span></a>
+        </div>
       </div>
     </section>
 
     <!-- ========================================================
-         04 — NOTABLE COLLABORATIONS
+         06 — TALKS & PRESS
          ======================================================== -->
-    <section class="ab-section" aria-label="Notable collaborations and projects">
-      <header class="ab-section-head">
-        <span class="ab-section-num">04</span>
-        <h2 class="ab-section-title">Notable collaborations</h2>
-        <span class="ab-section-meta">Selected · 2021 — 2025</span>
+    <section class="abv-section" id="press" aria-label="Talks and press">
+      <header class="abv-section-head">
+        <span class="abv-section-num">06</span>
+        <h2 class="abv-section-title">Talks &amp; press</h2>
+        <span class="abv-section-meta">Selected</span>
       </header>
 
-      <div class="ab-collabs">
-        <a class="ab-collab" href="https://www.shuuemura.jp/" target="_blank" rel="noreferrer" aria-label="Open Shu Uemura official site">
-          <span class="ab-collab-year">2025</span>
-          <h3 class="ab-collab-name">Shu Uemura S/S 2025 Campaign</h3>
-          <p class="ab-collab-copy">Digital art for Shu Uemura's Spring / Summer 2025 cosmetics campaign in Japan.</p>
-          <span class="ab-collab-link">Official site ↗</span>
-        </a>
-        <a class="ab-collab" href="https://www.marieclairearabia.com/" target="_blank" rel="noreferrer" aria-label="Open Marie Claire Arabia official site">
-          <span class="ab-collab-year">2023</span>
-          <h3 class="ab-collab-name">Marie Claire Arabia Collaboration</h3>
-          <p class="ab-collab-copy">A series of new 3D artworks unveiled during her NFT Factory Paris solo exhibition.</p>
-          <span class="ab-collab-link">Official site ↗</span>
-        </a>
-        <a class="ab-collab" href="https://www.bang-olufsen.com/en/int/story/nft" target="_blank" rel="noreferrer" aria-label="Open Bang and Olufsen DNA Collection official page">
-          <span class="ab-collab-year">2022</span>
-          <h3 class="ab-collab-name">Bang &amp; Olufsen &ldquo;DNA&rdquo; Collection</h3>
-          <p class="ab-collab-copy">Partnered with the Danish audio brand on its first NFT collection — 1,925 digital collectibles fusing art and music.</p>
-          <span class="ab-collab-link">Official page ↗</span>
-        </a>
-        <a class="ab-collab" href="https://codegreen.earth/davos" target="_blank" rel="noreferrer" aria-label="Open Women and Climate Davos official page">
-          <span class="ab-collab-year">2022</span>
-          <h3 class="ab-collab-name">World Economic Forum × WoW · Davos</h3>
-          <p class="ab-collab-copy">Contributed artwork to &ldquo;Women &amp; Climate,&rdquo; a charitable NFT drop announced at WEF Davos with World of Women.</p>
-          <span class="ab-collab-link">Official page ↗</span>
-        </a>
-        <a class="ab-collab" href="https://vogue.sg/september-2021-digital-covers-nft/" target="_blank" rel="noreferrer" aria-label="Open Vogue Singapore NFT cover official page">
-          <span class="ab-collab-year">2021</span>
-          <h3 class="ab-collab-name">Vogue Singapore NFT Cover</h3>
-          <p class="ab-collab-copy">Co-creator of Vogue Singapore's first NFT cover art, <em>The Renaixance Rising</em>, with The Fabricant.</p>
-          <span class="ab-collab-link">Official page ↗</span>
-        </a>
-        <a class="ab-collab" href="https://www.tatlerasia.com/power-purpose/technology/meta-versed-shavonne-wong-virtual-model-creator" target="_blank" rel="noreferrer" aria-label="Open Tatler Asia feature official page">
-          <span class="ab-collab-year">2021</span>
-          <h3 class="ab-collab-name">Hong Kong Tatler Cover</h3>
-          <p class="ab-collab-copy">Tatler Hong Kong featured Wong's NFT art <em>Love is Love</em> on its cover.</p>
-          <span class="ab-collab-link">Official page ↗</span>
-        </a>
-        <a class="ab-collab" href="https://www.bloomberg.com/digitaloriginals" target="_blank" rel="noreferrer" aria-label="Open Bloomberg Originals official site">
-          <span class="ab-collab-year">2021</span>
-          <h3 class="ab-collab-name">Bloomberg Quicktake Feature</h3>
-          <p class="ab-collab-copy">Featured in a story on the rise of NFT art, highlighting her virtual modeling work.</p>
-          <span class="ab-collab-link">Official site ↗</span>
-        </a>
-        <a class="ab-collab" href="https://nft.time.com/collection/shavonne-wong/" target="_blank" rel="noreferrer" aria-label="Open TIMEPieces Shavonne Wong official page">
-          <span class="ab-collab-year">2021</span>
-          <h3 class="ab-collab-name">Times Square &amp; Shibuya Billboards</h3>
-          <p class="ab-collab-copy">Digital art displayed on Times Square billboards in New York City and at Shibuya Crossing in Tokyo.</p>
-          <span class="ab-collab-link">Official page ↗</span>
-        </a>
-      </div>
-    </section>
+      <div class="abv-tp">
+        <div class="abv-tp-col">
+          <div class="abv-tp-col-head">
+            <span class="abv-tp-col-title">Talks &amp; panels</span>
+            <span class="abv-tp-col-meta">2022 — 2026</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name">Generative Futures: Minds + Machines in Co-Creation</span>
+            <span class="abv-tp-year">2026</span>
+            <span class="abv-tp-ctx">Speaker + panelist · AISDC 2026</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://www.bacc.or.th/en/events/90389" target="_blank" rel="noreferrer">AI Imaginaries: Authorship, Creativity, Authenticity</a></span>
+            <span class="abv-tp-year">2026</span>
+            <span class="abv-tp-ctx">Panelist · Bangkok Art and Culture Centre</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name">Talking to Machines</span>
+            <span class="abv-tp-year">2025</span>
+            <span class="abv-tp-ctx">Performance lecture · Art Central, Hong Kong</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name">The Future of AI and Digital Identity</span>
+            <span class="abv-tp-year">2025</span>
+            <span class="abv-tp-ctx">Panelist · ART SG, Singapore</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name">Language, Technology, and Cultural Frictions</span>
+            <span class="abv-tp-year">2025</span>
+            <span class="abv-tp-ctx">Panelist · Taipei Dangdai, Taipei</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://consensus-hongkong2025.coindesk.com/agenda/speaker/-shavonne-wong" target="_blank" rel="noreferrer">Consensus Hong Kong</a></span>
+            <span class="abv-tp-year">2025</span>
+            <span class="abv-tp-ctx">Speaker · CoinDesk, Hong Kong</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name">Art & Tech Summit</span>
+            <span class="abv-tp-year">2024</span>
+            <span class="abv-tp-ctx">Panelist · Marina Bay Sands, Singapore</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name">Consensus 2024</span>
+            <span class="abv-tp-year">2024</span>
+            <span class="abv-tp-ctx">Panelist · CoinDesk, Austin, TX</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name">VOICES: The Next Generation</span>
+            <span class="abv-tp-year">2023</span>
+            <span class="abv-tp-ctx">Speaker · Vogue Singapore</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name">Digital Paradise: NFTs & the Chinese Art Market</span>
+            <span class="abv-tp-year">2023</span>
+            <span class="abv-tp-ctx">Panelist · Sanya, China</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name">HSBC Next Gen Digital</span>
+            <span class="abv-tp-year">2023</span>
+            <span class="abv-tp-ctx">Panelist · Singapore</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name">TEDx</span>
+            <span class="abv-tp-year">2022</span>
+            <span class="abv-tp-ctx">Speaker · Singapore</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name">Motion Plus Design</span>
+            <span class="abv-tp-year">2022</span>
+            <span class="abv-tp-ctx">Speaker · Los Angeles, CA</span>
+          </div>
+        </div>
 
-    <!-- ========================================================
-         05 — PRESS (teaser; full archive lives on press.html so the
-         content isn't duplicated across two routes)
-         ======================================================== -->
-    <section class="ab-section ab-press-teaser" id="press" aria-label="Press">
-      <header class="ab-section-head">
-        <span class="ab-section-num">05</span>
-        <h2 class="ab-section-title">Press</h2>
-        <span class="ab-section-meta">Selected long-form profiles &amp; reviews</span>
-      </header>
-      <p class="ab-copy">
-        Selected long-form profiles include <a class="ab-link" href="https://cntrfld.art/in-conversation-shavonne-wong/" target="_blank" rel="noreferrer">CNTRFLD.ART</a>,
-        <a class="ab-link" href="https://www.brandinginasia.com/shavonne-wong-each-medium-has-taught-me-something-different-about-creativity-itself/" target="_blank" rel="noreferrer">Branding In Asia</a>,
-        <a class="ab-link" href="https://www.coindesk.com/consensus-magazine/2024/04/23/web3-artist-shavonne-wong-on-the-future-of-nfts/" target="_blank" rel="noreferrer">CoinDesk</a>,
-        <a class="ab-link" href="https://www.herworld.com/pov/shavonne-wong-new-media-artist-blurring-line-between-reality-and-surreal" target="_blank" rel="noreferrer">Her World</a>,
-        <a class="ab-link" href="https://www.straitstimes.com/life/arts/chat-with-an-ai-influencer-view-van-gogh-high-end-works-at-art-sg-s-e-a-focus-and-sothebys-show" target="_blank" rel="noreferrer">The Straits Times</a>,
-        <a class="ab-link" href="https://www.vogue.it/news/article/shavonne-wong-3d-makeup" target="_blank" rel="noreferrer">Vogue Italia</a>,
-        and <a class="ab-link" href="https://news.artnet.com/art-world/venice-biennale-nft-cameroon-pavilion-2075164" target="_blank" rel="noreferrer">Artnet</a>.
-      </p>
-      <p class="ab-copy">
-        <a class="ab-card-cta" href="press.html">Read the full press archive →</a>
-      </p>
-    </section>
-
-    <!-- ========================================================
-         06 — TALKS & PANELS
-         ======================================================== -->
-    <section class="ab-section" aria-label="Talks and panels">
-      <header class="ab-section-head">
-        <span class="ab-section-num">06</span>
-        <h2 class="ab-section-title">Talks &amp; panels</h2>
-        <span class="ab-section-meta">2022 — 2026</span>
-      </header>
-
-      <div class="ab-year-block">
-        <div class="ab-year-col"><span class="ab-year">2026</span></div>
-        <ol class="ab-event-list">
-          <li class="ab-event"><strong>AISDC 2026: Generative Futures: Minds + Machines in Co-Creation</strong><span>Speaker + panelist / 22 May 2026</span></li>
-          <li class="ab-event"><a href="https://www.bacc.or.th/en/events/90389" target="_blank" rel="noreferrer">
-            <strong>AI Imaginaries: Authorship, Creativity, and Authenticity</strong>
-            <span>Panelist · AI Horizons, Bangkok Art and Culture Centre · 28 Mar 2026</span>
-          </a></li>
-        </ol>
-      </div>
-      <div class="ab-year-block">
-        <div class="ab-year-col"><span class="ab-year">2025</span></div>
-        <ol class="ab-event-list">
-          <li class="ab-event"><strong>Talking to Machines: When AI Becomes More Than a Tool</strong><span>Performance Lecture · Art Central, Hong Kong</span></li>
-          <li class="ab-event"><strong>The Future of AI and Digital Identity</strong><span>Panelist · ART SG, Singapore</span></li>
-          <li class="ab-event"><strong>Language, Technology, and Cultural Frictions</strong><span>Panelist · Taipei Dangdai, Taipei</span></li>
-        </ol>
-      </div>
-
-      <div class="ab-year-block">
-        <div class="ab-year-col"><span class="ab-year">2024</span></div>
-        <ol class="ab-event-list">
-          <li class="ab-event"><strong>Art &amp; Tech Summit</strong><span>Panelist · Marina Bay Sands, Singapore</span></li>
-          <li class="ab-event"><strong>Consensus 2024</strong><span>Panelist · CoinDesk Web3 Conference, Austin, Texas</span></li>
-        </ol>
-      </div>
-
-      <div class="ab-year-block">
-        <div class="ab-year-col"><span class="ab-year">2023</span></div>
-        <ol class="ab-event-list">
-          <li class="ab-event"><strong>VOICES: The Next Generation</strong><span>Speaker · Vogue Singapore, Singapore</span></li>
-          <li class="ab-event"><strong>Digital Paradise — NFTs and the Chinese Art Market</strong><span>Panelist · Sanya, China</span></li>
-          <li class="ab-event"><strong>HSBC Next Gen Digital Panel — Digital Assets for UHNW Collectors</strong><span>Panelist · Singapore</span></li>
-        </ol>
-      </div>
-
-      <div class="ab-year-block">
-        <div class="ab-year-col"><span class="ab-year">2022</span></div>
-        <ol class="ab-event-list">
-          <li class="ab-event"><strong>TED</strong><span>Speaker · Singapore</span></li>
-          <li class="ab-event"><strong>Motion Plus Design</strong><span>Speaker · Los Angeles, USA</span></li>
-        </ol>
+        <div class="abv-tp-col">
+          <div class="abv-tp-col-head">
+            <span class="abv-tp-col-title">Press</span>
+            <span class="abv-tp-col-meta">2021 to 2025</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://www.brandinginasia.com/shavonne-wong-each-medium-has-taught-me-something-different-about-creativity-itself/" target="_blank" rel="noreferrer">Each medium taught me something different</a></span>
+            <span class="abv-tp-year">2025</span>
+            <span class="abv-tp-ctx">Branding in Asia</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://cntrfld.art/in-conversation-shavonne-wong/" target="_blank" rel="noreferrer">In Conversation</a></span>
+            <span class="abv-tp-year">2025</span>
+            <span class="abv-tp-ctx">CNTRFLD.ART</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://www.herworld.com/pov/shavonne-wong-new-media-artist-blurring-line-between-reality-and-surreal" target="_blank" rel="noreferrer">Blurring reality and the surreal</a></span>
+            <span class="abv-tp-year">2025</span>
+            <span class="abv-tp-ctx">Her World</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://www.straitstimes.com/life/arts/chat-with-an-ai-influencer-view-van-gogh-high-end-works-at-art-sg-s-e-a-focus-and-sothebys-show" target="_blank" rel="noreferrer">Chat with an AI influencer at ART SG</a></span>
+            <span class="abv-tp-year">2025</span>
+            <span class="abv-tp-ctx">The Straits Times</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://www.coindesk.com/consensus-magazine/2024/04/23/web3-artist-shavonne-wong-on-the-future-of-nfts/" target="_blank" rel="noreferrer">On the future of NFTs</a></span>
+            <span class="abv-tp-year">2024</span>
+            <span class="abv-tp-ctx">CoinDesk</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://grazia.sg/culture/grazia-game-changers-shavonne-wong-digital-art-fashion-photography/" target="_blank" rel="noreferrer">Game Changer: from photographer to digital artist</a></span>
+            <span class="abv-tp-year">2024</span>
+            <span class="abv-tp-ctx">Grazia Singapore</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://www.iconsingapore.com/people/photographer-turned-digital-artist-shavonne-wong-is-making-waves-in-the-region/" target="_blank" rel="noreferrer">Photographer-turned-digital-artist making waves</a></span>
+            <span class="abv-tp-year">2023</span>
+            <span class="abv-tp-ctx">Icon Magazine</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://www.prestigeonline.com/sg/people/40-under-40/shavonne-wong-prestige-40-under-40-2023/" target="_blank" rel="noreferrer">40 Under 40</a></span>
+            <span class="abv-tp-year">2023</span>
+            <span class="abv-tp-ctx">Prestige</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://www.vogue.it/news/article/shavonne-wong-3d-makeup" target="_blank" rel="noreferrer">3D makeup &amp; the synthetic image</a></span>
+            <span class="abv-tp-year">2022</span>
+            <span class="abv-tp-ctx">Vogue Italia</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://news.artnet.com/art-world/venice-biennale-nft-cameroon-pavilion-2075164" target="_blank" rel="noreferrer">Venice Biennale, the Cameroon Pavilion</a></span>
+            <span class="abv-tp-year">2022</span>
+            <span class="abv-tp-ctx">Artnet</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://www.bloomberg.com/digitaloriginals" target="_blank" rel="noreferrer">The rise of NFT art</a></span>
+            <span class="abv-tp-year">2021</span>
+            <span class="abv-tp-ctx">Bloomberg Quicktake</span>
+          </div>
+          <div class="abv-tp-item">
+            <span class="abv-tp-name"><a href="https://www.tatlerasia.com/power-purpose/technology/meta-versed-shavonne-wong-virtual-model-creator" target="_blank" rel="noreferrer">Love is Love on the cover</a></span>
+            <span class="abv-tp-year">2021</span>
+            <span class="abv-tp-ctx">Tatler Asia</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <script src="site-i18n.js?v=20260526-global-ten"></script>
+  <script>
+    (function(){
+      var btn=document.querySelector("[data-exh-toggle]");
+      var ledger=document.querySelector("[data-exh-ledger]");
+      var lbl=document.querySelector("[data-exh-toggle-label]");
+      if(btn&&ledger){ btn.addEventListener("click",function(){ var on=ledger.classList.toggle("is-selected-only"); btn.setAttribute("aria-pressed",on?"true":"false"); if(lbl) lbl.textContent=on?"Show all":"Selected only"; }); }
+    })();
+  </script>
+  <script src="site-header.js?v=20260531-scroll2" data-about-toggle></script><script src="site-i18n.js?v=20260530-header-bar"></script>
   <script src="fluid-renderer.js?v=20260527-site-ripple-wide"></script>
 </body>
 </html>

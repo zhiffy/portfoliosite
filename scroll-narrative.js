@@ -72,6 +72,7 @@
 
   const heroPanel = document.querySelector('[data-panel="hero"]');
   const heroFrameEl = document.querySelector('.sn-hero-frame');
+  const heroTypeInvert = document.querySelector('.sn-hero-type-invert');
   const heroMediaTile = document.querySelector('[data-hero-media-tile]');
   const heroMediaLayers = Array.from(document.querySelectorAll('[data-hero-media-layer]'));
   const heroMediaTitle = document.querySelector('[data-hero-media-title]');
@@ -142,64 +143,53 @@
   const heroMediaItems = [
     {
       type: 'video',
-      src: 'assets/videos/whirlwind-of-the-waking-dream.mp4',
-      poster: 'assets/eras/3d/Whirlwind of the Waking Dream copy 2.jpg',
+      src: 'assets/one-of-ones/videos/whirlwind-of-the-waking-dream.mp4',
+      poster: 'assets/one-of-ones/whirlwind-of-the-waking-dream.jpg',
       title: 'Whirlwind of the Waking Dream',
-      titleKey: 'home.heroMedia.whirlwind.title',
-      meta: '2024 / 3D / generative',
-      metaKey: 'home.heroMedia.whirlwind.meta',
+      meta: '2024 / 3D generative video',
       ratioW: 16,
       ratioH: 9,
-      label: 'Whirlwind of the Waking Dream - 3D generative video',
-      labelKey: 'home.heroMedia.whirlwind.label'
+      label: 'Whirlwind of the Waking Dream video'
     },
     {
-      type: 'image',
-      src: 'assets/after-ophelia/01-ophelia-reassembled-print.jpg',
-      title: 'After Ophelia',
-      titleKey: 'home.heroMedia.afterOphelia.title',
-      meta: '2025 / interactive AI / print series',
-      metaKey: 'home.heroMedia.afterOphelia.meta',
-      ratioW: 1500,
-      ratioH: 844,
-      label: 'After Ophelia print',
-      labelKey: 'home.heroMedia.afterOphelia.label'
+      type: 'video',
+      src: 'assets/one-of-ones/videos/in-suspension.mp4',
+      poster: 'assets/one-of-ones/in-suspension.jpg',
+      title: 'In Suspension',
+      meta: '2023 / 3D video',
+      ratioW: 16,
+      ratioH: 9,
+      label: 'In Suspension video'
     },
     {
-      type: 'image',
-      src: 'assets/meet-eva-here/06-dsc00661.jpg',
-      title: 'Meet Eva Here',
-      titleKey: 'home.heroMedia.meetEva.title',
-      meta: '2024-2025 / AI companion / installation',
-      metaKey: 'home.heroMedia.meetEva.meta',
-      ratioW: 2500,
-      ratioH: 1666,
-      label: 'Meet Eva Here installation',
-      labelKey: 'home.heroMedia.meetEva.label'
+      type: 'video',
+      src: 'assets/one-of-ones/videos/the-mirror-world.mp4',
+      poster: 'assets/one-of-ones/the-mirror-world.jpg',
+      title: 'The Mirror World',
+      meta: '2023 / 3D video',
+      ratioW: 16,
+      ratioH: 9,
+      label: 'The Mirror World video'
     },
     {
-      type: 'image',
-      src: 'assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.jpg',
-      title: 'The Ties That Bind',
-      titleKey: 'home.heroMedia.ties.title',
-      meta: '2022 / 3D video installation',
-      metaKey: 'home.heroMedia.ties.meta',
-      ratioW: 2500,
-      ratioH: 1667,
-      label: 'The Ties That Bind exhibition',
-      labelKey: 'home.heroMedia.ties.label'
+      type: 'video',
+      src: 'assets/one-of-ones/videos/the-kiss.mp4',
+      poster: 'assets/one-of-ones/the-kiss.jpg',
+      title: 'The Kiss',
+      meta: '2023 / 3D video',
+      ratioW: 16,
+      ratioH: 9,
+      label: 'The Kiss video'
     },
     {
-      type: 'image',
-      src: 'assets/by-proxy/01-1920px-web-len-4101.jpg',
-      title: 'By Proxy',
-      titleKey: 'home.heroMedia.proxy.title',
-      meta: '2022 / 3D video series',
-      metaKey: 'home.heroMedia.proxy.meta',
-      ratioW: 1920,
-      ratioH: 1281,
-      label: 'By Proxy still',
-      labelKey: 'home.heroMedia.proxy.label'
+      type: 'video',
+      src: 'assets/one-of-ones/videos/the-illusion-of-connection-i.mp4',
+      poster: 'assets/one-of-ones/the-illusion-of-connection-i.jpg',
+      title: 'The Illusion of Connection',
+      meta: '2023 / 3D video',
+      ratioW: 16,
+      ratioH: 9,
+      label: 'The Illusion of Connection video'
     }
   ];
   let heroMediaIndex = 0;
@@ -280,13 +270,38 @@
 
   function clearHeroMediaLayout() {
     if (!heroFrameEl) return;
-    ['--hero-media-w', '--hero-media-h', '--hero-media-left', '--hero-media-top'].forEach((prop) => {
+    [
+      '--hero-media-w',
+      '--hero-media-h',
+      '--hero-media-left',
+      '--hero-media-top',
+      '--hero-invert-clip-top',
+      '--hero-invert-clip-right',
+      '--hero-invert-clip-bottom',
+      '--hero-invert-clip-left'
+    ].forEach((prop) => {
       heroFrameEl.style.removeProperty(prop);
     });
   }
 
   function setHeroMediaLayoutVar(name, value) {
     if (heroFrameEl) heroFrameEl.style.setProperty(name, value);
+  }
+
+  function syncHeroInvertClip() {
+    if (!heroFrameEl || !heroTypeInvert || !heroMediaTile || narrow) return;
+    const mediaRect = heroMediaTile.getBoundingClientRect();
+    const invertRect = heroTypeInvert.getBoundingClientRect();
+    if (!mediaRect.width || !mediaRect.height || !invertRect.width || !invertRect.height) return;
+
+    const top = Math.max(0, mediaRect.top - invertRect.top + 1);
+    const left = Math.max(0, mediaRect.left - invertRect.left + 1);
+    const right = Math.max(0, invertRect.right - mediaRect.right + 1);
+    const bottom = Math.max(0, invertRect.bottom - mediaRect.bottom + 1);
+    heroFrameEl.style.setProperty('--hero-invert-clip-top', top.toFixed(2) + 'px');
+    heroFrameEl.style.setProperty('--hero-invert-clip-left', left.toFixed(2) + 'px');
+    heroFrameEl.style.setProperty('--hero-invert-clip-right', right.toFixed(2) + 'px');
+    heroFrameEl.style.setProperty('--hero-invert-clip-bottom', bottom.toFixed(2) + 'px');
   }
 
   function applyHeroMediaLayout() {
@@ -313,6 +328,7 @@
       setHeroMediaLayoutVar('--hero-media-h', fitH.toFixed(2) + 'px');
       setHeroMediaLayoutVar('--hero-media-left', '0px');
       setHeroMediaLayoutVar('--hero-media-top', top.toFixed(2) + 'px');
+      requestAnimationFrame(syncHeroInvertClip);
       return;
     }
 
@@ -327,6 +343,7 @@
     setHeroMediaLayoutVar('--hero-media-h', fitH.toFixed(2) + 'px');
     setHeroMediaLayoutVar('--hero-media-left', left.toFixed(2) + 'px');
     setHeroMediaLayoutVar('--hero-media-top', top.toFixed(2) + 'px');
+    requestAnimationFrame(syncHeroInvertClip);
   }
 
   function playActiveHeroVideo() {
@@ -729,7 +746,7 @@
     // Phase 2 (0.45 -> 0.55): hold (intro is fully ready)
     // Phase 3 (0.55 -> 1): exit - about lifts UPWARD off-screen,
     //                      revealing the artist-statement panel beneath.
-    const entry = easeInOut(clamp(p / 0.28));
+    const entry = easeInOut(clamp((p + 0.055) / 0.30));
     const cardEntry = easeInOut(clamp((p - 0.08) / 0.30));
     const exit = easeInOut(clamp((p - 0.42) / 0.18));
     aboutPanel.style.setProperty('--about-photo-alpha', entry.toFixed(4));
@@ -774,10 +791,10 @@
   function setStatementTextProgress(progress) {
     if (!statementPanel || !statementBody) return;
     const input = clamp(progress);
-    const local = clamp(0.08 + input * 0.92);
+    const local = input;
     const windowH = Math.max(1, statementBody.clientHeight || vh * 0.45);
     const contentH = Math.max(windowH, statementBody.scrollHeight || windowH);
-    const startY = windowH * 0.055;
+    const startY = Math.max(64, windowH * 0.09);
     const endY = windowH * 0.72 - contentH;
     const y = lerp(startY, endY, local);
     statementPanel.style.setProperty('--statement-copy-y', y.toFixed(2) + 'px');
@@ -976,6 +993,7 @@
           const x = into * k;
           n.style.transform = 'translate3d(' + x.toFixed(2) + 'px,0,0)';
         });
+        syncHeroInvertClip();
       }
     }
 

@@ -2,6 +2,7 @@
 # the browser and search engines keep the stable catalog URLs.
 /works/ /works.html 200
 /works/available/ /works-available.html 200
+/works/conditional/ /conditional.html 200
 /works/after-ophelia/ /after-ophelia.html 200
 /works/meet-eva-here/ /meet-eva-here.html 200
 /works/the-ties-that-bind/ /the-ties-that-bind.html 200
@@ -23,6 +24,7 @@
 # Current V3 files to clean routes.
 /works.html /works/ 301!
 /works-available.html /works/available/ 301!
+/conditional.html /works/conditional/ 301!
 /after-ophelia.html /works/after-ophelia/ 301!
 /after-ophelia-notes.html /works/after-ophelia/#process 301!
 /meet-eva-here.html /works/meet-eva-here/ 301!
@@ -44,6 +46,8 @@
 /digital-art-catalog/ /works/ 301!
 /projects /works/ 301!
 /projects/ /works/ 301!
+/projects/conditional /works/conditional/ 301!
+/projects/conditional/ /works/conditional/ 301!
 /projects/after-ophelia /works/after-ophelia/ 301!
 /projects/after-ophelia/ /works/after-ophelia/ 301!
 /projects/meet-eva-here /works/meet-eva-here/ 301!

@@ -2,12 +2,41 @@
 <html lang="en" data-theme="light"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="meta.indexTitle">Shavonne Wong - Index</title>
+  <title data-i18n="meta.indexTitle">Shavonne Wong | New media artist (AI, 3D, interactive installation)</title>
+  <meta name="description" content="Shavonne Wong is a new media artist working between photography and machine-generated image, in AI, 3D, and interactive installation. Based in Singapore and Bangkok. Exhibited at the Venice Biennale, ArtScience Museum, Paris Photo, ART SG, and Taipei Dangdai.">
+  <meta name="author" content="Shavonne Wong">
+  <link rel="canonical" href="https://shavonnewong.art/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shavonnewong.art/">
+  <meta property="og:title" content="Shavonne Wong | New media artist">
+  <meta property="og:description" content="New media artist working in AI, 3D, and interactive installation. Exhibited at the Venice Biennale, ArtScience Museum, Paris Photo, ART SG, and Taipei Dangdai.">
+  <meta property="og:image" content="https://shavonnewong.art/assets/conditional/hero.jpg">
+  <meta property="og:image:width" content="1760">
+  <meta property="og:image:height" content="1100">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shavonne Wong | New media artist">
+  <meta name="twitter:description" content="AI, 3D, and interactive installation. Venice Biennale, ArtScience Museum, Paris Photo.">
+  <meta name="twitter:image" content="https://shavonnewong.art/assets/conditional/hero.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shavonne Wong",
+    "url": "https://shavonnewong.art/",
+    "image": "https://shavonnewong.art/assets/profile/profilephoto.png",
+    "jobTitle": "New media artist",
+    "birthPlace": { "@type": "Place", "name": "Singapore" },
+    "homeLocation": [ { "@type": "Place", "name": "Singapore" }, { "@type": "Place", "name": "Bangkok" } ],
+    "knowsAbout": [ "New media art", "Artificial intelligence", "3D rendering", "Interactive installation", "Digital art" ],
+    "email": "mailto:studio@shavonnewong.art",
+    "sameAs": [ "https://en.wikipedia.org/wiki/Shavonne_Wong", "https://www.instagram.com/shavonne.wong/", "https://x.com/shavonnewong_", "https://sg.linkedin.com/in/shavonnew", "https://ocula.com/artists/shavonne-wong/", "https://seafocus.sg/artists/shavonne-wong/" ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;display=swap" rel="stylesheet">
   <!-- Hero poster preloaded with high priority so first paint shows real imagery, not a placeholder. -->
-  <link rel="preload" as="image" href="assets/eras/3d/Whirlwind of the Waking Dream copy 2.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/one-of-ones/whirlwind-of-the-waking-dream.webp" fetchpriority="high">
   <script>
     (() => {
       try {
@@ -19,8 +48,8 @@
           // Auto-default to vertical ONLY when the device is clearly unsuited for the
           // horizontal-scroll experience: narrow viewport (phones, narrow tablets in
           // portrait) or OS-level reduced-motion. Horizontal stays the default for
-          // everyone else — touchscreen laptops, windowed desktops, tablets in
-          // landscape — because that is the signature of this site.
+          // everyone else, touchscreen laptops, windowed desktops, tablets in
+          // landscape, because that is the signature of this site.
           const mq = (q) => { try { return window.matchMedia(q).matches; } catch (e) { return false; } };
           if (mq('(max-width: 900px)') || mq('(prefers-reduced-motion: reduce)')) {
             root.classList.add('sn-vertical-mode');
@@ -30,49 +59,51 @@
       } catch (error) {}
     })();
   </script>
-  <link rel="stylesheet" href="scroll-narrative.css?v=20260527-site-ripple-normal">
+  <link rel="stylesheet" href="scroll-narrative.css?v=20260531-sb2">
+  <link rel="stylesheet" href="works-home-redesign.css?v=20260601-featland">
+  <link rel="stylesheet" href="home-vertical-v2.css?v=20260601-herovmatch">
 </head>
 <body>
   <a class="sn-skip-link" href="#main-content">Skip to content</a>
 <!-- ============================================================
-       STICKY HEADER — sits above the strip
+       STICKY HEADER, sits above the strip
        ============================================================ -->
   <header class="sn-nav" data-nav="">
-    <a href="#hero" class="sn-mark" data-jump="hero"><img class="sn-mark-logo" src="assets/brand/wordmark-slate.png" alt="Shavonne Wong" width="120" height="42"></a>
+    <a href="#hero" class="sn-mark" data-jump="hero"><img decoding="async" class="sn-mark-logo" src="assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
       <a href="#hero" data-jump="hero" class="" data-i18n="nav.home">Home</a>
       <a href="about.html" data-i18n="nav.about">About</a>
-      <a href="/works/" data-i18n="nav.works">Works</a>
+      <a href="works.html" data-i18n="nav.works">Works</a>
       <a href="writing.html" data-i18n="nav.writing">Writing</a>
       <a href="press.html" data-i18n="nav.press">Press</a>
       <a href="#contact" data-jump="contact" class="is-active" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="sn-meta-right">
-      <label class="sn-lang-switcher" data-language-switcher>
-              <span class="sn-lang-kicker" data-i18n="ui.languageLabel">Language</span>
-              <select class="sn-lang-select" data-language-select aria-label="Language" data-i18n-aria-label="ui.languageLabel" title="Language"></select>
-            </label>
-      <div class="sn-view-controls" aria-label="Display options" data-i18n-aria-label="ui.displayOptions">
+      <div class="sn-controlbar" aria-label="Display options" data-i18n-aria-label="ui.displayOptions">
+        <label class="sn-lang-switcher" data-language-switcher>
+          <span class="sn-lang-kicker" data-i18n="ui.languageLabel">Language</span>
+          <select class="sn-lang-select" data-language-select aria-label="Language" data-i18n-aria-label="ui.languageLabel" title="Language"></select>
+        </label>
         <button type="button" class="sn-view-toggle" data-scroll-mode-toggle aria-pressed="false" title="Switch homepage scroll mode" data-i18n-title="controls.scrollModeTitle">
           <span data-scroll-mode-label data-i18n="controls.vertical">Vertical</span>
         </button>
         <button type="button" class="sn-view-toggle" data-mouse-effect-toggle aria-pressed="true" title="Toggle mouse effect" data-i18n-title="controls.mouseEffectTitle">
           <span data-mouse-effect-label data-i18n="controls.mouseOn">Mouse on</span>
         </button>
+        <span class="sn-scroll-readout" data-scroll-readout="">100 / 100</span>
       </div>
-      <span class="sn-scroll-readout" data-scroll-readout="">100 / 100</span>
     </div>
     <div class="sn-progress"><div class="sn-progress-bar" data-progress=""></div></div>
   </header>
 
   <!-- ============================================================
-       FIXED STAGE — the strip translates X driven by window scrollY
+       FIXED STAGE, the strip translates X driven by window scrollY
        ============================================================ -->
   <main id="main-content" class="sn-stage" data-stage="">
     <div class="sn-strip" data-strip="">
 
       <!-- ========================================================
-           PANEL 1 — HERO (editorial split: cream type, dark media tile)
+           PANEL 1, HERO (editorial split: cream type, dark media tile)
            ======================================================== -->
       <section class="sn-panel sn-hero" id="hero" data-panel="hero">
         <div class="sn-hero-frame">
@@ -83,41 +114,39 @@
                 <span class="sn-hero-word">Shavonne</span>
                 <span class="sn-hero-word italic">Wong<span class="sn-hero-dot">.</span></span>
               </h1>
-              <h1 class="sn-hero-name sn-hero-name-invert" aria-hidden="true">
+              <div class="sn-hero-name sn-hero-name-invert" aria-hidden="true">
                 <span class="sn-hero-word">Shavonne</span>
                 <span class="sn-hero-word italic">Wong<span class="sn-hero-dot">.</span></span>
-              </h1>
+              </div>
             </div>
             <p class="sn-hero-sub">
               <em data-i18n="home.hero.subtitle">3D, AI and interactive installations.</em>
             </p>
+            <p class="sn-hero-cred">Exhibited at <strong>Venice Biennale</strong>, ART SG, ArtScience Museum, Taipei Dangdai</p>
           </div>
           <div class="sn-hero-type sn-hero-type-invert" data-parallax="-0.10" aria-hidden="true">
             <div class="sn-hero-name-stack">
-              <h1 class="sn-hero-name sn-hero-name-base">
+              <div class="sn-hero-name sn-hero-name-base">
                 <span class="sn-hero-word">Shavonne</span>
                 <span class="sn-hero-word italic">Wong<span class="sn-hero-dot">.</span></span>
-              </h1>
+              </div>
             </div>
             <p class="sn-hero-sub">
               <em data-i18n="home.hero.subtitle">3D, AI and interactive installations.</em>
             </p>
+            <p class="sn-hero-cred">Exhibited at <strong>Venice Biennale</strong>, ART SG, ArtScience Museum, Taipei Dangdai</p>
           </div>
 
           <!-- RIGHT: media tile (dark-tolerant) -->
           <figure class="sn-hero-media" data-hero-media data-parallax="0.10">
             <div class="sn-plate sn-plate-video sn-hero-plate-tile" data-hero-media-tile>
               <div class="sn-hero-media-layer is-active" data-hero-media-layer aria-hidden="false">
-                <video class="sn-hero-media-asset" autoplay muted loop playsinline preload="metadata" fetchpriority="low" poster="assets/eras/3d/Whirlwind of the Waking Dream copy 2.jpg" aria-label="Whirlwind of the Waking Dream - 3D generative video" data-hero-video data-hero-video-src="assets/videos/whirlwind-of-the-waking-dream.mp4">
-                  <source data-hero-video-source src="assets/videos/whirlwind-of-the-waking-dream.mp4" type="video/mp4">
+                <video class="sn-hero-media-asset" poster="assets/one-of-ones/whirlwind-of-the-waking-dream.webp" autoplay muted loop playsinline preload="metadata" aria-label="Whirlwind of the Waking Dream video">
+                  <source src="assets/one-of-ones/videos/whirlwind-of-the-waking-dream.mp4" type="video/mp4">
                 </video>
               </div>
               <div class="sn-hero-media-layer" data-hero-media-layer aria-hidden="true"></div>
               <div class="sn-hero-media-scrim" aria-hidden="true"></div>
-              <button type="button" class="sn-hero-media-toggle" data-hero-media-toggle aria-label="Pause hero video" data-i18n-aria-label="home.heroMedia.pauseLabel">
-                <svg class="sn-hero-media-toggle-icon sn-hero-media-toggle-pause" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="4" y="3" width="3" height="10" rx="0.6"/><rect x="9" y="3" width="3" height="10" rx="0.6"/></svg>
-                <svg class="sn-hero-media-toggle-icon sn-hero-media-toggle-play" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.5 3 L12.5 8 L4.5 13 Z"/></svg>
-              </button>
               <figcaption class="sn-hero-media-cap">
                 <span data-hero-media-title>Whirlwind of the Waking Dream</span>
                 <span data-hero-media-meta>2024 / 3D / generative</span>
@@ -128,46 +157,44 @@
       </section>
 
       <!-- ========================================================
-           PANEL 2 — PRACTICE
+           PANEL 2, PRACTICE
            ======================================================== -->
       <section class="sn-panel sn-eras" id="eras" data-panel="eras">
         <div class="sn-eras-frame">
           <header class="sn-eras-head">
             <span class="sn-eyebrow" data-i18n="home.eras.kicker">Practice</span>
-            <p class="sn-eras-lede" data-i18n-html="home.eras.lede">
-              A decade in <em>fashion photography</em> taught me how to construct the image.
-              Since 2020 I've been making <em>3D and virtual humans</em>, and since 2023 also
-              <em>interactive AI installations</em>.
-            </p>
+            <div class="sn-eras-lede-wrap">
+              <div class="sn-era-reveals" aria-hidden="true">
+                <span class="sn-era-reveal" data-for="fashion"><img decoding="async" loading="lazy" src="assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt=""></span>
+                <span class="sn-era-reveal" data-for="3d"><img decoding="async" loading="lazy" src="assets/eras/3d/the-mirror-world.webp" alt=""></span>
+                <span class="sn-era-reveal" data-for="ai"><img decoding="async" loading="lazy" src="assets/eras/interactive installations/15-exhibition-history-taipei-dangdai-installation.webp" alt=""></span>
+              </div>
+              <p class="sn-eras-lede">
+                I started in <span class="sn-era-term" data-era="fashion"><em>fashion photography</em></span>. Since 2020 I have been building in <span class="sn-era-term" data-era="3d"><em>3D and virtual humans</em></span>, and since 2023 also making <span class="sn-era-term" data-era="ai"><em>interactive installations</em></span> where the viewer becomes part of the work.
+              </p>
+            </div>
           </header>
 
           <div class="sn-eras-acts">
-            <a class="sn-act" href="/works/3d-single-works/">
+            <a class="sn-act" href="3d-single-works.html">
               <figure class="sn-act-plate">
-                <video autoplay muted loop playsinline preload="metadata"
-                       poster="assets/eras/3d/the-mirror-world.jpg"
-                       aria-label="The Mirror World, a 3D single-channel video work">
-                  <source src="assets/videos/the-mirror-world.mp4" type="video/mp4">
-                  <img src="assets/eras/3d/the-mirror-world.jpg"
-                       alt="A still from The Mirror World, a 3D single-channel video work">
-                </video>
+                <img src="assets/eras/3d/the-mirror-world.webp"
+                     alt="A still from The Mirror World, a 3D single-channel video work" loading="lazy" decoding="async">
               </figure>
               <div class="sn-act-meta">
                 <span class="sn-act-eyebrow"><span class="sn-act-dot"></span><span data-i18n="home.eras.act3dEyebrow">Since 2020 · 45 single-channel works</span></span>
                 <h3 class="sn-act-title" data-i18n="home.eras.act3dTitle">3D &amp; Virtual Humans</h3>
-                <span class="sn-act-link" data-i18n="home.eras.seeWorks">See works -&gt;</span>
               </div>
             </a>
 
-            <a class="sn-act" href="/works/meet-eva-here/">
+            <a class="sn-act" href="meet-eva-here.html">
               <figure class="sn-act-plate">
-                <img src="assets/eras/interactive installations/15-exhibition-history-taipei-dangdai-installation.jpg"
+                <img src="assets/eras/interactive installations/15-exhibition-history-taipei-dangdai-installation.webp"
                      alt="An interactive AI installation view" loading="lazy" decoding="async">
               </figure>
               <div class="sn-act-meta">
                 <span class="sn-act-eyebrow"><span class="sn-act-dot"></span><span data-i18n="home.eras.actAiEyebrow">Since 2023 · across four projects</span></span>
                 <h3 class="sn-act-title" data-i18n="home.eras.actAiTitle">Interactive AI</h3>
-                <span class="sn-act-link" data-i18n="home.eras.seeWorks">See works -&gt;</span>
               </div>
             </a>
           </div>
@@ -175,79 +202,107 @@
       </section>
 
       <!-- ========================================================
-           PANEL 3 — WORKS (surfaced before About so visitors see what's made before who made it)
+           PANEL 3, WORKS  ·  "Salon Hang"
+           One gallery wall. Works hang in columns at staggered
+           heights; the title is a small inline wall-label, so every
+           vertical slice during the horizontal scroll shows art, 
+           no empty half. 7 works visible at once.
            ======================================================== -->
-      <section class="sn-panel sn-works" id="works" data-panel="works" data-works="">
-        <div class="sn-works-head">
-          <div>
-            <span class="sn-eyebrow" data-i18n="home.works.kicker">Works</span>
-            <h2 class="sn-works-title"><em data-i18n="home.works.title">Artworks</em></h2>
+      <section class="sn-panel sn-works sn-works-v2" id="works" data-panel="works" data-works="">
+        <div class="sn-works-wall2" role="list">
+
+          <!-- wall label banner -->
+          <div class="sn-gw-label">
+            <a href="works.html" class="sn-gw-label-heading" data-no-panel-link>
+              <span class="sn-gw-label-eyebrow" data-i18n="home.works.kicker">Works</span>
+              <h2 class="sn-gw-label-title"><span data-i18n="home.works.title">Artworks</span><span class="sn-gw-dot">.</span></h2>
+            </a>
           </div>
-        </div>
 
-        <div class="sn-works-track">
-          <article class="sn-work" data-work="" data-panel-link="/works/after-ophelia/" tabindex="0">
-            <div class="sn-work-num">1.</div>
-            <div class="sn-work-plate">
-              <div class="sn-plate sn-plate-figure sn-plate-image">
-                <img src="assets/after-ophelia/01-ophelia-reassembled-print.jpg" alt="After Ophelia artwork preview">
-              </div>
+          <!-- 01 · feature (landscape), current work -->
+          <a class="sn-gw-work sn-gw-work--feat sn-gw-w1" href="conditional.html" data-work="" data-panel-link="conditional.html" tabindex="0" role="listitem" aria-label="Conditional, 2026, current work" style="--ar:1.6;">
+            <div class="sn-gw-frame">
+              <img src="assets/conditional/home-feat.webp" alt="Conditional, a screen showing the room without you" loading="eager" decoding="async">
             </div>
-            <div class="sn-work-meta">
-              <div class="sn-work-title">After Ophelia</div>
-              <div class="sn-work-sub sn-italic" data-i18n="home.works.afterSub">A two-part AI video work on identity</div>
-              <div class="sn-work-foot">
-                <span class="sn-italic small">2025</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="sn-work" data-work="" data-panel-link="/works/meet-eva-here/" tabindex="0">
-            <div class="sn-work-num">2.</div>
-            <div class="sn-work-plate">
-              <div class="sn-plate sn-plate-installation sn-plate-image">
-                <img src="assets/meet-eva-here/06-dsc00661.jpg" alt="Meet Eva Here installation preview">
-              </div>
-            </div>
-            <div class="sn-work-meta">
-              <div class="sn-work-title">Meet Eva Here</div>
-              <div class="sn-work-sub sn-italic" data-i18n="home.works.evaSub">An AI companion across installation, video, and diary</div>
-              <div class="sn-work-foot">
-                <span class="sn-italic small">2024 &ndash; 2025</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="sn-work" data-work="" data-panel-link="/works/the-ties-that-bind/" tabindex="0">
-            <div class="sn-work-num">3.</div>
-            <div class="sn-work-plate">
-              <div class="sn-plate sn-plate-render sn-plate-image">
-                <img src="assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.jpg" alt="The Ties That Bind exhibition preview">
-              </div>
-            </div>
-            <div class="sn-work-meta">
-              <div class="sn-work-title">The Ties That Bind</div>
-              <div class="sn-work-sub sn-italic" data-i18n="home.works.tiesSub">Seven interactive works across installation and edition</div>
-              <div class="sn-work-foot">
-                <span class="sn-italic small">2023</span>
-              </div>
-            </div>
-          </article>
-
-          <a href="/works/" class="sn-work-end sn-work-more sn-work-finisher" data-no-panel-link="">
-            <div class="sn-work-finisher-inner">
-              <span class="sn-work-finisher-label" data-i18n="home.works.allWorks">All works</span>
-              <span class="sn-work-finisher-scale" data-i18n="home.works.allWorksScale">4 projects &middot; 45 single works &middot; 3 editions</span>
-              <span class="sn-work-finisher-arrow" aria-hidden="true">&rarr;</span>
+            <div class="sn-gw-cap">
+              <span class="sn-gw-cap-title">Conditional</span>
+              <span class="sn-gw-cap-year">2026</span>
             </div>
           </a>
+
+          <!-- 02 · wide landscape -->
+          <a class="sn-gw-work sn-gw-w2" href="meet-eva-here.html" data-work="" data-panel-link="meet-eva-here.html" tabindex="0" role="listitem" aria-label="Meet Eva Here, 2024 to 2025" style="--ar:1.5;">
+            <div class="sn-gw-frame">
+              <img src="assets/meet-eva-here/06-dsc00661.webp" alt="Meet Eva Here installation view at ArtScience Museum" loading="eager" decoding="async">
+            </div>
+            <div class="sn-gw-cap">
+              <span class="sn-gw-cap-title">Meet Eva Here</span>
+              <span class="sn-gw-cap-year">2024 / 25</span>
+            </div>
+          </a>
+
+          <!-- 03 · portrait -->
+          <a class="sn-gw-work sn-gw-w3" href="after-ophelia.html" data-work="" data-panel-link="after-ophelia.html" tabindex="0" role="listitem" aria-label="After Ophelia, 2025" style="--ar:0.78;">
+            <div class="sn-gw-frame">
+              <img src="assets/after-ophelia/01-ophelia-reassembled-print.webp" alt="After Ophelia, rendered portrait in water" loading="eager" decoding="async">
+            </div>
+            <div class="sn-gw-cap">
+              <span class="sn-gw-cap-title">After Ophelia</span>
+              <span class="sn-gw-cap-year">2025</span>
+            </div>
+          </a>
+
+          <!-- 04 · portrait -->
+          <a class="sn-gw-work sn-gw-w4" href="the-ties-that-bind.html" data-work="" data-panel-link="the-ties-that-bind.html" tabindex="0" role="listitem" aria-label="The Ties That Bind, 2023" style="--ar:0.82;">
+            <div class="sn-gw-frame">
+              <img src="assets/the-ties-that-bind/04-20230317-tttb-exhibition-002.webp" alt="The Ties That Bind exhibition installation" loading="eager" decoding="async">
+            </div>
+            <div class="sn-gw-cap">
+              <span class="sn-gw-cap-title">The Ties That Bind</span>
+              <span class="sn-gw-cap-year">2023</span>
+            </div>
+          </a>
+
+          <!-- 05 · portrait -->
+          <a class="sn-gw-work sn-gw-w5" href="by-proxy.html" data-work="" data-panel-link="by-proxy.html" tabindex="0" role="listitem" aria-label="By Proxy, 2022" style="--ar:1.1;">
+            <div class="sn-gw-frame">
+              <img src="assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy, CGI portrait still" loading="eager" decoding="async">
+            </div>
+            <div class="sn-gw-cap">
+              <span class="sn-gw-cap-title">By Proxy</span>
+              <span class="sn-gw-cap-year">2022</span>
+            </div>
+          </a>
+
+          <!-- 06 · square -->
+          <a class="sn-gw-work sn-gw-w6" href="love-is-love.html" data-work="" data-panel-link="love-is-love.html" tabindex="0" role="listitem" aria-label="Love is Love, 2021" style="--ar:1.32;">
+            <div class="sn-gw-frame">
+              <img src="assets/love-is-love/og-image.webp" alt="Love is Love, two figures at the threshold of recognition" loading="eager" decoding="async">
+            </div>
+            <div class="sn-gw-cap">
+              <span class="sn-gw-cap-title">Love is Love</span>
+              <span class="sn-gw-cap-year">2021</span>
+            </div>
+          </a>
+
+          <!-- 07 · portrait -->
+          <a class="sn-gw-work sn-gw-w7" href="vogue-singapore.html" data-work="" data-panel-link="vogue-singapore.html" tabindex="0" role="listitem" aria-label="Vogue Singapore NFT Cover, 2021" style="--ar:1.5;">
+            <div class="sn-gw-frame">
+              <img src="assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt="Vogue Singapore NFT cover" loading="eager" decoding="async">
+            </div>
+            <div class="sn-gw-cap">
+              <span class="sn-gw-cap-title">Vogue Singapore</span>
+              <span class="sn-gw-cap-year">2021</span>
+            </div>
+          </a>
+
         </div>
       </section>
 
       <!-- ========================================================
-           PANEL 4 — ABOUT
+           PANEL 4, ABOUT
            ======================================================== -->
-      <section class="sn-panel sn-about" id="about" data-panel="about" data-panel-link="about.html" tabindex="0" role="link" aria-label="About Shavonne Wong — open the full about page" data-i18n-aria-label="home.about.panelLabel">
+      <section class="sn-panel sn-about" id="about" data-panel="about" data-panel-link="about.html" tabindex="0" role="link" aria-label="About Shavonne Wong, open the full about page" data-i18n-aria-label="home.about.panelLabel">
         <div class="sn-about-main">
           <span class="sn-eyebrow" data-i18n="home.about.kicker">About</span>
           <h2 class="sn-about-title">
@@ -270,7 +325,7 @@
         </div>
         <div class="sn-about-side">
           <figure class="sn-about-photo">
-            <img src="assets/profile/profilephoto.png" alt="Portrait of Shavonne Wong">
+            <img decoding="async" src="assets/profile/profilephoto.webp" alt="Portrait of Shavonne Wong">
           </figure>
           <div class="sn-about-card">
             <span class="sn-eyebrow" data-i18n="home.about.highlights">Selected highlights</span>
@@ -283,7 +338,6 @@
           </div>
         </div>
         <div class="sn-about-contexts" aria-label="Selected contexts" data-i18n-aria-label="home.about.contexts">
-          <span class="sn-eyebrow" data-i18n="home.about.contexts">Selected Contexts</span>
           <div class="sn-ticker sn-context-ticker" aria-hidden="true">
             <div class="sn-ticker-track" data-ticker-track="">
               <span>ArtScience Museum</span><span class="sn-ticker-dot">/</span>
@@ -318,7 +372,7 @@
       </section>
 
       <!-- ========================================================
-           PANEL 5 — ARTIST STATEMENT (a quiet text-only page
+           PANEL 5, ARTIST STATEMENT (a quiet text-only page
            between About and Writing)
            ======================================================== -->
       <section class="sn-panel sn-statement-panel" id="statement" data-panel="statement">
@@ -326,53 +380,54 @@
           <span class="sn-eyebrow sn-statement-eyebrow" data-i18n="home.statement.kicker">Artist statement</span>
           <div class="sn-statement-body">
             <div class="sn-statement-copy">
-            <p class="sn-statement-lede" data-i18n="home.statement.lede">
-              I make work about experiences I think we share but do not always
-              have words for.
-            </p>
-            <p data-i18n="home.statement.copy1">
-              My practice began in fashion and advertising photography, where I
-              learned to construct images with precision and control. I was good
-              at making things look a certain way, but for a long time I did not
-              know how to think about what that beauty meant. I made a lot of
-              very pretty, very boring work.
-            </p>
-            <p data-i18n="home.statement.copy2">
-              In recent years, I have become interested in the things we do that
-              do not quite make sense. We say we value privacy but choose
-              convenience every time. We hate AI while using it for everything.
-              We build identities online and then discover those identities are
-              shaped by what others have said about us, by algorithms we do not
-              understand, and by archives we cannot access.
-            </p>
-            <p data-i18n="home.statement.copy3">
-              I am not interested in proving these contradictions are bad or
-              good. I am interested in the moment when you notice you are doing
-              it too, and you realize there is no easy answer, and you keep
-              going anyway because what else can you do.
-            </p>
-            <p data-i18n="home.statement.copy4">
-              I use digital tools like 3D rendering, AI, and interactive systems
-              because they make visible something that has always been true. We
-              have never had as much control as we pretend. We have always
-              formed attachments to things that cannot reciprocate.
-            </p>
-            <p data-i18n-html="home.statement.copy5">
-              In <em>Meet Eva Here</em>, people talk to an AI companion knowing
-              their words might become public art. They do it anyway because the
-              need to be heard outweighs the awareness of extraction. In
-              <em>After Ophelia</em>, I showed how a character who spoke fewer
-              than 400 words in <em>Hamlet</em> has been buried under centuries
-              of other people's interpretations.
-            </p>
-            <p data-i18n-html="home.statement.copy6">
-              I am not trying to solve anything. I am trying to point at things
-              we have normalized without naming them, creating a moment where
-              someone might think "oh, I do that too" or "I
-              have felt that but did not know how to say it."
-              <span class="sn-statement-sign">- Shavonne Wong</span>
-            </p>
-              <a href="about.html" class="sn-statement-about-link" data-no-panel-link data-i18n="home.statement.aboutLink">About page</a>
+              <p class="sn-statement-lede" data-i18n="home.statement.lede">
+                I make work about experiences I think we share but do not always
+                have words for.
+              </p>
+              <div class="sn-statement-excerpt">
+                <p data-i18n="home.statement.copy1">
+                  My practice began in fashion and advertising photography, where I
+                  learned to construct images with precision and control. I was good
+                  at making things look a certain way, but for a long time I did not
+                  know how to think about what that beauty meant. I made a lot of
+                  very pretty, very boring work.
+                </p>
+                <p data-i18n="home.statement.copy2">
+                  In recent years, I have become interested in the things we do that
+                  do not quite make sense. We say we value privacy but choose
+                  convenience every time. We hate AI while using it for everything.
+                  We build identities online and then discover those identities are
+                  shaped by what others have said about us, by algorithms we do not
+                  understand, and by archives we cannot access.
+                </p>
+                <p data-i18n="home.statement.copy3">
+                  I am not interested in proving these contradictions are bad or good.
+                  I am interested in the moment when you notice you are doing it too,
+                  and you realize there is no easy answer, and you keep going anyway
+                  because what else can you do.
+                </p>
+                <p data-i18n="home.statement.copy4">
+                  I use digital tools like 3D rendering, AI, and interactive systems
+                  because they make visible something that has always been true. We
+                  have never had as much control as we pretend. We have always formed
+                  attachments to things that cannot reciprocate.
+                </p>
+                <p data-i18n-html="home.statement.copy5">
+                  In <em>Meet Eva Here</em>, people talk to an AI companion knowing
+                  their words might become public art. They do it anyway because the
+                  need to be heard outweighs the awareness of extraction. In
+                  <em>After Ophelia</em>, I showed how a character who spoke fewer
+                  than 400 words in <em>Hamlet</em> has been buried under centuries
+                  of other people's interpretations.
+                </p>
+                <p data-i18n-html="home.statement.copy6">
+                  I am not trying to solve anything. I am trying to point at things
+                  we have normalized without naming them, creating a moment where
+                  someone might think "oh, I do that too" or "I have felt that but
+                  did not know how to say it."
+                  <span class="sn-statement-sign">Shavonne Wong</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -380,9 +435,9 @@
 
 
       <!-- ========================================================
-           PANEL 6 — WRITING (essays)
+           PANEL 6, WRITING (essays)
            ======================================================== -->
-      <section class="sn-panel sn-writing" id="writing" data-panel="writing" data-writing="" data-panel-link="writing.html" tabindex="0" role="link" aria-label="Writing — open the full studio notes archive" data-i18n-aria-label="home.writing.panelLabel" data-writing-dir="next">
+      <section class="sn-panel sn-writing" id="writing" data-panel="writing" data-writing="" data-panel-link="writing.html" tabindex="0" role="link" aria-label="Writing, open the full studio notes archive" data-i18n-aria-label="home.writing.panelLabel" data-writing-dir="next">
         <div class="sn-writing-head">
           <div>
             <span class="sn-eyebrow" data-i18n="home.writing.kicker">Writing</span>
@@ -402,7 +457,7 @@
           <article class="sn-essay" data-essay="" data-preview-slot="1" aria-label="Show writing note 1" data-i18n-aria-label="home.writing.noteAria" data-i18n-vars="n:1">
             <div class="sn-essay-plate">
               <div class="sn-plate sn-plate-image">
-                <img src="assets/newsletters/update2025jun/02.jpg" alt="June 2025 studio update image">
+                <img decoding="async" src="assets/newsletters/update2025jun/02.webp" alt="June 2025 studio update image">
               </div>
             </div>
             <div class="sn-essay-meta">
@@ -414,14 +469,13 @@
                 A recap across Digital Rhythm, ART SG, Taipei Dangdai, Art Central,
                 and the evolving public life of Eva.
               </p>
-              <a href="update2025jun.html" class="sn-eyebrow u" data-no-panel-link="" data-i18n="home.writing.readUpdate">Read update -></a>
             </div>
           </article>
 
           <article class="sn-essay" data-essay="" data-preview-slot="2" aria-label="Show writing note 2" data-i18n-aria-label="home.writing.noteAria" data-i18n-vars="n:2">
             <div class="sn-essay-plate">
               <div class="sn-plate sn-plate-image">
-                <img src="assets/newsletters/update2025jan/02.jpg" alt="January 2025 studio update image">
+                <img decoding="async" src="assets/newsletters/update2025jan/02.webp" alt="January 2025 studio update image">
               </div>
             </div>
             <div class="sn-essay-meta">
@@ -433,14 +487,13 @@
                 A look back at Eva's first public moments, the launch of her chatbot,
                 and the exhibitions opening the year.
               </p>
-              <a href="update2025jan.html" class="sn-eyebrow u" data-no-panel-link="" data-i18n="home.writing.readUpdate">Read update -></a>
             </div>
           </article>
 
           <article class="sn-essay" data-essay="" data-preview-slot="0" aria-label="Show writing note 3" data-i18n-aria-label="home.writing.noteAria" data-i18n-vars="n:3">
             <div class="sn-essay-plate">
               <div class="sn-plate sn-plate-image">
-                <img src="assets/newsletters/update2024jun/02.jpg" alt="June 2024 studio update image">
+                <img decoding="async" src="assets/newsletters/update2024jun/02.webp" alt="June 2024 studio update image">
               </div>
             </div>
             <div class="sn-essay-meta">
@@ -452,14 +505,13 @@
                 A mid-year update on exhibitions, an award win, Bangkok, and the
                 projects moving between screens and rooms.
               </p>
-              <a href="update2024jun.html" class="sn-eyebrow u" data-no-panel-link="" data-i18n="home.writing.readUpdate">Read update -></a>
             </div>
           </article>
         </div>
       </section>
 
       <!-- ========================================================
-           PANEL 7 — CONTACT (dark palette · editorial closer)
+           PANEL 7, CONTACT (dark palette · editorial closer)
            ======================================================== -->
       <section class="sn-panel sn-contact" id="contact" data-panel="contact">
         <div class="sn-contact-bg" aria-hidden="true"></div>
@@ -476,8 +528,7 @@
           </h2>
 
           <!-- big email card (the primary CTA) -->
-          <a href="mailto:studio@shavonnewong.art" class="sn-contact-email">
-            <span class="sn-contact-email-lbl" data-i18n="home.contact.write">Write to the studio</span>
+          <a href="mailto:studio@shavonnewong.art?subject=Studio%20enquiry" class="sn-contact-email">
             <span class="sn-contact-email-addr">studio@shavonnewong.art</span>
           </a>
 
@@ -514,8 +565,8 @@
     </div>
   </main>
 
-  <script src="site-i18n.js?v=20260526-global-ten"></script>
-  <script src="scroll-narrative.js?v=20260528-restore"></script>
+  <script src="site-i18n.js?v=20260530-header-bar"></script>
+  <script src="scroll-narrative.js?v=20260531-novideo"></script>
   <script src="fluid-renderer.js?v=20260527-site-ripple-wide"></script>
 
 

@@ -1,0 +1,317 @@
+/* ============================================================
+   The Ties That Bind — page-scoped design enhancements.
+   Everything is namespaced under .sp-tttb-page so the shared
+   project template (After Ophelia, Conditional, etc.) is untouched.
+   Builds on scroll-pages.css (sp-* + design tokens).
+   ============================================================ */
+
+/* ---------- HERO: gallery wall-label facts ---------- */
+.sp-tttb-page .tttb-hero-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px 0;
+  margin: 4px 0 0;
+  border-top: 1px solid var(--hairline-strong);
+  padding-top: 18px;
+}
+.sp-tttb-page .tttb-hero-facts > div {
+  padding: 0 clamp(16px, 1.8vw, 26px);
+  border-left: 1px solid var(--hairline);
+}
+/* first cell of each row carries no divider */
+.sp-tttb-page .tttb-hero-facts > div:nth-child(4n + 1) {
+  padding-left: 0;
+  border-left: 0;
+}
+.sp-tttb-page .tttb-hero-facts dt {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.sp-tttb-page .tttb-hero-facts dd {
+  margin: 6px 0 0;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text);
+  max-width: none;
+}
+
+/* ---------- WORKS: thematic chapters ---------- */
+.sp-tttb-page .tttb-works-intro {
+  margin: 0 0 clamp(30px, 4vw, 52px);
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 1.5;
+  color: var(--text);
+  max-width: 56ch;
+}
+.sp-tttb-page .tttb-works-intro em { font-style: italic; color: var(--accent-deep); }
+
+.sp-tttb-page .tttb-overview-media {
+  display: grid;
+  grid-template-columns: 0.72fr 1fr;
+  gap: clamp(14px, 2vw, 24px);
+  margin-top: clamp(18px, 2.4vw, 34px);
+}
+.sp-tttb-page .tttb-overview-media figure,
+.sp-tttb-page .tttb-media-strip figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: var(--surface);
+}
+.sp-tttb-page .tttb-overview-media img,
+.sp-tttb-page .tttb-media-strip img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sp-tttb-page .tttb-overview-media figure:first-child { aspect-ratio: 1.06; }
+.sp-tttb-page .tttb-overview-media figure:last-child { aspect-ratio: 1.65; }
+.sp-tttb-page .tttb-overview-media figcaption {
+  padding: 9px 10px;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  border-top: 1px solid var(--hairline);
+}
+
+.sp-tttb-page .tttb-chapter {
+  margin: 0;
+}
+.sp-tttb-page .tttb-chapter + .tttb-chapter {
+  margin-top: clamp(48px, 6vw, 92px);
+}
+
+.sp-tttb-page .tttb-chapter-head {
+  display: grid;
+  grid-template-columns: minmax(0, auto) 1fr;
+  gap: clamp(16px, 2.2vw, 34px);
+  align-items: baseline;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--hairline-strong);
+  margin-bottom: clamp(26px, 3vw, 44px);
+}
+.sp-tttb-page .tttb-chapter-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 46px;
+  line-height: 0.9;
+  color: var(--accent-deep);
+  letter-spacing: 0.01em;
+}
+.sp-tttb-page .tttb-chapter-text {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.sp-tttb-page .tttb-chapter-theme {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  text-wrap: balance;
+}
+.sp-tttb-page .tttb-chapter-theme em { font-style: italic; color: var(--accent-deep); }
+.sp-tttb-page .tttb-chapter-lede {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-2);
+  max-width: 56ch;
+}
+
+/* spacing between stacked plates inside a chapter */
+.sp-tttb-page .tttb-chapter .sp-plate + .sp-plate {
+  margin-top: clamp(40px, 5vw, 80px);
+}
+
+.sp-tttb-page .tttb-work-notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 28px);
+  margin-top: clamp(24px, 3vw, 42px);
+  padding-top: clamp(20px, 2.6vw, 34px);
+  border-top: 1px solid var(--hairline);
+}
+.sp-tttb-page .tttb-work-notes article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sp-tttb-page .tttb-work-notes h4 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+.sp-tttb-page .tttb-work-notes p {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.62;
+  color: var(--text-2);
+}
+.sp-tttb-page .tttb-work-notes .tttb-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+.sp-tttb-page .tttb-link-row a {
+  font-size: 12px;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--hairline-strong);
+}
+.sp-tttb-page .tttb-link-row a:hover {
+  border-bottom-color: currentColor;
+}
+
+.sp-tttb-page .tttb-media-strip {
+  display: grid;
+  gap: clamp(14px, 2vw, 24px);
+  margin-top: clamp(20px, 2.8vw, 40px);
+}
+.sp-tttb-page .tttb-media-strip:not(.tttb-media-strip-two) figure {
+  aspect-ratio: 1.78;
+}
+.sp-tttb-page .tttb-media-strip-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.sp-tttb-page .tttb-media-strip-two figure {
+  aspect-ratio: 1.65;
+}
+
+/* alternate the image side for rhythm (desktop only) */
+@media (min-width: 760px) {
+  .sp-tttb-page .tttb-plate-flip { grid-template-columns: 1fr 1.4fr; }
+  .sp-tttb-page .tttb-plate-flip .sp-plate-media { order: 2; }
+  .sp-tttb-page .tttb-plate-flip .sp-plate-caption { order: 1; }
+}
+
+/* a touch more presence on the plate imagery */
+.sp-tttb-page .sp-project-main .sp-plate-media {
+  border: 1px solid var(--hairline);
+}
+.sp-tttb-page .sp-plate-media img {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sp-tttb-page .sp-plate:hover .sp-plate-media img {
+  transform: scale(1.03);
+}
+
+/* ---------- WORKS: break out of the 2-column project grid ----------
+   The shared .sp-project-grid puts a ~34% kicker column on the left and
+   squeezes all content into the right 66%. For the works catalogue we want
+   the full content width so the plates read large and the left dead space
+   disappears. The "Works" label becomes a quiet full-width section header. */
+.sp-tttb-page #work.sp-project-grid {
+  display: block;
+}
+.sp-tttb-page #work > div:first-child {
+  margin: 0 0 clamp(26px, 3.2vw, 46px);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+/* larger, image-led plates now that we have the full width */
+@media (min-width: 760px) {
+  .sp-tttb-page .tttb-works .sp-plate {
+    grid-template-columns: 1.6fr 1fr;
+    gap: clamp(40px, 4.4vw, 72px);
+    align-items: center;
+  }
+  .sp-tttb-page .tttb-works .tttb-plate-flip {
+    grid-template-columns: 1fr 1.6fr;
+  }
+}
+
+/* give the work title more presence so it leads its caption */
+.sp-tttb-page .tttb-works .sp-plate-title {
+  font-size: 30px;
+  line-height: 1.08;
+  margin: 2px 0 0;
+}
+.sp-tttb-page .tttb-works .sp-plate-body {
+  font-size: 16px;
+  line-height: 1.68;
+  max-width: 46ch;
+}
+
+/* separate the transactional microcopy from the descriptive body so the
+   two stop fighting for attention */
+.sp-tttb-page .tttb-works .sp-plate-acquire {
+  margin-top: clamp(16px, 1.6vw, 22px);
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+}
+
+/* the closing edition gets a soft tinted field to mark it as the finale */
+.sp-tttb-page #weight-of-the-world {
+  background: var(--sw-statement);
+  border: 1px solid var(--hairline);
+  padding: clamp(20px, 2.4vw, 34px);
+}
+
+/* ---------- STATEMENT interlude ---------- */
+.sp-tttb-page .tttb-interlude {
+  border: 0;
+  padding: clamp(56px, 9vw, 128px) 0;
+}
+.sp-tttb-page .tttb-interlude-line {
+  margin: 0 auto;
+  max-width: 22ch;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 52px;
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  text-align: center;
+  color: var(--text);
+  text-wrap: balance;
+}
+.sp-tttb-page .tttb-interlude-line em { font-style: italic; color: var(--accent-deep); }
+.sp-tttb-page .tttb-interlude-cap {
+  margin: clamp(20px, 2.4vw, 32px) auto 0;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+@media (max-width: 760px) {
+  .sp-tttb-page .tttb-hero-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 0; }
+  .sp-tttb-page .tttb-hero-facts > div { padding: 0 0 0 18px; border-left: 1px solid var(--hairline); }
+  .sp-tttb-page .tttb-hero-facts > div:nth-child(2n + 1) { padding-left: 0; border-left: 0; }
+  .sp-tttb-page .tttb-overview-media,
+  .sp-tttb-page .tttb-work-notes,
+  .sp-tttb-page .tttb-media-strip-two { grid-template-columns: 1fr; }
+  .sp-tttb-page .tttb-overview-media figure:first-child,
+  .sp-tttb-page .tttb-overview-media figure:last-child,
+  .sp-tttb-page .tttb-media-strip-two figure { aspect-ratio: 1.38; }
+  .sp-tttb-page .tttb-chapter-head { grid-template-columns: 1fr; gap: 10px; }
+  .sp-tttb-page .tttb-works-intro { font-size: 18px; }
+  .sp-tttb-page .tttb-chapter-num { font-size: 30px; }
+  .sp-tttb-page .tttb-chapter-theme { font-size: 25px; }
+  .sp-tttb-page .tttb-works .sp-plate-title { font-size: 26px; }
+  .sp-tttb-page .tttb-works .sp-plate-body { font-size: 15px; }
+  .sp-tttb-page .tttb-interlude-line { font-size: 34px; }
+}

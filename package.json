@@ -1,0 +1,16 @@
+{
+  "name": "shavonne-website-redesign-v4",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "prepare:nft-media": "node tools/prepare-nft-media.mjs",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "devDependencies": {
+    "ffmpeg-static": "^5.3.0",
+    "sharp": "^0.34.5",
+    "vite": "^8.0.16"
+  }
+}
