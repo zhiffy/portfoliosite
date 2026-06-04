@@ -3,6 +3,12 @@
 Launch QA status and deploy-preview checks live in `WORKS_LAUNCH_QA.md`.
 Hosting-specific launch notes live in `HOSTING_HANDOFF.md`.
 
+## Newsletter And Contact
+
+- Newsletter forms post to `/api/newsletter-subscribe`, which creates or updates the address in MailerLite's main subscriber list.
+- Set `MAILERLITE_API_KEY` in the deploy host environment before testing live newsletter signups.
+- The contact page form stays on Formspree at `https://formspree.io/f/mvznodbq`.
+
 ## Quarterly
 
 - Walk every project page and individual work page.

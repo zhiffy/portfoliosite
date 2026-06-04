@@ -15,3 +15,9 @@ assets/videos/everything-yet-nothing-scrub/
 Thumbs.db
 *.log
 ds-preview/
+
+# local secrets
+.env
+.env.local
+.env.*.local
+!.env.example

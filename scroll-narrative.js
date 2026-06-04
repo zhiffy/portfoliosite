@@ -143,8 +143,8 @@
   const heroMediaItems = [
     {
       type: 'video',
-      src: 'assets/one-of-ones/videos/whirlwind-of-the-waking-dream.mp4',
-      poster: 'assets/one-of-ones/whirlwind-of-the-waking-dream.jpg',
+      src: '/assets/one-of-ones/videos/whirlwind-of-the-waking-dream.mp4',
+      poster: '/assets/one-of-ones/whirlwind-of-the-waking-dream.jpg',
       title: 'Whirlwind of the Waking Dream',
       meta: '2024 / 3D generative video',
       ratioW: 16,
@@ -153,8 +153,8 @@
     },
     {
       type: 'video',
-      src: 'assets/one-of-ones/videos/in-suspension.mp4',
-      poster: 'assets/one-of-ones/in-suspension.jpg',
+      src: '/assets/one-of-ones/videos/in-suspension.mp4',
+      poster: '/assets/one-of-ones/in-suspension.jpg',
       title: 'In Suspension',
       meta: '2023 / 3D video',
       ratioW: 16,
@@ -163,8 +163,8 @@
     },
     {
       type: 'video',
-      src: 'assets/one-of-ones/videos/the-mirror-world.mp4',
-      poster: 'assets/one-of-ones/the-mirror-world.jpg',
+      src: '/assets/one-of-ones/videos/the-mirror-world.mp4',
+      poster: '/assets/one-of-ones/the-mirror-world.jpg',
       title: 'The Mirror World',
       meta: '2023 / 3D video',
       ratioW: 16,
@@ -173,8 +173,8 @@
     },
     {
       type: 'video',
-      src: 'assets/one-of-ones/videos/the-kiss.mp4',
-      poster: 'assets/one-of-ones/the-kiss.jpg',
+      src: '/assets/one-of-ones/videos/the-kiss.mp4',
+      poster: '/assets/one-of-ones/the-kiss.jpg',
       title: 'The Kiss',
       meta: '2023 / 3D video',
       ratioW: 16,
@@ -183,8 +183,8 @@
     },
     {
       type: 'video',
-      src: 'assets/one-of-ones/videos/the-illusion-of-connection-i.mp4',
-      poster: 'assets/one-of-ones/the-illusion-of-connection-i.jpg',
+      src: '/assets/one-of-ones/videos/the-illusion-of-connection-i.mp4',
+      poster: '/assets/one-of-ones/the-illusion-of-connection-i.jpg',
       title: 'The Illusion of Connection',
       meta: '2023 / 3D video',
       ratioW: 16,

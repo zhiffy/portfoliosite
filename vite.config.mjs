@@ -2,13 +2,27 @@ import { existsSync, readdirSync } from "node:fs";
 import { cp, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { defineConfig } from "vite";
+import {
+  NEWSLETTER_ALLOWED_METHODS,
+  NEWSLETTER_HEADERS,
+  readNodeJsonBody,
+  subscribeToStudioUpdates,
+} from "./lib/mailerlite-subscribe.js";
 
 const root = process.cwd();
 
 const cleanRoutes = {
   "/about/": "about.html",
+  "/contact/": "contact.html",
   "/press/": "press.html",
   "/writing/": "writing.html",
+  "/update2023jan/": "update2023jan.html",
+  "/update2023june/": "update2023june.html",
+  "/update2024jan/": "update2024jan.html",
+  "/update2024jun/": "update2024jun.html",
+  "/update2025jan/": "update2025jan.html",
+  "/update2025jun/": "update2025jun.html",
+  "/update2026jun/": "update2026jun.html",
   "/works/": "works.html",
   "/works/available/": "works-available.html",
   "/works/conditional/": "conditional.html",
@@ -49,6 +63,37 @@ function rewriteCleanRoute(request) {
   }
 }
 
+async function handleNewsletterSignup(request, response) {
+  if (request.url !== "/api/newsletter-subscribe") return false;
+
+  if (request.method === "OPTIONS") {
+    response.writeHead(204, { Allow: NEWSLETTER_ALLOWED_METHODS });
+    response.end();
+    return true;
+  }
+
+  if (request.method !== "POST") {
+    response.writeHead(405, { ...NEWSLETTER_HEADERS, Allow: NEWSLETTER_ALLOWED_METHODS });
+    response.end(JSON.stringify({ error: "Method not allowed" }));
+    return true;
+  }
+
+  try {
+    const payload = await readNodeJsonBody(request);
+    const result = await subscribeToStudioUpdates(payload);
+    response.writeHead(result.status, NEWSLETTER_HEADERS);
+    response.end(JSON.stringify(result.body));
+  } catch (error) {
+    response.writeHead(500, NEWSLETTER_HEADERS);
+    response.end(JSON.stringify({
+      error: "Newsletter signup failed.",
+      details: error instanceof Error ? error.message : String(error),
+    }));
+  }
+
+  return true;
+}
+
 const htmlEntries = Object.fromEntries(
   readdirSync(root)
     .filter((file) => file.endsWith(".html"))
@@ -63,6 +108,7 @@ const htmlEntries = Object.fromEntries(
 function copyStaticFiles() {
   const copyTargets = [
     "assets",
+    "contact.css",
     "uploads",
     "fluid-renderer.js",
     "favicon.ico",
@@ -110,13 +156,15 @@ function cleanRouteDevServer() {
   return {
     name: "clean-route-dev-server",
     configureServer(server) {
-      server.middlewares.use((request, _response, next) => {
+      server.middlewares.use(async (request, response, next) => {
+        if (await handleNewsletterSignup(request, response)) return;
         rewriteCleanRoute(request);
         next();
       });
     },
     configurePreviewServer(server) {
-      server.middlewares.use((request, _response, next) => {
+      server.middlewares.use(async (request, response, next) => {
+        if (await handleNewsletterSignup(request, response)) return;
         rewriteCleanRoute(request);
         next();
       });

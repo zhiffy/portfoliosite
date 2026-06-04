@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
@@ -42,7 +42,7 @@
       <a href="/works/" data-i18n="nav.works">Works</a>
       <a href="/writing/" class="is-active" data-i18n="nav.writing">Writing</a>
       <a href="/press/" data-i18n="nav.press">Press</a>
-      <a href="/#contact" data-i18n="nav.contact">Contact</a>
+      <a href="/contact/" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="sn-meta-right">
       <label class="sn-lang-switcher" data-language-switcher>
@@ -144,9 +144,7 @@
       </a>
     </section>
 
-    <!-- Stay in touch. Email capture via Formspree (form xzdwqlkq), submitted over
-         AJAX so the reader stays on the page. The action + method are kept so the
-         form still works if JavaScript fails (falls back to Formspree's page). -->
+    <!-- Stay in touch. Email capture is sent to the private MailerLite endpoint. -->
     <aside class="wr-subscribe" aria-label="Stay in touch">
       <div class="wr-subscribe-copy">
         <span class="wr-eyebrow">Stay in touch</span>
@@ -156,7 +154,7 @@
       <div class="wr-subscribe-action">
         <p class="wr-subscribe-feedback wr-subscribe-feedback--success" data-fs-success role="status" aria-live="polite"></p>
         <p class="wr-subscribe-feedback wr-subscribe-feedback--error" data-fs-error role="alert"></p>
-        <form id="sw-subscribe-form" class="wr-subscribe-form" data-newsletter-form action="https://formspree.io/f/xzdwqlkq" method="POST">
+        <form id="sw-subscribe-form" class="wr-subscribe-form" data-newsletter-form action="/api/newsletter-subscribe" method="POST">
           <label class="wr-subscribe-field">
             <span class="wr-subscribe-field-label">Email address</span>
             <input class="wr-subscribe-input" type="email" id="sw-subscribe-email" name="email" inputmode="email" autocomplete="email" required placeholder="you@example.com" data-fs-field>
@@ -172,13 +170,8 @@
       </div>
     </footer>
   </main>
-<script src="site-header.js?v=20260531-scroll2"></script><script src="site-i18n.js?v=20260604-fix"></script>
-  <script src="fluid-renderer.js?v=20260527-site-ripple-wide"></script>
-  <!-- Formspree AJAX: keeps the subscribe submission on-page with inline success/error -->
-  <script>
-    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-    formspree('initForm', { formElement: '#sw-subscribe-form', formId: 'xzdwqlkq' });
-  </script>
-  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+<script src="/site-header.js?v=20260531-scroll2"></script><script src="/site-i18n.js?v=20260604-fix"></script>
+  <script src="/fluid-renderer.js?v=20260527-site-ripple-wide"></script>
+  <script src="/subscribe.js?v=20260604-mailerlite"></script>
 </body>
 </html>

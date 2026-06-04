@@ -3,6 +3,10 @@
   "trailingSlash": true,
   "rewrites": [
     {
+      "source": "/contact/",
+      "destination": "/contact.html"
+    },
+    {
       "source": "/works/",
       "destination": "/works.html"
     },
@@ -64,6 +68,11 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/contact.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
     {
       "source": "/works.html",
       "destination": "/works/",

@@ -1,6 +1,12 @@
 import { createReadStream, existsSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import path from "node:path";
+import {
+  NEWSLETTER_ALLOWED_METHODS,
+  NEWSLETTER_HEADERS,
+  readNodeJsonBody,
+  subscribeToStudioUpdates,
+} from "./lib/mailerlite-subscribe.js";
 
 const root = process.cwd();
 const port = Number(process.argv[2] || 4174);
@@ -26,6 +32,7 @@ const contentTypes = {
 const routes = {
   "/": "index.html",
   "/about/": "about.html",
+  "/contact/": "contact.html",
   "/press/": "press.html",
   "/writing/": "writing.html",
   "/works/": "works.html",
@@ -51,6 +58,37 @@ const routes = {
   "/update2025jun/": "update2025jun.html",
   "/update2026jun/": "update2026jun.html",
 };
+
+async function handleNewsletterSignup(request, response) {
+  if (request.url !== "/api/newsletter-subscribe") return false;
+
+  if (request.method === "OPTIONS") {
+    response.writeHead(204, { Allow: NEWSLETTER_ALLOWED_METHODS });
+    response.end();
+    return true;
+  }
+
+  if (request.method !== "POST") {
+    response.writeHead(405, { ...NEWSLETTER_HEADERS, Allow: NEWSLETTER_ALLOWED_METHODS });
+    response.end(JSON.stringify({ error: "Method not allowed" }));
+    return true;
+  }
+
+  try {
+    const payload = await readNodeJsonBody(request);
+    const result = await subscribeToStudioUpdates(payload);
+    response.writeHead(result.status, NEWSLETTER_HEADERS);
+    response.end(JSON.stringify(result.body));
+  } catch (error) {
+    response.writeHead(500, NEWSLETTER_HEADERS);
+    response.end(JSON.stringify({
+      error: "Newsletter signup failed.",
+      details: error instanceof Error ? error.message : String(error),
+    }));
+  }
+
+  return true;
+}
 
 function respond(response, status, body, type = "text/plain; charset=utf-8") {
   response.writeHead(status, {
@@ -90,9 +128,11 @@ function resolveFile(requestPath) {
   return filePath;
 }
 
-const server = createServer((request, response) => {
+const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url || "/", `http://${host}:${port}`);
+    if (await handleNewsletterSignup(request, response)) return;
+
     const filePath = resolveFile(decodeURIComponent(url.pathname));
 
     if (!filePath) {
