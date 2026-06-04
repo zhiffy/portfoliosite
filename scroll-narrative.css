@@ -3035,7 +3035,7 @@ html.sn-vertical-mode .sn-ticker {
   .sn-panel {
     width: 100% !important;
     height: auto;
-    min-height: 90vh;
+    min-height: auto;
     border-right: 0;
     border-bottom: 1px solid var(--hairline);
     opacity: 1;
