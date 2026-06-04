@@ -9,3 +9,10 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# Serverless functions. by-proxy-listings.js self-routes to /api/by-proxy-listings
+# via its exported config.path, so no extra redirect rule is needed.
+# It reads the OPENSEA_API_KEY environment variable (set in Netlify site settings).
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
