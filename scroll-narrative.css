@@ -4113,7 +4113,8 @@ html.sn-vertical-mode .sn-ticker {
   .sn-meta-right { grid-column: 2; grid-row: 1; justify-self: end; align-self: center; width: auto; }
   .sn-meta-right .sn-controlbar { border: 0; }
   .sn-meta-right .sn-controlbar > * { border-left: 0; }
-  .sn-view-toggle, .sn-scroll-readout { display: none !important; }
+  .sn-meta-right .sn-controlbar > .sn-view-toggle,
+  .sn-meta-right .sn-controlbar > .sn-scroll-readout { display: none !important; }
   .sn-links { grid-column: 1 / -1; grid-row: 2; display: flex; justify-content: space-between; align-items: center; gap: 4px; width: 100%; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 7px 0 2px; border-top: 0.5px solid var(--hairline); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
   .sn-links::-webkit-scrollbar { display: none; }
   .sn-links a { flex: 0 1 auto; min-height: 30px; display: inline-flex; align-items: center; white-space: nowrap; }
