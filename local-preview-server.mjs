@@ -30,12 +30,18 @@ const routes = {
   "/writing/": "writing.html",
   "/works/": "works.html",
   "/works/after-ophelia/": "after-ophelia.html",
+  "/works/after-ophelia/ophelia-retold/": "after-ophelia-ophelia-retold.html",
+  "/works/after-ophelia/ophelia-reassembled/": "after-ophelia-ophelia-reassembled.html",
   "/works/available/": "works-available.html",
   "/works/by-proxy/": "by-proxy.html",
   "/works/conditional/": "conditional.html",
   "/works/love-is-love/": "love-is-love.html",
   "/works/meet-eva-here/": "meet-eva-here.html",
+  "/works/meet-eva-here/chatbot/": "meet-eva-here-chatbot.html",
+  "/works/meet-eva-here/diary/": "meet-eva-here-diary.html",
+  "/works/6529-meme-card/": "6529-meme-card.html",
   "/works/the-ties-that-bind/": "the-ties-that-bind.html",
+  "/works/vogue-singapore/": "vogue-singapore.html",
   "/works/whirlwind-of-the-waking-dream/": "whirlwind-of-the-waking-dream.html",
   "/update2023jan/": "update2023jan.html",
   "/update2023june/": "update2023june.html",
@@ -56,7 +62,18 @@ function respond(response, status, body, type = "text/plain; charset=utf-8") {
 
 function resolveFile(requestPath) {
   const mappedRoute = routes[requestPath] || routes[`${requestPath}/`];
-  const relativePath = mappedRoute || requestPath.replace(/^\/+/, "") || "index.html";
+  let relativePath = mappedRoute || requestPath.replace(/^\/+/, "") || "index.html";
+  const routePrefix = Object.keys(routes)
+    .sort((a, b) => b.length - a.length)
+    .find((route) => requestPath.startsWith(route));
+
+  if (!mappedRoute && routePrefix) {
+    const nestedAsset = requestPath.slice(routePrefix.length);
+    const nestedAssetPath = path.resolve(root, nestedAsset);
+    if (nestedAsset && nestedAssetPath.startsWith(root) && existsSync(nestedAssetPath)) {
+      relativePath = nestedAsset;
+    }
+  }
   let filePath = path.resolve(root, relativePath);
 
   if (!filePath.startsWith(root)) return null;

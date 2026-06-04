@@ -30,8 +30,23 @@ function rewriteCleanRoute(request) {
   if (!request.url) return;
   const url = new URL(request.url, "http://local.preview");
   const target = cleanRoutes[url.pathname] || cleanRoutes[`${url.pathname}/`];
-  if (!target) return;
-  request.url = `/${target}${url.search}${url.hash}`;
+  if (target) {
+    request.url = `/${target}${url.search}${url.hash}`;
+    return;
+  }
+
+  const routePrefix = Object.keys(cleanRoutes)
+    .sort((a, b) => b.length - a.length)
+    .find((route) => url.pathname.startsWith(route));
+  if (!routePrefix) return;
+
+  const nestedAsset = url.pathname.slice(routePrefix.length);
+  if (!nestedAsset) return;
+
+  const assetPath = path.resolve(root, nestedAsset);
+  if (assetPath.startsWith(root) && existsSync(assetPath)) {
+    request.url = `/${nestedAsset}${url.search}${url.hash}`;
+  }
 }
 
 const htmlEntries = Object.fromEntries(
