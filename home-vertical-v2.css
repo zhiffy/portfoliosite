@@ -103,7 +103,7 @@ html.sn-vertical-mode .sn-hero-cred strong { color: var(--text-2); font-weight: 
 
 /* ---------- 02 PRACTICE — one bold statement; hovering a phrase
    reveals its artwork BEHIND the text, shown whole (no crop) ---------- */
-html.sn-vertical-mode .sn-eras-acts { display: none !important; }
+.sn-eras-acts { display: none !important; }
 .sn-era-phases { display: none !important; }   /* retired the timeline row */
 
 @media (min-width: 901px) {
@@ -115,17 +115,17 @@ html.sn-vertical-mode .sn-eras-acts { display: none !important; }
   }
   html.sn-vertical-mode .sn-eras-head { max-width: none; }
   html.sn-vertical-mode .sn-eras-lede {
-    max-width: 18ch !important;
-    font-size: clamp(40px, 5vw, 76px) !important;
-    line-height: 1.04 !important;
-    letter-spacing: -0.02em;
+    max-width: min(100%, 920px) !important;
+    font-size: clamp(46px, 5.6vw, 82px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: 0;
   }
 }
 html.sn-vertical-mode .sn-eras-lede em { color: var(--text); font-style: italic; }
 
 /* reveal layer sits behind the text */
 .sn-eras-lede-wrap { position: relative; }
-html.sn-vertical-mode .sn-eras-lede { position: relative; z-index: 2; }
+.sn-eras-lede-wrap .sn-eras-lede { position: relative; z-index: 2; }
 .sn-era-reveals {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
 }
@@ -143,26 +143,12 @@ html.sn-vertical-mode .sn-eras-lede { position: relative; z-index: 2; }
 }
 .sn-era-term { cursor: help; }
 .sn-era-term em {
-  border-bottom: 0.5px solid var(--accent-deep);
   transition: color 160ms ease;
 }
 .sn-era-term:hover em { color: var(--accent-deep); }
 .sn-eras-lede-wrap:has(.sn-era-term[data-era="fashion"]:hover) .sn-era-reveal[data-for="fashion"],
 .sn-eras-lede-wrap:has(.sn-era-term[data-era="3d"]:hover) .sn-era-reveal[data-for="3d"],
 .sn-eras-lede-wrap:has(.sn-era-term[data-era="ai"]:hover) .sn-era-reveal[data-for="ai"] { opacity: 1; }
-
-html:not(.sn-vertical-mode) .sn-era-reveals {
-  display: none !important;
-}
-html:not(.sn-vertical-mode) .sn-era-term {
-  cursor: inherit;
-}
-html:not(.sn-vertical-mode) .sn-era-term em {
-  border-bottom: 0;
-}
-html:not(.sn-vertical-mode) .sn-era-term:hover em {
-  color: inherit;
-}
 
 @media (max-width: 900px) {
   .sn-era-reveal { position: relative; opacity: 1; justify-content: flex-start; margin-top: 18px; }
@@ -227,3 +213,30 @@ html:not(.sn-vertical-mode) .sn-era-term:hover em {
 
 /* ---------- 05 CONTACT — italic closer ---------- */
 .sn-contact-title { font-style: italic; font-weight: 300; }
+
+/* Studio-updates cards: a real, calm hover.
+   The previous rule set the bg to haze-elev, which is already the card's base bg,
+   so nothing happened. This lifts to white, darkens the hairline, and gently zooms the image. */
+@media (min-width: 901px) {
+  html.sn-vertical-mode .sn-essay,
+  html.sn-vertical-mode .sn-essay:not(.is-on) {
+    cursor: pointer;
+    transition: background 220ms ease, border-color 220ms ease;
+  }
+  html.sn-vertical-mode .sn-essay-plate img {
+    transition: transform 480ms cubic-bezier(.2, .7, .3, 1);
+  }
+  html.sn-vertical-mode .sn-essay:hover,
+  html.sn-vertical-mode .sn-essay:focus-within {
+    background: #ffffff;
+    border-color: rgba(24, 25, 43, 0.45);
+  }
+  html.sn-vertical-mode .sn-essay:hover .sn-essay-plate img,
+  html.sn-vertical-mode .sn-essay:focus-within .sn-essay-plate img {
+    transform: scale(1.045);
+  }
+  html.sn-vertical-mode .sn-essay:hover .sn-essay-title,
+  html.sn-vertical-mode .sn-essay:focus-within .sn-essay-title {
+    color: #18192B;
+  }
+}

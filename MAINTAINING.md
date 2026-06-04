@@ -10,9 +10,9 @@ Hosting-specific launch notes live in `HOSTING_HANDOFF.md`.
 - Confirm every `.sp-plate-status` value uses the approved vocabulary.
 - Verify marketplace links, Etherscan links, and chain labels.
 - Check that By Proxy still renders from `/assets/data/by-proxy.json`.
-- Walk `/assets/data/3d-single-works.json`: confirm every 3D single-work tile has the right status, representative still, marketplace link, and pair/trilogy grouping before changing `/works/3d-single-works/`.
+- Walk `/assets/data/3d-single-works.json`: confirm every 3D single-work tile has the right status, representative still, marketplace link, and pair/trilogy grouping before changing the single-work grid on `/works/`.
 - Walk `/assets/data/available.json`: confirm each listed work still belongs in the collector inventory, update fallback counts only when recently checked, and remove stale per-card price displays.
-- Keep commissioned covers and NFT commissions, such as Vogue Singapore NFT Cover and 6529 Meme Card, in `/assets/data/available.json` and the `/works/` commissions footer rather than in the 3D Single Works body.
+- Keep commissioned covers and NFT commissions, such as Vogue Singapore NFT Cover and 6529 Meme Card, in `/assets/data/available.json` and the `/works/` commissions footer rather than in the single-work grid.
 - Treat `/assets/data/available.merged.json` as a generated/cache file for reconciled marketplace counts; it may be overwritten by a build-time fetch, while `/assets/data/available.json` remains the editorial source of truth.
 - Review OpenSea and Manifold API endpoint assumptions for `/assets/js/available.js`; if endpoint behavior changes, update the runtime reconciliation before refreshing fallback counts.
 - Review price bands (`under_2k`, `2k_10k`, `10k_plus`) against current studio pricing and collector-facing strategy.
@@ -34,7 +34,7 @@ Hosting-specific launch notes live in `HOSTING_HANDOFF.md`.
 ## On Each New Work
 
 - Add a `.sp-plate`, `.sp-edition-summary`, or series JSON entry.
-- Add 3D-era single-channel videos to `/assets/data/3d-single-works.json` instead of creating individual project cards on `/works/`.
+- Add 3D-era single-channel videos to `/assets/data/3d-single-works.json` so they render as direct marketplace links on `/works/`.
 - Update the project page `hasPart` Schema.org JSON-LD.
 - Update `/works/` search terms and `/assets/data/available.json` when the work should appear in the collector inventory.
 - Add a dedicated work page only when the work warrants its own stable URL.

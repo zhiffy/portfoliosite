@@ -31,10 +31,6 @@
       "destination": "/whirlwind-of-the-waking-dream.html"
     },
     {
-      "source": "/works/3d-single-works/",
-      "destination": "/3d-single-works.html"
-    },
-    {
       "source": "/works/love-is-love/",
       "destination": "/love-is-love.html"
     },
@@ -124,8 +120,13 @@
       "permanent": true
     },
     {
+      "source": "/works/3d-single-works/",
+      "destination": "/works/#tab=single",
+      "permanent": true
+    },
+    {
       "source": "/3d-single-works.html",
-      "destination": "/works/3d-single-works/",
+      "destination": "/works/#tab=single",
       "permanent": true
     },
     {
@@ -260,222 +261,222 @@
     },
     {
       "source": "/nfts/v/6gwmhj423z6h2nys2gz394sjeygjwn",
-      "destination": "/works/3d-single-works/#duality-of-eth-extrovert",
+      "destination": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2",
       "permanent": true
     },
     {
       "source": "/nfts/v/6lnpe8mhg7rmzmk82arkpd449tfhj5",
-      "destination": "/works/3d-single-works/#in-suspension",
+      "destination": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5",
       "permanent": true
     },
     {
       "source": "/nfts/v/c3fppsja2hpkldx25tsax2kmjalhkz",
-      "destination": "/works/3d-single-works/#duality-of-eth-introvert",
+      "destination": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---introvert-1",
       "permanent": true
     },
     {
       "source": "/nfts/v/everything-yet-nothing",
-      "destination": "/works/3d-single-works/#everything-yet-nothing",
+      "destination": "https://superrare.com/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/everything,-yet-nothing-7",
       "permanent": true
     },
     {
       "source": "/nfts/v/fhyxxbpcegn4shrbdmynh6k5cr9hdl",
-      "destination": "/works/3d-single-works/#beyond-the-surface",
+      "destination": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/beyond-the-surface-6",
       "permanent": true
     },
     {
       "source": "/nfts/v/glow",
-      "destination": "/works/3d-single-works/#glow",
+      "destination": "https://foundation.app/@shavonnewong/foundation/73504",
       "permanent": true
     },
     {
       "source": "/nfts/v/i-am-not-confident",
-      "destination": "/works/3d-single-works/#i-am-not-confident",
+      "destination": "https://foundation.app/@shavonnewong/concealedemotions/4",
       "permanent": true
     },
     {
       "source": "/nfts/v/i-am-not-happy",
-      "destination": "/works/3d-single-works/#i-am-not-happy",
+      "destination": "https://foundation.app/@shavonnewong/concealedemotions/3",
       "permanent": true
     },
     {
       "source": "/nfts/v/i-am-not-zen",
-      "destination": "/works/3d-single-works/#i-am-not-zen",
+      "destination": "https://foundation.app/@shavonnewong/concealedemotions/1",
       "permanent": true
     },
     {
       "source": "/nfts/v/ice-and-fire",
-      "destination": "/works/3d-single-works/#ice-and-fire",
+      "destination": "https://www.niftygateway.com/itemdetail/primary/0x7eeb0cdad2d695cbd2bf8fb96a6a20ad5309a2dd/1",
       "permanent": true
     },
     {
       "source": "/nfts/v/kin-i",
-      "destination": "/works/3d-single-works/#kin-i",
+      "destination": "https://foundation.app/@shavonnewong/foundation/36162",
       "permanent": true
     },
     {
       "source": "/nfts/v/legend-of-the-white-snake",
-      "destination": "/works/3d-single-works/#the-legend-of-the-white-snake",
+      "destination": "https://foundation.app/@shavonnewong/shasha/6",
       "permanent": true
     },
     {
       "source": "/nfts/v/lilium-in-pearls-i",
-      "destination": "/works/3d-single-works/#lilium-in-pearls-i",
+      "destination": "https://foundation.app/@shavonnewong/foundation/1253",
       "permanent": true
     },
     {
       "source": "/nfts/v/lilium-in-pearls-ii",
-      "destination": "/works/3d-single-works/#lilium-in-pearls-ii",
+      "destination": "https://foundation.app/@shavonnewong/foundation/1713",
       "permanent": true
     },
     {
       "source": "/nfts/v/lilium-in-pearls-iii",
-      "destination": "/works/3d-single-works/#lilium-in-pearls-iii",
+      "destination": "https://foundation.app/@shavonnewong/foundation/2813",
       "permanent": true
     },
     {
       "source": "/nfts/v/lunah-moon-i",
-      "destination": "/works/3d-single-works/#lunah-moon-i",
+      "destination": "https://foundation.app/@shavonnewong/foundation/7419",
       "permanent": true
     },
     {
       "source": "/nfts/v/lunah-moon-ii",
-      "destination": "/works/3d-single-works/#lunah-moon-ii",
+      "destination": "https://foundation.app/@shavonnewong/foundation/9193",
       "permanent": true
     },
     {
       "source": "/nfts/v/lunah-moon-iii",
-      "destination": "/works/3d-single-works/#lunah-moon-iii",
+      "destination": "https://foundation.app/@shavonnewong/foundation/11479",
       "permanent": true
     },
     {
       "source": "/nfts/v/n7r2ly4z7kmjzpslzzcy6mzpnjkgdb",
-      "destination": "/works/3d-single-works/#a-life-short-lived",
+      "destination": "https://superrare.com/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/a-life-short-lived-8",
       "permanent": true
     },
     {
       "source": "/nfts/v/natures-muse",
-      "destination": "/works/3d-single-works/#natures-muse",
+      "destination": "https://foundation.app/mint/eth/0x72e991768e09D8d82BdE9334cCCD7f4beC8c433D/9",
       "permanent": true
     },
     {
       "source": "/nfts/v/new-video",
-      "destination": "/works/3d-single-works/#goldfish",
+      "destination": "https://opensea.io/assets/ethereum/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/1",
       "permanent": true
     },
     {
       "source": "/nfts/v/new-video-1",
-      "destination": "/works/3d-single-works/#beauty",
+      "destination": "https://superrare.com/artwork-v2/beauty-26661",
       "permanent": true
     },
     {
       "source": "/nfts/v/new-video-2",
-      "destination": "/works/3d-single-works/#kin-ii",
+      "destination": "https://foundation.app/@shavonnewong/foundation/36422",
       "permanent": true
     },
     {
       "source": "/nfts/v/oceans-whisper",
-      "destination": "/works/3d-single-works/#oceans-whisper",
+      "destination": "https://foundation.app/@shavonnewong/shasha/11",
       "permanent": true
     },
     {
       "source": "/nfts/v/panopticon",
-      "destination": "/works/3d-single-works/#panopticon",
+      "destination": "https://opensea.io/assets/ethereum/0xe56f28e23c6172703f024f0ce4ac7ba171907fde/1",
       "permanent": true
     },
     {
       "source": "/nfts/v/st6d52tkah5tyw589kyhl5gez7bj6l",
-      "destination": "/works/3d-single-works/#the-invisible-march-of-time-ii",
+      "destination": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-ii-3",
       "permanent": true
     },
     {
       "source": "/nfts/v/stargazers-dream",
-      "destination": "/works/3d-single-works/#stargazers-dream",
+      "destination": "/works/#tab=single",
       "permanent": true
     },
     {
       "source": "/nfts/v/stellae-i",
-      "destination": "/works/3d-single-works/#stellae-i",
+      "destination": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272438752120930305",
       "permanent": true
     },
     {
       "source": "/nfts/v/stellae-ii",
-      "destination": "/works/3d-single-works/#stellae-ii",
+      "destination": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272439851632558081",
       "permanent": true
     },
     {
       "source": "/nfts/v/stellae-iii",
-      "destination": "/works/3d-single-works/#stellae-iii",
+      "destination": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272440951144185857",
       "permanent": true
     },
     {
       "source": "/nfts/v/suspense",
-      "destination": "/works/3d-single-works/#suspense",
+      "destination": "https://suspendedsoul.com/marketplace/f0dd7e7c0cd2143dfeedfa7e7d465d74180c5f5ef4516458960354478a4d2e3a",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-hug",
-      "destination": "/works/3d-single-works/#the-hug",
+      "destination": "https://superrare.com/artwork-v2/the-hug-30550",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-illusion-of-connection-i",
-      "destination": "/works/3d-single-works/#the-illusion-of-connection-i",
+      "destination": "https://foundation.app/@shavonnewong/shasha/12",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-invisible-march-of-time-i",
-      "destination": "/works/3d-single-works/#the-invisible-march-of-time-i",
+      "destination": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-i-4",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-kiss",
-      "destination": "/works/3d-single-works/#the-kiss",
+      "destination": "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/28474",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-loneliness-of-an-orchid",
-      "destination": "/works/3d-single-works/#the-loneliness-of-an-orchid",
+      "destination": "https://superrare.com/0x6583afe5f8eda8178877fb819b63c6f605c4f692/the-loneliness-of-an-orchid-28",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-mirror-world",
-      "destination": "/works/3d-single-works/#the-mirror-world",
+      "destination": "https://superchief.io/series/0x6d15a7192f8e9ad55a72b997df0986d712c31cbf/54",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-shimmering-veil-i",
-      "destination": "/works/3d-single-works/#the-shimmering-veil-i",
+      "destination": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-i-43",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-shimmering-veil-ii",
-      "destination": "/works/3d-single-works/#the-shimmering-veil-ii",
+      "destination": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-shimmering-veil-iii",
-      "destination": "/works/3d-single-works/#the-shimmering-veil-iii",
+      "destination": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45",
       "permanent": true
     },
     {
       "source": "/nfts/v/uplift",
-      "destination": "/works/3d-single-works/#uplift",
+      "destination": "https://superrare.com/artwork-v2/uplift-25511",
       "permanent": true
     },
     {
       "source": "/nfts/v/year-of-the-tiger",
-      "destination": "/works/3d-single-works/#year-of-the-tiger",
+      "destination": "https://www.shavonnewong.art/projects/yearofthetiger",
       "permanent": true
     },
     {
       "source": "/nfts/v/year-of-the-tiger-2",
-      "destination": "/works/3d-single-works/#year-of-the-tiger-2",
+      "destination": "https://tiger2.shavonnewong.art",
       "permanent": true
     },
     {
       "source": "/nfts/v/year-of-the-tiger-3",
-      "destination": "/works/3d-single-works/#year-of-the-tiger-3",
+      "destination": "https://tiger3.shavonnewong.art",
       "permanent": true
     },
     {
@@ -570,222 +571,222 @@
     },
     {
       "source": "/nfts/v/6gwmhj423z6h2nys2gz394sjeygjwn/",
-      "destination": "/works/3d-single-works/#duality-of-eth-extrovert",
+      "destination": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2",
       "permanent": true
     },
     {
       "source": "/nfts/v/6lnpe8mhg7rmzmk82arkpd449tfhj5/",
-      "destination": "/works/3d-single-works/#in-suspension",
+      "destination": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5",
       "permanent": true
     },
     {
       "source": "/nfts/v/c3fppsja2hpkldx25tsax2kmjalhkz/",
-      "destination": "/works/3d-single-works/#duality-of-eth-introvert",
+      "destination": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---introvert-1",
       "permanent": true
     },
     {
       "source": "/nfts/v/everything-yet-nothing/",
-      "destination": "/works/3d-single-works/#everything-yet-nothing",
+      "destination": "https://superrare.com/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/everything,-yet-nothing-7",
       "permanent": true
     },
     {
       "source": "/nfts/v/fhyxxbpcegn4shrbdmynh6k5cr9hdl/",
-      "destination": "/works/3d-single-works/#beyond-the-surface",
+      "destination": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/beyond-the-surface-6",
       "permanent": true
     },
     {
       "source": "/nfts/v/glow/",
-      "destination": "/works/3d-single-works/#glow",
+      "destination": "https://foundation.app/@shavonnewong/foundation/73504",
       "permanent": true
     },
     {
       "source": "/nfts/v/i-am-not-confident/",
-      "destination": "/works/3d-single-works/#i-am-not-confident",
+      "destination": "https://foundation.app/@shavonnewong/concealedemotions/4",
       "permanent": true
     },
     {
       "source": "/nfts/v/i-am-not-happy/",
-      "destination": "/works/3d-single-works/#i-am-not-happy",
+      "destination": "https://foundation.app/@shavonnewong/concealedemotions/3",
       "permanent": true
     },
     {
       "source": "/nfts/v/i-am-not-zen/",
-      "destination": "/works/3d-single-works/#i-am-not-zen",
+      "destination": "https://foundation.app/@shavonnewong/concealedemotions/1",
       "permanent": true
     },
     {
       "source": "/nfts/v/ice-and-fire/",
-      "destination": "/works/3d-single-works/#ice-and-fire",
+      "destination": "https://www.niftygateway.com/itemdetail/primary/0x7eeb0cdad2d695cbd2bf8fb96a6a20ad5309a2dd/1",
       "permanent": true
     },
     {
       "source": "/nfts/v/kin-i/",
-      "destination": "/works/3d-single-works/#kin-i",
+      "destination": "https://foundation.app/@shavonnewong/foundation/36162",
       "permanent": true
     },
     {
       "source": "/nfts/v/legend-of-the-white-snake/",
-      "destination": "/works/3d-single-works/#the-legend-of-the-white-snake",
+      "destination": "https://foundation.app/@shavonnewong/shasha/6",
       "permanent": true
     },
     {
       "source": "/nfts/v/lilium-in-pearls-i/",
-      "destination": "/works/3d-single-works/#lilium-in-pearls-i",
+      "destination": "https://foundation.app/@shavonnewong/foundation/1253",
       "permanent": true
     },
     {
       "source": "/nfts/v/lilium-in-pearls-ii/",
-      "destination": "/works/3d-single-works/#lilium-in-pearls-ii",
+      "destination": "https://foundation.app/@shavonnewong/foundation/1713",
       "permanent": true
     },
     {
       "source": "/nfts/v/lilium-in-pearls-iii/",
-      "destination": "/works/3d-single-works/#lilium-in-pearls-iii",
+      "destination": "https://foundation.app/@shavonnewong/foundation/2813",
       "permanent": true
     },
     {
       "source": "/nfts/v/lunah-moon-i/",
-      "destination": "/works/3d-single-works/#lunah-moon-i",
+      "destination": "https://foundation.app/@shavonnewong/foundation/7419",
       "permanent": true
     },
     {
       "source": "/nfts/v/lunah-moon-ii/",
-      "destination": "/works/3d-single-works/#lunah-moon-ii",
+      "destination": "https://foundation.app/@shavonnewong/foundation/9193",
       "permanent": true
     },
     {
       "source": "/nfts/v/lunah-moon-iii/",
-      "destination": "/works/3d-single-works/#lunah-moon-iii",
+      "destination": "https://foundation.app/@shavonnewong/foundation/11479",
       "permanent": true
     },
     {
       "source": "/nfts/v/n7r2ly4z7kmjzpslzzcy6mzpnjkgdb/",
-      "destination": "/works/3d-single-works/#a-life-short-lived",
+      "destination": "https://superrare.com/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/a-life-short-lived-8",
       "permanent": true
     },
     {
       "source": "/nfts/v/natures-muse/",
-      "destination": "/works/3d-single-works/#natures-muse",
+      "destination": "https://foundation.app/mint/eth/0x72e991768e09D8d82BdE9334cCCD7f4beC8c433D/9",
       "permanent": true
     },
     {
       "source": "/nfts/v/new-video/",
-      "destination": "/works/3d-single-works/#goldfish",
+      "destination": "https://opensea.io/assets/ethereum/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/1",
       "permanent": true
     },
     {
       "source": "/nfts/v/new-video-1/",
-      "destination": "/works/3d-single-works/#beauty",
+      "destination": "https://superrare.com/artwork-v2/beauty-26661",
       "permanent": true
     },
     {
       "source": "/nfts/v/new-video-2/",
-      "destination": "/works/3d-single-works/#kin-ii",
+      "destination": "https://foundation.app/@shavonnewong/foundation/36422",
       "permanent": true
     },
     {
       "source": "/nfts/v/oceans-whisper/",
-      "destination": "/works/3d-single-works/#oceans-whisper",
+      "destination": "https://foundation.app/@shavonnewong/shasha/11",
       "permanent": true
     },
     {
       "source": "/nfts/v/panopticon/",
-      "destination": "/works/3d-single-works/#panopticon",
+      "destination": "https://opensea.io/assets/ethereum/0xe56f28e23c6172703f024f0ce4ac7ba171907fde/1",
       "permanent": true
     },
     {
       "source": "/nfts/v/st6d52tkah5tyw589kyhl5gez7bj6l/",
-      "destination": "/works/3d-single-works/#the-invisible-march-of-time-ii",
+      "destination": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-ii-3",
       "permanent": true
     },
     {
       "source": "/nfts/v/stargazers-dream/",
-      "destination": "/works/3d-single-works/#stargazers-dream",
+      "destination": "/works/#tab=single",
       "permanent": true
     },
     {
       "source": "/nfts/v/stellae-i/",
-      "destination": "/works/3d-single-works/#stellae-i",
+      "destination": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272438752120930305",
       "permanent": true
     },
     {
       "source": "/nfts/v/stellae-ii/",
-      "destination": "/works/3d-single-works/#stellae-ii",
+      "destination": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272439851632558081",
       "permanent": true
     },
     {
       "source": "/nfts/v/stellae-iii/",
-      "destination": "/works/3d-single-works/#stellae-iii",
+      "destination": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272440951144185857",
       "permanent": true
     },
     {
       "source": "/nfts/v/suspense/",
-      "destination": "/works/3d-single-works/#suspense",
+      "destination": "https://suspendedsoul.com/marketplace/f0dd7e7c0cd2143dfeedfa7e7d465d74180c5f5ef4516458960354478a4d2e3a",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-hug/",
-      "destination": "/works/3d-single-works/#the-hug",
+      "destination": "https://superrare.com/artwork-v2/the-hug-30550",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-illusion-of-connection-i/",
-      "destination": "/works/3d-single-works/#the-illusion-of-connection-i",
+      "destination": "https://foundation.app/@shavonnewong/shasha/12",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-invisible-march-of-time-i/",
-      "destination": "/works/3d-single-works/#the-invisible-march-of-time-i",
+      "destination": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-i-4",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-kiss/",
-      "destination": "/works/3d-single-works/#the-kiss",
+      "destination": "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/28474",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-loneliness-of-an-orchid/",
-      "destination": "/works/3d-single-works/#the-loneliness-of-an-orchid",
+      "destination": "https://superrare.com/0x6583afe5f8eda8178877fb819b63c6f605c4f692/the-loneliness-of-an-orchid-28",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-mirror-world/",
-      "destination": "/works/3d-single-works/#the-mirror-world",
+      "destination": "https://superchief.io/series/0x6d15a7192f8e9ad55a72b997df0986d712c31cbf/54",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-shimmering-veil-i/",
-      "destination": "/works/3d-single-works/#the-shimmering-veil-i",
+      "destination": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-i-43",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-shimmering-veil-ii/",
-      "destination": "/works/3d-single-works/#the-shimmering-veil-ii",
+      "destination": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45",
       "permanent": true
     },
     {
       "source": "/nfts/v/the-shimmering-veil-iii/",
-      "destination": "/works/3d-single-works/#the-shimmering-veil-iii",
+      "destination": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45",
       "permanent": true
     },
     {
       "source": "/nfts/v/uplift/",
-      "destination": "/works/3d-single-works/#uplift",
+      "destination": "https://superrare.com/artwork-v2/uplift-25511",
       "permanent": true
     },
     {
       "source": "/nfts/v/year-of-the-tiger/",
-      "destination": "/works/3d-single-works/#year-of-the-tiger",
+      "destination": "https://www.shavonnewong.art/projects/yearofthetiger",
       "permanent": true
     },
     {
       "source": "/nfts/v/year-of-the-tiger-2/",
-      "destination": "/works/3d-single-works/#year-of-the-tiger-2",
+      "destination": "https://tiger2.shavonnewong.art",
       "permanent": true
     },
     {
       "source": "/nfts/v/year-of-the-tiger-3/",
-      "destination": "/works/3d-single-works/#year-of-the-tiger-3",
+      "destination": "https://tiger3.shavonnewong.art",
       "permanent": true
     },
     {
@@ -800,7 +801,7 @@
     },
     {
       "source": "/nfts/v/:slug*",
-      "destination": "/works/3d-single-works/",
+      "destination": "/works/#tab=single",
       "permanent": true
     }
   ],

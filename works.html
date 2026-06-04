@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <title>Works. Shavonne Wong</title>
   <meta name="description" content="Projects, single works, editions, and commissions by Shavonne Wong across installation, video, AI, and 3D figuration.">
   <meta name="author" content="Shavonne Wong">
@@ -11,13 +15,13 @@
   <meta property="og:url" content="https://shavonnewong.art/works/">
   <meta property="og:title" content="Works | Shavonne Wong">
   <meta property="og:description" content="Projects, single works, editions, and commissions across installation, video, AI, and 3D figuration.">
-  <meta property="og:image" content="https://shavonnewong.art/assets/conditional/hero.jpg">
+  <meta property="og:image" content="https://shavonnewong.art/assets/conditional/compliance-reality.jpg">
   <meta property="og:image:width" content="1760">
   <meta property="og:image:height" content="1100">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Works | Shavonne Wong">
   <meta name="twitter:description" content="Projects, single works, editions, and commissions across installation, video, AI, and 3D.">
-  <meta name="twitter:image" content="https://shavonnewong.art/assets/conditional/hero.jpg">
+  <meta name="twitter:image" content="https://shavonnewong.art/assets/conditional/compliance-reality.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -55,19 +59,22 @@
     ]
   }
   </script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
+    <!-- End Cloudflare Web Analytics -->
 </head>
 <body class="wk2-body">
   <a class="sn-skip-link" href="#main-content">Skip to content</a>
 
   <header class="sn-nav" data-page-nav>
-    <a href="index.html#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
+    <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
-      <a href="index.html#hero">Home</a>
-      <a href="about.html">About</a>
-      <a href="works.html" class="is-active">Works</a>
-      <a href="writing.html">Writing</a>
-      <a href="press.html">Press</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="/#hero">Home</a>
+      <a href="/about/">About</a>
+      <a href="/works/" class="is-active">Works</a>
+      <a href="/writing/">Writing</a>
+      <a href="/press/">Press</a>
+      <a href="/#contact">Contact</a>
     </nav>
     <div class="sn-meta-right">
       <label class="sn-lang-switcher" data-language-switcher>
@@ -81,46 +88,19 @@
 
   <main id="main-content">
 
-    <!-- HERO. Featured project: image, title, one-line context, view link. -->
-    <section class="wk2-hero" aria-labelledby="wk2-hero-title">
-      <div class="wk2-hero-media" aria-hidden="true">
-        <img fetchpriority="high" decoding="async" src="assets/conditional/hero.webp" alt="">
-      </div>
-      <div class="wk2-hero-shell">
-        <div class="wk2-hero-overline">
-          <div class="wk2-hero-overline-l">
-            <span>Current work</span>
-            <span aria-hidden="true"></span>
-            <span>Real-time AI installation</span>
-          </div>
-          <div>2026. In development</div>
-        </div>
-        <div class="wk2-hero-meta">
-          <div>
-            <h1 id="wk2-hero-title" class="wk2-hero-title">Conditional.</h1>
-            <p class="wk2-hero-desc">A room with a screen that shows you the room you are standing in, with everything still there except you. Generative AI produces your absence, frame by frame.</p>
-          </div>
-          <a class="wk2-hero-cta" href="conditional.html">
-            <span>View project</span>
-            <span class="wk2-hero-cta-arrow" aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- ============================================================
-         CATALOG. Title + tabbed surface + filters. Tabs and
-         filters become sticky once the hero scrolls offscreen.
+         CATALOG. Title + tabbed surface + filters.
          ============================================================ -->
     <section class="wk2-catalog">
       <header class="wk2-cat-head">
         <div>
-          <h2 class="wk2-cat-title"><em>The</em> works.</h2>
+          <span class="wk2-cat-kicker">Works</span>
+          <h1 class="wk2-cat-title"><em>The</em> works.</h1>
           <p class="wk2-cat-sub">Work since 2020 across installation, video, and AI.</p>
         </div>
         <div class="wk2-cat-count" aria-label="Catalog scale">
           <strong>6</strong>
-          <span>Projects, 45 single works</span>
+          <span>Projects, 45 single works, editions, commissions</span>
         </div>
       </header>
 
@@ -136,10 +116,13 @@
             <span class="wk2-tab-num">02</span>Single works
           </button>
           <button type="button" class="wk2-tab" role="tab" aria-selected="false" data-tab="editions" aria-controls="panel-editions" id="tab-editions">
-            <span class="wk2-tab-num">03</span>Editions and commissions
+            <span class="wk2-tab-num">03</span>Editions
+          </button>
+          <button type="button" class="wk2-tab" role="tab" aria-selected="false" data-tab="commissions" aria-controls="panel-commissions" id="tab-commissions">
+            <span class="wk2-tab-num">04</span>Commissions
           </button>
           <button type="button" class="wk2-tab" role="tab" aria-selected="false" data-tab="available" aria-controls="panel-available" id="tab-available">
-            <span class="wk2-tab-num">04</span>Available
+            <span class="wk2-tab-num">05</span>Available
           </button>
         </div>
 
@@ -184,108 +167,104 @@
 
           <div class="wk2-grid wk2-grid--projects" data-grid>
 
-            <a class="wk2-tile" href="conditional.html"
+            <a class="wk2-tile" href="/works/conditional/"
                data-year="2026" data-medium="installation ai video" data-availability="available">
               <div class="wk2-tile-media">
-                <img decoding="async" src="assets/conditional/works-card.webp" alt="Conditional, a screen showing the room without you" loading="eager">
-                <div class="wk2-tile-overlay">Real-time AI installation. The screen shows the room without you.</div>
+                <img decoding="async" src="assets/conditional/compliance-reality.webp" alt="Conditional installation view showing viewers facing the screen" loading="eager">
+                <div class="wk2-tile-overlay">Conditional, 2026.</div>
               </div>
               <div class="wk2-tile-meta">
                 <h3 class="wk2-tile-title">Conditional</h3>
                 <span class="wk2-tile-year">2026</span>
-                <div class="wk2-tile-medium">A real-time generative installation that produces your absence, frame by frame.</div>
-                <div class="wk2-tile-context">Current work, in development</div>
-                <div class="wk2-tile-edition">Editioned long-exposure prints</div>
+                <div class="wk2-tile-medium">Real-time installation that renders the room without you.</div>
+                <div class="wk2-tile-context">Editioned long-exposure prints.</div>
                 <div class="wk2-tile-foot">
                   <span class="wk2-dot wk2-dot--available">In development</span>
                 </div>
               </div>
             </a>
 
-            <a class="wk2-tile" href="after-ophelia.html"
+            <a class="wk2-tile" href="/works/after-ophelia/"
                data-year="2025" data-medium="ai video" data-availability="available">
               <div class="wk2-tile-media">
-                <img decoding="async" src="assets/after-ophelia/works-card.webp" alt="After Ophelia, rendered portrait in water" loading="eager">
-                <div class="wk2-tile-overlay">2 video works, both available. Paris Photo, 2025.</div>
+                <img decoding="async" src="assets/after-ophelia/04-ophelia-retold-000101.webp" alt="After Ophelia, rendered portrait in water" loading="eager">
+                <div class="wk2-tile-overlay">Ophelia, Retold.</div>
               </div>
               <div class="wk2-tile-meta">
                 <h3 class="wk2-tile-title">After Ophelia</h3>
                 <span class="wk2-tile-year">2025</span>
-                <div class="wk2-tile-medium">Two-part AI video work on identity and inherited interpretation.</div>
-                <div class="wk2-tile-context">Artverse Paris, Paris Photo</div>
+                <div class="wk2-tile-medium">Two AI videos on identity and inherited interpretation.</div>
+                <div class="wk2-tile-context">Artverse Paris, Paris Photo.</div>
                 <div class="wk2-tile-foot">
                   <span class="wk2-dot wk2-dot--available">2 works available</span>
                 </div>
               </div>
             </a>
 
-            <a class="wk2-tile" href="meet-eva-here.html"
+            <a class="wk2-tile" href="/works/meet-eva-here/"
                data-year="2024 2025" data-medium="ai installation video" data-availability="available">
               <div class="wk2-tile-media">
                 <img decoding="async" src="assets/meet-eva-here/06-dsc00661.webp" alt="Meet Eva Here installation view at ArtScience Museum" loading="lazy">
-                <div class="wk2-tile-overlay">Installation, video, diary. 2,363 logged conversations.</div>
+                <div class="wk2-tile-overlay">Installation and public diary.</div>
               </div>
               <div class="wk2-tile-meta">
                 <h3 class="wk2-tile-title">Meet Eva Here</h3>
                 <span class="wk2-tile-year">2024 / 2025</span>
-                <div class="wk2-tile-medium">Interactive AI companion across installation, video, and a public diary.</div>
-                <div class="wk2-tile-context">ArtScience Museum, ART SG, Taipei Dangdai</div>
+                <div class="wk2-tile-medium">AI companion shaped through audience conversations.</div>
+                <div class="wk2-tile-context">ArtScience Museum, ART SG, Taipei Dangdai.</div>
                 <div class="wk2-tile-foot">
                   <span class="wk2-dot wk2-dot--available">3 works available</span>
                 </div>
               </div>
             </a>
 
-            <a class="wk2-tile" href="the-ties-that-bind.html"
+            <a class="wk2-tile" href="/works/the-ties-that-bind/"
                data-year="2023" data-medium="installation video 3d" data-availability="edition">
               <div class="wk2-tile-media">
                 <img decoding="async" src="assets/the-ties-that-bind/04-20230317-tttb-exhibition-002.webp" alt="The Ties That Bind exhibition installation" loading="lazy">
-                <div class="wk2-tile-overlay">Solo exhibition. 7 works, one open edition.</div>
+                <div class="wk2-tile-overlay">UltraSuperNew, Singapore.</div>
               </div>
               <div class="wk2-tile-meta">
                 <h3 class="wk2-tile-title">The Ties That Bind</h3>
                 <span class="wk2-tile-year">2023</span>
-                <div class="wk2-tile-medium">Solo exhibition of seven dynamic digital works on inheritance.</div>
-                <div class="wk2-tile-context">UltraSuperNew, Singapore</div>
-                <div class="wk2-tile-edition">7 works, one open edition</div>
+                <div class="wk2-tile-medium">Seven dynamic works on inheritance and connection.</div>
+                <div class="wk2-tile-context">Solo exhibition with one open edition.</div>
                 <div class="wk2-tile-foot">
                   <span class="wk2-dot wk2-dot--edition">Edition available</span>
                 </div>
               </div>
             </a>
 
-            <a class="wk2-tile" href="by-proxy.html"
+            <a class="wk2-tile" href="/works/by-proxy/"
                data-year="2022" data-medium="3d photography" data-availability="available">
               <div class="wk2-tile-media">
                 <img decoding="async" src="assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy, CGI portrait still" loading="lazy">
-                <div class="wk2-tile-overlay">60 unique CGI and photography works with Lenne Chai.</div>
+                <div class="wk2-tile-overlay">By Proxy, 2022.</div>
               </div>
               <div class="wk2-tile-meta">
                 <h3 class="wk2-tile-title">By Proxy</h3>
                 <span class="wk2-tile-year">2022</span>
-                <div class="wk2-tile-medium">Series of 60 unique CGI and photography works. With Lenne Chai.</div>
-                <div class="wk2-tile-context">Sold across editions, 2022 to 2024</div>
-                <div class="wk2-tile-edition">60 unique works</div>
+                <div class="wk2-tile-medium">Collaborative CGI and photography series with Lenne Chai.</div>
+                <div class="wk2-tile-context">60 unique works.</div>
                 <div class="wk2-tile-foot">
                   <span class="wk2-dot wk2-dot--available">1 work available</span>
                 </div>
               </div>
             </a>
 
-            <a class="wk2-tile" href="love-is-love.html"
+            <a class="wk2-tile" href="/works/love-is-love/"
                data-year="2021" data-medium="3d ai" data-availability="edition">
               <div class="wk2-tile-media">
-                <img decoding="async" src="assets/love-is-love/og-image.webp" alt="Love is Love, two figures at the threshold of recognition" loading="lazy">
-                <div class="wk2-tile-overlay">Generative project with a 500-piece edition.</div>
+                <img decoding="async" src="assets/one-of-ones/the-kiss.webp" alt="The Kiss, the sold 1/1 work from Love is Love" loading="lazy">
+                <div class="wk2-tile-overlay">The Kiss, 2021.</div>
               </div>
               <div class="wk2-tile-meta">
                 <h3 class="wk2-tile-title">Love is Love</h3>
                 <span class="wk2-tile-year">2021</span>
-                <div class="wk2-tile-medium">Generative digital artwork. One highlight plus a 500-piece edition.</div>
-                <div class="wk2-tile-context">Collected by Idris Elba</div>
-                <div class="wk2-tile-edition">Edition of 500</div>
+                <div class="wk2-tile-medium">Generative project on love equality and self-identification.</div>
+                <div class="wk2-tile-context">500 editions + The Kiss, sold 1/1. Collected by Idris Elba.</div>
                 <div class="wk2-tile-foot">
-                  <span class="wk2-dot wk2-dot--edition">Edition available</span>
+                  <span class="wk2-dot wk2-dot--edition">18 editions listed</span>
                 </div>
               </div>
             </a>
@@ -305,57 +284,150 @@
 
         <!-- ====================== PANEL. EDITIONS ====================== -->
         <section class="wk2-panel" id="panel-editions" role="tabpanel" aria-labelledby="tab-editions" data-panel="editions" hidden>
-          <p class="wk2-panel-intro">Open editions, cover commissions, and collaborative releases. Each catalogs separately from the conceptual projects.</p>
+          <p class="wk2-panel-intro">Editioned releases, kept separate from commissions. Some works also sit inside larger projects.</p>
 
           <div class="wk2-grid wk2-grid--editions" data-grid>
 
-            <a class="wk2-tile" href="love-is-love.html"
+            <a class="wk2-tile" href="/works/6529-meme-card/"
+               data-year="2023" data-medium="3d" data-availability="sold">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="assets/6529-meme-card/02-freedom-to-transact-still.webp" alt="Faces of Freedom by Shavonne Wong" loading="lazy">
+                <div class="wk2-tile-overlay">Faces of Freedom.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">6529 Meme Card</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">Editioned Meme Card for The Memes by 6529.</div>
+                <div class="wk2-tile-context">Commissioned work, also an edition.</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--edition">Edition</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/works/the-ties-that-bind/#weight-of-the-world"
+               data-year="2023" data-medium="3d installation" data-availability="edition">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="assets/the-ties-that-bind/17-weightoftheworld-1.webp" alt="The Weight of the World artwork still" loading="lazy">
+                <div class="wk2-tile-overlay">The Weight of the World.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">The Weight of the World</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">Editioned work from The Ties That Bind.</div>
+                <div class="wk2-tile-context">Edition of 50.</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--edition">Edition listed</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/works/love-is-love/"
                data-year="2021" data-medium="3d ai" data-availability="edition">
               <div class="wk2-tile-media">
                 <img decoding="async" src="assets/love-is-love/samples/edition-637.webp" alt="Love is Love, edition sample" loading="lazy">
-                <div class="wk2-tile-overlay">500-piece generative edition. With Idris Elba and others.</div>
+                <div class="wk2-tile-overlay">Edition sample.</div>
               </div>
               <div class="wk2-tile-meta">
                 <h3 class="wk2-tile-title">Love is Love</h3>
                 <span class="wk2-tile-year">2021</span>
-                <div class="wk2-tile-medium">Generative art project. 500-piece open edition.</div>
-                <div class="wk2-tile-edition">Edition of 500</div>
+                <div class="wk2-tile-medium">500 generative editions on Ethereum.</div>
                 <div class="wk2-tile-foot">
-                  <span class="wk2-dot wk2-dot--edition">Edition available</span>
+                  <span class="wk2-dot wk2-dot--edition">18 editions listed</span>
                 </div>
               </div>
             </a>
 
-            <a class="wk2-tile" href="vogue-singapore.html"
+          </div>
+        </section>
+
+        <!-- ====================== PANEL. COMMISSIONS ====================== -->
+        <section class="wk2-panel" id="panel-commissions" role="tabpanel" aria-labelledby="tab-commissions" data-panel="commissions" hidden>
+          <p class="wk2-panel-intro">Commissioned works and editorial collaborations, separated from editioned releases.</p>
+
+          <div class="wk2-grid wk2-grid--commissions" data-grid>
+
+            <a class="wk2-tile" href="/works/vogue-singapore/"
                data-year="2021" data-medium="3d photography" data-availability="archive">
               <div class="wk2-tile-media">
                 <img decoding="async" src="assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt="Vogue Singapore NFT cover" loading="lazy">
-                <div class="wk2-tile-overlay">Digital cover commission. September 2021.</div>
+                <div class="wk2-tile-overlay">The RenaiXance Rising.</div>
               </div>
               <div class="wk2-tile-meta">
                 <h3 class="wk2-tile-title">Vogue Singapore NFT Cover</h3>
                 <span class="wk2-tile-year">2021</span>
-                <div class="wk2-tile-medium">Digital cover commission. September 2021.</div>
-                <div class="wk2-tile-edition">1 of 1</div>
+                <div class="wk2-tile-medium">Digital cover commission for Vogue Singapore.</div>
+                <div class="wk2-tile-context">September 2021. 1/1 NFT cover artwork.</div>
                 <div class="wk2-tile-foot">
-                  <span class="wk2-dot wk2-dot--archive">Archive</span>
+                  <span class="wk2-dot wk2-dot--commission">Commission</span>
                 </div>
               </div>
             </a>
 
-            <a class="wk2-tile" href="6529-meme-card.html"
-               data-year="2023" data-medium="3d" data-availability="edition">
+            <a class="wk2-tile" href="/works/6529-meme-card/"
+               data-year="2023" data-medium="3d" data-availability="sold">
               <div class="wk2-tile-media">
-                <img decoding="async" src="assets/6529-meme-card/01-faces-of-freedom-card.webp" alt="6529 Meme Card artwork" loading="lazy">
-                <div class="wk2-tile-overlay">Commissioned card for The Memes by 6529.</div>
+                <img decoding="async" src="assets/6529-meme-card/02-freedom-to-transact-still.webp" alt="Faces of Freedom by Shavonne Wong" loading="lazy">
+                <div class="wk2-tile-overlay">Faces of Freedom.</div>
               </div>
               <div class="wk2-tile-meta">
                 <h3 class="wk2-tile-title">6529 Meme Card</h3>
                 <span class="wk2-tile-year">2023</span>
                 <div class="wk2-tile-medium">Commissioned card for The Memes by 6529.</div>
-                <div class="wk2-tile-edition">Open edition</div>
+                <div class="wk2-tile-context">Freedom to Transact. Also an editioned release.</div>
                 <div class="wk2-tile-foot">
-                  <span class="wk2-dot wk2-dot--edition">Edition available</span>
+                  <span class="wk2-dot wk2-dot--commission">Commission + edition</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="https://foundation.app/mint/eth/0x72e991768e09D8d82BdE9334cCCD7f4beC8c433D/9" target="_blank" rel="noreferrer"
+               data-year="2023" data-medium="3d video" data-availability="available">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="assets/one-of-ones/natures-muse.webp" alt="Nature's Muse by Shavonne Wong" loading="lazy">
+                <div class="wk2-tile-overlay">Marie Claire Arabia.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">Nature's Muse</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">Commission for Marie Claire Arabia.</div>
+                <div class="wk2-tile-context">Editorial digital artwork, 1/1 NFT.</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--commission">Commission</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="mailto:studio@shavonnewong.art?subject=Acquisition%20%E2%80%94%20Stargazer%E2%80%99s%20Dream"
+               data-year="2023" data-medium="3d video" data-availability="available">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="assets/one-of-ones/stargazers-dream.jpg" alt="Stargazer's Dream by Shavonne Wong" loading="lazy">
+                <div class="wk2-tile-overlay">Marie Claire Arabia.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">Stargazer's Dream</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">Commission for Marie Claire Arabia.</div>
+                <div class="wk2-tile-context">Editorial digital artwork, 1/1 NFT.</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--commission">Commission</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="https://foundation.app/@shavonnewong/shasha/11" target="_blank" rel="noreferrer"
+               data-year="2023" data-medium="3d video" data-availability="sold">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="assets/one-of-ones/oceans-whisper.webp" alt="Ocean's Whisper by Shavonne Wong" loading="lazy">
+                <div class="wk2-tile-overlay">Marie Claire Arabia.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">Ocean's Whisper</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">Commission for Marie Claire Arabia.</div>
+                <div class="wk2-tile-context">Editorial digital artwork, 1/1 NFT.</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--commission">Commission</span>
                 </div>
               </div>
             </a>
@@ -366,7 +438,7 @@
         <!-- ====================== PANEL. AVAILABLE ====================== -->
         <!-- Populated by JS from any tile across the catalog with availability available or edition. -->
         <section class="wk2-panel" id="panel-available" role="tabpanel" aria-labelledby="tab-available" data-panel="available" hidden>
-          <p class="wk2-panel-intro">Works currently for sale or available as editions. Prices and edition details on request.</p>
+          <p class="wk2-panel-intro">Works currently for sale, including available commissions and editioned releases. Prices and details on request.</p>
 
           <div class="wk2-grid wk2-grid--available" data-grid data-available-grid>
             <!-- Cloned tiles inserted here on tab activation. -->
@@ -376,19 +448,31 @@
         <div class="wk2-empty" data-empty hidden>No works match the current filters. Try clearing filters or switching tabs.</div>
 
       </div>
+
+      <dialog class="wk2-work-modal" data-single-modal aria-labelledby="single-modal-title">
+        <div class="wk2-work-modal-shell">
+          <button type="button" class="wk2-work-modal-close" data-single-modal-close aria-label="Close work details">&times;</button>
+          <figure class="wk2-work-modal-media">
+            <video data-single-modal-video controls controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture disableremoteplayback autoplay muted loop playsinline hidden></video>
+            <img data-single-modal-image alt="">
+          </figure>
+          <div class="wk2-work-modal-copy">
+            <div class="wk2-work-modal-kicker" data-single-modal-meta></div>
+            <h2 id="single-modal-title" data-single-modal-title></h2>
+            <p data-single-modal-description></p>
+            <div class="wk2-work-modal-details">
+              <span data-single-modal-edition></span>
+              <span data-single-modal-status></span>
+            </div>
+            <a class="wk2-work-modal-link" data-single-modal-marketplace href="#" target="_blank" rel="noreferrer">View marketplace</a>
+          </div>
+        </div>
+      </dialog>
     </section>
 
-    <!-- ============================================================
-         FOOTER. Clean horizontal nav.
-         ============================================================ -->
-    <footer class="wk2-footer">
-      <div class="wk2-footer-inner">
-        <ul class="wk2-footer-nav">
-          <li><a href="writing.html">Writing</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-        <button type="button" class="wk2-back-top" data-back-top>Back to top</button>
+    <footer class="sw-page-footer" data-site-footer>
+      <div class="sw-page-footer__inner">
+        <button class="sw-page-footer__top" type="button" data-site-back-top>Back to top</button>
       </div>
     </footer>
 
@@ -403,6 +487,19 @@
       const clearBtn = document.querySelector('[data-filter-clear]');
       const emptyEl = document.querySelector('[data-empty]');
       const availableGrid = document.querySelector('[data-available-grid]');
+      const singleModal = document.querySelector('[data-single-modal]');
+      const singleModalImage = document.querySelector('[data-single-modal-image]');
+      const singleModalVideo = document.querySelector('[data-single-modal-video]');
+      const singleModalMeta = document.querySelector('[data-single-modal-meta]');
+      const singleModalTitle = document.querySelector('[data-single-modal-title]');
+      const singleModalDescription = document.querySelector('[data-single-modal-description]');
+      const singleModalEdition = document.querySelector('[data-single-modal-edition]');
+      const singleModalStatus = document.querySelector('[data-single-modal-status]');
+      const singleModalMarketplace = document.querySelector('[data-single-modal-marketplace]');
+      const singleModalClose = document.querySelector('[data-single-modal-close]');
+      const singleWorksById = new Map();
+      let activeModalMediaRatio = 16 / 9;
+      const MONTH_LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
       const params = new URLSearchParams(location.hash.replace(/^#/, ''));
       function chronologyYear(tile) {
@@ -413,11 +510,18 @@
       }
 
       function compareTilesChronological(a, b) {
-        const byYear = chronologyYear(b) - chronologyYear(a);
-        if (byYear) return byYear;
+        const byTime = chronologyTime(b) - chronologyTime(a);
+        if (byTime) return byTime;
         const aTitle = a.querySelector('.wk2-tile-title')?.textContent?.trim() || '';
         const bTitle = b.querySelector('.wk2-tile-title')?.textContent?.trim() || '';
         return aTitle.localeCompare(bTitle);
+      }
+
+      function chronologyTime(tile) {
+        const explicitDate = tile.dataset.sortDate || '';
+        const parsed = Date.parse(explicitDate);
+        if (!Number.isNaN(parsed)) return parsed;
+        return chronologyYear(tile) ? Date.UTC(chronologyYear(tile), 0, 1) : 0;
       }
 
       function sortGridChronological(grid) {
@@ -469,13 +573,32 @@
           .filter((t) => !t.closest('#panel-available'))
           .filter((t) => /(available|edition)/.test(t.dataset.availability || ''))
           .sort(compareTilesChronological);
-        const seen = new Set();
+        const byWork = new Map();
+        function workKey(tile) {
+          const title = tile.querySelector('.wk2-tile-title')?.textContent?.trim() || '';
+          const href = tile.getAttribute('href') || '';
+          return title
+            ? title.normalize('NFKD').toLowerCase().replace(/[\u2018\u2019]/g, "'").replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+            : href;
+        }
+        function availabilityScore(tile) {
+          const foot = tile.querySelector('.wk2-tile-foot')?.textContent?.toLowerCase() || '';
+          if (foot.includes('available')) return 4;
+          if (foot.includes('edition')) return 3;
+          if (foot.includes('in development')) return 2;
+          if ((tile.dataset.availability || '').includes('available')) return 1;
+          return 0;
+        }
         all.forEach((t) => {
-          const key = t.getAttribute('href') || t.querySelector('.wk2-tile-title')?.textContent;
-          if (!key || seen.has(key)) return;
-          seen.add(key);
-          const clone = t.cloneNode(true);
-          availableGrid.appendChild(clone);
+          const key = workKey(t);
+          if (!key) return;
+          const existing = byWork.get(key);
+          if (!existing || availabilityScore(t) > availabilityScore(existing)) {
+            byWork.set(key, t);
+          }
+        });
+        Array.from(byWork.values()).forEach((t) => {
+          availableGrid.appendChild(t.cloneNode(true));
         });
         availableGrid.dataset.built = '1';
       }
@@ -512,7 +635,6 @@
         const tiles = Array.from(activePanel.querySelectorAll('.wk2-tile'));
         let visible = 0;
         tiles.forEach((t) => {
-          // Skip filtering the "more" finisher tile.
           if (t.classList.contains('wk2-tile-more')) { t.style.display = ''; return; }
           const ok = tileMatches(t, state);
           t.style.display = ok ? '' : 'none';
@@ -549,15 +671,12 @@
             if (sel) sel.value = v;
           }
         });
-        const tab = p.get('tab') || 'projects';
-        selectTab(tab, { silent: true });
+        selectTab(p.get('tab') || 'projects', { silent: true });
       }
 
       readUrl();
 
-      // ----- Load Single Works from JSON. -----
-      const singleGrid = document.querySelector('[data-single-grid]');
-      const singleLoading = document.querySelector('[data-single-loading]');
+      // ----- Single works from JSON. -----
       const CLUSTER_LABEL = {
         'the-watched-self': 'The Watched Self',
         'stories-older-than-me': 'Stories Older Than Me',
@@ -565,38 +684,215 @@
         'held-in-time': 'Held in Time',
         'on-the-surface': 'On the Surface'
       };
-      function slug(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+      function singleWorkId(work) { return work.id || slug(work.title || ''); }
+      function slug(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+      function workAvailability(status) {
+        const s = String(status || '').toLowerCase();
+        return /available|listed/.test(s) ? 'available' : 'sold';
+      }
+      function workStatusLabel(status) {
+        const s = String(status || '').trim();
+        if (!s) return 'Sold';
+        if (/available/i.test(s)) return 'Available';
+        if (/listed/i.test(s)) return 'Listed';
+        return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+      }
+      function startTilePreview(tile) {
+        const video = tile?.querySelector('[data-single-preview-video]');
+        if (!video) return;
+        video.currentTime = 0;
+        video.play?.().catch(() => {});
+      }
+      function stopTilePreview(tile) {
+        const video = tile?.querySelector('[data-single-preview-video]');
+        if (!video) return;
+        video.pause?.();
+        video.currentTime = 0;
+      }
+      function marketplaceLabel(url) {
+        const u = String(url || '').toLowerCase();
+        if (u.includes('superrare.com')) return 'View on SuperRare';
+        if (u.includes('opensea.io')) return 'View on OpenSea';
+        if (u.includes('foundation.app')) return 'View on Foundation';
+        if (u.includes('niftygateway.com')) return 'View on Nifty Gateway';
+        if (u.includes('mailto:')) return 'Contact studio';
+        return 'View marketplace';
+      }
+      function workDisplayYear(work) {
+        const year = Number(String(work?.mint_date || '').slice(0, 4)) || Number(work?.year || 0);
+        return year || '';
+      }
+      function workSortValue(work) {
+        const year = workDisplayYear(work);
+        return work?.mint_date || (year ? year + '-01-01' : '');
+      }
+      function formatMintDate(value) {
+        const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (!match) return '';
+        const month = MONTH_LABELS[Number(match[2]) - 1] || '';
+        return [month, String(Number(match[3])), match[1]].filter(Boolean).join(' ');
+      }
+      function setModalMediaSize(width, height) {
+        const w = Number(width);
+        const h = Number(height);
+        if (!singleModal || !w || !h) return;
+        activeModalMediaRatio = Math.max(0.35, Math.min(2.4, w / h));
+        const maxDialogWidth = Math.min(window.innerWidth - 36, 1180);
+        const maxMediaHeight = Math.min(window.innerHeight * 0.76, 760);
+        const shellPadding = window.innerWidth <= 760 ? 28 : 68;
+        const shellGap = window.innerWidth <= 1080 ? 0 : 42;
+        const copyWidth = window.innerWidth <= 1080 ? 0 : 340;
+        const availableWidth = Math.max(260, maxDialogWidth - shellPadding - shellGap - copyWidth);
+        const mediaWidth = Math.max(260, Math.min(availableWidth, maxMediaHeight * activeModalMediaRatio));
+        singleModal.style.setProperty('--wk2-modal-media-width', Math.round(mediaWidth) + 'px');
+        singleModal.style.setProperty('--wk2-modal-media-ratio', activeModalMediaRatio.toFixed(4));
+        singleModal.dataset.mediaOrientation = activeModalMediaRatio < 0.9 ? 'portrait' : activeModalMediaRatio > 1.15 ? 'landscape' : 'square';
+      }
+      function refreshModalMediaSize() {
+        if (!singleModal?.open) return;
+        if (singleModalVideo && !singleModalVideo.hidden && singleModalVideo.videoWidth && singleModalVideo.videoHeight) {
+          setModalMediaSize(singleModalVideo.videoWidth, singleModalVideo.videoHeight);
+          return;
+        }
+        if (singleModalImage && !singleModalImage.hidden && singleModalImage.naturalWidth && singleModalImage.naturalHeight) {
+          setModalMediaSize(singleModalImage.naturalWidth, singleModalImage.naturalHeight);
+        }
+      }
+      function openSingleWork(id) {
+        const it = singleWorksById.get(id);
+        if (!it || !singleModal) return;
+        const cluster = CLUSTER_LABEL[it.series_cluster] || 'Single work';
+        const status = workStatusLabel(it.status);
+        const imageSrc = String(it.image || '').replace(/^\//, '');
+        const videoSrc = String(it.video_url || '').replace(/^\//, '');
+        const marketUrl = String(it.marketplace_url || '');
+        singleModal.style.removeProperty('--wk2-modal-media-width');
+        singleModal.removeAttribute('data-media-orientation');
+        if (videoSrc && singleModalVideo) {
+          singleModalVideo.hidden = false;
+          singleModalVideo.poster = imageSrc;
+          singleModalVideo.src = videoSrc;
+          singleModalVideo.controlsList?.add('nodownload');
+          singleModalVideo.controlsList?.add('noplaybackrate');
+          singleModalVideo.controlsList?.add('noremoteplayback');
+          singleModalVideo.disablePictureInPicture = true;
+          singleModalVideo.disableRemotePlayback = true;
+          singleModalVideo.load();
+          singleModalVideo.play?.().catch(() => {});
+          singleModalImage.hidden = true;
+          singleModalImage.removeAttribute('src');
+        } else {
+          if (singleModalVideo) {
+            singleModalVideo.pause?.();
+            singleModalVideo.hidden = true;
+            singleModalVideo.removeAttribute('src');
+            singleModalVideo.removeAttribute('poster');
+            singleModalVideo.load();
+          }
+          singleModalImage.hidden = false;
+          singleModalImage.src = imageSrc;
+          if (singleModalImage.complete) {
+            setModalMediaSize(singleModalImage.naturalWidth, singleModalImage.naturalHeight);
+          }
+        }
+        singleModalImage.alt = (it.title || 'Work') + ' still';
+        const dateLabel = it.mint_date ? 'Minted ' + formatMintDate(it.mint_date) : workDisplayYear(it);
+        singleModalMeta.textContent = [dateLabel, cluster].filter(Boolean).join(' · ');
+        singleModalTitle.textContent = it.title || '';
+        singleModalDescription.textContent = it.brief_description || it.medium || '';
+        singleModalEdition.textContent = it.edition_info || it.medium || '';
+        singleModalStatus.textContent = status;
+        if (marketUrl) {
+          singleModalMarketplace.hidden = false;
+          singleModalMarketplace.href = marketUrl;
+          singleModalMarketplace.textContent = marketplaceLabel(marketUrl);
+          if (/^mailto:/i.test(marketUrl)) {
+            singleModalMarketplace.removeAttribute('target');
+            singleModalMarketplace.removeAttribute('rel');
+          } else {
+            singleModalMarketplace.target = '_blank';
+            singleModalMarketplace.rel = 'noreferrer';
+          }
+        } else {
+          singleModalMarketplace.hidden = true;
+          singleModalMarketplace.removeAttribute('href');
+        }
+        document.documentElement.classList.add('wk2-modal-open');
+        if (typeof singleModal.showModal === 'function') singleModal.showModal();
+        else singleModal.setAttribute('open', '');
+        refreshModalMediaSize();
+      }
+      function closeSingleWork() {
+        if (!singleModal) return;
+        if (singleModalVideo) {
+          singleModalVideo.pause?.();
+        }
+        document.documentElement.classList.remove('wk2-modal-open');
+        if (typeof singleModal.close === 'function' && singleModal.open) singleModal.close();
+        else singleModal.removeAttribute('open');
+      }
+      document.addEventListener('click', (e) => {
+        const target = e.target instanceof Element ? e.target : null;
+        const card = target?.closest('[data-single-work-id]');
+        if (card) {
+          e.preventDefault();
+          openSingleWork(card.dataset.singleWorkId);
+          return;
+        }
+        if (e.target === singleModal) closeSingleWork();
+      });
+      singleModalClose?.addEventListener('click', closeSingleWork);
+      singleModal?.addEventListener('close', () => {
+        document.documentElement.classList.remove('wk2-modal-open');
+      });
+      singleModalVideo?.addEventListener('loadedmetadata', refreshModalMediaSize);
+      singleModalImage?.addEventListener('load', refreshModalMediaSize);
+      singleModalVideo?.addEventListener('contextmenu', (e) => e.preventDefault());
+      singleModalImage?.addEventListener('contextmenu', (e) => e.preventDefault());
+      window.addEventListener('resize', refreshModalMediaSize);
       function renderSingleWorks(items) {
         if (!singleGrid) return;
         if (singleLoading) singleLoading.remove();
         items
           .slice()
-          .sort((a, b) => (Number(b.year || 0) - Number(a.year || 0)) || String(a.title || '').localeCompare(String(b.title || '')))
+          .sort((a, b) => (Date.parse(workSortValue(b)) - Date.parse(workSortValue(a))) || String(a.title || '').localeCompare(String(b.title || '')))
           .forEach((it) => {
-            const a = document.createElement('a');
-            a.className = 'wk2-tile';
-            a.href = '3d-single-works.html#' + (it.id || slug(it.title));
-            a.dataset.year = String(it.year);
-            a.dataset.medium = '3d video';
+            const card = document.createElement('button');
+            card.type = 'button';
+            card.className = 'wk2-tile wk2-single-card';
+            card.dataset.singleWorkId = singleWorkId(it);
+            singleWorksById.set(card.dataset.singleWorkId, it);
+            const displayYear = workDisplayYear(it);
+            card.dataset.year = String(displayYear);
+            card.dataset.sortDate = workSortValue(it);
+            card.dataset.medium = '3d video';
             const status = String(it.status || '').toLowerCase();
-            a.dataset.availability = status.includes('available') ? 'available' : 'sold';
+            card.dataset.availability = workAvailability(status);
             const cluster = CLUSTER_LABEL[it.series_cluster] || '';
             const imgSrc = String(it.image || '').replace(/^\//, '');
-            a.innerHTML =
+            const previewSrc = String(it.video_url || '').replace(/^\//, '');
+            const statusLabel = workStatusLabel(status);
+            card.innerHTML =
               '<div class="wk2-tile-media">' +
                 '<img decoding="async" src="' + imgSrc + '" alt="' + (it.title || '').replace(/"/g, '&quot;') + ' still" loading="lazy">' +
+                (previewSrc ? '<video class="wk2-tile-preview" data-single-preview-video src="' + previewSrc + '" muted loop playsinline preload="metadata" aria-hidden="true"></video>' : '') +
                 (cluster ? '<div class="wk2-tile-overlay">' + cluster + '</div>' : '') +
               '</div>' +
               '<div class="wk2-tile-meta">' +
                 '<h3 class="wk2-tile-title">' + (it.title || '') + '</h3>' +
-                '<span class="wk2-tile-year">' + (it.year || '') + '</span>' +
+                '<span class="wk2-tile-year">' + displayYear + '</span>' +
                 '<div class="wk2-tile-foot">' +
-                  '<span class="wk2-dot wk2-dot--' + a.dataset.availability + '">' + (a.dataset.availability === 'available' ? 'Available' : 'Sold') + '</span>' +
+                  '<span class="wk2-dot wk2-dot--' + card.dataset.availability + '">' + statusLabel + '</span>' +
                 '</div>' +
               '</div>';
-            singleGrid.appendChild(a);
+            if (previewSrc) {
+              card.addEventListener('mouseenter', () => startTilePreview(card));
+              card.addEventListener('mouseleave', () => stopTilePreview(card));
+              card.addEventListener('focus', () => startTilePreview(card));
+              card.addEventListener('blur', () => stopTilePreview(card));
+            }
+            singleGrid.appendChild(card);
           });
-        // Re-run any active filters or available-tab build now that DOM has more tiles.
         if (availableGrid) { availableGrid.dataset.built = ''; availableGrid.innerHTML = ''; }
         const activePanel = panels.find((p) => p.classList.contains('is-active'));
         if (activePanel && activePanel.dataset.panel === 'available') populateAvailable();
@@ -605,7 +901,7 @@
       fetch('assets/data/3d-single-works.json', { cache: 'no-store' })
         .then((r) => r.ok ? r.json() : Promise.reject(r.status))
         .then(renderSingleWorks)
-        .catch((err) => {
+        .catch(() => {
           if (singleLoading) singleLoading.textContent = 'Single works data unavailable.';
         });
 
@@ -625,17 +921,11 @@
       updateStuck();
       window.addEventListener('scroll', updateStuck, { passive: true });
       window.addEventListener('resize', updateStuck);
-
-      // ----- Back to top. -----
-      const backTop = document.querySelector('[data-back-top]');
-      if (backTop) backTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
     })();
   </script>
 
-  <script src="site-header.js?v=20260531-scroll2"></script>
-  <script src="site-i18n.js?v=20260530-header-bar"></script>
+  <script src="site-header.js?v=20260604-sticky"></script>
+  <script src="site-i18n.js?v=20260603-nosign"></script>
   <script src="fluid-renderer.js?v=20260527-site-ripple-wide"></script>
 </body>
 </html>

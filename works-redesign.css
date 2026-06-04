@@ -154,7 +154,7 @@
   padding: 11px 16px;
   background: transparent;
   border: 1px solid var(--hairline-strong);
-  border-radius: 999px;
+  border-radius: 2px;
   cursor: pointer;
   transition: background .2s ease, color .2s ease, border-color .2s ease;
   display: inline-flex;
@@ -186,7 +186,7 @@
 .wk-viewtoggle {
   display: flex;
   border: 1px solid var(--hairline-strong);
-  border-radius: 999px;
+  border-radius: 2px;
   padding: 3px;
   background: var(--bg);
 }
@@ -197,7 +197,7 @@
   padding: 6px 14px;
   background: transparent;
   border: 0;
-  border-radius: 999px;
+  border-radius: 2px;
   cursor: pointer;
   font-family: var(--sans);
   font-size: 10px;
@@ -797,7 +797,7 @@
   background: transparent;
   color: var(--text-2);
   border: 1px solid var(--hairline-strong);
-  border-radius: 999px;
+  border-radius: 2px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -848,7 +848,7 @@
 .av-select {
   min-height: 40px;
   border: 1px solid var(--hairline-strong);
-  border-radius: 999px;
+  border-radius: 2px;
   background: transparent;
   color: var(--text-2);
   font-family: var(--sans);
@@ -1166,7 +1166,7 @@
 /* ============================================================
    ZONES — Works landing two-zone-plus-editions structure
    Zone 01: Projects (multi-form, large cards)
-   Zone 02: 3D Single Works (loops preview grid)
+   Zone 02: Single Works (loops preview grid)
    Zone 03: Editions & Commissions (smaller catalog cards)
    ============================================================ */
 
@@ -1689,7 +1689,7 @@
 /* ============================================================
    ZONES — Works landing two-zone-plus-editions structure
    Zone 01: Projects (multi-form, large cards)
-   Zone 02: 3D Single Works (loops preview grid)
+   Zone 02: Single Works (loops preview grid)
    Zone 03: Editions & Commissions (smaller catalog cards)
    ============================================================ */
 

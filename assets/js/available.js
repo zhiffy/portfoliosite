@@ -1,7 +1,7 @@
 (function () {
   const DATA_URL = '/assets/data/available.json';
   const MERGED_URL = '/assets/data/available.merged.json';
-  const CACHE_KEY = 'sw-available-merged-v3';
+  const CACHE_KEY = 'sw-available-merged-v6';
   const CACHE_TTL = 24 * 60 * 60 * 1000;
   const FALLBACK_COUNT_MAX_AGE = 92 * 24 * 60 * 60 * 1000;
 
@@ -251,6 +251,7 @@
   function statusText(item) {
     if (item.edition_type === 'unique') {
       if (item.status === 'sold') return 'Unique \u00b7 sold';
+      if (item.status === 'listed') return 'Unique \u00b7 listed';
       if (item.status === 'not_for_sale') return 'Unique \u00b7 not for sale';
       return 'Unique \u00b7 available';
     }
@@ -266,6 +267,7 @@
         if (item.edition_remaining <= 0) return 'Sold out';
         return `Edition of ${item.edition_total} \u00b7 ${item.edition_remaining} remaining`;
       }
+      if (item.status === 'listed') return `Edition of ${item.edition_total} \u00b7 listed`;
       return `Edition of ${item.edition_total}`;
     }
     return '';
@@ -378,11 +380,16 @@
     const next = [...items];
     if (state.sort === 'project') {
       next.sort((a, b) => {
+        const parentA = a.parent_project?.title || a.title;
+        const parentB = b.parent_project?.title || b.title;
+        const byProject = parentA.localeCompare(parentB);
+        if (byProject) return byProject;
+        if (typeof a.project_order === 'number' && typeof b.project_order === 'number') {
+          return a.project_order - b.project_order;
+        }
         const byAvailability = availabilityRank(a) - availabilityRank(b);
         if (byAvailability) return byAvailability;
-        const projectA = `${a.parent_project?.title || a.title} ${a.title}`;
-        const projectB = `${b.parent_project?.title || b.title} ${b.title}`;
-        return projectA.localeCompare(projectB);
+        return a.title.localeCompare(b.title);
       });
       return next;
     }

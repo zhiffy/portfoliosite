@@ -14,12 +14,13 @@
     "series_position": 1,
     "marketplace_url": "https://foundation.app/@shavonnewong/concealedemotions/4",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2022-04-29"
   },
   {
     "id": "i-am-not-happy",
     "title": "I Am (Not) Happy",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
@@ -31,12 +32,13 @@
     "series_position": 2,
     "marketplace_url": "https://foundation.app/@shavonnewong/concealedemotions/3",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-12-16"
   },
   {
     "id": "i-am-not-zen",
     "title": "I Am (Not) Zen",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
@@ -48,12 +50,13 @@
     "series_position": 3,
     "marketplace_url": "https://foundation.app/@shavonnewong/concealedemotions/1",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-12-16"
   },
   {
     "id": "kin-i",
     "title": "Kin I",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
@@ -65,12 +68,13 @@
     "series_position": 4,
     "marketplace_url": "https://foundation.app/@shavonnewong/foundation/36162",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-05-14"
   },
   {
     "id": "kin-ii",
     "title": "Kin II",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
@@ -82,29 +86,31 @@
     "series_position": 5,
     "marketplace_url": "https://foundation.app/@shavonnewong/foundation/36422",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-05-15"
   },
   {
     "id": "beauty",
     "title": "Beauty",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
     "image": "/assets/one-of-ones/beauty.jpg",
     "video_url": "/assets/one-of-ones/videos/beauty.mp4",
-    "brief_description": "A single-channel 3D video work from Shavonne Wong's early digital practice, studying identity, time, and the material presence of constructed bodies.",
+    "brief_description": "The world will constantly try to categorise and divide us. Yet when you take away our makeup, our accessories and all the things we are conditioned to believe we need, you are left with raw beauty. Colour, shape, size, geography... none of it matters, we are united as human beings and our beauty only shines brighter when we come together.",
     "edition_info": "1/1 NFT",
     "series_cluster": "the-watched-self",
     "series_position": 6,
     "marketplace_url": "https://superrare.com/artwork-v2/beauty-26661",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-07-30"
   },
   {
     "id": "glow",
     "title": "Glow",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
@@ -116,7 +122,8 @@
     "series_position": 7,
     "marketplace_url": "https://foundation.app/@shavonnewong/foundation/73504",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-08-18"
   },
   {
     "id": "goldfish",
@@ -127,47 +134,50 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/goldfish.jpg",
     "video_url": "/assets/one-of-ones/videos/goldfish.mp4",
-    "brief_description": "A single-channel 3D video work from Shavonne Wong's early digital practice, studying identity, time, and the material presence of constructed bodies.",
+    "brief_description": "It is traditionally believed that goldfishes symbolize prosperity and good fortune. This piece was made as a means to wish abundance onto the holder of this NFT.",
     "edition_info": "1/1 NFT",
     "series_cluster": "the-watched-self",
     "series_position": 8,
     "marketplace_url": "https://opensea.io/assets/ethereum/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/1",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2022-01-24"
   },
   {
     "id": "the-hug",
     "title": "The Hug",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
     "image": "/assets/one-of-ones/the-hug.jpg",
     "video_url": "/assets/one-of-ones/videos/the-hug.mp4",
-    "brief_description": "A single-channel 3D video work from Shavonne Wong's early digital practice, studying identity, time, and the material presence of constructed bodies.",
+    "brief_description": "This piece was made as a charity piece for the Twitter 140 Charity Auction led by Sotheby's and Sostento. Proceeds from the sale of this piece will go towards fulfilling Sostento's mission of helping frontline healthcare heroes save lives. #Gifted140 The theme for the project is \"Gifted\" and is dedicated to healthcare workers. I wanted to show that when the pandemic happened, all the touch, intimacy and physical hugs that we have always taken for granted suddenly became something that isn't as accessible and available anymore. It was only when the situation started to improve after the tireless help from these healthcare heroes that people were given the gift of being able to see their loved ones and show their love and affection through hugs and physical touch again.",
     "edition_info": "1/1 NFT",
     "series_cluster": "the-watched-self",
     "series_position": 9,
     "marketplace_url": "https://superrare.com/artwork-v2/the-hug-30550",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-11-22"
   },
   {
     "id": "the-kiss",
     "title": "The Kiss",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
     "image": "/assets/one-of-ones/the-kiss.jpg",
     "video_url": "/assets/one-of-ones/videos/the-kiss.mp4",
-    "brief_description": "A single-channel 3D video work from Shavonne Wong's early digital practice, studying identity, time, and the material presence of constructed bodies.",
+    "brief_description": "This is a 1/1 that I'm incredibly proud of. Not only does it represent the infinite possibilities of love in our world, it is also representative of a larger project, \"Love is Love\".",
     "edition_info": "1/1 NFT",
     "series_cluster": "the-watched-self",
     "series_position": 10,
-    "marketplace_url": "https://superrare.com/artwork-v2/the-kiss-28474",
+    "marketplace_url": "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/28474",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": "/works/love-is-love/",
+    "mint_date": "2021-09-15"
   },
   {
     "id": "duality-of-eth-extrovert",
@@ -178,13 +188,14 @@
     "status": "Available",
     "image": "/assets/one-of-ones/duality-of-eth-extrovert.jpg",
     "video_url": "/assets/one-of-ones/videos/duality-of-eth-extrovert.mp4",
-    "brief_description": "Part of a grouped set within Shavonne Wong's 3D single-channel video practice, using constructed bodies and charged surfaces to study identity, memory, and transformation.",
+    "brief_description": "\"The Duality of ETH\" consists of two distinct digital pieces that represent the extroverted and introverted sides of personality, exploring the complex and often contradictory nature of human identity in the context of the Ethereum blockchain. The pieces are titled \"The Duality of ETH - Introvert\" and \"The Duality of ETH - Extrovert\". The variable that determines which stage of the piece is displayed is based on ETH traffic, personifying the cryptocurrency as an active participant in the artwork. The artwork dynamically switches between stages in response to the fluctuating traffic on the Ethereum blockchain. This unique and immersive experience encourages viewers to reflect on the interplay between their own introverted and extroverted tendencies, and how they express themselves in different contexts within the digital realm. \"The Duality of ETH\" is not only a visual representation of the duality of self, but also a manifestation of the unpredictable and ever-changing nature of the crypto landscape.",
     "edition_info": "1/1 NFT",
     "series_cluster": "the-watched-self",
     "series_position": 11,
-    "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2",
+    "marketplace_url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": "/works/the-ties-that-bind/",
+    "mint_date": "2023-03-15"
   },
   {
     "id": "duality-of-eth-introvert",
@@ -195,24 +206,25 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/duality-of-eth-introvert.jpg",
     "video_url": "/assets/one-of-ones/videos/duality-of-eth-introvert.mp4",
-    "brief_description": "Part of a grouped set within Shavonne Wong's 3D single-channel video practice, using constructed bodies and charged surfaces to study identity, memory, and transformation.",
+    "brief_description": "\"The Duality of ETH\" consists of two distinct digital pieces that represent the extroverted and introverted sides of personality, exploring the complex and often contradictory nature of human identity in the context of the Ethereum blockchain. The pieces are titled \"The Duality of ETH - Introvert\" and \"The Duality of ETH - Extrovert\". The variable that determines which stage of the piece is displayed is based on ETH traffic, personifying the cryptocurrency as an active participant in the artwork. The artwork dynamically switches between stages in response to the fluctuating traffic on the Ethereum blockchain. This unique and immersive experience encourages viewers to reflect on the interplay between their own introverted and extroverted tendencies, and how they express themselves in different contexts within the digital realm. \"The Duality of ETH\" is not only a visual representation of the duality of self, but also a manifestation of the unpredictable and ever-changing nature of the crypto landscape.",
     "edition_info": "1/1 NFT",
     "series_cluster": "the-watched-self",
     "series_position": 12,
-    "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---introvert-1",
+    "marketplace_url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---introvert-1",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": "/works/the-ties-that-bind/",
+    "mint_date": "2023-03-15"
   },
   {
     "id": "panopticon",
     "title": "Panopticon",
-    "year": 2024,
+    "year": 2023,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
     "image": "/assets/one-of-ones/panopticon.jpg",
     "video_url": "/assets/one-of-ones/videos/panopticon.mp4",
-    "brief_description": "A single-channel 3D video work from Shavonne Wong's early digital practice, studying identity, time, and the material presence of constructed bodies.",
+    "brief_description": "Panopticon is an artwork that explores the theme of surveillance in modern times. This portrait of Sam Altman, captured in a fleeting moment, reflects the omnipresence and unpredictability of observation in today's digital age. His intermittent presence in the frame introduces a sense of uncertainty, mirroring the often unseen yet ever-present gaze of today's surveillance technology. The work aims to raise questions about the balance of power between the observer and the observed and challenges the viewer to consider their own visibility in a world increasingly filled with unseen watchers.",
     "edition_info": "1/1 NFT",
     "series_cluster": "the-watched-self",
     "series_position": 13,
@@ -252,7 +264,8 @@
     "series_position": 15,
     "marketplace_url": "https://foundation.app/@shavonnewong/shasha/12",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2024-02-19"
   },
   {
     "id": "year-of-the-tiger",
@@ -269,7 +282,8 @@
     "series_position": 1,
     "marketplace_url": "https://www.shavonnewong.art/projects/yearofthetiger",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2022-01-31"
   },
   {
     "id": "year-of-the-tiger-2",
@@ -280,13 +294,14 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/year-of-the-tiger-2.jpg",
     "video_url": "/assets/one-of-ones/videos/year-of-the-tiger-2.mp4",
-    "brief_description": "Part of a grouped set within Shavonne Wong's 3D single-channel video practice, using constructed bodies and charged surfaces to study identity, memory, and transformation.",
+    "brief_description": "Year of the Tiger is a collection of dynamic NFTs that were made in celebration of Lunar New Year. \"The Mountain Spirit (Sanshin), Korea's most important indigenous deity, personifies the veneration of mountains, also manifested by the powerful tiger that accompanies him. The Mountain Spirit is considered a protector of Buddhism and most Korean Buddhist temple complexes include a shrine dedicated to him.\"",
     "edition_info": "1/1 NFT",
     "series_cluster": "stories-older-than-me",
     "series_position": 2,
     "marketplace_url": "https://tiger2.shavonnewong.art",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2022-01-31"
   },
   {
     "id": "year-of-the-tiger-3",
@@ -297,13 +312,14 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/year-of-the-tiger-3.jpg",
     "video_url": "/assets/one-of-ones/videos/year-of-the-tiger-3.mp4",
-    "brief_description": "Part of a grouped set within Shavonne Wong's 3D single-channel video practice, using constructed bodies and charged surfaces to study identity, memory, and transformation.",
+    "brief_description": "Year of the Tiger is a collection of dynamic NFTs that were made in celebration of Lunar New Year. \"Legend has it that when Sang Nila Utama, a prince of the Srivijaya Empire, landed on the island in the 13th century, he named the settlement he founded Singapura, 'Lion City', after an animal he spotted while hunting and took to be a good omen. Lions were never native to Singapore, however, and many historians believe it might, in fact, have been a tiger.\"",
     "edition_info": "1/1 NFT",
     "series_cluster": "stories-older-than-me",
     "series_position": 3,
     "marketplace_url": "https://tiger3.shavonnewong.art",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2022-01-31"
   },
   {
     "id": "the-legend-of-the-white-snake",
@@ -320,24 +336,26 @@
     "series_position": 4,
     "marketplace_url": "https://foundation.app/@shavonnewong/shasha/6",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2022-03-02"
   },
   {
     "id": "stellae-i",
     "title": "Stellae I",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
     "image": "/assets/one-of-ones/stellae-i.jpg",
     "video_url": "/assets/one-of-ones/videos/stellae-i.mp4",
-    "brief_description": "Part of a grouped set within Shavonne Wong's 3D single-channel video practice, using constructed bodies and charged surfaces to study identity, memory, and transformation.",
+    "brief_description": "Kade. Part of a space series with my virtual models. It's a complicated world in an infinite universe. I hope my work reminds us all that we can be strong and independent despite the infinity that surrounds us.",
     "edition_info": "1/1 NFT",
     "series_cluster": "moons-and-flowers",
     "series_position": 1,
     "marketplace_url": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272438752120930305",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-04-22"
   },
   {
     "id": "stellae-ii",
@@ -348,7 +366,7 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/stellae-ii.jpg",
     "video_url": "/assets/one-of-ones/videos/stellae-ii.mp4",
-    "brief_description": "Part of a grouped set within Shavonne Wong's 3D single-channel video practice, using constructed bodies and charged surfaces to study identity, memory, and transformation.",
+    "brief_description": "Lilium. Part of a space series with my virtual models. It's a complicated world in an infinite universe. I hope my work reminds us all that we can be strong and independent despite the infinity that surrounds us.",
     "edition_info": "1/1 NFT",
     "series_cluster": "moons-and-flowers",
     "series_position": 2,
@@ -365,7 +383,7 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/stellae-iii.jpg",
     "video_url": "/assets/one-of-ones/videos/stellae-iii.mp4",
-    "brief_description": "Part of a grouped set within Shavonne Wong's 3D single-channel video practice, using constructed bodies and charged surfaces to study identity, memory, and transformation.",
+    "brief_description": "Sonya. Part of a space series with my virtual models. It's a complicated world in an infinite universe. I hope my work reminds us all that we can be strong and independent despite the infinity that surrounds us.",
     "edition_info": "1/1 NFT",
     "series_cluster": "moons-and-flowers",
     "series_position": 3,
@@ -376,7 +394,7 @@
   {
     "id": "lunah-moon-i",
     "title": "Lunah Moon I",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
@@ -388,12 +406,13 @@
     "series_position": 4,
     "marketplace_url": "https://foundation.app/@shavonnewong/foundation/7419",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-03-14"
   },
   {
     "id": "lunah-moon-ii",
     "title": "Lunah Moon II",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
@@ -405,12 +424,13 @@
     "series_position": 5,
     "marketplace_url": "https://foundation.app/@shavonnewong/foundation/9193",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-03-18"
   },
   {
     "id": "lunah-moon-iii",
     "title": "Lunah Moon III",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
@@ -422,12 +442,13 @@
     "series_position": 6,
     "marketplace_url": "https://foundation.app/@shavonnewong/foundation/11479",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-03-23"
   },
   {
     "id": "lilium-in-pearls-i",
     "title": "Lilium in Pearls I",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
@@ -439,12 +460,13 @@
     "series_position": 7,
     "marketplace_url": "https://foundation.app/@shavonnewong/foundation/1253",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-02-27"
   },
   {
     "id": "lilium-in-pearls-ii",
     "title": "Lilium in Pearls II",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
@@ -456,12 +478,13 @@
     "series_position": 8,
     "marketplace_url": "https://foundation.app/@shavonnewong/foundation/1713",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-03-01"
   },
   {
     "id": "lilium-in-pearls-iii",
     "title": "Lilium in Pearls III",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
@@ -473,7 +496,8 @@
     "series_position": 9,
     "marketplace_url": "https://foundation.app/@shavonnewong/foundation/2813",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-03-03"
   },
   {
     "id": "natures-muse",
@@ -501,13 +525,14 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/the-loneliness-of-an-orchid.jpg",
     "video_url": "/assets/one-of-ones/videos/the-loneliness-of-an-orchid.mp4",
-    "brief_description": "A single-channel 3D video work from Shavonne Wong's early digital practice, studying identity, time, and the material presence of constructed bodies.",
+    "brief_description": "The artwork is inspired by the surprising resilience of orchids, despite their beautiful and fragile appearance. The woman is suspended in the block of water, her dress floating ethereally, similar to how an orchid would be when grown in water. In this scene, she is defiant, beautiful and delicate but none of which are necessarily a replacement for loneliness. We display our strongest exteriors to the world but we nonetheless float in our own versions of a void trying to find our way.",
     "edition_info": "1/1 NFT",
     "series_cluster": "moons-and-flowers",
     "series_position": 11,
     "marketplace_url": "https://superrare.com/0x6583afe5f8eda8178877fb819b63c6f605c4f692/the-loneliness-of-an-orchid-28",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2022-07-18"
   },
   {
     "id": "oceans-whisper",
@@ -524,7 +549,8 @@
     "series_position": 12,
     "marketplace_url": "https://foundation.app/@shavonnewong/shasha/11",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2023-08-29"
   },
   {
     "id": "stargazers-dream",
@@ -558,7 +584,8 @@
     "series_position": 14,
     "marketplace_url": "https://www.niftygateway.com/itemdetail/primary/0x7eeb0cdad2d695cbd2bf8fb96a6a20ad5309a2dd/1",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2023-01-11"
   },
   {
     "id": "the-invisible-march-of-time-i",
@@ -569,13 +596,14 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/the-invisible-march-of-time-i.jpg",
     "video_url": null,
-    "brief_description": "Part of a grouped set within Shavonne Wong's 3D single-channel video practice, using constructed bodies and charged surfaces to study identity, memory, and transformation.",
+    "brief_description": "\"The Invisible March of Time\" NFT version is a digital artwork that delves into the passage of time and the inevitability of change through its dynamic depiction of the ageing process. The age displayed in the artwork corresponds with the age of the artist, and the piece dynamically changes every year. At the end of the artist's life, when they reach the age of 100, the piece will fade away and restart again. Through its moving depiction of ageing, \"The Invisible March of Time\" NFT version encourages viewers to contemplate their own experiences with change and the impermanence of the world around us. The work invites a personal connection with the themes of the piece, prompting viewers to reflect on their own mortality and the value of cherishing the present moment.",
     "edition_info": "1/1 NFT",
     "series_cluster": "held-in-time",
     "series_position": 1,
-    "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-i-4",
+    "marketplace_url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-i-4",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": "/works/the-ties-that-bind/",
+    "mint_date": "2023-03-15"
   },
   {
     "id": "the-invisible-march-of-time-ii",
@@ -586,30 +614,32 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/the-invisible-march-of-time-ii.jpg",
     "video_url": null,
-    "brief_description": "Part of a grouped set within Shavonne Wong's 3D single-channel video practice, using constructed bodies and charged surfaces to study identity, memory, and transformation.",
+    "brief_description": "\"The Invisible March of Time\" NFT version is a digital artwork that delves into the passage of time and the inevitability of change through its dynamic depiction of the ageing process. The age displayed in the artwork corresponds with the age of the artist, and the piece dynamically changes every year. At the end of the artist's life, when they reach the age of 100, the piece will fade away and restart again. Through its moving depiction of ageing, \"The Invisible March of Time\" NFT version encourages viewers to contemplate their own experiences with change and the impermanence of the world around us. The work invites a personal connection with the themes of the piece, prompting viewers to reflect on their own mortality and the value of cherishing the present moment.",
     "edition_info": "1/1 NFT",
     "series_cluster": "held-in-time",
     "series_position": 2,
-    "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-ii-3",
+    "marketplace_url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-ii-3",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": "/works/the-ties-that-bind/",
+    "mint_date": "2023-03-15"
   },
   {
     "id": "a-life-short-lived",
     "title": "A Life Short Lived",
-    "year": 2023,
+    "year": 2022,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
     "image": "/assets/one-of-ones/a-life-short-lived.jpg",
     "video_url": "/assets/one-of-ones/videos/a-life-short-lived.mp4",
-    "brief_description": "A single-channel 3D video work from Shavonne Wong's early digital practice, studying identity, time, and the material presence of constructed bodies.",
+    "brief_description": "Inspired by the life of Giuliano de' Medici, which was cut short before he could build his own legacy. The brother of Lorenzo the Magnificent, Giuliano was born into the Medici family and was considered the golden boy of that era. He was loved and admired by some of the most talented and famous men of his day, including Michelangelo Buonarroti, Leonardo da Vinci, and Raphael. However, he was tragically assassinated at a young age in a plot known as the Pazzi conspiracy. This work is meant to evoke feelings of loss and longing in viewers. It is a reflection on when someone is taken from the world too soon, we often lose the potential that they might have had to make a difference.",
     "edition_info": "1/1 NFT",
     "series_cluster": "held-in-time",
     "series_position": 3,
     "marketplace_url": "https://superrare.com/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/a-life-short-lived-8",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2022-11-15"
   },
   {
     "id": "in-suspension",
@@ -620,18 +650,19 @@
     "status": "Available",
     "image": "/assets/one-of-ones/in-suspension.jpg",
     "video_url": "/assets/one-of-ones/videos/in-suspension.mp4",
-    "brief_description": "A single-channel 3D video work from Shavonne Wong's early digital practice, studying identity, time, and the material presence of constructed bodies.",
+    "brief_description": "\"In Suspension\" invites viewers to reflect on the experience of individuals facing challenging moments in their lives through its feature of a lone individual sitting at a table surrounded by shifting lighting states that symbolise the passing of time. The artwork changes dynamically based on how long a viewer has been viewing the piece, encouraging viewers to sit and simply be present with the figure, providing a chance for some introspective peace. The character's gentle movements allude to a state of suspension and stasis, provoking an inner exploration of the power of connection and the strength of human support.",
     "edition_info": "1/1 NFT",
     "series_cluster": "held-in-time",
     "series_position": 4,
-    "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5",
+    "marketplace_url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": "/works/the-ties-that-bind/",
+    "mint_date": "2023-03-15"
   },
   {
     "id": "suspense",
     "title": "Suspense",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
@@ -643,24 +674,26 @@
     "series_position": 5,
     "marketplace_url": "https://suspendedsoul.com/marketplace/f0dd7e7c0cd2143dfeedfa7e7d465d74180c5f5ef4516458960354478a4d2e3a",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-05-29"
   },
   {
     "id": "uplift",
     "title": "Uplift",
-    "year": 2022,
+    "year": 2021,
     "medium": "Single-channel digital video · 1/1 NFT",
     "duration": null,
     "status": "Sold",
     "image": "/assets/one-of-ones/uplift.jpg",
     "video_url": "/assets/one-of-ones/videos/uplift.mp4",
-    "brief_description": "A single-channel 3D video work from Shavonne Wong's early digital practice, studying identity, time, and the material presence of constructed bodies.",
+    "brief_description": "The artwork shows women uplifting and empowering each other, acting as pillars of strength for one another. Individually, we are each strong, unique and worthy. And together, women will not only reach the highest peaks of society, but we can also create newer heights.",
     "edition_info": "1/1 NFT",
     "series_cluster": "held-in-time",
     "series_position": 6,
     "marketplace_url": "https://superrare.com/artwork-v2/uplift-25511",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2021-06-18"
   },
   {
     "id": "everything-yet-nothing",
@@ -671,13 +704,14 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/everything-yet-nothing.jpg",
     "video_url": "/assets/one-of-ones/videos/everything-yet-nothing.mp4",
-    "brief_description": "A single-channel 3D video work from Shavonne Wong's early digital practice, studying identity, time, and the material presence of constructed bodies.",
+    "brief_description": "In our world of excessive consumerism where possessions seem to hold the key to happiness and social acceptance, this work reveals the fragile and vulnerable side of that belief. When someone tries to gain a sense of identity through materialistic elements, their whole world can fall apart once the allure fades.",
     "edition_info": "1/1 NFT",
     "series_cluster": "held-in-time",
     "series_position": 7,
     "marketplace_url": "https://superrare.com/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/everything,-yet-nothing-7",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2022-10-08"
   },
   {
     "id": "the-shimmering-veil-i",
@@ -688,13 +722,14 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/the-shimmering-veil-i.jpg",
     "video_url": "/assets/one-of-ones/videos/the-shimmering-veil-i.mp4",
-    "brief_description": "Part of a grouped set within Shavonne Wong's 3D single-channel video practice, using constructed bodies and charged surfaces to study identity, memory, and transformation.",
+    "brief_description": "This is an exploration of self-expression through a mask that embodies all the facets of our life. \"The Shimmering Veil\" is a series of works filled with moving gemstones covering a face like a mask. This work explores the idea of how we often hide behind the highlight reels of our lives. We put the best and most glorified side of us forward, ever shining and changing according to the trends, just so as to protect the things we wish to be hidden.",
     "edition_info": "1/1 NFT",
     "series_cluster": "on-the-surface",
     "series_position": 1,
-    "marketplace_url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-i-43",
+    "marketplace_url": "https://superrare.com/artwork/eth/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-i-43",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2022-09-27"
   },
   {
     "id": "the-shimmering-veil-ii",
@@ -705,13 +740,14 @@
     "status": "Available",
     "image": "/assets/one-of-ones/the-shimmering-veil-ii.jpg",
     "video_url": "/assets/one-of-ones/videos/the-shimmering-veil-ii.mp4",
-    "brief_description": "Part of a grouped set within Shavonne Wong's 3D single-channel video practice, using constructed bodies and charged surfaces to study identity, memory, and transformation.",
+    "brief_description": "This is an exploration of self-expression through a mask that embodies all the facets of our life. \"The Shimmering Veil\" is a series of works filled with moving gemstones covering a face like a mask. This work explores the idea of how we often hide behind the highlight reels of our lives. We put the best and most glorified side of us forward, ever shining and changing according to the trends, just so as to protect the things we wish to be hidden.",
     "edition_info": "1/1 NFT",
     "series_cluster": "on-the-surface",
     "series_position": 2,
-    "marketplace_url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45",
+    "marketplace_url": "https://superrare.com/artwork/eth/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-ii-44",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2022-09-27"
   },
   {
     "id": "the-shimmering-veil-iii",
@@ -722,13 +758,14 @@
     "status": "Available",
     "image": "/assets/one-of-ones/the-shimmering-veil-iii.jpg",
     "video_url": "/assets/one-of-ones/videos/the-shimmering-veil-iii.mp4",
-    "brief_description": "Part of a grouped set within Shavonne Wong's 3D single-channel video practice, using constructed bodies and charged surfaces to study identity, memory, and transformation.",
+    "brief_description": "This is an exploration of self-expression through a mask that embodies all the facets of our life. \"The Shimmering Veil\" is a series of works filled with moving gemstones covering a face like a mask. This work explores the idea of how we often hide behind the highlight reels of our lives. We put the best and most glorified side of us forward, ever shining and changing according to the trends, just so as to protect the things we wish to be hidden.",
     "edition_info": "1/1 NFT",
     "series_cluster": "on-the-surface",
     "series_position": 3,
-    "marketplace_url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45",
+    "marketplace_url": "https://superrare.com/artwork/eth/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": null,
+    "mint_date": "2022-09-27"
   },
   {
     "id": "whirlwind-of-the-waking-dream",
@@ -739,13 +776,14 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/whirlwind-of-the-waking-dream.jpg",
     "video_url": "/assets/one-of-ones/videos/whirlwind-of-the-waking-dream.mp4",
-    "brief_description": "A single-work generative video on motion, dream logic, and the unstable body, retained as its own project page while also belonging to this 3D video body.",
+    "brief_description": "In \"Whirlwind of the Waking Dream,\" I explore the chaos of our fast changing world, particularly in the context of our shift towards a more digital future. The rapid pace of life creates a blur between what's real and what's not, and between dreams and waking life. Each realm portrayed in this artwork represents a different aspect of our constantly changing world. This piece is my way of navigating and coming to terms with these relentless changes. It's a mix of awe, confusion, and a search for meaning in a world that never stops moving. It's about trying to find solid ground in an ever-shifting landscape, a journey that continually challenges my perceptions and pushes me to evolve with the world around me.",
     "edition_info": "1/1 NFT",
     "series_cluster": "on-the-surface",
     "series_position": 4,
     "marketplace_url": "https://gallery.manifold.xyz/whirlwindofthewakingdream",
     "chain": "Optimism",
-    "project_url": "/works/whirlwind-of-the-waking-dream/"
+    "project_url": "/works/whirlwind-of-the-waking-dream/",
+    "mint_date": "2024-01-07"
   },
   {
     "id": "beyond-the-surface",
@@ -756,12 +794,13 @@
     "status": "Sold",
     "image": "/assets/one-of-ones/beyond-the-surface.jpg",
     "video_url": "/assets/one-of-ones/videos/beyond-the-surface.mp4",
-    "brief_description": "A single-channel 3D video work from Shavonne Wong's early digital practice, studying identity, time, and the material presence of constructed bodies.",
+    "brief_description": "\"Beyond the Surface\" is a dynamic artwork that explores the complexities of human perception. The artwork features a still image of a woman sitting at a table, which transforms into a mesmerising video when interacted with. By clicking on the image and typing \"beyond\" on your computer or clicking on the eyes on your mobile device, the artwork transitions to a reflective mirror with rippling waves, creating an otherworldly atmosphere that invites viewers to look deeper into the hidden dimensions of the human character. This artwork encourages viewers to expand their perspectives, move beyond the superficial, and look beyond first impressions. It invites viewers to engage in a thoughtful exploration of perception and the layers of complexity that exist within each individual.",
     "edition_info": "1/1 NFT",
     "series_cluster": "on-the-surface",
     "series_position": 5,
-    "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/beyond-the-surface-6",
+    "marketplace_url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/beyond-the-surface-6",
     "chain": "Ethereum",
-    "project_url": null
+    "project_url": "/works/the-ties-that-bind/",
+    "mint_date": "2023-03-15"
   }
 ]

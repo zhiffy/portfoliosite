@@ -91,7 +91,7 @@
       "id": "panopticon",
       "edition_type": "unique",
       "title": "Panopticon",
-      "year": 2024,
+      "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
       "image": "/assets/one-of-ones/panopticon.jpg",
       "image_alt": "Panopticon",
@@ -199,34 +199,6 @@
       "marketplace_url": "https://foundation.app/mint/eth/0x72e991768e09D8d82BdE9334cCCD7f4beC8c433D/9"
     },
     {
-      "id": "duality-of-eth-extrovert",
-      "edition_type": "unique",
-      "title": "Duality of ETH - Extrovert",
-      "year": 2023,
-      "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/duality-of-eth-extrovert.jpg",
-      "image_alt": "Duality of ETH - Extrovert",
-      "parent_project": {
-        "title": "1/1 Art"
-      },
-      "price_band": "10k_plus",
-      "price_display": "6 ETH",
-      "status": "available",
-      "primary_action": {
-        "type": "marketplace",
-        "label": "View on SuperRare",
-        "url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2"
-      },
-      "chain": "Ethereum",
-      "medium_tags": [
-        "video",
-        "3d"
-      ],
-      "added": "2023-06-19",
-      "source_page": "https://www.shavonnewong.art/nfts/v/6gwmhj423z6h2nys2gz394sjeygjwn",
-      "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2"
-    },
-    {
       "id": "duality-of-eth-introvert",
       "edition_type": "unique",
       "title": "Duality of ETH - Introvert",
@@ -235,7 +207,8 @@
       "image": "/assets/one-of-ones/duality-of-eth-introvert.jpg",
       "image_alt": "Duality of ETH - Introvert",
       "parent_project": {
-        "title": "1/1 Art"
+        "title": "The Ties That Bind",
+        "url": "/works/the-ties-that-bind/"
       },
       "price_band": "10k_plus",
       "price_display": null,
@@ -252,26 +225,28 @@
       ],
       "added": "2023-06-19",
       "source_page": "https://www.shavonnewong.art/nfts/v/c3fppsja2hpkldx25tsax2kmjalhkz",
-      "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---introvert-1"
+      "marketplace_url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---introvert-1",
+      "project_order": 1
     },
     {
-      "id": "the-invisible-march-of-time-ii",
+      "id": "duality-of-eth-extrovert",
       "edition_type": "unique",
-      "title": "The Invisible March of Time II",
+      "title": "Duality of ETH - Extrovert",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/the-invisible-march-of-time-ii.jpg",
-      "image_alt": "The Invisible March of Time II",
+      "image": "/assets/one-of-ones/duality-of-eth-extrovert.jpg",
+      "image_alt": "Duality of ETH - Extrovert",
       "parent_project": {
-        "title": "1/1 Art"
+        "title": "The Ties That Bind",
+        "url": "/works/the-ties-that-bind/"
       },
       "price_band": "10k_plus",
-      "price_display": null,
-      "status": "sold",
+      "price_display": "6 ETH",
+      "status": "available",
       "primary_action": {
-        "type": "inquire",
-        "label": "Talk to the artist directly",
-        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20The%20Invisible%20March%20of%20Time%20II"
+        "type": "marketplace",
+        "label": "View available work on SuperRare",
+        "url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2"
       },
       "chain": "Ethereum",
       "medium_tags": [
@@ -279,8 +254,9 @@
         "3d"
       ],
       "added": "2023-06-19",
-      "source_page": "https://www.shavonnewong.art/nfts/v/st6d52tkah5tyw589kyhl5gez7bj6l",
-      "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-ii-3"
+      "source_page": "https://www.shavonnewong.art/nfts/v/6gwmhj423z6h2nys2gz394sjeygjwn",
+      "marketplace_url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2",
+      "project_order": 2
     },
     {
       "id": "the-invisible-march-of-time-i",
@@ -291,7 +267,8 @@
       "image": "/assets/one-of-ones/the-invisible-march-of-time-i.jpg",
       "image_alt": "The Invisible March of Time I",
       "parent_project": {
-        "title": "1/1 Art"
+        "title": "The Ties That Bind",
+        "url": "/works/the-ties-that-bind/"
       },
       "price_band": "10k_plus",
       "price_display": null,
@@ -308,26 +285,28 @@
       ],
       "added": "2023-06-19",
       "source_page": "https://www.shavonnewong.art/nfts/v/the-invisible-march-of-time-i",
-      "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-i-4"
+      "marketplace_url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-i-4",
+      "project_order": 3
     },
     {
-      "id": "in-suspension",
+      "id": "the-invisible-march-of-time-ii",
       "edition_type": "unique",
-      "title": "In Suspension",
+      "title": "The Invisible March of Time II",
       "year": 2023,
       "medium": "Single-channel digital video · 1/1 NFT",
-      "image": "/assets/one-of-ones/in-suspension.jpg",
-      "image_alt": "In Suspension",
+      "image": "/assets/one-of-ones/the-invisible-march-of-time-ii.jpg",
+      "image_alt": "The Invisible March of Time II",
       "parent_project": {
-        "title": "1/1 Art"
+        "title": "The Ties That Bind",
+        "url": "/works/the-ties-that-bind/"
       },
       "price_band": "10k_plus",
-      "price_display": "8 ETH",
-      "status": "available",
+      "price_display": null,
+      "status": "sold",
       "primary_action": {
-        "type": "marketplace",
-        "label": "View on SuperRare",
-        "url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5"
+        "type": "inquire",
+        "label": "Talk to the artist directly",
+        "url": "mailto:studio@shavonnewong.art?subject=Waitlist%20%E2%80%94%20The%20Invisible%20March%20of%20Time%20II"
       },
       "chain": "Ethereum",
       "medium_tags": [
@@ -335,8 +314,9 @@
         "3d"
       ],
       "added": "2023-06-19",
-      "source_page": "https://www.shavonnewong.art/nfts/v/6lnpe8mhg7rmzmk82arkpd449tfhj5",
-      "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5"
+      "source_page": "https://www.shavonnewong.art/nfts/v/st6d52tkah5tyw589kyhl5gez7bj6l",
+      "marketplace_url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-ii-3",
+      "project_order": 4
     },
     {
       "id": "beyond-the-surface",
@@ -347,7 +327,8 @@
       "image": "/assets/one-of-ones/beyond-the-surface.jpg",
       "image_alt": "Beyond The Surface",
       "parent_project": {
-        "title": "1/1 Art"
+        "title": "The Ties That Bind",
+        "url": "/works/the-ties-that-bind/"
       },
       "price_band": "10k_plus",
       "price_display": null,
@@ -364,7 +345,71 @@
       ],
       "added": "2023-06-19",
       "source_page": "https://www.shavonnewong.art/nfts/v/fhyxxbpcegn4shrbdmynh6k5cr9hdl",
-      "marketplace_url": "https://superrare.com/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/beyond-the-surface-6"
+      "marketplace_url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/beyond-the-surface-6",
+      "project_order": 5
+    },
+    {
+      "id": "in-suspension",
+      "edition_type": "unique",
+      "title": "In Suspension",
+      "year": 2023,
+      "medium": "Single-channel digital video · 1/1 NFT",
+      "image": "/assets/one-of-ones/in-suspension.jpg",
+      "image_alt": "In Suspension",
+      "parent_project": {
+        "title": "The Ties That Bind",
+        "url": "/works/the-ties-that-bind/"
+      },
+      "price_band": "10k_plus",
+      "price_display": "8 ETH",
+      "status": "available",
+      "primary_action": {
+        "type": "marketplace",
+        "label": "View available work on SuperRare",
+        "url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2023-06-19",
+      "source_page": "https://www.shavonnewong.art/nfts/v/6lnpe8mhg7rmzmk82arkpd449tfhj5",
+      "marketplace_url": "https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5",
+      "project_order": 6
+    },
+    {
+      "id": "the-weight-of-the-world",
+      "edition_type": "edition",
+      "title": "The Weight of the World",
+      "year": 2023,
+      "medium": "Dynamic digital artwork · blockchain-linked edition",
+      "image": "/assets/the-ties-that-bind/17-weightoftheworld-1.jpg",
+      "parent_project": {
+        "title": "The Ties That Bind",
+        "url": "/works/the-ties-that-bind/"
+      },
+      "price_band": "2k_10k",
+      "price_display": null,
+      "edition_total": 50,
+      "edition_remaining_fallback": null,
+      "primary_action": {
+        "type": "marketplace",
+        "label": "View listed edition on OpenSea",
+        "url": "https://opensea.io/collection/the-weight-of-the-world-1"
+      },
+      "verification": {
+        "label": "Verify on Etherscan",
+        "url": "https://etherscan.io/token/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82"
+      },
+      "chain": "Ethereum",
+      "medium_tags": [
+        "video",
+        "3d"
+      ],
+      "added": "2026-05-27",
+      "status": "listed",
+      "project_order": 7
     },
     {
       "id": "a-life-short-lived",
@@ -448,7 +493,7 @@
       ],
       "added": "2022-11-06",
       "source_page": "https://www.shavonnewong.art/nfts/v/the-shimmering-veil-i",
-      "marketplace_url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-i-43"
+      "marketplace_url": "https://superrare.com/artwork/eth/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-i-43"
     },
     {
       "id": "the-shimmering-veil-ii",
@@ -467,7 +512,7 @@
       "primary_action": {
         "type": "marketplace",
         "label": "View on SuperRare",
-        "url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45"
+        "url": "https://superrare.com/artwork/eth/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-ii-44"
       },
       "chain": "Ethereum",
       "medium_tags": [
@@ -476,7 +521,7 @@
       ],
       "added": "2022-11-06",
       "source_page": "https://www.shavonnewong.art/nfts/v/the-shimmering-veil-ii",
-      "marketplace_url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45"
+      "marketplace_url": "https://superrare.com/artwork/eth/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-ii-44"
     },
     {
       "id": "the-shimmering-veil-iii",
@@ -495,7 +540,7 @@
       "primary_action": {
         "type": "marketplace",
         "label": "View on SuperRare",
-        "url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45"
+        "url": "https://superrare.com/artwork/eth/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45"
       },
       "chain": "Ethereum",
       "medium_tags": [
@@ -504,7 +549,7 @@
       ],
       "added": "2022-11-06",
       "source_page": "https://www.shavonnewong.art/nfts/v/the-shimmering-veil-iii",
-      "marketplace_url": "https://superrare.com/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45"
+      "marketplace_url": "https://superrare.com/artwork/eth/0xc7492a07cd68699b30b4eaef18dd2413351c563c/the-shimmering-veil-iii-45"
     },
     {
       "id": "everything-yet-nothing",
@@ -823,7 +868,8 @@
       "image": "/assets/one-of-ones/the-kiss.jpg",
       "image_alt": "The Kiss",
       "parent_project": {
-        "title": "1/1 Art"
+        "title": "Love is Love",
+        "url": "/works/love-is-love/"
       },
       "price_band": "10k_plus",
       "price_display": null,
@@ -840,7 +886,7 @@
       ],
       "added": "2022-01-27",
       "source_page": "https://www.shavonnewong.art/nfts/v/the-kiss",
-      "marketplace_url": "https://superrare.com/artwork-v2/the-kiss-28474"
+      "marketplace_url": "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/28474"
     },
     {
       "id": "uplift",
@@ -1277,7 +1323,7 @@
       "price_display": null,
       "series_total": 60,
       "series_available_fallback": 1,
-      "fallback_updated": "2026-05-27",
+      "fallback_updated": "2026-06-03",
       "series_section_url": "/works/by-proxy/#available",
       "primary_action": {
         "type": "marketplace",
@@ -1306,7 +1352,7 @@
       "edition_type": "series",
       "title": "Love is Love",
       "year": 2021,
-      "medium": "500 unique generative works · digital",
+      "medium": "500 generative editions · digital",
       "image": "/assets/love-is-love/og-image.jpg",
       "parent_project": {
         "title": "Love is Love",
@@ -1315,12 +1361,13 @@
       "price_band": "under_2k",
       "price_display": null,
       "series_total": 500,
-      "series_available_fallback": null,
-      "series_section_url": "/works/love-is-love/#available",
+      "series_available_fallback": 18,
+      "fallback_updated": "2026-06-03",
+      "series_section_url": "https://opensea.io/collection/love-is-love-shavonnewong?status=listed",
       "primary_action": {
         "type": "marketplace",
-        "label": "Browse the series",
-        "url": "/works/love-is-love/#available"
+        "label": "Browse listed editions",
+        "url": "https://opensea.io/collection/love-is-love-shavonnewong?status=listed"
       },
       "verification": {
         "label": "Verify contract on Etherscan",
@@ -1336,37 +1383,6 @@
         "contract": "0x30de3508e1f826910a254719258346570b27627e",
         "chain": "ethereum"
       },
-      "added": "2026-05-27"
-    },
-    {
-      "id": "the-weight-of-the-world",
-      "edition_type": "edition",
-      "title": "The Weight of the World",
-      "year": 2023,
-      "medium": "Dynamic digital artwork · blockchain-linked edition",
-      "image": "/assets/the-ties-that-bind/17-weightoftheworld-1.jpg",
-      "parent_project": {
-        "title": "The Ties That Bind",
-        "url": "/works/the-ties-that-bind/"
-      },
-      "price_band": "2k_10k",
-      "price_display": null,
-      "edition_total": 50,
-      "edition_remaining_fallback": null,
-      "primary_action": {
-        "type": "marketplace",
-        "label": "View on OpenSea",
-        "url": "https://opensea.io/collection/the-weight-of-the-world-1"
-      },
-      "verification": {
-        "label": "Verify on Etherscan",
-        "url": "https://etherscan.io/token/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82"
-      },
-      "chain": "Ethereum",
-      "medium_tags": [
-        "video",
-        "3d"
-      ],
       "added": "2026-05-27"
     },
     {

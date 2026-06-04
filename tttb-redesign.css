@@ -205,15 +205,9 @@
   .sp-tttb-page .tttb-plate-flip .sp-plate-caption { order: 1; }
 }
 
-/* a touch more presence on the plate imagery */
+/* keep artwork plates true to their source ratio */
 .sp-tttb-page .sp-project-main .sp-plate-media {
   border: 1px solid var(--hairline);
-}
-.sp-tttb-page .sp-plate-media img {
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.sp-tttb-page .sp-plate:hover .sp-plate-media img {
-  transform: scale(1.03);
 }
 
 /* ---------- WORKS: break out of the 2-column project grid ----------

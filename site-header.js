@@ -159,8 +159,46 @@
     });
   }
 
-  /* ---------- 4 : scroll thread (Iris progress accent) ---------- */
+  /* ---------- 4 : consistent page footer ---------- */
   (function () {
+    var oldFooters = document.querySelectorAll('.wr-footer-nav, .sp-footer-nav, .wk-footer-nav, .wk2-footer');
+    for (var f = 0; f < oldFooters.length; f++) oldFooters[f].remove();
+
+    var styleId = 'sw-page-footer-style';
+    if (!document.getElementById(styleId)) {
+      var style = document.createElement('style');
+      style.id = styleId;
+      style.textContent =
+        '.sw-page-footer{margin:clamp(48px,8vh,92px) auto 0;padding:clamp(22px,4vh,34px) clamp(20px,4vw,72px) clamp(34px,6vh,58px);border-top:1px solid rgba(24,25,43,.16);font-family:Mulish,Helvetica Neue,Arial,sans-serif;color:#18192B}' +
+        '.sw-page-footer__inner{max-width:1500px;margin:0 auto;display:flex;justify-content:flex-end}' +
+        '.sw-page-footer__top{appearance:none;border:1px solid rgba(79,88,166,.62);background:transparent;color:#4F58A6;min-height:42px;padding:0 18px;font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease}' +
+        '.sw-page-footer__top:hover,.sw-page-footer__top:focus-visible{background:#4F58A6;color:#F8F8FC;border-color:#4F58A6;outline:0}' +
+        '@media(max-width:700px){.sw-page-footer{padding-left:18px;padding-right:18px}.sw-page-footer__inner{justify-content:flex-start}.sw-page-footer__top{width:100%;justify-content:center}}';
+      document.head.appendChild(style);
+    }
+
+    var main = document.querySelector('main');
+    if (!main || main.querySelector('[data-site-footer]')) return;
+
+    var footer = document.createElement('footer');
+    footer.className = 'sw-page-footer';
+    footer.setAttribute('data-site-footer', '');
+    footer.innerHTML =
+      '<div class="sw-page-footer__inner">' +
+        '<button class="sw-page-footer__top" type="button" data-site-back-top>Back to top</button>' +
+      '</div>';
+    main.appendChild(footer);
+  })();
+
+  document.addEventListener('click', function (e) {
+    var target = e.target && e.target.closest ? e.target.closest('[data-site-back-top]') : null;
+    if (!target) return;
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ---------- 5 : scroll thread (Iris progress accent) ---------- */
+  if (!isHome) (function () {
     var thread = document.createElement('div');
     thread.className = 'sw-scroll-thread';
     thread.setAttribute('aria-hidden', 'true');
@@ -201,5 +239,64 @@
       if (!raf) raf = window.requestAnimationFrame(paint);
     }, { passive: true });
     paint();
+  })();
+
+  /* ---------- 6 : sticky subscribe CTA ---------- */
+  if (!isHome) (function () {
+    var KEY = 'sw-subscribe-cta-dismissed';
+    if (document.getElementById('sw-subscribe-cta')) return;
+    try {
+      if (window.localStorage.getItem(KEY) === 'yes') return;
+    } catch (e) {}
+
+    var styleId = 'sw-subscribe-cta-style';
+    if (!document.getElementById(styleId)) {
+      var style = document.createElement('style');
+      style.id = styleId;
+      style.textContent =
+        '.sw-subscribe-cta{position:fixed;right:clamp(14px,2vw,28px);bottom:clamp(14px,2vw,28px);z-index:140;display:flex;align-items:center;gap:12px;max-width:min(390px,calc(100vw - 28px));padding:12px 12px 12px 15px;background:#18192B;color:#EDEDF4;border:1px solid rgba(237,237,244,.22);box-shadow:0 18px 44px rgba(24,25,43,.2);font-family:Mulish,Helvetica Neue,Arial,sans-serif;opacity:0;transform:translateY(10px);transition:opacity .28s ease,transform .28s ease}' +
+        '.sw-subscribe-cta.is-visible{opacity:1;transform:translateY(0)}' +
+        '.sw-subscribe-cta__link{display:grid;gap:1px;min-width:0;color:inherit;text-decoration:none}' +
+        '.sw-subscribe-cta__kicker{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#D0D3EC;white-space:nowrap}' +
+        '.sw-subscribe-cta__title{font-size:14px;line-height:1.25;font-style:italic;font-weight:300;color:#fff}' +
+        '.sw-subscribe-cta__button{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:0 13px;border:1px solid rgba(237,237,244,.45);color:#fff;font-size:10px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}' +
+        '.sw-subscribe-cta__close{appearance:none;border:0;background:transparent;color:#D0D3EC;font:inherit;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:8px 2px;cursor:pointer}' +
+        '.sw-subscribe-cta__link:hover .sw-subscribe-cta__button{background:#EDEDF4;color:#18192B}' +
+        '.sw-subscribe-cta__close:hover{color:#fff}' +
+        '@media(max-width:640px){.sw-subscribe-cta{left:12px;right:12px;bottom:12px;max-width:none;gap:10px}.sw-subscribe-cta__title{font-size:13px}.sw-subscribe-cta__button{padding:0 10px}.sw-subscribe-cta__close{font-size:10px}}' +
+        '@media(prefers-reduced-motion:reduce){.sw-subscribe-cta{transition:none}}';
+      document.head.appendChild(style);
+    }
+
+    function targetHref() {
+      var form = document.querySelector('[data-newsletter-form]');
+      if (form) {
+        if (!form.id) form.id = 'sw-subscribe-form';
+        return '#' + form.id;
+      }
+      return 'writing.html#sw-subscribe-form';
+    }
+
+    var cta = document.createElement('aside');
+    cta.id = 'sw-subscribe-cta';
+    cta.className = 'sw-subscribe-cta';
+    cta.setAttribute('aria-label', 'Subscribe to studio updates');
+    cta.innerHTML =
+      '<a class="sw-subscribe-cta__link" href="' + targetHref() + '">' +
+        '<span class="sw-subscribe-cta__kicker">Studio updates</span>' +
+        '<span class="sw-subscribe-cta__title">New work, exhibitions, and drops.</span>' +
+      '</a>' +
+      '<a class="sw-subscribe-cta__button" href="' + targetHref() + '">Subscribe</a>' +
+      '<button class="sw-subscribe-cta__close" type="button" aria-label="Dismiss subscribe prompt">Close</button>';
+
+    cta.querySelector('.sw-subscribe-cta__close').addEventListener('click', function () {
+      cta.remove();
+      try { window.localStorage.setItem(KEY, 'yes'); } catch (e) {}
+    });
+
+    document.body.appendChild(cta);
+    window.requestAnimationFrame(function () {
+      cta.classList.add('is-visible');
+    });
   })();
 })();

@@ -81,7 +81,6 @@ const stillSources = {
   "oceans-whisper": "MarieClaire_Underwater_highres_still.jpg",
   "panopticon": "Panopticon_Final_1 copy.jpg",
   "stargazers-dream": "MarieClaire_Space_highres_still.jpg",
-  "the-hug": "The Kiss.jpg",
   "the-illusion-of-connection-i": "The Illusion of Connection I copy.jpg",
   "the-invisible-march-of-time-i": "Invisible March of Time_1_Old.png",
   "the-invisible-march-of-time-ii": "Invisible March of Time_1_Young.png",

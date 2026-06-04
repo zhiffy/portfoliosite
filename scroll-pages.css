@@ -780,8 +780,9 @@ html {
 .sp-project-hero-media img,
 .sp-project-hero-media video {
   width: 100%;
-  min-height: clamp(420px, 62vh, 760px);
-  object-fit: cover;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
   display: block;
 }
 
@@ -792,7 +793,7 @@ html {
 .sp-project-hero-media.is-media-native img,
 .sp-project-hero-media.is-media-native video,
 .sp-image-card.is-media-native img {
-  aspect-ratio: var(--sp-media-ratio, 16 / 9);
+  aspect-ratio: auto;
   min-height: 0;
   object-fit: contain;
 }
@@ -890,24 +891,25 @@ html {
 
 .sp-image-card img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   display: block;
   background: var(--veil);
 }
 
 .sp-image-card.wide img {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: auto;
 }
 
 .sp-section-media .sp-image-card img,
 .sp-section-media.is-single .sp-image-card img {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: auto;
 }
 
 .sp-section-media .sp-image-card.is-media-native img,
 .sp-section-media.is-single .sp-image-card.is-media-native img {
-  aspect-ratio: var(--sp-media-ratio, 16 / 9);
+  aspect-ratio: auto;
   object-fit: contain;
 }
 
@@ -956,19 +958,18 @@ html {
 }
 
 .sp-project-main .sp-plate-media {
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 2px;
   margin: 0;
-  background: #22201E;
+  background: transparent;
   position: relative;
 }
 
 .sp-project-main .sp-plate-media img,
 .sp-project-main .sp-plate-media video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
@@ -995,7 +996,7 @@ html {
   background: rgba(0,0,0,0.62);
   color: #F1EBDE;
   border: none;
-  border-radius: 999px;
+  border-radius: 2px;
   cursor: pointer;
   font-family: var(--sans);
   font-size: 9px;
@@ -1084,7 +1085,9 @@ html {
   font-size: 11px;
   line-height: 1.6;
   color: rgba(27,27,27,0.65);
-  margin-top: 4px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(27,27,27,0.12);
 }
 
 .sp-plate-acquire p {
@@ -1092,7 +1095,7 @@ html {
 }
 
 .sp-plate-acquire p + p {
-  margin-top: 2px;
+  margin-top: 8px;
 }
 
 .sp-plate-acquire a,
@@ -1106,11 +1109,32 @@ html {
 }
 
 .sp-plate-market {
-  font-size: 10px;
-  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  font-size: 9px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(27,27,27,0.45);
-  margin-top: 2px;
+  margin-top: 0;
+}
+
+.sp-plate-market a,
+.sp-plate-market span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+}
+
+.sp-plate-market a {
+  padding: 0 8px;
+  border: 1px solid rgba(27,27,27,0.18);
+  background: rgba(255,255,255,0.18);
+}
+
+.sp-plate-market span {
+  color: rgba(27,27,27,0.38);
 }
 
 .sp-plate-link {
@@ -1137,9 +1161,11 @@ html {
 
 .sp-edition-samples img {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   display: block;
+  background: var(--veil);
 }
 
 .sp-series-grid {
@@ -1163,10 +1189,12 @@ html {
 
 .sp-series-tile img {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   border-radius: 2px;
   display: block;
+  background: var(--veil);
   transition: transform 200ms ease;
 }
 
@@ -1240,7 +1268,7 @@ html {
   background: transparent;
   color: var(--text-2);
   border: 1px solid var(--hairline-strong);
-  border-radius: 999px;
+  border-radius: 2px;
   cursor: pointer;
 }
 
@@ -1273,7 +1301,7 @@ html {
   background: transparent;
   color: var(--text-2);
   border: 1px solid var(--hairline-strong);
-  border-radius: 999px;
+  border-radius: 2px;
   cursor: pointer;
 }
 
@@ -1360,7 +1388,7 @@ html {
   width: max-content;
   max-width: 100%;
   border: 1px solid var(--hairline-strong);
-  border-radius: 999px;
+  border-radius: 2px;
   padding: 3px 8px;
   font-family: var(--sans);
   font-size: 8.5px;
@@ -1517,9 +1545,11 @@ html {
 
 .sp-related-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   display: block;
+  background: var(--veil);
 }
 
 .sp-related-card h3 {
@@ -1846,7 +1876,7 @@ html {
   }
   .sp-project-hero-media img,
   .sp-project-hero-media video {
-    min-height: 320px;
+    min-height: 0;
   }
   .sp-title {
     font-size: clamp(52px, 15vw, 86px);
@@ -1940,7 +1970,7 @@ html {
     word-break: break-word;
   }
   .sp-section {
-    padding: 42px 0;
+    padding: 34px 0;
   }
   .sp-section-head {
     display: grid;
@@ -2102,3 +2132,151 @@ html {
 /* Q&A sub-headings (project "Questions" sections) */
 .sp-q { font-size: clamp(16px, 1.4vw, 19px); font-weight: 500; margin: 20px 0 4px; letter-spacing: -0.01em; }
 .sp-q:first-of-type { margin-top: 0; }
+
+/* ============================================================
+   WORKS PAGES — readability pass (design-system aligned).
+   Body to Slate at a comfortable size and a 64ch measure;
+   intros to Slate; 1px section rules down to 0.5px hairlines;
+   sticky section labels use the empty left column for rhythm.
+   No copy was changed — type, colour, measure, spacing only.
+   ============================================================ */
+.sp-copy {
+  font-size: 16.5px;          /* was 15px */
+  line-height: 1.7;           /* was 1.75 */
+  color: var(--text);         /* Slate — was Fog grey (--text-2) */
+}
+.sp-copy { max-width: 64ch; }
+.sp-text-stack .sp-copy { max-width: 64ch; }   /* was 760px (~85ch) */
+.sp-text-stack { gap: 20px; }
+
+.sp-intro { color: var(--text); line-height: 1.65; }  /* was Fog */
+
+/* DS rule: no 1px rules anywhere — section dividers to 0.5px hairline */
+.sp-section { border-bottom-width: 0.5px; }
+
+/* Sticky section label: fills the otherwise-empty left column and
+   gives long pages a sense of place. Desktop only (mobile is single column). */
+@media (min-width: 901px) {
+  .sp-project-grid > div:first-child {
+    position: sticky;
+    top: 112px;               /* clears the fixed header + sticky sub-nav */
+    align-self: start;
+  }
+}
+
+/* ============================================================
+   WORKS PAGES — editorial rail layout.
+   Narrow flush-left sticky label rail; body anchored beside it
+   at a readable 66ch; image media expands to the full wide
+   column so the work is large; tighter, even vertical rhythm.
+   CSS only — no content changed.
+   ============================================================ */
+@media (min-width: 901px) {
+  .sp-project-grid {
+    grid-template-columns: clamp(120px, 11vw, 150px) minmax(0, 1fr);
+    column-gap: clamp(26px, 3vw, 48px);
+  }
+  /* sticky rail label, flush to the content-left edge */
+  .sp-project-grid > div:first-child { position: sticky; top: 112px; align-self: start; }
+
+  /* text holds a readable measure, anchored left against the rail */
+  .sp-text-stack > .sp-copy,
+  .sp-text-stack > .sp-intro,
+  .sp-text-stack > .sp-project-line,
+  .sp-text-stack > p,
+  .sp-text-stack > .sp-detail-grid,
+  .sp-text-stack > .sp-contact-line { max-width: 66ch; }
+
+  /* image media uses the full width of the wide column (art-forward) */
+  .sp-text-stack > .sp-section-media,
+  .sp-text-stack > .sp-image-card,
+  .sp-text-stack > figure { max-width: none; width: 100%; }
+}
+
+/* tighter, even rhythm */
+.sp-section { padding-top: 38px; padding-bottom: 38px; }
+.sp-section-head { margin-bottom: 22px; }
+.sp-text-stack { gap: 18px; }
+
+/* ============================================================
+   WORKS PAGES — left-rail in-page nav + wider reading column.
+   The section nav moves from a top bar (which stacked under the
+   site header) to a vertical rail pinned at the left. On those
+   pages the per-section label column collapses so text and media
+   use the full content width. Desktop only; mobile keeps the
+   original top bar.
+   ============================================================ */
+
+/* less skinny measure on all works pages */
+@media (min-width: 901px) {
+  .sp-text-stack > .sp-copy,
+  .sp-text-stack > .sp-intro,
+  .sp-text-stack > .sp-project-line,
+  .sp-text-stack > p,
+  .sp-text-stack > .sp-detail-grid,
+  .sp-text-stack > .sp-contact-line { max-width: 72ch; }
+}
+
+@media (min-width: 1180px) {
+  .sp-subnav {
+    position: fixed;
+    top: calc(var(--nav-h, 56px) + 30px);
+    left: max(clamp(20px, 3.5vw, 56px), calc((100vw - var(--site-max)) / 2 - 8px));
+    width: 132px;
+    max-height: calc(100vh - var(--nav-h) - 72px);
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+    padding: 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 0;
+    z-index: 40;
+  }
+  .sp-subnav a { white-space: nowrap; }
+
+  /* shift the page content clear of the left rail */
+  body:has(.sp-subnav) .sp-main { padding-left: clamp(170px, 12vw, 210px); }
+
+  /* with the nav on the left, collapse the per-section label rail so
+     text + media span the full width (kicker becomes an inline label) */
+  body:has(.sp-subnav) .sp-project-grid { grid-template-columns: 1fr; }
+  body:has(.sp-subnav) .sp-project-grid > div:first-child {
+    position: static;
+    margin-bottom: 12px;
+  }
+}
+
+/* ------------------------------------------------------------
+   Works left rail — refinement: lower, further left, no scrollbar,
+   responsive clearance (overrides the block above).
+   ------------------------------------------------------------ */
+@media (min-width: 1180px) {
+  .sp-subnav {
+    position: fixed;
+    top: 50%;
+    left: clamp(12px, 1.8vw, 34px);
+    transform: translateY(-50%);
+    width: clamp(132px, 12vw, 168px);
+    max-height: none;          /* no clipping */
+    overflow: visible;         /* kills the scrollbar */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 0;
+    z-index: 40;
+  }
+  .sp-subnav a { white-space: normal; line-height: 1.35; }       /* long labels wrap, no overflow */
+
+  /* content clears the rail at any width, but stays wide when the
+     centred margin already provides room */
+  body:has(.sp-subnav) .sp-main {
+    padding-left: max(var(--pad), calc(230px - max(0px, (100vw - var(--site-max)) / 2)));
+  }
+}

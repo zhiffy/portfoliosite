@@ -3,13 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <title>Love is Love. Shavonne Wong</title>
-  <meta name="description" content="A 2021 generative NFT project about love equality, self-identification, and the emotional charge of collectible variation.">
+  <meta name="description" content="A 2021 NFT project about love equality, self-identification, and chosen recognition, with 500 editions and one sold 1/1 work.">
   <meta name="author" content="Shavonne Wong">
   <link rel="canonical" href="https://shavonnewong.art/works/love-is-love/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Love is Love. Shavonne Wong">
-  <meta property="og:description" content="A 500-piece generative NFT project on love equality, self-identification, and chosen recognition.">
+  <meta property="og:description" content="A 2021 NFT project on love equality, with 500 editions and one sold 1/1 work.">
   <meta property="og:image" content="https://shavonnewong.art/assets/love-is-love/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -17,6 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="scroll-narrative.css?v=20260531-sb2">
+  <link rel="stylesheet" href="scroll-pages.css?v=20260604-left-rail">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -25,10 +30,10 @@
     "creator": { "@type": "Person", "name": "Shavonne Wong", "sameAs": "https://en.wikipedia.org/wiki/Shavonne_Wong" },
     "dateCreated": "2021",
     "datePublished": "2021",
-    "artMedium": "Generative digital artwork, 500-piece edition",
+    "artMedium": "Generative digital artwork, 500 editions and one 1/1 NFT",
     "url": "https://shavonnewong.art/works/love-is-love/",
     "image": "https://shavonnewong.art/assets/love-is-love/og-image.jpg",
-    "description": "Love is Love, a 2021 generative digital project about love equality, self-identification, and chosen recognition, released as a 500-piece edition and collected by Idris Elba.",
+    "description": "Love is Love, a 2021 digital project about love equality, self-identification, and chosen recognition, released as 500 editions plus one sold 1/1 work and collected by Idris Elba.",
     "isPartOf": { "@type": "CollectionPage", "name": "Works", "url": "https://shavonnewong.art/works/" }
   }
   </script>
@@ -65,12 +70,11 @@
     .bp2-hero-desc { margin: 28px 0 0; font-size: 15px; line-height: 1.65; color: #18192B; max-width: 56ch; }
     .bp2-hero-cover {
       position: relative;
-      aspect-ratio: 1200/630;
       max-height: 80vh;
       background: #EDEDF4;
-      overflow: hidden;
+      overflow: visible;
     }
-    .bp2-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .bp2-hero-cover img { width: 100%; height: auto; object-fit: contain; display: block; }
     .bp2-hero-cover figcaption {
       position: absolute; left: 16px; bottom: 16px;
       font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
@@ -113,11 +117,10 @@
     .bp2-sheet { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
     .bp2-cell {
       position: relative;
-      aspect-ratio: 1/1;
       background: #EDEDF4;
-      overflow: hidden;
+      overflow: visible;
     }
-    .bp2-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .bp2-cell img { width: 100%; height: auto; object-fit: contain; display: block; }
     .bp2-cell-overlay {
       position: absolute; inset: 0;
       display: flex; align-items: flex-end; justify-content: space-between; gap: 4px;
@@ -143,11 +146,11 @@
       border-top: 1px solid rgba(24,25,43,0.10);
     }
     .bp2-context-grid {
-      display: grid; grid-template-columns: 200px minmax(0, 1fr);
+      display: grid; grid-template-columns: clamp(120px, 11vw, 150px) minmax(0, 1fr);
       gap: clamp(24px, 5vw, 64px);
       align-items: start;
     }
-    .bp2-prose { max-width: 72ch; }
+    .bp2-prose { max-width: 66ch; }
     .bp2-prose p { margin: 0; font-size: 16px; line-height: 1.75; color: #18192B; }
     .bp2-prose p + p { margin-top: 18px; }
     .bp2-launch-list {
@@ -212,7 +215,7 @@
     .bp2-badge::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #545C9E; }
 
     /* Highlight callout. Love is Love has a unique highlight piece next to the
-       500-piece edition; this block calls it out as a sibling note inside the
+       500 editions; this block calls it out as a sibling note inside the
        sequence (no image, since the only available image of it is the hero). */
     .bp2-highlight {
       max-width: var(--site-max); margin: 0 auto;
@@ -231,9 +234,8 @@
     .bp2-related-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: clamp(28px, 4vh, 44px); }
     .bp2-related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 36px); }
     .bp2-related-card { display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: inherit; }
-    .bp2-related-fig { aspect-ratio: 4/3; overflow: hidden; background: #EDEDF4; }
-    .bp2-related-fig img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
-    .bp2-related-card:hover .bp2-related-fig img { transform: scale(1.025); }
+    .bp2-related-fig { overflow: visible; background: #EDEDF4; }
+    .bp2-related-fig img { width: 100%; height: auto; object-fit: contain; display: block; }
     .bp2-related-card h3 { font-size: 16px; font-weight: 500; margin: 0; }
     .bp2-related-card:hover h3 { color: #545C9E; }
     .bp2-related-card p { font-size: 12px; color: #595E78; margin: 0; }
@@ -260,6 +262,18 @@
       .bp2-stick-back { padding: 7px 10px; font-size: 10px; letter-spacing: 0.12em; }
       .bp2-launch-list { grid-template-columns: 1fr; }
     }
+    @media (min-width: 1180px) {
+      .bp2-stick { display: none !important; }
+      body:has(.sp-subnav) .bp2-hero,
+      body:has(.sp-subnav) .bp2-context,
+      body:has(.sp-subnav) .bp2-related,
+      body:has(.sp-subnav) .bp2-colo,
+      body:has(.sp-subnav) .bp2-highlight,
+      body:has(.sp-subnav) .bp2-seq,
+      body:has(.sp-subnav) .bp2-index {
+        padding-left: max(clamp(24px,5vw,80px), calc(230px - max(0px, (100vw - var(--site-max)) / 2)));
+      }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -272,62 +286,73 @@
     ]
   }
   </script>
+  <style>
+    /* 1/1 video hero + compact edition strip (The Kiss redesign) */
+    .bp2-hero-cover--video { max-height: 78vh; }
+    .bp2-hero-cover--video video { width: 100%; height: auto; object-fit: contain; display: block; }
+    .bp2-edition-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 22px 0 26px; max-width: 640px; }
+    .bp2-edition-strip figure { margin: 0; overflow: visible; background: #EDEDF4; border-radius: 2px; }
+    .bp2-edition-strip img { width: 100%; height: auto; object-fit: contain; display: block; }
+    @media (max-width: 560px) { .bp2-edition-strip { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
+    <!-- End Cloudflare Web Analytics -->
 </head>
 <body>
   <a class="sn-skip-link" href="#main">Skip to content</a>
 
   <header class="sn-nav" data-page-nav>
-    <a href="index.html#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
+    <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
-      <a href="index.html#hero">Home</a>
-      <a href="about.html">About</a>
-      <a href="works.html" class="is-active">Works</a>
-      <a href="writing.html">Writing</a>
-      <a href="press.html">Press</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="/#hero">Home</a>
+      <a href="/about/">About</a>
+      <a href="/works/" class="is-active">Works</a>
+      <a href="/writing/">Writing</a>
+      <a href="/press/">Press</a>
+      <a href="/#contact">Contact</a>
     </nav>
     <div class="sn-meta-right"><span>Love is Love</span><span>Project page</span></div>
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
   </header>
 
-  <div class="bp2-stick" data-stick aria-hidden="true">
-    <div class="bp2-stick-inner">
-      <div class="bp2-stick-title">Love <em>is Love.</em></div>
-      <div class="bp2-stick-current" data-stick-current>
-        <span class="bp2-stick-current-prefix">In view</span><span data-stick-current-label>Edition #112</span>
-      </div>
-      <a href="#index" class="bp2-stick-back" data-stick-back>Back to index</a>
-    </div>
-  </div>
+  <nav class="sp-subnav" aria-label="Page sections">
+    <a href="#overview">Overview</a>
+    <a href="#project">Project text</a>
+    <a href="#edition">Editions</a>
+    <a href="#statement">Statement</a>
+    <a href="#related">Related</a>
+    <a href="#details">Details</a>
+  </nav>
 
   <main id="main">
 
     <!-- HERO ====================================================== -->
-    <section class="bp2-hero" aria-label="Love is Love overview">
+    <section class="bp2-hero" id="overview" aria-label="Love is Love overview">
       <div class="bp2-hero-grid">
         <div>
-          <p class="bp2-eyebrow">Project. 2021</p>
+          <p class="bp2-eyebrow">Project . 2021 . 500 editions + 1/1</p>
           <h1 class="bp2-hero-title">Love <em>is Love.</em></h1>
           <p class="bp2-hero-tag">A statement, a belief, and a celebration of love in every form.</p>
           <p class="bp2-hero-meta">
-            <strong>2021</strong> . 500-piece edition + 1 highlight . Generative digital artwork . Ethereum
+            <strong>2021</strong> . 500 editions . The Kiss, 1/1 sold . Ethereum
           </p>
           <p class="bp2-hero-desc">
-            A 500-piece generative NFT project released in November 2021. The system recombines
-            figures and palette systems so love appears as a spectrum rather than a category,
-            holding space for platonic, romantic, and self-love alongside every other form of care.
-            The edition has been collected widely, including by Idris Elba.
+            The 1/1 work in the project is <em>The Kiss</em>, a single moving work that carries its thesis:
+            two figures held at the threshold of intimacy, without asking anyone to rank the relationship.
+            Around it sits a set of 500 editions, released in November 2021 and collected widely,
+            including by Idris Elba.
           </p>
         </div>
-        <figure class="bp2-hero-cover">
-          <img decoding="async" src="assets/love-is-love/og-image.webp" alt="Love is Love, cover image">
-          <figcaption>Love is Love, cover image</figcaption>
+        <figure class="bp2-hero-cover bp2-hero-cover--video">
+          <video src="assets/one-of-ones/videos/the-kiss.mp4" poster="assets/one-of-ones/the-kiss.webp" autoplay muted loop playsinline preload="metadata" aria-label="The Kiss, the sold 1/1 work from Love is Love"></video>
+          <figcaption>The Kiss, 2021 . 1/1 sold</figcaption>
         </figure>
       </div>
     </section>
 
     <!-- PROJECT NARRATIVE ======================================== -->
-    <section class="bp2-context" aria-label="Project narrative">
+    <section class="bp2-context" id="project" aria-label="Project narrative">
       <div class="bp2-context-grid">
         <p class="bp2-eyebrow">Project text</p>
         <div class="bp2-prose">
@@ -338,223 +363,39 @@
           <p>The project also marked Wong's first foray into generative art, opening a path toward using art and technology together as a form of visual poetry.</p>
           <ul class="bp2-launch-list" aria-label="Launch details">
             <li><strong>Dropped</strong>November 5, 2021</li>
-            <li><strong>Edition</strong>500-piece art project</li>
+            <li><strong>Edition</strong>500 editions + one 1/1</li>
             <li><strong>Reception</strong>Sold out within the hour</li>
           </ul>
           <div class="bp2-link-row" aria-label="Project links">
             <a href="https://loveislove.io/" target="_blank" rel="noreferrer">Website</a>
-            <a href="https://opensea.io/collection/love-is-love-shavonnewong" target="_blank" rel="noreferrer">OpenSea</a>
+            <a href="https://opensea.io/collection/love-is-love-shavonnewong?status=listed" target="_blank" rel="noreferrer">OpenSea</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- INDEX (contact sheet) ===================================== -->
-    <section class="bp2-index" id="index" aria-label="Index. selected editions">
-      <header class="bp2-index-head">
-        <h2 class="bp2-index-title">Index. selected <em>editions</em>.</h2>
-        <p class="bp2-index-help">12 of 500. Click to jump to a featured edition or open it on OpenSea.</p>
-      </header>
-      <div class="bp2-rule"></div>
-      <div class="bp2-sheet" role="list" aria-label="Contact sheet, 12 selected editions">
-        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x30de3508e1f826910a254719258346570b27627e/32" target="_blank" rel="noreferrer" data-cell data-status="available" data-title="Edition #32">
-          <img decoding="async" src="assets/love-is-love/samples/edition-032.webp" alt="Love is Love, edition #32" loading="lazy">
-          <span class="bp2-cell-overlay">
-            <span class="bp2-cell-num">01</span>
-            <span class="bp2-cell-title">#32</span>
-            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
-          </span>
-        </a>
-        <a class="bp2-cell" href="#editions-041-069" data-cell data-status="available" data-title="Edition #41">
-          <img decoding="async" src="assets/love-is-love/samples/edition-041.webp" alt="Love is Love, edition #41" loading="lazy">
-          <span class="bp2-cell-overlay">
-            <span class="bp2-cell-num">02</span>
-            <span class="bp2-cell-title">#41</span>
-            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
-          </span>
-        </a>
-        <a class="bp2-cell" href="#editions-041-069" data-cell data-status="available" data-title="Edition #69">
-          <img decoding="async" src="assets/love-is-love/samples/edition-069.webp" alt="Love is Love, edition #69" loading="lazy">
-          <span class="bp2-cell-overlay">
-            <span class="bp2-cell-num">03</span>
-            <span class="bp2-cell-title">#69</span>
-            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
-          </span>
-        </a>
-        <a class="bp2-cell" href="#edition-112" data-cell data-status="available" data-title="Edition #112">
-          <img decoding="async" src="assets/love-is-love/samples/edition-112.webp" alt="Love is Love, edition #112" loading="lazy">
-          <span class="bp2-cell-overlay">
-            <span class="bp2-cell-num">04</span>
-            <span class="bp2-cell-title">#112</span>
-            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
-          </span>
-        </a>
-        <a class="bp2-cell" href="#edition-584" data-cell data-status="available" data-title="Edition #584">
-          <img decoding="async" src="assets/love-is-love/samples/edition-584.webp" alt="Love is Love, edition #584" loading="lazy">
-          <span class="bp2-cell-overlay">
-            <span class="bp2-cell-num">05</span>
-            <span class="bp2-cell-title">#584</span>
-            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
-          </span>
-        </a>
-        <a class="bp2-cell" href="#editions-634-608" data-cell data-status="available" data-title="Edition #608">
-          <img decoding="async" src="assets/love-is-love/samples/edition-608.webp" alt="Love is Love, edition #608" loading="lazy">
-          <span class="bp2-cell-overlay">
-            <span class="bp2-cell-num">06</span>
-            <span class="bp2-cell-title">#608</span>
-            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
-          </span>
-        </a>
-        <a class="bp2-cell" href="#editions-634-608" data-cell data-status="available" data-title="Edition #634">
-          <img decoding="async" src="assets/love-is-love/samples/edition-634.webp" alt="Love is Love, edition #634" loading="lazy">
-          <span class="bp2-cell-overlay">
-            <span class="bp2-cell-num">07</span>
-            <span class="bp2-cell-title">#634</span>
-            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
-          </span>
-        </a>
-        <a class="bp2-cell" href="#edition-637" data-cell data-status="available" data-title="Edition #637">
-          <img decoding="async" src="assets/love-is-love/samples/edition-637.webp" alt="Love is Love, edition #637" loading="lazy">
-          <span class="bp2-cell-overlay">
-            <span class="bp2-cell-num">08</span>
-            <span class="bp2-cell-title">#637</span>
-            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
-          </span>
-        </a>
-        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x30de3508e1f826910a254719258346570b27627e/1155" target="_blank" rel="noreferrer" data-cell data-status="available" data-title="Edition #1155">
-          <img decoding="async" src="assets/love-is-love/samples/edition-1155.webp" alt="Love is Love, edition #1155" loading="lazy">
-          <span class="bp2-cell-overlay">
-            <span class="bp2-cell-num">09</span>
-            <span class="bp2-cell-title">#1155</span>
-            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
-          </span>
-        </a>
-        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x30de3508e1f826910a254719258346570b27627e/1186" target="_blank" rel="noreferrer" data-cell data-status="available" data-title="Edition #1186">
-          <img decoding="async" src="assets/love-is-love/samples/edition-1186.webp" alt="Love is Love, edition #1186" loading="lazy">
-          <span class="bp2-cell-overlay">
-            <span class="bp2-cell-num">10</span>
-            <span class="bp2-cell-title">#1186</span>
-            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
-          </span>
-        </a>
-        <a class="bp2-cell" href="#edition-1276" data-cell data-status="available" data-title="Edition #1276">
-          <img decoding="async" src="assets/love-is-love/samples/edition-1276.webp" alt="Love is Love, edition #1276" loading="lazy">
-          <span class="bp2-cell-overlay">
-            <span class="bp2-cell-num">11</span>
-            <span class="bp2-cell-title">#1276</span>
-            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
-          </span>
-        </a>
-        <a class="bp2-cell" href="https://opensea.io/item/ethereum/0x30de3508e1f826910a254719258346570b27627e/1369" target="_blank" rel="noreferrer" data-cell data-status="available" data-title="Edition #1369">
-          <img decoding="async" src="assets/love-is-love/samples/edition-1369.webp" alt="Love is Love, edition #1369" loading="lazy">
-          <span class="bp2-cell-overlay">
-            <span class="bp2-cell-num">12</span>
-            <span class="bp2-cell-title">#1369</span>
-            <span class="bp2-cell-dot bp2-cell-dot--available" aria-hidden="true"></span>
-          </span>
-        </a>
-      </div>
-      <p class="bp2-sheet-foot"><a href="https://opensea.io/collection/love-is-love-shavonnewong" target="_blank" rel="noreferrer">Browse the complete edition on OpenSea</a></p>
-    </section>
-
-    <!-- FEATURED SEQUENCE ========================================= -->
-    <section class="bp2-seq" aria-label="Selected editions">
-
-      <article id="edition-112" class="bp2-work bp2-work-full" data-work data-title="Edition #112">
-        <figure class="bp2-fig bp2-fig-full">
-          <img decoding="async" src="assets/love-is-love/samples/edition-112.webp" alt="Love is Love, edition #112" loading="lazy">
-        </figure>
-        
-        <div class="bp2-cap">
-          <div class="bp2-cap-num">01</div>
-          <h3 class="bp2-cap-title">Edition #112</h3>
-          <p class="bp2-cap-body">Two figures composed at the threshold of recognition, where the system’s variation reads as a question rather than an answer.</p>
-          <div class="bp2-badges"><span class="bp2-badge">Edition available</span></div>
-        </div>
-      </article>
-
-      <article id="edition-637" class="bp2-work bp2-work-half" data-work data-title="Edition #637">
-        <figure class="bp2-fig bp2-fig-half">
-          <img decoding="async" src="assets/love-is-love/samples/edition-637.webp" alt="Love is Love, edition #637" loading="lazy">
-        </figure>
-        
-        <div class="bp2-cap">
-          <div class="bp2-cap-num">02</div>
-          <h3 class="bp2-cap-title">Edition #637</h3>
-          <p class="bp2-cap-body">A softer register, letting tenderness lead before the system’s other moods take over.</p>
-          <div class="bp2-badges"><span class="bp2-badge">Edition available</span></div>
-        </div>
-      </article>
-
-      <article id="editions-041-069" class="bp2-work bp2-work-diptych" data-work data-title="Edition #41 / #69">
-        <div class="bp2-diptych">
-          <figure class="bp2-fig"><img decoding="async" src="assets/love-is-love/samples/edition-041.webp" alt="Love is Love, edition #41" loading="lazy"></figure>
-          <figure class="bp2-fig"><img decoding="async" src="assets/love-is-love/samples/edition-069.webp" alt="Love is Love, edition #69" loading="lazy"></figure>
-        </div>
-        
-        <div class="bp2-cap">
-          <div class="bp2-cap-num">03</div>
-          <h3 class="bp2-cap-title">Edition #41 / #69</h3>
-          <p class="bp2-cap-body">Two outputs from the same system, holding different ways of being held.</p>
-          <div class="bp2-badges"><span class="bp2-badge">Edition available</span></div>
-        </div>
-      </article>
-
-      <article id="edition-584" class="bp2-work bp2-work-cap-above" data-work data-title="Edition #584">
-        
-        <div class="bp2-cap">
-          <div class="bp2-cap-num">04</div>
-          <h3 class="bp2-cap-title">Edition #584</h3>
-          <p class="bp2-cap-body">A more public-facing pose, the kind of composition the project shares with portrait photography.</p>
-          <div class="bp2-badges"><span class="bp2-badge">Edition available</span></div>
-        </div>
-        <figure class="bp2-fig bp2-fig-full">
-          <img decoding="async" src="assets/love-is-love/samples/edition-584.webp" alt="Love is Love, edition #584" loading="lazy">
-        </figure>
-      </article>
-
-      <article id="edition-1276" class="bp2-work bp2-work-half bp2-work-half-reverse" data-work data-title="Edition #1276">
-        
-        <div class="bp2-cap">
-          <div class="bp2-cap-num">05</div>
-          <h3 class="bp2-cap-title">Edition #1276</h3>
-          <p class="bp2-cap-body">Closer, but not symmetrical. The system was tuned to let pairings feel like individuals.</p>
-          <div class="bp2-badges"><span class="bp2-badge">Edition available</span></div>
-        </div>
-        <figure class="bp2-fig bp2-fig-half">
-          <img decoding="async" src="assets/love-is-love/samples/edition-1276.webp" alt="Love is Love, edition #1276" loading="lazy">
-        </figure>
-      </article>
-
-      <article id="editions-634-608" class="bp2-work bp2-work-diptych" data-work data-title="Edition #634 / #608">
-        <div class="bp2-diptych">
-          <figure class="bp2-fig"><img decoding="async" src="assets/love-is-love/samples/edition-634.webp" alt="Love is Love, edition #634" loading="lazy"></figure>
-          <figure class="bp2-fig"><img decoding="async" src="assets/love-is-love/samples/edition-608.webp" alt="Love is Love, edition #608" loading="lazy"></figure>
-        </div>
-        
-        <div class="bp2-cap">
-          <div class="bp2-cap-num">06</div>
-          <h3 class="bp2-cap-title">Edition #634 / #608</h3>
-          <p class="bp2-cap-body">Side by side, the system’s tonal range shows itself.</p>
-          <div class="bp2-badges"><span class="bp2-badge">Edition available</span></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- HIGHLIGHT NOTE ============================================ -->
-    <section class="bp2-highlight" aria-label="The highlight work">
-      <div class="bp2-highlight-grid">
-        <p class="bp2-eyebrow">A note. the highlight</p>
-        <div class="bp2-highlight-body">
-          <h3>Alongside the 500, one unique highlight.</h3>
-          <p>The Highlight plate (sold) carries the project’s thesis in a single composed work: two generated figures held at the threshold of intimacy, without asking the viewer to rank the relationship. It functions as provenance and orientation, the public-facing image that frames the generative set around love, equality, and chosen recognition.</p>
-          <p>The edition’s mint price, 0.05683 ETH, carried a small sentimental code. The number 5683 maps to L-O-V-E on a phone keypad.</p>
+    <!-- THE EDITION (compact) ================================== -->
+    <section class="bp2-context" id="edition" aria-label="The generative edition">
+      <div class="bp2-context-grid">
+        <p class="bp2-eyebrow">The editions</p>
+        <div class="bp2-prose">
+          <p>Alongside the sold 1/1 work <em>The Kiss</em>, the project released 500 generative editions. The system recombines the same figures and palettes, so each piece is a variation on one idea rather than a separate work. A few are shown here; the full set lives on-chain.</p>
+          <div class="bp2-edition-strip" aria-label="Selected outputs from the 500 editions">
+            <figure><img decoding="async" src="assets/love-is-love/samples/edition-032.webp" alt="Love is Love, generative edition output" loading="lazy"></figure>
+            <figure><img decoding="async" src="assets/love-is-love/samples/edition-041.webp" alt="Love is Love, generative edition output" loading="lazy"></figure>
+            <figure><img decoding="async" src="assets/love-is-love/samples/edition-069.webp" alt="Love is Love, generative edition output" loading="lazy"></figure>
+            <figure><img decoding="async" src="assets/love-is-love/samples/edition-112.webp" alt="Love is Love, generative edition output" loading="lazy"></figure>
+          </div>
+          <div class="bp2-link-row" aria-label="Edition links">
+            <a href="https://opensea.io/collection/love-is-love-shavonnewong?status=listed" target="_blank" rel="noreferrer">Browse the 18 listed editions on OpenSea</a>
+            <a href="https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/28474" target="_blank" rel="noreferrer">View the sold 1/1 on SuperRare</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- STATEMENT ================================================= -->
-    <section class="bp2-context" aria-label="Statement and reception">
+    <section class="bp2-context" id="statement" aria-label="Statement and reception">
       <div class="bp2-context-grid">
         <p class="bp2-eyebrow">Statement</p>
         <div class="bp2-prose">
@@ -569,23 +410,23 @@
     </section>
 
     <!-- RELATED =================================================== -->
-    <section class="bp2-related" aria-label="Other projects">
+    <section class="bp2-related" id="related" aria-label="Other projects">
       <header class="bp2-related-head">
         <h2 class="bp2-index-title">Other <em>projects</em>.</h2>
-        <a href="works.html" class="bp2-eyebrow" style="text-decoration: underline; text-underline-offset: 3px;">All works</a>
+        <a href="/works/" class="bp2-eyebrow" style="text-decoration: underline; text-underline-offset: 3px;">All works</a>
       </header>
       <div class="bp2-related-grid">
-        <a class="bp2-related-card" href="by-proxy.html">
+        <a class="bp2-related-card" href="/works/by-proxy/">
           <figure class="bp2-related-fig"><img decoding="async" src="assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy"></figure>
           <h3>By Proxy</h3>
           <p>Sixty unique CGI and photography works with Lenne Chai.</p>
         </a>
-        <a class="bp2-related-card" href="vogue-singapore.html">
+        <a class="bp2-related-card" href="/works/vogue-singapore/">
           <figure class="bp2-related-fig"><img decoding="async" src="assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt="Vogue Singapore NFT cover"></figure>
           <h3>Vogue Singapore NFT Cover</h3>
           <p>Digital cover commission, September 2021.</p>
         </a>
-        <a class="bp2-related-card" href="6529-meme-card.html">
+        <a class="bp2-related-card" href="/works/6529-meme-card/">
           <figure class="bp2-related-fig"><img decoding="async" src="assets/6529-meme-card/01-faces-of-freedom-card.webp" alt="6529 Meme Card"></figure>
           <h3>6529 Meme Card</h3>
           <p>Commissioned card for The Memes by 6529.</p>
@@ -594,26 +435,30 @@
     </section>
 
     <!-- COLOPHON ================================================== -->
-    <section class="bp2-colo" aria-label="Colophon">
+    <section class="bp2-colo" id="details" aria-label="Colophon">
       <div class="bp2-colo-grid">
         <p class="bp2-eyebrow">Colophon</p>
         <dl class="bp2-colo-list">
           <dt>Year</dt><dd>2021</dd>
           <dt>Drop date</dt><dd>November 5, 2021. Sold out within the hour.</dd>
-          <dt>Type</dt><dd>Generative digital artwork. NFT edition.</dd>
-          <dt>Edition</dt><dd>500 unique generative outputs, plus one unique highlight work.</dd>
+          <dt>Type</dt><dd>Generative digital artwork. NFT editions plus 1/1 NFT.</dd>
+          <dt>Edition</dt><dd>500 generative editions, plus The Kiss, the project's sold 1/1 work.</dd>
+          <dt>Availability</dt><dd>18 editions listed on OpenSea. The 1/1 work, The Kiss, is sold and not listed.</dd>
           <dt>Mint</dt><dd>0.05683 ETH. The number 5683 maps to L-O-V-E on a phone keypad.</dd>
           <dt>Chain</dt><dd>Ethereum</dd>
           <dt>Notable collectors</dt><dd>Idris Elba</dd>
-          <dt>Links</dt><dd><a href="https://loveislove.io/" target="_blank" rel="noreferrer">Project website</a> . <a href="https://opensea.io/collection/love-is-love-shavonnewong" target="_blank" rel="noreferrer">Browse the edition on OpenSea</a> . <a href="https://etherscan.io/address/0x30de3508e1f826910a254719258346570b27627e" target="_blank" rel="noreferrer">Verify on Etherscan</a></dd>
+          <dt>Links</dt><dd><a href="https://loveislove.io/" target="_blank" rel="noreferrer">Project website</a> . <a href="https://opensea.io/collection/love-is-love-shavonnewong?status=listed" target="_blank" rel="noreferrer">Browse listed editions on OpenSea</a> . <a href="https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/28474" target="_blank" rel="noreferrer">View The Kiss on SuperRare</a> . <a href="https://etherscan.io/address/0x30de3508e1f826910a254719258346570b27627e" target="_blank" rel="noreferrer">Verify on Etherscan</a></dd>
           <dt>Acquisitions</dt><dd><a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20Love%20is%20Love">studio@shavonnewong.art</a></dd>
         </dl>
       </div>
     </section>
-
+    <footer class="sw-page-footer" data-site-footer>
+      <div class="sw-page-footer__inner">
+        <button class="sw-page-footer__top" type="button" data-site-back-top>Back to top</button>
+      </div>
+    </footer>
   </main>
-
-  <script>
+<script>
     (function () {
       const stick = document.querySelector('[data-stick]');
       const currentLabel = document.querySelector('[data-stick-current-label]');

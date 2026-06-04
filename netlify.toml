@@ -1,0 +1,11 @@
+# Netlify deploy config for shavonnewong.art
+# The site is a Vite multi-page static build. Publish the built dist directory,
+# which contains the rewritten root-absolute asset paths plus _redirects,
+# _headers, sitemap.xml, and robots.txt copied in by the build plugin.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"

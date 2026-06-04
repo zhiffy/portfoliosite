@@ -3,7 +3,7 @@
   // By Proxy — Series catalog
   // Populates the #available grid from /assets/data/by-proxy.json
   // with status filters and a per-work detail modal. Mirrors the
-  // 3d-single-works.js pattern.
+  // Marketplace metadata shape shared with the single-work data.
   // ============================================================
 
   const grid = document.querySelector('[data-series-src], [data-bp-series-src]');
