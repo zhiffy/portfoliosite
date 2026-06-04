@@ -652,8 +652,18 @@ button.wk2-tile {
 @media (max-width: 760px) {
   .wk2-cat-head { grid-template-columns: 1fr; }
   .wk2-cat-count { align-items: flex-start; text-align: left; }
-  .wk2-tabbar { grid-template-columns: 1fr; gap: 12px; padding: 12px 0; }
-  .wk2-tabs { gap: 8px; padding-right: 28px; margin-right: -28px; }
+  .wk2-tabbar { grid-template-columns: 1fr; gap: 12px; padding: 12px 0; overflow: hidden; }
+  .wk2-tabs {
+    gap: 8px;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-right: 0;
+    margin-right: 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .wk2-tabs::-webkit-scrollbar { display: none; }
   .wk2-filters { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0; }
   .wk2-filter select { min-width: 120px; }
   .wk2-grid--projects { grid-template-columns: 1fr; gap: 28px; }

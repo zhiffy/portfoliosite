@@ -3496,34 +3496,125 @@ html.sn-vertical-mode .sn-ticker {
 }
 
 @media (max-width: 900px) {
+  :root {
+    --nav-h: 132px;
+  }
+
   .sn-nav {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 34px 34px 34px;
+    align-content: start;
+    height: var(--nav-h);
+    gap: 6px 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .sn-mark {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: start;
+    min-width: 0;
+  }
+  .sn-links {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 5px 0 7px;
+    border-top: 0.5px solid var(--hairline);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .sn-links::-webkit-scrollbar {
+    display: none;
+  }
+  .sn-links a {
+    flex: 0 0 auto;
+    min-height: 24px;
+    white-space: nowrap;
+  }
+  .sn-nav[data-mode="dark"] .sn-links {
+    border-top-color: rgba(237,237,244,0.14);
   }
   .sn-meta-right {
+    grid-column: 1 / -1;
+    grid-row: 2;
     display: flex;
-    justify-self: end;
+    justify-self: stretch;
+    width: 100%;
+    min-width: 0;
     gap: 0;
   }
-  /* mobile keeps only the language control — hide page labels (sub-pages)
-     and the homepage toggles + readout, but keep the bar itself */
+  /* Mobile keeps the full homepage control bar visible while hiding
+     static page-context labels on sub-pages. */
   .sn-meta-right > :not(.sn-lang-switcher):not(.sn-controlbar) {
     display: none !important;
   }
+  .sn-controlbar {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    height: 34px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .sn-controlbar::-webkit-scrollbar {
+    display: none;
+  }
+  .sn-controlbar > * {
+    flex: 0 0 auto;
+    padding-left: 11px;
+    padding-right: 11px;
+  }
   .sn-controlbar > .sn-view-toggle,
   .sn-controlbar > .sn-scroll-readout {
-    display: none !important;
+    display: inline-flex !important;
   }
-  .sn-controlbar { height: 34px; }
   .sn-controlbar > .sn-lang-switcher { border-left: 0; }
   .sn-meta-right > .sn-lang-switcher {
     height: 34px;
-    max-width: 46vw;
+    max-width: 100%;
   }
   .sn-lang-kicker {
     display: none;
   }
   .sn-lang-select {
-    max-width: 46vw;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --nav-h: 128px;
+  }
+
+  .sn-nav {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .sn-mark {
+    height: 34px;
+  }
+  .sn-controlbar {
+    height: 32px;
+  }
+  .sn-controlbar > * {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .sn-controlbar > .sn-scroll-readout {
+    display: none !important;
+  }
+  .sn-lang-select {
+    max-width: 100%;
   }
 }
 
@@ -4009,3 +4100,22 @@ html.sn-vertical-mode .sn-ticker {
 .sn-contact-sub-msg:empty { display: none; }
 .sn-contact-sub-msg--success { color: #EDEDF4; }
 .sn-contact-sub-msg--error { color: #c98b9b; }
+
+/* ============================================================
+   Mobile header refinement (added 2026-06).
+   Row 1 = wordmark + language, row 2 = nav links.
+   Scroll-mode and mouse-effect toggles are hidden on mobile.
+   ============================================================ */
+@media (max-width: 900px) {
+  :root { --nav-h: 94px; }
+  .sn-nav { grid-template-columns: 1fr auto; grid-template-rows: auto auto; align-content: center; gap: 6px 12px; height: var(--nav-h); padding-top: 10px; padding-bottom: 8px; }
+  .sn-mark { grid-column: 1; grid-row: 1; justify-self: start; align-self: center; }
+  .sn-meta-right { grid-column: 2; grid-row: 1; justify-self: end; align-self: center; width: auto; }
+  .sn-meta-right .sn-controlbar { border: 0; }
+  .sn-meta-right .sn-controlbar > * { border-left: 0; }
+  .sn-view-toggle, .sn-scroll-readout { display: none !important; }
+  .sn-links { grid-column: 1 / -1; grid-row: 2; display: flex; justify-content: space-between; align-items: center; gap: 4px; width: 100%; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 7px 0 2px; border-top: 0.5px solid var(--hairline); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .sn-links::-webkit-scrollbar { display: none; }
+  .sn-links a { flex: 0 1 auto; min-height: 30px; display: inline-flex; align-items: center; white-space: nowrap; }
+  .sn-nav[data-mode="dark"] .sn-links { border-top-color: rgba(237, 237, 244, 0.14); }
+}

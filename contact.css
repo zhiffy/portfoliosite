@@ -267,10 +267,13 @@
 
 .ct-honey {
   position: absolute;
-  left: -9999px;
+  inset: 0 auto auto 0;
   width: 1px;
   height: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
   overflow: hidden;
+  white-space: nowrap;
 }
 
 @media (max-width: 900px) {
@@ -282,5 +285,51 @@
 
   .ct-title {
     font-size: clamp(58px, 17vw, 96px);
+  }
+}
+
+@media (max-width: 600px) {
+  .ct-main {
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 72px;
+  }
+
+  .ct-hero {
+    gap: 26px;
+    padding-bottom: 34px;
+  }
+
+  .ct-intro {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .ct-direct {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    letter-spacing: 0.08em;
+  }
+
+  .ct-panel {
+    gap: 34px;
+    padding-top: 38px;
+  }
+
+  .ct-link-list a {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 13px 0;
+  }
+
+  .ct-input,
+  .ct-select,
+  .ct-textarea {
+    font-size: 16px;
+  }
+
+  .ct-submit {
+    width: 100%;
+    justify-content: center;
   }
 }

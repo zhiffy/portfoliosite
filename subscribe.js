@@ -33,7 +33,7 @@
         if (!form.id) form.id = 'sw-subscribe-form';
         return '#' + form.id;
       }
-      return 'writing.html#sw-subscribe-form';
+      return '/writing/#sw-subscribe-form';
     }
 
     var href = targetHref();

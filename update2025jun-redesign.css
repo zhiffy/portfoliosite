@@ -602,6 +602,10 @@
 .nl-pager:focus-visible .nl-pager-dir { color: rgba(237, 237, 244, 0.7); }
 
 @media (max-width: 760px) {
+  .nl-press-preview {
+    display: none;
+  }
+
   .nl-pager { padding: 12px 10px; gap: 0; }
   .nl-pager-info { display: none; }
   .nl-pager-chevron { font-size: 18px; }

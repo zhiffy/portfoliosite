@@ -225,6 +225,30 @@
 .sn-gw-work--feat .sn-gw-cap-title { font-size: 16px; }
 .sn-gw-work--feat .sn-gw-num { font-size: 15px; top: 12px; left: 13px; }
 
+.sn-gw-work--spotlight .sn-gw-frame {
+  border-color: rgba(80, 88, 162, 0.72);
+  box-shadow: 0 0 0 1px rgba(80, 88, 162, 0.2), 0 18px 42px rgba(37, 43, 91, 0.16);
+}
+
+.sn-gw-work--spotlight .sn-gw-cap {
+  border-left: 2px solid var(--accent-deep);
+  padding-left: 9px;
+}
+
+.sn-gw-work--spotlight .sn-gw-cap::before {
+  content: "Featured";
+  display: block;
+  margin-bottom: 4px;
+  color: var(--accent-deep);
+  font: 700 10px/1 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sn-gw-work--spotlight .sn-gw-cap-title {
+  color: var(--accent-deep);
+}
+
 /* ---- grid placement: landscape feature + reflowed bands ----
    Conditional's cover is landscape, so the feature sits as a wide
    plate in the top band (not a tall left column). The remaining six
@@ -295,8 +319,9 @@ html.sn-vertical-mode .sn-gw-w7 { grid-column: 7 / 13; grid-row: auto; align-sel
   html.sn-vertical-mode .sn-gw-w1 { grid-column: 1 / -1; }
   html.sn-vertical-mode .sn-gw-w2 { grid-column: 1 / -1; align-self: auto; }
   html.sn-vertical-mode .sn-gw-w3 { grid-column: 1 / 2; }
-  html.sn-vertical-mode .sn-gw-w4 { grid-column: 2 / 3; align-self: auto; }
-  html.sn-vertical-mode .sn-gw-w5 { grid-column: 1 / 2; }
-  html.sn-vertical-mode .sn-gw-w6 { grid-column: 2 / 3; }
+  html.sn-vertical-mode .sn-gw-work--spotlight { grid-column: 1 / -1; }
+  html.sn-vertical-mode .sn-gw-w4 { grid-column: 1 / 2; align-self: auto; }
+  html.sn-vertical-mode .sn-gw-w5 { grid-column: 2 / 3; }
+  html.sn-vertical-mode .sn-gw-w6 { grid-column: 1 / 2; }
   html.sn-vertical-mode .sn-gw-w7 { grid-column: 1 / -1; align-self: auto; }
 }

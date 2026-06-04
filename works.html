@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="scroll-narrative.css?v=20260531-sb2">
+  <link rel="stylesheet" href="scroll-narrative.css?v=20260604-mobile-header">
   <link rel="stylesheet" href="works-v2.css?v=20260531-width">
   <script type="application/ld+json">
   {
@@ -487,6 +487,8 @@
       const clearBtn = document.querySelector('[data-filter-clear]');
       const emptyEl = document.querySelector('[data-empty]');
       const availableGrid = document.querySelector('[data-available-grid]');
+      const singleGrid = document.querySelector('[data-single-grid]');
+      const singleLoading = document.querySelector('[data-single-loading]');
       const singleModal = document.querySelector('[data-single-modal]');
       const singleModalImage = document.querySelector('[data-single-modal-image]');
       const singleModalVideo = document.querySelector('[data-single-modal-video]');
@@ -677,13 +679,6 @@
       readUrl();
 
       // ----- Single works from JSON. -----
-      const CLUSTER_LABEL = {
-        'the-watched-self': 'The Watched Self',
-        'stories-older-than-me': 'Stories Older Than Me',
-        'moons-and-flowers': 'Moons and Flowers',
-        'held-in-time': 'Held in Time',
-        'on-the-surface': 'On the Surface'
-      };
       function singleWorkId(work) { return work.id || slug(work.title || ''); }
       function slug(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
       function workAvailability(status) {
@@ -761,7 +756,7 @@
       function openSingleWork(id) {
         const it = singleWorksById.get(id);
         if (!it || !singleModal) return;
-        const cluster = CLUSTER_LABEL[it.series_cluster] || 'Single work';
+        const cluster = '';
         const status = workStatusLabel(it.status);
         const imageSrc = String(it.image || '').replace(/^\//, '');
         const videoSrc = String(it.video_url || '').replace(/^\//, '');
@@ -797,7 +792,7 @@
         }
         singleModalImage.alt = (it.title || 'Work') + ' still';
         const dateLabel = it.mint_date ? 'Minted ' + formatMintDate(it.mint_date) : workDisplayYear(it);
-        singleModalMeta.textContent = [dateLabel, cluster].filter(Boolean).join(' Â· ');
+        singleModalMeta.textContent = [dateLabel, cluster].filter(Boolean).join(' · ');
         singleModalTitle.textContent = it.title || '';
         singleModalDescription.textContent = it.brief_description || it.medium || '';
         singleModalEdition.textContent = it.edition_info || it.medium || '';
@@ -868,7 +863,7 @@
             card.dataset.medium = '3d video';
             const status = String(it.status || '').toLowerCase();
             card.dataset.availability = workAvailability(status);
-            const cluster = CLUSTER_LABEL[it.series_cluster] || '';
+            const cluster = '';
             const imgSrc = String(it.image || '').replace(/^\//, '');
             const previewSrc = String(it.video_url || '').replace(/^\//, '');
             const statusLabel = workStatusLabel(status);
@@ -928,4 +923,4 @@
   <script src="/site-i18n.js?v=20260604-fix"></script>
   <script src="/fluid-renderer.js?v=20260527-site-ripple-wide"></script>
 </body>
-</html>
+<
