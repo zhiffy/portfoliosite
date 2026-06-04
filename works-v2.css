@@ -697,3 +697,10 @@ button.wk2-tile {
   }
   .wk2-footer-inner { flex-direction: column; align-items: flex-start; }
 }
+
+/* ============================================================
+   Availability status (the wk2-tile-foot dot line: "In development",
+   "X works available", "Edition available", etc.) appears ONLY in the
+   Available tab. Everywhere else the works read cleanly without it.
+   ============================================================ */
+[data-panel]:not([data-panel="available"]) .wk2-tile-foot { display: none !important; }

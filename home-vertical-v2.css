@@ -115,10 +115,10 @@ html.sn-vertical-mode .sn-hero-cred strong { color: var(--text-2); font-weight: 
   }
   html.sn-vertical-mode .sn-eras-head { max-width: none; }
   html.sn-vertical-mode .sn-eras-lede {
-    max-width: min(100%, 920px) !important;
-    font-size: clamp(46px, 5.6vw, 82px) !important;
-    line-height: 1.08 !important;
-    letter-spacing: 0;
+    max-width: min(100%, 1040px) !important;
+    font-size: clamp(50px, 6.3vw, 96px) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.012em;
   }
 }
 html.sn-vertical-mode .sn-eras-lede em { color: var(--text); font-style: italic; }
@@ -135,7 +135,7 @@ html.sn-vertical-mode .sn-eras-lede em { color: var(--text); font-style: italic;
   transition: opacity 340ms var(--ease, cubic-bezier(0.2,0,0,1));
 }
 .sn-era-reveal img {
-  max-width: 58%; max-height: 104%;
+  max-width: 50%; max-height: 82%;
   width: auto; height: auto;
   object-fit: contain;          /* respect the artwork's aspect */
   border: 0.5px solid var(--hairline-strong);
@@ -150,10 +150,14 @@ html.sn-vertical-mode .sn-eras-lede em { color: var(--text); font-style: italic;
 .sn-eras-lede-wrap:has(.sn-era-term[data-era="3d"]:hover) .sn-era-reveal[data-for="3d"],
 .sn-eras-lede-wrap:has(.sn-era-term[data-era="ai"]:hover) .sn-era-reveal[data-for="ai"] { opacity: 1; }
 
+/* Each era's artwork reveals in its own spot, not all stacked in one place. */
+.sn-era-reveal[data-for="fashion"] { align-items: flex-start; justify-content: flex-end; }
+.sn-era-reveal[data-for="3d"]      { align-items: center;     justify-content: flex-start; }
+.sn-era-reveal[data-for="ai"]      { align-items: flex-end;   justify-content: flex-end; }
+
 @media (max-width: 900px) {
-  .sn-era-reveal { position: relative; opacity: 1; justify-content: flex-start; margin-top: 18px; }
-  .sn-era-reveal img { max-width: 100%; max-height: none; width: 100%; }
-  .sn-era-reveals { position: relative; inset: auto; display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+  /* No artwork reveals on mobile — the era statement stands on its own. */
+  .sn-era-reveals { display: none !important; }
 }
 
 /* ---------- 03 ARTWORKS — make Conditional the clear anchor ---------- */
