@@ -127,7 +127,8 @@
     wireForm(form, {
       defaultLabel: 'Send message',
       pendingLabel: 'Sending...',
-      successText: 'Thank you. Your message has been sent to the studio.'
+      successText: 'Thank you. Your message has been sent to the studio.',
+      json: true
     });
   });
 

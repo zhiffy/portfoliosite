@@ -415,3 +415,35 @@
 .wr-subscribe-error:empty { display: none; }
 .wr-subscribe-input[aria-invalid="true"] { border-color: #b3261e; }
 .wr-subscribe-submit[disabled] { opacity: 0.55; cursor: progress; }
+
+/* Shared top-page header rhythm. */
+.wr-main {
+  padding-top: calc(var(--nav-h) + 58px);
+}
+
+.wr-head {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.wr-title {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: clamp(64px, 8vw, 118px);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.wr-title em {
+  font-style: normal;
+}
+
+@media (max-width: 760px) {
+  .wr-main {
+    padding-top: calc(var(--nav-h) + 34px);
+  }
+
+  .wr-title {
+    font-size: clamp(54px, 15vw, 84px);
+  }
+}

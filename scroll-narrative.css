@@ -72,6 +72,19 @@ body {
   /* body height is set by JS to match strip width */
 }
 a { color: inherit; text-decoration: none; }
+a,
+button,
+select,
+summary,
+[role="button"] {
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 180ms ease,
+    opacity 160ms ease;
+}
 em { font-style: italic; font-weight: 300; }
 
 /* ============================================================
@@ -330,7 +343,22 @@ html.sn-ripple-filter-on .sp-main {
   display: flex; gap: 26px; align-items: center;
   font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500;
 }
-.sn-links a { display: inline-flex; gap: 6px; align-items: baseline; cursor: pointer; }
+.sn-links a {
+  display: inline-flex; gap: 6px; align-items: baseline; cursor: pointer;
+  position: relative;
+}
+.sn-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
 .sn-links a .sn-num {
   font-family: var(--serif);
   font-style: italic;
@@ -338,6 +366,15 @@ html.sn-ripple-filter-on .sp-main {
   text-transform: none;
   letter-spacing: 0;
   color: var(--text-2);
+}
+.sn-links a:hover,
+.sn-links a:focus-visible {
+  color: var(--accent-deep);
+  outline: 0;
+}
+.sn-links a:hover::after,
+.sn-links a:focus-visible::after {
+  transform: scaleX(1);
 }
 .sn-links a:hover .sn-num { color: var(--accent-deep); }
 .sn-links a.is-active,
@@ -395,6 +432,7 @@ html.sn-ripple-filter-on .sp-main {
 .sn-controlbar .sn-lang-switcher:hover {
   background: rgba(24, 25, 43, 0.05);
   color: var(--text);
+  box-shadow: inset 0 0 0 1px rgba(24, 25, 43, 0.18);
 }
 .sn-view-toggle.is-on,
 .sn-view-toggle[aria-pressed="true"],
@@ -480,6 +518,7 @@ html.sn-ripple-filter-on .sp-main {
 .sn-meta-right > .sn-lang-switcher:hover {
   background: rgba(24, 25, 43, 0.05);
   color: var(--text);
+  box-shadow: inset 0 0 0 1px rgba(24, 25, 43, 0.18);
 }
 
 /* Dark nav (homepage contact flip) */
@@ -1356,6 +1395,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-hero-media-toggle:focus-visible {
   background: rgba(24,25,43,0.72);
   border-color: rgba(237,237,244,0.85);
+  transform: scale(1.06);
 }
 .sn-hero-media-toggle:focus-visible {
   outline: 2px solid var(--sw-iris);
@@ -2362,8 +2402,10 @@ html.sn-vertical-mode .sn-ticker {
   color: var(--text);
   transform: translateX(4px);
 }
+.sn-press-index li:hover,
 .sn-press-index li:focus-visible {
   color: var(--text);
+  transform: translateX(4px);
   text-decoration: underline;
   text-underline-offset: 5px;
 }
@@ -4093,9 +4135,13 @@ html.sn-vertical-mode .sn-ticker {
 .sn-contact-sub-btn {
   font: inherit; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400;
   padding: 12px 22px; cursor: pointer; color: #18192B; background: #EDEDF4; border: 0; border-radius: 2px;
-  transition: opacity .18s ease;
+  transition: opacity .18s ease, transform .18s ease, background-color .18s ease;
 }
-.sn-contact-sub-btn:hover, .sn-contact-sub-btn:focus-visible { opacity: 0.82; }
+.sn-contact-sub-btn:hover, .sn-contact-sub-btn:focus-visible {
+  opacity: 1;
+  background: #fff;
+  transform: translateY(-1px);
+}
 .sn-contact-sub-btn[disabled] { opacity: 0.5; cursor: progress; }
 .sn-contact-sub-msg { margin: 0 0 10px; font-size: 13px; line-height: 1.45; letter-spacing: 0.02em; }
 .sn-contact-sub-msg:empty { display: none; }
@@ -4120,4 +4166,592 @@ html.sn-vertical-mode .sn-ticker {
   .sn-links::-webkit-scrollbar { display: none; }
   .sn-links a { flex: 0 1 auto; min-height: 30px; display: inline-flex; align-items: center; white-space: nowrap; }
   .sn-nav[data-mode="dark"] .sn-links { border-top-color: rgba(237, 237, 244, 0.14); }
+}
+
+/* ============================================================
+   Homepage contact: "Write to the studio" CTA + popup form.
+   Native <dialog> renders in the top layer, so it never clips
+   inside the fixed-height, overflow-hidden contact panel.
+   ============================================================ */
+.sn-contact-cta {
+  justify-self: start;
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 1px solid #C7BFE9;
+  background: transparent;
+  color: #EDEDF4;
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.sn-contact-cta:hover,
+.sn-contact-cta:focus-visible { background: #EDEDF4; color: #18192B; outline: 0; }
+
+.sn-honey { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+
+.sn-contact-modal {
+  width: min(640px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  margin: auto;
+  border: 1px solid rgba(237, 237, 244, 0.2);
+  background: #1E2036;
+  color: #EDEDF4;
+  padding: 0;
+  overflow: auto;
+}
+.sn-contact-modal::backdrop { background: rgba(10, 11, 22, 0.62); }
+.sn-contact-modal-shell { padding: clamp(24px, 4vw, 40px); position: relative; }
+.sn-contact-modal-close {
+  position: absolute; top: 12px; right: 16px;
+  appearance: none; border: 0; background: transparent;
+  color: rgba(237, 237, 244, 0.7); font-size: 26px; line-height: 1; cursor: pointer;
+}
+.sn-contact-modal-close:hover { color: #fff; }
+.sn-contact-modal-title { margin: 0 0 6px; font-family: var(--serif); font-weight: 300; font-size: clamp(28px, 4vw, 40px); line-height: 1; }
+.sn-contact-modal-sub { margin: 0 0 20px; color: rgba(237, 237, 244, 0.72); font-size: 14px; line-height: 1.55; }
+.sn-contact-modal-msg { min-height: 1.2em; margin: 0 0 12px; font-size: 13px; line-height: 1.5; }
+.sn-contact-modal-msg--success { color: #BFE8D3; }
+.sn-contact-modal-msg--error { color: #F2A8B7; }
+.sn-contact-modal-form { display: grid; gap: 14px; }
+.sn-contact-modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.sn-contact-modal-field { display: grid; gap: 7px; }
+.sn-contact-modal-label { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237, 237, 244, 0.62); }
+.sn-contact-modal-input,
+.sn-contact-modal-select,
+.sn-contact-modal-textarea {
+  width: 100%; border: 1px solid rgba(237, 237, 244, 0.28); background: rgba(237, 237, 244, 0.06);
+  color: #EDEDF4; border-radius: 0; padding: 12px 13px; font: inherit; outline: 0;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+.sn-contact-modal-input:focus,
+.sn-contact-modal-select:focus,
+.sn-contact-modal-textarea:focus { border-color: #C7BFE9; box-shadow: 0 0 0 1px #C7BFE9; }
+.sn-contact-modal-select option { background: #EDEDF4; color: #18192B; }
+.sn-contact-modal-textarea { min-height: 120px; resize: vertical; }
+.sn-contact-modal-submit {
+  justify-self: start; appearance: none; min-height: 44px; padding: 0 22px;
+  border: 1px solid #C7BFE9; background: transparent; color: #EDEDF4; font: inherit;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.sn-contact-modal-submit:hover,
+.sn-contact-modal-submit:focus-visible { background: #EDEDF4; color: #18192B; outline: 0; }
+@media (max-width: 560px) {
+  .sn-contact-modal-row { grid-template-columns: 1fr; }
+  .sn-contact-modal-input,
+  .sn-contact-modal-select,
+  .sn-contact-modal-textarea { font-size: 16px; }
+}
+
+/* ============================================================
+   Sitewide visual-language cleanup.
+   Keep the portfolio editorial and image-led: quieter uppercase
+   labels, less decorative italic, no dashboard-like dots/pills.
+   ============================================================ */
+
+html body [class] em,
+html body .sn-hero-word.italic,
+html body .sn-italic,
+html body .sn-italic-lg,
+html body .sn-work-finisher-label,
+html body .sn-work-finisher-arrow,
+html body .sn-contact-title,
+html body .sn-contact-sub-msg--success,
+html body .sn-act-title,
+html body .sn-act-link,
+html body .sn-press-headline em,
+html body .ab-hero-title em,
+html body .ab-feature-title,
+html body .ab-card-title,
+html body .ab-collab-copy em,
+html body .ab-recog-year,
+html body .abv-hero-title .w2,
+html body .abv-hero-lede em,
+html body .abv-hero-bio p em,
+html body .abv-statement-lede,
+html body .abv-statement-body p em,
+html body .abv-feature-title,
+html body .abv-feature-title em,
+html body .abv-collab-copy em,
+html body .abv-recog-year,
+html body .abv-recog-p em,
+html body .ct-title em,
+html body .wr-title em,
+html body .wr-intro,
+html body .wr-card-num,
+html body .wr-foot-link,
+html body .wr-subscribe-feedback--success,
+html body .sp-press-masthead-names span,
+html body .sp-press-selected-title,
+html body .sp-press-selected-copy em,
+html body .sp-press-feature-title,
+html body .pr-title em,
+html body .bp2-italic,
+html body .bp2-hero-title em,
+html body .bp2-hero-tag,
+html body .bp2-stick-title em,
+html body .bp2-stick-current,
+html body .bp2-source-title em,
+html body .bp2-index-title,
+html body .bp2-cap-title,
+html body .bp2-related-card h3,
+html body .sp-title em,
+html body .sp-sub,
+html body .sp-piece-title,
+html body .sp-essay-title,
+html body .sp-card-title,
+html body .sp-related-card h3,
+html body .sp-project-line,
+html body .wk2-cat-title em,
+html body .wk2-tile-context,
+html body .wk2-tile-edition,
+html body .av-title em,
+html body .av-card-title em,
+html body .nl-hero-title em,
+html body .nl-ahead-body em,
+html body .sp-tttb-page .tttb-chapter-theme em,
+html body .sp-tttb-page .tttb-interlude-line em,
+html body .sp-tttb-page .tttb-works-intro em {
+  font-style: normal;
+}
+
+html body [class*="eyebrow"],
+html body [class*="kicker"],
+html body [class*="label"],
+html body [class*="meta"],
+html body [class*="status"],
+html body [class*="badge"],
+html body [class*="chip"],
+html body [class*="filter"],
+html body [class*="tab"],
+html body [class*="nav"],
+html body [class*="link"],
+html body [class*="year"],
+html body [class*="count"],
+html body [class*="scale"],
+html body [class*="handle"],
+html body [class*="date"],
+html body [class*="pub"],
+html body [class*="num"],
+html body [class*="byline"],
+html body [class*="readout"],
+html body [class*="control"],
+html body [class*="button"],
+html body [class*="btn"],
+html body .sn-links,
+html body .sp-subnav,
+html body .bp2-stick-back,
+html body .bp2-action-link,
+html body .bp2-colo-list dt,
+html body .wk2-back-top,
+html body .ct-submit,
+html body .wr-subscribe-cta,
+html body .pr-row {
+  letter-spacing: 0.08em;
+}
+
+html body .sn-hero-rule,
+html body .sn-gw-label-rule,
+html body .sn-contact-head-rule,
+html body .ab-hero-stamp-rule,
+html body .abv-hero-stamp-rule,
+html body .sn-writing-dots::before,
+html body .sn-press-pub::after,
+html body .sp-press-list-selected .sp-press-item::before,
+html body .pr-row::before {
+  display: none;
+}
+
+html body .sn-act-dot,
+html body .wk-avail-dot,
+html body .wk2-dot::before,
+html body .sp-plate-status::before,
+html body .av-card-status::before,
+html body .bp2-index-availability::before,
+html body .bp2-cell-dot,
+html body .bp2-badge::before,
+html body .sp-status-pill::before {
+  display: none;
+}
+
+html body .bp2-index-availability,
+html body .bp2-badge,
+html body .sp-status-pill,
+html body .sp-chip,
+html body .sp-work-filterbar .wk-chip,
+html body .bp-filterbar .wk-chip,
+html body .wk-chip,
+html body .av-chip,
+html body .ct-chip-list li,
+html body .wk2-work-modal-close {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+html body .bp2-cell[data-status="listed"],
+html body .av-card.is-sold .av-card-status,
+html body .wk2-tile-foot,
+html body .wk-avail--available .wk-avail-dot,
+html body .sp-plate-status,
+html body .sp-walllabel-status,
+html body .sp-tile-status {
+  box-shadow: none;
+  background: transparent;
+}
+
+html body .bp2-index-availability,
+html body .sp-status-pill,
+html body .wk2-tile-foot,
+html body .sp-plate-status,
+html body .sp-walllabel-status,
+html body .sp-tile-status,
+html body .av-card-status,
+html body .wk-meta-status,
+html body .wk-list-status {
+  color: var(--text-2);
+}
+
+html body .sn-contact-sub-btn,
+html body .sn-contact-cta,
+html body .sn-contact-modal-submit,
+html body .wk2-work-modal-link,
+html body .wk2-back-top,
+html body .bp2-action-link,
+html body .bp2-stick-back,
+html body .ct-submit {
+  letter-spacing: 0.08em;
+  border-radius: 0;
+}
+
+/* Homepage contact now mirrors the standalone contact page, without the old closer lines. */
+.sn-contact .ct-home-shell {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  align-content: center;
+  gap: clamp(30px, 4.5vh, 52px);
+  width: min(1120px, 100%);
+  max-width: 1120px;
+  min-height: calc(100vh - var(--nav-h) - 10vh);
+  margin: 0 auto;
+}
+
+.sn-contact .ct-home-hero {
+  max-width: 760px;
+  padding: 0;
+  border: 0;
+}
+
+.sn-contact .ct-title {
+  margin: 0 0 16px;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(58px, 7.8vw, 98px);
+  line-height: 0.96;
+  color: #EDEDF4;
+}
+
+.sn-contact .ct-title em {
+  color: #C7BFE9;
+  font-style: normal;
+}
+
+.sn-contact .ct-direct {
+  display: inline-flex;
+  max-width: 100%;
+  border-bottom: 1px solid currentColor;
+  color: #EDEDF4;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.sn-contact .ct-direct:hover,
+.sn-contact .ct-direct:focus-visible {
+  color: #C7BFE9;
+}
+
+.sn-contact .ct-home-panel {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.58fr) minmax(360px, 1.42fr);
+  gap: clamp(34px, 5vw, 68px);
+  padding: 0;
+}
+
+.sn-contact .ct-notes {
+  display: grid;
+  gap: 26px;
+  align-content: start;
+}
+
+.sn-contact .ct-links,
+.sn-contact .ct-sub,
+.sn-contact .ct-form-wrap {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.sn-contact .ct-note-label,
+.sn-contact .ct-label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(237, 237, 244, 0.58);
+}
+
+.sn-contact .ct-link-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sn-contact .ct-link-list a {
+  display: grid;
+  grid-template-columns: minmax(80px, 0.34fr) minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(237, 237, 244, 0.12);
+  color: #EDEDF4;
+  text-decoration: none;
+}
+
+.sn-contact .ct-link-list a span:first-child {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(237, 237, 244, 0.56);
+}
+
+.sn-contact .ct-link-list a span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: rgba(237, 237, 244, 0.86);
+}
+
+.sn-contact .ct-link-list a:hover span:last-child,
+.sn-contact .ct-link-list a:focus-visible span:last-child {
+  color: #C7BFE9;
+}
+
+.sn-contact .ct-sub-tagline {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(237, 237, 244, 0.72);
+}
+
+.sn-contact .ct-feedback {
+  min-height: 1.4em;
+  margin: 0 0 18px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.sn-contact .ct-feedback:empty {
+  display: none;
+}
+
+.sn-contact .ct-feedback--success {
+  color: #BFE8D3;
+}
+
+.sn-contact .ct-feedback--error {
+  color: #F2A8B7;
+}
+
+.sn-contact .ct-sub-form {
+  display: flex;
+  border: 1px solid rgba(237, 237, 244, 0.28);
+}
+
+.sn-contact .ct-sub-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  background: rgba(237, 237, 244, 0.06);
+  color: #EDEDF4;
+  padding: 12px 14px;
+  font: inherit;
+  outline: 0;
+}
+
+.sn-contact .ct-sub-input::placeholder {
+  color: rgba(237, 237, 244, 0.45);
+}
+
+.sn-contact .ct-sub-input:focus {
+  background: rgba(237, 237, 244, 0.1);
+}
+
+.sn-contact .ct-sub-btn {
+  flex: 0 0 auto;
+  border: 0;
+  border-left: 1px solid rgba(237, 237, 244, 0.28);
+  background: transparent;
+  color: #EDEDF4;
+  padding: 0 16px;
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.sn-contact .ct-sub-btn:hover,
+.sn-contact .ct-sub-btn:focus-visible {
+  background: #EDEDF4;
+  color: #18192B;
+  outline: 0;
+}
+
+.sn-contact .ct-form {
+  display: grid;
+  gap: 16px;
+}
+
+.sn-contact .ct-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.sn-contact .ct-field {
+  display: grid;
+  gap: 8px;
+}
+
+.sn-contact .ct-input,
+.sn-contact .ct-select,
+.sn-contact .ct-textarea {
+  width: 100%;
+  border: 1px solid rgba(237, 237, 244, 0.28);
+  background: rgba(237, 237, 244, 0.06);
+  color: #EDEDF4;
+  border-radius: 0;
+  padding: 13px 14px;
+  font: inherit;
+  outline: 0;
+  transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.sn-contact .ct-input:hover,
+.sn-contact .ct-select:hover,
+.sn-contact .ct-textarea:hover {
+  border-color: rgba(237, 237, 244, 0.48);
+  background: rgba(237, 237, 244, 0.09);
+}
+
+.sn-contact .ct-input:focus,
+.sn-contact .ct-select:focus,
+.sn-contact .ct-textarea:focus {
+  border-color: #C7BFE9;
+  box-shadow: 0 0 0 1px #C7BFE9;
+}
+
+.sn-contact .ct-select option {
+  background: #EDEDF4;
+  color: #18192B;
+}
+
+.sn-contact .ct-textarea {
+  min-height: clamp(112px, 18vh, 168px);
+  resize: vertical;
+}
+
+.sn-contact .ct-submit {
+  justify-self: start;
+  appearance: none;
+  min-height: 46px;
+  border: 1px solid #C7BFE9;
+  background: transparent;
+  color: #EDEDF4;
+  padding: 0 22px;
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.sn-contact .ct-submit:hover,
+.sn-contact .ct-submit:focus-visible {
+  background: #EDEDF4;
+  color: #18192B;
+  outline: 0;
+}
+
+.sn-contact .ct-submit:disabled {
+  opacity: 0.62;
+  cursor: wait;
+}
+
+.sn-contact .ct-honey {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+html.sn-vertical-mode .sn-contact .ct-home-shell {
+  min-height: 0;
+  align-content: start;
+}
+
+@media (max-width: 900px) {
+  .sn-contact .ct-home-panel,
+  .sn-contact .ct-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sn-contact .ct-form-wrap {
+    order: -1;
+  }
+
+  .sn-contact .ct-notes {
+    order: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .sn-contact .ct-title {
+    font-size: clamp(54px, 15vw, 84px);
+  }
+
+  .sn-contact .ct-home-panel {
+    gap: 30px;
+  }
+
+  .sn-contact .ct-link-list a {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 13px 0;
+  }
+
+  .sn-contact .ct-input,
+  .sn-contact .ct-select,
+  .sn-contact .ct-textarea {
+    font-size: 16px;
+  }
+
+  .sn-contact .ct-submit {
+    width: 100%;
+    justify-content: center;
+  }
 }

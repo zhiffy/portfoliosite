@@ -23,9 +23,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/scroll-narrative.css?v=20260604-mobile-header">
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260605-contact-clean">
   <link rel="stylesheet" href="/scroll-pages.css?v=20260531-scroll2">
-  <link rel="stylesheet" href="/contact.css?v=20260604-navy">
+  <link rel="stylesheet" href="/contact.css?v=20260605-contact-layout">
 </head>
 <body class="sn-page-body">
   <a class="sn-skip-link" href="#main-content">Skip to content</a>
@@ -50,48 +50,40 @@
   </header>
 
   <main id="main-content" class="ct-main">
-    <section class="ct-hero" aria-labelledby="contact-title">
-      <div>
-        <p class="ct-kicker">Studio</p>
-        <h1 class="ct-title" id="contact-title">Contact<em>.</em></h1>
-      </div>
-      <div>
-        <p class="ct-intro">For acquisitions, commissions, exhibitions, press, or collaborations, send a note to the studio. For time-sensitive enquiries, email directly.</p>
-        <a class="ct-direct" href="mailto:studio@shavonnewong.art?subject=Studio%20enquiry">studio@shavonnewong.art</a>
-      </div>
-    </section>
+    <section class="ct-layout" aria-labelledby="contact-title">
+      <div class="ct-info">
+        <section class="ct-hero">
+          <h1 class="ct-title" id="contact-title">Contact<em>.</em></h1>
+          <a class="ct-direct" href="mailto:studio@shavonnewong.art?subject=Studio%20enquiry">studio@shavonnewong.art</a>
+        </section>
 
-    <section class="ct-panel" aria-label="Contact form">
-      <div class="ct-notes">
-        <div class="ct-note">
-          <span class="ct-note-label">Acquisitions</span>
-          <p>Artwork enquiries, edition availability, commissions, and collector conversations.</p>
-        </div>
-        <div class="ct-note">
-          <span class="ct-note-label">Exhibitions</span>
-          <p>Curatorial invitations, talks, installations, screening requests, and institutional projects.</p>
-        </div>
-        <div class="ct-note">
-          <span class="ct-note-label">Press</span>
-          <p>Interview requests, profile enquiries, image permissions, and publication details.</p>
-        </div>
-        <div class="ct-links" aria-label="Shavonne Wong links">
-          <span class="ct-note-label">Elsewhere</span>
-          <ul class="ct-link-list">
-            <li><a href="https://www.instagram.com/shavonne.wong/" target="_blank" rel="noreferrer"><span>Instagram</span><span>@shavonne.wong</span></a></li>
-            <li><a href="https://x.com/shavonnewong_" target="_blank" rel="noreferrer"><span>X</span><span>@shavonnewong_</span></a></li>
-            <li><a href="https://sg.linkedin.com/in/shavonnew" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>/in/shavonnew</span></a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Shavonne_Wong" target="_blank" rel="noreferrer"><span>Wikipedia</span><span>/Shavonne_Wong</span></a></li>
-            <li><a href="https://ocula.com/artists/shavonne-wong/" target="_blank" rel="noreferrer"><span>Ocula</span><span>/artists/shavonne-wong</span></a></li>
-            <li><a href="https://seafocus.sg/artists/shavonne-wong/" target="_blank" rel="noreferrer"><span>SEA Focus</span><span>/artists/shavonne-wong</span></a></li>
-          </ul>
-        </div>
+        <aside class="ct-notes">
+          <div class="ct-links" aria-label="Shavonne Wong elsewhere">
+            <span class="ct-note-label">Elsewhere</span>
+            <ul class="ct-link-list">
+              <li><a href="https://www.instagram.com/shavonne.wong/" target="_blank" rel="noreferrer"><span>Instagram</span><span>@shavonne.wong</span></a></li>
+              <li><a href="https://x.com/shavonnewong_" target="_blank" rel="noreferrer"><span>X</span><span>@shavonnewong_</span></a></li>
+              <li><a href="https://sg.linkedin.com/in/shavonnew" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>/in/shavonnew</span></a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Shavonne_Wong" target="_blank" rel="noreferrer"><span>Wikipedia</span><span>/Shavonne_Wong</span></a></li>
+            </ul>
+          </div>
+          <div class="ct-sub">
+            <span class="ct-note-label">Studio notes</span>
+            <p class="ct-sub-tagline">New work, exhibitions, and drops, a few times a year.</p>
+            <p class="ct-feedback ct-feedback--success" data-fs-success role="status" aria-live="polite"></p>
+            <p class="ct-feedback ct-feedback--error" data-fs-error role="alert"></p>
+            <form class="ct-sub-form" data-newsletter-form action="/api/newsletter-subscribe" method="POST">
+              <input class="ct-sub-input" type="email" name="email" autocomplete="email" inputmode="email" required placeholder="you@example.com" aria-label="Email address">
+              <button class="ct-sub-btn" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </aside>
       </div>
 
       <div class="ct-form-wrap">
         <p class="ct-feedback ct-feedback--success" data-fs-success role="status" aria-live="polite"></p>
         <p class="ct-feedback ct-feedback--error" data-fs-error role="alert"></p>
-        <form class="ct-form" data-contact-form action="https://formspree.io/f/mvznodbq" method="POST">
+        <form class="ct-form" data-contact-form action="/api/contact" method="POST">
           <input type="hidden" name="_subject" value="Website contact enquiry">
           <label class="ct-honey">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
           <div class="ct-grid">

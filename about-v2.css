@@ -12,8 +12,15 @@
   color: var(--text);
 }
 
+.abv-rail {
+  display: none;
+}
+
 /* generous, distinct sections */
-.abv-section { padding-top: clamp(80px, 11vh, 160px); }
+.abv-section {
+  padding-top: clamp(80px, 11vh, 160px);
+  scroll-margin-top: calc(var(--nav-h) + 22px);
+}
 .abv-section + .abv-section { margin-top: 0; }
 
 .abv-section-head {
@@ -354,6 +361,63 @@
   .abv-hero-meta .abv-facts > div:first-child { padding-top: 13px; }
   .abv-hero-meta .abv-tags { margin-top: 6px; }
 }
+
+@media (min-width: 1180px) {
+  .abv-main {
+    padding-left: max(clamp(24px, 5vw, 80px), calc(230px - max(0px, (100vw - var(--site-max)) / 2)));
+  }
+
+  .abv-rail {
+    position: fixed;
+    top: 50%;
+    left: clamp(12px, 1.8vw, 34px);
+    z-index: 45;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: clamp(128px, 10vw, 168px);
+    max-height: calc(100vh - var(--nav-h) - 48px);
+    gap: 11px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+    transform: translateY(-50%);
+  }
+
+  .abv-rail a {
+    display: inline-flex;
+    color: rgba(28, 31, 54, 0.52);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 0.5px solid transparent;
+    white-space: normal;
+    transition: color 160ms ease, border-color 160ms ease, transform 180ms ease;
+  }
+
+  .abv-rail a:hover,
+  .abv-rail a:focus-visible,
+  .abv-rail a.is-current {
+    color: var(--accent-deep);
+    border-bottom-color: currentColor;
+    outline: 0;
+  }
+
+  .abv-rail a:hover,
+  .abv-rail a:focus-visible {
+    transform: translateX(3px);
+  }
+}
+
+@media (max-width: 1179px) {
+  .abv-rail {
+    display: none !important;
+  }
+}
+
 @media (max-width: 920px) {
   .abv-hero-grid {
     grid-template-columns: 1fr;
@@ -422,8 +486,20 @@
   padding: 7px 14px; border-radius: 2px; cursor: pointer; white-space: nowrap;
   transition: color .2s ease, border-color .2s ease, background .2s ease;
 }
-.abv-exh-toggle:hover { color: var(--text-1, #1a1a1a); border-color: currentColor; }
+.abv-exh-toggle:hover,
+.abv-exh-toggle:focus-visible {
+  color: var(--text-1, #1a1a1a);
+  border-color: currentColor;
+  background: rgba(255, 255, 255, 0.62);
+  transform: translateY(-1px);
+  outline: 0;
+}
 .abv-exh-toggle[aria-pressed="true"] { background: var(--accent-deep); color: #fff; border-color: transparent; }
+.abv-exh-toggle[aria-pressed="true"]:hover,
+.abv-exh-toggle[aria-pressed="true"]:focus-visible {
+  background: var(--text);
+  color: var(--bg);
+}
 .abv-exh-ledger.is-selected-only .abv-exh-entry:not([data-selected]) { display: none; }
 .abv-exh-ledger.is-selected-only .abv-exh-yr-count { visibility: hidden; }
 .abv-exh-ledger.is-selected-only .abv-exh-yr:not(:has([data-selected])) { display: none; }
@@ -434,6 +510,30 @@
 /* Exhibitions toggle: own right-aligned row (was wrapping awkwardly under the section number) */
 .abv-exh-toggle { grid-column: 1 / -1; justify-self: end; margin-top: 4px; }
 @media (max-width: 760px) { .abv-exh-toggle { justify-self: start; margin-top: 6px; } }
+
+/* ============================================================
+   Shared top-page header rhythm.
+   ============================================================ */
+.abv-main {
+  padding-top: calc(var(--nav-h) + 58px);
+}
+
+.abv-hero {
+  padding-top: 0;
+}
+
+.abv-hero-title {
+  margin: 0 0 clamp(30px, 4vh, 52px);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: clamp(64px, 8vw, 118px);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.abv-hero-title .dot {
+  color: var(--accent-deep);
+}
 
 /* Talks & Press: make the entries that are links clearly clickable.
    (Previously the underline was transparent until hover, so links looked like plain text.) */

@@ -263,6 +263,35 @@
   padding: clamp(20px, 2.4vw, 34px);
 }
 
+/* ---------- COMPACT LOWER SECTIONS ---------- */
+.sp-tttb-page .sp-project-grid {
+  row-gap: 16px;
+}
+
+.sp-tttb-page #process,
+.sp-tttb-page #statement,
+.sp-tttb-page #supporting-texts,
+.sp-tttb-page #exhibitions,
+.sp-tttb-page #related,
+.sp-tttb-page #contact {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.sp-tttb-page #process > div:first-child,
+.sp-tttb-page #statement > div:first-child,
+.sp-tttb-page #supporting-texts > div:first-child,
+.sp-tttb-page #exhibitions > div:first-child,
+.sp-tttb-page #related > div:first-child,
+.sp-tttb-page #contact > div:first-child {
+  margin-bottom: 0;
+}
+
+.sp-tttb-page #statement .sp-copy,
+.sp-tttb-page #supporting-texts .sp-copy {
+  max-width: 62ch;
+}
+
 /* ---------- STATEMENT interlude ---------- */
 .sp-tttb-page .tttb-interlude {
   border: 0;

@@ -742,11 +742,13 @@
     if (!aboutPanel) return;
     const p = clamp(progress);
     aboutProgress = p;
-    // Phase 1 (0 -> 0.45): entry - photo + card slide in
+    // Phase 1 (0 -> 0.45): entry - photo + card slide in.
+    // Let the portrait arrive a little ahead of the card so it is visible
+    // as soon as the About panel starts to settle into view.
     // Phase 2 (0.45 -> 0.55): hold (intro is fully ready)
     // Phase 3 (0.55 -> 1): exit - about lifts UPWARD off-screen,
     //                      revealing the artist-statement panel beneath.
-    const entry = easeInOut(clamp((p + 0.055) / 0.30));
+    const entry = easeInOut(clamp((p + 0.105) / 0.30));
     const cardEntry = easeInOut(clamp((p - 0.08) / 0.30));
     const exit = easeInOut(clamp((p - 0.42) / 0.18));
     aboutPanel.style.setProperty('--about-photo-alpha', entry.toFixed(4));

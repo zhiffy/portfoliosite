@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="scroll-narrative.css?v=20260604-mobile-header">
-  <link rel="stylesheet" href="works-v2.css?v=20260531-width">
+  <link rel="stylesheet" href="works-v2.css?v=20260605-header-consistency">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -94,13 +94,7 @@
     <section class="wk2-catalog">
       <header class="wk2-cat-head">
         <div>
-          <span class="wk2-cat-kicker">Works</span>
-          <h1 class="wk2-cat-title"><em>The</em> works.</h1>
-          <p class="wk2-cat-sub">Work since 2020 across installation, video, and AI.</p>
-        </div>
-        <div class="wk2-cat-count" aria-label="Catalog scale">
-          <strong>6</strong>
-          <span>Projects, 45 single works, editions, commissions</span>
+          <h1 class="wk2-cat-title">Works.</h1>
         </div>
       </header>
 
@@ -163,8 +157,6 @@
 
         <!-- ====================== PANEL. PROJECTS ====================== -->
         <section class="wk2-panel is-active" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" data-panel="projects">
-          <p class="wk2-panel-intro">Multi-form works across installation, video, and AI. Each project gathers a set of related pieces.</p>
-
           <div class="wk2-grid wk2-grid--projects" data-grid>
 
             <a class="wk2-tile" href="/works/conditional/"
@@ -274,8 +266,6 @@
 
         <!-- ====================== PANEL. SINGLE WORKS ====================== -->
         <section class="wk2-panel" id="panel-single" role="tabpanel" aria-labelledby="tab-single" data-panel="single" hidden>
-          <p class="wk2-panel-intro">Forty-five single-channel video works since 2020 on identity, time, and constructed bodies. Ordered chronologically, newest first.</p>
-
           <div class="wk2-grid wk2-grid--single" data-grid data-single-grid>
             <!-- Tiles rendered from assets/data/3d-single-works.json -->
             <div class="wk2-single-loading" data-single-loading>Loading 45 works.</div>
@@ -284,8 +274,6 @@
 
         <!-- ====================== PANEL. EDITIONS ====================== -->
         <section class="wk2-panel" id="panel-editions" role="tabpanel" aria-labelledby="tab-editions" data-panel="editions" hidden>
-          <p class="wk2-panel-intro">Editioned releases, kept separate from commissions. Some works also sit inside larger projects.</p>
-
           <div class="wk2-grid wk2-grid--editions" data-grid>
 
             <a class="wk2-tile" href="/works/6529-meme-card/"
@@ -343,8 +331,6 @@
 
         <!-- ====================== PANEL. COMMISSIONS ====================== -->
         <section class="wk2-panel" id="panel-commissions" role="tabpanel" aria-labelledby="tab-commissions" data-panel="commissions" hidden>
-          <p class="wk2-panel-intro">Commissioned works and editorial collaborations, separated from editioned releases.</p>
-
           <div class="wk2-grid wk2-grid--commissions" data-grid>
 
             <a class="wk2-tile" href="/works/vogue-singapore/"
@@ -438,8 +424,6 @@
         <!-- ====================== PANEL. AVAILABLE ====================== -->
         <!-- Populated by JS from any tile across the catalog with availability available or edition. -->
         <section class="wk2-panel" id="panel-available" role="tabpanel" aria-labelledby="tab-available" data-panel="available" hidden>
-          <p class="wk2-panel-intro">Works currently for sale, including available commissions and editioned releases. Prices and details on request.</p>
-
           <div class="wk2-grid wk2-grid--available" data-grid data-available-grid>
             <!-- Cloned tiles inserted here on tab activation. -->
           </div>
@@ -502,6 +486,8 @@
       const singleWorksById = new Map();
       let activeModalMediaRatio = 16 / 9;
       const MONTH_LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+      const availableCategories = ['projects', 'single', 'editions', 'commissions'];
+      const selectedAvailableCategories = new Set(availableCategories);
 
       const params = new URLSearchParams(location.hash.replace(/^#/, ''));
       function chronologyYear(tile) {
@@ -537,6 +523,33 @@
         .forEach(sortGridChronological);
 
       // ----- Tabs -----
+      function currentTab() {
+        return tabs.find((t) => t.getAttribute('aria-selected') === 'true')?.dataset.tab || 'projects';
+      }
+
+      function syncAvailableCategoryButtons() {
+        const inAvailable = currentTab() === 'available';
+        tabs.forEach((t) => {
+          const isCategory = availableCategories.includes(t.dataset.tab);
+          t.classList.toggle('is-available-filter', inAvailable && isCategory);
+          t.classList.toggle('is-category-active', inAvailable && isCategory && selectedAvailableCategories.has(t.dataset.tab));
+          if (isCategory) {
+            t.setAttribute('aria-pressed', inAvailable && selectedAvailableCategories.has(t.dataset.tab) ? 'true' : 'false');
+          } else {
+            t.removeAttribute('aria-pressed');
+          }
+        });
+      }
+
+      function toggleAvailableCategory(name) {
+        if (!availableCategories.includes(name)) return;
+        if (selectedAvailableCategories.has(name)) selectedAvailableCategories.delete(name);
+        else selectedAvailableCategories.add(name);
+        syncAvailableCategoryButtons();
+        applyFilters();
+        writeUrl();
+      }
+
       function selectTab(name, options) {
         options = options || {};
         const valid = tabs.find((t) => t.dataset.tab === name);
@@ -552,19 +565,30 @@
           else p.setAttribute('hidden', '');
         });
         if (target === 'available') populateAvailable();
+        syncAvailableCategoryButtons();
         applyFilters();
         if (!options.silent) writeUrl();
       }
 
       tabs.forEach((tab) => {
-        tab.addEventListener('click', () => selectTab(tab.dataset.tab));
+        tab.addEventListener('click', () => {
+          if (currentTab() === 'available' && availableCategories.includes(tab.dataset.tab)) {
+            toggleAvailableCategory(tab.dataset.tab);
+            return;
+          }
+          selectTab(tab.dataset.tab);
+        });
         tab.addEventListener('keydown', (e) => {
           const i = tabs.indexOf(tab);
           if (e.key === 'ArrowRight') { e.preventDefault(); tabs[(i + 1) % tabs.length].focus(); }
           if (e.key === 'ArrowLeft') { e.preventDefault(); tabs[(i - 1 + tabs.length) % tabs.length].focus(); }
           if (e.key === 'Home') { e.preventDefault(); tabs[0].focus(); }
           if (e.key === 'End') { e.preventDefault(); tabs[tabs.length - 1].focus(); }
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectTab(tab.dataset.tab); }
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            if (currentTab() === 'available' && availableCategories.includes(tab.dataset.tab)) toggleAvailableCategory(tab.dataset.tab);
+            else selectTab(tab.dataset.tab);
+          }
         });
       });
 
@@ -594,14 +618,21 @@
         all.forEach((t) => {
           const key = workKey(t);
           if (!key) return;
+          const category = t.closest('.wk2-panel')?.dataset.panel || '';
           const existing = byWork.get(key);
           if (!existing || availabilityScore(t) > availabilityScore(existing)) {
-            byWork.set(key, t);
+            const clone = t.cloneNode(true);
+            const categories = new Set(String(existing?.dataset.sourceCategories || '').split(/\s+/).filter(Boolean));
+            if (category) categories.add(category);
+            clone.dataset.sourceCategories = Array.from(categories).join(' ');
+            byWork.set(key, clone);
+          } else if (category) {
+            const categories = new Set(String(existing.dataset.sourceCategories || '').split(/\s+/).filter(Boolean));
+            categories.add(category);
+            existing.dataset.sourceCategories = Array.from(categories).join(' ');
           }
         });
-        Array.from(byWork.values()).forEach((t) => {
-          availableGrid.appendChild(t.cloneNode(true));
-        });
+        Array.from(byWork.values()).forEach((t) => availableGrid.appendChild(t));
         availableGrid.dataset.built = '1';
       }
 
@@ -627,6 +658,11 @@
           if (state.availability === 'available' && !/available/.test(a)) return false;
           if (state.availability === 'edition' && a !== 'edition') return false;
         }
+        if (tile.closest('#panel-available')) {
+          const categories = String(tile.dataset.sourceCategories || '').split(/\s+/).filter(Boolean);
+          if (selectedAvailableCategories.size === 0) return false;
+          if (categories.length && !categories.some((category) => selectedAvailableCategories.has(category))) return false;
+        }
         return true;
       }
 
@@ -642,7 +678,8 @@
           t.style.display = ok ? '' : 'none';
           if (ok) visible += 1;
         });
-        const hasFilters = Object.keys(state).length > 0;
+        const hasCategoryFilters = activePanel.dataset.panel === 'available' && selectedAvailableCategories.size !== availableCategories.length;
+        const hasFilters = Object.keys(state).length > 0 || hasCategoryFilters;
         clearBtn.hidden = !hasFilters;
         if (emptyEl) emptyEl.hidden = !(hasFilters && visible === 0);
         writeUrl();
@@ -651,14 +688,20 @@
       filters.forEach((f) => f.addEventListener('change', applyFilters));
       clearBtn.addEventListener('click', () => {
         filters.forEach((f) => { f.value = ''; });
+        selectedAvailableCategories.clear();
+        availableCategories.forEach((category) => selectedAvailableCategories.add(category));
+        syncAvailableCategoryButtons();
         applyFilters();
       });
 
       // ----- URL state. -----
       function writeUrl() {
-        const tab = tabs.find((t) => t.getAttribute('aria-selected') === 'true')?.dataset.tab || 'projects';
+        const tab = currentTab();
         const state = readFilters();
         const parts = ['tab=' + tab];
+        if (tab === 'available' && selectedAvailableCategories.size !== availableCategories.length) {
+          parts.push('categories=' + encodeURIComponent(Array.from(selectedAvailableCategories).join(',')));
+        }
         Object.entries(state).forEach(([k, v]) => parts.push(k + '=' + encodeURIComponent(v)));
         const next = '#' + parts.join('&');
         if (location.hash !== next) history.replaceState(null, '', next);
@@ -666,6 +709,11 @@
 
       function readUrl() {
         const p = new URLSearchParams(location.hash.replace(/^#/, ''));
+        const categoryParam = p.get('categories');
+        selectedAvailableCategories.clear();
+        (categoryParam ? categoryParam.split(',') : availableCategories).forEach((category) => {
+          if (availableCategories.includes(category)) selectedAvailableCategories.add(category);
+        });
         ['year', 'medium', 'availability'].forEach((k) => {
           const v = p.get(k);
           if (v) {
@@ -923,4 +971,3 @@
   <script src="/site-i18n.js?v=20260604-fix"></script>
   <script src="/fluid-renderer.js?v=20260527-site-ripple-wide"></script>
 </body>
-<

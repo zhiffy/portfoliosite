@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="scroll-narrative.css?v=20260531-sb2">
   <link rel="stylesheet" href="scroll-pages.css?v=20260531-scroll2">
   <link rel="stylesheet" href="about-redesign.css?v=20260531-width">
-  <link rel="stylesheet" href="about-v2.css?v=20260601-recogcards2">
+  <link rel="stylesheet" href="about-v2.css?v=20260605-header-consistency">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -95,16 +95,22 @@
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
   </header>
 
+  <nav class="abv-rail sp-subnav" aria-label="About sections">
+    <a href="#about">About</a>
+    <a href="#statement">Statement</a>
+    <a href="#exhibitions">Exhibitions</a>
+    <a href="#collaborations">Collaborations</a>
+    <a href="#recognition">Recognition</a>
+    <a href="#press">Talks / Press</a>
+  </nav>
+
   <main id="main-content" class="abv-main" data-abv-main>
 
     <!-- ========================================================
          01 - HERO
          ======================================================== -->
-    <section class="abv-section abv-hero">
-      <h1 class="abv-hero-title">
-        <span class="w1">Shavonne</span>
-        <span class="w2">Wong<span class="dot">.</span></span>
-      </h1>
+    <section class="abv-section abv-hero" id="about">
+      <h1 class="abv-hero-title">About<span class="dot">.</span></h1>
 
       <div class="abv-hero-grid">
         <figure class="abv-portrait abv-hero-fig">
@@ -162,7 +168,7 @@
     <!-- ========================================================
          02 - ARTIST STATEMENT
          ======================================================== -->
-    <section class="abv-section abv-statement abv-band" aria-label="Artist statement">
+    <section class="abv-section abv-statement abv-band" id="statement" aria-label="Artist statement">
       <header class="abv-section-head">
         <span class="abv-section-num">02</span>
         <h2 class="abv-section-title">Artist statement</h2>
@@ -224,7 +230,7 @@
     <!-- ========================================================
          03 - SELECTED EXHIBITIONS (+ full archive toggle)
          ======================================================== -->
-    <section class="abv-section" aria-label="Selected exhibitions">
+    <section class="abv-section" id="exhibitions" aria-label="Selected exhibitions">
       <header class="abv-section-head">
         <span class="abv-section-num">03</span>
         <h2 class="abv-section-title">Exhibitions</h2>
@@ -317,7 +323,7 @@
     <!-- ========================================================
          04 - COLLABORATIONS (hover reveals the campaign image)
          ======================================================== -->
-    <section class="abv-section abv-collabs-section" aria-label="Notable collaborations">
+    <section class="abv-section abv-collabs-section" id="collaborations" aria-label="Notable collaborations">
       <header class="abv-section-head">
         <span class="abv-section-num">04</span>
         <h2 class="abv-section-title">Collaborations</h2>
@@ -387,7 +393,7 @@
     <!-- ========================================================
          05 - RECOGNITION
          ======================================================== -->
-    <section class="abv-section abv-recognition" aria-label="Recognition">
+    <section class="abv-section abv-recognition" id="recognition" aria-label="Recognition">
       <header class="abv-section-head">
         <span class="abv-section-num">05</span>
         <h2 class="abv-section-title">Recognition</h2>
@@ -586,6 +592,7 @@
       if(btn&&ledger){ btn.addEventListener("click",function(){ var on=ledger.classList.toggle("is-selected-only"); btn.setAttribute("aria-pressed",on?"true":"false"); if(lbl) lbl.textContent=on?"Show all":"Selected only"; }); }
     })();
   </script>
+  <script src="/assets/js/subnav.js?v=20260605-about-rail"></script>
   <script src="/site-header.js?v=20260604-sticky" data-about-toggle></script><script src="/site-i18n.js?v=20260604-fix"></script>
   <script src="/fluid-renderer.js?v=20260527-site-ripple-wide"></script>
 </body>

@@ -240,13 +240,21 @@
     .bp2-related-card:hover h3 { color: #545C9E; }
     .bp2-related-card p { font-size: 12px; color: #595E78; margin: 0; }
 
-    /* Colophon */
+    /* Details */
     .bp2-colo { max-width: var(--site-max); margin: 0 auto; padding: clamp(40px,6vh,72px) clamp(24px,5vw,80px) clamp(80px,12vh,140px); border-top: 1px solid rgba(24,25,43,0.10); }
-    .bp2-colo-grid { display: grid; grid-template-columns: 200px 1fr; gap: clamp(24px, 5vw, 64px); }
-    .bp2-colo-list { font-size: 13px; line-height: 1.8; color: #18192B; max-width: 70ch; }
-    .bp2-colo-list dt { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9094AB; margin-top: 8px; }
-    .bp2-colo-list dt:first-child { margin-top: 0; }
-    .bp2-colo-list dd { margin: 0 0 14px; }
+    .bp2-colo-grid { display: grid; grid-template-columns: 160px 1fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
+    .bp2-colo-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(160px, 1fr));
+      gap: 24px 36px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: #18192B;
+      max-width: none;
+    }
+    .bp2-colo-list dt { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9094AB; margin: 0 0 8px; }
+    .bp2-colo-list dd { margin: 0; }
+    .bp2-colo-item { min-width: 0; }
     .bp2-colo-list a { color: #545C9E; text-decoration: underline; text-underline-offset: 3px; }
 
     @media (max-width: 900px) {
@@ -434,21 +442,21 @@
       </div>
     </section>
 
-    <!-- COLOPHON ================================================== -->
-    <section class="bp2-colo" id="details" aria-label="Colophon">
+    <!-- DETAILS =================================================== -->
+    <section class="bp2-colo" id="details" aria-label="Details">
       <div class="bp2-colo-grid">
-        <p class="bp2-eyebrow">Colophon</p>
+        <p class="bp2-eyebrow">Details</p>
         <dl class="bp2-colo-list">
-          <dt>Year</dt><dd>2021</dd>
-          <dt>Drop date</dt><dd>November 5, 2021. Sold out within the hour.</dd>
-          <dt>Type</dt><dd>Generative digital artwork. NFT editions plus 1/1 NFT.</dd>
-          <dt>Edition</dt><dd>500 generative editions, plus The Kiss, the project's sold 1/1 work.</dd>
-          <dt>Availability</dt><dd>18 editions listed on OpenSea. The 1/1 work, The Kiss, is sold and not listed.</dd>
-          <dt>Mint</dt><dd>0.05683 ETH. The number 5683 maps to L-O-V-E on a phone keypad.</dd>
-          <dt>Chain</dt><dd>Ethereum</dd>
-          <dt>Notable collectors</dt><dd>Idris Elba</dd>
-          <dt>Links</dt><dd><a href="https://loveislove.io/" target="_blank" rel="noreferrer">Project website</a> . <a href="https://opensea.io/collection/love-is-love-shavonnewong?status=listed" target="_blank" rel="noreferrer">Browse listed editions on OpenSea</a> . <a href="https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/28474" target="_blank" rel="noreferrer">View The Kiss on SuperRare</a> . <a href="https://etherscan.io/address/0x30de3508e1f826910a254719258346570b27627e" target="_blank" rel="noreferrer">Verify on Etherscan</a></dd>
-          <dt>Acquisitions</dt><dd><a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20Love%20is%20Love">studio@shavonnewong.art</a></dd>
+          <div class="bp2-colo-item"><dt>Year</dt><dd>2021</dd></div>
+          <div class="bp2-colo-item"><dt>Drop date</dt><dd>November 5, 2021. Sold out within the hour.</dd></div>
+          <div class="bp2-colo-item"><dt>Type</dt><dd>Generative digital artwork. NFT editions plus 1/1 NFT.</dd></div>
+          <div class="bp2-colo-item"><dt>Edition</dt><dd>500 generative editions, plus The Kiss, the project's sold 1/1 work.</dd></div>
+          <div class="bp2-colo-item"><dt>Availability</dt><dd>18 editions listed on OpenSea. The 1/1 work, The Kiss, is sold and not listed.</dd></div>
+          <div class="bp2-colo-item"><dt>Mint</dt><dd>0.05683 ETH. The number 5683 maps to L-O-V-E on a phone keypad.</dd></div>
+          <div class="bp2-colo-item"><dt>Chain</dt><dd>Ethereum</dd></div>
+          <div class="bp2-colo-item"><dt>Notable collectors</dt><dd>Idris Elba</dd></div>
+          <div class="bp2-colo-item"><dt>Links</dt><dd><a href="https://loveislove.io/" target="_blank" rel="noreferrer">Project website</a> . <a href="https://opensea.io/collection/love-is-love-shavonnewong?status=listed" target="_blank" rel="noreferrer">Browse listed editions on OpenSea</a> . <a href="https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/28474" target="_blank" rel="noreferrer">View The Kiss on SuperRare</a> . <a href="https://etherscan.io/address/0x30de3508e1f826910a254719258346570b27627e" target="_blank" rel="noreferrer">Verify on Etherscan</a></dd></div>
+          <div class="bp2-colo-item"><dt>Acquisitions</dt><dd><a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20Love%20is%20Love">studio@shavonnewong.art</a></dd></div>
         </dl>
       </div>
     </section>

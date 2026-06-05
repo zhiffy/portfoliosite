@@ -63,7 +63,7 @@
       } catch (error) {}
     })();
   </script>
-  <link rel="stylesheet" href="scroll-narrative.css?v=20260604-mobile-header">
+  <link rel="stylesheet" href="scroll-narrative.css?v=20260605-contact-clean">
   <link rel="stylesheet" href="works-home-redesign.css?v=20260601-featland">
   <link rel="stylesheet" href="home-vertical-v2.css?v=20260601-herovmatch">
     <!-- Cloudflare Web Analytics -->
@@ -522,43 +522,72 @@
       <section class="sn-panel sn-contact" id="contact" data-panel="contact">
         <div class="sn-contact-bg" aria-hidden="true"></div>
 
-        <div class="sn-contact-inner">
-          <!-- top: section meta -->
-          <div class="sn-contact-head">
-            <span class="sn-eyebrow on-dark" data-i18n="home.contact.kicker">Contact</span>
-          </div>
+        <div class="sn-contact-inner ct-home-shell">
+          <section class="ct-hero ct-home-hero" aria-labelledby="home-contact-title">
+            <h2 class="ct-title" id="home-contact-title">Contact<em>.</em></h2>
+            <a class="ct-direct" href="mailto:studio@shavonnewong.art?subject=Studio%20enquiry">studio@shavonnewong.art</a>
+          </section>
 
-          <!-- middle: title -->
-          <h2 class="sn-contact-title" data-i18n="home.contact.title">
-            Contact
-          </h2>
+          <section class="ct-panel ct-home-panel" aria-label="Contact">
+            <aside class="ct-notes">
+              <div class="ct-links" aria-label="Shavonne Wong elsewhere">
+                <span class="ct-note-label">Elsewhere</span>
+                <ul class="ct-link-list">
+                  <li><a href="https://www.instagram.com/shavonne.wong/" target="_blank" rel="noreferrer"><span>Instagram</span><span>@shavonne.wong</span></a></li>
+                  <li><a href="https://x.com/shavonnewong_" target="_blank" rel="noreferrer"><span>X</span><span>@shavonnewong_</span></a></li>
+                  <li><a href="https://sg.linkedin.com/in/shavonnew" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>/in/shavonnew</span></a></li>
+                  <li><a href="https://en.wikipedia.org/wiki/Shavonne_Wong" target="_blank" rel="noreferrer"><span>Wikipedia</span><span>/Shavonne_Wong</span></a></li>
+                </ul>
+              </div>
 
-          <!-- big email card (the primary CTA) -->
-          <a href="mailto:studio@shavonnewong.art?subject=Studio%20enquiry" class="sn-contact-email">
-            <span class="sn-contact-email-addr">studio@shavonnewong.art</span>
-          </a>
+              <div class="ct-sub">
+                <span class="ct-note-label">Studio notes</span>
+                <p class="ct-sub-tagline">New work, exhibitions, and drops, a few times a year.</p>
+                <p class="ct-feedback ct-feedback--success" data-fs-success role="status" aria-live="polite"></p>
+                <p class="ct-feedback ct-feedback--error" data-fs-error role="alert"></p>
+                <form class="ct-sub-form" data-newsletter-form action="/api/newsletter-subscribe" method="POST">
+                  <input class="ct-sub-input" type="email" name="email" autocomplete="email" inputmode="email" required placeholder="you@example.com" aria-label="Email address">
+                  <button class="ct-sub-btn" type="submit">Subscribe</button>
+                </form>
+              </div>
+            </aside>
 
-          <!-- connect band: a single Iris threshold, then socials + studio notes -->
-          <div class="sn-contact-connect">
-            <div class="sn-contact-col sn-contact-col--elsewhere">
-              <span class="sn-eyebrow on-dark">Elsewhere</span>
-              <ul class="sn-contact-social" aria-label="Find me elsewhere" data-i18n-aria-label="home.contact.socialAria">
-                <li><a href="https://www.instagram.com/shavonne.wong/" target="_blank" rel="noreferrer"><span class="sn-contact-social-name">Instagram</span><span class="sn-contact-social-handle">@shavonne.wong</span></a></li>
-                <li><a href="https://twitter.com/shavonnewong_" target="_blank" rel="noreferrer"><span class="sn-contact-social-name">X</span><span class="sn-contact-social-handle">@shavonnewong_</span></a></li>
-                <li><a href="https://sg.linkedin.com/in/shavonnew" target="_blank" rel="noreferrer"><span class="sn-contact-social-name">LinkedIn</span><span class="sn-contact-social-handle">/in/shavonnew</span></a></li>
-                <li><a href="https://en.wikipedia.org/wiki/Shavonne_Wong" target="_blank" rel="noreferrer"><span class="sn-contact-social-name">Wikipedia</span><span class="sn-contact-social-handle">/Shavonne_Wong</span></a></li>
-              </ul>
-            </div>
-            <div class="sn-contact-col sn-contact-col--notes">
-              <span class="sn-eyebrow on-dark">Studio notes</span>
-              <p class="sn-contact-sub-msg sn-contact-sub-msg--success" data-fs-success role="status" aria-live="polite"></p>
-              <p class="sn-contact-sub-msg sn-contact-sub-msg--error" data-fs-error role="alert"></p>
-              <form class="sn-contact-sub-form" data-newsletter-form action="/api/newsletter-subscribe" method="POST">
-                <input class="sn-contact-sub-input" type="email" name="email" autocomplete="email" inputmode="email" required placeholder="you@example.com" aria-label="Email address">
-                <button type="submit" class="sn-contact-sub-btn">Subscribe</button>
+            <div class="ct-form-wrap">
+              <p class="ct-feedback ct-feedback--success" data-fs-success role="status" aria-live="polite"></p>
+              <p class="ct-feedback ct-feedback--error" data-fs-error role="alert"></p>
+              <form class="ct-form" data-contact-form action="/api/contact" method="POST">
+                <input type="hidden" name="_subject" value="Website contact enquiry">
+                <label class="ct-honey">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+                <div class="ct-grid">
+                  <label class="ct-field">
+                    <span class="ct-label">Name</span>
+                    <input class="ct-input" type="text" name="name" autocomplete="name" required>
+                  </label>
+                  <label class="ct-field">
+                    <span class="ct-label">Email</span>
+                    <input class="ct-input" type="email" name="email" autocomplete="email" inputmode="email" required>
+                  </label>
+                </div>
+                <label class="ct-field">
+                  <span class="ct-label">Enquiry type</span>
+                  <select class="ct-select" name="enquiry_type" required>
+                    <option value="">Select one</option>
+                    <option>Acquisition</option>
+                    <option>Commission</option>
+                    <option>Exhibition</option>
+                    <option>Press</option>
+                    <option>Collaboration</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+                <label class="ct-field">
+                  <span class="ct-label">Message</span>
+                  <textarea class="ct-textarea" name="message" required></textarea>
+                </label>
+                <button class="ct-submit" type="submit">Send message</button>
               </form>
             </div>
-          </div>
+          </section>
         </div>
       </section>
 
