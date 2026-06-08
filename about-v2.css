@@ -8,7 +8,7 @@
 .abv-main {
   max-width: var(--site-max);
   margin: 0 auto;
-  padding: calc(var(--nav-h) + 40px) clamp(24px, 5vw, 80px) 140px;
+  padding: calc(var(--nav-h) + 40px) clamp(24px, 5vw, 80px) clamp(36px, 5vh, 58px);
   color: var(--text);
 }
 
@@ -172,7 +172,8 @@
   position: relative;
   margin: clamp(84px, 11vh, 150px) 0 0;
 }
-.abv-feature img {
+.abv-feature img,
+.abv-feature video {
   display: block; width: 100%; height: auto;   /* natural aspect, no crop, no bars */
   background: var(--surface);
 }

@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="scroll-narrative.css?v=20260604-mobile-header">
-  <link rel="stylesheet" href="scroll-pages.css?v=20260604-left-rail">
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260608-eras">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260606-theatre">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -296,7 +296,7 @@
   </script>
   <style>
     /* 1/1 video hero + compact edition strip (The Kiss redesign) */
-    .bp2-hero-cover--video { max-height: 78vh; }
+    .bp2-hero-cover--video { max-height: 78vh; background: #0c0c12; }
     .bp2-hero-cover--video video { width: 100%; height: auto; object-fit: contain; display: block; }
     .bp2-edition-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 22px 0 26px; max-width: 640px; }
     .bp2-edition-strip figure { margin: 0; overflow: visible; background: #EDEDF4; border-radius: 2px; }
@@ -311,7 +311,7 @@
   <a class="sn-skip-link" href="#main">Skip to content</a>
 
   <header class="sn-nav" data-page-nav>
-    <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
+    <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="/assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
       <a href="/#hero">Home</a>
       <a href="/about/">About</a>
@@ -352,8 +352,16 @@
             including by Idris Elba.
           </p>
         </div>
-        <figure class="bp2-hero-cover bp2-hero-cover--video">
-          <video src="assets/one-of-ones/videos/the-kiss.mp4" poster="assets/one-of-ones/the-kiss.webp" autoplay muted loop playsinline preload="metadata" aria-label="The Kiss, the sold 1/1 work from Love is Love"></video>
+        <figure class="bp2-hero-cover bp2-hero-cover--video"
+                data-theatre
+                data-theatre-src="/assets/one-of-ones/videos/the-kiss.mp4"
+                data-theatre-poster="/assets/one-of-ones/the-kiss.webp"
+                data-theatre-title="The Kiss"
+                data-theatre-meta="2021 · Single-channel video · 1/1 sold"
+                data-theatre-loop="true"
+                data-theatre-href="/works/love-is-love/">
+          <video src="/assets/one-of-ones/videos/the-kiss.mp4" poster="/assets/one-of-ones/the-kiss.webp" autoplay muted loop playsinline preload="metadata" aria-label="The Kiss, the sold 1/1 work from Love is Love"></video>
+          <button class="sp-plate-play-btn" type="button" aria-label="Watch The Kiss">&#9654;</button>
           <figcaption>The Kiss, 2021 . 1/1 sold</figcaption>
         </figure>
       </div>
@@ -389,10 +397,10 @@
         <div class="bp2-prose">
           <p>Alongside the sold 1/1 work <em>The Kiss</em>, the project released 500 generative editions. The system recombines the same figures and palettes, so each piece is a variation on one idea rather than a separate work. A few are shown here; the full set lives on-chain.</p>
           <div class="bp2-edition-strip" aria-label="Selected outputs from the 500 editions">
-            <figure><img decoding="async" src="assets/love-is-love/samples/edition-032.webp" alt="Love is Love, generative edition output" loading="lazy"></figure>
-            <figure><img decoding="async" src="assets/love-is-love/samples/edition-041.webp" alt="Love is Love, generative edition output" loading="lazy"></figure>
-            <figure><img decoding="async" src="assets/love-is-love/samples/edition-069.webp" alt="Love is Love, generative edition output" loading="lazy"></figure>
-            <figure><img decoding="async" src="assets/love-is-love/samples/edition-112.webp" alt="Love is Love, generative edition output" loading="lazy"></figure>
+            <figure><img decoding="async" src="/assets/love-is-love/samples/edition-032.webp" alt="Love is Love, generative edition output" loading="lazy"></figure>
+            <figure><img decoding="async" src="/assets/love-is-love/samples/edition-041.webp" alt="Love is Love, generative edition output" loading="lazy"></figure>
+            <figure><img decoding="async" src="/assets/love-is-love/samples/edition-069.webp" alt="Love is Love, generative edition output" loading="lazy"></figure>
+            <figure><img decoding="async" src="/assets/love-is-love/samples/edition-112.webp" alt="Love is Love, generative edition output" loading="lazy"></figure>
           </div>
           <div class="bp2-link-row" aria-label="Edition links">
             <a href="https://opensea.io/collection/love-is-love-shavonnewong?status=listed" target="_blank" rel="noreferrer">Browse the 18 listed editions on OpenSea</a>
@@ -425,17 +433,17 @@
       </header>
       <div class="bp2-related-grid">
         <a class="bp2-related-card" href="/works/by-proxy/">
-          <figure class="bp2-related-fig"><img decoding="async" src="assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy"></figure>
+          <figure class="bp2-related-fig"><img decoding="async" src="/assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy"></figure>
           <h3>By Proxy</h3>
           <p>Sixty unique CGI and photography works with Lenne Chai.</p>
         </a>
         <a class="bp2-related-card" href="/works/vogue-singapore/">
-          <figure class="bp2-related-fig"><img decoding="async" src="assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt="Vogue Singapore NFT cover"></figure>
+          <figure class="bp2-related-fig"><img decoding="async" src="/assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt="Vogue Singapore NFT cover"></figure>
           <h3>Vogue Singapore NFT Cover</h3>
           <p>Digital cover commission, September 2021.</p>
         </a>
         <a class="bp2-related-card" href="/works/6529-meme-card/">
-          <figure class="bp2-related-fig"><img decoding="async" src="assets/6529-meme-card/01-faces-of-freedom-card.webp" alt="6529 Meme Card"></figure>
+          <figure class="bp2-related-fig"><img decoding="async" src="/assets/6529-meme-card/01-faces-of-freedom-card.webp" alt="6529 Meme Card"></figure>
           <h3>6529 Meme Card</h3>
           <p>Commissioned card for The Memes by 6529.</p>
         </a>
@@ -466,6 +474,25 @@
       </div>
     </footer>
   </main>
+
+  <dialog class="sp-theatre" id="sp-theatre" aria-label="Watch work">
+    <div class="sp-theatre-inner">
+      <button class="sp-theatre-close" type="button" data-theatre-close aria-label="Close">&times;</button>
+      <div class="sp-theatre-stage" data-theatre-stage></div>
+      <div class="sp-theatre-bar">
+        <div class="sp-theatre-label">
+          <p class="sp-theatre-title" data-theatre-label-title></p>
+          <p class="sp-theatre-meta" data-theatre-label-meta></p>
+        </div>
+        <div class="sp-theatre-actions">
+          <button class="sp-theatre-again" type="button" data-theatre-again>Watch again</button>
+          <button class="sp-theatre-read" type="button" data-theatre-read>&#8595; About this work</button>
+          <a class="sp-theatre-full" data-theatre-full href="#">Full work page &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
 <script>
     (function () {
       const stick = document.querySelector('[data-stick]');
@@ -506,8 +533,83 @@
       window.addEventListener('resize', syncCurrent);
     })();
   </script>
-  <script src="/site-header.js?v=20260531-scroll2"></script>
+  <script src="/site-header.js?v=20260606-footer"></script>
   <script src="/site-i18n.js?v=20260604-fix"></script>
   <script src="/fluid-renderer.js?v=20260527-site-ripple-wide"></script>
+<script>
+(function () {
+  var dialog = document.getElementById('sp-theatre');
+  if (!dialog) return;
+  var stage = dialog.querySelector('[data-theatre-stage]');
+  var labelTitle = dialog.querySelector('[data-theatre-label-title]');
+  var labelMeta = dialog.querySelector('[data-theatre-label-meta]');
+  var againBtn = dialog.querySelector('[data-theatre-again]');
+  var readBtn = dialog.querySelector('[data-theatre-read]');
+  var fullLink = dialog.querySelector('[data-theatre-full]');
+  var closeBtn = dialog.querySelector('[data-theatre-close]');
+  var currentVideo = null;
+  var triggerEl = null;
+  function showPostWatch() { againBtn.classList.add('is-visible'); readBtn.classList.add('is-visible'); }
+  function hidePostWatch() { againBtn.classList.remove('is-visible'); readBtn.classList.remove('is-visible'); }
+  function openTheatre(plate) {
+    var src = plate.dataset.theatreSrc;
+    var poster = plate.dataset.theatrePoster;
+    var title = plate.dataset.theatreTitle;
+    var meta = plate.dataset.theatreMeta;
+    var loop = plate.dataset.theatreLoop === 'true';
+    var href = plate.dataset.theatreHref;
+    var video = document.createElement('video');
+    video.src = src;
+    video.poster = poster;
+    video.muted = false;
+    video.loop = loop;
+    video.setAttribute('playsinline', '');
+    video.setAttribute('disablepictureinpicture', '');
+    video.setAttribute('controlslist', 'nodownload noplaybackrate noremoteplayback');
+    stage.innerHTML = '';
+    stage.appendChild(video);
+    currentVideo = video;
+    labelTitle.textContent = title;
+    labelMeta.textContent = meta;
+    if (href) fullLink.href = href;
+    hidePostWatch();
+    if (!loop) {
+      video.addEventListener('ended', showPostWatch);
+      video.addEventListener('timeupdate', function () {
+        if (video.duration && video.currentTime >= video.duration - 0.3) showPostWatch();
+      });
+    }
+    document.documentElement.classList.add('sp-theatre-open');
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+    else dialog.setAttribute('open', '');
+    video.play().catch(function () {});
+    triggerEl = plate.querySelector('.sp-plate-play-btn') || plate;
+  }
+  function closeTheatre() {
+    if (currentVideo) { currentVideo.pause(); currentVideo.removeAttribute('src'); currentVideo.load(); stage.innerHTML = ''; currentVideo = null; }
+    document.documentElement.classList.remove('sp-theatre-open');
+    if (typeof dialog.close === 'function' && dialog.open) dialog.close();
+    else dialog.removeAttribute('open');
+    if (triggerEl) { triggerEl.focus(); triggerEl = null; }
+  }
+  document.querySelectorAll('[data-theatre]').forEach(function (plate) {
+    var playBtn = plate.querySelector('.sp-plate-play-btn');
+    if (playBtn) {
+      playBtn.addEventListener('click', function (e) { e.stopPropagation(); openTheatre(plate); });
+    }
+    var fig = plate.querySelector('.sp-plate-media');
+    if (fig) {
+      fig.addEventListener('click', function (e) { if (e.target.closest('.sp-plate-play-btn')) return; openTheatre(plate); });
+      fig.style.cursor = 'pointer';
+    }
+  });
+  againBtn.addEventListener('click', function () { if (!currentVideo) return; hidePostWatch(); currentVideo.currentTime = 0; currentVideo.play().catch(function () {}); });
+  readBtn.addEventListener('click', function () { closeTheatre(); var t = document.querySelector('#project'); if (t) t.scrollIntoView({ behavior: 'smooth' }); });
+  closeBtn.addEventListener('click', closeTheatre);
+  dialog.addEventListener('click', function (e) { if (e.target === dialog) closeTheatre(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dialog.open) closeTheatre(); });
+  dialog.addEventListener('close', function () { document.documentElement.classList.remove('sp-theatre-open'); if (currentVideo) { currentVideo.pause(); stage.innerHTML = ''; currentVideo = null; } });
+})();
+</script>
 </body>
 </html>

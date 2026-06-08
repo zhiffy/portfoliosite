@@ -13,7 +13,7 @@
 .wr-main {
   max-width: var(--site-max);
   margin: 0 auto;
-  padding: calc(var(--nav-h) + 44px) clamp(20px, 3vw, 64px) 68px;
+  padding: calc(var(--nav-h) + 44px) clamp(20px, 3vw, 64px) clamp(36px, 5vh, 58px);
   position: relative;
   z-index: 2;
 }

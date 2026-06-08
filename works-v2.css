@@ -17,7 +17,7 @@
 
 /* ---------- CATALOG HEADER ---------- */
 .wk2-catalog {
-  padding: clamp(44px, 7vh, 76px) clamp(20px, 3vw, 64px) clamp(80px, 12vh, 140px);
+  padding: clamp(44px, 7vh, 76px) clamp(20px, 3vw, 64px) clamp(36px, 5vh, 58px);
 }
 .wk2-cat-head {
   max-width: var(--site-max);
@@ -98,7 +98,7 @@
 }
 .wk2-tabs {
   display: flex;
-  gap: 8px;
+  gap: 0;
   overflow-x: auto;
   scrollbar-width: none;
   padding-bottom: 0;
@@ -108,6 +108,7 @@
   appearance: none;
   background: rgba(255, 255, 255, 0.55);
   border: 1px solid var(--hairline-strong);
+  border-style: dashed;
   border-radius: 2px;
   min-height: 41px;
   padding: 0 17px;
@@ -124,6 +125,9 @@
   gap: 9px;
   transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
+.wk2-tab + .wk2-tab {
+  margin-left: -1px;
+}
 .wk2-tab .wk2-tab-num {
   font-size: 10px;
   font-weight: 600;
@@ -136,20 +140,26 @@
 .wk2-tab:hover {
   color: var(--text);
   border-color: var(--accent-deep);
+  border-style: dashed;
   background: rgba(255, 255, 255, 0.9);
   transform: translateY(-1px);
+  z-index: 2;
 }
 .wk2-tab:hover .wk2-tab-num { color: var(--accent-deep); }
 .wk2-tab[aria-selected="true"] {
   color: #fff;
   background: var(--accent-deep);
   border-color: var(--accent-deep);
+  border-style: solid;
   box-shadow: 0 2px 10px rgba(24, 25, 43, 0.14);
+  z-index: 1;
 }
 .wk2-tab[aria-selected="true"]:hover,
 .wk2-tab[aria-selected="true"]:focus-visible {
+  border-style: solid;
   box-shadow: 0 4px 14px rgba(24, 25, 43, 0.2);
   transform: translateY(-1px);
+  z-index: 3;
 }
 .wk2-tab[aria-selected="true"] .wk2-tab-num { color: rgba(255, 255, 255, 0.7); }
 .wk2-tab.is-available-filter {
@@ -364,9 +374,9 @@ button.wk2-tile {
 .wk2-tile-title {
   grid-column: 1 / 2;
   font-family: var(--sans);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.28;
   margin: 0;
   color: var(--text);
   text-wrap: balance;
@@ -378,23 +388,24 @@ button.wk2-tile {
 .wk2-tile-year {
   grid-column: 2 / 3;
   font-size: 11px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
   font-feature-settings: "tnum";
+  white-space: nowrap;
 }
 .wk2-tile-medium {
   grid-column: 1 / -1;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-2);
-  line-height: 1.45;
+  line-height: 1.48;
 }
 .wk2-tile-context {
   grid-column: 1 / -1;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-3);
-  font-style: italic;
-  line-height: 1.4;
+  font-style: normal;
+  line-height: 1.46;
   margin-top: 2px;
 }
 .wk2-tile-edition {
@@ -442,6 +453,7 @@ button.wk2-tile {
   flex-shrink: 0;
 }
 .wk2-dot--available { color: #2E7D5B; }
+.wk2-dot--progress { color: var(--accent-deep); }
 .wk2-dot--edition { color: var(--accent-deep); }
 .wk2-dot--commission { color: #7A5B2E; }
 .wk2-dot--sold,
@@ -613,8 +625,8 @@ button.wk2-tile {
 /* ---------- FOOTER ---------- */
 .wk2-footer {
   border-top: 1px solid var(--hairline-strong);
-  margin-top: clamp(64px, 10vh, 120px);
-  padding: clamp(32px, 5vh, 56px) clamp(28px, 4vw, 72px);
+  margin-top: clamp(26px, 4vh, 48px);
+  padding: clamp(16px, 2.4vh, 24px) clamp(28px, 4vw, 72px) clamp(18px, 3vh, 28px);
 }
 .wk2-footer-inner {
   max-width: var(--site-max);
@@ -684,7 +696,7 @@ button.wk2-tile {
   .wk2-cat-count { align-items: flex-start; text-align: left; }
   .wk2-tabbar { grid-template-columns: 1fr; gap: 12px; padding: 12px 0; overflow: hidden; }
   .wk2-tabs {
-    gap: 8px;
+    gap: 0;
     max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
@@ -734,6 +746,12 @@ button.wk2-tile {
    Available tab. Everywhere else the works read cleanly without it.
    ============================================================ */
 [data-panel]:not([data-panel="available"]) .wk2-tile-foot { display: none !important; }
+.wk2-tile--in-progress .wk2-tile-foot { display: flex !important; }
+.wk2-tile--in-progress .wk2-tile-year {
+  color: var(--accent-deep);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
 
 /* Shared top-page header rhythm. */
 .wk2-catalog {

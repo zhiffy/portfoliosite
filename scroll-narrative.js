@@ -78,6 +78,8 @@
   const heroMediaTitle = document.querySelector('[data-hero-media-title]');
   const heroMediaMeta = document.querySelector('[data-hero-media-meta]');
   const heroMediaToggle = document.querySelector('[data-hero-media-toggle]');
+  const heroInvertBg = document.querySelector('[data-hero-invert-bg]');
+  const heroTypeBase = document.querySelector('.sn-hero-type-base');
   // Defaults: pause the hero autoplay when the user has asked for reduced motion
   // or reduced data at the OS level. Stays an explicit toggle either way.
   let userPausedHero = false;
@@ -278,7 +280,8 @@
       '--hero-invert-clip-top',
       '--hero-invert-clip-right',
       '--hero-invert-clip-bottom',
-      '--hero-invert-clip-left'
+      '--hero-invert-clip-left',
+      '--hero-base-clip-right'
     ].forEach((prop) => {
       heroFrameEl.style.removeProperty(prop);
     });
@@ -294,14 +297,28 @@
     const invertRect = heroTypeInvert.getBoundingClientRect();
     if (!mediaRect.width || !mediaRect.height || !invertRect.width || !invertRect.height) return;
 
-    const top = Math.max(0, mediaRect.top - invertRect.top + 1);
-    const left = Math.max(0, mediaRect.left - invertRect.left + 1);
-    const right = Math.max(0, invertRect.right - mediaRect.right + 1);
-    const bottom = Math.max(0, invertRect.bottom - mediaRect.bottom + 1);
+    // top/bottom = 0: no vertical clipping, full letterforms show without splits.
+    const top = 0;
+    const bottom = 0;
+    // Left clip: start of the video tile (where text/video overlap begins).
+    const left = Math.max(0, mediaRect.left - invertRect.left);
+    // Right clip: end of the name text column — NOT the media tile's right edge.
+    // This bounds the invert zone to only the text/video overlap, leaving the
+    // pure-video zone to the right of the name unaffected.
+    const nameStack = heroTypeInvert ? heroTypeInvert.querySelector('.sn-hero-name-stack') : null;
+    const nameRight = nameStack ? nameStack.getBoundingClientRect().right : mediaRect.right;
+    const right = Math.max(0, invertRect.right - nameRight);
     heroFrameEl.style.setProperty('--hero-invert-clip-top', top.toFixed(2) + 'px');
     heroFrameEl.style.setProperty('--hero-invert-clip-left', left.toFixed(2) + 'px');
     heroFrameEl.style.setProperty('--hero-invert-clip-right', right.toFixed(2) + 'px');
     heroFrameEl.style.setProperty('--hero-invert-clip-bottom', bottom.toFixed(2) + 'px');
+    // Clip the base text layer to hide its overlap with the video tile —
+    // the invert layer owns that zone and shows white text over the video.
+    if (heroTypeBase) {
+      const baseRect = heroTypeBase.getBoundingClientRect();
+      const baseClipRight = Math.max(0, baseRect.right - mediaRect.left);
+      heroFrameEl.style.setProperty('--hero-base-clip-right', baseClipRight.toFixed(2) + 'px');
+    }
   }
 
   function applyHeroMediaLayout() {

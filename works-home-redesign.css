@@ -219,6 +219,16 @@
   margin-left: auto;
   padding-left: 6px;
 }
+.sn-gw-cap-status {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  border-left: 1px solid rgba(80, 88, 162, 0.35);
+  padding-left: 8px;
+  white-space: nowrap;
+}
 .sn-gw-work:hover .sn-gw-cap-title,
 .sn-gw-work:focus-visible .sn-gw-cap-title { color: var(--accent-deep); }
 

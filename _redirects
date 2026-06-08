@@ -14,6 +14,7 @@
 /works/by-proxy/ /by-proxy.html 200
 /works/meet-eva-here/chatbot/ /meet-eva-here-chatbot.html 200
 /works/meet-eva-here/diary/ /meet-eva-here-diary.html 200
+/works/meet-eva-here/hello-eva/ /meet-eva-here-hello-eva.html 200
 /works/after-ophelia/ophelia-retold/ /after-ophelia-ophelia-retold.html 200
 /works/after-ophelia/ophelia-reassembled/ /after-ophelia-ophelia-reassembled.html 200
 
@@ -38,6 +39,7 @@
 /by-proxy.html /works/by-proxy/ 301!
 /meet-eva-here-chatbot.html /works/meet-eva-here/chatbot/ 301!
 /meet-eva-here-diary.html /works/meet-eva-here/diary/ 301!
+/meet-eva-here-hello-eva.html /works/meet-eva-here/hello-eva/ 301!
 /after-ophelia-ophelia-retold.html /works/after-ophelia/ophelia-retold/ 301!
 /after-ophelia-ophelia-reassembled.html /works/after-ophelia/ophelia-reassembled/ 301!
 

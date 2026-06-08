@@ -34,6 +34,7 @@ const cleanRoutes = {
   "/works/meet-eva-here/": "meet-eva-here.html",
   "/works/meet-eva-here/chatbot/": "meet-eva-here-chatbot.html",
   "/works/meet-eva-here/diary/": "meet-eva-here-diary.html",
+  "/works/meet-eva-here/hello-eva/": "meet-eva-here-hello-eva.html",
   "/works/6529-meme-card/": "6529-meme-card.html",
   "/works/the-ties-that-bind/": "the-ties-that-bind.html",
   "/works/vogue-singapore/": "vogue-singapore.html",

@@ -96,7 +96,7 @@
 
       setBanner('No works currently listed.', payload?.collection_url || COLLECTION_URL);
     } catch {
-      setBanner('View current listings on OpenSea.', COLLECTION_URL);
+      setBanner('Live listing check unavailable.', COLLECTION_URL, 'View OpenSea');
     }
   }
 

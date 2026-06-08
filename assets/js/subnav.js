@@ -21,12 +21,17 @@
   function syncCurrent() {
     timer = 0;
     const navBottom = nav.getBoundingClientRect().bottom;
+    const marker = Math.max(navBottom + 12, window.innerHeight * 0.3);
+    const passed = targets
+      .map((item) => ({ ...item, rect: item.target.getBoundingClientRect() }))
+      .filter((item) => item.rect.top <= marker)
+      .sort((a, b) => b.rect.top - a.rect.top);
     const visible = targets
       .map((item) => ({ ...item, rect: item.target.getBoundingClientRect() }))
       .filter((item) => item.rect.bottom > navBottom + 8 && item.rect.top < window.innerHeight * 0.62)
       .sort((a, b) => a.rect.top - b.rect.top);
 
-    setCurrent((visible[0] || targets[0]).link);
+    setCurrent((passed[0] || visible[0] || targets[0]).link);
   }
 
   function scheduleSync() {

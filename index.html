@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;display=swap" rel="stylesheet">
   <!-- Hero poster preloaded with high priority so first paint shows real imagery, not a placeholder. -->
-  <link rel="preload" as="image" href="assets/one-of-ones/whirlwind-of-the-waking-dream.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/one-of-ones/whirlwind-of-the-waking-dream.webp" fetchpriority="high">
   <script>
     (() => {
       try {
@@ -63,9 +63,10 @@
       } catch (error) {}
     })();
   </script>
-  <link rel="stylesheet" href="scroll-narrative.css?v=20260605-contact-clean">
-  <link rel="stylesheet" href="works-home-redesign.css?v=20260601-featland">
-  <link rel="stylesheet" href="home-vertical-v2.css?v=20260601-herovmatch">
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260608-eras">
+  <link rel="stylesheet" href="/works-home-redesign.css?v=20260606-conditional-feature">
+  <link rel="stylesheet" href="/home-vertical-v2.css?v=20260608-eras">
+  <link rel="stylesheet" href="/contact.css?v=20260606-unified">
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
     <!-- End Cloudflare Web Analytics -->
@@ -76,7 +77,7 @@
        STICKY HEADER, sits above the strip
        ============================================================ -->
   <header class="sn-nav" data-nav="">
-    <a href="#hero" class="sn-mark" data-jump="hero"><img decoding="async" class="sn-mark-logo" src="assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
+    <a href="#hero" class="sn-mark" data-jump="hero"><img decoding="async" class="sn-mark-logo" src="/assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
       <a href="#hero" data-jump="hero" class="" data-i18n="nav.home">Home</a>
       <a href="/about/" data-i18n="nav.about">About</a>
@@ -132,6 +133,7 @@
             <p class="sn-hero-cred">Exhibited at <strong>Venice Biennale</strong>, ART SG, ArtScience Museum, Taipei Dangdai</p>
           </div>
           <div class="sn-hero-type sn-hero-type-invert" data-parallax="-0.10" aria-hidden="true">
+            <figure class="sn-hero-invert-bg" aria-hidden="true" data-hero-invert-bg></figure>
             <div class="sn-hero-name-stack">
               <div class="sn-hero-name sn-hero-name-base">
                 <span class="sn-hero-word">Shavonne</span>
@@ -148,8 +150,8 @@
           <figure class="sn-hero-media" data-hero-media data-parallax="0.10">
             <div class="sn-plate sn-plate-video sn-hero-plate-tile" data-hero-media-tile>
               <div class="sn-hero-media-layer is-active" data-hero-media-layer aria-hidden="false">
-                <video class="sn-hero-media-asset" poster="assets/one-of-ones/whirlwind-of-the-waking-dream.webp" autoplay muted loop playsinline preload="metadata" aria-label="Whirlwind of the Waking Dream video">
-                  <source src="assets/one-of-ones/videos/whirlwind-of-the-waking-dream.mp4" type="video/mp4">
+                <video class="sn-hero-media-asset" poster="/assets/one-of-ones/whirlwind-of-the-waking-dream.webp" autoplay muted loop playsinline preload="metadata" aria-label="Whirlwind of the Waking Dream video">
+                  <source src="/assets/one-of-ones/videos/whirlwind-of-the-waking-dream.mp4" type="video/mp4">
                 </video>
               </div>
               <div class="sn-hero-media-layer" data-hero-media-layer aria-hidden="true"></div>
@@ -172,9 +174,9 @@
             <span class="sn-eyebrow" data-i18n="home.eras.kicker">Practice</span>
             <div class="sn-eras-lede-wrap">
               <div class="sn-era-reveals" aria-hidden="true">
-                <span class="sn-era-reveal" data-for="fashion"><img decoding="async" loading="lazy" src="assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt=""></span>
-                <span class="sn-era-reveal" data-for="3d"><img decoding="async" loading="lazy" src="assets/eras/3d/the-mirror-world.webp" alt=""></span>
-                <span class="sn-era-reveal" data-for="ai"><img decoding="async" loading="lazy" src="assets/eras/interactive installations/15-exhibition-history-taipei-dangdai-installation.webp" alt=""></span>
+                <span class="sn-era-reveal" data-for="fashion"><img decoding="async" loading="lazy" src="/assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt=""></span>
+                <span class="sn-era-reveal" data-for="3d"><img decoding="async" loading="lazy" src="/assets/eras/3d/the-mirror-world.webp" alt=""></span>
+                <span class="sn-era-reveal" data-for="ai"><img decoding="async" loading="lazy" src="/assets/eras/interactive installations/15-exhibition-history-taipei-dangdai-installation.webp" alt=""></span>
               </div>
               <p class="sn-eras-lede">
                 I started in <span class="sn-era-term" data-era="fashion"><em>fashion photography</em></span>. Since 2020 I have been building in <span class="sn-era-term" data-era="3d"><em>3D and virtual humans</em></span>, and since 2023 also making <span class="sn-era-term" data-era="ai"><em>interactive installations</em></span> where the viewer becomes part of the work.
@@ -185,7 +187,7 @@
           <div class="sn-eras-acts" hidden aria-hidden="true">
             <a class="sn-act" href="/works/#tab=single">
               <figure class="sn-act-plate">
-                <img src="assets/eras/3d/the-mirror-world.webp"
+                <img src="/assets/eras/3d/the-mirror-world.webp"
                      alt="A still from The Mirror World, a 3D single-channel video work" loading="lazy" decoding="async">
               </figure>
               <div class="sn-act-meta">
@@ -196,7 +198,7 @@
 
             <a class="sn-act" href="/works/meet-eva-here/">
               <figure class="sn-act-plate">
-                <img src="assets/eras/interactive installations/15-exhibition-history-taipei-dangdai-installation.webp"
+                <img src="/assets/eras/interactive installations/15-exhibition-history-taipei-dangdai-installation.webp"
                      alt="An interactive AI installation view" loading="lazy" decoding="async">
               </figure>
               <div class="sn-act-meta">
@@ -227,20 +229,21 @@
           </div>
 
           <!-- 01 · feature (landscape), current work -->
-          <a class="sn-gw-work sn-gw-work--feat sn-gw-w1" href="/works/conditional/" data-work="" data-panel-link="conditional.html" tabindex="0" role="listitem" aria-label="Conditional, 2026, current work" style="--ar:1.6;">
+          <a class="sn-gw-work sn-gw-work--feat sn-gw-w1" href="/works/conditional/" data-work="" data-panel-link="conditional.html" tabindex="0" role="listitem" aria-label="Conditional, work in development, 2026" style="--ar:1.6;">
             <div class="sn-gw-frame">
-              <img src="assets/conditional/compliance-reality.webp" alt="Conditional installation view showing viewers facing the screen" loading="eager" decoding="async">
+              <img src="/assets/conditional/compliance-reality.webp" alt="Conditional installation view showing viewers facing the screen" loading="eager" decoding="async">
             </div>
             <div class="sn-gw-cap">
               <span class="sn-gw-cap-title">Conditional</span>
               <span class="sn-gw-cap-year">2026</span>
+              <span class="sn-gw-cap-status">In development</span>
             </div>
           </a>
 
           <!-- 02 · wide landscape -->
           <a class="sn-gw-work sn-gw-w2" href="/works/meet-eva-here/" data-work="" data-panel-link="meet-eva-here.html" tabindex="0" role="listitem" aria-label="Meet Eva Here, 2024 to 2025" style="--ar:1.5;">
             <div class="sn-gw-frame">
-              <img src="assets/meet-eva-here/06-dsc00661.webp" alt="Meet Eva Here installation view at ArtScience Museum" loading="eager" decoding="async">
+              <img src="/assets/meet-eva-here/06-dsc00661.webp" alt="Meet Eva Here installation view at ArtScience Museum" loading="eager" decoding="async">
             </div>
             <div class="sn-gw-cap">
               <span class="sn-gw-cap-title">Meet Eva Here</span>
@@ -249,9 +252,9 @@
           </a>
 
           <!-- 03 · portrait -->
-          <a class="sn-gw-work sn-gw-work--spotlight sn-gw-w3" href="/works/after-ophelia/" data-work="" data-panel-link="after-ophelia.html" tabindex="0" role="listitem" aria-label="After Ophelia, 2025, featured" style="--ar:0.78;">
+          <a class="sn-gw-work sn-gw-w3" href="/works/after-ophelia/" data-work="" data-panel-link="after-ophelia.html" tabindex="0" role="listitem" aria-label="After Ophelia, 2025" style="--ar:0.78;">
             <div class="sn-gw-frame">
-              <img src="assets/after-ophelia/01-ophelia-reassembled-print.webp" alt="After Ophelia, rendered portrait in water" loading="eager" decoding="async">
+              <img src="/assets/after-ophelia/01-ophelia-reassembled-print.webp" alt="After Ophelia, rendered portrait in water" loading="eager" decoding="async">
             </div>
             <div class="sn-gw-cap">
               <span class="sn-gw-cap-title">After Ophelia</span>
@@ -262,7 +265,7 @@
           <!-- 04 · portrait -->
           <a class="sn-gw-work sn-gw-w4" href="/works/the-ties-that-bind/" data-work="" data-panel-link="the-ties-that-bind.html" tabindex="0" role="listitem" aria-label="The Ties That Bind, 2023" style="--ar:0.82;">
             <div class="sn-gw-frame">
-              <img src="assets/the-ties-that-bind/04-20230317-tttb-exhibition-002.webp" alt="The Ties That Bind exhibition installation" loading="eager" decoding="async">
+              <img src="/assets/the-ties-that-bind/04-20230317-tttb-exhibition-002.webp" alt="The Ties That Bind exhibition installation" loading="eager" decoding="async">
             </div>
             <div class="sn-gw-cap">
               <span class="sn-gw-cap-title">The Ties That Bind</span>
@@ -273,7 +276,7 @@
           <!-- 05 · portrait -->
           <a class="sn-gw-work sn-gw-w5" href="/works/by-proxy/" data-work="" data-panel-link="by-proxy.html" tabindex="0" role="listitem" aria-label="By Proxy, 2022" style="--ar:1.1;">
             <div class="sn-gw-frame">
-              <img src="assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy, CGI portrait still" loading="eager" decoding="async">
+              <img src="/assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy, CGI portrait still" loading="eager" decoding="async">
             </div>
             <div class="sn-gw-cap">
               <span class="sn-gw-cap-title">By Proxy</span>
@@ -284,7 +287,7 @@
           <!-- 06 · square -->
           <a class="sn-gw-work sn-gw-w6" href="/works/love-is-love/" data-work="" data-panel-link="love-is-love.html" tabindex="0" role="listitem" aria-label="Love is Love, 2021" style="--ar:1.32;">
             <div class="sn-gw-frame">
-              <img src="assets/love-is-love/og-image.webp" alt="Love is Love, two figures at the threshold of recognition" loading="eager" decoding="async">
+              <img src="/assets/love-is-love/og-image.webp" alt="Love is Love, two figures at the threshold of recognition" loading="eager" decoding="async">
             </div>
             <div class="sn-gw-cap">
               <span class="sn-gw-cap-title">Love is Love</span>
@@ -295,7 +298,7 @@
           <!-- 07 · portrait -->
           <a class="sn-gw-work sn-gw-w7" href="/works/vogue-singapore/" data-work="" data-panel-link="vogue-singapore.html" tabindex="0" role="listitem" aria-label="Vogue Singapore NFT Cover, 2021" style="--ar:1.5;">
             <div class="sn-gw-frame">
-              <img src="assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt="Vogue Singapore NFT cover" loading="eager" decoding="async" style="object-position: center 18%;">
+              <img src="/assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt="Vogue Singapore NFT cover" loading="eager" decoding="async" style="object-position: center 18%;">
             </div>
             <div class="sn-gw-cap">
               <span class="sn-gw-cap-title">Vogue Singapore</span>
@@ -332,7 +335,7 @@
         </div>
         <div class="sn-about-side">
           <figure class="sn-about-photo">
-            <img decoding="async" src="assets/profile/profilephoto.webp" alt="Portrait of Shavonne Wong">
+            <img decoding="async" src="/assets/profile/profilephoto.webp" alt="Portrait of Shavonne Wong">
           </figure>
           <div class="sn-about-card">
             <span class="sn-eyebrow" data-i18n="home.about.highlights">Selected highlights</span>
@@ -463,7 +466,7 @@
           <article class="sn-essay" data-essay="" data-preview-slot="1" aria-label="Show writing note 1" data-i18n-aria-label="home.writing.noteAria" data-i18n-vars="n:1">
             <div class="sn-essay-plate">
               <div class="sn-plate sn-plate-image">
-                <img decoding="async" src="assets/after-ophelia/01-ophelia-reassembled-print.webp" alt="After Ophelia studio update image">
+                <img decoding="async" src="/assets/after-ophelia/01-ophelia-reassembled-print.webp" alt="After Ophelia studio update image">
               </div>
             </div>
             <div class="sn-essay-meta">
@@ -481,7 +484,7 @@
           <article class="sn-essay" data-essay="" data-preview-slot="2" aria-label="Show writing note 2" data-i18n-aria-label="home.writing.noteAria" data-i18n-vars="n:2">
             <div class="sn-essay-plate">
               <div class="sn-plate sn-plate-image">
-                <img decoding="async" src="assets/newsletters/update2025jun/02.webp" alt="June 2025 studio update image">
+                <img decoding="async" src="/assets/newsletters/update2025jun/02.webp" alt="June 2025 studio update image">
               </div>
             </div>
             <div class="sn-essay-meta">
@@ -499,7 +502,7 @@
           <article class="sn-essay" data-essay="" data-preview-slot="0" aria-label="Show writing note 3" data-i18n-aria-label="home.writing.noteAria" data-i18n-vars="n:3">
             <div class="sn-essay-plate">
               <div class="sn-plate sn-plate-image">
-                <img decoding="async" src="assets/newsletters/update2025jan/02.webp" alt="January 2025 studio update image">
+                <img decoding="async" src="/assets/newsletters/update2025jan/02.webp" alt="January 2025 studio update image">
               </div>
             </div>
             <div class="sn-essay-meta">
@@ -523,71 +526,74 @@
         <div class="sn-contact-bg" aria-hidden="true"></div>
 
         <div class="sn-contact-inner ct-home-shell">
-          <section class="ct-hero ct-home-hero" aria-labelledby="home-contact-title">
-            <h2 class="ct-title" id="home-contact-title">Contact<em>.</em></h2>
-            <a class="ct-direct" href="mailto:studio@shavonnewong.art?subject=Studio%20enquiry">studio@shavonnewong.art</a>
-          </section>
+          <div class="ct-layout" aria-labelledby="home-contact-title">
 
-          <section class="ct-panel ct-home-panel" aria-label="Contact">
-            <aside class="ct-notes">
-              <div class="ct-links" aria-label="Shavonne Wong elsewhere">
-                <span class="ct-note-label">Elsewhere</span>
-                <ul class="ct-link-list">
-                  <li><a href="https://www.instagram.com/shavonne.wong/" target="_blank" rel="noreferrer"><span>Instagram</span><span>@shavonne.wong</span></a></li>
-                  <li><a href="https://x.com/shavonnewong_" target="_blank" rel="noreferrer"><span>X</span><span>@shavonnewong_</span></a></li>
-                  <li><a href="https://sg.linkedin.com/in/shavonnew" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>/in/shavonnew</span></a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/Shavonne_Wong" target="_blank" rel="noreferrer"><span>Wikipedia</span><span>/Shavonne_Wong</span></a></li>
-                </ul>
-              </div>
+            <div class="ct-top">
+              <h2 class="ct-title" id="home-contact-title">Contact<em>.</em></h2>
+              <a class="ct-direct" href="mailto:studio@shavonnewong.art?subject=Studio%20enquiry">studio@shavonnewong.art</a>
+            </div>
 
-              <div class="ct-sub">
-                <span class="ct-note-label">Studio notes</span>
-                <p class="ct-sub-tagline">New work, exhibitions, and drops, a few times a year.</p>
+            <div class="ct-body">
+              <aside class="ct-notes" aria-label="Studio contact links">
+                <div class="ct-links">
+                  <span class="ct-note-label">Elsewhere</span>
+                  <ul class="ct-link-list">
+                    <li><a href="https://www.instagram.com/shavonne.wong/" target="_blank" rel="noreferrer"><span>Instagram</span><span>@shavonne.wong</span></a></li>
+                    <li><a href="https://x.com/shavonnewong_" target="_blank" rel="noreferrer"><span>X</span><span>@shavonnewong_</span></a></li>
+                    <li><a href="https://sg.linkedin.com/in/shavonnew" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>/in/shavonnew</span></a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Shavonne_Wong" target="_blank" rel="noreferrer"><span>Wikipedia</span><span>/Shavonne_Wong</span></a></li>
+                  </ul>
+                </div>
+                <div class="ct-sub">
+                  <span class="ct-note-label">Studio notes</span>
+                  <p class="ct-sub-tagline">New work, exhibitions, and drops, a few times a year.</p>
+                  <p class="ct-feedback ct-feedback--success" data-fs-success role="status" aria-live="polite"></p>
+                  <p class="ct-feedback ct-feedback--error" data-fs-error role="alert"></p>
+                  <form class="ct-sub-form" data-newsletter-form action="/api/newsletter-subscribe" method="POST">
+                    <input class="ct-sub-input" type="email" name="email" autocomplete="email" inputmode="email" required placeholder="you@example.com" aria-label="Email address">
+                    <button class="ct-sub-btn" type="submit">Subscribe</button>
+                  </form>
+                </div>
+              </aside>
+
+              <div class="ct-form-wrap">
                 <p class="ct-feedback ct-feedback--success" data-fs-success role="status" aria-live="polite"></p>
                 <p class="ct-feedback ct-feedback--error" data-fs-error role="alert"></p>
-                <form class="ct-sub-form" data-newsletter-form action="/api/newsletter-subscribe" method="POST">
-                  <input class="ct-sub-input" type="email" name="email" autocomplete="email" inputmode="email" required placeholder="you@example.com" aria-label="Email address">
-                  <button class="ct-sub-btn" type="submit">Subscribe</button>
+                <form class="ct-form" data-contact-form action="/api/contact" method="POST">
+                  <input type="hidden" name="_subject" value="Website contact enquiry">
+                  <label class="ct-honey">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+                  <div class="ct-grid">
+                    <label class="ct-field">
+                      <span class="ct-label">Name</span>
+                      <input class="ct-input" type="text" name="name" autocomplete="name" required>
+                    </label>
+                    <label class="ct-field">
+                      <span class="ct-label">Email</span>
+                      <input class="ct-input" type="email" name="email" autocomplete="email" inputmode="email" required>
+                    </label>
+                  </div>
+                  <label class="ct-field">
+                    <span class="ct-label">Enquiry type</span>
+                    <select class="ct-select" name="enquiry_type" required>
+                      <option value="">Select one</option>
+                      <option>Acquisition</option>
+                      <option>Commission</option>
+                      <option>Exhibition</option>
+                      <option>Press</option>
+                      <option>Collaboration</option>
+                      <option>Other</option>
+                    </select>
+                  </label>
+                  <label class="ct-field">
+                    <span class="ct-label">Message</span>
+                    <textarea class="ct-textarea" name="message" required></textarea>
+                  </label>
+                  <button class="ct-submit" type="submit">Send message</button>
                 </form>
               </div>
-            </aside>
-
-            <div class="ct-form-wrap">
-              <p class="ct-feedback ct-feedback--success" data-fs-success role="status" aria-live="polite"></p>
-              <p class="ct-feedback ct-feedback--error" data-fs-error role="alert"></p>
-              <form class="ct-form" data-contact-form action="/api/contact" method="POST">
-                <input type="hidden" name="_subject" value="Website contact enquiry">
-                <label class="ct-honey">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
-                <div class="ct-grid">
-                  <label class="ct-field">
-                    <span class="ct-label">Name</span>
-                    <input class="ct-input" type="text" name="name" autocomplete="name" required>
-                  </label>
-                  <label class="ct-field">
-                    <span class="ct-label">Email</span>
-                    <input class="ct-input" type="email" name="email" autocomplete="email" inputmode="email" required>
-                  </label>
-                </div>
-                <label class="ct-field">
-                  <span class="ct-label">Enquiry type</span>
-                  <select class="ct-select" name="enquiry_type" required>
-                    <option value="">Select one</option>
-                    <option>Acquisition</option>
-                    <option>Commission</option>
-                    <option>Exhibition</option>
-                    <option>Press</option>
-                    <option>Collaboration</option>
-                    <option>Other</option>
-                  </select>
-                </label>
-                <label class="ct-field">
-                  <span class="ct-label">Message</span>
-                  <textarea class="ct-textarea" name="message" required></textarea>
-                </label>
-                <button class="ct-submit" type="submit">Send message</button>
-              </form>
             </div>
-          </section>
+
+          </div>
         </div>
       </section>
 

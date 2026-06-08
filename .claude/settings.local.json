@@ -2,7 +2,33 @@
   "permissions": {
     "allow": [
       "mcp__Claude_Preview__preview_start",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "PowerShell(Get-ChildItem \"D:\\\\Dropbox\\\\Gen V Agency\\\\Renders\\\\NFTs\\\\videos\" | Where-Object { $_.Name -match \"ophelia\" -or $_.Name -match \"after\" } | Select-Object Name, Length)",
+      "Bash(ls \"C:/Program Files/HandBrake/\")",
+      "Bash(where vlc *)",
+      "Read(//c/Program Files/VideoLAN/VLC/**)",
+      "Bash(where python *)",
+      "Bash(winget --version)",
+      "Bash(scoop --version)",
+      "Bash(choco --version)",
+      "PowerShell(python -c \"import imageio_ffmpeg; print\\(imageio_ffmpeg.get_ffmpeg_exe\\(\\)\\)\" 2>&1)",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "Bash(dir \"D:\\\\Dropbox\\\\Admin\\\\Website\\\\Shavonne Website Redesign V4\\\\assets\" /s /b)",
+      "Bash(findstr /i \".mp4\")",
+      "Bash(copy \"D:\\\\Dropbox\\\\Gen V Agency\\\\Renders\\\\NFTs\\\\videos\\\\Hello Eva.mp4\" \"D:\\\\Dropbox\\\\Admin\\\\Website\\\\Shavonne Website Redesign V4\\\\assets\\\\meet-eva-here\\\\hello-eva.mp4\")",
+      "Bash(python dev-server.py 5199)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type}\\\\n\" http://127.0.0.1:5199/about/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type}\\\\n\" http://127.0.0.1:5199/about/about-redesign.css)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type}\\\\n\" http://127.0.0.1:5199/works/meet-eva-here/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type}\\\\n\" http://127.0.0.1:5199/works/meet-eva-here/scroll-narrative.css)",
+      "Bash(nohup python dev-server.py 5174)",
+      "Bash(curl -s -o /dev/null -w \"page /about/ -> %{http_code}\\\\n\" http://127.0.0.1:5174/about/)",
+      "Bash(curl -s -o /dev/null -w \"css /about/about-redesign.css -> %{http_code} %{content_type}\\\\n\" http://127.0.0.1:5174/about/about-redesign.css)",
+      "Bash(curl -s -o /dev/null -w \"img /about/assets/brand/wordmark-slate.webp -> %{http_code} %{content_type}\\\\n\" http://127.0.0.1:5174/about/assets/brand/wordmark-slate.webp)",
+      "Bash(python tools/absolutize-assets.py)",
+      "Bash(grep -rhoE '=\"//\\(assets|[a-z-]+\\\\.css\\)' *.html)",
+      "Bash(python tools/bump-css-version.py)",
+      "Bash(git symbolic-ref *)"
     ]
   }
 }

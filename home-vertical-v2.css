@@ -117,11 +117,13 @@ html.sn-vertical-mode .sn-hero-cred strong { color: var(--text-2); font-weight: 
   html.sn-vertical-mode .sn-eras-lede {
     max-width: min(100%, 1040px) !important;
     font-size: clamp(50px, 6.3vw, 96px) !important;
-    line-height: 1.12 !important;
-    letter-spacing: -0.012em;
+    font-weight: 300 !important;
+    line-height: 1.16 !important;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
   }
 }
-html.sn-vertical-mode .sn-eras-lede em { color: var(--text); font-style: italic; }
+html.sn-vertical-mode .sn-eras-lede em { color: var(--accent-deep); font-style: italic; font-weight: 300; }
 
 /* reveal layer sits behind the text */
 .sn-eras-lede-wrap { position: relative; }
@@ -145,7 +147,11 @@ html.sn-vertical-mode .sn-eras-lede em { color: var(--text); font-style: italic;
 .sn-era-term em {
   transition: color 160ms ease;
 }
-.sn-era-term:hover em { color: var(--accent-deep); }
+.sn-era-term:hover em {
+  text-decoration: underline;
+  text-decoration-thickness: 0.04em;
+  text-underline-offset: 0.16em;
+}
 .sn-eras-lede-wrap:has(.sn-era-term[data-era="fashion"]:hover) .sn-era-reveal[data-for="fashion"],
 .sn-eras-lede-wrap:has(.sn-era-term[data-era="3d"]:hover) .sn-era-reveal[data-for="3d"],
 .sn-eras-lede-wrap:has(.sn-era-term[data-era="ai"]:hover) .sn-era-reveal[data-for="ai"] { opacity: 1; }
