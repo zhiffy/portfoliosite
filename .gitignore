@@ -7,6 +7,9 @@ dist/
 assets/videos/everything-yet-nothing-frames/
 assets/videos/everything-yet-nothing-scrub/
 
+# raw 4K video masters — kept locally as backup, optimized web versions are committed
+assets/_video-masters/
+
 # editor / sync temp + backup files (these caused the truncation issues)
 *.tmp
 *.tmp.*
