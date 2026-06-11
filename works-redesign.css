@@ -1975,3 +1975,18 @@
   background: var(--text-3);
   opacity: 0.55;
 }
+
+/* Static inventory fallback (pre-JS / crawlers). Hidden the moment the live
+   grid renders because available.js replaces the grid's innerHTML. */
+.av-static {
+  list-style: none;
+  margin: 0;
+  padding: 24px 0;
+  display: block;
+}
+.av-static li {
+  padding: 10px 0;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  font-size: 15px;
+  line-height: 1.5;
+}

@@ -583,7 +583,8 @@
       });
     })
     .catch(() => {
-      state.items = [];
-      render();
+      // Listing data failed to load. Keep the static server-rendered inventory
+      // visible instead of wiping it, and say so plainly.
+      if (els.count) els.count.textContent = 'Live listing data is unavailable right now; the inventory below may not reflect current availability.';
     });
 })();

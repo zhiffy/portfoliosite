@@ -776,3 +776,16 @@
     padding: 13px 0;
   }
 }
+
+/* Selected tier — word label needs smaller type than the year numerals */
+.pr-selected .pr-year-num {
+  font-size: clamp(17px, 1.6vw, 22px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: var(--sans);
+  font-weight: 500;
+}
+.pr-selected {
+  border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  padding-bottom: clamp(30px, 5vh, 56px);
+}

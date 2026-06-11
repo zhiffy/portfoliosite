@@ -214,20 +214,38 @@ body.sn-page-body::-webkit-scrollbar-corner { background: transparent; }
 
 html.sn-ripple-filter-on .sn-stage,
 html.sn-ripple-filter-on .ab-main,
+html.sn-ripple-filter-on .abv-main,
+html.sn-ripple-filter-on .bp2-main,
 html.sn-ripple-filter-on .wk-main,
 html.sn-ripple-filter-on .av-main,
 html.sn-ripple-filter-on .wr-main,
-html.sn-ripple-filter-on .sp-main {
+html.sn-ripple-filter-on .sp-main,
+html.sn-ripple-filter-on .ct-main,
+html.sn-ripple-filter-on .nl-letter,
+html.sn-ripple-filter-on .sp-screen-main {
   filter: url(#snWebglRippleDisplace);
+}
+
+/* The works-page headline lives outside the filtered .wk2-panels (scoped to
+   protect the sticky tabbar); it rides its own filter instance which
+   fluid-renderer.js keeps in sync with the page each frame. */
+html.sn-ripple-filter-on .wk2-cat-head {
+  filter: url(#snWebglRippleDisplaceExtra);
 }
 
 @media (prefers-reduced-motion: reduce), (pointer: coarse) {
   html.sn-ripple-filter-on .sn-stage,
   html.sn-ripple-filter-on .ab-main,
+  html.sn-ripple-filter-on .abv-main,
+  html.sn-ripple-filter-on .bp2-main,
   html.sn-ripple-filter-on .wk-main,
   html.sn-ripple-filter-on .av-main,
   html.sn-ripple-filter-on .wr-main,
-  html.sn-ripple-filter-on .sp-main {
+  html.sn-ripple-filter-on .sp-main,
+  html.sn-ripple-filter-on .ct-main,
+  html.sn-ripple-filter-on .nl-letter,
+  html.sn-ripple-filter-on .sp-screen-main,
+  html.sn-ripple-filter-on .wk2-cat-head {
     filter: none;
   }
 }
@@ -900,8 +918,11 @@ html.sn-vertical-mode .sn-ticker {
 
 @media (max-width: 900px) {
   html.sn-vertical-mode .sn-panel {
-    padding-top: calc(var(--nav-h) + 40px);
-    padding-bottom: 64px;
+    /* Just enough to clear the fixed 94px nav, with light breathing. Larger
+       values stacked with the previous panel's bottom padding into a big
+       empty band between sections (most visible at statement -> writing). */
+    padding-top: calc(var(--nav-h) + 16px);
+    padding-bottom: 30px;
   }
   html.sn-vertical-mode .sn-hero {
     padding-top: 0;
@@ -1361,7 +1382,7 @@ html.sn-vertical-mode .sn-ticker {
   z-index: 2;
   pointer-events: none;
   background:
-    linear-gradient(180deg, transparent 60%, rgba(24,25,43,0.55) 100%);
+    linear-gradient(180deg, transparent 55%, rgba(24,25,43,0.68) 100%);
 }
 .sn-hero-media-cap {
   position: absolute;
@@ -1379,7 +1400,7 @@ html.sn-vertical-mode .sn-ticker {
   color: rgba(237,237,244,0.85);
 }
 .sn-hero-media-cap > span:last-child {
-  color: rgba(237,237,244,0.6);
+  color: rgba(237,237,244,0.78);
 }
 
 /* Hero video play/pause control --------------------------------- */

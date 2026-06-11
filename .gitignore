@@ -19,6 +19,10 @@ Thumbs.db
 *.log
 ds-preview/
 
+# QA artifacts — not site content (already-tracked files need `git rm -r --cached screenshots qa`)
+screenshots/
+qa/
+
 # local secrets
 .env
 .env.local

@@ -11,17 +11,35 @@
   const finePointer = window.matchMedia('(pointer: fine)');
   if (reduceMotion.matches || !finePointer.matches) return;
 
-  const rippleTargetSelector = '[data-stage], .ab-main, .wk-main, .wr-main, .sp-main';
+  const rippleTargetSelector = '[data-stage], .ab-main, .abv-main, .bp2-main, .wk-main, .wk2-panels, .wr-main, .sp-main, .av-main, .ct-main, .nl-letter, .sp-screen-main';
   const rippleTarget = document.querySelector(rippleTargetSelector);
   if (!rippleTarget) return;
+  if (rippleTarget.hasAttribute('data-no-ripple')) return;
   const isHomeTarget = rippleTarget.matches('[data-stage]');
+  // Dense text pages (About bio + ledger, studio notes) get a gentler warp so
+  // body text stays readable; media-led pages keep the stronger one.
+  const isDenseTarget = !isHomeTarget && rippleTarget.matches('.abv-main, .nl-letter');
+  const initialTargetRect = rippleTarget.getBoundingClientRect();
+  const targetWidth = Math.max(window.innerWidth, initialTargetRect.width || 0);
+  const targetHeight = Math.max(window.innerHeight, initialTargetRect.height || 0, rippleTarget.scrollHeight || 0);
+  // Very tall pages re-rasterise a huge layer per frame; halve their tick rate.
+  const isTallTarget = !isHomeTarget && targetHeight > window.innerHeight * 2.5;
+  const clamp = (min, value, max) => Math.max(min, Math.min(max, value));
 
   const MAX_RIPPLES = 28;
-  const MAP_W = isHomeTarget ? 420 : 720;
-  const MAP_H = isHomeTarget ? 260 : 900;
+  // Keep the map small: it is PNG-encoded every frame, so its pixel count is
+  // the main per-frame cost on long pages like About.
+  const MAP_W = 420;
+  const MAP_H = isHomeTarget ? 260 : 300;
   const FILTER_ID = 'snWebglRippleDisplace';
+  const HEADER_FILTER_ID = 'snWebglRippleDisplaceExtra';
   const MAP_ID = 'snWebglRippleMap';
   const DISPLACE_ID = 'snWebglRippleDisplaceNode';
+  // Extra ripple target outside the main filtered element. On the works page
+  // the big "Works." headline lives outside .wk2-panels (which is scoped to
+  // protect the sticky tabbar), so it gets its own filter instance whose map
+  // is repositioned each frame to stay in sync with the page.
+  const headerEl = document.querySelector('.wk2-cat-head');
   const mouseEffectKey = 'sw-mouse-effect';
   const readMouseEffectEnabled = () => {
     try { return window.localStorage.getItem(mouseEffectKey) !== 'off'; } catch (error) { return true; }
@@ -43,11 +61,16 @@
   const defs = document.createElementNS(svgNS, 'defs');
   const filter = document.createElementNS(svgNS, 'filter');
   filter.setAttribute('id', FILTER_ID);
+  // Same geometry as the homepage on every page: the filter region is exactly
+  // the element's own box. An expanded region (the old -6%/112%) leaves a
+  // margin the displacement map never covers, which painted a ghost strip of
+  // duplicated edge pixels outside the content on works/press/writing.
   filter.setAttribute('x', '0');
   filter.setAttribute('y', '0');
   filter.setAttribute('width', '100%');
   filter.setAttribute('height', '100%');
   filter.setAttribute('color-interpolation-filters', 'sRGB');
+  if (!isHomeTarget) filter.setAttribute('primitiveUnits', 'userSpaceOnUse');
 
   const feImage = document.createElementNS(svgNS, 'feImage');
   feImage.setAttribute('id', MAP_ID);
@@ -55,6 +78,8 @@
   feImage.setAttributeNS('http://www.w3.org/1999/xlink', 'href', neutralPixel);
   feImage.setAttribute('result', 'rippleMap');
   feImage.setAttribute('preserveAspectRatio', 'none');
+  // No explicit width/height: the map defaults to the filter region, exactly
+  // as on the homepage, so it always spans the element edge-to-edge.
 
   const feDisplace = document.createElementNS(svgNS, 'feDisplacementMap');
   feDisplace.setAttribute('id', DISPLACE_ID);
@@ -66,6 +91,33 @@
 
   filter.append(feImage, feDisplace);
   defs.appendChild(filter);
+
+  let headerFeImage = null;
+  let headerFeDisplace = null;
+  if (headerEl) {
+    const headerFilter = document.createElementNS(svgNS, 'filter');
+    headerFilter.setAttribute('id', HEADER_FILTER_ID);
+    headerFilter.setAttribute('x', '0');
+    headerFilter.setAttribute('y', '0');
+    headerFilter.setAttribute('width', '100%');
+    headerFilter.setAttribute('height', '100%');
+    headerFilter.setAttribute('color-interpolation-filters', 'sRGB');
+    headerFilter.setAttribute('primitiveUnits', 'userSpaceOnUse');
+    headerFeImage = document.createElementNS(svgNS, 'feImage');
+    headerFeImage.setAttribute('href', neutralPixel);
+    headerFeImage.setAttributeNS('http://www.w3.org/1999/xlink', 'href', neutralPixel);
+    headerFeImage.setAttribute('result', 'rippleMap');
+    headerFeImage.setAttribute('preserveAspectRatio', 'none');
+    headerFeDisplace = document.createElementNS(svgNS, 'feDisplacementMap');
+    headerFeDisplace.setAttribute('in', 'SourceGraphic');
+    headerFeDisplace.setAttribute('in2', 'rippleMap');
+    headerFeDisplace.setAttribute('scale', '0');
+    headerFeDisplace.setAttribute('xChannelSelector', 'R');
+    headerFeDisplace.setAttribute('yChannelSelector', 'G');
+    headerFilter.append(headerFeImage, headerFeDisplace);
+    defs.appendChild(headerFilter);
+  }
+
   defsSvg.appendChild(defs);
   document.body.prepend(defsSvg);
 
@@ -194,6 +246,7 @@
 
   let start = performance.now();
   let raf = 0;
+  let lastDraw = 0;
   let rippleIndex = 0;
   let lastX = window.innerWidth * 0.5;
   let lastY = window.innerHeight * 0.5;
@@ -222,6 +275,15 @@
   }
 
   function pointerUv(x, y, rect = rippleTargetRect()) {
+    if (!isHomeTarget) {
+      // Subpages work in viewport space: the map covers exactly the visible
+      // screen (like the homepage stage), so ripple detail never dilutes on
+      // long documents.
+      return [
+        Math.max(0, Math.min(1, x / Math.max(1, window.innerWidth))),
+        Math.max(0, Math.min(1, 1 - (y / Math.max(1, window.innerHeight))))
+      ];
+    }
     return [
       Math.max(0, Math.min(1, (x - rect.left) / Math.max(1, rect.width))),
       Math.max(0, Math.min(1, 1 - ((y - rect.top) / Math.max(1, rect.height))))
@@ -237,6 +299,11 @@
     feDisplace.setAttribute('scale', '0');
     feImage.setAttribute('href', neutralPixel);
     feImage.setAttributeNS('http://www.w3.org/1999/xlink', 'href', neutralPixel);
+    if (headerFeDisplace) headerFeDisplace.setAttribute('scale', '0');
+    if (headerFeImage) {
+      headerFeImage.setAttribute('href', neutralPixel);
+      headerFeImage.setAttributeNS('http://www.w3.org/1999/xlink', 'href', neutralPixel);
+    }
     currentScale = 0;
     pointerActive = 0;
   }
@@ -269,6 +336,11 @@
       clearRipple();
       return;
     }
+    if (isTallTarget && now - lastDraw < 30) {
+      requestRender();
+      return;
+    }
+    lastDraw = now;
     const time = (now - start) / 1000;
     const wantsPointer = (now - lastMove) < 520 ? 1 : 0;
 
@@ -280,24 +352,47 @@
       }
     }
 
+    const scaleKick = isHomeTarget ? 11.52 : 9.2;
+    const scaleTarget = isHomeTarget ? 25.92 : 18.4;
+    const scaleEase = 0.20;
+
     pointerActive += (wantsPointer - pointerActive) * 0.11;
-    if (wantsPointer) currentScale = Math.max(currentScale, 11.52);
-    currentScale += (((wantsPointer || hasLiveRipple) ? 25.92 : 0) - currentScale) * 0.20;
+    if (wantsPointer) currentScale = Math.max(currentScale, scaleKick);
+    currentScale += (((wantsPointer || hasLiveRipple) ? scaleTarget : 0) - currentScale) * scaleEase;
 
     const rect = rippleTargetRect();
     const uv = pointerUv(lastX, lastY, rect);
+    const resW = isHomeTarget ? Math.max(1, rect.width) : window.innerWidth;
+    const resH = isHomeTarget ? Math.max(1, rect.height) : window.innerHeight;
     gl.useProgram(program);
     gl.viewport(0, 0, MAP_W, MAP_H);
-    gl.uniform2f(uResolution, Math.max(1, rect.width), Math.max(1, rect.height));
+    gl.uniform2f(uResolution, resW, resH);
     gl.uniform1f(uTime, time);
     gl.uniform4fv(uRipples, ripples);
     gl.uniform3f(uPointer, uv[0], uv[1], pointerActive);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 
     const mapUrl = canvas.toDataURL('image/png');
+    if (!isHomeTarget) {
+      // Pin the map to the viewport, expressed in the element's local coords.
+      feImage.setAttribute('x', (-rect.left).toFixed(1));
+      feImage.setAttribute('y', (-rect.top).toFixed(1));
+      feImage.setAttribute('width', window.innerWidth);
+      feImage.setAttribute('height', window.innerHeight);
+    }
     feImage.setAttribute('href', mapUrl);
     feImage.setAttributeNS('http://www.w3.org/1999/xlink', 'href', mapUrl);
     feDisplace.setAttribute('scale', currentScale.toFixed(2));
+    if (headerFeImage && headerFeDisplace) {
+      const headerRect = headerEl.getBoundingClientRect();
+      headerFeImage.setAttribute('x', (-headerRect.left).toFixed(1));
+      headerFeImage.setAttribute('y', (-headerRect.top).toFixed(1));
+      headerFeImage.setAttribute('width', window.innerWidth);
+      headerFeImage.setAttribute('height', window.innerHeight);
+      headerFeImage.setAttribute('href', mapUrl);
+      headerFeImage.setAttributeNS('http://www.w3.org/1999/xlink', 'href', mapUrl);
+      headerFeDisplace.setAttribute('scale', currentScale.toFixed(2));
+    }
     document.documentElement.classList.toggle('sn-ripple-filter-on', currentScale > 0.35);
 
     if (hasLiveRipple || pointerActive > 0.01 || currentScale > 0.35) requestRender();
@@ -317,7 +412,10 @@
 
     const spawnDistance = Math.hypot(lastX - lastSpawnX, lastY - lastSpawnY);
     if (spawnDistance > 26 || speed > 36) {
-      spawnRipple(lastX, lastY, Math.min(0.94, 0.29 + speed / 150));
+      const strengthCap = 0.94;
+      const strengthBase = 0.29;
+      const strengthDivisor = 150;
+      spawnRipple(lastX, lastY, Math.min(strengthCap, strengthBase + speed / strengthDivisor));
       lastSpawnX = lastX;
       lastSpawnY = lastY;
     } else {

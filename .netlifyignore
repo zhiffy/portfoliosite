@@ -1,2 +1,9 @@
 assets/videos/everything-yet-nothing-frames/
 assets/videos/everything-yet-nothing-scrub/
+assets/_video-masters/
+screenshots/
+qa/
+ds-preview/
+uploads/
+*.tmp
+*.tmp.*

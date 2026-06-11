@@ -28,7 +28,16 @@
       "Bash(python tools/absolutize-assets.py)",
       "Bash(grep -rhoE '=\"//\\(assets|[a-z-]+\\\\.css\\)' *.html)",
       "Bash(python tools/bump-css-version.py)",
-      "Bash(git symbolic-ref *)"
+      "Bash(git symbolic-ref *)",
+      "Bash(sed -n '64,76p' meet-eva-here-hello-eva.html)",
+      "Bash(sed -n '180,190p' meet-eva-here.html)",
+      "Bash(sed -n '160,164p' after-ophelia.html)",
+      "Bash(sed -n '68,72p' after-ophelia-ophelia-reassembled.html)",
+      "Bash(git checkout *)",
+      "Bash(git merge *)",
+      "Bash(git push *)",
+      "Bash(curl -s -o /tmp/listings.json -w \"HTTP %{http_code}\\\\n\" \"https://dapper-sprite-916862.netlify.app/api/by-proxy-listings\")",
+      "Read(//tmp/**)"
     ]
   }
 }

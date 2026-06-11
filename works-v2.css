@@ -344,6 +344,18 @@ button.wk2-tile {
 }
 .wk2-tile:hover .wk2-tile-media img,
 .wk2-tile:hover .wk2-tile-media video { transform: scale(1.025); }
+/* Meet Eva Here cover (installation view): bias the crop toward the screen
+   with the figure on the left rather than the visitors on the right. */
+.wk2-tile[href="/works/meet-eva-here/"] .wk2-tile-media img { object-position: 38% 50%; }
+
+/* Mouse ripple effect target for the Works grids (mirrors the .wk-main /
+   .ab-main rule in scroll-narrative.css). Targets .wk2-panels rather than the
+   whole catalog so the SVG filter never wraps the sticky tabbar (a filtered
+   ancestor would break position: sticky). */
+html.sn-ripple-filter-on .wk2-panels { filter: url(#snWebglRippleDisplace); }
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  html.sn-ripple-filter-on .wk2-panels { filter: none; }
+}
 
 .wk2-tile-overlay {
   position: absolute;
@@ -694,20 +706,26 @@ button.wk2-tile {
 @media (max-width: 760px) {
   .wk2-cat-head { grid-template-columns: 1fr; }
   .wk2-cat-count { align-items: flex-start; text-align: left; }
-  .wk2-tabbar { grid-template-columns: 1fr; gap: 12px; padding: 12px 0; overflow: hidden; }
+  .wk2-tabbar { grid-template-columns: 1fr; gap: 14px; padding: 12px 0; overflow: visible; }
+  /* Wrap the category tabs onto multiple rows so all five stay visible and
+     tappable instead of overflowing off-screen behind a hidden scrollbar. */
   .wk2-tabs {
-    gap: 0;
+    flex-wrap: wrap;
+    gap: 6px;
     max-width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-right: 0;
-    margin-right: 0;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    overflow: visible;
   }
-  .wk2-tabs::-webkit-scrollbar { display: none; }
-  .wk2-filters { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0; }
-  .wk2-filter select { min-width: 120px; }
+  .wk2-tab {
+    min-height: 38px;
+    padding: 0 13px;
+    font-size: 13px;
+    gap: 6px;
+  }
+  .wk2-tab + .wk2-tab { margin-left: 0; }
+  /* Filters wrap too rather than hiding behind a horizontal scroll. */
+  .wk2-filters { overflow-x: visible; flex-wrap: wrap; gap: 8px; }
+  .wk2-filter { flex: 1 1 auto; }
+  .wk2-filter select { width: 100%; min-width: 130px; }
   .wk2-grid--projects { grid-template-columns: 1fr; gap: 28px; }
   .wk2-grid--single,
   .wk2-grid--editions,
