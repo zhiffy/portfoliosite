@@ -604,33 +604,37 @@
 
 /* In brief - compact Q&A at the bottom of the About page. Liftable answers for AEO. */
 .abv-brief {
-  margin-top: clamp(36px, 6vh, 64px);
-  padding-top: clamp(22px, 3.5vh, 36px);
-  border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  margin-top: clamp(24px, 4vh, 44px);
+  padding-top: clamp(16px, 2.4vh, 24px);
+  border-top: 0.5px solid color-mix(in srgb, currentColor 14%, transparent);
 }
 .abv-brief-title {
   font-family: var(--sans, inherit);
-  font-size: 12px;
+  font-size: 9px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 500;
-  opacity: 0.65;
-  margin: 0 0 18px;
+  opacity: 0.7;
+  margin: 0 0 12px;
 }
 .abv-brief-list {
   margin: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(18px, 3vw, 36px);
+  gap: 14px clamp(20px, 3vw, 34px);
 }
 .abv-brief-list dt {
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  font-size: clamp(13.5px, 1vw, 15px);
+  line-height: 1.35;
 }
 .abv-brief-list dd {
   margin: 0;
-  line-height: 1.6;
-  opacity: 0.9;
+  max-width: 58ch;
+  font-size: 13px;
+  line-height: 1.55;
+  opacity: 0.82;
 }
 @media (max-width: 760px) {
   .abv-brief-list { grid-template-columns: 1fr; }

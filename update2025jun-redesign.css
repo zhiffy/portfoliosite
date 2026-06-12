@@ -726,3 +726,105 @@
 @media (prefers-reduced-motion: reduce) {
   .nl-press-preview { transition: opacity 80ms linear; }
 }
+
+/* ============================================================
+   WIDTH PASS (2026-06-12) — the letter pages left a large dead
+   zone at desktop. Stacked events and minor items become
+   two-column editorial rows (title rail left, prose right);
+   Looking Ahead pairs its label with the text; the hero lead
+   widens. Desktop only; below 901px everything stacks as before.
+   ============================================================ */
+@media (min-width: 901px) {
+  /* hero lead breathes a little wider */
+  .nl-hero-lead { max-width: 60ch; }
+
+  /* events without a media grid: title/venue rail left, prose right */
+  .nl-ev--herotop::after, .nl-ev--stack::after { content: ""; display: block; clear: both; }
+  .nl-ev--herotop .nl-ev-title, .nl-ev--stack .nl-ev-title { float: left; clear: left; width: 36%; }
+  .nl-ev--herotop .nl-ev-venue, .nl-ev--stack .nl-ev-venue { float: left; clear: left; width: 36%; margin-top: 8px; }
+  .nl-ev--herotop .nl-ev-body, .nl-ev--stack .nl-ev-body,
+  .nl-ev--herotop .nl-ev-note, .nl-ev--stack .nl-ev-note { margin-left: 44%; max-width: 62ch; }
+  .nl-ev--herotop .nl-ev-body:first-of-type, .nl-ev--stack .nl-ev-body:first-of-type { margin-top: 6px; }
+
+  /* minor coming-soon items: title left, body right */
+  .nl-soon-minor { max-width: none; }
+  .nl-soon-item { display: grid; grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr); column-gap: clamp(28px, 4vw, 72px); align-items: start; }
+  .nl-soon-item-body { margin-top: 0; max-width: 62ch; }
+
+  /* personal-voice blocks (Hi again / Looking ahead): label rail left, text right */
+  .nl-ahead-inner { display: grid; grid-template-columns: minmax(140px, 0.22fr) minmax(0, 0.78fr); column-gap: clamp(28px, 4vw, 72px); align-items: start; }
+  .nl-ahead-label { grid-column: 1; padding-top: 8px; }
+  .nl-ahead-body { grid-column: 2; margin-top: 0; width: auto; max-width: none; }
+  .nl-ahead-body p { max-width: 58ch; }
+  .nl-sign { grid-column: 2; }
+
+  /* press headlines can carry a longer line */
+  .nl-press-headline { max-width: 76ch; }
+}
+
+/* ============================================================
+   WIDTH PASS 2 (2026-06-12) — page-by-page audit fixes.
+   1. Section-level notes (e.g. "A move to Bangkok", "What it is
+      about") become label-left / text-right rows matching the
+      coming-soon items, instead of a narrow left paragraph.
+   2. Body copy that continues below a featured grid aligns under
+      the featured text column rather than restarting at the left.
+   3. A lone support image under a media-right event keeps to the
+      media column (right) instead of orphaning at the left edge.
+   ============================================================ */
+@media (min-width: 901px) {
+  .nl-section > .nl-ev-note {
+    display: grid;
+    grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr);
+    column-gap: clamp(28px, 4vw, 72px);
+    align-items: start;
+    max-width: none;
+  }
+  .nl-section > .nl-ev-note .nl-ev-note-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text);
+  }
+  .nl-section > .nl-ev-note p { margin: 0; max-width: 62ch; }
+
+  .nl-featured ~ .nl-body-copy { margin-left: calc(53.5% + 28px); max-width: none; }
+  .nl-featured ~ .nl-body-copy p { max-width: 56ch; }
+
+  .nl-ev--mediaright .nl-ev-support:not(.nl-twoup) { margin-left: auto; }
+}
+
+/* ============================================================
+   COVER PLATE (2026-06-12) — every letter opens with one wide
+   image at a fixed 2:1 crop directly under the masthead, never
+   two. Hero spacing tightened so title, lead, and cover compose
+   as one unit.
+   ============================================================ */
+.nl-hero { padding: clamp(32px, 5vw, 64px) 0 clamp(24px, 3vw, 44px); }
+.nl-cover { margin: clamp(24px, 3.2vw, 44px) 0 0; }
+.nl-cover img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; display: block; }
+.nl-cover figcaption { margin-top: 10px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: var(--text-2); }
+
+/* ============================================================
+   WIDTH PASS 3 (2026-06-12) — rail events with image rows.
+   Support image rows inside rail events span the full content
+   width instead of stopping at the compact cap, and event notes
+   become label-left / text-right rows so the close of the event
+   returns to the rail axis instead of floating.
+   ============================================================ */
+@media (min-width: 901px) {
+  .nl-ev--herotop .nl-ev-support, .nl-ev--stack .nl-ev-support { max-width: none; margin-left: 0; }
+  .nl-ev--herotop .nl-ev-note, .nl-ev--stack .nl-ev-note {
+    margin-left: 0;
+    max-width: none;
+    display: grid;
+    grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr);
+    column-gap: clamp(28px, 4vw, 72px);
+    align-items: start;
+  }
+  .nl-ev--herotop .nl-ev-note .nl-ev-note-label, .nl-ev--stack .nl-ev-note .nl-ev-note-label {
+    display: block; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; color: var(--text);
+  }
+  .nl-ev--herotop .nl-ev-note p, .nl-ev--stack .nl-ev-note p { margin: 0; max-width: 62ch; }
+}

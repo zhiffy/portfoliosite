@@ -2358,9 +2358,54 @@ html {
   }
 }
 
-/* Q&A sub-headings (project "Questions" sections) */
-.sp-q { font-size: clamp(16px, 1.4vw, 19px); font-weight: 500; margin: 20px 0 4px; letter-spacing: -0.01em; }
+/* Compact Q&A sections for direct-answer / LLM-readable project summaries. */
+.sp-section[id="questions"] {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 0;
+}
+
+.sp-section[id="questions"] .sp-kicker {
+  font-size: 9px;
+  opacity: 0.7;
+}
+
+.sp-section[id="questions"] .sp-text-stack {
+  gap: 16px clamp(24px, 4vw, 54px);
+}
+
+.sp-section[id="questions"] .sp-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.sp-faq-item {
+  display: grid;
+  gap: 8px;
+}
+
+.sp-section[id="questions"] .sp-copy {
+  max-width: 58ch;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+.sp-q {
+  font-size: clamp(13.5px, 1vw, 15px);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0;
+}
+
 .sp-q:first-of-type { margin-top: 0; }
+
+@media (max-width: 760px) {
+  .sp-section[id="questions"] .sp-faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ============================================================
    WORKS PAGES — readability pass (design-system aligned).
@@ -2851,26 +2896,14 @@ html.sp-theatre-open { overflow: hidden; }
   flex-wrap: wrap;
   padding: 28px clamp(20px, 4vw, 48px) 56px;
   border-top: 0.5px solid var(--hairline);
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(16px, 1.4vw, 21px);
-}
-.sp-screen-nav-works a {
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 0.5px solid transparent;
-  transition: color 160ms ease, border-color 160ms ease;
-}
-.sp-screen-nav-works a:hover {
-  color: var(--accent-deep);
-  border-bottom-color: currentColor;
 }
 
-@media (max-width: 600px) {
-  .sp-screen-stage { padding: 16px 16px 12px; }
-  .sp-screen-copy { padding: 30px 20px; }
-  .sp-screen-video, .sp-screen-poster { max-height: 55vh; }
-  .sp-theatre { padding: 14px; }
-  .sp-theatre-close { top: -44px; right: -2px; }
-  .sp-theatre-stage video { max-height: 58vh; }
-}
+/* ============================================================
+   WORK PAGES — hero standfirst pass (2026-06-12).
+   The title is the only display element in the hero. The project
+   line sits above the intro as a short deck, not a second
+   headline, and the image centers against the shorter copy stack.
+   ============================================================ */
+.sp-project-hero { align-items: center; min-height: clamp(420px, 56vh, 620px); }
+.sp-project-hero .sp-project-line { font-size: clamp(22px, 2.1vw, 32px); line-height: 1.35; max-width: 26ch; }
+.sp-project-hero .sp-intro { max-width: 56ch; }

@@ -8,13 +8,13 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <title>Conditional | Shavonne Wong</title>
-  <meta name="description" content="Conditional, a real-time installation where a screen shows the room without you. Generative AI continuously produces your absence; hold still to fade back, color-shifted, as a version the scene will accept." />
+  <meta name="description" content="Conditional, an ongoing series of installations built on one premise, a mirror that erases you. A screen renders the scene faithfully in real time with every person removed. Each staging sets the conditions of the erasure differently." />
   <meta name="author" content="Shavonne Wong">
   <link rel="canonical" href="https://shavonnewong.art/works/conditional/" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://shavonnewong.art/works/conditional/" />
   <meta property="og:title" content="Conditional | Shavonne Wong" />
-  <meta property="og:description" content="A real-time installation: the screen shows the room without you. How much of yourself are you willing to give up just to be seen?" />
+  <meta property="og:description" content="An ongoing series of installations built on one premise, a mirror that erases you. Each staging sets the conditions differently. How much of yourself are you willing to give up just to be seen?" />
   <meta property="og:image" content="https://shavonnewong.art/assets/conditional/compliance-reality.jpg" />
   <meta property="og:image:width" content="1760" />
   <meta property="og:image:height" content="1100" />
@@ -22,16 +22,47 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/scroll-narrative.css?v=20260611-ripple-v7">
-  <link rel="stylesheet" href="/scroll-pages.css?v=20260531-scroll2">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260612-compact-qa">
   <style>
     /* "Conditional." is a single long word, size it to sit inside the hero copy column. */
     .sp-conditional-page .sp-project-hero .sp-title { font-size: clamp(46px, 6vw, 92px); overflow-wrap: anywhere; }
     @media (max-width: 760px) { .sp-conditional-page .sp-project-hero .sp-title { font-size: clamp(40px, 12vw, 64px); } }
+    /* Single-column sections: kicker sits above the text instead of in a left column. */
+    .sp-conditional-page .sp-section.sp-project-grid { display: block; }
+    .sp-conditional-page .sp-section.sp-project-grid > div:first-child { position: static; margin: 0 0 16px; }
+    /* Image cards carry grid-column spans in the shared stylesheet, which silently lays
+       paragraphs out as side-by-side panels. Keep every stack a single column. */
+    .sp-conditional-page .sp-text-stack { grid-template-columns: minmax(0, 1fr); }
+    .sp-conditional-page .sp-text-stack:not(.sp-faq-grid):not(.sp-cond-split) > * { grid-column: 1 / -1; }
+    /* Text-only sections run a fuller measure so the page uses its width. */
+    .sp-conditional-page .sp-text-stack > .sp-copy { max-width: 86ch; }
+    .sp-conditional-page #questions .sp-text-stack > .sp-copy { max-width: 58ch; }
+    /* Split sections (text left, media right) fill the full content width. */
+    .sp-conditional-page .sp-text-stack.sp-cond-split { grid-template-columns: minmax(0, 0.56fr) minmax(0, 0.44fr); column-gap: clamp(36px, 4vw, 80px); align-items: start; }
+    .sp-conditional-page .sp-cond-split > * { grid-column: auto; }
+    .sp-conditional-page .sp-cond-text { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; align-content: start; }
+    .sp-conditional-page .sp-cond-text > * { grid-column: 1 / -1; }
+    .sp-conditional-page .sp-cond-text .sp-copy { max-width: 70ch; }
+    .sp-conditional-page .sp-cond-media { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; align-content: start; position: sticky; top: 120px; }
+    .sp-conditional-page .sp-cond-media .sp-image-card { grid-column: auto; max-width: none; width: 100%; }
+    .sp-conditional-page .sp-cond-media .sp-section-media { grid-template-columns: 1fr; gap: 26px; }
+    @media (max-width: 900px) {
+      .sp-conditional-page .sp-text-stack.sp-cond-split { grid-template-columns: 1fr; }
+      .sp-conditional-page .sp-cond-media { position: static; }
+    }
+    /* Hero, editorial standfirst pattern: the title is the only display element.
+       The line under it is a short deck, not a second headline, and the image
+       centers against the shorter copy stack instead of leaving a void below. */
+    .sp-conditional-page .sp-project-hero { align-items: center; min-height: clamp(420px, 56vh, 620px); }
+    .sp-conditional-page .sp-project-hero .sp-project-line { font-size: clamp(22px, 2.1vw, 32px); line-height: 1.35; max-width: 26ch; }
+    .sp-conditional-page .sp-project-hero .sp-intro { max-width: 56ch; }
+    /* The surveillance line, relocated to close the Overview at reading scale. */
+    .sp-conditional-page .sp-cond-aside { font-family: var(--serif); font-style: italic; color: var(--accent-deep); font-size: 19px; line-height: 1.6; max-width: 60ch; }
   </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
+    "@type": "CreativeWorkSeries",
     "name": "Conditional",
     "creator": { "@type": "Person", "name": "Shavonne Wong", "sameAs": "https://en.wikipedia.org/wiki/Shavonne_Wong" },
     "dateCreated": "2026",
@@ -39,7 +70,23 @@
     "artMedium": "Real-time generative AI installation, single- or multi-channel screen, live camera capture",
     "url": "https://shavonnewong.art/works/conditional/",
     "image": "https://shavonnewong.art/assets/conditional/compliance-reality.jpg",
-    "description": "A work-in-progress real-time installation in which a screen shows a live feed of the room with the viewer continuously removed by generative AI. Holding still lets the viewer slowly fade back as a color-shifted version the scene will accept."
+    "description": "An ongoing series of real-time installations in which a screen renders the scene in front of it faithfully, with every person erased by generative AI. Each staging sets the conditions of the erasure differently and is developed as its own work.",
+    "hasPart": [
+      {
+        "@type": "CreativeWork",
+        "name": "The Mirror (working title)",
+        "creativeWorkStatus": "Prototype in build",
+        "image": "https://shavonnewong.art/assets/conditional/mirror-frame-render.webp",
+        "description": "A screen disguised as a framed mirror. The viewer appears at first, as any mirror would show them, then is removed for good. No condition returns them."
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "The Waiting Room",
+        "creativeWorkStatus": "In development",
+        "image": "https://shavonnewong.art/assets/conditional/compliance-reality.jpg",
+        "description": "An institutional waiting area in which visitors vanish from a live feed of the room and reappear only by holding still, color-corrected into a version the scene will accept."
+      }
+    ]
   }
   </script>
   <script type="application/ld+json">
@@ -82,9 +129,9 @@
 
   <nav class="sp-subnav" aria-label="Page sections">
     <a href="#overview">Overview</a>
-    <a href="#screen">On screen</a>
-    <a href="#format">Format</a>
-    <a href="#outputs">Outputs</a>
+    <a href="#conditions">Conditions</a>
+    <a href="#mirror">The Mirror</a>
+    <a href="#waiting-room">The Waiting Room</a>
     <a href="#statement">Statement</a>
     <a href="#details">Details</a>
   </nav>
@@ -94,11 +141,10 @@
     <!-- ================= HERO ================= -->
     <section class="sp-project-hero" aria-label="Conditional overview">
       <div class="sp-project-hero-copy">
-        <div class="sp-kicker">Work in progress &middot; real-time AI installation &middot; 2026</div>
+        <div class="sp-kicker">Ongoing series &middot; real-time AI installations &middot; 2026 &middot; <span class="sp-updated">Updated June 2026</span></div>
         <h1 class="sp-title">Conditional<em>.</em></h1>
-        <p class="sp-project-onview">Work in progress &middot; in development, 2026 &middot; <span class="sp-updated">Updated May 2026</span></p>
-        <p class="sp-intro">A room with a screen that shows you a live feed of the room you are standing in, with everything still there except you.</p>
-        <p class="sp-project-line">The problem with technology used to be surveillance. Now the problem is that it doesn&rsquo;t see you at all.</p>
+        <p class="sp-project-line">A mirror that erases you.</p>
+        <p class="sp-intro">A screen renders the scene in front of it faithfully and in real time, with every person removed. Each work in the series sets the conditions of that erasure differently.</p>
         <div class="sp-project-actions">
           <a href="#overview" class="sn-section-link">Read the work &rarr;</a>
           <a href="https://www.dropbox.com/scl/fi/xwa22gr8sn3elfkjtb9rd/demovid.mp4?rlkey=ttr44azad158ef39r7qa364cp&amp;dl=0" target="_blank" rel="noreferrer" class="sn-section-link">Watch demo &rarr;</a>
@@ -107,7 +153,7 @@
       </div>
       <figure class="sp-project-hero-media">
         <img fetchpriority="high" decoding="async" src="/assets/conditional/compliance-reality.webp" alt="Conditional installation view showing viewers in the room facing a screen that renders the room without them" />
-        <figcaption>Conditional, work in progress, 2026</figcaption>
+        <figcaption>Conditional, The Waiting Room staging, work in progress, 2026</figcaption>
       </figure>
     </section>
 
@@ -115,107 +161,50 @@
     <section class="sp-section sp-project-grid" id="overview">
       <div><h2 class="sp-kicker">Overview</h2></div>
       <div class="sp-text-stack">
-        <p class="sp-copy">Conditional is a room with a screen that shows you a live feed of the room you&rsquo;re standing in. The fan is turning, the clock is ticking, the mannequin is sitting in its chair. Everything is there except you. You are in the room and the screen is showing the room without you in it.</p>
+        <p class="sp-copy">Conditional is an ongoing series of installations built on one premise, a mirror that erases you. A screen shows the scene in front of it, the fan turning, the clock ticking, everything rendered faithfully and in real time, except the people. You are there, and the screen is showing the place without you.</p>
         <p class="sp-copy">This is not a recording of the empty room played back. The system uses real-time generative AI to actively imagine what the scene looks like without you, producing your absence frame by frame. The world on screen was never photographed empty. It is being invented, continuously, to not include you.</p>
-        <p class="sp-copy">If you want to appear, hold still. After a while you start to fade back in, not fully, and your colors shift to match the palette of the scene around you. What returns is not you, but a version of you the scene will accept. Move again, and you&rsquo;re gone.</p>
+        <p class="sp-copy">Each staging sets the conditions of that erasure differently and is developed as its own work. Two stagings are in development now, The Mirror and The Waiting Room.</p>
+        <p class="sp-copy sp-cond-aside">The problem with technology used to be surveillance. Now the problem is that it doesn&rsquo;t see you at all.</p>
       </div>
     </section>
 
-    <!-- ================= ON SCREEN / IN REALITY ================= -->
-    <section class="sp-section sp-project-grid" id="screen">
-      <div><h2 class="sp-kicker">On screen, in reality</h2></div>
+    <!-- ================= CONDITIONS ================= -->
+    <section class="sp-section sp-project-grid" id="conditions">
+      <div><h2 class="sp-kicker">Conditions</h2></div>
       <div class="sp-text-stack">
-        <div class="sp-section-media">
-          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/compliance-reality.webp" alt="Conditional installation view showing people in the room facing the screen"><figcaption>In reality, the room, with you in it</figcaption></figure>
-          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/compliance-on-screen.webp" alt="The screen view of the waiting room with the viewer removed"><figcaption>On screen, the room, generated without you</figcaption></figure>
+        <p class="sp-copy">Every staging of Conditional answers the same questions in its own way. Do you vanish the moment you arrive, or fade slowly enough to watch yourself go? Can you return at all, and at what price? And what is it that returns, you as you are, a color-corrected version the scene will accept, a figure closer to a mannequin than a person, or nothing?</p>
+        <p class="sp-copy">These are not settings on a finished work. They are the questions the series exists to test. Each staging is developed for its context and sets the conditions for that site. The two stagings below are the first answers.</p>
+      </div>
+    </section>
+
+    <!-- ================= THE MIRROR ================= -->
+    <section class="sp-section sp-project-grid" id="mirror">
+      <div><h2 class="sp-kicker">The Mirror</h2></div>
+      <div class="sp-text-stack sp-cond-split">
+        <div class="sp-cond-text">
+          <p class="sp-project-onview">Working title &middot; first physical prototype in build &middot; 2026</p>
+          <p class="sp-copy">A screen disguised as a framed mirror, hung where a mirror would hang. You walk up expecting your reflection, and at first you get it. Then the system removes you, and nothing you do returns you. Here the conditions are absolute.</p>
+          <p class="sp-copy">A mirror has one job, to show you. A mirror that renders the room faithfully and leaves you out breaks a contract older than any technology. Across a day the reflection empties of people even as the room fills, until by closing time the mirror shows a place no living person is in.</p>
+          <figure class="sp-image-card"><video autoplay muted loop playsinline preload="metadata" poster="/assets/conditional/mirror-chassis-assembly-poster.webp" src="/assets/conditional/mirror-chassis-assembly.mp4" style="display:block;width:100%;height:auto;" aria-label="Assembly animation of the 3D printed mirror housing"></video><figcaption>Mirror prototype, 3D printed housing, assembly sequence, June 2026</figcaption></figure>
         </div>
-        <p class="sp-copy">The mannequins were always visible. They never had to do anything. The living body has to earn what the mannequins were given by default.</p>
-        <p class="sp-copy">When there are multiple people in the room, everyone can see who&rsquo;s trying to comply and who isn&rsquo;t. Someone across the room is holding still, slowly resolving into a color-shifted version of themselves. They can see you deciding whether to do the same. The negotiation between visibility and self-compromise is happening live, between strangers, and the screen is showing all of it.</p>
-      </div>
-    </section>
-
-    <!-- ================= FORMAT ================= -->
-    <section class="sp-section sp-project-grid" id="format">
-      <div><h2 class="sp-kicker">Format</h2></div>
-      <div class="sp-text-stack">
-        <figure class="sp-image-card wide"><img loading="lazy" decoding="async" src="/assets/conditional/render-3d.webp" alt="3D rendering of the bureaucratic configuration: rows of chairs, mannequins, fluorescent light"><figcaption>3D rendering, bureaucratic configuration</figcaption></figure>
-        <p class="sp-copy">The primary configuration is bureaucratic: chairs in rows, mannequins in suits, fluorescent lighting, a wall clock, a desk fan. The kind of space that already asks you to sit down and wait.</p>
-        <p class="sp-copy">But the installation is designed as a format, not a fixed set. The same system can be adapted for a living room, an exam hall, or a ceremonial space, each producing a different argument about what compliance costs. Display configurations range from a single screen facing the scene to doubled screens creating an infinite reflection.</p>
-      </div>
-    </section>
-
-    <!-- ================= OUTPUTS ================= -->
-    <section class="sp-section sp-project-grid" id="outputs">
-      <div><h2 class="sp-kicker">Outputs</h2></div>
-      <div class="sp-text-stack">
-        <p class="sp-copy">The installation produces a series of editioned prints computed from the system&rsquo;s compliance data. During a structured day-long session, fifty participants arrive whenever they choose and stay as long as they like.</p>
-        <p class="sp-copy">Additional cameras capture their activity from multiple angles and generate long-exposure composites: bodies that held still appear sharp and defined; bodies that moved are smeared across the image. The prints are the system&rsquo;s record of who complied and who didn&rsquo;t. They can be exhibited independently.</p>
-        <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/print.webp" alt="Editioned print: a long-exposure compliance composite"><figcaption>Editioned print, long-exposure compliance composite</figcaption></figure>
-      </div>
-    </section>
-
-    <!-- ================= STATEMENT ================= -->
-    <section class="sp-section sp-project-grid" id="statement">
-      <div><h2 class="sp-kicker">The question</h2></div>
-      <div class="sp-text-stack">
-        <p class="sp-project-line">How much of yourself are you willing to give up just to be seen?</p>
-        <p class="sp-copy">Conditional turns the contemporary anxiety about being watched on its head. Here the system does not surveil you; it refuses to acknowledge you at all, and then offers visibility back only on its own terms, held still, recolored, made to match. The work asks what we are willing to trade for recognition by a system that was never built to hold us.</p>
-      </div>
-    </section>
-
-    <!-- ================= DETAILS ================= -->
-    <section class="sp-section sp-project-grid" id="details">
-      <div><h2 class="sp-kicker">Details</h2></div>
-      <div class="sp-text-stack">
-        <dl class="sp-detail-grid">
-          <dt>Year</dt><dd>2026 &middot; current work, in development</dd>
-          <dt>Medium</dt><dd>Real-time generative AI installation; live camera capture; single- or multi-channel screen</dd>
-          <dt>Configuration</dt><dd>Designed as an adaptable format. Primary set is bureaucratic; display ranges from a single screen to doubled screens forming an infinite reflection.</dd>
-          <dt>Outputs</dt><dd>Editioned long-exposure prints computed from compliance data; exhibitable independently.</dd>
-          <dt>Demo</dt><dd><a href="https://www.dropbox.com/scl/fi/xwa22gr8sn3elfkjtb9rd/demovid.mp4?rlkey=ttr44azad158ef39r7qa364cp&amp;dl=0" target="_blank" rel="noreferrer">Watch the demo video &rarr;</a></dd>
-        </dl>
-      </div>
-    </section>
-
-    <!-- ================= QUESTIONS ================= -->
-    <section class="sp-section sp-project-grid" id="questions">
-      <div><h2 class="sp-kicker">Questions</h2></div>
-      <div class="sp-text-stack">
-        <h3 class="sp-q">What is Conditional?</h3>
-        <p class="sp-copy">Conditional is a real-time generative AI installation in which a screen shows a live feed of the room with the viewer continuously removed. Holding still lets you fade back, colour-shifted, as a version the scene will accept.</p>
-        <h3 class="sp-q">Where can Conditional be shown?</h3>
-        <p class="sp-copy">It is built as an adaptable format rather than a fixed set. The primary configuration is bureaucratic, and the same system can be staged for a living room, an exam hall, or a ceremonial space. Display ranges from a single screen to doubled screens forming an infinite reflection.</p>
-        <h3 class="sp-q">Is there work to acquire?</h3>
-        <p class="sp-copy">Conditional produces a series of editioned long-exposure prints computed from the installation's compliance data, and these can be exhibited and acquired independently. For exhibition, commissioning, or acquisition, write to <a href="mailto:studio@shavonnewong.art?subject=Conditional%20-%20inquiry">studio@shavonnewong.art</a>.</p>
-      </div>
-    </section>
-
-    <!-- ================= RELATED ================= -->
-    <section class="sp-section sp-project-grid" id="related">
-      <div><h2 class="sp-kicker">Related projects</h2></div>
-      <div class="sp-text-stack">
-        <nav class="sp-prev-next" aria-label="Project navigation">
-          <a class="sp-prev" href="/works/">&larr; All works</a>
-          <a class="sp-next" href="/works/after-ophelia/">After Ophelia &rarr;</a>
-        </nav>
-        <div class="sp-related-grid">
-          <article class="sp-related-card"><figure><img loading="lazy" decoding="async" src="/assets/meet-eva-here/06-dsc00661.webp" alt="Meet Eva Here installation"></figure><h3>Meet Eva Here</h3><p>An AI companion and the record of being seen.</p><a href="/works/meet-eva-here/">View project</a></article>
-          <article class="sp-related-card"><figure><img loading="lazy" decoding="async" src="/assets/after-ophelia/01-ophelia-reassembled-print.webp" alt="After Ophelia rendered portrait"></figure><h3>After Ophelia</h3><p>Identity rewritten by other people&rsquo;s machines.</p><a href="/works/after-ophelia/">View project</a></article>
-          <article class="sp-related-card"><figure><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.webp" alt="The Ties That Bind exhibition"></figure><h3>The Ties That Bind</h3><p>Interactive digital bodies in physical space.</p><a href="/works/the-ties-that-bind/">View project</a></article>
+        <div class="sp-cond-media">
+          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/mirror-frame-render.webp" alt="The Mirror frame render, an ornate white baroque frame with a small camera hidden in the crest"><figcaption>The Mirror, frame render, prototype in build, 2026</figcaption></figure>
         </div>
       </div>
     </section>
 
-    <footer class="sw-page-footer" data-site-footer>
-      <div class="sw-page-footer__inner">
-        <button class="sw-page-footer__top" type="button" data-site-back-top>Back to top</button>
-      </div>
-    </footer>
-  </main>
-<script src="/assets/js/plate-status.js?v=20260527-plate-status"></script>
-  <script src="/assets/js/sustainability.js?v=20260527-works-catalog"></script>
-  <script src="/assets/js/subnav.js?v=20260527-subnav"></script>
-  <script src="/site-header.js?v=20260606-footer"></script><script src="/site-i18n.js?v=20260604-fix"></script>
-  <script src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
-</body>
-</html>
+    <!-- ================= THE WAITING ROOM ================= -->
+    <section class="sp-section sp-project-grid" id="waiting-room">
+      <div><h2 class="sp-kicker">The Waiting Room</h2></div>
+      <div class="sp-text-stack sp-cond-split">
+        <div class="sp-cond-text">
+          <p class="sp-project-onview">In development &middot; 2026</p>
+          <p class="sp-copy">An institutional waiting area, chairs in rows, suited mannequins, a ticking wall clock, an oscillating desk fan. The kind of space that already asks you to sit down and wait. Here the conditions are negotiable. You vanish on arrival, and if you hold still you begin to reappear, not fully, your colors shifted to match the palette of the scene. What returns is a version of you the room will accept. Move again, and you&rsquo;re gone.</p>
+          <p class="sp-copy">The mannequins were always visible. They never had to do anything. The living body has to earn what the mannequins were given by default.</p>
+          <p class="sp-copy">When there are multiple people in the room, everyone can see who&rsquo;s trying to comply and who isn&rsquo;t. Someone across the room is holding still, slowly resolving into a color-shifted version of themselves. They can see you deciding whether to do the same. The negotiation between visibility and self-compromise is happening live, between strangers, and the screen is showing all of it.</p>
+          <p class="sp-copy">This staging produces a series of editioned prints computed from the system&rsquo;s compliance data. During a structured day-long session, fifty participants arrive whenever they choose and stay as long as they like. Additional cameras capture their activity from multiple angles and generate long-exposure composites. Bodies that held still appear sharp and defined. Bodies that moved are smeared across the image. The prints are the system&rsquo;s record of who complied and who didn&rsquo;t, and they can be exhibited independently.</p>
+          <p class="sp-copy"><a href="https://www.dropbox.com/scl/fi/xwa22gr8sn3elfkjtb9rd/demovid.mp4?rlkey=ttr44azad158ef39r7qa364cp&amp;dl=0" target="_blank" rel="noreferrer" class="sn-section-link">Watch the erasure demo &rarr;</a></p>
+        </div>
+        <div class="sp-cond-media">
+          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/compliance-reality.webp" alt="The Waiting Room installation view showing people in the room facing the screen"><figcaption>In reality, the room, with you in it</figcaption></figure>
+          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/compliance-on-screen.webp" alt="The screen view of the waiting room with the viewer removed"><figcaption>On screen, the roo
