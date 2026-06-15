@@ -38,6 +38,7 @@ const cleanRoutes = {
   "/works/meet-eva-here/hello-eva/": "meet-eva-here-hello-eva.html",
   "/works/6529-meme-card/": "6529-meme-card.html",
   "/works/the-ties-that-bind/": "the-ties-that-bind.html",
+  "/works/echoes-of-identity/": "echoes-of-identity.html",
   "/works/vogue-singapore/": "vogue-singapore.html",
   "/works/whirlwind-of-the-waking-dream/": "whirlwind-of-the-waking-dream.html",
 };

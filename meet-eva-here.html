@@ -18,11 +18,13 @@
   <meta property="og:image" content="https://shavonnewong.art/assets/meet-eva-here/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/scroll-narrative.css?v=20260614-link-fix">
-  <link rel="stylesheet" href="/scroll-pages.css?v=20260615-bp2-related">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Meet Eva Here | Shavonne Wong" />
+  <meta name="twitter:description" content="An interactive AI companion, chatbot, public diary archive, and video work documenting 2,363 conversations with synthetic listeners in 2024-2025." />
+  <meta name="twitter:image" content="https://shavonnewong.art/assets/meet-eva-here/og-image.jpg" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/mulish/mulish-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260615-detrack">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260615-detrack">
   <link rel="stylesheet" href="/work-gallery.css?v=20260615-eva-plate-spacing">
   <script type="application/ld+json">
   {
@@ -82,8 +84,6 @@
         <span class="sn-lang-kicker" data-i18n="ui.languageLabel">Language</span>
         <select class="sn-lang-select" data-language-select aria-label="Language" data-i18n-aria-label="ui.languageLabel" title="Language"></select>
       </label>
-      <span>Meet Eva Here</span>
-      <span data-i18n="page.projectPage">Project page</span>
     </div>
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
   </header>
@@ -104,18 +104,13 @@
   <main id="main-content" class="sp-main sp-project-main">
     <section class="sp-project-hero" aria-label="Meet Eva Here overview">
       <div class="sp-project-hero-copy">
-        <div class="sp-kicker">Interactive AI companion &middot; 2024-2025</div>
         <h1 class="sp-title">Meet <em>Eva Here.</em></h1>
         <p class="sp-project-onview" data-end-date="2025-11-03">Archived November 3, 2025 &middot; <span class="sp-updated">Updated June 2026</span></p>
         <p class="sp-project-line">What do we say to machines when we think they are listening?</p>
         <p class="sp-intro">An interactive AI companion, public diary, and exhibition project documenting how people speak to synthetic listeners before those relationships become ordinary infrastructure.</p>
-        <div class="sp-project-actions">
-          <a href="#work" class="sn-section-link">View works &rarr;</a>
-        </div>
       </div>
       <figure class="sp-project-hero-media">
         <img fetchpriority="high" decoding="async" src="/assets/meet-eva-here/06-dsc00661.webp" alt="Meet Eva Here installation view with a screen, seating, and gallery furniture" />
-        <figcaption>Meet Eva Here, 2024-2025</figcaption>
       </figure>
     </section>
 
@@ -445,4 +440,14 @@
   });
   againBtn.addEventListener('click', function () { if (!currentVideo) return; hidePostWatch(); currentVideo.currentTime = 0; currentVideo.play().catch(function () {}); });
   readBtn.addEventListener('click', function () { closeTheatre(); var t = document.querySelector('#work'); if (t) t.scrollIntoView({ behavior: 'smooth' }); });
-  closeBtn.addEventListener('click', closeTheatre
+  closeBtn.addEventListener('click', closeTheatre);
+  dialog.addEventListener('click', function (e) { if (e.target === dialog) closeTheatre(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dialog.open) closeTheatre(); });
+  dialog.addEventListener('close', function () {
+    document.documentElement.classList.remove('sp-theatre-open');
+    if (currentVideo) { currentVideo.pause(); stage.innerHTML = ''; currentVideo = null; }
+  });
+})();
+</script>
+</body>
+</html>

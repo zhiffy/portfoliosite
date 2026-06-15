@@ -18,12 +18,14 @@
   <meta property="og:image" content="https://shavonnewong.art/assets/videos/whirlwind-cover-og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Whirlwind of the Waking Dream | Shavonne Wong" />
+  <meta name="twitter:description" content="A 2024 1/1 3D generative video by Shavonne Wong, sold on Manifold for 5 ETH and collected by Sebastien Borget / The Sandbox." />
+  <meta name="twitter:image" content="https://shavonnewong.art/assets/videos/whirlwind-cover-og.jpg" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/mulish/mulish-variable.woff2" crossorigin>
   <link rel="preload" as="image" href="/assets/one-of-ones/whirlwind-of-the-waking-dream.webp" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/scroll-narrative.css?v=20260614-link-fix">
-  <link rel="stylesheet" href="/scroll-pages.css?v=20260615-bp2-related">
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260615-detrack">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260615-detrack">
   <link rel="stylesheet" href="/work-gallery.css?v=20260614-spgallery8">
   <script type="application/ld+json">
   {
@@ -179,8 +181,6 @@
         <span class="sn-lang-kicker" data-i18n="ui.languageLabel">Language</span>
         <select class="sn-lang-select" data-language-select aria-label="Language" data-i18n-aria-label="ui.languageLabel" title="Language"></select>
       </label>
-      <span>Whirlwind</span>
-      <span data-i18n="page.projectPage">Work page</span>
     </div>
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
   </header>
@@ -188,7 +188,6 @@
   <main id="main-content" class="sp-main sp-project-main sp-light-project">
     <section class="sp-project-hero" aria-label="Whirlwind of the Waking Dream overview">
       <div class="sp-project-hero-copy">
-        <div class="sp-kicker">Single work &middot; 2024</div>
         <h1 class="sp-title">Whirlwind <em>of the Waking Dream.</em></h1>
         <div class="sp-walllabel">
           <span>2024</span>
@@ -210,7 +209,6 @@
             </svg>
           </button>
         </div>
-        <figcaption>Whirlwind of the Waking Dream, 2024</figcaption>
       </figure>
       <p class="sp-project-line">A mix of awe, confusion, and a search for meaning in a world that never stops moving.</p>
     </section>
@@ -288,7 +286,7 @@
       if(fn){ fn.call(vid); }
     }
     if(wrap && vid){
-      wrap.addEventListener('click', function(e){ goFullscreen(); });
+      wrap.addEventListener('click', function(){ goFullscreen(); });
       if(btn){ btn.addEventListener('click', function(e){ e.stopPropagation(); goFullscreen(); }); }
     }
   })();

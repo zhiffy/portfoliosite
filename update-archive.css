@@ -7,9 +7,9 @@
 }
 
 .nl-source-page .nl-hero-title {
-  font-size: 6.8rem;
-  letter-spacing: 0;
-  line-height: 0.98;
+  font-size: clamp(52px, 8.5vw, 124px);
+  letter-spacing: -0.015em;
+  line-height: 0.96;
   margin-left: 0;
   max-width: 100%;
   overflow-wrap: normal;
@@ -25,7 +25,7 @@
   color: var(--text-2);
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   margin-bottom: 14px;
   text-transform: uppercase;
 }
@@ -168,8 +168,8 @@
 
 @media (max-width: 720px) {
   .nl-source-page .nl-hero-title {
-    font-size: 3.25rem;
-    line-height: 1.04;
+    font-size: clamp(52px, 8.5vw, 124px);
+    line-height: 0.96;
   }
 
   .nl-archive-nav-link {
@@ -190,7 +190,7 @@
 
 @media (max-width: 420px) {
   .nl-source-page .nl-hero-title {
-    font-size: 2.75rem;
+    font-size: clamp(52px, 13vw, 54px);
   }
 }
 
@@ -318,7 +318,7 @@
   display: none;
   margin-bottom: 12px;
   font-size: 11px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);

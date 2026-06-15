@@ -1,12 +1,20 @@
-// Netlify Function (v2): By Proxy live OpenSea listings.
+// Netlify Function (v2): live OpenSea listings for selected project collections.
 // Ported from the former Vercel handler. Serves the same JSON shape at
 // /api/by-proxy-listings so assets/js/by-proxy-listings.js needs no change.
 // Requires the environment variable OPENSEA_API_KEY (set in Netlify site settings).
 
-const COLLECTION_SLUG = 'by-proxy-by-shavonne-wong-and-lenne-chai';
-const CONTRACT_ADDRESS = '0x46ac8540d698167fcbb9e846511beb8cf8af9bd8';
-const COLLECTION_URL = `https://opensea.io/collection/${COLLECTION_SLUG}`;
-const OPEN_SEA_URL = `https://api.opensea.io/api/v2/listings/collection/${COLLECTION_SLUG}/all`;
+const COLLECTIONS = {
+  'by-proxy-by-shavonne-wong-and-lenne-chai': {
+    contract: '0x46ac8540d698167fcbb9e846511beb8cf8af9bd8'
+  },
+  'love-is-love-shavonnewong': {
+    contract: '0x30de3508e1f826910a254719258346570b27627e'
+  },
+  'echoes-of-identity-by-shavonne-wong': {
+    contract: '0x069eeda3395242bd0d382e3ec5738704569b8885'
+  }
+};
+const DEFAULT_COLLECTION_SLUG = 'by-proxy-by-shavonne-wong-and-lenne-chai';
 const MAX_PAGES = 5;
 
 const JSON_HEADERS = {
@@ -21,12 +29,13 @@ function getOfferItems(listing) {
   return asset ? [asset] : [];
 }
 
-function extractTokenId(listing) {
+function extractOfferItem(listing, contractAddress) {
+  const contract = String(contractAddress || '').toLowerCase();
   for (const item of getOfferItems(listing)) {
     const token = String(item?.token || item?.asset_contract?.address || '').toLowerCase();
     const identifier = item?.identifierOrCriteria ?? item?.token_id ?? item?.identifier;
-    if ((!token || token === CONTRACT_ADDRESS) && identifier !== undefined && identifier !== null && identifier !== '') {
-      return String(identifier);
+    if ((!contract || !token || token === contract) && identifier !== undefined && identifier !== null && identifier !== '') {
+      return { token_id: String(identifier), contract: token || contract };
     }
   }
   return null;
@@ -50,11 +59,23 @@ function extractPrice(listing) {
   };
 }
 
-async function fetchOpenSeaPage(apiKey, next) {
+function resolveCollection(request) {
+  const url = new URL(request.url);
+  const requested = url.searchParams.get('collection') || url.searchParams.get('slug') || DEFAULT_COLLECTION_SLUG;
+  const slug = Object.prototype.hasOwnProperty.call(COLLECTIONS, requested) ? requested : DEFAULT_COLLECTION_SLUG;
+  return {
+    slug,
+    contract: COLLECTIONS[slug].contract,
+    collection_url: `https://opensea.io/collection/${slug}`,
+    open_sea_url: `https://api.opensea.io/api/v2/listings/collection/${slug}/all`
+  };
+}
+
+async function fetchOpenSeaPage(apiKey, collection, next) {
   const params = new URLSearchParams({ limit: '200' });
   if (next) params.set('next', next);
 
-  const response = await fetch(`${OPEN_SEA_URL}?${params.toString()}`, {
+  const response = await fetch(`${collection.open_sea_url}?${params.toString()}`, {
     headers: {
       Accept: 'application/json',
       'x-api-key': apiKey
@@ -70,6 +91,8 @@ async function fetchOpenSeaPage(apiKey, next) {
 }
 
 export default async (request) => {
+  const collection = resolveCollection(request);
+
   if (request.method === 'OPTIONS') {
     return new Response(null, { status: 204, headers: { Allow: 'GET, OPTIONS' } });
   }
@@ -85,7 +108,8 @@ export default async (request) => {
   if (!apiKey) {
     return new Response(JSON.stringify({
       error: 'OpenSea API key is not configured.',
-      collection_url: COLLECTION_URL,
+      collection_slug: collection.slug,
+      collection_url: collection.collection_url,
       listings: [],
       listed_token_ids: []
     }), { status: 503, headers: JSON_HEADERS });
@@ -97,16 +121,19 @@ export default async (request) => {
     let page = 0;
 
     do {
-      const payload = await fetchOpenSeaPage(apiKey, next);
+      const payload = await fetchOpenSeaPage(apiKey, collection, next);
       const listings = Array.isArray(payload?.listings) ? payload.listings : [];
 
       for (const listing of listings) {
-        const tokenId = extractTokenId(listing);
-        if (!tokenId || listingsByToken.has(tokenId)) continue;
+        const item = extractOfferItem(listing, collection.contract);
+        if (!item?.token_id || listingsByToken.has(item.token_id)) continue;
+        const contract = item.contract || collection.contract;
 
-        listingsByToken.set(tokenId, {
-          token_id: tokenId,
-          url: `https://opensea.io/item/ethereum/${CONTRACT_ADDRESS}/${tokenId}`,
+        listingsByToken.set(item.token_id, {
+          token_id: item.token_id,
+          url: contract
+            ? `https://opensea.io/item/ethereum/${contract}/${item.token_id}`
+            : collection.collection_url,
           price: extractPrice(listing)
         });
       }
@@ -118,8 +145,8 @@ export default async (request) => {
 
     const listings = Array.from(listingsByToken.values());
     return new Response(JSON.stringify({
-      collection_slug: COLLECTION_SLUG,
-      collection_url: COLLECTION_URL,
+      collection_slug: collection.slug,
+      collection_url: collection.collection_url,
       updated_at: new Date().toISOString(),
       listed_token_ids: listings.map((listing) => listing.token_id),
       listings
@@ -128,7 +155,8 @@ export default async (request) => {
     return new Response(JSON.stringify({
       error: 'Could not load OpenSea listings.',
       details: error instanceof Error ? error.message : String(error),
-      collection_url: COLLECTION_URL,
+      collection_slug: collection.slug,
+      collection_url: collection.collection_url,
       listings: [],
       listed_token_ids: []
     }), { status: 502, headers: JSON_HEADERS });

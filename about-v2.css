@@ -44,7 +44,7 @@
   padding-top: 18px;
 }
 .abv-section-num {
-  font-size: 11px; letter-spacing: 0.22em; color: var(--text-3);
+  font-size: 11px; letter-spacing: 0.04em; color: var(--text-3);
   font-variant-numeric: tabular-nums;
 }
 .abv-section-title {
@@ -52,7 +52,7 @@
   letter-spacing: -0.01em; line-height: 1;
 }
 .abv-section-meta {
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--text-3); text-align: right;
 }
 
@@ -60,7 +60,7 @@
 .abv-hero { padding-top: clamp(20px, 5vh, 56px); }
 .abv-hero-stamp {
   display: flex; align-items: center; gap: 16px;
-  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--text-3); margin-bottom: clamp(26px, 4vh, 46px);
 }
 .abv-hero-stamp-rule { height: 0.5px; background: var(--hairline-strong); flex: 1; }
@@ -94,7 +94,7 @@
 }
 .abv-portrait figcaption {
   display: flex; justify-content: space-between;
-  margin-top: 12px; font-size: 11px; letter-spacing: 0.1em;
+  margin-top: 12px; font-size: 11px; letter-spacing: 0.04em;
   text-transform: uppercase; color: var(--text-3);
 }
 .abv-hero-bio { padding-top: 6px; }
@@ -121,14 +121,14 @@
   padding: 11px 0; border-bottom: 0.5px solid var(--hairline);
   font-size: 13px;
 }
-.abv-facts dt { margin: 0; color: var(--text-3); letter-spacing: 0.06em; text-transform: uppercase; font-size: 10.5px; padding-top: 2px; }
+.abv-facts dt { margin: 0; color: var(--text-3); letter-spacing: 0.04em; text-transform: uppercase; font-size: 10.5px; padding-top: 2px; }
 .abv-facts dd { margin: 0; color: var(--text); }
 .abv-link { color: var(--text); text-decoration: none; border-bottom: 0.5px solid var(--hairline-strong); padding-bottom: 1px; transition: color 140ms ease; }
 .abv-link:hover { color: var(--accent-deep); }
 
 .abv-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; padding: 0; list-style: none; }
 .abv-tags li {
-  font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
+  font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--text-2); border: 0.5px solid var(--hairline-strong);
   border-radius: 2px; padding: 6px 11px;
 }
@@ -194,7 +194,7 @@
 }
 .abv-feature-title { font-style: italic; font-weight: 300; font-size: clamp(18px, 1.8vw, 28px); }
 .abv-feature-title em { font-style: italic; }
-.abv-feature-meta { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85; }
+.abv-feature-meta { font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.85; }
 
 /* ---------- 03 EXHIBITIONS (selected + full toggle) ---------- */
 /* ---------- 03 EXHIBITIONS — full list, year-grouped ledger ---------- */
@@ -215,7 +215,7 @@
   font-size: clamp(30px, 3.2vw, 48px); font-weight: 300; line-height: 0.9;
   letter-spacing: -0.02em; color: var(--text); font-variant-numeric: tabular-nums;
 }
-.abv-exh-yr-count { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-3); }
+.abv-exh-yr-count { font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-3); }
 .abv-exh-entries { position: relative; isolation: isolate; list-style: none; margin: 0; padding: 0; }
 .abv-exh-entry {
   position: relative; display: grid; grid-template-columns: 1fr auto; gap: 2px 18px; align-items: baseline;
@@ -276,7 +276,7 @@
 .abv-exh-v { grid-column: 1; font-size: 13px; font-weight: 300; color: var(--text-2); }
 .abv-exh-solo {
   grid-row: 1; grid-column: 2; align-self: center;
-  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--sw-haze); background: var(--accent-deep);
   border: 0.5px solid var(--accent-deep); border-radius: 2px;
   padding: 5px 10px; white-space: nowrap;
@@ -324,7 +324,7 @@
 .abv-collab:focus-visible .abv-collab-media { opacity: 1; }
 .abv-collab > *:not(.abv-collab-media) { position: relative; transition: color 320ms ease; }
 .abv-collab-year {
-  display: block; font-size: 11px; letter-spacing: 0.16em; color: var(--text-3);
+  display: block; font-size: 11px; letter-spacing: 0.04em; color: var(--text-3);
   font-variant-numeric: tabular-nums; margin-bottom: 14px;
 }
 .abv-collab-name {
@@ -335,7 +335,7 @@
 .abv-collab-copy em { font-style: italic; font-weight: 400; }
 .abv-collab-link {
   margin-top: auto; padding-top: 18px;
-  font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-2);
+  font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-2);
 }
 /* text flips to Haze on hover (over the darkened artwork) */
 .abv-collab:hover .abv-collab-year,
@@ -357,7 +357,7 @@
   display: flex; flex-direction: column;
 }
 .abv-recog-card .abv-card-eyebrow {
-  display: block; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  display: block; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--text-3); padding-bottom: 14px; margin-bottom: 18px;
   border-bottom: 0.5px solid var(--hairline-strong);
 }
@@ -380,7 +380,7 @@
 .abv-recog-loc { margin: 16px 0 0; font-size: 12px; letter-spacing: 0.04em; color: var(--text-2); font-variant-numeric: tabular-nums; }
 .abv-recog-more {
   margin-top: auto; padding-top: clamp(22px, 2.4vw, 30px);
-  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--text); text-decoration: none; align-self: flex-start; white-space: nowrap;
   transition: color 140ms ease;
 }
@@ -398,8 +398,8 @@
   padding-bottom: 14px; margin-bottom: 8px;
   border-bottom: 0.5px solid var(--hairline-strong);
 }
-.abv-tp-col-title { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text); }
-.abv-tp-col-meta { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); }
+.abv-tp-col-title { font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); }
+.abv-tp-col-meta { font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-3); }
 .abv-tp-item {
   display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; align-items: baseline;
   padding: 16px 0; border-bottom: 0.5px solid var(--hairline);
@@ -409,7 +409,7 @@
 .abv-tp-name a:hover { border-color: var(--hairline-strong); }
 .abv-tp-ctx { grid-column: 1; font-size: 13px; font-weight: 300; color: var(--text-2); }
 .abv-tp-year { font-size: 13px; color: var(--text-3); font-variant-numeric: tabular-nums; }
-.abv-tp-more { margin-top: 18px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+.abv-tp-more { margin-top: 18px; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; }
 .abv-tp-more a { color: var(--text-2); }
 
 /* ---------- responsive ---------- */
@@ -497,7 +497,7 @@
   background: transparent;
   border: 0.5px solid var(--hairline-strong);
   color: var(--text-2);
-  font: inherit; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  font: inherit; font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase;
   padding: 7px 14px; border-radius: 2px; cursor: pointer; white-space: nowrap;
   transition: color .2s ease, border-color .2s ease, background .2s ease;
 }
@@ -573,7 +573,7 @@
 .abv-brief-title {
   font-family: var(--sans, inherit);
   font-size: 9px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   opacity: 0.7;
@@ -618,7 +618,7 @@
    letters and Press page) instead of the fixed in-row position.
    ============================================================ */
 .nl-press-preview {
-  position: fixed; top: 0; left: 0; z-index: 2;
+  position: fixed; top: 0; left: 0; z-index: 20;
   width: clamp(300px, 28vw, 430px); margin: 0;
   pointer-events: none; transform: translate(-9999px, -9999px); will-change: transform;
 }

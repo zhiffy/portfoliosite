@@ -215,47 +215,6 @@
       else if (e.key === 'ArrowRight' && older) { location.href = urlFor(older); }
     });
 
-    // Top-of-letter switcher: an "All updates" jump plus adjacent steps, near
-    // the masthead, so readers never have to scroll to move between letters.
-    var letterMain = document.getElementById('main-content') || document.querySelector('main.nl-letter');
-    if (letterMain && !document.querySelector('.nl-switch')) {
-      var swStyle = document.createElement('style');
-      swStyle.textContent =
-        '.nl-switch{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:6px;margin-bottom:clamp(6px,1.4vw,14px);font-family:Mulish,Helvetica Neue,Arial,sans-serif}' +
-        '.nl-switch a{text-decoration:none}' +
-        '.nl-switch-all,.nl-switch-step,.nl-switch-current{font-size:11px;letter-spacing:.16em;text-transform:uppercase}' +
-        '.nl-switch-all,.nl-switch-step{color:var(--text-3,#6b6c80);transition:color .16s ease}' +
-        '.nl-switch-all:hover,a.nl-switch-step:hover{color:var(--text,#18192B)}' +
-        '.nl-switch-current{color:var(--text,#18192B);font-weight:600}' +
-        '.nl-switch-pager{display:flex;align-items:center;gap:18px}' +
-        '.nl-switch-step{display:inline-flex;align-items:center;gap:7px}' +
-        'span.nl-switch-step{opacity:.32}' +
-        '.nl-switch-chev{font-size:13px;line-height:1}' +
-        '@media(max-width:700px){.nl-switch{flex-wrap:wrap;gap:10px}.nl-switch-pager{gap:14px}}';
-      document.head.appendChild(swStyle);
-
-      var sw = document.createElement('nav');
-      sw.className = 'nl-switch nl-wrap';
-      sw.setAttribute('aria-label', 'Studio updates');
-      function stepHtml(target, dir) {
-        var chev = dir === 'prev' ? '←' : '→';
-        var word = dir === 'prev' ? 'Newer' : 'Older';
-        var inner = dir === 'prev'
-          ? '<span class="nl-switch-chev" aria-hidden="true">' + chev + '</span>' + word
-          : word + '<span class="nl-switch-chev" aria-hidden="true">' + chev + '</span>';
-        if (!target) return '<span class="nl-switch-step">' + inner + '</span>';
-        return '<a class="nl-switch-step" href="' + urlFor(target) + '" aria-label="' +
-          (dir === 'prev' ? 'Newer update: ' : 'Older update: ') + target.label + '">' + inner + '</a>';
-      }
-      sw.innerHTML =
-        '<a class="nl-switch-all" href="/writing/">All updates</a>' +
-        '<div class="nl-switch-pager">' +
-          stepHtml(newer, 'prev') +
-          '<span class="nl-switch-current">' + ARTICLES[idx].label + '</span>' +
-          stepHtml(older, 'next') +
-        '</div>';
-      letterMain.insertBefore(sw, letterMain.firstChild);
-    }
   }
 
   /* ---------- 4 : consistent page footer ---------- */

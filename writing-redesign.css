@@ -31,7 +31,7 @@
 .wr-eyebrow {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -89,7 +89,7 @@
 .wr-meta-lbl {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -170,7 +170,7 @@
 .wr-card-date {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -286,7 +286,7 @@
 .wr-subscribe-cta-label {
   font-family: var(--sans);
   font-size: 12px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -387,7 +387,7 @@
 .wr-subscribe-form { display: flex; flex-direction: column; gap: 12px; }
 .wr-subscribe-field { display: flex; flex-direction: column; gap: 6px; }
 .wr-subscribe-field-label {
-  font-family: var(--sans); font-size: 11px; letter-spacing: 0.16em;
+  font-family: var(--sans); font-size: 11px; letter-spacing: 0.04em;
   text-transform: uppercase; color: var(--text-2);
 }
 .wr-subscribe-input {
@@ -396,7 +396,7 @@
 }
 .wr-subscribe-input:focus-visible { outline: 2px solid var(--sw-iris); outline-offset: 2px; border-color: transparent; }
 .wr-subscribe-submit {
-  font-family: var(--sans); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  font-family: var(--sans); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
   font-weight: 600; padding: 14px 22px; background: var(--text); color: var(--bg);
   border: 0; cursor: pointer; transition: background 0.18s ease, transform 0.18s ease;
 }

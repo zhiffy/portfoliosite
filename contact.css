@@ -61,7 +61,7 @@
   color: rgba(237, 237, 244, 0.5);
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
   border-bottom: 0.5px solid rgba(237, 237, 244, 0.18);
@@ -95,7 +95,7 @@
   display: block;
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: #8B90AB;
@@ -132,7 +132,7 @@
 
 .ct-link-list a span:first-child {
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: #8B90AB;
@@ -207,7 +207,7 @@
   padding: 0 13px;
   font: inherit;
   font-size: 9px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
@@ -255,7 +255,7 @@
 .ct-label {
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: #8B90AB;
@@ -316,7 +316,7 @@
   padding: 0 28px;
   font: inherit;
   font-size: 10px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;

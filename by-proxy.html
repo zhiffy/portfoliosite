@@ -7,21 +7,23 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <title>By Proxy. Shavonne Wong</title>
+  <title>By Proxy | Shavonne Wong</title>
   <meta name="description" content="By Proxy, a 60-work CGI and photography series by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images.">
   <meta name="author" content="Shavonne Wong">
   <link rel="canonical" href="https://shavonnewong.art/works/by-proxy/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="By Proxy. Shavonne Wong">
+  <meta property="og:title" content="By Proxy | Shavonne Wong">
   <meta property="og:description" content="A 60-work CGI and photography series by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images.">
   <meta property="og:image" content="https://shavonnewong.art/assets/by-proxy/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/scroll-narrative.css?v=20260614-link-fix">
-  <link rel="stylesheet" href="/scroll-pages.css?v=20260615-bp2-related">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="By Proxy | Shavonne Wong">
+  <meta name="twitter:description" content="A 60-work CGI and photography series by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images.">
+  <meta name="twitter:image" content="https://shavonnewong.art/assets/by-proxy/og-image.jpg">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/mulish/mulish-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260615-detrack">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260615-detrack">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,30 +42,8 @@
     "isPartOf": { "@type": "CollectionPage", "name": "Works", "url": "https://shavonnewong.art/works/" }
   }
   </script>
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: '#18192B',
-            fog: '#595E78',
-            mist: '#9094AB',
-            iris: '#545C9E',
-            hair: 'rgba(24,25,43,0.10)',
-            hairStrong: 'rgba(24,25,43,0.22)'
-          },
-          fontFamily: {
-            sans: ['Mulish', 'Helvetica Neue', 'Arial', 'sans-serif']
-          },
-          maxWidth: {
-            page: '1320px',
-            text: '64ch'
-          }
-        }
-      }
-    };
-  </script>
+  <!-- Tailwind CDN removed June 2026. The page uses only custom bp2-* classes (no Tailwind utilities, no @apply), so the runtime CDN was unused. Styling lives in the inline style block below and the linked stylesheets. -->
+
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Mulish', 'Helvetica Neue', Arial, sans-serif; color: #18192B; background: var(--bg); }
@@ -71,7 +51,7 @@
     main { padding-top: 56px; }
     .bp2-italic { font-style: italic; font-weight: 300; }
     .bp2-eyebrow {
-      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #595E78;
+      font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: #595E78;
     }
     .bp2-rule { height: 1px; background: rgba(24,25,43,0.10); }
 
@@ -104,7 +84,7 @@
       min-height: 40px; padding: 10px 14px;
       border: 1px solid rgba(24,25,43,0.22);
       color: #18192B; text-decoration: none;
-      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
       transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
     }
     .bp2-action-link:hover, .bp2-action-link:focus-visible {
@@ -123,7 +103,7 @@
     }
     .bp2-hero-cover figcaption {
       position: absolute; left: 16px; bottom: 16px;
-      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+      font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase;
       color: #FFFFFF; background: rgba(24,25,43,0.7); padding: 6px 10px;
     }
 
@@ -155,12 +135,12 @@
       font-style: normal;
       color: #9094AB;
       margin-right: 8px;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       font-size: 10px;
     }
     .bp2-stick-back {
-      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #18192B;
+      font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: #18192B;
       border: 1px solid rgba(24,25,43,0.22); padding: 8px 14px;
       transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
       cursor: pointer;
@@ -261,7 +241,7 @@
       display: block;
     }
     .bp2-story-copy {
-      max-width: 64ch;
+      max-width: none;
     }
     .bp2-story-copy p {
       margin: 0 0 22px;
@@ -290,7 +270,7 @@
     }
     .bp2-source-gallery figcaption {
       padding: 8px 0 0;
-      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
       color: #8B90AB; line-height: 1.5;
     }
 
@@ -306,7 +286,7 @@
       flex-wrap: wrap;
     }
     .bp2-index-title { font-style: italic; font-weight: 300; font-size: clamp(22px, 2.4vw, 30px); margin: 0; }
-    .bp2-index-help { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9094AB; }
+    .bp2-index-help { font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: #9094AB; }
     .bp2-index-availability {
       display: inline-flex;
       align-items: center;
@@ -317,7 +297,7 @@
       color: #1F5F45;
       background: rgba(46, 125, 91, 0.06);
       font-size: 12px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       text-decoration: none;
     }
@@ -360,7 +340,7 @@
       background: linear-gradient(180deg, rgba(24,25,43,0) 45%, rgba(24,25,43,0.78) 100%);
       color: #FFFFFF;
       opacity: 0; transition: opacity 0.2s ease;
-      font-size: 10px; letter-spacing: 0.06em;
+      font-size: 10px; letter-spacing: 0.04em;
     }
     .bp2-cell:hover .bp2-cell-overlay,
     .bp2-cell:focus-visible .bp2-cell-overlay { opacity: 1; }
@@ -384,7 +364,7 @@
       color: #FFFFFF;
       font-size: 9px;
       line-height: 1;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
     }
     .bp2-cell-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; align-self: flex-end; margin-bottom: 2px; }
@@ -435,7 +415,7 @@
     .bp2-diptych .bp2-fig img { max-height: 78vh; }
 
     .bp2-cap { max-width: 52ch; }
-    .bp2-cap-num { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #9094AB; margin-bottom: 14px; font-feature-settings: "tnum"; }
+    .bp2-cap-num { font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: #9094AB; margin-bottom: 14px; font-feature-settings: "tnum"; }
     .bp2-cap-title { font-style: italic; font-weight: 300; font-size: clamp(22px, 2.6vw, 32px); margin: 0; line-height: 1.15; letter-spacing: -0.01em; }
     .bp2-cap-body { font-size: 15px; line-height: 1.6; color: #18192B; margin: 14px 0 0; }
 
@@ -473,7 +453,7 @@
       color: #18192B;
       max-width: none;
     }
-    .bp2-colo-list dt { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9094AB; margin: 0 0 8px; }
+    .bp2-colo-list dt { font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: #9094AB; margin: 0 0 8px; }
     .bp2-colo-list dd { margin: 0; }
     .bp2-colo-item { min-width: 0; }
     .bp2-colo-list a { color: #545C9E; text-decoration: underline; text-underline-offset: 3px; }
@@ -497,7 +477,7 @@
     @media (max-width: 540px) {
       .bp2-sheet { grid-template-columns: repeat(4, minmax(0, 1fr)); }
       .bp2-source-gallery { columns: 1; }
-      .bp2-stick-back { padding: 7px 10px; font-size: 10px; letter-spacing: 0.12em; }
+      .bp2-stick-back { padding: 7px 10px; font-size: 10px; letter-spacing: 0.04em; }
     }
     @media (min-width: 1180px) {
       .bp2-stick { display: none !important; }
@@ -567,7 +547,6 @@
     <section class="bp2-hero" id="overview" aria-label="By Proxy overview">
       <div class="bp2-hero-grid">
         <div>
-          <p class="bp2-eyebrow">Project. 2022</p>
           <h1 class="bp2-hero-title">By <em>Proxy.</em></h1>
           <p class="bp2-hero-tag">Can memories, just like images, be manipulated?</p>
           <p class="bp2-hero-meta">
@@ -576,7 +555,7 @@
           <p class="bp2-hero-desc">
             Created with photographer Lenne Chai, By Proxy follows an imaginary young girl
             through girlhood into adolescence in Singapore. The central figure is sculpted
-            in 3D as an amalgamation of the artists' younger selves. Each image deliberately
+            in 3D as an amalgamation of our younger selves. Each image deliberately
             blurs what was captured in-camera, what was constructed in CGI, and what was
             remembered into being.
           </p>
@@ -588,7 +567,6 @@
         </div>
         <figure class="bp2-hero-cover" data-lb-href="https://opensea.io/collection/by-proxy-by-shavonne-wong-and-lenne-chai?status=listed">
           <img decoding="async" src="/assets/by-proxy/02-1920px-web-len-5295.webp" alt="Listen to the ocean crying">
-          <figcaption>Listen to the ocean crying</figcaption>
         </figure>
       </div>
     </section>
@@ -602,12 +580,12 @@
       <div class="bp2-story">
         <p class="bp2-eyebrow">The story</p>
         <div class="bp2-story-copy">
-          <p>By Proxy combines photography and 3D virtual modeling to explore how memory can bend, blur, and recompose the past. The project grew from Shavonne Wong and Lenne Chai's parallel histories in Singapore, their long friendship, and their shared background in fashion image-making.</p>
-          <p>The collaboration joined two practices at a moment when they were moving through different tools. Shavonne was deepening her work in 3D virtual modeling and NFTs, while Lenne brought an emotionally charged photographic language. Together they built a world that feels personal, surreal, and familiar without settling into documentary certainty.</p>
-          <p>At the center of the work is a virtual teenage girl whose face merges features from both artists' childhood selves. She appears inside scenes that read as half observed and half reconstructed, with each frame refusing to fully reveal what came from a camera, what came from a render, and what came from memory.</p>
-          <p>That uncertainty is the point. Memories overlap, borrow from images, and sometimes become more convincing after they have been retold. By Proxy treats the remembered past as something intimate but unstable, full of gaps, substitutions, and details that may have been invented after the fact.</p>
+          <p>By Proxy combines photography and 3D virtual modeling to explore how memory can bend, blur, and recompose the past. It grew out of Lenne Chai's and my parallel histories in Singapore, our long friendship, and the shared background we have in fashion image-making.</p>
+          <p>It joined our two practices at a moment when we were moving through different tools. I was deepening my work in 3D virtual modeling and NFTs, while Lenne brought an emotionally charged photographic language. Together we built a world that feels personal, surreal, and familiar without settling into documentary certainty.</p>
+          <p>At the center of the work is a virtual teenage girl whose face merges features from both our childhood selves. She appears inside scenes that read as half observed and half reconstructed, with each frame refusing to fully reveal what came from a camera, what came from a render, and what came from memory.</p>
+          <p>That uncertainty is the point. Memories overlap, borrow from images, and sometimes become more convincing after they have been retold. By Proxy treats the remembered past as something intimate but unstable, full of substitutions, soft edges, and details that may have been invented after the fact.</p>
           <p>The series is both a visual experiment and a study of identity, nostalgia, and technology. It asks viewers to step into a world that feels close but slightly displaced, then consider how much of their own past has been preserved, edited, or remembered into existence.</p>
-          <p>By Proxy was exhibited at <a href="https://proofofconcept.sg/" target="_blank" rel="noreferrer">Proof of Concept</a> in Singapore.</p>
+          <p>We showed By Proxy at <a href="https://proofofconcept.sg/" target="_blank" rel="noreferrer">Proof of Concept</a> in Singapore.</p>
         </div>
         <figure class="bp2-story-aside">
           <img decoding="async" src="/assets/by-proxy/03-by-proxy-bts-high.gif" alt="Behind-the-scenes 3D process, By Proxy" loading="lazy">
@@ -1258,9 +1236,9 @@
       window.addEventListener('resize', syncCurrent);
     })();
   </script>
-  <script src="/assets/js/by-proxy-listings.js?v=20260613-local-quiet"></script>
+  <script src="/assets/js/by-proxy-listings.js?v=20260616-multi-collection"></script>
   <script src="/site-header.js?v=20260606-footer"></script>
   <script src="/site-i18n.js?v=20260604-fix"></script>
   <script src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
 </body>
-</htm
+</html>

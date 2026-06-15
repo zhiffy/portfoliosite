@@ -44,7 +44,7 @@
 .nl-hero-kicker {
   display: none !important;
   font-size: 11px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -72,7 +72,7 @@
 }
 .nl-hero-byline {
   font-size: 13px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text);
@@ -81,7 +81,7 @@
   display: flex;
   gap: 18px;
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   color: var(--text-2);
   font-variant-numeric: tabular-nums;
 }
@@ -114,7 +114,7 @@
 }
 .nl-section-label {
   font-size: clamp(12px, 1vw, 14px);
-  letter-spacing: 0.24em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text);
@@ -123,7 +123,7 @@
   display: none !important;
   margin-left: auto;
   font-size: 12px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   color: var(--text-2);
   font-variant-numeric: tabular-nums;
 }
@@ -150,14 +150,14 @@
 }
 .nl-ev-index {
   font-size: 12px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   color: var(--text-3);
   font-variant-numeric: tabular-nums;
 }
 .nl-ev-date {
   margin-left: auto;
   font-size: 12px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-2);
   font-variant-numeric: tabular-nums;
@@ -388,14 +388,14 @@
 .nl-press-item:first-child { border-top: 0; }
 .nl-press-num {
   font-size: 13px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   color: var(--text-3);
   font-variant-numeric: tabular-nums;
 }
 .nl-press-main { min-width: 0; }
 .nl-press-pub {
   font-size: 13px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--text);
@@ -417,7 +417,7 @@
 .nl-press-headline a:hover { color: var(--text-2); border-color: var(--accent-deep); }
 .nl-press-date {
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   color: var(--text-2);
   text-align: right;
   font-variant-numeric: tabular-nums;
@@ -443,7 +443,7 @@
 }
 .nl-featured-tag {
   font-size: 11px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--accent-deep);
@@ -474,7 +474,7 @@
 .nl-featured-when {
   margin-top: 18px;
   font-size: 12px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text);
   font-weight: 600;
@@ -522,7 +522,7 @@
 }
 .nl-ahead-label {
   font-size: 12px;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--accent-deep);
@@ -585,7 +585,7 @@ main.nl-letter > .sw-page-footer { border-top: 0; }
 .nl-foot-link span {
   display: block;
   font-size: 11px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-2);
   margin-bottom: 10px;
@@ -682,7 +682,7 @@ main.nl-letter > .sw-page-footer { border-top: 0; }
 .nl-pager:focus-visible .nl-pager-info { max-width: 168px; opacity: 1; }
 .nl-pager-dir {
   font-size: 10px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-2);
   transition: color 160ms ease;
@@ -853,7 +853,7 @@ main.nl-letter > .sw-page-footer { border-top: 0; }
 .nl-hero { padding: clamp(32px, 5vw, 64px) 0 clamp(24px, 3vw, 44px); }
 .nl-cover { margin: clamp(24px, 3.2vw, 44px) 0 0; }
 .nl-cover img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; display: block; }
-.nl-cover figcaption { margin-top: 10px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: var(--text-2); }
+.nl-cover figcaption { margin-top: 10px; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 600; color: var(--text-2); }
 
 /* ============================================================
    WIDTH PASS 3 (2026-06-12) — rail events with image rows.
@@ -884,7 +884,7 @@ main.nl-letter > .sw-page-footer { border-top: 0; }
 
 .nl-press-feature-pub {
   font-size: 0.6875rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-2);
   margin: 0 0 1rem;

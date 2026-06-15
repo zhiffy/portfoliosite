@@ -4,6 +4,24 @@
    Body height is inflated so vertical scroll becomes horizontal.
    ============================================================ */
 
+/* Self-hosted Mulish (variable). Files live in /assets/fonts/mulish/.
+   Covers weights 200 to 1000 in normal and italic, replacing the Google
+   Fonts request. */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url('/assets/fonts/mulish/mulish-variable.woff2') format('woff2-variations');
+}
+@font-face {
+  font-family: 'Mulish';
+  font-style: italic;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url('/assets/fonts/mulish/mulish-italic-variable.woff2') format('woff2-variations');
+}
+
 :root {
   /* ── Shavonne Wong design system — colour foundations ──────────
      Cool palette, no warm tones. Haze is the page; Slate is the type
@@ -188,7 +206,7 @@ body.sn-page-body::-webkit-scrollbar-corner { background: transparent; }
   color: var(--sw-haze);
   font-family: var(--sans);
   font-size: 12px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: 4px;
   text-decoration: none;
@@ -269,7 +287,7 @@ html.sn-ripple-filter-on .wk2-cat-head {
 .sn-eyebrow {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -368,13 +386,13 @@ html.sn-ripple-filter-on .wk2-cat-head {
   font-family: var(--sans);
   font-size: 10px;
   color: var(--text-2);
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-left: 4px;
 }
 .sn-links {
   display: flex; gap: 26px; align-items: center;
-  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500;
+  font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500;
 }
 .sn-links a {
   display: inline-flex; gap: 6px; align-items: baseline; cursor: pointer;
@@ -414,7 +432,7 @@ html.sn-ripple-filter-on .wk2-cat-head {
 .sn-links a.is-active .sn-num { color: var(--accent-deep); }
 .sn-meta-right {
   display: flex; justify-content: flex-end; align-items: center; gap: 16px;
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-2);
+  font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-2);
   font-weight: 500;
 }
 /* ============================================================
@@ -448,7 +466,7 @@ html.sn-ripple-filter-on .wk2-cat-head {
   color: var(--text-2);
   font: inherit;
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   white-space: nowrap;
@@ -484,7 +502,7 @@ html.sn-ripple-filter-on .wk2-cat-head {
 .sn-scroll-readout {
   font-variant-numeric: tabular-nums;
   color: var(--text-3);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
 }
 
 /* Language switcher — compact "EN ▾" custom trigger.
@@ -502,7 +520,7 @@ html.sn-ripple-filter-on .wk2-cat-head {
 .sn-lang-kicker { display: none; }                 /* drop the word "LANGUAGE" */
 .sn-lang-code {
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 .sn-lang-caret {
@@ -580,7 +598,7 @@ html:not([data-language="en"]) .sn-links,
 html:not([data-language="en"]) .sn-meta-right,
 html:not([data-language="en"]) .sn-section-link,
 html:not([data-language="en"]) .sn-eyebrow {
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
 }
 .sn-progress {
   position: absolute; left: 0; right: 0; bottom: -1px;
@@ -1014,7 +1032,7 @@ html.sn-vertical-mode .sn-ticker {
   padding-bottom: 4px;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text);
@@ -1035,7 +1053,7 @@ html.sn-vertical-mode .sn-ticker {
   border: 1px solid var(--hairline-strong);
   background-image: none;
   font-size: 14px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
 }
 .sn-about-main .sn-section-link:hover,
 .sn-about-main .sn-section-link:focus-visible {
@@ -1044,7 +1062,7 @@ html.sn-vertical-mode .sn-ticker {
 }
 .sn-writing-link {
   font-size: 12px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   padding: 9px 0 7px;
 }
 
@@ -1058,7 +1076,7 @@ html.sn-vertical-mode .sn-ticker {
   gap: 10px;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text);
@@ -1159,7 +1177,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-plate-caption {
   position: absolute; left: 14px; bottom: 12px; z-index: 2;
   font-family: var(--sans);
-  font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 9px; letter-spacing: 0.04em; text-transform: uppercase;
   color: rgba(26,26,24,0.55);
 }
 
@@ -1276,7 +1294,7 @@ html.sn-vertical-mode .sn-ticker {
   flex-wrap: wrap;
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -1440,7 +1458,7 @@ html.sn-vertical-mode .sn-ticker {
   gap: 12px;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: rgba(237,237,244,0.85);
@@ -1698,7 +1716,7 @@ html.sn-vertical-mode .sn-ticker {
 }
 .sn-act-eyebrow {
   font-size: 10px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(27,27,27,0.55);
   font-weight: 500;
@@ -1874,7 +1892,7 @@ html.sn-vertical-mode .sn-ticker {
   flex: 1 1 auto;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   line-height: 1.45;
   text-transform: uppercase;
   color: var(--text-2);
@@ -1888,7 +1906,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-about-tags span {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -1948,7 +1966,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-badge-text {
   font-family: var(--sans);
   font-size: 9.6px;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   fill: var(--text);
@@ -2192,7 +2210,7 @@ html.sn-vertical-mode .sn-ticker {
   color: var(--text-3);
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
@@ -2254,7 +2272,7 @@ html.sn-vertical-mode .sn-ticker {
   align-self: flex-end;
   background-color: transparent;
   font-size: 12px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
 }
 .sn-essay {
   position: absolute;
@@ -2457,7 +2475,7 @@ html.sn-vertical-mode .sn-ticker {
   display: flex; align-items: baseline; gap: 12px;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-3);
@@ -2517,7 +2535,7 @@ html.sn-vertical-mode .sn-ticker {
 }
 .sn-press-pub {
   font-family: var(--sans);
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600;
+  font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 600;
   color: var(--text);
   display: inline-flex; align-items: center; gap: 14px;
 }
@@ -2630,7 +2648,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-contact-mark text {
   font-family: var(--sans);
   font-size: 9.5px;
-  letter-spacing: 0.34em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   fill: rgba(237,237,244,0.7);
@@ -2723,7 +2741,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-contact-email-lbl {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: rgba(237,237,244,0.55);
@@ -2848,7 +2866,7 @@ html.sn-vertical-mode .sn-ticker {
   grid-area: handle;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: rgba(237,237,244,0.5);
@@ -2909,7 +2927,7 @@ html.sn-vertical-mode .sn-ticker {
   text-align: left;
   font-size: clamp(14px, 1.15vw, 19px);
   line-height: 1;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.04em;
   font-weight: 600;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--hairline-strong);
@@ -2990,7 +3008,7 @@ html.sn-vertical-mode .sn-ticker {
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   line-height: 1;
   text-transform: uppercase;
   text-decoration: none;
@@ -3658,7 +3676,7 @@ html.sn-vertical-mode .sn-ticker {
     padding: 5px 0 7px;
     border-top: 0.5px solid var(--hairline);
     font-size: 10px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.04em;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
@@ -4243,7 +4261,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-work-finisher-scale {
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -4274,7 +4292,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-contact-sub-input::placeholder { color: rgba(255,255,255,0.42); }
 .sn-contact-sub-input:focus-visible { outline: 2px solid rgba(255,255,255,0.6); outline-offset: 2px; border-color: transparent; }
 .sn-contact-sub-btn {
-  font: inherit; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600;
+  font: inherit; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 600;
   padding: 12px 22px; cursor: pointer; color: #14151f; background: #fff; border: 0;
   transition: opacity .18s ease, transform .18s ease;
 }
@@ -4321,7 +4339,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-contact-sub-input::placeholder { color: #8B90AB; }
 .sn-contact-sub-input:focus-visible { outline: none; border-color: #545C9E; box-shadow: 0 0 0 1px #545C9E inset; }
 .sn-contact-sub-btn {
-  font: inherit; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400;
+  font: inherit; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 400;
   padding: 12px 22px; cursor: pointer; color: #18192B; background: #EDEDF4; border: 0; border-radius: 2px;
   transition: opacity .18s ease, transform .18s ease, background-color .18s ease;
 }
@@ -4350,7 +4368,7 @@ html.sn-vertical-mode .sn-ticker {
   .sn-meta-right .sn-controlbar > * { border-left: 0; }
   .sn-meta-right .sn-controlbar > .sn-view-toggle,
   .sn-meta-right .sn-controlbar > .sn-scroll-readout { display: none !important; }
-  .sn-links { grid-column: 1 / -1; grid-row: 2; display: flex; justify-content: space-between; align-items: center; gap: 4px; width: 100%; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 7px 0 2px; border-top: 0.5px solid var(--hairline); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .sn-links { grid-column: 1 / -1; grid-row: 2; display: flex; justify-content: space-between; align-items: center; gap: 4px; width: 100%; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 7px 0 2px; border-top: 0.5px solid var(--hairline); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; }
   .sn-links::-webkit-scrollbar { display: none; }
   .sn-links a { flex: 0 1 auto; min-height: 30px; display: inline-flex; align-items: center; white-space: nowrap; }
   .sn-nav[data-mode="dark"] .sn-links { border-top-color: rgba(237, 237, 244, 0.14); }
@@ -4373,7 +4391,7 @@ html.sn-vertical-mode .sn-ticker {
   color: #EDEDF4;
   font: inherit;
   font-size: 11px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   cursor: pointer;
   transition: background-color 160ms ease, color 160ms ease;
@@ -4409,7 +4427,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-contact-modal-form { display: grid; gap: 14px; }
 .sn-contact-modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .sn-contact-modal-field { display: grid; gap: 7px; }
-.sn-contact-modal-label { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237, 237, 244, 0.62); }
+.sn-contact-modal-label { font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(237, 237, 244, 0.62); }
 .sn-contact-modal-input,
 .sn-contact-modal-select,
 .sn-contact-modal-textarea {
@@ -4425,7 +4443,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-contact-modal-submit {
   justify-self: start; appearance: none; min-height: 44px; padding: 0 22px;
   border: 1px solid #C7BFE9; background: transparent; color: #EDEDF4; font: inherit;
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;
+  font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer;
   transition: background-color 160ms ease, color 160ms ease;
 }
 .sn-contact-modal-submit:hover,

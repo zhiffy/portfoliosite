@@ -1,0 +1,20 @@
+/* Self-hosted Mulish (variable). Activated in Phase 2 once the two woff2 files
+   below are present in this folder. See README.md in this folder for how to get
+   them. Covers weights 200 to 1000, which includes every weight the site uses
+   (300, 400, 500, 600, plus 200 on the About page), in normal and italic. */
+
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url('/assets/fonts/mulish/mulish-variable.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Mulish';
+  font-style: italic;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url('/assets/fonts/mulish/mulish-italic-variable.woff2') format('woff2-variations');
+}

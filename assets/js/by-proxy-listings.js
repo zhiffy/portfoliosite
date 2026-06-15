@@ -1,12 +1,19 @@
 (function () {
-  const COLLECTION_URL = 'https://opensea.io/collection/by-proxy-by-shavonne-wong-and-lenne-chai';
+  const DEFAULT_COLLECTION_URL = 'https://opensea.io/collection/by-proxy-by-shavonne-wong-and-lenne-chai';
+  const DEFAULT_ENDPOINT = '/api/by-proxy-listings';
 
-  const index = document.querySelector('[data-bp-listings-endpoint]');
-  if (!index) return;
+  const indexes = Array.from(document.querySelectorAll('[data-bp-listings-endpoint]'))
+    .filter((element) => element.querySelector('[data-cell]'));
+  const standaloneBanners = Array.from(document.querySelectorAll('[data-bp-listing-banner][data-bp-listings-endpoint]'));
+  if (!indexes.length && !standaloneBanners.length) return;
 
-  const banner = document.querySelector('[data-bp-listing-banner]');
-  const endpoint = index.getAttribute('data-bp-listings-endpoint') || '/api/by-proxy-listings';
-  const cells = Array.from(index.querySelectorAll('[data-cell]'));
+  function isLocalhost() {
+    return ['localhost', '127.0.0.1'].includes(window.location.hostname);
+  }
+
+  function collectionUrl(target) {
+    return target.getAttribute('data-bp-collection-url') || DEFAULT_COLLECTION_URL;
+  }
 
   function tokenFromUrl(url) {
     const match = String(url || '').match(/\/(\d+)(?:[/?#]|$)/);
@@ -21,9 +28,9 @@
     return cell.querySelector('.bp2-cell-num')?.textContent?.trim() || '';
   }
 
-  function setBanner(text, href, strongText) {
+  function setBanner(banner, text, href, strongText) {
     if (!banner) return;
-    banner.href = href || COLLECTION_URL;
+    banner.href = href || collectionUrl(banner);
     banner.textContent = text;
     if (strongText) {
       banner.append(' ');
@@ -54,26 +61,63 @@
     }
   }
 
-  function resetListedState() {
+  function resetListedState(cells) {
     cells.forEach((cell) => setCellStatus(cell, 'sold'));
   }
 
-  async function loadListings() {
+  async function loadListings(endpoint) {
     const response = await fetch(endpoint, { headers: { Accept: 'application/json' }, cache: 'no-store' });
     if (!response.ok) throw new Error(`Listings endpoint returned ${response.status}`);
     return response.json();
   }
 
-  async function applyListings() {
-    resetListedState();
+  function listingLabel(count, target) {
+    const singular = target.getAttribute('data-bp-listing-singular') || 'listed work';
+    const plural = target.getAttribute('data-bp-listing-plural') || 'listed works';
+    if (count === 1) return `1 ${singular}`;
+    return `${count} ${plural}`;
+  }
 
-    if (['localhost', '127.0.0.1'].includes(window.location.hostname)) {
-      setBanner('Live listing check unavailable.', COLLECTION_URL, 'View OpenSea');
+  async function applyBannerOnly(banner) {
+    const endpoint = banner.getAttribute('data-bp-listings-endpoint') || DEFAULT_ENDPOINT;
+    const fallback = collectionUrl(banner);
+
+    if (isLocalhost()) {
+      setBanner(banner, 'Live listing check unavailable.', fallback, 'View OpenSea');
       return;
     }
 
     try {
-      const payload = await loadListings();
+      const payload = await loadListings(endpoint);
+      const listings = Array.isArray(payload?.listings) ? payload.listings : [];
+      const href = payload?.collection_url || fallback;
+
+      if (listings.length) {
+        setBanner(banner, 'Currently on OpenSea', href, listingLabel(listings.length, banner));
+        return;
+      }
+
+      setBanner(banner, 'No works currently listed.', href);
+    } catch {
+      setBanner(banner, 'Live listing check unavailable.', fallback, 'View OpenSea');
+    }
+  }
+
+  async function applyListings(index) {
+    const banner = index.querySelector('[data-bp-listing-banner]');
+    const endpoint = index.getAttribute('data-bp-listings-endpoint') || DEFAULT_ENDPOINT;
+    const fallback = collectionUrl(index);
+    const cells = Array.from(index.querySelectorAll('[data-cell]'));
+
+    resetListedState(cells);
+
+    if (isLocalhost()) {
+      setBanner(banner, 'Live listing check unavailable.', fallback, 'View OpenSea');
+      return;
+    }
+
+    try {
+      const payload = await loadListings(endpoint);
       const listings = Array.isArray(payload?.listings) ? payload.listings : [];
       const listedTokens = new Set(
         listings
@@ -90,20 +134,21 @@
         const listing = listings.find((item) => String(item?.token_id) === tokenId);
         const number = cellNumber(cell);
         const label = `${cellTitle(cell)}${number ? `, #${Number(number)}` : ''}`;
-        setBanner('Listed work', listing?.url || cell.href, label);
+        setBanner(banner, 'Listed work', listing?.url || cell.href, label);
         return;
       }
 
       if (listedCells.length > 1) {
-        setBanner('Listed works', payload?.collection_url || COLLECTION_URL, `${listedCells.length} currently listed`);
+        setBanner(banner, 'Listed works', payload?.collection_url || fallback, `${listedCells.length} currently listed`);
         return;
       }
 
-      setBanner('No works currently listed.', payload?.collection_url || COLLECTION_URL);
+      setBanner(banner, 'No works currently listed.', payload?.collection_url || fallback);
     } catch {
-      setBanner('Live listing check unavailable.', COLLECTION_URL, 'View OpenSea');
+      setBanner(banner, 'Live listing check unavailable.', fallback, 'View OpenSea');
     }
   }
 
-  applyListings();
+  indexes.forEach(applyListings);
+  standaloneBanners.forEach(applyBannerOnly);
 })();

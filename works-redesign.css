@@ -49,7 +49,7 @@
 .wk-eyebrow {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -96,7 +96,7 @@
 .wk-count-lbl {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -146,7 +146,7 @@
 .wk-chip {
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -205,7 +205,7 @@
   cursor: pointer;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -302,7 +302,7 @@
 .wk-meta-year {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -350,7 +350,7 @@
 .wk-status-onview {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-3);
@@ -368,7 +368,7 @@
 .wk-tag {
   font-family: var(--sans);
   font-size: 9.5px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -417,7 +417,7 @@
 .wk-list-head {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -459,14 +459,14 @@
 .wk-list-year {
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   font-weight: 500;
   color: var(--text-2);
 }
 .wk-list-status {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-2);
@@ -666,7 +666,7 @@
 .av-filter-label {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -800,7 +800,7 @@
   position: relative;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   min-height: 40px;
@@ -848,7 +848,7 @@
   background: #1B1B1B;
   color: #F1EBDE;
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   padding: 6px 10px;
   border-radius: 2px;
   white-space: nowrap;
@@ -864,7 +864,7 @@
   color: var(--text-2);
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   padding: 0 34px 0 14px;
@@ -878,7 +878,7 @@
   color: var(--text-2);
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
@@ -958,7 +958,7 @@
 .av-card-parent {
   font-family: var(--sans);
   font-size: 9.5px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-3);
@@ -1005,7 +1005,7 @@
 .av-card-status {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: rgba(27,27,27,0.62);
@@ -1014,7 +1014,7 @@
 
 .av-card-priceband {
   font-size: 11px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(27,27,27,0.6);
   font-weight: 500;
@@ -1057,7 +1057,7 @@
 
 .av-card-signal {
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(27,27,27,0.5);
   font-style: italic;
@@ -1248,7 +1248,7 @@
   flex-wrap: wrap;
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -1283,7 +1283,7 @@
 .wk-available-eyebrow {
   font-family: var(--sans);
   font-size: 9.5px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-3);
@@ -1323,7 +1323,7 @@
   gap: 7px;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -1421,7 +1421,7 @@
   margin-top: 6px;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -1531,7 +1531,7 @@
 .wk-loop-year {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-3);
@@ -1565,7 +1565,7 @@
 .wk-loop .wk-avail {
   margin-top: 5px;
   font-size: 9.5px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
 }
 
 .wk-loop .wk-avail-dot {
@@ -1634,7 +1634,7 @@
   margin-top: 6px;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text);
@@ -1771,7 +1771,7 @@
   flex-wrap: wrap;
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -1804,7 +1804,7 @@
 .wk-available-eyebrow {
   font-family: var(--sans);
   font-size: 9.5px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-3);
@@ -1843,7 +1843,7 @@
   min-height: 40px;
   padding: 10px 14px;
   font-size: 10.5px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
 }
 .bp-series-grid {
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -1896,7 +1896,7 @@
 .bp-tile-num {
   font-family: var(--sans);
   font-size: 9.5px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-3);
@@ -1911,7 +1911,7 @@
 }
 .bp-tile .wk-avail {
   font-size: 9px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   margin-top: 2px;
 }
 .bp-tile .wk-avail-dot { width: 5px; height: 5px; }

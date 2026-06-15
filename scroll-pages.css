@@ -60,7 +60,7 @@ html {
   gap: clamp(18px, 2.4vw, 32px);
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -78,7 +78,7 @@ html {
   justify-self: end;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -135,7 +135,7 @@ html {
   margin-top: 10px;
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-3);
@@ -144,7 +144,7 @@ html {
 .sp-kicker {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -207,7 +207,7 @@ html {
   padding: 6px 11px;
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -326,7 +326,7 @@ main > .sp-section:last-of-type {
 .sp-detail-grid dt {
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-3);
@@ -593,7 +593,7 @@ main > .sp-section:last-of-type {
   padding: 8px 12px;
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -680,7 +680,7 @@ main > .sp-section:last-of-type {
 .sp-date {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-2);
   text-align: right;
@@ -709,7 +709,7 @@ main > .sp-section:last-of-type {
   backdrop-filter: blur(10px);
   border-bottom: 0.5px solid rgba(86, 93, 160, 0.14);
   font-size: 11px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -773,7 +773,7 @@ main > .sp-section:last-of-type {
 
 .sp-walllabel-status {
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(27,27,27,0.7);
   font-weight: 500;
@@ -838,7 +838,7 @@ main > .sp-section:last-of-type {
   margin-top: 10px;
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-3);
@@ -883,7 +883,7 @@ main > .sp-section:last-of-type {
 .sp-stat-grid span {
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-3);
@@ -1066,7 +1066,7 @@ main > .sp-section:last-of-type {
   margin: -12px 0 0;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -1137,7 +1137,7 @@ main > .sp-section:last-of-type {
   font-family: var(--sans);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   line-height: 1;
   text-transform: uppercase;
   pointer-events: none;
@@ -1160,7 +1160,7 @@ main > .sp-section:last-of-type {
   background: rgba(0,0,0,0.6);
   color: #F1EBDE;
   font-size: 10px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 4px 8px;
   border-radius: 2px;
@@ -1180,7 +1180,7 @@ main > .sp-section:last-of-type {
   cursor: pointer;
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -1247,7 +1247,7 @@ main > .sp-section:last-of-type {
 
 .sp-plate-status {
   font-size: 10px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(27,27,27,0.55);
   font-weight: 500;
@@ -1293,7 +1293,7 @@ main > .sp-section:last-of-type {
   flex-wrap: wrap;
   gap: 6px 10px;
   font-size: 9px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(27,27,27,0.45);
   margin-top: 0;
@@ -1452,7 +1452,7 @@ main > .sp-section:last-of-type {
 .sp-work-filterbar .wk-chip {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   min-height: 40px;
@@ -1497,7 +1497,7 @@ main > .sp-section:last-of-type {
   font-family: var(--sans);
   font-size: 10px;
   line-height: 1;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   background: transparent;
@@ -1547,7 +1547,7 @@ main > .sp-section:last-of-type {
   margin: 0 0 8px;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1.5;
   color: rgba(27,27,27,0.52);
@@ -1604,7 +1604,7 @@ main > .sp-section:last-of-type {
   padding: 3px 8px;
   font-family: var(--sans);
   font-size: 8.5px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(27,27,27,0.58);
 }
@@ -1670,7 +1670,7 @@ main > .sp-section:last-of-type {
   color: var(--text-2);
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -1717,7 +1717,7 @@ main > .sp-section:last-of-type {
 
 .sp-tile-status {
   font-size: 9px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(27,27,27,0.5);
 }
@@ -2621,7 +2621,21 @@ main > .sp-section:last-of-type {
     border-bottom: 0;
     z-index: 40;
   }
-  .sp-subnav a { white-space: normal; line-height: 1.35; }       /* long labels wrap, no overflow */
+  .sp-subnav a {
+    white-space: normal;
+    line-height: 1.35;
+    border-bottom: 0;
+    text-decoration-line: none;
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 0.28em;
+    text-decoration-color: currentColor;
+    transition: color 150ms ease, transform 150ms ease;
+  }
+  .sp-subnav a:hover,
+  .sp-subnav a:focus-visible,
+  .sp-subnav a.is-current {
+    text-decoration-line: underline;
+  }
 
   /* content clears the rail at any width, but stays wide when the
      centred margin already provides room */
@@ -2712,7 +2726,7 @@ main > .sp-section:last-of-type {
   color: rgba(255,255,255,0.38);
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -2730,7 +2744,7 @@ main > .sp-section:last-of-type {
   color: rgba(255,255,255,0.7);
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 7px 14px;
   cursor: pointer;
@@ -2820,7 +2834,7 @@ html.sp-theatre-open { overflow: hidden; }
 .sp-screen-back {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-2);
@@ -2876,7 +2890,7 @@ html.sp-theatre-open { overflow: hidden; }
   font-family: var(--sans);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 14px 28px;
   cursor: pointer;
@@ -2909,7 +2923,7 @@ html.sp-theatre-open { overflow: hidden; }
   color: #F1EBDE;
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 8px 16px;
   cursor: pointer;
@@ -2951,7 +2965,7 @@ html.sp-theatre-open { overflow: hidden; }
   color: rgba(237, 237, 244, 0.38);
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 

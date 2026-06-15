@@ -28,7 +28,7 @@
   margin: 22px 0 0;
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-3);
@@ -52,7 +52,7 @@
 .sp-press-masthead-label {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-3);
@@ -163,7 +163,7 @@
   margin-top: 6px;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-3);
@@ -174,7 +174,7 @@
   grid-column: 3;
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--text-2);
@@ -194,7 +194,7 @@
 .sp-press-list-selected .sp-date {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-3);
   font-variant-numeric: tabular-nums;
@@ -228,7 +228,7 @@
   margin-bottom: 16px;
   font-family: var(--sans);
   font-size: 9px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--accent-deep);
@@ -307,7 +307,7 @@
 .sp-press-list:not(.sp-press-list-selected) .sp-press-item .sp-kicker {
   order: 2;
   font-size: 9px;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.04em;
   color: var(--text-3);
 }
 .sp-press-list:not(.sp-press-list-selected) .sp-press-title {
@@ -323,7 +323,7 @@
 .sp-press-list:not(.sp-press-list-selected) .sp-press-pub {
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--text-2);
@@ -395,7 +395,7 @@
 .pr-ledger-meta {
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-3);
   text-align: right;
@@ -466,7 +466,7 @@
   padding-top: 5px;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-3);
@@ -507,7 +507,7 @@
   white-space: nowrap;
   font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-3);
   font-variant-numeric: tabular-nums;
@@ -614,7 +614,7 @@
 .pr-byline {
   padding-top: 0;
   font-size: 10px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   font-weight: 500;
   line-height: 1.35;
 }
@@ -640,7 +640,7 @@
 .pr-date {
   padding-top: 1px;
   font-size: 10px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   color: var(--text-3);
 }
 
@@ -793,7 +793,7 @@
   font-family: var(--sans);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-3);
 }
@@ -814,7 +814,7 @@
    as the update letters (press-hover.js), applied to .pr-row.
    ============================================================ */
 .nl-press-preview {
-  position: fixed; top: 0; left: 0; z-index: 2;
+  position: fixed; top: 0; left: 0; z-index: 20;
   width: clamp(210px, 19.6vw, 301px); margin: 0;
   pointer-events: none; transform: translate(-9999px, -9999px); will-change: transform;
 }
