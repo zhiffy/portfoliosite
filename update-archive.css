@@ -1,0 +1,404 @@
+/* Source-matched update archive pages. */
+.nl-source-page .nl-hero {
+  border-bottom: 1px solid var(--hairline);
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.nl-source-page .nl-hero-title {
+  font-size: 6.8rem;
+  letter-spacing: 0;
+  line-height: 0.98;
+  margin-left: 0;
+  max-width: 100%;
+  overflow-wrap: normal;
+}
+
+.nl-source-page .nl-foot {
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.nl-archive-kicker {
+  color: var(--text-2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.nl-archive-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: clamp(22px, 3vw, 36px);
+}
+
+.nl-archive-nav-link {
+  border: 1px solid var(--hairline-strong);
+  color: var(--text);
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 10px 12px;
+  text-decoration: none;
+}
+
+.nl-archive-nav-link:hover,
+.nl-archive-nav-link.is-active {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--paper);
+}
+
+.nl-source-flow {
+  box-sizing: border-box;
+  display: grid;
+  gap: clamp(22px, 3vw, 42px);
+  padding-block: clamp(30px, 5vw, 72px);
+  padding-inline: 16px;
+}
+
+.nl-source-copy {
+  max-width: 74ch;
+}
+
+.nl-source-copy h1,
+.nl-source-copy h2,
+.nl-source-copy h3 {
+  color: var(--text);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.nl-source-copy h1 {
+  font-size: clamp(2.2rem, 7vw, 5.6rem);
+}
+
+.nl-source-copy h2 {
+  font-size: clamp(1.35rem, 3.2vw, 2.2rem);
+}
+
+.nl-source-copy h3 {
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+}
+
+.nl-source-copy p,
+.nl-source-copy li {
+  color: var(--text);
+  font-size: clamp(1rem, 1.45vw, 1.16rem);
+  line-height: 1.72;
+  margin: 0;
+}
+
+.nl-source-copy p + p,
+.nl-source-copy ul + p,
+.nl-source-copy p + ul {
+  margin-top: 0.9rem;
+}
+
+.nl-source-copy ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.nl-source-copy a {
+  color: var(--accent-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.nl-source-copy a:hover {
+  text-decoration-color: transparent;
+}
+
+.nl-source-gallery {
+  display: grid;
+  gap: clamp(12px, 1.5vw, 20px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 2px 0 clamp(8px, 1.5vw, 18px);
+}
+
+.nl-source-gallery[data-count="1"] {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.nl-source-gallery[data-count="3"],
+.nl-source-gallery[data-count="5"],
+.nl-source-gallery[data-count="6"],
+.nl-source-gallery[data-count="7"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.nl-source-figure {
+  background: var(--paper-soft);
+  margin: 0;
+  overflow: hidden;
+}
+
+.nl-source-figure picture,
+.nl-source-figure img {
+  display: block;
+  width: 100%;
+}
+
+.nl-source-figure img {
+  aspect-ratio: 4 / 3;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nl-source-gallery[data-count="1"] .nl-source-figure img {
+  aspect-ratio: auto;
+  height: auto;
+  max-height: 82vh;
+  object-fit: contain;
+}
+
+.nl-source-copy + .nl-source-gallery {
+  margin-top: clamp(-4px, -0.5vw, -2px);
+}
+
+@media (max-width: 720px) {
+  .nl-source-page .nl-hero-title {
+    font-size: 3.25rem;
+    line-height: 1.04;
+  }
+
+  .nl-archive-nav-link {
+    flex: 1 1 calc(50% - 8px);
+    justify-content: center;
+  }
+
+  .nl-source-gallery,
+  .nl-source-gallery[data-count] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nl-source-figure img {
+    aspect-ratio: auto;
+    height: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .nl-source-page .nl-hero-title {
+    font-size: 2.75rem;
+  }
+}
+
+/* ============================================================
+   RICH ARCHIVE LAYOUT (2026-06-14) — archive letters rebuilt to
+   match the update2026jun reference (nl-event / nl-section /
+   nl-ahead system), scoped to `.nl-archive-rich` so pages still
+   on the older nl-source-flow format are untouched.
+
+   Shavonne's standing rule is no cropped content images and no
+   changed aspect ratios, so every CONTENT figure renders at its
+   natural ratio. Only the header cover is a deliberate full-width
+   horizontal band. Higher specificity + later load order beats the
+   base nl- rules.
+   ============================================================ */
+
+/* CONTENT figures: natural ratio, never cropped. The header cover is
+   deliberately excluded (it is a full-width horizontal band, below). */
+.nl-archive-rich .nl-ev-media .nl-fig img,
+.nl-archive-rich .nl-ev-support .nl-fig img,
+.nl-archive-rich .nl-twoup .nl-fig img,
+.nl-archive-rich .nl-closing .nl-fig img,
+.nl-archive-rich .nl-figure-wide img {
+  aspect-ratio: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  background: transparent;
+}
+
+/* Cap content event-media portraits so tall images keep a tight rhythm.
+   The image still shows in full (no crop) — it simply scales down and
+   centres in its column, capped by height rather than filling it. */
+.nl-archive-rich .nl-ev-media .nl-fig img {
+  max-height: 430px;
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+/* HEADER COVER: full-width horizontal band, like the update2026jun
+   reference. The opener is the one place a crop is allowed so it spans
+   the page rather than floating as a centred plate. */
+.nl-archive-rich .nl-cover img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  max-height: none;
+}
+
+/* Two-up / support rows + event grids: tops aligned so unequal natural
+   heights sit cleanly side by side. */
+.nl-archive-rich .nl-twoup,
+.nl-archive-rich .nl-ev-support,
+.nl-archive-rich .nl-ev--medialeft .nl-ev-grid,
+.nl-archive-rich .nl-ev--mediaright .nl-ev-grid {
+  align-items: start;
+}
+
+/* Standalone full-width figure (single image between events). */
+.nl-archive-rich .nl-figure-wide {
+  margin: clamp(22px, 2.6vw, 40px) 0 0;
+}
+.nl-archive-rich .nl-figure-wide img {
+  width: 100%;
+}
+
+/* Support imagery (two-up rows and lone support figures): cap height and
+   centre so portraits and small images stay tidy and never crop. */
+.nl-archive-rich .nl-ev-support .nl-fig img,
+.nl-archive-rich .nl-twoup .nl-fig img {
+  max-height: 460px;
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+
+/* ============================================================
+   ARROW PRESS ROWS (2026-06-14) — compact "what's ahead" style lists
+   use a leading arrow. Give the arrow its own column so the text is not
+   shoved to the right with a large empty gap (the default nl-press-item
+   grid is two columns, which broke with a third arrow child).
+   ============================================================ */
+.nl-archive-rich .nl-press-list .nl-press-item:has(.nl-press-num) {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 6px 18px;
+}
+.nl-archive-rich .nl-press-item:has(.nl-press-num) .nl-press-num {
+  align-self: start;
+  padding-top: 3px;
+}
+@media (max-width: 760px) {
+  .nl-archive-rich .nl-press-list .nl-press-item:has(.nl-press-num) {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .nl-archive-rich .nl-press-item:has(.nl-press-num) .nl-press-date {
+    grid-column: 2;
+    text-align: left;
+    margin-top: 2px;
+  }
+}
+
+/* In-media two-up (two images side by side beside the text) stacks to a
+   single column on phones so the pair stays a readable size. */
+@media (max-width: 760px) {
+  .nl-archive-rich .nl-ev-media.nl-twoup { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SCROLL GALLERY (2026-06-14) — sections with more than 3
+   documentation photos become a horizontal filmstrip instead of a
+   tall grid. Designed across two roundtables: CSS-first (works with
+   no JS), no cropping (every frame is a uniform HEIGHT with natural
+   width, so aspect ratios are preserved), restrained chrome.
+   Affordances: a peek of the next frame, a "N photos" label, and a
+   thin scrollbar. No carousel buttons, no Iris, no card shadows.
+   Documentation photos only — never artworks, heroes, or press.
+   ============================================================ */
+.nl-archive-rich .nl-gallery {
+  position: relative;
+  margin-top: clamp(18px, 2.2vw, 32px);
+}
+.nl-archive-rich .nl-gallery-meta {
+  display: none;
+  margin-bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-2);
+}
+.nl-archive-rich .nl-gallery-track {
+  display: flex;
+  gap: clamp(12px, 1.4vw, 18px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  padding-bottom: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--hairline-strong) transparent;
+}
+.nl-archive-rich .nl-gallery-track::-webkit-scrollbar { height: 6px; }
+.nl-archive-rich .nl-gallery-track::-webkit-scrollbar-thumb { background: var(--hairline-strong); border-radius: 3px; }
+.nl-archive-rich .nl-gallery-track::-webkit-scrollbar-track { background: transparent; }
+.nl-archive-rich .nl-gallery-track:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 4px;
+}
+.nl-archive-rich .nl-gallery-track .nl-fig {
+  flex: 0 0 auto;
+  margin: 0;
+  min-width: 0;
+  background: var(--surface);
+}
+.nl-archive-rich .nl-gallery-track .nl-fig img {
+  height: clamp(240px, 32vw, 330px) !important;
+  width: auto !important;
+  max-width: 86vw;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  display: block;
+  margin: 0 !important;
+}
+@media (max-width: 760px) {
+  .nl-archive-rich .nl-gallery-track {
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 16px;
+  }
+  .nl-archive-rich .nl-gallery-track .nl-fig { scroll-snap-align: start; }
+  .nl-archive-rich .nl-gallery-track .nl-fig img {
+    height: clamp(190px, 52vw, 240px) !important;
+  }
+}
+
+/* Scroll gallery enhancements (gallery-scroll.js) — desktop only:
+   grab cursor for mouse drag, and thin chevron buttons that hide at the
+   ends. Quiet chrome: hairline border, Fog glyph, no fill accent. */
+.nl-archive-rich .nl-gallery-track.is-draggable { cursor: grab; }
+.nl-archive-rich .nl-gallery-track.is-grabbing { cursor: grabbing; user-select: none; }
+.nl-archive-rich .nl-gallery-nav {
+  position: absolute;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--hairline-strong);
+  background: var(--bg);
+  color: var(--text-2);
+  cursor: pointer;
+  font: 300 26px/1 var(--sans);
+  transition: color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+.nl-archive-rich .nl-gallery-nav:hover,
+.nl-archive-rich .nl-gallery-nav:focus-visible {
+  color: var(--text);
+  border-color: var(--text);
+  outline: none;
+}
+.nl-archive-rich .nl-gallery-nav--prev { left: -8px; }
+.nl-archive-rich .nl-gallery-nav--next { right: -8px; }
+.nl-archive-rich .nl-gallery-nav[disabled] { opacity: 0; pointer-events: none; }
+@media (max-width: 760px) {
+  .nl-archive-rich .nl-gallery-nav { display: none; }
+}

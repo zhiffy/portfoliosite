@@ -120,6 +120,7 @@
   cursor: pointer;
   position: relative;
   white-space: nowrap;
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -419,6 +420,7 @@ html.sn-ripple-filter-on .wk2-panels { filter: url(#snWebglRippleDisplace); }
   font-style: normal;
   line-height: 1.46;
   margin-top: 2px;
+  display: none;
 }
 .wk2-tile-edition {
   grid-column: 1 / -1;
@@ -522,8 +524,8 @@ html.sn-ripple-filter-on .wk2-panels { filter: url(#snWebglRippleDisplace); }
 .wk2-modal-open { overflow: hidden; }
 .wk2-work-modal {
   width: fit-content;
-  max-width: min(1180px, calc(100vw - 36px));
-  max-height: min(860px, calc(100vh - 36px));
+  max-width: min(1340px, calc(100vw - 36px));
+  max-height: min(880px, calc(100vh - 36px));
   padding: 0;
   border: 0;
   background: transparent;
@@ -535,8 +537,9 @@ html.sn-ripple-filter-on .wk2-panels { filter: url(#snWebglRippleDisplace); }
 .wk2-work-modal-shell {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(260px, var(--wk2-modal-media-width, 720px)) minmax(320px, 340px);
-  gap: clamp(22px, 3vw, 42px);
+  grid-template-columns: minmax(260px, var(--wk2-modal-media-width, 700px)) minmax(400px, 500px);
+  gap: clamp(26px, 3vw, 48px);
+  align-items: center;
   max-height: inherit;
   overflow: auto;
   background: var(--bg);
@@ -634,6 +637,93 @@ html.sn-ripple-filter-on .wk2-panels { filter: url(#snWebglRippleDisplace); }
   outline: 0;
 }
 
+/* Two exits: project page (primary, filled Slate) + marketplace (secondary,
+   the existing outlined accent). When a work has only one, it sits alone. */
+.wk2-work-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: stretch;
+}
+.wk2-work-modal-actions .wk2-work-modal-link { align-self: stretch; }
+.wk2-work-modal-link--primary {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
+}
+.wk2-work-modal-link--primary:hover,
+.wk2-work-modal-link--primary:focus-visible {
+  background: var(--text-2);
+  border-color: var(--text-2);
+  color: var(--bg);
+}
+
+/* Flip controls — thin chevrons over the dimmed backdrop, centred on the
+   media, matching the image lightbox so the two viewers feel related.
+   Hidden (not just dimmed) at the first/last work; fixed so no layout jump. */
+.wk2-work-modal-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 72px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: rgba(248, 248, 252, 0.55);
+  font: 300 38px/1 var(--sans);
+  transition: color 0.15s ease;
+}
+.wk2-work-modal-nav:hover,
+.wk2-work-modal-nav:focus-visible { color: #fff; outline: 0; }
+.wk2-work-modal-nav--prev { left: 18px; }
+.wk2-work-modal-nav--next { right: 18px; }
+.wk2-work-modal-count {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(248, 248, 252, 0.45);
+  pointer-events: none;
+}
+/* gentle media cross-fade on flip */
+.wk2-work-modal-media img,
+.wk2-work-modal-media video { transition: opacity 0.16s ease; }
+.wk2-work-modal[data-flipping] .wk2-work-modal-media img,
+.wk2-work-modal[data-flipping] .wk2-work-modal-media video { opacity: 0; }
+.wk2-visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+  overflow: hidden; white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wk2-work-modal-media img,
+  .wk2-work-modal-media video { transition: none; }
+}
+/* On touch/small screens, swipe replaces the side arrows and the two exits
+   stack full-width. */
+@media (max-width: 760px) {
+  .wk2-work-modal-nav { display: none; }
+  .wk2-work-modal-actions { width: 100%; }
+  .wk2-work-modal-actions .wk2-work-modal-link {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+  .wk2-work-modal-count { bottom: 12px; }
+}
+
 /* ---------- FOOTER ---------- */
 .wk2-footer {
   border-top: 1px solid var(--hairline-strong);
@@ -686,119 +776,37 @@ html.sn-ripple-filter-on .wk2-panels { filter: url(#snWebglRippleDisplace); }
 }
 
 /* ---------- RESPONSIVE ---------- */
+@media (max-width: 960px) {
+  /* Stack the filter row below the tabs so filters don't get cut off
+     on Surface Pro 7 / narrow tablet viewports (760–960px). */
+  .wk2-tabbar {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    overflow: visible;
+  }
+}
 @media (max-width: 1080px) {
   .wk2-grid--projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .wk2-grid--single,
   .wk2-grid--editions,
   .wk2-grid--commissions,
-  .wk2-grid--available { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .wk2-work-modal-shell {
-    grid-template-columns: 1fr;
-  }
-  .wk2-work-modal-media {
-    justify-self: center;
-  }
-  .wk2-work-modal-copy {
-    justify-content: flex-start;
-    padding: 0;
+  .wk2-grid--available {    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (max-width: 760px) {
-  .wk2-cat-head { grid-template-columns: 1fr; }
-  .wk2-cat-count { align-items: flex-start; text-align: left; }
-  .wk2-tabbar { grid-template-columns: 1fr; gap: 14px; padding: 12px 0; overflow: visible; }
-  /* Wrap the category tabs onto multiple rows so all five stay visible and
-     tappable instead of overflowing off-screen behind a hidden scrollbar. */
-  .wk2-tabs {
-    flex-wrap: wrap;
-    gap: 6px;
-    max-width: 100%;
-    overflow: visible;
+  .wk2-catalog {
+    padding-left: clamp(16px, 4vw, 24px);
+    padding-right: clamp(16px, 4vw, 24px);
   }
-  .wk2-tab {
-    min-height: 38px;
-    padding: 0 13px;
-    font-size: 13px;
-    gap: 6px;
+  .wk2-tabbar {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
-  .wk2-tab + .wk2-tab { margin-left: 0; }
-  /* Filters wrap too rather than hiding behind a horizontal scroll. */
-  .wk2-filters { overflow-x: visible; flex-wrap: wrap; gap: 8px; }
-  .wk2-filter { flex: 1 1 auto; }
-  .wk2-filter select { width: 100%; min-width: 130px; }
-  .wk2-grid--projects { grid-template-columns: 1fr; gap: 28px; }
+  .wk2-grid--projects,
   .wk2-grid--single,
   .wk2-grid--editions,
   .wk2-grid--commissions,
   .wk2-grid--available {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-  }
-  .wk2-work-modal {
-    width: calc(100vw - 20px);
-    max-height: calc(100vh - 20px);
-  }
-  .wk2-work-modal-shell {
-    padding: 14px;
-    gap: 16px;
-  }
-  .wk2-work-modal-media {
-    width: 100%;
-  }
-  .wk2-work-modal-media img,
-  .wk2-work-modal-media video {
-    max-height: 56vh;
-  }
-  .wk2-work-modal-copy h2 {
-    font-size: 26px;
-  }
-  .wk2-work-modal-copy p {
-    font-size: 14px;
-  }
-  .wk2-footer-inner { flex-direction: column; align-items: flex-start; }
-}
-
-/* ============================================================
-   Availability status (the wk2-tile-foot dot line: "In development",
-   "X works available", "Edition available", etc.) appears ONLY in the
-   Available tab. Everywhere else the works read cleanly without it.
-   ============================================================ */
-[data-panel]:not([data-panel="available"]) .wk2-tile-foot { display: none !important; }
-.wk2-tile--in-progress .wk2-tile-foot { display: flex !important; }
-.wk2-tile--in-progress .wk2-tile-year {
-  color: var(--accent-deep);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-}
-
-/* Shared top-page header rhythm. */
-.wk2-catalog {
-  padding-top: 58px;
-}
-
-.wk2-cat-head {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
-.wk2-cat-title {
-  font-family: var(--sans);
-  font-weight: 300;
-  font-size: clamp(64px, 8vw, 118px);
-  line-height: 0.98;
-  letter-spacing: 0;
-}
-
-.wk2-cat-title em {
-  font-style: normal;
-}
-
-@media (max-width: 760px) {
-  .wk2-catalog {
-    padding-top: 34px;
-  }
-
-  .wk2-cat-title {
-    font-size: clamp(54px, 15vw, 84px);
+    grid-template-columns: 1fr;
   }
 }

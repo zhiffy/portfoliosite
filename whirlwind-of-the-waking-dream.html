@@ -22,8 +22,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="/assets/one-of-ones/whirlwind-of-the-waking-dream.webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/scroll-narrative.css?v=20260611-ripple-v7">
-  <link rel="stylesheet" href="/scroll-pages.css?v=20260606-theatre">
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260614-link-fix">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260615-bp2-related">
+  <link rel="stylesheet" href="/work-gallery.css?v=20260614-spgallery8">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -92,18 +93,69 @@
     }
   }
   </script>
-  <style>
-    /* Dark video stage within hero — mirrors sp-screen-stage aesthetic */
+    <style>
     .sp-project-hero-media.is-dark-stage {
-      background: #0c0c12;
+      align-self: center;
+      background: transparent;
       border: none;
+      contain: layout paint;
+      isolation: isolate;
+      overflow: hidden;
       padding: 0;
-      align-self: stretch;
+    }
+    .sp-project-hero-media.is-dark-stage .sp-screen-video {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      clip-path: inset(0);
+      filter: saturate(1.0001);
+      transform: translate3d(0, 0, 0);
+      will-change: transform;
     }
     .sp-project-hero-media.is-dark-stage figcaption {
-      color: rgba(241,235,222,0.55);
+      color: var(--text-3);
       background: none;
-      padding: 10px 16px;
+      padding: 10px 0 0;
+    }
+    /* Tagline spans full hero width — single horizontal line below the two columns */
+    .sp-project-hero .sp-project-line {
+      grid-column: 1 / -1;
+      max-width: none;
+      font-size: clamp(17px, 1.6vw, 22px);
+      line-height: 1.4;
+      padding-top: 20px;
+      border-top: 0.5px solid var(--hairline);
+      margin: 0;
+      align-self: start;
+    }
+    /* Override shared min-height — let content dictate section height */
+    .sp-project-hero {
+      min-height: 0;
+    }
+    /* Hero video expand affordance */
+    .ww-video-wrap {
+      position: relative;
+      cursor: pointer;
+      display: block;
+    }
+    .ww-expand-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      background: rgba(255,255,255,0.88);
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.15s;
+      padding: 0;
+    }
+    .ww-video-wrap:hover .ww-expand-btn {
+      opacity: 1;
     }
   </style>
     <!-- Cloudflare Web Analytics -->
@@ -122,7 +174,14 @@
       <a href="/press/" data-i18n="nav.press">Press</a>
       <a href="/contact/" data-i18n="nav.contact">Contact</a>
     </nav>
-    <div class="sn-meta-right"><span>Whirlwind</span><span>Work page</span></div>
+    <div class="sn-meta-right">
+      <label class="sn-lang-switcher" data-language-switcher>
+        <span class="sn-lang-kicker" data-i18n="ui.languageLabel">Language</span>
+        <select class="sn-lang-select" data-language-select aria-label="Language" data-i18n-aria-label="ui.languageLabel" title="Language"></select>
+      </label>
+      <span>Whirlwind</span>
+      <span data-i18n="page.projectPage">Work page</span>
+    </div>
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
   </header>
 
@@ -134,31 +193,58 @@
         <div class="sp-walllabel">
           <span>2024</span>
           <span>3D generative video &middot; 0:27 loop</span>
-          <span class="sp-walllabel-status">1/1 NFT &middot; sold for 5 ETH</span>
         </div>
         <p class="sp-walllabel-market"><a href="https://gallery.manifold.xyz/whirlwindofthewakingdream" rel="noreferrer">View on Manifold &rarr;</a> &middot; <a href="https://optimistic.etherscan.io/token/0x937714da10894Aa0721f7ed0221c98989A33F822?a=1" rel="noreferrer">Verify on Optimistic Etherscan &rarr;</a> &middot; Chain: Optimism</p>
-        <p class="sp-intro">Whirlwind of the Waking Dream follows a rendered figure through a compressed passage of shifting realms, where waking perception and dream logic blur into one another. The work holds the speed of a digital world as a bodily sensation: unstable, seductive, and difficult to stand still inside.</p>
-        <div class="sp-project-actions">
-          <a href="/works/" class="sn-section-link">Back to works</a>
-        </div>
       </div>
       <figure class="sp-project-hero-media is-media-native is-dark-stage">
-        <video class="sp-screen-video"
-               src="/assets/one-of-ones/videos/whirlwind-of-the-waking-dream.mp4"
-               poster="/assets/one-of-ones/whirlwind-of-the-waking-dream.webp"
-               autoplay muted loop playsinline
-               disablepictureinpicture
-               controlslist="nodownload noplaybackrate noremoteplayback"
-               aria-label="Whirlwind of the Waking Dream — 0:27 loop, silent"></video>
+        <div class="ww-video-wrap" id="ww-hero-wrap">
+          <video class="sp-screen-video" id="ww-hero-video"
+                 src="/assets/one-of-ones/videos/whirlwind-of-the-waking-dream.mp4"
+                 poster="/assets/one-of-ones/whirlwind-of-the-waking-dream.webp"
+                 autoplay muted loop playsinline
+                 controlslist="nodownload noplaybackrate noremoteplayback"
+                 aria-label="Whirlwind of the Waking Dream, 0:27 loop — click to expand"></video>
+          <button class="ww-expand-btn" aria-label="Play fullscreen" type="button">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M1 4.5V1h3.5M8.5 1H12v3.5M12 8.5V12H8.5M4.5 12H1V8.5" stroke="#1b1b1b" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
         <figcaption>Whirlwind of the Waking Dream, 2024</figcaption>
       </figure>
+      <p class="sp-project-line">A mix of awe, confusion, and a search for meaning in a world that never stops moving.</p>
     </section>
 
     <section class="sp-section sp-project-grid" id="overview">
       <div><h2 class="sp-kicker">Overview</h2></div>
       <div class="sp-text-stack">
-        <p class="sp-copy">The work belongs to Wong's 3D video practice, where virtual bodies carry emotional states that are difficult to stage with a camera. Its brevity gives the movement a concentrated pressure, like a dream repeating until it becomes a signal.</p>
-        <p class="sp-copy">Whirlwind of the Waking Dream was presented as a 1/1 NFT on Manifold's Optimism marketplace and sold for 5 ETH. Wong later noted it as the first-prize winner in Optimism's We Love The Art competition 1/1 category, acquired by Sebastien Borget / The Sandbox.</p>
+        <p class="sp-copy">In Whirlwind of the Waking Dream, I explore the chaos of our fast-changing world, particularly in the context of our shift towards a more digital future. The rapid pace of life creates a blur between what's real and what's not, and between dreams and waking life. Each realm in this work represents a different aspect of our constantly changing world.</p>
+        <p class="sp-copy">This piece is my way of navigating and coming to terms with these relentless changes. It's a mix of awe, confusion, and a search for meaning in a world that never stops moving. It's about trying to find solid ground in an ever-shifting landscape, a journey that continually challenges my perceptions and pushes me to evolve with the world around me.</p>
+      </div>
+    </section>
+
+    <section class="sp-section sp-project-grid" id="realms">
+      <div><h2 class="sp-kicker">The realms</h2></div>
+      <div class="sp-text-stack">
+        <p class="sp-copy"><strong>I. Reality.</strong> Her bedroom, grounded in the familiar. The scene is dotted with hints of what is to come: a butterfly poster on the wall, a book about AI on the table.</p>
+        <p class="sp-copy"><strong>II. The Mirror Realm.</strong> A reflection of today's echo chambers, capturing the divided nature of a world moving further into a digital future.</p>
+        <p class="sp-copy"><strong>III. The Butterfly.</strong> Inspired by Zhuangzi's butterfly dream, this scene blurs the line between dreams and reality, speaking to the challenge of distinguishing the real from the not-real in a digital era.</p>
+        <p class="sp-copy"><strong>IV. AI Filtered.</strong> An AI-generated forest scene where technology merges with the wild, symbolizing AI's unpredictable journey and its inevitable integration into our lives.</p>
+      </div>
+    </section>
+
+    <section class="sp-section sp-project-grid" id="process">
+      <div><h2 class="sp-kicker">Process</h2></div>
+      <div class="sp-text-stack">
+        <figure class="sp-image-card is-media-native" style="max-height:480px;overflow:hidden;">
+          <video src="/assets/whirlwind-of-the-waking-dream/movement-feedback.mp4"
+                 poster="/assets/whirlwind-of-the-waking-dream/movement-feedback-poster.jpg"
+                 autoplay muted loop playsinline
+                 controlslist="nodownload noplaybackrate noremoteplayback"
+                 style="width:100%;height:auto;max-height:480px;object-fit:contain;display:block;"
+                 aria-label="Work in progress — movement feedback test, 2024"></video>
+          <figcaption>Movement feedback test, work in progress, 2024</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -167,24 +253,18 @@
       <div class="sp-text-stack">
         <dl class="sp-detail-grid">
           <dt>2024</dt><dd>First prize, Optimism We Love The Art competition, 1/1 category. Work: Whirlwind of the Waking Dream.</dd>
-          <dt>Collection</dt><dd>Collected by Sebastien Borget / The Sandbox.</dd>
+          <dt>Collection</dt><dd>Collected by Sebastien Borget, co-founder of The Sandbox. Borget is a digital art collector whose practice is embedded in conversations about virtual worlds and digital futures, the same territory the work inhabits.</dd>
           <dt>Status</dt><dd>Sold 1/1 work; available for loan and exhibition inquiries.</dd>
         </dl>
       </div>
     </section>
 
-    <section class="sp-section sp-project-grid" id="related">
-      <div><h2 class="sp-kicker">Related projects</h2></div>
-      <div class="sp-text-stack">
-        <nav class="sp-prev-next" aria-label="Project navigation">
-          <a class="sp-prev" href="/works/the-ties-that-bind/">&larr; The Ties That Bind</a>
-          <a class="sp-next" href="/works/love-is-love/">Love is Love &rarr;</a>
-        </nav>
-        <div class="sp-related-grid">
-          <article class="sp-related-card"><figure><img decoding="async" src="/assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.webp" alt="The Ties That Bind"></figure><h3>The Ties That Bind</h3><p>Responsive 3D installation works.</p><a href="/works/the-ties-that-bind/">View project</a></article>
-          <article class="sp-related-card"><figure><img decoding="async" src="/assets/after-ophelia/01-ophelia-reassembled-print.webp" alt="After Ophelia"></figure><h3>After Ophelia</h3><p>AI video and inherited images.</p><a href="/works/after-ophelia/">View project</a></article>
-          <article class="sp-related-card"><figure><img decoding="async" src="/assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy"></figure><h3>By Proxy</h3><p>CGI and photography as memory.</p><a href="/works/by-proxy/">View project</a></article>
-        </div>
+    <section class="sp-section sp-related-section" id="related">
+      <h2 class="sp-kicker">More works</h2>
+      <div class="sp-related-grid">
+        <a class="sp-related-card" href="/works/the-bubble-we-call-home/"><figure><img loading="lazy" decoding="async" src="/assets/the-bubble-we-call-home/ap60-installation-view.webp" alt="The Bubble We Call Home installation view"></figure><h3>The Bubble We Call Home</h3><p>A 1/1 video commission about collective retreat into manufactured comfort.</p></a>
+        <a class="sp-related-card" href="/works/after-ophelia/"><figure><img loading="lazy" decoding="async" src="/assets/after-ophelia/01-ophelia-reassembled-print.webp" alt="After Ophelia"></figure><h3>After Ophelia</h3><p>A figure described by strangers and rebuilt from what they got wrong.</p></a>
+        <a class="sp-related-card" href="/works/by-proxy/"><figure><img loading="lazy" decoding="async" src="/assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy"></figure><h3>By Proxy</h3><p>Sixty scenes where photography and CGI become indistinguishable from each other.</p></a>
       </div>
     </section>
 
@@ -195,7 +275,23 @@
     </footer>
   </main>
 <script src="/assets/js/sustainability.js?v=20260527-works-catalog"></script>
+  <script src="/gallery-scroll.js?v=20260614-scrolldriven4"></script>
   <script src="/site-header.js?v=20260606-footer"></script><script src="/site-i18n.js?v=20260604-fix"></script>
   <script src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
+  <script>
+  (function(){
+    var wrap = document.getElementById('ww-hero-wrap');
+    var vid  = document.getElementById('ww-hero-video');
+    var btn  = wrap && wrap.querySelector('.ww-expand-btn');
+    function goFullscreen(){
+      var fn = vid.requestFullscreen || vid.webkitRequestFullscreen || vid.mozRequestFullScreen;
+      if(fn){ fn.call(vid); }
+    }
+    if(wrap && vid){
+      wrap.addEventListener('click', function(e){ goFullscreen(); });
+      if(btn){ btn.addEventListener('click', function(e){ e.stopPropagation(); goFullscreen(); }); }
+    }
+  })();
+  </script>
 </body>
 </html>

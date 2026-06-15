@@ -205,6 +205,12 @@
 
     try {
       if (source.provider === 'opensea' && item.edition_type === 'series') {
+        // OpenSea's listing API requires authenticated server-side access in many
+        // contexts. Keep the public page quiet and use the maintained fallback
+        // inventory instead of producing browser-side 401s.
+        return applyFallbackCounts(item);
+      }
+      if (source.provider === 'opensea-live' && item.edition_type === 'series') {
         const count = await fetchOpenSeaListedCount(source);
         return {
           ...item,

@@ -1,0 +1,225 @@
+# Wayback Full Site Availability
+
+Generated: 2026-06-14T07:37:02.048Z
+Live sitemap: https://www.shavonnewong.art/sitemap.xml
+Local sitemap: sitemap.xml
+Explicit URLs: https://www.shavonnewong.art/
+
+Already archived: 14/105
+Need Save Page Now: 91/105
+
+## Need Save Page Now
+
+- https://shavonnewong.art/contact/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/contact/
+- https://shavonnewong.art/press/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/press/
+- https://shavonnewong.art/update2023jan/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/update2023jan/
+- https://shavonnewong.art/update2023june/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/update2023june/
+- https://shavonnewong.art/update2024jan/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/update2024jan/
+- https://shavonnewong.art/update2025jan/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/update2025jan/
+- https://shavonnewong.art/update2025jun/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/update2025jun/
+- https://shavonnewong.art/update2026jun/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/update2026jun/
+- https://shavonnewong.art/works/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/
+- https://shavonnewong.art/works/6529-meme-card/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/6529-meme-card/
+- https://shavonnewong.art/works/after-ophelia/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/after-ophelia/
+- https://shavonnewong.art/works/after-ophelia/ophelia-reassembled/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/after-ophelia/ophelia-reassembled/
+- https://shavonnewong.art/works/after-ophelia/ophelia-retold/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/after-ophelia/ophelia-retold/
+- https://shavonnewong.art/works/available/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/available/
+- https://shavonnewong.art/works/by-proxy/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/by-proxy/
+- https://shavonnewong.art/works/conditional/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/conditional/
+- https://shavonnewong.art/works/love-is-love/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/love-is-love/
+- https://shavonnewong.art/works/meet-eva-here/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/meet-eva-here/
+- https://shavonnewong.art/works/meet-eva-here/chatbot/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/meet-eva-here/chatbot/
+- https://shavonnewong.art/works/meet-eva-here/diary/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/meet-eva-here/diary/
+- https://shavonnewong.art/works/the-bubble-we-call-home/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/the-bubble-we-call-home/
+- https://shavonnewong.art/works/the-ties-that-bind/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/the-ties-that-bind/
+- https://shavonnewong.art/works/vogue-singapore/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/vogue-singapore/
+- https://shavonnewong.art/works/whirlwind-of-the-waking-dream/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/works/whirlwind-of-the-waking-dream/
+- https://shavonnewong.art/writing/
+  - Save: https://web.archive.org/save/https://shavonnewong.art/writing/
+- https://www.shavonnewong.art/11x
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/11x
+- https://www.shavonnewong.art/about
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/about
+- https://www.shavonnewong.art/art
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/art
+- https://www.shavonnewong.art/editions
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/editions
+- https://www.shavonnewong.art/main
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/main
+- https://www.shavonnewong.art/nfts/available
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/available
+- https://www.shavonnewong.art/nfts/foundation
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/foundation
+- https://www.shavonnewong.art/nfts/manifold-contract
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/manifold-contract
+- https://www.shavonnewong.art/nfts/opensea
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/opensea
+- https://www.shavonnewong.art/nfts/sold
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/sold
+- https://www.shavonnewong.art/nfts/superrare
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/superrare
+- https://www.shavonnewong.art/nfts/suspended-soul
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/suspended-soul
+- https://www.shavonnewong.art/nfts/v/6gwmhj423z6h2nys2gz394sjeygjwn
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/6gwmhj423z6h2nys2gz394sjeygjwn
+- https://www.shavonnewong.art/nfts/v/6lnpe8mhg7rmzmk82arkpd449tfhj5
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/6lnpe8mhg7rmzmk82arkpd449tfhj5
+- https://www.shavonnewong.art/nfts/v/95h8fy3655a9lf9rr6pygpafddasjy
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/95h8fy3655a9lf9rr6pygpafddasjy
+- https://www.shavonnewong.art/nfts/v/c3fppsja2hpkldx25tsax2kmjalhkz
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/c3fppsja2hpkldx25tsax2kmjalhkz
+- https://www.shavonnewong.art/nfts/v/everything-yet-nothing
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/everything-yet-nothing
+- https://www.shavonnewong.art/nfts/v/fhyxxbpcegn4shrbdmynh6k5cr9hdl
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/fhyxxbpcegn4shrbdmynh6k5cr9hdl
+- https://www.shavonnewong.art/nfts/v/glow
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/glow
+- https://www.shavonnewong.art/nfts/v/i-am-not-confident
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/i-am-not-confident
+- https://www.shavonnewong.art/nfts/v/i-am-not-happy
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/i-am-not-happy
+- https://www.shavonnewong.art/nfts/v/i-am-not-zen
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/i-am-not-zen
+- https://www.shavonnewong.art/nfts/v/ice-and-fire
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/ice-and-fire
+- https://www.shavonnewong.art/nfts/v/kin-i
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/kin-i
+- https://www.shavonnewong.art/nfts/v/legend-of-the-white-snake
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/legend-of-the-white-snake
+- https://www.shavonnewong.art/nfts/v/lilium-in-pearls-i
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/lilium-in-pearls-i
+- https://www.shavonnewong.art/nfts/v/lilium-in-pearls-ii
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/lilium-in-pearls-ii
+- https://www.shavonnewong.art/nfts/v/lilium-in-pearls-iii
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/lilium-in-pearls-iii
+- https://www.shavonnewong.art/nfts/v/lunah-moon-i
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/lunah-moon-i
+- https://www.shavonnewong.art/nfts/v/lunah-moon-ii
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/lunah-moon-ii
+- https://www.shavonnewong.art/nfts/v/lunah-moon-iii
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/lunah-moon-iii
+- https://www.shavonnewong.art/nfts/v/n7r2ly4z7kmjzpslzzcy6mzpnjkgdb
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/n7r2ly4z7kmjzpslzzcy6mzpnjkgdb
+- https://www.shavonnewong.art/nfts/v/natures-muse
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/natures-muse
+- https://www.shavonnewong.art/nfts/v/new-video
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/new-video
+- https://www.shavonnewong.art/nfts/v/new-video-1
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/new-video-1
+- https://www.shavonnewong.art/nfts/v/new-video-2
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/new-video-2
+- https://www.shavonnewong.art/nfts/v/oceans-whisper
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/oceans-whisper
+- https://www.shavonnewong.art/nfts/v/panopticon
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/panopticon
+- https://www.shavonnewong.art/nfts/v/st6d52tkah5tyw589kyhl5gez7bj6l
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/st6d52tkah5tyw589kyhl5gez7bj6l
+- https://www.shavonnewong.art/nfts/v/stargazers-dream
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/stargazers-dream
+- https://www.shavonnewong.art/nfts/v/stellae-i
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/stellae-i
+- https://www.shavonnewong.art/nfts/v/stellae-ii
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/stellae-ii
+- https://www.shavonnewong.art/nfts/v/stellae-iii
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/stellae-iii
+- https://www.shavonnewong.art/nfts/v/suspense
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/suspense
+- https://www.shavonnewong.art/nfts/v/the-hug
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/the-hug
+- https://www.shavonnewong.art/nfts/v/the-illusion-of-connection-i
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/the-illusion-of-connection-i
+- https://www.shavonnewong.art/nfts/v/the-invisible-march-of-time-i
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/the-invisible-march-of-time-i
+- https://www.shavonnewong.art/nfts/v/the-kiss
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/the-kiss
+- https://www.shavonnewong.art/nfts/v/the-loneliness-of-an-orchid
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/the-loneliness-of-an-orchid
+- https://www.shavonnewong.art/nfts/v/the-mirror-world
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/the-mirror-world
+- https://www.shavonnewong.art/nfts/v/the-shimmering-veil-i
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/the-shimmering-veil-i
+- https://www.shavonnewong.art/nfts/v/the-shimmering-veil-ii
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/the-shimmering-veil-ii
+- https://www.shavonnewong.art/nfts/v/the-shimmering-veil-iii
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/the-shimmering-veil-iii
+- https://www.shavonnewong.art/nfts/v/uplift
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/uplift
+- https://www.shavonnewong.art/nfts/v/year-of-the-tiger-2
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/year-of-the-tiger-2
+- https://www.shavonnewong.art/nfts/v/year-of-the-tiger-3
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/nfts/v/year-of-the-tiger-3
+- https://www.shavonnewong.art/privacypolicytest
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/privacypolicytest
+- https://www.shavonnewong.art/projects
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/projects
+- https://www.shavonnewong.art/projects/6529-meme-card
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/projects/6529-meme-card
+- https://www.shavonnewong.art/projects/meet-eva-here
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/projects/meet-eva-here
+- https://www.shavonnewong.art/projects/vogue-singapore
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/projects/vogue-singapore
+- https://www.shavonnewong.art/shuuemura
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/shuuemura
+- https://www.shavonnewong.art/update2023jan
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/update2023jan
+- https://www.shavonnewong.art/update2024jan
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/update2024jan
+- https://www.shavonnewong.art/update2025jan
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/update2025jan
+- https://www.shavonnewong.art/update2025jun
+  - Save: https://web.archive.org/save/https://www.shavonnewong.art/update2025jun
+
+## Already archived
+
+- https://shavonnewong.art/
+  - Archive: https://web.archive.org/web/20251105165038/https://www.shavonnewong.art/
+- https://shavonnewong.art/about/
+  - Archive: https://web.archive.org/web/20250722183624/https://www.shavonnewong.art/about
+- https://shavonnewong.art/update2024jun/
+  - Archive: https://web.archive.org/web/20240705015955/https://www.shavonnewong.art/update2024jun
+- https://www.shavonnewong.art/
+  - Archive: https://web.archive.org/web/20251105165038/https://www.shavonnewong.art/
+- https://www.shavonnewong.art/links
+  - Archive: https://web.archive.org/web/20231205212055/https://www.shavonnewong.art/links
+- https://www.shavonnewong.art/newsletter
+  - Archive: https://web.archive.org/web/20240525023429/https://www.shavonnewong.art/newsletter
+- https://www.shavonnewong.art/nfts
+  - Archive: https://web.archive.org/web/20221128151015/https://www.shavonnewong.art/nfts
+- https://www.shavonnewong.art/nfts/v/year-of-the-tiger
+  - Archive: https://web.archive.org/web/20230121083609/https://www.shavonnewong.art/nfts/v/year-of-the-tiger
+- https://www.shavonnewong.art/projects/after-ophelia
+  - Archive: https://web.archive.org/web/20251105163510/https://www.shavonnewong.art/projects/after-ophelia
+- https://www.shavonnewong.art/projects/by-proxy
+  - Archive: https://web.archive.org/web/20240528155235/https://www.shavonnewong.art/projects/by-proxy
+- https://www.shavonnewong.art/projects/love-is-love
+  - Archive: https://web.archive.org/web/20250616102334/https://www.shavonnewong.art/projects/love-is-love
+- https://www.shavonnewong.art/projects/the-ties-that-bind
+  - Archive: https://web.archive.org/web/20230705185429/https://www.shavonnewong.art/projects/the-ties-that-bind
+- https://www.shavonnewong.art/update2023june
+  - Archive: https://web.archive.org/web/20230630133234/https://www.shavonnewong.art/update2023june
+- https://www.shavonnewong.art/update2024jun
+  - Archive: https://web.archive.org/web/20240705015955/https://www.shavonnewong.art/update2024jun

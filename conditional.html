@@ -21,43 +21,80 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/scroll-narrative.css?v=20260611-ripple-v7">
-  <link rel="stylesheet" href="/scroll-pages.css?v=20260612-compact-qa">
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260614-link-fix">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260615-bp2-related">
+  <link rel="stylesheet" href="/work-gallery.css?v=20260614-spgallery9">
   <style>
-    /* "Conditional." is a single long word, size it to sit inside the hero copy column. */
     .sp-conditional-page .sp-project-hero .sp-title { font-size: clamp(46px, 6vw, 92px); overflow-wrap: anywhere; }
     @media (max-width: 760px) { .sp-conditional-page .sp-project-hero .sp-title { font-size: clamp(40px, 12vw, 64px); } }
-    /* Single-column sections: kicker sits above the text instead of in a left column. */
-    .sp-conditional-page .sp-section.sp-project-grid { display: block; }
-    .sp-conditional-page .sp-section.sp-project-grid > div:first-child { position: static; margin: 0 0 16px; }
-    /* Image cards carry grid-column spans in the shared stylesheet, which silently lays
-       paragraphs out as side-by-side panels. Keep every stack a single column. */
-    .sp-conditional-page .sp-text-stack { grid-template-columns: minmax(0, 1fr); }
-    .sp-conditional-page .sp-text-stack:not(.sp-faq-grid):not(.sp-cond-split) > * { grid-column: 1 / -1; }
-    /* Text-only sections run a fuller measure so the page uses its width. */
-    .sp-conditional-page .sp-text-stack > .sp-copy { max-width: 86ch; }
-    .sp-conditional-page #questions .sp-text-stack > .sp-copy { max-width: 58ch; }
-    /* Split sections (text left, media right) fill the full content width. */
-    .sp-conditional-page .sp-text-stack.sp-cond-split { grid-template-columns: minmax(0, 0.56fr) minmax(0, 0.44fr); column-gap: clamp(36px, 4vw, 80px); align-items: start; }
-    .sp-conditional-page .sp-cond-split > * { grid-column: auto; }
-    .sp-conditional-page .sp-cond-text { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; align-content: start; }
-    .sp-conditional-page .sp-cond-text > * { grid-column: 1 / -1; }
-    .sp-conditional-page .sp-cond-text .sp-copy { max-width: 70ch; }
-    .sp-conditional-page .sp-cond-media { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; align-content: start; position: sticky; top: 120px; }
-    .sp-conditional-page .sp-cond-media .sp-image-card { grid-column: auto; max-width: none; width: 100%; }
-    .sp-conditional-page .sp-cond-media .sp-section-media { grid-template-columns: 1fr; gap: 26px; }
-    @media (max-width: 900px) {
-      .sp-conditional-page .sp-text-stack.sp-cond-split { grid-template-columns: 1fr; }
-      .sp-conditional-page .sp-cond-media { position: static; }
-    }
-    /* Hero, editorial standfirst pattern: the title is the only display element.
-       The line under it is a short deck, not a second headline, and the image
-       centers against the shorter copy stack instead of leaving a void below. */
+
     .sp-conditional-page .sp-project-hero { align-items: center; min-height: clamp(420px, 56vh, 620px); }
     .sp-conditional-page .sp-project-hero .sp-project-line { font-size: clamp(22px, 2.1vw, 32px); line-height: 1.35; max-width: 26ch; }
     .sp-conditional-page .sp-project-hero .sp-intro { max-width: 56ch; }
-    /* The surveillance line, relocated to close the Overview at reading scale. */
-    .sp-conditional-page .sp-cond-aside { font-family: var(--serif); font-style: italic; color: var(--accent-deep); font-size: 19px; line-height: 1.6; max-width: 60ch; }
+
+    /* Single blocks, kicker above. A hairline opens each section so this
+       text-heavy page reads as distinct parts; whitespace alone is not enough
+       separation here. */
+    .sp-conditional-page .sp-section.sp-project-grid {
+      display: block;
+      border-top: 1px solid var(--hairline);
+      margin-top: clamp(44px, 4.5vw, 72px);
+      padding-top: clamp(36px, 4vw, 60px);
+    }
+    .sp-conditional-page .sp-section.sp-project-grid > div:first-child { position: static; margin: 0 0 18px; }
+    /* The hero already closes with a rule, so the first section opens without its own. */
+    .sp-conditional-page #overview { border-top: 0; margin-top: clamp(28px, 3vw, 44px); padding-top: clamp(6px, 1vw, 14px); }
+
+    /* Single-column prose at a readable measure. No side-by-side text panels. */
+    .sp-conditional-page .sp-text-stack > .sp-copy { max-width: none; }
+
+    /* The surveillance line closes the Overview, reading-plus italic (Mulish). */
+    .sp-conditional-page .sp-cond-aside {
+      font-family: var(--sans); font-style: italic; color: var(--text);
+      font-size: clamp(19px, 1.4vw, 23px); line-height: 1.55; max-width: none; margin: 6px 0 0;
+    }
+    /* The statement question is the one display line in its section. */
+    .sp-conditional-page #statement .sp-project-line {
+      font-family: var(--sans); font-size: clamp(27px, 2.3vw, 40px); line-height: 1.22;
+      color: var(--text); max-width: 26ch; margin: 0 0 8px;
+    }
+
+    /* The Mirror / The Waiting Room: text left, media right, media scrolls with
+       the page (no sticky). The Mirror keeps its assembly clip under the text. */
+    .sp-conditional-page .sp-cond-split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.52fr) minmax(0, 0.48fr);
+      column-gap: clamp(40px, 4vw, 80px);
+      align-items: start;
+    }
+    .sp-conditional-page .sp-cond-text { display: grid; gap: 18px; align-content: start; min-width: 0; }
+    .sp-conditional-page .sp-cond-text .sp-copy { max-width: none; }
+    .sp-conditional-page .sp-cond-text .sp-image-card { margin: 8px 0 0; max-width: 100%; }
+    .sp-conditional-page .sp-cond-media { display: grid; gap: 22px; align-content: start; min-width: 0; }
+    .sp-conditional-page .sp-cond-split .sp-image-card { margin: 0; max-width: none; width: 100%; grid-column: auto; }
+    .sp-conditional-page .sp-cond-split .sp-image-card img,
+    .sp-conditional-page .sp-cond-split .sp-image-card video { display: block; width: 100%; height: auto; }
+    .sp-conditional-page .sp-cond-generated-grid {
+      margin: clamp(22px, 2.4vw, 34px) 0 0;
+      max-width: none;
+      width: 100%;
+      grid-column: auto;
+    }
+    .sp-conditional-page .sp-cond-generated-grid img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .sp-conditional-page .sp-detail-grid { display: grid; grid-template-columns: minmax(120px, 0.22fr) minmax(0, 0.78fr); column-gap: clamp(24px, 3vw, 56px); row-gap: 14px; max-width: 1000px; }
+    .sp-conditional-page .sp-detail-grid dt { color: var(--text-2); font-size: 13px; letter-spacing: 0.04em; }
+    .sp-conditional-page .sp-detail-grid dd { margin: 0; max-width: 70ch; }
+
+    @media (max-width: 900px) {
+      .sp-conditional-page .sp-cond-split { grid-template-columns: 1fr; row-gap: 22px; }
+      .sp-conditional-page .sp-detail-grid { grid-template-columns: 1fr; row-gap: 4px; }
+      .sp-conditional-page .sp-detail-grid dd { margin: 0 0 12px; }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -77,7 +114,7 @@
         "name": "The Mirror (working title)",
         "creativeWorkStatus": "Prototype in build",
         "image": "https://shavonnewong.art/assets/conditional/mirror-frame-render.webp",
-        "description": "A screen disguised as a framed mirror. The viewer appears at first, as any mirror would show them, then is removed for good. No condition returns them."
+        "description": "A screen disguised as a framed mirror. The viewer appears at first, as any mirror would show them, then is removed for good. No condition returns them. The frame's final form is generated as a composite of the whole ornate mirror category, grand from a distance and settling into no real tradition up close. The baroque frame shown now is a stand-in for the prototype."
       },
       {
         "@type": "CreativeWork",
@@ -133,7 +170,6 @@
     <a href="#mirror">The Mirror</a>
     <a href="#waiting-room">The Waiting Room</a>
     <a href="#statement">Statement</a>
-    <a href="#details">Details</a>
   </nav>
 
   <main id="main-content" class="sp-main sp-project-main">
@@ -164,7 +200,7 @@
         <p class="sp-copy">Conditional is an ongoing series of installations built on one premise, a mirror that erases you. A screen shows the scene in front of it, the fan turning, the clock ticking, everything rendered faithfully and in real time, except the people. You are there, and the screen is showing the place without you.</p>
         <p class="sp-copy">This is not a recording of the empty room played back. The system uses real-time generative AI to actively imagine what the scene looks like without you, producing your absence frame by frame. The world on screen was never photographed empty. It is being invented, continuously, to not include you.</p>
         <p class="sp-copy">Each staging sets the conditions of that erasure differently and is developed as its own work. Two stagings are in development now, The Mirror and The Waiting Room.</p>
-        <p class="sp-copy sp-cond-aside">The problem with technology used to be surveillance. Now the problem is that it doesn&rsquo;t see you at all.</p>
+        <p class="sp-cond-aside">The problem with technology used to be surveillance. Now the problem is that it doesn&rsquo;t see you at all.</p>
       </div>
     </section>
 
@@ -185,12 +221,18 @@
           <p class="sp-project-onview">Working title &middot; first physical prototype in build &middot; 2026</p>
           <p class="sp-copy">A screen disguised as a framed mirror, hung where a mirror would hang. You walk up expecting your reflection, and at first you get it. Then the system removes you, and nothing you do returns you. Here the conditions are absolute.</p>
           <p class="sp-copy">A mirror has one job, to show you. A mirror that renders the room faithfully and leaves you out breaks a contract older than any technology. Across a day the reflection empties of people even as the room fills, until by closing time the mirror shows a place no living person is in.</p>
+          <p class="sp-copy">The frame is part of the work, not a decoration around it. Its final form is being generated rather than chosen. A model composes across the whole category of ornate mirrors at once, so the frame reads as grand and ornate from across the room and settles into no real period or tradition as you come closer. It is the machine&rsquo;s idea of a mirror rather than any mirror that has existed, made by a system that knows the category well enough to render it grand and never well enough to make it real.</p>
+          <p class="sp-copy">That is the logic the screen already runs on the viewer, recognized closely enough to be removed and never closely enough to be kept. The white baroque frame shown here is a stand-in while that form is developed, a placeholder for the prototype and not the final object.</p>
           <figure class="sp-image-card"><video autoplay muted loop playsinline preload="metadata" poster="/assets/conditional/mirror-chassis-assembly-poster.webp" src="/assets/conditional/mirror-chassis-assembly.mp4" style="display:block;width:100%;height:auto;" aria-label="Assembly animation of the 3D printed mirror housing"></video><figcaption>Mirror prototype, 3D printed housing, assembly sequence, June 2026</figcaption></figure>
         </div>
         <div class="sp-cond-media">
-          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/mirror-frame-render.webp" alt="The Mirror frame render, an ornate white baroque frame with a small camera hidden in the crest"><figcaption>The Mirror, frame render, prototype in build, 2026</figcaption></figure>
+          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/mirror-frame-render.webp" alt="A white ornate baroque frame standing in for The Mirror prototype, with a small camera hidden in the crest"><figcaption>The Mirror, stand-in baroque frame for the prototype, 2026. The final frame is being generated.</figcaption></figure>
         </div>
       </div>
+      <figure class="sp-image-card sp-cond-generated-grid">
+        <img loading="lazy" decoding="async" src="/assets/conditional/mirror-generation-grid.jpg" alt="Grid of generated ornate mirror studies for Conditional">
+        <figcaption>Generated mirror studies for The Mirror, 2026</figcaption>
+      </figure>
     </section>
 
     <!-- ================= THE WAITING ROOM ================= -->
@@ -207,4 +249,23 @@
         </div>
         <div class="sp-cond-media">
           <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/compliance-reality.webp" alt="The Waiting Room installation view showing people in the room facing the screen"><figcaption>In reality, the room, with you in it</figcaption></figure>
-          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/compliance-on-screen.webp" alt="The screen view of the waiting room with the viewer removed"><figcaption>On screen, the roo
+          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/compliance-on-screen.webp" alt="The screen view of the waiting room with the viewer removed"><figcaption>On screen, the room, without you in it</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATEMENT ================= -->
+    <section class="sp-section sp-project-grid" id="statement">
+      <div><h2 class="sp-kicker">The question</h2></div>
+      <div class="sp-text-stack">
+        <p class="sp-project-line">How much of yourself are you willing to give up just to be seen?</p>
+        <p class="sp-copy">Conditional turns the contemporary anxiety about being watched on its head. Here the system does not surveil you; it refuses to acknowledge you at all, and then offers visibility back only on its own terms, held still, recolored, made to match. The work asks what we are willing to trade for recognition by a system that was never built to hold us.</p>
+      </div>
+    </section>
+
+    <!-- ================= RELATED ================= -->
+    <section class="sp-section sp-related-section" id="related">
+      <h2 class="sp-kicker">More works</h2>
+      <div class="sp-related-grid">
+        <a class="sp-related-card" href="/works/meet-eva-here/"><figure><img loading="lazy" decoding="async" src="/assets/meet-eva-here/06-dsc00661.webp" alt="Meet Eva Here installation"></figure><h3>Meet Eva Here</h3><p>An AI companion that received thousands of confessions and the hundred conversations made public.</p></a>
+        <a class="sp-related-card" href="/works/the-ties-that-bind/"><figure><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.webp" alt="The Ties That Bind installation"></figure><h3>The Ties That Bind</h3><p>3D bodies th

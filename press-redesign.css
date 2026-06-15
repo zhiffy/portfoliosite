@@ -777,15 +777,50 @@
   }
 }
 
-/* Selected tier — word label needs smaller type than the year numerals */
+/* Selected tier — a full-width editorial label instead of the sticky left
+   rail the year numerals use. A single word in that narrow column left a tall
+   empty band down the left side; this lays "Selected" out as a kicker above
+   full-width rows so the rows fill the page and the label reads as intentional. */
+.pr-selected .pr-year {
+  display: block;
+  padding-top: 0;
+}
 .pr-selected .pr-year-num {
-  font-size: clamp(17px, 1.6vw, 22px);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  position: static;
+  display: block;
+  margin: 0;
+  padding: 0 0 14px;
   font-family: var(--sans);
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-3);
 }
 .pr-selected {
   border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
   padding-bottom: clamp(30px, 5vh, 56px);
 }
+
+/* Collapse the doubled hairline at every group boundary. Each .pr-rows group
+   opens with its own leading rule (.pr-rows border-top), so the last row's
+   trailing border stacked a second line a gap below it. Dropping the last
+   row's bottom border leaves a single rule per boundary. */
+.pr-rows > li:last-child .pr-row { border-bottom: 0; }
+
+
+/* ============================================================
+   CURSOR PRESS PREVIEWS (2026-06-12) — same ghost-image system
+   as the update letters (press-hover.js), applied to .pr-row.
+   ============================================================ */
+.nl-press-preview {
+  position: fixed; top: 0; left: 0; z-index: 2;
+  width: clamp(210px, 19.6vw, 301px); margin: 0;
+  pointer-events: none; transform: translate(-9999px, -9999px); will-change: transform;
+}
+.nl-press-preview-inner { border: 0; background: transparent; padding: 0; opacity: 0; }
+.nl-press-preview img {
+  display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--surface, #fff);
+}
+.pr-rows { position: relative; z-index: 3; }
+@media (prefers-reduced-motion: reduce) { .nl-press-preview { transition: opacity 80ms linear; } }

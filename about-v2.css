@@ -12,9 +12,19 @@
   color: var(--text);
 }
 
-.abv-rail {
-  display: none;
+.ab-body .sn-nav .sn-links a,
+.ab-body .sp-subnav a {
+  text-decoration: none !important;
+  text-decoration-color: transparent !important;
 }
+.ab-body .sn-nav .sn-links a { color: var(--text) !important; }
+.ab-body .sn-nav .sn-links a:hover,
+.ab-body .sn-nav .sn-links a:focus-visible,
+.ab-body .sn-nav .sn-links a.is-active { color: var(--accent-deep) !important; }
+.ab-body .sp-subnav a { color: rgba(28, 31, 54, 0.52) !important; }
+.ab-body .sp-subnav a:hover,
+.ab-body .sp-subnav a:focus-visible,
+.ab-body .sp-subnav a.is-current { color: var(--accent-deep) !important; }
 
 /* generous, distinct sections */
 .abv-section {
@@ -298,13 +308,14 @@
   width: 100%; height: 100%; object-fit: cover; display: block;
   object-position: var(--collab-focus, center center);
 }
-.abv-collab:nth-child(1) { --collab-focus: 50% 42%; }
-.abv-collab:nth-child(2) { --collab-focus: 50% 38%; }
-.abv-collab:nth-child(4) { --collab-focus: 50% 36%; }
-.abv-collab:nth-child(5) { --collab-focus: 50% 22%; }
-.abv-collab:nth-child(6) { --collab-focus: 55% 42%; }
-.abv-collab:nth-child(7) { --collab-focus: 50% 48%; }
-.abv-collab:nth-child(8) { --collab-focus: 50% 30%; }
+.abv-collab:nth-child(1) { --collab-focus: 50% 46%; }
+.abv-collab:nth-child(2) { --collab-focus: 50% 64%; }
+.abv-collab:nth-child(3) { --collab-focus: 50% 48%; }
+.abv-collab:nth-child(4) { --collab-focus: 50% 42%; }
+.abv-collab:nth-child(5) { --collab-focus: 50% 38%; }
+.abv-collab:nth-child(6) { --collab-focus: 50% 36%; }
+.abv-collab:nth-child(7) { --collab-focus: 50% 22%; }
+.abv-collab:nth-child(8) { --collab-focus: 50% 18%; }
 .abv-collab-media::after {
   content: ""; position: absolute; inset: 0;
   background: rgba(24,25,43,0.60);
@@ -420,55 +431,6 @@
     padding-left: max(clamp(24px, 5vw, 80px), calc(230px - max(0px, (100vw - var(--site-max)) / 2)));
   }
 
-  .abv-rail {
-    position: fixed;
-    top: 50%;
-    left: clamp(12px, 1.8vw, 34px);
-    z-index: 45;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: clamp(128px, 10vw, 168px);
-    max-height: calc(100vh - var(--nav-h) - 48px);
-    gap: 11px;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    overflow: visible;
-    transform: translateY(-50%);
-  }
-
-  .abv-rail a {
-    display: inline-flex;
-    color: rgba(28, 31, 54, 0.52);
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    line-height: 1.35;
-    text-decoration: none;
-    text-transform: uppercase;
-    border-bottom: 0.5px solid transparent;
-    white-space: normal;
-    transition: color 160ms ease, border-color 160ms ease, transform 180ms ease;
-  }
-
-  .abv-rail a:hover,
-  .abv-rail a:focus-visible,
-  .abv-rail a.is-current {
-    color: var(--accent-deep);
-    border-bottom-color: currentColor;
-    outline: 0;
-  }
-
-  .abv-rail a:hover,
-  .abv-rail a:focus-visible {
-    transform: translateX(3px);
-  }
-}
-
-@media (max-width: 1179px) {
-  .abv-rail {
-    display: none !important;
-  }
 }
 
 @media (max-width: 920px) {
@@ -639,3 +601,31 @@
 @media (max-width: 760px) {
   .abv-brief-list { grid-template-columns: 1fr; }
 }
+
+/* Exhibition hover previews (2026-06-12): fill the landscape plate with a
+   cover crop so portrait documentation does not render as a vertical strip.
+   Per-entry focal point still adjustable via --exh-focus. */
+.abv-exh-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   EXHIBITION CURSOR PREVIEWS (2026-06-12) — the hover image now
+   follows the cursor via press-hover.js (same ghost system as the
+   letters and Press page) instead of the fixed in-row position.
+   ============================================================ */
+.nl-press-preview {
+  position: fixed; top: 0; left: 0; z-index: 2;
+  width: clamp(300px, 28vw, 430px); margin: 0;
+  pointer-events: none; transform: translate(-9999px, -9999px); will-change: transform;
+}
+.nl-press-preview-inner { border: 0; background: transparent; padding: 0; opacity: 0; }
+.nl-press-preview img {
+  display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--surface, #fff);
+}
+.abv-exh-ledger { position: relative; z-index: 3; }
+/* the old fixed-position in-row media is retired */
+.abv-exh-entry .abv-exh-media { display: none; }

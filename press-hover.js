@@ -17,7 +17,7 @@
   if (!canHover) return;
 
   var items = Array.prototype.slice.call(
-    document.querySelectorAll('.nl-press-item[data-press-img]')
+    document.querySelectorAll('.nl-press-item[data-press-img], .pr-row[data-press-img], .abv-exh-entry[data-exh-image]')
   );
   if (!items.length) return;
 
@@ -101,7 +101,7 @@
 
   function show(item, e) {
     active = item;
-    var src = item.getAttribute('data-press-img');
+    var src = item.getAttribute('data-press-img') || item.getAttribute('data-exh-image');
     if (src && src !== loadedSrc) { img.src = src; loadedSrc = src; }
     targetX = e.clientX; targetY = e.clientY;
     place(true);                 // snap to first position (no slide-in from origin)

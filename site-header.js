@@ -26,8 +26,61 @@
 
   /* ---------- 1 + 2 : normalise control bar + mouse toggle ---------- */
   if (!isHome) {
-    var meta = document.querySelector('.sn-meta-right');
-    if (meta) {
+    var pageNav = document.querySelector('.sn-nav[data-page-nav], .sn-nav');
+    if (pageNav) {
+      var links = [
+        { href: '/#hero', label: 'Home', key: 'nav.home', match: /^\/(?:index\.html)?$/ },
+        { href: '/about/', label: 'About', key: 'nav.about', match: /^\/about(?:\.html|\/)?$/ },
+        { href: '/works/', label: 'Works', key: 'nav.works', match: /^\/(?:works(?:\/.*)?|6529-meme-card|after-ophelia|after-ophelia-ophelia-reassembled|after-ophelia-ophelia-retold|by-proxy|conditional|love-is-love|meet-eva-here|meet-eva-here-chatbot|meet-eva-here-diary|meet-eva-here-hello-eva|the-bubble-we-call-home|the-ties-that-bind|vogue-singapore|whirlwind-of-the-waking-dream|works-available)(?:\.html|\/)?$/ },
+        { href: '/writing/', label: 'Writing', key: 'nav.writing', match: /^\/(?:writing|update20\d{2}(?:jan|june?))(?:\.html|\/)?$/ },
+        { href: '/press/', label: 'Press', key: 'nav.press', match: /^\/press(?:\.html|\/)?$/ },
+        { href: '/contact/', label: 'Contact', key: 'nav.contact', match: /^\/contact(?:\.html|\/)?$/ }
+      ];
+      var path = location.pathname.toLowerCase().replace(/\/+$/, '') || '/';
+
+      var mark = pageNav.querySelector('.sn-mark');
+      if (!mark) {
+        mark = document.createElement('a');
+        mark.className = 'sn-mark';
+        pageNav.insertBefore(mark, pageNav.firstChild);
+      }
+      mark.setAttribute('href', '/#hero');
+      if (!mark.querySelector('.sn-mark-logo')) {
+        mark.textContent = '';
+        var logo = document.createElement('img');
+        logo.className = 'sn-mark-logo';
+        logo.setAttribute('decoding', 'async');
+        logo.setAttribute('src', '/assets/brand/wordmark-slate.webp');
+        logo.setAttribute('alt', 'Shavonne Wong');
+        logo.setAttribute('width', '120');
+        logo.setAttribute('height', '42');
+        mark.appendChild(logo);
+      }
+
+      var navLinks = pageNav.querySelector('.sn-links');
+      if (!navLinks) {
+        navLinks = document.createElement('nav');
+        navLinks.className = 'sn-links';
+        mark.insertAdjacentElement('afterend', navLinks);
+      }
+      navLinks.textContent = '';
+      links.forEach(function (item) {
+        var a = document.createElement('a');
+        a.href = item.href;
+        a.textContent = item.label;
+        a.setAttribute('data-i18n', item.key);
+        if (item.match.test(path)) a.className = 'is-active';
+        navLinks.appendChild(a);
+      });
+
+      var meta = pageNav.querySelector('.sn-meta-right');
+      if (!meta) {
+        meta = document.createElement('div');
+        meta.className = 'sn-meta-right';
+        var progress = pageNav.querySelector('.sn-progress');
+        pageNav.insertBefore(meta, progress || null);
+      }
+
       // reuse an existing language switcher, or build one
       var lang = meta.querySelector('[data-language-switcher]');
       if (!lang) {
@@ -111,9 +164,13 @@
     { file: 'update2023june.html', label: 'June 2023' },
     { file: 'update2023jan.html',  label: 'January 2023' }
   ];
-  var here = (location.pathname.split('/').pop() || '').toLowerCase();
+  // Resolve both clean URLs (/update2026jun/) and direct .html paths.
+  var here = (location.pathname.toLowerCase().replace(/\/+$/, '').split('/').pop() || '');
   var idx = -1;
-  for (var i = 0; i < ARTICLES.length; i++) { if (ARTICLES[i].file === here) { idx = i; break; } }
+  for (var i = 0; i < ARTICLES.length; i++) {
+    if (ARTICLES[i].file === here || ARTICLES[i].file.replace(/\.html$/, '') === here) { idx = i; break; }
+  }
+  function urlFor(t) { return '/' + t.file.replace(/\.html$/, '') + '/'; }
 
   if (idx !== -1) {
     var newer = idx > 0 ? ARTICLES[idx - 1] : null;                 // <- left
@@ -123,7 +180,7 @@
       if (!target) return null;
       var a = document.createElement('a');
       a.className = 'nl-pager nl-pager--' + dir;
-      a.href = target.file;
+      a.href = urlFor(target);
       a.setAttribute('aria-label', (dir === 'prev' ? 'Newer update: ' : 'Older update: ') + target.label);
       var chev = document.createElement('span');
       chev.className = 'nl-pager-chevron';
@@ -154,9 +211,51 @@
       var t = e.target || {};
       var tag = t.tagName || '';
       if (/^(INPUT|TEXTAREA|SELECT)$/.test(tag) || t.isContentEditable) return;
-      if (e.key === 'ArrowLeft' && newer) { location.href = newer.file; }
-      else if (e.key === 'ArrowRight' && older) { location.href = older.file; }
+      if (e.key === 'ArrowLeft' && newer) { location.href = urlFor(newer); }
+      else if (e.key === 'ArrowRight' && older) { location.href = urlFor(older); }
     });
+
+    // Top-of-letter switcher: an "All updates" jump plus adjacent steps, near
+    // the masthead, so readers never have to scroll to move between letters.
+    var letterMain = document.getElementById('main-content') || document.querySelector('main.nl-letter');
+    if (letterMain && !document.querySelector('.nl-switch')) {
+      var swStyle = document.createElement('style');
+      swStyle.textContent =
+        '.nl-switch{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:6px;margin-bottom:clamp(6px,1.4vw,14px);font-family:Mulish,Helvetica Neue,Arial,sans-serif}' +
+        '.nl-switch a{text-decoration:none}' +
+        '.nl-switch-all,.nl-switch-step,.nl-switch-current{font-size:11px;letter-spacing:.16em;text-transform:uppercase}' +
+        '.nl-switch-all,.nl-switch-step{color:var(--text-3,#6b6c80);transition:color .16s ease}' +
+        '.nl-switch-all:hover,a.nl-switch-step:hover{color:var(--text,#18192B)}' +
+        '.nl-switch-current{color:var(--text,#18192B);font-weight:600}' +
+        '.nl-switch-pager{display:flex;align-items:center;gap:18px}' +
+        '.nl-switch-step{display:inline-flex;align-items:center;gap:7px}' +
+        'span.nl-switch-step{opacity:.32}' +
+        '.nl-switch-chev{font-size:13px;line-height:1}' +
+        '@media(max-width:700px){.nl-switch{flex-wrap:wrap;gap:10px}.nl-switch-pager{gap:14px}}';
+      document.head.appendChild(swStyle);
+
+      var sw = document.createElement('nav');
+      sw.className = 'nl-switch nl-wrap';
+      sw.setAttribute('aria-label', 'Studio updates');
+      function stepHtml(target, dir) {
+        var chev = dir === 'prev' ? '←' : '→';
+        var word = dir === 'prev' ? 'Newer' : 'Older';
+        var inner = dir === 'prev'
+          ? '<span class="nl-switch-chev" aria-hidden="true">' + chev + '</span>' + word
+          : word + '<span class="nl-switch-chev" aria-hidden="true">' + chev + '</span>';
+        if (!target) return '<span class="nl-switch-step">' + inner + '</span>';
+        return '<a class="nl-switch-step" href="' + urlFor(target) + '" aria-label="' +
+          (dir === 'prev' ? 'Newer update: ' : 'Older update: ') + target.label + '">' + inner + '</a>';
+      }
+      sw.innerHTML =
+        '<a class="nl-switch-all" href="/writing/">All updates</a>' +
+        '<div class="nl-switch-pager">' +
+          stepHtml(newer, 'prev') +
+          '<span class="nl-switch-current">' + ARTICLES[idx].label + '</span>' +
+          stepHtml(older, 'next') +
+        '</div>';
+      letterMain.insertBefore(sw, letterMain.firstChild);
+    }
   }
 
   /* ---------- 4 : consistent page footer ---------- */
@@ -170,7 +269,7 @@
       style.id = styleId;
       style.textContent =
         'main:has(>.sw-page-footer){padding-bottom:clamp(28px,4vh,46px)!important}' +
-        '.sw-page-footer{margin:clamp(26px,4vh,48px) auto 0;padding:clamp(16px,2.4vh,24px) clamp(20px,4vw,72px) clamp(18px,3vh,28px);border-top:1px solid rgba(24,25,43,.16);font-family:Mulish,Helvetica Neue,Arial,sans-serif;color:#18192B}' +
+        '.sw-page-footer{margin:clamp(26px,4vh,48px) auto 0;padding:clamp(16px,2.4vh,24px) clamp(20px,4vw,72px) clamp(18px,3vh,28px);font-family:Mulish,Helvetica Neue,Arial,sans-serif;color:#18192B}' +
         '.sw-page-footer__inner{max-width:1500px;margin:0 auto;display:flex;justify-content:flex-end}' +
         '.sw-page-footer__top{appearance:none;border:1px solid rgba(79,88,166,.62);background:transparent;color:#4F58A6;min-height:42px;padding:0 18px;font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease}' +
         '.sw-page-footer__top:hover,.sw-page-footer__top:focus-visible{background:#4F58A6;color:#F8F8FC;border-color:#4F58A6;outline:0}' +

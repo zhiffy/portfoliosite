@@ -29,6 +29,7 @@ const cleanRoutes = {
   "/works/after-ophelia/": "after-ophelia.html",
   "/works/after-ophelia/ophelia-retold/": "after-ophelia-ophelia-retold.html",
   "/works/after-ophelia/ophelia-reassembled/": "after-ophelia-ophelia-reassembled.html",
+  "/works/the-bubble-we-call-home/": "the-bubble-we-call-home.html",
   "/works/by-proxy/": "by-proxy.html",
   "/works/love-is-love/": "love-is-love.html",
   "/works/meet-eva-here/": "meet-eva-here.html",
@@ -102,7 +103,7 @@ const htmlEntries = Object.fromEntries(
     .filter((file) => !file.includes(" v1"))
     .map((file) => [
       file.replace(/\.html$/, "").replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "") || "index",
-      path.resolve(root, file),
+      file,
     ]),
 );
 

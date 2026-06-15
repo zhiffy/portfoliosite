@@ -71,6 +71,21 @@ body {
   overflow-x: hidden;
   /* body height is set by JS to match strip width */
 }
+@media (pointer: coarse), (max-width: 900px) {
+  html,
+  body {
+    overscroll-behavior-y: auto;
+  }
+  body,
+  .sn-stage,
+  .sn-strip,
+  .sn-panel,
+  .sn-writing,
+  .sn-writing-track,
+  .sn-essay {
+    touch-action: pan-y pinch-zoom;
+  }
+}
 a { color: inherit; text-decoration: none; }
 a,
 button,
@@ -700,6 +715,9 @@ html.sn-vertical-mode .sn-hero-type {
   display: grid;
   gap: 18px;
   padding: 0;
+  /* Hard-guarantee no base clip in vertical mode — belt and suspenders in case
+     --hero-base-clip-right has a stale JS value from a previous horizontal view. */
+  clip-path: none;
 }
 html.sn-vertical-mode .sn-hero-type-invert {
   display: none;
@@ -927,6 +945,29 @@ html.sn-vertical-mode .sn-ticker {
   html.sn-vertical-mode .sn-hero {
     padding-top: 0;
     padding-bottom: 0;
+  }
+  html.sn-vertical-mode .sn-eras {
+    display: block;
+    overflow-x: hidden;
+  }
+  html.sn-vertical-mode .sn-eras-frame {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  html.sn-vertical-mode .sn-eras-head,
+  html.sn-vertical-mode .sn-eras-lede-wrap,
+  html.sn-vertical-mode .sn-eras-lede {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  html.sn-vertical-mode .sn-eras-acts {
+    grid-template-columns: minmax(0, 1fr);
   }
   html.sn-vertical-mode .sn-writing {
     padding-left: var(--pad);
@@ -1196,6 +1237,11 @@ html.sn-vertical-mode .sn-ticker {
   z-index: 6;
   color: var(--bg);
   pointer-events: none;
+  /* mix-blend-mode: difference — white text blends against the video behind it,
+     producing |255 – video_color| = inverted video colors through the letterforms.
+     The clip-path already restricts this layer to the text/video overlap zone,
+     so the blend has no effect outside that area. */
+  mix-blend-mode: difference;
   clip-path: inset(
     var(--hero-invert-clip-top, calc(var(--hero-media-top) + 1px))
     var(--hero-invert-clip-right, -1px)
@@ -1536,15 +1582,15 @@ html.sn-vertical-mode .sn-ticker {
    PANEL 3 - PRACTICE
    ============================================================ */
 .sn-eras {
-  width: clamp(620px, 50vw, 960px);
+  width: clamp(480px, 50vw, 720px);
   background: var(--bg-warm);
   padding: 0;
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
   overflow-x: hidden;
-  overflow-y: auto;
-  overscroll-behavior: contain;
+  overflow-y: hidden;
+  overscroll-behavior: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(89, 87, 165, 0.38) rgba(24, 25, 43, 0.04);
 }
@@ -1568,13 +1614,15 @@ html.sn-vertical-mode .sn-ticker {
 }
 .sn-eras-frame {
   width: 100%;
-  max-width: 780px;
-  min-height: 100%;
+  max-width: none;
+  min-height: 0;
+  height: 100%;
   margin: 0;
-  padding: calc(var(--nav-h) + clamp(34px, 6.5vh, 78px)) clamp(28px, 4vw, 52px) clamp(64px, 10vh, 120px);
-  display: flex;
-  flex-direction: column;
-  gap: clamp(42px, 7vh, 76px);
+  padding: calc(var(--nav-h) + clamp(28px, 5vh, 58px)) clamp(36px, 5vw, 74px) clamp(44px, 7vh, 78px);
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: clamp(42px, 6vw, 96px);
 }
 .sn-eras-head {
   display: flex;
@@ -1583,12 +1631,12 @@ html.sn-vertical-mode .sn-ticker {
 }
 .sn-eras-lede {
   font-family: var(--serif);
-  font-size: clamp(46px, 5.05vw, 76px);
+  font-size: clamp(38px, 3.65vw, 64px);
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: -0.018em;
   text-wrap: balance;
-  max-width: 1000px;
+  max-width: 540px;
   color: var(--text, #1B1B1B);
   margin: 0;
   font-style: normal;
@@ -1602,8 +1650,9 @@ html.sn-vertical-mode .sn-ticker {
 .sn-eras-acts {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(42px, 7vh, 70px);
-  max-width: 620px;
+  gap: clamp(24px, 4vh, 42px);
+  max-width: 520px;
+  justify-self: end;
 }
 .sn-act {
   display: flex;
@@ -1624,7 +1673,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-act-plate {
   width: 100%;
   aspect-ratio: 16 / 10;
-  min-height: clamp(220px, 30vh, 320px);
+  min-height: clamp(160px, 22vh, 240px);
   overflow: hidden;
   border-radius: 2px;
   margin: 0;
@@ -3487,6 +3536,7 @@ html.sn-vertical-mode .sn-ticker {
   .sn-writing {
     padding-left: var(--pad);
     padding-right: var(--pad);
+    overscroll-behavior-y: auto;
   }
   .sn-writing-head {
     display: grid !important;
@@ -3517,6 +3567,7 @@ html.sn-vertical-mode .sn-ticker {
     grid-template-columns: 1fr;
     gap: 34px;
     overflow: visible;
+    overscroll-behavior-y: auto;
   }
   .sn-essay,
   .sn-essay:not(.is-on),
@@ -3537,6 +3588,8 @@ html.sn-vertical-mode .sn-ticker {
     opacity: 1 !important;
     transform: none !important;
     pointer-events: auto;
+    touch-action: pan-y pinch-zoom;
+    overscroll-behavior-y: auto;
   }
   .sn-essay:not(.is-on)::before {
     display: none !important;
@@ -3803,6 +3856,101 @@ html.sn-vertical-mode .sn-ticker {
     min-height: 0;
   }
 
+  /* DESKTOP VERTICAL hero: reuse the horizontal overlapping layout so the
+     inverted name-over-media effect runs here too. Mobile (<=900px) stays stacked.
+     NB: .sn-hero-type-invert / -base also match .sn-hero-type, and the
+     html.sn-vertical-mode .sn-hero-type rule out-specifies their single-class
+     rules, so their absolute positioning + clip are re-asserted here (with
+     !important) to win the cascade. */
+  html.sn-vertical-mode .sn-hero { min-height: 100vh; padding: 0 !important; display: block; }
+
+  html.sn-vertical-mode .sn-hero-frame {
+    --hero-frame-x-pad: clamp(28px, 4vw, 72px);
+    --hero-frame-top: calc(var(--nav-h) + 4vh);
+    --hero-frame-bottom: clamp(28px, 4vw, 72px);
+    --hero-frame-gap: clamp(28px, 3.2vw, 56px);
+    --hero-frame-height: calc(100vh - var(--hero-frame-top) - var(--hero-frame-bottom));
+    --hero-media-w: min(clamp(960px, 64vw, 1280px), calc(100vw - (var(--hero-frame-x-pad) * 2)));
+    --hero-media-h: min(calc(var(--hero-media-w) * 9 / 16), calc(var(--hero-frame-height) - 8px));
+    --hero-media-left: max(0px, calc(100vw - (var(--hero-frame-x-pad) * 2) - var(--hero-media-w)));
+    --hero-media-top: max(0px, calc(var(--hero-frame-height) - var(--hero-media-h)));
+    position: absolute;
+    inset: var(--hero-frame-top) var(--hero-frame-x-pad) var(--hero-frame-bottom);
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    grid-template-rows: auto;
+    gap: var(--hero-frame-gap);
+    align-items: end;
+  }
+
+  /* shared by base + invert (both carry .sn-hero-type) */
+  html.sn-vertical-mode .sn-hero-type {
+    position: relative;
+    z-index: 4;
+    grid-column: 1 / 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: clamp(20px, 2.4vw, 32px);
+    height: 100%;
+    align-self: stretch;
+    align-content: start;
+    padding: 0 0 4px;
+    clip-path: none;
+  }
+
+  html.sn-vertical-mode .sn-hero-name { font-size: clamp(80px, 11vw, 200px); line-height: 0.88; }
+  html.sn-vertical-mode .sn-hero-sub { max-width: 540px; }
+
+  /* base layer: hide the portion that crosses the video, ceding it to the invert layer */
+  html.sn-vertical-mode .sn-hero-type.sn-hero-type-base {
+    clip-path: inset(0 var(--hero-base-clip-right, 0px) 0 0) !important;
+  }
+
+  /* invert layer: overlay the whole frame, mirror the 2-col grid, difference-blend,
+     clip to just the text/video overlap (vars set by syncHeroInvertClip in JS) */
+  html.sn-vertical-mode .sn-hero-type.sn-hero-type-invert {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 6;
+    grid-column: 1 / -1 !important;
+    grid-row: 1;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) !important;
+    grid-template-rows: auto auto 1fr;
+    gap: clamp(20px, 2.4vw, 32px) var(--hero-frame-gap);
+    height: 100%;
+    align-self: stretch;
+    align-content: start;
+    padding: 0;
+    mix-blend-mode: difference;
+    clip-path: inset(
+      var(--hero-invert-clip-top, calc(var(--hero-media-top) + 1px))
+      var(--hero-invert-clip-right, -1px)
+      var(--hero-invert-clip-bottom, -1px)
+      var(--hero-invert-clip-left, calc(var(--hero-media-left) + 1px))
+    );
+  }
+
+  html.sn-vertical-mode .sn-hero-media {
+    position: absolute;
+    z-index: 1;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    margin: 0;
+    width: var(--hero-media-w);
+    height: var(--hero-media-h);
+    max-height: none;
+    align-self: end;
+    justify-self: end;
+  }
+
   html.sn-vertical-mode .sn-eras {
     display: block;
     background: var(--bg-warm);
@@ -3816,9 +3964,14 @@ html.sn-vertical-mode .sn-ticker {
   }
 
   html.sn-vertical-mode .sn-eras-frame {
+    width: 100%;
     max-width: var(--sn-vertical-max);
     margin: 0 auto;
     padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+    min-height: 0;
     gap: clamp(48px, 6vh, 76px);
   }
 
@@ -4284,200 +4437,51 @@ html.sn-vertical-mode .sn-ticker {
   .sn-contact-modal-textarea { font-size: 16px; }
 }
 
-/* ============================================================
-   Sitewide visual-language cleanup.
-   Keep the portfolio editorial and image-led: quieter uppercase
-   labels, less decorative italic, no dashboard-like dots/pills.
+/* =============================================================
+   PROSE INLINE LINKS
+   Global rule: any inline <a> inside running body/copy text
+   shows as accent-coloured + underlined. Consistent across
+   every page. Navigation, card, CTA, and media links are
+   all excluded — they have their own contained rules.
    ============================================================ */
-
-html body [class] em,
-html body .sn-hero-word.italic,
-html body .sn-italic,
-html body .sn-italic-lg,
-html body .sn-work-finisher-label,
-html body .sn-work-finisher-arrow,
-html body .sn-contact-title,
-html body .sn-contact-sub-msg--success,
-html body .sn-act-title,
-html body .sn-act-link,
-html body .sn-press-headline em,
-html body .ab-hero-title em,
-html body .ab-feature-title,
-html body .ab-card-title,
-html body .ab-collab-copy em,
-html body .ab-recog-year,
-html body .abv-hero-title .w2,
-html body .abv-hero-lede em,
-html body .abv-hero-bio p em,
-html body .abv-statement-lede,
-html body .abv-statement-body p em,
-html body .abv-feature-title,
-html body .abv-feature-title em,
-html body .abv-collab-copy em,
-html body .abv-recog-year,
-html body .abv-recog-p em,
-html body .ct-title em,
-html body .wr-title em,
-html body .wr-intro,
-html body .wr-card-num,
-html body .wr-foot-link,
-html body .wr-subscribe-feedback--success,
-html body .sp-press-masthead-names span,
-html body .sp-press-selected-title,
-html body .sp-press-selected-copy em,
-html body .sp-press-feature-title,
-html body .pr-title em,
-html body .bp2-italic,
-html body .bp2-hero-title em,
-html body .bp2-hero-tag,
-html body .bp2-stick-title em,
-html body .bp2-stick-current,
-html body .bp2-source-title em,
-html body .bp2-index-title,
-html body .bp2-cap-title,
-html body .bp2-related-card h3,
-html body .sp-title em,
-html body .sp-sub,
-html body .sp-piece-title,
-html body .sp-essay-title,
-html body .sp-card-title,
-html body .sp-related-card h3,
-html body .sp-project-line,
-html body .wk2-cat-title em,
-html body .wk2-tile-context,
-html body .wk2-tile-edition,
-html body .av-title em,
-html body .av-card-title em,
-html body .nl-hero-title em,
-html body .nl-ahead-body em,
-html body .sp-tttb-page .tttb-chapter-theme em,
-html body .sp-tttb-page .tttb-interlude-line em,
-html body .sp-tttb-page .tttb-works-intro em {
-  font-style: normal;
+/* Only bare inline links (no class) get the prose underline. Classed
+   component links (.sn-section-link, CTAs, media links, prev/next, etc.)
+   carry their own underline, so underlining them here produced a double
+   underline. Excluding [class] keeps a single underline everywhere. */
+:is(
+  /* works / scroll pages */
+  .sp-copy, .sp-intro, .sp-about-copy,
+  .sp-about-note, .sp-reading-note, .sp-newsletter-copy, .sp-newsletter-body,
+  .sp-plate-body, .sp-gap-note, .sp-work-text,
+  /* text-stack bare paragraphs */
+  .sp-text-stack > p,
+  /* update letter pages */
+  .nl-ev-body, .nl-featured-body, .nl-soon-item-body,
+  .nl-ev-note p, .nl-ahead-body p,
+  /* about page */
+  .ab-body, .ab-copy, .ab-year-note, .ab-collab-copy,
+  /* writing page */
+  .wr-intro,
+  /* works index / artwork pages */
+  .wk-body, .wk-intro, .wk-meta-copy,
+  .av-body, .av-intro, .av-primer-copy, .av-header-copy
+) a:not([class]) {
+  color: var(--accent-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
-
-html body [class*="eyebrow"],
-html body [class*="kicker"],
-html body [class*="label"],
-html body [class*="meta"],
-html body [class*="status"],
-html body [class*="badge"],
-html body [class*="chip"],
-html body [class*="filter"],
-html body [class*="tab"],
-html body [class*="nav"],
-html body [class*="link"],
-html body [class*="year"],
-html body [class*="count"],
-html body [class*="scale"],
-html body [class*="handle"],
-html body [class*="date"],
-html body [class*="pub"],
-html body [class*="num"],
-html body [class*="byline"],
-html body [class*="readout"],
-html body [class*="control"],
-html body [class*="button"],
-html body [class*="btn"],
-html body .sn-links,
-html body .sp-subnav,
-html body .bp2-stick-back,
-html body .bp2-action-link,
-html body .bp2-colo-list dt,
-html body .wk2-back-top,
-html body .ct-submit,
-html body .wr-subscribe-cta,
-html body .pr-row {
-  letter-spacing: 0.08em;
-}
-
-html body .sn-hero-rule,
-html body .sn-gw-label-rule,
-html body .sn-contact-head-rule,
-html body .ab-hero-stamp-rule,
-html body .abv-hero-stamp-rule,
-html body .sn-writing-dots::before,
-html body .sn-press-pub::after,
-html body .sp-press-list-selected .sp-press-item::before,
-html body .pr-row::before {
-  display: none;
-}
-
-html body .sn-act-dot,
-html body .wk-avail-dot,
-html body .wk2-dot::before,
-html body .sp-plate-status::before,
-html body .av-card-status::before,
-html body .bp2-index-availability::before,
-html body .bp2-cell-dot,
-html body .bp2-badge::before,
-html body .sp-status-pill::before {
-  display: none;
-}
-
-html body .bp2-index-availability,
-html body .bp2-badge,
-html body .sp-status-pill,
-html body .sp-chip,
-html body .sp-work-filterbar .wk-chip,
-html body .bp-filterbar .wk-chip,
-html body .wk-chip,
-html body .av-chip,
-html body .ct-chip-list li,
-html body .wk2-work-modal-close {
-  border-radius: 0;
-  box-shadow: none;
-}
-
-html body .bp2-cell[data-status="listed"],
-html body .av-card.is-sold .av-card-status,
-html body .wk2-tile-foot,
-html body .wk-avail--available .wk-avail-dot,
-html body .sp-plate-status,
-html body .sp-walllabel-status,
-html body .sp-tile-status {
-  box-shadow: none;
-  background: transparent;
-}
-
-html body .bp2-index-availability,
-html body .sp-status-pill,
-html body .wk2-tile-foot,
-html body .sp-plate-status,
-html body .sp-walllabel-status,
-html body .sp-tile-status,
-html body .av-card-status,
-html body .wk-meta-status,
-html body .wk-list-status {
-  color: var(--text-2);
-}
-
-html body .sn-contact-sub-btn,
-html body .sn-contact-cta,
-html body .sn-contact-modal-submit,
-html body .wk2-work-modal-link,
-html body .wk2-back-top,
-html body .bp2-action-link,
-html body .bp2-stick-back,
-html body .ct-submit {
-  letter-spacing: 0.08em;
-  border-radius: 0;
-}
-
-/* Homepage contact panel: centering shell. All ct-* styles come from contact.css. */
-.sn-contact .ct-home-shell {
-  position: relative;
-  z-index: 2;
-  width: min(1120px, 100%);
-  max-width: 1120px;
-  min-height: calc(100vh - var(--nav-h) - 10vh);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-html.sn-vertical-mode .sn-contact .ct-home-shell {
-  min-height: 0;
-  justify-content: flex-start;
+:is(
+  .sp-copy, .sp-intro, .sp-about-copy,
+  .sp-about-note, .sp-reading-note, .sp-newsletter-copy, .sp-newsletter-body,
+  .sp-plate-body, .sp-gap-note, .sp-work-text,
+  .sp-text-stack > p,
+  .nl-ev-body, .nl-featured-body, .nl-soon-item-body,
+  .nl-ev-note p, .nl-ahead-body p,
+  .ab-body, .ab-copy, .ab-year-note, .ab-collab-copy,
+  .wr-intro,
+  .wk-body, .wk-intro, .wk-meta-copy,
+  .av-body, .av-intro, .av-primer-copy, .av-header-copy
+) a:not([class]):hover {
+  text-decoration-color: transparent;
 }

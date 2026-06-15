@@ -1,0 +1,165 @@
+# Wayback Live Site Final Availability
+
+Generated: 2026-06-14T09:02:11.456Z
+Sitemap: https://www.shavonnewong.art/sitemap.xml
+
+Archived: 76/76
+Missing or blocked: 0/76
+
+## Missing or blocked
+
+
+## Archived
+
+- https://www.shavonnewong.art/main
+  - Archive: https://web.archive.org/web/20260614075627/https://www.shavonnewong.art/main
+- https://www.shavonnewong.art/about
+  - Archive: https://web.archive.org/web/20260614073825/https://www.shavonnewong.art/about/
+- https://www.shavonnewong.art/links
+  - Archive: https://web.archive.org/web/20231205212055/https://www.shavonnewong.art/links
+- https://www.shavonnewong.art/update2023jan
+  - Archive: https://web.archive.org/web/20260614074359/https://www.shavonnewong.art/update2023jan/
+- https://www.shavonnewong.art/update2023june
+  - Archive: https://web.archive.org/web/20260614074332/https://www.shavonnewong.art/update2023june/
+- https://www.shavonnewong.art/art
+  - Archive: https://web.archive.org/web/20260614075520/https://www.shavonnewong.art/art
+- https://www.shavonnewong.art/11x
+  - Archive: https://web.archive.org/web/20260614075418/https://www.shavonnewong.art/11x
+- https://www.shavonnewong.art/editions
+  - Archive: https://web.archive.org/web/20260614075547/https://www.shavonnewong.art/editions
+- https://www.shavonnewong.art/update2024jan
+  - Archive: https://web.archive.org/web/20260614074304/https://www.shavonnewong.art/update2024jan/
+- https://www.shavonnewong.art/newsletter
+  - Archive: https://web.archive.org/web/20240525023429/https://www.shavonnewong.art/newsletter
+- https://www.shavonnewong.art/update2024jun
+  - Archive: https://web.archive.org/web/20260614074237/https://www.shavonnewong.art/update2024jun/
+- https://www.shavonnewong.art/update2025jan
+  - Archive: https://web.archive.org/web/20260614074206/https://www.shavonnewong.art/update2025jan/
+- https://www.shavonnewong.art/shuuemura
+  - Archive: https://web.archive.org/web/20260614083717/https://www.shavonnewong.art/shuuemura
+- https://www.shavonnewong.art/update2025jun
+  - Archive: https://web.archive.org/web/20260614075139/https://www.shavonnewong.art/update2025jun/
+- https://www.shavonnewong.art/privacypolicytest
+  - Archive: https://web.archive.org/web/20260614083212/https://www.shavonnewong.art/privacypolicytest
+- https://www.shavonnewong.art/projects
+  - Archive: https://web.archive.org/web/20260614083245/https://www.shavonnewong.art/projects
+- https://www.shavonnewong.art/projects/6529-meme-card
+  - Archive: https://web.archive.org/web/20260614083317/https://www.shavonnewong.art/projects/6529-meme-card
+- https://www.shavonnewong.art/projects/vogue-singapore
+  - Archive: https://web.archive.org/web/20260614083639/https://www.shavonnewong.art/projects/vogue-singapore
+- https://www.shavonnewong.art/projects/by-proxy
+  - Archive: https://web.archive.org/web/20240528155235/https://www.shavonnewong.art/projects/by-proxy
+- https://www.shavonnewong.art/projects/meet-eva-here
+  - Archive: https://web.archive.org/web/20260614083345/https://www.shavonnewong.art/projects/meet-eva-here
+- https://www.shavonnewong.art/projects/after-ophelia
+  - Archive: https://web.archive.org/web/20251105163510/https://www.shavonnewong.art/projects/after-ophelia
+- https://www.shavonnewong.art/projects/love-is-love
+  - Archive: https://web.archive.org/web/20250616102334/https://www.shavonnewong.art/projects/love-is-love
+- https://www.shavonnewong.art/projects/the-ties-that-bind
+  - Archive: https://web.archive.org/web/20230705185429/https://www.shavonnewong.art/projects/the-ties-that-bind
+- https://www.shavonnewong.art/nfts
+  - Archive: https://web.archive.org/web/20221128151015/https://www.shavonnewong.art/nfts
+- https://www.shavonnewong.art/nfts/available
+  - Archive: https://web.archive.org/web/20260614075703/https://www.shavonnewong.art/nfts/available
+- https://www.shavonnewong.art/nfts/foundation
+  - Archive: https://web.archive.org/web/20260614075731/https://www.shavonnewong.art/nfts/foundation
+- https://www.shavonnewong.art/nfts/manifold-contract
+  - Archive: https://web.archive.org/web/20260614075758/https://www.shavonnewong.art/nfts/manifold-contract
+- https://www.shavonnewong.art/nfts/opensea
+  - Archive: https://web.archive.org/web/20260614075826/https://www.shavonnewong.art/nfts/opensea
+- https://www.shavonnewong.art/nfts/sold
+  - Archive: https://web.archive.org/web/20260614075857/https://www.shavonnewong.art/nfts/sold
+- https://www.shavonnewong.art/nfts/superrare
+  - Archive: https://web.archive.org/web/20260614075926/https://www.shavonnewong.art/nfts/superrare
+- https://www.shavonnewong.art/nfts/suspended-soul
+  - Archive: https://web.archive.org/web/20260614080000/https://www.shavonnewong.art/nfts/suspended-soul
+- https://www.shavonnewong.art/nfts/v/the-illusion-of-connection-i
+  - Archive: https://web.archive.org/web/20260614082620/https://www.shavonnewong.art/nfts/v/the-illusion-of-connection-i
+- https://www.shavonnewong.art/nfts/v/95h8fy3655a9lf9rr6pygpafddasjy
+  - Archive: https://web.archive.org/web/20260614080154/https://www.shavonnewong.art/nfts/v/95h8fy3655a9lf9rr6pygpafddasjy
+- https://www.shavonnewong.art/nfts/v/the-mirror-world
+  - Archive: https://web.archive.org/web/20260614082820/https://www.shavonnewong.art/nfts/v/the-mirror-world
+- https://www.shavonnewong.art/nfts/v/panopticon
+  - Archive: https://web.archive.org/web/20260614082149/https://www.shavonnewong.art/nfts/v/panopticon
+- https://www.shavonnewong.art/nfts/v/stargazers-dream
+  - Archive: https://web.archive.org/web/20260614082246/https://www.shavonnewong.art/nfts/v/stargazers-dream
+- https://www.shavonnewong.art/nfts/v/oceans-whisper
+  - Archive: https://web.archive.org/web/20260614082110/https://www.shavonnewong.art/nfts/v/oceans-whisper
+- https://www.shavonnewong.art/nfts/v/natures-muse
+  - Archive: https://web.archive.org/web/20260614081857/https://www.shavonnewong.art/nfts/v/natures-muse
+- https://www.shavonnewong.art/nfts/v/ice-and-fire
+  - Archive: https://web.archive.org/web/20260614080954/https://www.shavonnewong.art/nfts/v/ice-and-fire
+- https://www.shavonnewong.art/nfts/v/6gwmhj423z6h2nys2gz394sjeygjwn
+  - Archive: https://web.archive.org/web/20260614080040/https://www.shavonnewong.art/nfts/v/6gwmhj423z6h2nys2gz394sjeygjwn
+- https://www.shavonnewong.art/nfts/v/c3fppsja2hpkldx25tsax2kmjalhkz
+  - Archive: https://web.archive.org/web/20260614080227/https://www.shavonnewong.art/nfts/v/c3fppsja2hpkldx25tsax2kmjalhkz
+- https://www.shavonnewong.art/nfts/v/st6d52tkah5tyw589kyhl5gez7bj6l
+  - Archive: https://web.archive.org/web/20260614082218/https://www.shavonnewong.art/nfts/v/st6d52tkah5tyw589kyhl5gez7bj6l
+- https://www.shavonnewong.art/nfts/v/the-invisible-march-of-time-i
+  - Archive: https://web.archive.org/web/20260614082653/https://www.shavonnewong.art/nfts/v/the-invisible-march-of-time-i
+- https://www.shavonnewong.art/nfts/v/6lnpe8mhg7rmzmk82arkpd449tfhj5
+  - Archive: https://web.archive.org/web/20260614080121/https://www.shavonnewong.art/nfts/v/6lnpe8mhg7rmzmk82arkpd449tfhj5
+- https://www.shavonnewong.art/nfts/v/fhyxxbpcegn4shrbdmynh6k5cr9hdl
+  - Archive: https://web.archive.org/web/20260614080450/https://www.shavonnewong.art/nfts/v/fhyxxbpcegn4shrbdmynh6k5cr9hdl
+- https://www.shavonnewong.art/nfts/v/n7r2ly4z7kmjzpslzzcy6mzpnjkgdb
+  - Archive: https://web.archive.org/web/20260614081807/https://www.shavonnewong.art/nfts/v/n7r2ly4z7kmjzpslzzcy6mzpnjkgdb
+- https://www.shavonnewong.art/nfts/v/the-shimmering-veil-i
+  - Archive: https://web.archive.org/web/20260614082846/https://www.shavonnewong.art/nfts/v/the-shimmering-veil-i
+- https://www.shavonnewong.art/nfts/v/the-shimmering-veil-ii
+  - Archive: https://web.archive.org/web/20260614082913/https://www.shavonnewong.art/nfts/v/the-shimmering-veil-ii
+- https://www.shavonnewong.art/nfts/v/the-shimmering-veil-iii
+  - Archive: https://web.archive.org/web/20260614083003/https://www.shavonnewong.art/nfts/v/the-shimmering-veil-iii
+- https://www.shavonnewong.art/nfts/v/everything-yet-nothing
+  - Archive: https://web.archive.org/web/20260614080330/https://www.shavonnewong.art/nfts/v/everything-yet-nothing
+- https://www.shavonnewong.art/nfts/v/the-loneliness-of-an-orchid
+  - Archive: https://web.archive.org/web/20260614082752/https://www.shavonnewong.art/nfts/v/the-loneliness-of-an-orchid
+- https://www.shavonnewong.art/nfts/v/lilium-in-pearls-i
+  - Archive: https://web.archive.org/web/20260614081343/https://www.shavonnewong.art/nfts/v/lilium-in-pearls-i
+- https://www.shavonnewong.art/nfts/v/year-of-the-tiger-3
+  - Archive: https://web.archive.org/web/20260614083137/https://www.shavonnewong.art/nfts/v/year-of-the-tiger-3
+- https://www.shavonnewong.art/nfts/v/year-of-the-tiger-2
+  - Archive: https://web.archive.org/web/20260614083106/https://www.shavonnewong.art/nfts/v/year-of-the-tiger-2
+- https://www.shavonnewong.art/nfts/v/year-of-the-tiger
+  - Archive: https://web.archive.org/web/20230121083609/https://www.shavonnewong.art/nfts/v/year-of-the-tiger
+- https://www.shavonnewong.art/nfts/v/legend-of-the-white-snake
+  - Archive: https://web.archive.org/web/20260614081236/https://www.shavonnewong.art/nfts/v/legend-of-the-white-snake
+- https://www.shavonnewong.art/nfts/v/uplift
+  - Archive: https://web.archive.org/web/20260614083030/https://www.shavonnewong.art/nfts/v/uplift
+- https://www.shavonnewong.art/nfts/v/the-kiss
+  - Archive: https://web.archive.org/web/20260614082721/https://www.shavonnewong.art/nfts/v/the-kiss
+- https://www.shavonnewong.art/nfts/v/the-hug
+  - Archive: https://web.archive.org/web/20260614082548/https://www.shavonnewong.art/nfts/v/the-hug
+- https://www.shavonnewong.art/nfts/v/suspense
+  - Archive: https://web.archive.org/web/20260614082514/https://www.shavonnewong.art/nfts/v/suspense
+- https://www.shavonnewong.art/nfts/v/stellae-iii
+  - Archive: https://web.archive.org/web/20260614082443/https://www.shavonnewong.art/nfts/v/stellae-iii
+- https://www.shavonnewong.art/nfts/v/stellae-ii
+  - Archive: https://web.archive.org/web/20260614082417/https://www.shavonnewong.art/nfts/v/stellae-ii
+- https://www.shavonnewong.art/nfts/v/stellae-i
+  - Archive: https://web.archive.org/web/20260614082318/https://www.shavonnewong.art/nfts/v/stellae-i
+- https://www.shavonnewong.art/nfts/v/lunah-moon-i
+  - Archive: https://web.archive.org/web/20260614081634/https://www.shavonnewong.art/nfts/v/lunah-moon-i
+- https://www.shavonnewong.art/nfts/v/lunah-moon-iii
+  - Archive: https://web.archive.org/web/20260614081739/https://www.shavonnewong.art/nfts/v/lunah-moon-iii
+- https://www.shavonnewong.art/nfts/v/lunah-moon-ii
+  - Archive: https://web.archive.org/web/20260614081708/https://www.shavonnewong.art/nfts/v/lunah-moon-ii
+- https://www.shavonnewong.art/nfts/v/i-am-not-confident
+  - Archive: https://web.archive.org/web/20260614080812/https://www.shavonnewong.art/nfts/v/i-am-not-confident
+- https://www.shavonnewong.art/nfts/v/i-am-not-zen
+  - Archive: https://web.archive.org/web/20260614080921/https://www.shavonnewong.art/nfts/v/i-am-not-zen
+- https://www.shavonnewong.art/nfts/v/glow
+  - Archive: https://web.archive.org/web/20260614080625/https://www.shavonnewong.art/nfts/v/glow
+- https://www.shavonnewong.art/nfts/v/lilium-in-pearls-iii
+  - Archive: https://web.archive.org/web/20260614081548/https://www.shavonnewong.art/nfts/v/lilium-in-pearls-iii
+- https://www.shavonnewong.art/nfts/v/lilium-in-pearls-ii
+  - Archive: https://web.archive.org/web/20260614081513/https://www.shavonnewong.art/nfts/v/lilium-in-pearls-ii
+- https://www.shavonnewong.art/nfts/v/kin-i
+  - Archive: https://web.archive.org/web/20260614081115/https://www.shavonnewong.art/nfts/v/kin-i
+- https://www.shavonnewong.art/nfts/v/new-video-2
+  - Archive: https://web.archive.org/web/20260614082031/https://www.shavonnewong.art/nfts/v/new-video-2
+- https://www.shavonnewong.art/nfts/v/i-am-not-happy
+  - Archive: https://web.archive.org/web/20260614080843/https://www.shavonnewong.art/nfts/v/i-am-not-happy
+- https://www.shavonnewong.art/nfts/v/new-video-1
+  - Archive: https://web.archive.org/web/20260614081957/https://www.shavonnewong.art/nfts/v/new-video-1
+- https://www.shavonnewong.art/nfts/v/new-video
+  - Archive: https://web.archive.org/web/20260614081929/https://www.shavonnewong.art/nfts/v/new-video

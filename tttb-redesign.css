@@ -43,14 +43,14 @@
 /* ---------- WORKS: thematic chapters ---------- */
 .sp-tttb-page .tttb-works-intro {
   margin: 0 0 clamp(30px, 4vw, 52px);
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-weight: 300;
   font-size: 21px;
   line-height: 1.5;
   color: var(--text);
-  max-width: 56ch;
+  max-width: none;
 }
-.sp-tttb-page .tttb-works-intro em { font-style: italic; color: var(--accent-deep); }
+.sp-tttb-page .tttb-works-intro em { font-style: italic; }
 
 .sp-tttb-page .tttb-overview-media {
   display: grid;
@@ -101,11 +101,11 @@
   margin-bottom: clamp(26px, 3vw, 44px);
 }
 .sp-tttb-page .tttb-chapter-num {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-style: italic;
   font-size: 46px;
   line-height: 0.9;
-  color: var(--accent-deep);
+  color: var(--text);
   letter-spacing: 0.01em;
 }
 .sp-tttb-page .tttb-chapter-text {
@@ -115,7 +115,7 @@
 }
 .sp-tttb-page .tttb-chapter-theme {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-weight: 300;
   font-size: 32px;
   line-height: 1.04;
@@ -123,14 +123,14 @@
   color: var(--text);
   text-wrap: balance;
 }
-.sp-tttb-page .tttb-chapter-theme em { font-style: italic; color: var(--accent-deep); }
+.sp-tttb-page .tttb-chapter-theme em { font-style: italic; }
 .sp-tttb-page .tttb-chapter-lede {
   margin: 0;
   font-family: var(--sans);
   font-size: 14px;
   line-height: 1.6;
   color: var(--text-2);
-  max-width: 56ch;
+  max-width: none;
 }
 
 /* spacing between stacked plates inside a chapter */
@@ -140,8 +140,8 @@
 
 .sp-tttb-page .tttb-work-notes {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(18px, 2vw, 28px);
+  grid-template-columns: 1fr;
+  gap: clamp(22px, 2.6vw, 34px);
   margin-top: clamp(24px, 3vw, 42px);
   padding-top: clamp(20px, 2.6vw, 34px);
   border-top: 1px solid var(--hairline);
@@ -157,14 +157,15 @@
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent-deep);
+  color: var(--text-2);
 }
 .sp-tttb-page .tttb-work-notes p {
   margin: 0;
   font-family: var(--sans);
-  font-size: 14px;
-  line-height: 1.62;
+  font-size: 15px;
+  line-height: 1.68;
   color: var(--text-2);
+  max-width: none;
 }
 .sp-tttb-page .tttb-work-notes .tttb-link-row {
   display: flex;
@@ -229,7 +230,7 @@
   .sp-tttb-page .tttb-works .sp-plate {
     grid-template-columns: 1.6fr 1fr;
     gap: clamp(40px, 4.4vw, 72px);
-    align-items: center;
+    align-items: start;
   }
   .sp-tttb-page .tttb-works .tttb-plate-flip {
     grid-template-columns: 1fr 1.6fr;
@@ -245,7 +246,7 @@
 .sp-tttb-page .tttb-works .sp-plate-body {
   font-size: 16px;
   line-height: 1.68;
-  max-width: 46ch;
+  max-width: none;
 }
 
 /* separate the transactional microcopy from the descriptive body so the
@@ -289,7 +290,7 @@
 
 .sp-tttb-page #statement .sp-copy,
 .sp-tttb-page #supporting-texts .sp-copy {
-  max-width: 62ch;
+  max-width: none;
 }
 
 /* ---------- STATEMENT interlude ---------- */
@@ -300,7 +301,7 @@
 .sp-tttb-page .tttb-interlude-line {
   margin: 0 auto;
   max-width: 22ch;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-weight: 300;
   font-size: 52px;
   line-height: 1.06;
@@ -309,7 +310,7 @@
   color: var(--text);
   text-wrap: balance;
 }
-.sp-tttb-page .tttb-interlude-line em { font-style: italic; color: var(--accent-deep); }
+.sp-tttb-page .tttb-interlude-line em { font-style: italic; }
 .sp-tttb-page .tttb-interlude-cap {
   margin: clamp(20px, 2.4vw, 32px) auto 0;
   text-align: center;
@@ -337,4 +338,83 @@
   .sp-tttb-page .tttb-works .sp-plate-title { font-size: 26px; }
   .sp-tttb-page .tttb-works .sp-plate-body { font-size: 15px; }
   .sp-tttb-page .tttb-interlude-line { font-size: 34px; }
+}
+
+/* ---------- 2026-06 layout pass: full width + section separators ---------- */
+/* Standalone text sections fill the column (no dead right half). */
+.sp-tttb-page .sp-text-stack > .sp-copy { max-width: none; }
+
+/* A hairline opens each section (except the first) so the works read as
+   distinct parts, matching the After Ophelia rhythm. */
+.sp-tttb-page .sp-section.sp-project-grid {
+  border-top: 1px solid var(--hairline);
+  margin-top: 0;
+  padding-top: clamp(24px, 2.5vw, 36px);
+  padding-bottom: clamp(24px, 2.5vw, 36px);
+}
+.sp-tttb-page #duality { border-top: 0; padding-top: clamp(28px, 3vw, 44px); }
+
+/* ---------- works rebuilt from the live project content ---------- */
+.sp-tttb-page .tttb-work .sp-copy { max-width: none; }
+.sp-tttb-page .tttb-work .tttb-fig { margin: clamp(10px,1.6vw,20px) 0 0; }
+.sp-tttb-page .tttb-work .tttb-fig img { display: block; width: auto; max-width: 100%; max-height: clamp(320px, 42vw, 480px); }
+.sp-tttb-page .tttb-work .tttb-fig-row { display: flex; flex-wrap: wrap; gap: clamp(16px,1.8vw,26px); align-items: flex-start; margin: clamp(10px,1.6vw,20px) 0 0; }
+.sp-tttb-page .tttb-work .tttb-fig-row figure { margin: 0; }
+.sp-tttb-page .tttb-work .tttb-fig-row img { display: block; height: clamp(300px, 33vw, 440px); width: auto; max-width: 100%; }
+.sp-tttb-page .tttb-work figcaption { margin-top: 8px; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-2); }
+.sp-tttb-page .tttb-work-sub { font-family: var(--sans); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-2); margin: clamp(22px,2.6vw,36px) 0 0; }
+.sp-tttb-page .tttb-work-links { margin-top: clamp(18px,2vw,26px); margin-bottom: 0; padding-top: 14px; border-top: 1px solid var(--hairline); font-size: 14px; color: var(--text-2); }
+.sp-tttb-page .tttb-work-links-label { text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; margin-right: 10px; color: var(--text-2); }
+.sp-tttb-page .tttb-work-links a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--hairline-strong); margin-right: 16px; }
+.sp-tttb-page .tttb-work-links a:hover { border-bottom-color: currentColor; }
+
+.sp-tttb-page .tttb-age-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(18px, 2vw, 30px);
+  margin: clamp(12px, 1.6vw, 22px) 0 0;
+}
+
+.sp-tttb-page .tttb-age-pair {
+  margin: 0;
+}
+
+.sp-tttb-page .tttb-age-frame {
+  position: relative;
+  display: block;
+  height: clamp(320px, 34vw, 460px);
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  background: #050505;
+}
+
+.sp-tttb-page .tttb-age-frame img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+
+.sp-tttb-page .tttb-age-old {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 420ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sp-tttb-page .tttb-age-pair:hover .tttb-age-old,
+  .sp-tttb-page .tttb-age-pair:focus-within .tttb-age-old {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .sp-tttb-page .tttb-work .tttb-fig-row img { height: clamp(220px, 52vw, 300px); }
+  .sp-tttb-page .tttb-work .tttb-fig img { max-height: 320px; }
+  .sp-tttb-page .tttb-age-row { display: grid; grid-template-columns: 1fr; }
+  .sp-tttb-page .tttb-age-frame { height: auto; width: 100%; }
+  .sp-tttb-page .tttb-age-frame img { width: 100%; height: auto; }
+  .sp-tttb-page .tttb-age-frame img.tttb-age-old { display: none; }
 }

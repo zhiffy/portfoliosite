@@ -184,7 +184,7 @@
     ],
     "added": "2024-02-23",
     "source_page": "https://www.shavonnewong.art/nfts/v/the-illusion-of-connection-i",
-    "marketplace_url": "https://foundation.app/@shavonnewong/shasha/12"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/12"
   },
   {
     "id": "the-mirror-world",
@@ -212,7 +212,8 @@
     ],
     "added": "2024-01-12",
     "source_page": "https://www.shavonnewong.art/nfts/v/the-mirror-world",
-    "marketplace_url": "https://superchief.io/series/0x6d15a7192f8e9ad55a72b997df0986d712c31cbf/54"
+    "marketplace_url": "https://opensea.io/item/avalanche/0x6d15a7192f8e9ad55a72b997df0986d712c31cbf/54",
+    "mint_date": "2023-12-06"
   },
   {
     "id": "panopticon",
@@ -240,7 +241,8 @@
     ],
     "added": "2024-01-12",
     "source_page": "https://www.shavonnewong.art/nfts/v/panopticon",
-    "marketplace_url": "https://opensea.io/assets/ethereum/0xe56f28e23c6172703f024f0ce4ac7ba171907fde/1"
+    "marketplace_url": "https://opensea.io/item/ethereum/0xe56f28e23c6172703f024f0ce4ac7ba171907fde/1",
+    "mint_date": "2023-12-03"
   },
   {
     "id": "stargazers-dream",
@@ -261,13 +263,15 @@
       "label": "Talk to the artist directly",
       "url": "mailto:studio@shavonnewong.art?subject=Acquisition%20%E2%80%94%20Stargazer%E2%80%99s%20Dream"
     },
-    "chain": null,
+    "chain": "Ethereum",
     "medium_tags": [
       "video",
       "3d"
     ],
     "added": "2023-09-09",
-    "source_page": "https://www.shavonnewong.art/nfts/v/stargazers-dream"
+    "source_page": "https://www.shavonnewong.art/nfts/v/stargazers-dream",
+    "marketplace_url": "https://opensea.io/item/ethereum/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/10",
+    "mint_date": "2023-08-29"
   },
   {
     "id": "oceans-whisper",
@@ -295,7 +299,7 @@
     ],
     "added": "2023-09-09",
     "source_page": "https://www.shavonnewong.art/nfts/v/oceans-whisper",
-    "marketplace_url": "https://foundation.app/@shavonnewong/shasha/11"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/11"
   },
   {
     "id": "natures-muse",
@@ -323,7 +327,8 @@
     ],
     "added": "2023-09-09",
     "source_page": "https://www.shavonnewong.art/nfts/v/natures-muse",
-    "marketplace_url": "https://foundation.app/mint/eth/0x72e991768e09D8d82BdE9334cCCD7f4beC8c433D/9"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/9",
+    "mint_date": "2023-08-29"
   },
   {
     "id": "duality-of-eth-introvert",
@@ -391,7 +396,7 @@
     "title": "The Invisible March of Time I",
     "year": 2023,
     "medium": "Single-channel digital video · 1/1 NFT",
-    "image": "/assets/one-of-ones/the-invisible-march-of-time-i.jpg",
+    "image": "/assets/one-of-ones/the-invisible-march-of-time-i-young.jpg",
     "image_alt": "The Invisible March of Time I",
     "parent_project": {
       "title": "The Ties That Bind",
@@ -421,7 +426,7 @@
     "title": "The Invisible March of Time II",
     "year": 2023,
     "medium": "Single-channel digital video · 1/1 NFT",
-    "image": "/assets/one-of-ones/the-invisible-march-of-time-ii.jpg",
+    "image": "/assets/one-of-ones/the-invisible-march-of-time-ii-young.jpg",
     "image_alt": "The Invisible March of Time II",
     "parent_project": {
       "title": "The Ties That Bind",
@@ -572,7 +577,7 @@
     "title": "Ice and Fire",
     "year": 2023,
     "medium": "Single-channel digital video · 1/1 NFT",
-    "image": "/assets/one-of-ones/ice-and-fire.jpg",
+    "image": "/assets/one-of-ones/ice-and-fire-cube.jpg",
     "image_alt": "Ice and Fire",
     "parent_project": {
       "title": "1/1 Art"
@@ -760,7 +765,7 @@
     ],
     "added": "2022-03-16",
     "source_page": "https://www.shavonnewong.art/nfts/v/legend-of-the-white-snake",
-    "marketplace_url": "https://foundation.app/@shavonnewong/shasha/6"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x72e991768e09d8d82bde9334cccd7f4bec8c433d/6"
   },
   {
     "id": "year-of-the-tiger",
@@ -928,7 +933,7 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/i-am-not-happy",
-    "marketplace_url": "https://foundation.app/@shavonnewong/concealedemotions/3"
+    "marketplace_url": "https://opensea.io/item/ethereum/0xca517ce14e65c7f0f9a204a5ee8675a97fbd9881/3"
   },
   {
     "id": "i-am-not-confident",
@@ -956,7 +961,7 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/i-am-not-confident",
-    "marketplace_url": "https://foundation.app/@shavonnewong/concealedemotions/4"
+    "marketplace_url": "https://opensea.io/item/ethereum/0xca517ce14e65c7f0f9a204a5ee8675a97fbd9881/4"
   },
   {
     "id": "i-am-not-zen",
@@ -984,7 +989,7 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/i-am-not-zen",
-    "marketplace_url": "https://foundation.app/@shavonnewong/concealedemotions/1"
+    "marketplace_url": "https://opensea.io/item/ethereum/0xca517ce14e65c7f0f9a204a5ee8675a97fbd9881/1"
   },
   {
     "id": "the-kiss",
@@ -1097,7 +1102,7 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/glow",
-    "marketplace_url": "https://foundation.app/@shavonnewong/foundation/73504"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x3b3ee1931dc30c1957379fac9aba94d1c48a5405/73504"
   },
   {
     "id": "suspense",
@@ -1153,7 +1158,8 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/stellae-iii",
-    "marketplace_url": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272440951144185857"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272440951144185857",
+    "mint_date": "2022-01-27"
   },
   {
     "id": "stellae-ii",
@@ -1181,7 +1187,8 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/stellae-ii",
-    "marketplace_url": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272439851632558081"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272439851632558081",
+    "mint_date": "2022-01-27"
   },
   {
     "id": "stellae-i",
@@ -1209,7 +1216,8 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/stellae-i",
-    "marketplace_url": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272438752120930305"
+    "marketplace_url": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51123566014865372023132627773508027819930631433058804455298272438752120930305",
+    "mint_date": "2022-01-27"
   },
   {
     "id": "kin-i",
@@ -1237,7 +1245,7 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/kin-i",
-    "marketplace_url": "https://foundation.app/@shavonnewong/foundation/36162"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x3b3ee1931dc30c1957379fac9aba94d1c48a5405/36162"
   },
   {
     "id": "kin-ii",
@@ -1265,7 +1273,7 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/new-video-2",
-    "marketplace_url": "https://foundation.app/@shavonnewong/foundation/36422"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x3b3ee1931dc30c1957379fac9aba94d1c48a5405/36422"
   },
   {
     "id": "lunah-moon-iii",
@@ -1293,7 +1301,7 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/lunah-moon-iii",
-    "marketplace_url": "https://foundation.app/@shavonnewong/foundation/11479"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x3b3ee1931dc30c1957379fac9aba94d1c48a5405/11479"
   },
   {
     "id": "lunah-moon-ii",
@@ -1321,7 +1329,7 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/lunah-moon-ii",
-    "marketplace_url": "https://foundation.app/@shavonnewong/foundation/9193"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x3b3ee1931dc30c1957379fac9aba94d1c48a5405/9193"
   },
   {
     "id": "lunah-moon-i",
@@ -1349,7 +1357,7 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/lunah-moon-i",
-    "marketplace_url": "https://foundation.app/@shavonnewong/foundation/7419"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x3b3ee1931dc30c1957379fac9aba94d1c48a5405/7419"
   },
   {
     "id": "lilium-in-pearls-iii",
@@ -1377,7 +1385,7 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/lilium-in-pearls-iii",
-    "marketplace_url": "https://foundation.app/@shavonnewong/foundation/2813"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x3b3ee1931dc30c1957379fac9aba94d1c48a5405/2813"
   },
   {
     "id": "lilium-in-pearls-ii",
@@ -1405,7 +1413,7 @@
     ],
     "added": "2022-01-27",
     "source_page": "https://www.shavonnewong.art/nfts/v/lilium-in-pearls-ii",
-    "marketplace_url": "https://foundation.app/@shavonnewong/foundation/1713"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x3b3ee1931dc30c1957379fac9aba94d1c48a5405/1713"
   },
   {
     "id": "lilium-in-pearls-i",
@@ -1433,7 +1441,7 @@
     ],
     "added": "2022-04-30",
     "source_page": "https://www.shavonnewong.art/nfts/v/lilium-in-pearls-i",
-    "marketplace_url": "https://foundation.app/@shavonnewong/foundation/1253"
+    "marketplace_url": "https://opensea.io/item/ethereum/0x3b3ee1931dc30c1957379fac9aba94d1c48a5405/1253"
   },
   {
     "id": "by-proxy",

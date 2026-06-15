@@ -6,6 +6,21 @@ body.sn-page-body {
   min-height: 100vh;
 }
 
+@media (pointer: coarse) {
+  html,
+  body.sn-page-body {
+    overscroll-behavior-y: auto;
+  }
+
+  body.sn-page-body,
+  body.sn-page-body main,
+  body.sn-page-body section,
+  body.sn-page-body article,
+  body.sn-page-body footer {
+    touch-action: pan-y pinch-zoom;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -203,6 +218,13 @@ html {
   border-bottom: 1px solid var(--hairline);
 }
 
+/* Drop the last section's divider so it does not stack a second hairline
+   on top of the page footer's own top border (the footer always follows
+   the last section, so its border is the single separator). */
+main > .sp-section:last-of-type {
+  border-bottom: 0;
+}
+
 .sp-section-head {
   display: flex;
   justify-content: space-between;
@@ -312,6 +334,13 @@ html {
 
 .sp-detail-grid dd {
   color: var(--text-2);
+}
+
+/* The last detail row keeps no bottom border, so it does not echo the
+   section divider that already closes the block just below it. */
+.sp-detail-grid dt:last-of-type,
+.sp-detail-grid dd:last-of-type {
+  border-bottom: 0;
 }
 
 .sp-project-pieces {
@@ -928,8 +957,25 @@ html {
   object-fit: contain;
 }
 
+.sp-instagram-embed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(18px, 2.4vw, 30px);
+  align-items: start;
+  width: 100%;
+}
+
+.sp-instagram-embed-grid .instagram-media,
+.sp-instagram-embed {
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  max-width: 540px !important;
+  width: 100% !important;
+}
+
 .sp-meet-eva-page .sp-section-media--books {
-  grid-template-columns: repeat(2, minmax(160px, 260px));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 240px));
   align-items: start;
   justify-content: start;
   gap: clamp(18px, 2.4vw, 30px);
@@ -964,6 +1010,24 @@ html {
 
 .sp-meet-eva-page .sp-section-media--process figcaption {
   display: none;
+}
+
+.sp-meet-eva-page #hello-eva .sp-plate-media {
+  width: fit-content;
+  max-width: 100%;
+  justify-self: center;
+}
+
+.sp-meet-eva-page #hello-eva .sp-plate-media img {
+  width: auto;
+  max-width: min(100%, 430px);
+  max-height: 420px;
+}
+
+@media (min-width: 760px) {
+  .sp-meet-eva-page #hello-eva .sp-plate-media {
+    justify-self: end;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1217,8 +1281,7 @@ html {
 .sp-plate-acquire a,
 .sp-series-marketplace a,
 .sp-contact-line a,
-.sp-prev-next a,
-.sp-related-card a {
+.sp-prev-next a {
   color: rgba(27,27,27,0.85);
   border-bottom: 0.5px solid currentColor;
   text-decoration: none;
@@ -1676,21 +1739,35 @@ html {
   font-size: clamp(17px, 1.6vw, 24px);
 }
 
+/* Related section — full-width footer, kicker above grid (no left rail) */
+.sp-related-section {
+  padding: 48px 0;
+}
+/* When sp-related-section appears inside a bp2-main page (by-proxy, love-is-love),
+   it needs its own max-width + horizontal padding — those pages don't use sp-main. */
+.bp2-main .sp-related-section {
+  max-width: var(--site-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(24px, 5vw, 80px);
+  padding-right: clamp(24px, 5vw, 80px);
+}
+.sp-related-section .sp-kicker {
+  margin-bottom: 24px;
+}
+
 .sp-related-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 18px;
+  gap: 24px;
+  margin-top: 0;
 }
 
 .sp-related-card {
   display: grid;
-  gap: 8px;
-}
-
-.sp-related-card a {
-  display: grid;
-  gap: 8px;
+  gap: 10px;
+  color: rgba(27,27,27,0.85);
+  text-decoration: none;
   border-bottom: 0;
   transition: color 180ms ease;
 }
@@ -1700,11 +1777,13 @@ html {
   overflow: hidden;
 }
 
+/* Deliberate exception to C1: thumbnail navigation cards use cover crop at 3:2.
+   Artwork display pages and hero images remain no-crop. */
 .sp-related-card img {
   width: 100%;
   height: auto;
-  aspect-ratio: auto;
-  object-fit: contain;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
   display: block;
   background: var(--veil);
   transition: transform 360ms cubic-bezier(.2,.7,.3,1), filter 180ms ease;
@@ -1714,29 +1793,29 @@ html {
   margin: 0;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .sp-related-card p,
 .sp-contact-line {
   margin: 0;
+  font-size: 13px;
   color: var(--text-2);
   line-height: 1.55;
 }
 
-.sp-related-card a:hover h3,
-.sp-related-card a:focus-visible h3,
-.sp-related-card:hover h3 {
+.sp-related-card:hover h3,
+.sp-related-card:focus-visible h3 {
   color: var(--accent-deep);
 }
-.sp-related-card a:hover img,
-.sp-related-card a:focus-visible img {
+.sp-related-card:hover img,
+.sp-related-card:focus-visible img {
   transform: scale(1.035);
   filter: contrast(1.03) saturate(1.02);
 }
-.sp-related-card a:focus-visible {
+.sp-related-card:focus-visible {
   outline: 1px solid var(--accent-deep);
   outline-offset: 5px;
 }
@@ -2035,12 +2114,7 @@ html {
   font-weight: 500;
 }
 
-.sp-newsletter-copy a {
-  color: var(--text);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
+/* .sp-newsletter-copy a — inherits from global prose link rule in scroll-narrative.css */
 
 .sp-newsletter-media {
   margin: 18px 0 26px;
@@ -2354,7 +2428,8 @@ html {
   }
 
   .sp-related-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
 }
 
@@ -2899,7 +2974,7 @@ html.sp-theatre-open { overflow: hidden; }
 }
 
 /* ============================================================
-   WORK PAGES — hero standfirst pass (2026-06-12).
+   WORK PAGES - hero standfirst pass (2026-06-12).
    The title is the only display element in the hero. The project
    line sits above the intro as a short deck, not a second
    headline, and the image centers against the shorter copy stack.

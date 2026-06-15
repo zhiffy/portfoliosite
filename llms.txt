@@ -14,6 +14,7 @@
 - [Works](https://shavonnewong.art/works/): Catalogue of projects, single works, editions, and commissions.
 - [Available works](https://shavonnewong.art/works/available/): Collector-focused inventory of available works with edition and provenance details.
 - [Conditional](https://shavonnewong.art/works/conditional/): Current work, 2026. A real-time generative AI installation in which a screen shows a live feed of the room with the viewer continuously removed; holding still lets you fade back, colour-shifted, as a version the scene will accept.
+- [The Bubble We Call Home](https://shavonnewong.art/works/the-bubble-we-call-home/): Unique 1/1 single-channel video commission for Artist's Proof: Singapore at 60 (AP60), commissioned by Mr Chong, 2025.
 - [Meet Eva Here](https://shavonnewong.art/works/meet-eva-here/): Interactive AI companion artwork shown at ArtScience Museum, Art SG, and Taipei Dangdai.
 - [After Ophelia](https://shavonnewong.art/works/after-ophelia/): Two-part AI video work on identity and inherited interpretation, Paris Photo 2025.
 - [The Ties That Bind](https://shavonnewong.art/works/the-ties-that-bind/): Solo exhibition of seven dynamic digital works, Singapore, 2023.

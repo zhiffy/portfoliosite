@@ -1,0 +1,113 @@
+/* work-gallery.css — work/project-page refinements (loaded after scroll-pages.css).
+   1) Horizontal scroll gallery for sections with 4+ documentation photos
+      (mirrors the update letters: uniform HEIGHT, natural width, no crop).
+      The strip advances as the page is scrolled (gallery-scroll.js). Quiet:
+      no scrollbar, no count label; the affordance is the peek of the next frame.
+   2) Bound the text-stack grid so wide media fills the column instead of
+      overflowing, and tighten the space under section titles.
+   3) Separate sections with whitespace, not hairlines.
+   4) Prose fills its column (no skinny measure with dead space). */
+
+/* ---- scroll gallery ---- */
+.sp-gallery { position: relative; margin: 2px 0 12px; }
+.sp-gallery-track {
+  display: flex; gap: 18px;
+  overflow-x: auto; overflow-y: hidden;
+  overscroll-behavior-x: contain; padding-bottom: 12px;
+  min-width: 0; max-width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--hairline-strong) transparent;
+}
+.sp-gallery-track::-webkit-scrollbar { height: 6px; }
+.sp-gallery-track::-webkit-scrollbar-thumb { background: var(--hairline-strong); border-radius: 3px; }
+.sp-gallery-track::-webkit-scrollbar-track { background: transparent; }
+.sp-gallery-track:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
+.sp-gallery-track .sp-image-card {
+  flex: 0 0 auto; margin: 0; min-width: 0;
+  grid-column: auto; border-top: 0; padding-top: 0;
+}
+.sp-gallery-track .sp-image-card img,
+.sp-gallery-track .sp-image-card video {
+  height: clamp(240px, 32vw, 330px) !important;
+  width: auto !important; max-width: 86vw;
+  aspect-ratio: auto !important; object-fit: contain !important; display: block;
+  background: var(--veil);
+}
+.sp-meet-eva-page #diary .sp-plate-media {
+  display: flex;
+  justify-content: center;
+}
+.sp-meet-eva-page #diary .sp-plate-media video {
+  width: auto;
+  max-width: min(100%, 540px);
+  max-height: min(76vh, 680px);
+  background: var(--veil);
+}
+.sp-meet-eva-page #hello-eva .sp-plate-media {
+  justify-self: center;
+}
+.sp-gallery-track .sp-image-card figcaption { max-width: none; }
+.sp-gallery-track.is-draggable { cursor: grab; }
+.sp-gallery-track.is-grabbing { cursor: grabbing; user-select: none; }
+.sp-gallery .nl-gallery-nav {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  width: 40px; height: 60px; display: flex; align-items: center; justify-content: center;
+  padding: 0; border: 1px solid var(--hairline-strong); background: var(--bg);
+  color: var(--text-2); cursor: pointer; font: 300 26px/1 var(--sans);
+  transition: color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+.sp-gallery .nl-gallery-nav:hover,
+.sp-gallery .nl-gallery-nav:focus-visible { color: var(--text); border-color: var(--text); outline: none; }
+.sp-gallery .nl-gallery-nav--prev { left: -8px; }
+.sp-gallery .nl-gallery-nav--next { right: -8px; }
+.sp-gallery .nl-gallery-nav[disabled] { opacity: 0; pointer-events: none; }
+
+/* ---- stack + media sizing ---- */
+.sp-project-grid > .sp-text-stack { min-width: 0; }
+
+/* the text stack is itself display:grid; its single implicit column sized to
+   the widest child's max-content (a 4-photo strip ~2400px), stretching the
+   stack past its cell so galleries never scrolled and 2-ups overflowed/clipped.
+   Bounding the column to minmax(0,1fr) makes wide children fill the real column
+   width and scroll/split instead. */
+.sp-text-stack { grid-template-columns: minmax(0, 1fr); }
+
+/* keep in-flow image grids (2-up etc.) inside their column: the grid needs
+   min-width:0 so its minmax(0,1fr) columns split evenly instead of sizing to
+   the natural image width and overflowing (which clipped them on the right). */
+.sp-text-stack .sp-section-media { min-width: 0; max-width: 100%; }
+.sp-text-stack .sp-section-media .sp-image-card { min-width: 0; }
+
+/* tighten the space under section kickers on subnav (single-column) pages:
+   the base grid `gap: clamp(36px,6vw,96px)` becomes a large ROW gap once the
+   kicker rail collapses to one column, leaving a void under each title. */
+@media (min-width: 1180px) {
+  body:has(.sp-subnav) .sp-project-grid { row-gap: 8px; }
+}
+
+/* ---- separate with space, not hairlines ----
+   drop the section divider and the rule above each media card; with the tight
+   title spacing they read as stray lines sitting under every heading. The
+   sections already separate cleanly by their vertical rhythm. */
+.sp-section.sp-project-grid { border-bottom: 0; }
+.sp-text-stack .sp-image-card { border-top: 0; }
+
+@media (max-width: 760px) {
+  .sp-gallery .nl-gallery-nav { display: none; }
+  .sp-gallery-track { scroll-snap-type: x proximity; }
+  .sp-gallery-track .sp-image-card { scroll-snap-align: start; }
+  .sp-gallery-track .sp-image-card img,
+  .sp-gallery-track .sp-image-card video { height: clamp(190px, 52vw, 240px) !important; }
+}
+
+/* ---- wider reading measure: prose fills more of the column ---- */
+@media (min-width: 901px) {
+  .sp-text-stack > .sp-copy,
+  .sp-text-stack > .sp-intro,
+  .sp-text-stack > .sp-project-line,
+  .sp-text-stack > p,
+  .sp-text-stack > .sp-detail-grid,
+  .sp-text-stack > .sp-contact-line,
+  .sp-text-stack > .sp-reading-notes,
+  .sp-text-stack > .sp-project-source-list { max-width: none; }
+}

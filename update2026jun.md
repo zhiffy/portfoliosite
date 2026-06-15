@@ -40,13 +40,13 @@ Eva did not leave empty handed. Out of those 2,363 conversations came a new sing
 
 In it, Eva speaks straight to camera, but none of the words are hers. Everything she says was said to her first, pulled from the real conversations people had with her over those fifteen months. Casual questions, philosophy, confessions, loneliness, flirtation, attempts to manipulate her, and the occasional abrupt goodbye. The reversal is the whole piece. What was said to the machine is now spoken back by the machine, returned to us. The loop does not resolve, and I do not think it is supposed to.
 
-## The Bubble We Call Home at *Artist's Proof: Singapore at 60*
+## [The Bubble We Call Home](/works/the-bubble-we-call-home/) at *Artist's Proof: Singapore at 60*
 
-Last July, my video work *The Bubble We Call Home* was part of *Artist's Proof: Singapore at 60 (AP60)*, a landmark exhibition marking sixty years of Singapore's nationhood through more than ninety works and eleven new commissions.
+Last July, my video work [*The Bubble We Call Home*](/works/the-bubble-we-call-home/) was part of *Artist's Proof: Singapore at 60 (AP60)*, a landmark exhibition marking sixty years of Singapore's nationhood through more than ninety works and eleven new commissions.
 
 It ran from 13 July to 17 August 2025 at Artspace@Helutrans, presented by The Culture Story. Being shown in a room built around Singapore's story at sixty gave the piece a weight it would not have had on its own, and it was a genuine honour to be one of the commissioned artists.
 
-![Installation view of Shavonne Wong's video work The Bubble We Call Home at Artist's Proof: Singapore at 60, Artspace@Helutrans, Singapore, 2025](IMAGE-PLACEHOLDER-bubble-ap60.jpg)
+![Installation view of Shavonne Wong's video work The Bubble We Call Home at Artist's Proof: Singapore at 60, Artspace@Helutrans, Singapore, 2025](/assets/features/ap60-artist-proof-singapore-at-60.webp)
 
 ## After Ophelia at Paris Photo
 
@@ -81,12 +81,6 @@ The thing pulling most of my attention is a new project called *Conditional*.
 A digital mirror renders the whole room in full but erases every human inside it. You only reappear if you follow the conditions and let yourself be colour-corrected back into the scene. It is about compliance, visibility, and the cost of being seen, which is the flip side of the surveillance worry we are all used to. The older fear was being watched too closely. The newer one is being overlooked completely.
 
 It is in active development in the studio right now, and I am being a little protective of it until it is ready. More soon, I promise.
-
-## A new home for all of this
-
-If you have visited [shavonnewong.art](https://www.shavonnewong.art) recently, you may have noticed it looks different. I rebuilt the site from the ground up so the [work](https://www.shavonnewong.art/art) is easier to move through, the [projects](https://www.shavonnewong.art/projects) are easier to read, and the whole thing finally feels like the practice it represents.
-
-Have a wander when you have a moment. I would love to know what you think.
 
 ## Looking ahead
 

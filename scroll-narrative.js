@@ -46,6 +46,9 @@
   }
   let mouseEffectEnabled = readSetting(mouseEffectKey) !== 'off' && !docEl.classList.contains('sn-mouse-effect-off');
   const isNarrow = () => forceVertical || window.matchMedia('(max-width: 900px)').matches;
+  // Width-only check: the hero overlap + inverted blend should run in desktop
+  // vertical-scroll mode too, but NOT on phones (which keep the stacked hero).
+  const isMobileViewport = () => window.matchMedia('(max-width: 900px)').matches;
   const i18n = () => window.SW_I18N;
   const text = (key, fallback, vars) => {
     const api = i18n();
@@ -198,6 +201,11 @@
   let heroLayerIndex = 0;
   let heroWasVisible = null;
   let lastHeroProgress = 0;
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let lastTouchPanAt = 0;
+  let wheelTargetY = window.scrollY || window.pageYOffset || 0;
+  let wheelRaf = 0;
 
   function syncDisplayOptions() {
     docEl.classList.toggle('sn-vertical-mode', forceVertical);
@@ -292,7 +300,7 @@
   }
 
   function syncHeroInvertClip() {
-    if (!heroFrameEl || !heroTypeInvert || !heroMediaTile || narrow) return;
+    if (!heroFrameEl || !heroTypeInvert || !heroMediaTile || isMobileViewport()) return;
     const mediaRect = heroMediaTile.getBoundingClientRect();
     const invertRect = heroTypeInvert.getBoundingClientRect();
     if (!mediaRect.width || !mediaRect.height || !invertRect.width || !invertRect.height) return;
@@ -302,18 +310,31 @@
     const bottom = 0;
     // Left clip: start of the video tile (where text/video overlap begins).
     const left = Math.max(0, mediaRect.left - invertRect.left);
-    // Right clip: end of the name text column — NOT the media tile's right edge.
-    // This bounds the invert zone to only the text/video overlap, leaving the
-    // pure-video zone to the right of the name unaffected.
-    const nameStack = heroTypeInvert ? heroTypeInvert.querySelector('.sn-hero-name-stack') : null;
-    const nameRight = nameStack ? nameStack.getBoundingClientRect().right : mediaRect.right;
-    const right = Math.max(0, invertRect.right - nameRight);
+    // Right clip: cover the full visual text right edge, including any font overflow
+    // beyond the grid column. We measure from the BASE layer's .sn-hero-word span
+    // because the base layer's clip-path has not been applied yet at this point in
+    // execution, so getBoundingClientRect() returns the true ink edge unambiguously.
+    // (Measuring from inside the invert layer — which shares the same 2-col grid —
+    // gave misleading results because the invert's own clip was already set or its
+    // column constraint masked the overflow.)
+    let nameRight = mediaRect.right; // safe fallback: video right edge
+    if (heroTypeBase) {
+      const baseWordEl = heroTypeBase.querySelector('.sn-hero-word');
+      if (baseWordEl) {
+        nameRight = Math.max(nameRight, baseWordEl.getBoundingClientRect().right);
+      } else {
+        const baseStack = heroTypeBase.querySelector('.sn-hero-name-stack');
+        if (baseStack) nameRight = Math.max(nameRight, baseStack.getBoundingClientRect().right);
+      }
+    }
+    // 8px buffer absorbs sub-pixel rounding and glyph optical-margin overshoot.
+    const right = Math.max(0, invertRect.right - nameRight - 8);
     heroFrameEl.style.setProperty('--hero-invert-clip-top', top.toFixed(2) + 'px');
     heroFrameEl.style.setProperty('--hero-invert-clip-left', left.toFixed(2) + 'px');
     heroFrameEl.style.setProperty('--hero-invert-clip-right', right.toFixed(2) + 'px');
     heroFrameEl.style.setProperty('--hero-invert-clip-bottom', bottom.toFixed(2) + 'px');
     // Clip the base text layer to hide its overlap with the video tile —
-    // the invert layer owns that zone and shows white text over the video.
+    // the invert layer owns that zone and shows inverted-video colors through the text.
     if (heroTypeBase) {
       const baseRect = heroTypeBase.getBoundingClientRect();
       const baseClipRight = Math.max(0, baseRect.right - mediaRect.left);
@@ -326,7 +347,7 @@
     if (!heroFrameEl || !item) return;
     setHeroMediaRatio(item);
 
-    if (narrow) {
+    if (isMobileViewport()) {
       clearHeroMediaLayout();
       return;
     }
@@ -549,15 +570,11 @@
     stripWidth = strip.scrollWidth;
     baseTotalScroll = Math.max(0, stripWidth - vw);
 
-    const erasScrollable = erasPanel
-      ? Math.max(0, erasPanel.scrollHeight - erasPanel.clientHeight)
-      : 0;
-    const erasHoldDistance = erasScrollable > 0
-      ? Math.max(vh * 0.85, 720)
-      : 0;
-    erasPinDistance = erasScrollable > 0
-      ? Math.max(erasScrollable + erasHoldDistance, vh * 1.7)
-      : 0;
+    // Keep the homepage's desktop scroll on the document only. Earlier builds
+    // pinned the Practice/Era panel and drove its internal scrollTop, which can
+    // feel like a snag with trackpads when momentum reverses inside that panel.
+    const erasScrollable = 0;
+    erasPinDistance = 0;
     erasPinStart = erasPanel
       ? clamp(erasPanel.offsetLeft, 0, baseTotalScroll)
       : 0;
@@ -1035,13 +1052,6 @@
         String(workEls.length).padStart(2, '0');
     }
 
-    // ---------- TICKER scroll-velocity boost ----------
-    if (tickerTrack) {
-      const kick = clamp(Math.abs(scrollVel) * 0.008, 0, 1);
-      const dur = Math.max(150, 210 - kick * 35);
-      tickerTrack.style.animationDuration = dur.toFixed(2) + 's';
-    }
-
     // ---------- CONTACT parallax + nav flip ----------
     if (contactPanel) {
       const r = contactPanel.getBoundingClientRect();
@@ -1071,24 +1081,29 @@
 
   let rafTicking = false;
   function onScroll() {
+    if (!wheelRaf) wheelTargetY = window.scrollY || window.pageYOffset || 0;
     if (!rafTicking) {
       rafTicking = true;
       requestAnimationFrame(update);
     }
   }
 
-  function scrollableWheelTarget(target, deltaY) {
-    if (Math.abs(deltaY) <= 0) return null;
+  function scrollableWheelTarget(target, delta, axis = 'y') {
+    if (Math.abs(delta) <= 0) return null;
     let node = target;
     while (node && node !== document.body && node !== document.documentElement) {
       if (node.nodeType === 1) {
-        if (node === erasPanel) return null;
+        if (axis === 'y' && node === erasPanel) return null;
         const style = window.getComputedStyle(node);
-        const canScrollY = /(auto|scroll)/.test(style.overflowY) && node.scrollHeight > node.clientHeight + 1;
-        if (canScrollY) {
-          const atTop = node.scrollTop <= 0;
-          const atBottom = node.scrollTop + node.clientHeight >= node.scrollHeight - 1;
-          if ((deltaY < 0 && !atTop) || (deltaY > 0 && !atBottom)) return node;
+        const overflow = axis === 'x' ? style.overflowX : style.overflowY;
+        const scrollSize = axis === 'x' ? node.scrollWidth : node.scrollHeight;
+        const clientSize = axis === 'x' ? node.clientWidth : node.clientHeight;
+        const scrollPos = axis === 'x' ? node.scrollLeft : node.scrollTop;
+        const canScroll = /(auto|scroll)/.test(overflow) && scrollSize > clientSize + 1;
+        if (canScroll) {
+          const atStart = scrollPos <= 0;
+          const atEnd = scrollPos + clientSize >= scrollSize - 1;
+          if ((delta < 0 && !atStart) || (delta > 0 && !atEnd)) return node;
         }
       }
       node = node.parentElement;
@@ -1096,16 +1111,60 @@
     return null;
   }
 
+  function normalizedWheelDelta(ev) {
+    const raw = Math.abs(ev.deltaX) > Math.abs(ev.deltaY) ? ev.deltaX : ev.deltaY;
+    if (ev.deltaMode === 1) return raw * 22;
+    if (ev.deltaMode === 2) return raw * Math.max(1, vh);
+    const magnitude = Math.abs(raw);
+    const boost = magnitude >= 90 ? 1.55 : magnitude >= 36 ? 1.25 : 1;
+    return raw * boost;
+  }
+
+  function stopWheelSmoothing(syncToViewport = true) {
+    if (wheelRaf) {
+      cancelAnimationFrame(wheelRaf);
+      wheelRaf = 0;
+    }
+    if (syncToViewport) wheelTargetY = window.scrollY || window.pageYOffset || 0;
+  }
+
+  function stepWheelSmoothing() {
+    const current = window.scrollY || window.pageYOffset || 0;
+    const diff = wheelTargetY - current;
+    if (Math.abs(diff) < 0.8) {
+      window.scrollTo({ top: wheelTargetY, behavior: 'auto' });
+      wheelRaf = 0;
+      onScroll();
+      return;
+    }
+    const ease = Math.abs(diff) > vh * 0.7 ? 0.42 : 0.34;
+    window.scrollTo({ top: current + diff * ease, behavior: 'auto' });
+    onScroll();
+    wheelRaf = requestAnimationFrame(stepWheelSmoothing);
+  }
+
   function onWheel(ev) {
-    if (narrow || ev.ctrlKey) return;
-    if (Math.abs(ev.deltaY) > Math.abs(ev.deltaX) && scrollableWheelTarget(ev.target, ev.deltaY)) return;
-    const delta = Math.abs(ev.deltaX) > Math.abs(ev.deltaY) ? ev.deltaX : ev.deltaY;
+    if (narrow || ev.ctrlKey) {
+      stopWheelSmoothing();
+      return;
+    }
+    const absX = Math.abs(ev.deltaX);
+    const absY = Math.abs(ev.deltaY);
+    if (absY >= absX) {
+      stopWheelSmoothing();
+      return;
+    }
+    if (scrollableWheelTarget(ev.target, ev.deltaX, 'x')) {
+      stopWheelSmoothing(false);
+      return;
+    }
+    const delta = normalizedWheelDelta(ev);
     if (!delta) return;
     ev.preventDefault();
     const maxScroll = totalScroll;
-    const next = clamp((window.scrollY || window.pageYOffset) + delta, 0, maxScroll);
-    window.scrollTo({ top: next, behavior: 'auto' });
-    onScroll();
+    if (!wheelRaf) wheelTargetY = window.scrollY || window.pageYOffset || 0;
+    wheelTargetY = clamp(wheelTargetY + delta, 0, maxScroll);
+    if (!wheelRaf) wheelRaf = requestAnimationFrame(stepWheelSmoothing);
   }
 
   function onResize() {
@@ -1120,6 +1179,7 @@
       }
     }
     narrow = isNarrow();
+    stopWheelSmoothing();
     recompute();
     update();
   }
@@ -1128,6 +1188,7 @@
   function jumpTo(id) {
     const el = document.getElementById(id);
     if (!el) return;
+    stopWheelSmoothing();
     if (narrow) {
       // vertical layout: scroll element into view normally
       window.scrollTo({ top: el.offsetTop - 60, behavior: 'smooth' });
@@ -1220,6 +1281,14 @@
     return !!target.closest('a, button, input, select, textarea, label, [data-no-panel-link]');
   }
 
+  function isNativeNavigationTarget(panel) {
+    return panel && (panel.tagName === 'A' || panel.tagName === 'BUTTON');
+  }
+
+  function isRecentTouchPan() {
+    return Date.now() - lastTouchPanAt < 520;
+  }
+
   function openPanel(panel) {
     const href = panel.getAttribute('data-panel-link');
     if (href) window.location.href = href;
@@ -1229,11 +1298,13 @@
     if (!panel.hasAttribute('tabindex')) panel.setAttribute('tabindex', '0');
     panel.addEventListener('click', (ev) => {
       if (shouldIgnorePanelOpen(ev.target)) return;
+      if (narrow && (!isNativeNavigationTarget(panel) || isRecentTouchPan())) return;
       openPanel(panel);
     });
     panel.addEventListener('keydown', (ev) => {
       if (ev.key !== 'Enter' && ev.key !== ' ') return;
       if (shouldIgnorePanelOpen(ev.target)) return;
+      if (narrow && !isNativeNavigationTarget(panel)) return;
       ev.preventDefault();
       openPanel(panel);
     });
@@ -1279,6 +1350,19 @@
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('wheel', onWheel, { passive: false });
+    window.addEventListener('touchstart', (ev) => {
+      const touch = ev.touches && ev.touches[0];
+      if (!touch) return;
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    }, { passive: true });
+    window.addEventListener('touchmove', (ev) => {
+      const touch = ev.touches && ev.touches[0];
+      if (!touch) return;
+      const dx = Math.abs(touch.clientX - touchStartX);
+      const dy = Math.abs(touch.clientY - touchStartY);
+      if (dy > 8 && dy >= dx) lastTouchPanAt = Date.now();
+    }, { passive: true });
     window.addEventListener('resize', onResize);
     window.addEventListener('hashchange', () => {
       const id = window.location.hash ? window.location.hash.slice(1) : '';

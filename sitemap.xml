@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://shavonnewong.art/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://shavonnewong.art/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://shavonnewong.art/?lang=zh-Hans"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shavonnewong.art/?lang=zh-Hant"/>
@@ -25,7 +25,7 @@
   </url>
   <url>
     <loc>https://shavonnewong.art/works/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-13</lastmod>
   </url>
   <url>
     <loc>https://shavonnewong.art/works/available/</loc>
@@ -46,6 +46,10 @@
   <url>
     <loc>https://shavonnewong.art/works/after-ophelia/ophelia-reassembled/</loc>
     <lastmod>2026-06-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shavonnewong.art/works/the-bubble-we-call-home/</loc>
+    <lastmod>2026-06-13</lastmod>
   </url>
   <url>
     <loc>https://shavonnewong.art/works/meet-eva-here/</loc>
@@ -85,11 +89,11 @@
   </url>
   <url>
     <loc>https://shavonnewong.art/writing/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-14</lastmod>
   </url>
   <url>
     <loc>https://shavonnewong.art/update2026jun/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-14</lastmod>
   </url>
   <url>
     <loc>https://shavonnewong.art/update2025jun/</loc>

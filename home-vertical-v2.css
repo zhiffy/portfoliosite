@@ -3,9 +3,11 @@
    Loaded LAST on index.html. Mulish only; Iris stays a line.
    ============================================================ */
 
-/* ---------- 01 HERO — credential line + fuller composition ---------- */
-.sn-hero-cred { display: none; }
-html.sn-vertical-mode .sn-hero-cred {
+/* ---------- 01 HERO — credential line + fuller composition ----------
+   Show the credential line in BOTH horizontal and vertical (it used to be
+   vertical-only). It always renders on the cream/base layer; the inverted
+   over-image layer never shows it. */
+.sn-hero-cred {
   display: block;
   margin: 18px 0 0;
   font-size: clamp(12px, 1vw, 14px);
@@ -14,7 +16,8 @@ html.sn-vertical-mode .sn-hero-cred {
   color: var(--text-3);
   max-width: 34ch;
 }
-html.sn-vertical-mode .sn-hero-cred strong { color: var(--text-2); font-weight: 600; }
+.sn-hero-cred strong { color: var(--text-2); font-weight: 600; }
+.sn-hero-type-invert .sn-hero-cred { display: none !important; }
 
 @media (min-width: 901px) {
   /* Vertical mode hero == horizontal mode hero: the work keeps its 16:9
@@ -63,9 +66,12 @@ html.sn-vertical-mode .sn-hero-cred strong { color: var(--text-2); font-weight: 
     line-height: 0.88 !important;
     letter-spacing: -0.015em !important;
   }
+  /* match the horizontal subtitle exactly (size + measure) so the hero reads
+     identically in both modes — was clamp(19px,2.35vw,24px)/26ch, which made
+     it smaller and wrap to two lines, shifting the credit line down */
   html.sn-vertical-mode .sn-hero-sub {
-    max-width: 26ch !important;
-    font-size: clamp(19px, 2.35vw, 24px) !important;
+    max-width: 540px !important;
+    font-size: clamp(20px, 1.7vw, 28px) !important;
   }
   /* re-enable the inverted light title only where it overlaps the image */
   html.sn-vertical-mode .sn-hero-type-invert { display: grid !important; }
@@ -106,6 +112,16 @@ html.sn-vertical-mode .sn-hero-cred strong { color: var(--text-2); font-weight: 
 .sn-eras-acts { display: none !important; }
 .sn-era-phases { display: none !important; }   /* retired the timeline row */
 
+/* Acts column is hidden — let the lede head span the full panel in
+   both horizontal and vertical mode. No max-width on the lede either;
+   the era section is excluded from the narrow-paragraph rule. */
+.sn-eras-head {
+  grid-column: 1 / -1;
+}
+.sn-eras-lede {
+  max-width: none;
+}
+
 @media (min-width: 901px) {
   html.sn-vertical-mode .sn-eras { padding: clamp(96px, 13vh, 168px) 0 !important; }
   html.sn-vertical-mode .sn-eras-frame {
@@ -114,14 +130,8 @@ html.sn-vertical-mode .sn-hero-cred strong { color: var(--text-2); font-weight: 
     padding: 0 clamp(40px, 6vw, 96px);
   }
   html.sn-vertical-mode .sn-eras-head { max-width: none; }
-  html.sn-vertical-mode .sn-eras-lede {
-    max-width: min(100%, 1040px) !important;
-    font-size: clamp(50px, 6.3vw, 96px) !important;
-    font-weight: 300 !important;
-    line-height: 1.16 !important;
-    letter-spacing: -0.02em;
-    text-wrap: balance;
-  }
+  /* Override scroll-narrative's 820px cap — era lede fills its container */
+  html.sn-vertical-mode .sn-eras-lede { max-width: none; }
 }
 html.sn-vertical-mode .sn-eras-lede em { color: var(--accent-deep); font-style: italic; font-weight: 300; }
 
@@ -266,5 +276,14 @@ html.sn-vertical-mode .sn-eras-lede em { color: var(--accent-deep); font-style: 
   html.sn-vertical-mode .sn-hero-frame {
     min-height: auto !important;
     padding-bottom: 0 !important;
+  }
+
+  html.sn-vertical-mode {
+    scroll-padding-top: calc(var(--nav-h, 94px) + 16px);
+  }
+
+  html.sn-vertical-mode .sn-panel.sn-writing {
+    padding-top: calc(var(--nav-h, 94px) + clamp(88px, 11vh, 108px)) !important;
+    scroll-margin-top: calc(var(--nav-h, 94px) + 16px);
   }
 }

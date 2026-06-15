@@ -102,7 +102,7 @@
    SECTION SCAFFOLD
    ============================================================ */
 .nl-section {
-  padding: clamp(40px, 5.5vw, 84px) 0 0;
+  padding: clamp(28px, 4vw, 64px) 0 0;
 }
 .nl-section-head {
   display: flex;
@@ -217,9 +217,11 @@
   text-decoration: none;
 }
 .nl-fig--video .nl-media-link {
+  display: block;
   aspect-ratio: 16 / 9;
   background: var(--surface);
   overflow: hidden;
+  position: relative;
 }
 .nl-media-link img {
   transition: opacity 160ms ease, transform 180ms ease;
@@ -230,8 +232,12 @@
   transform: scale(0.992);
 }
 .nl-fig--video img {
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
 }
 .nl-cap a {
   color: inherit;
@@ -319,11 +325,23 @@
 .nl-ev--mediaright .nl-ev-media { order: 2; }
 .nl-ev--medialeft .nl-ev-media .nl-fig img,
 .nl-ev--mediaright .nl-ev-media .nl-fig img { aspect-ratio: 4 / 3; }
+.nl-ev--medialeft .nl-ev-media .nl-fig.is-portrait,
+.nl-ev--mediaright .nl-ev-media .nl-fig.is-portrait { background: transparent; }
+.nl-ev--medialeft .nl-ev-media .nl-fig.is-portrait img,
+.nl-ev--mediaright .nl-ev-media .nl-fig.is-portrait img { aspect-ratio: 9 / 16; object-fit: contain; object-position: top center; background: transparent; }
+.nl-ev--medialeft .nl-ev-media .nl-fig.is-hello-eva,
+.nl-ev--mediaright .nl-ev-media .nl-fig.is-hello-eva {
+  margin-inline: auto;
+  width: min(340px, 68%);
+}
+.nl-ev--medialeft .nl-ev-media .nl-fig.is-hello-eva img,
+.nl-ev--mediaright .nl-ev-media .nl-fig.is-hello-eva img {
+  aspect-ratio: auto;
+  height: auto;
+}
 .nl-ev--medialeft .nl-ev-media .nl-fig--video img,
 .nl-ev--mediaright .nl-ev-media .nl-fig--video img {
-  height: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* layout C — stack: text first, media after ----------------------- */
@@ -361,7 +379,7 @@
 }
 .nl-press-item {
   display: grid;
-  grid-template-columns: 44px 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 6px 22px;
   align-items: baseline;
   padding: clamp(18px, 2vw, 26px) 0;
@@ -410,12 +428,19 @@
    04 — COMING SOON  (anticipation, not admin)
    ============================================================ */
 .nl-featured {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: clamp(26px, 3.2vw, 56px);
-  align-items: center;
+  display: block;
 }
-.nl-featured .nl-fig img { aspect-ratio: 1 / 1; }
+.nl-featured .nl-ev-media {
+  margin-bottom: clamp(22px, 2.4vw, 36px);
+}
+.nl-featured .nl-fig img { aspect-ratio: 16 / 9; }
+.nl-featured-text {
+  display: block;
+  max-width: var(--nl-media-max);
+}
+[aria-label="Current Work"] .nl-ev-support {
+  max-width: 100%;
+}
 .nl-featured-tag {
   font-size: 11px;
   letter-spacing: 0.2em;
@@ -444,7 +469,7 @@
   font-size: 16px;
   line-height: 1.7;
   color: var(--text);
-  max-width: 52ch;
+  max-width: none;
 }
 .nl-featured-when {
   margin-top: 18px;
@@ -480,20 +505,20 @@
   color: var(--text-2);
   max-width: 46ch;
 }
-.nl-soon-item-body a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
+/* .nl-soon-item-body a — inherits from global prose link rule in scroll-narrative.css */
 
 /* ============================================================
    05 — LOOKING AHEAD  (the one register change → Iris threshold)
    ============================================================ */
 .nl-ahead {
-  margin-top: clamp(56px, 7vw, 104px);
+  margin-top: clamp(32px, 4vw, 64px);
   background: var(--bg-warm);            /* haze-elevated — cool, not cream */
   border-top: 0.5px solid var(--sw-iris); /* the single Iris threshold */
 }
 .nl-ahead-inner {
   width: min(var(--site-max), 100%);
   margin: 0 auto;
-  padding: clamp(46px, 6vw, 96px) clamp(24px, 5vw, 80px);
+  padding: clamp(32px, 4vw, 64px) clamp(24px, 5vw, 80px);
 }
 .nl-ahead-label {
   font-size: 12px;
@@ -547,8 +572,11 @@
   gap: clamp(20px, 3vw, 40px);
   margin-top: clamp(48px, 6vw, 88px);
   padding: clamp(36px, 4vw, 60px) 0 clamp(60px, 7vw, 110px);
-  border-top: 1px solid var(--hairline-strong);
+  /* No border: this closing section is separated by its top margin (rule L3). */
 }
+/* Letters end in a quiet closing zone, so the global back-to-top bar drops
+   its rule here too. Scoped to update letters; promote globally only on review. */
+main.nl-letter > .sw-page-footer { border-top: 0; }
 .nl-foot-link {
   display: block;
   color: var(--text);
@@ -576,6 +604,17 @@
    RESPONSIVE
    ============================================================ */
 @media (max-width: 760px) {
+  /* Mobile side gutter — keep content off the screen edges. On desktop the
+     hero and sections zero their horizontal padding because the page is
+     centred within its max-width; on phones there is no such inset, so the
+     title, cover, and section content would otherwise run edge-to-edge.
+     Restore a small, consistent gutter (colored bands stay full-bleed but
+     align their text to the same gutter). */
+  .nl-hero,
+  .nl-section,
+  .nl-foot { padding-left: 16px; padding-right: 16px; }
+  .nl-ahead-inner { padding-left: 16px; padding-right: 16px; }
+
   .nl-ev--medialeft .nl-ev-grid,
   .nl-ev--mediaright .nl-ev-grid {
     grid-template-columns: 1fr;
@@ -597,7 +636,7 @@
   .nl-featured { grid-template-columns: 1fr; }
   .nl-featured .nl-fig img { aspect-ratio: 16 / 11; }
   .nl-foot { grid-template-columns: 1fr; }
-  .nl-press-item { grid-template-columns: 32px 1fr; }
+  .nl-press-item { grid-template-columns: 1fr auto; }
   .nl-press-date { grid-column: 2; text-align: left; margin-top: 2px; }
 }
 
@@ -699,7 +738,7 @@
      above the flat Haze page, so the photo reads as a ghost behind
      the type. */
   z-index: 2;
-  width: clamp(300px, 28vw, 430px);
+  width: clamp(180px, 18vw, 260px);
   margin: 0;
   pointer-events: none;
   transform: translate(-9999px, -9999px);
@@ -717,8 +756,7 @@
 .nl-press-preview img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
   background: var(--surface);
 }
 /* lift the row text above the ghost image */
@@ -754,8 +792,12 @@
   /* personal-voice blocks (Hi again / Looking ahead): label rail left, text right */
   .nl-ahead-inner { display: grid; grid-template-columns: minmax(140px, 0.22fr) minmax(0, 0.78fr); column-gap: clamp(28px, 4vw, 72px); align-items: start; }
   .nl-ahead-label { grid-column: 1; padding-top: 8px; }
+  /* Prose fills its grid column. Do NOT cap with a ch value here: this
+     wrapper renders at body font-size (~16px) while its paragraphs are
+     ~28px, so a ch cap computes far too small and the text becomes a
+     skinny column with dead space beside it. The 0.78fr column governs
+     the measure. (See WIDTH PASS 3 note + CLAUDE.md rules 1, 2a, 14.) */
   .nl-ahead-body { grid-column: 2; margin-top: 0; width: auto; max-width: none; }
-  .nl-ahead-body p { max-width: 58ch; }
   .nl-sign { grid-column: 2; }
 
   /* press headlines can carry a longer line */
@@ -789,6 +831,13 @@
   }
   .nl-section > .nl-ev-note p { margin: 0; max-width: 62ch; }
 
+  /* plain note: no label rail, prose aligns to the left edge at normal measure */
+  .nl-section > .nl-ev-note.nl-ev-note--plain {
+    display: block;
+    grid-template-columns: none;
+    max-width: var(--nl-measure);
+  }
+
   .nl-featured ~ .nl-body-copy { margin-left: calc(53.5% + 28px); max-width: none; }
   .nl-featured ~ .nl-body-copy p { max-width: 56ch; }
 
@@ -810,21 +859,119 @@
    WIDTH PASS 3 (2026-06-12) — rail events with image rows.
    Support image rows inside rail events span the full content
    width instead of stopping at the compact cap, and event notes
-   become label-left / text-right rows so the close of the event
-   returns to the rail axis instead of floating.
-   ============================================================ */
-@media (min-width: 901px) {
-  .nl-ev--herotop .nl-ev-support, .nl-ev--stack .nl-ev-support { max-width: none; margin-left: 0; }
-  .nl-ev--herotop .nl-ev-note, .nl-ev--stack .nl-ev-note {
-    margin-left: 0;
-    max-width: none;
-    display: grid;
-    grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr);
-    column-gap: clamp(28px, 4vw, 72px);
-    align-items: start;
+/* =============================================================
+   PRESS FEATURE BLOCK v3 (2026-06-13) — two-column: image left,
+   text right. Full-width, editorial layout.
+   ============================================================= */
+.nl-press-feature { padding-top: 0; }
+
+.nl-press-feature-inner {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+
+.nl-press-feature-img { flex-shrink: 0; }
+
+.nl-press-feature-img .nl-fig img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nl-press-feature-content { min-width: 0; }
+
+.nl-press-feature-pub {
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin: 0 0 1rem;
+}
+
+.nl-press-feature-title {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.4rem;
+}
+
+.nl-press-feature-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nl-press-feature-title a:hover {
+  color: var(--accent-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.nl-press-feature-byline {
+  font-size: 0.8125rem;
+  color: var(--text-2);
+  margin: 0 0 1.5rem;
+}
+
+.nl-press-feature-body {
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  line-height: 1.72;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
+.nl-press-feature-body + .nl-press-feature-body { margin-top: 14px; }
+
+.nl-press-feature-body a {
+  color: var(--accent-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.nl-press-feature-body a:hover { text-decoration-color: transparent; }
+
+@media (max-width: 900px) {
+  .nl-press-feature-inner { grid-template-columns: 1fr; }
+}
+
+
+/* Press secondary items (Grazia, Fisheye) under the main features */
+.nl-press-feature--secondary {
+  border-top: 1px solid var(--hairline-strong);
+  padding-top: clamp(28px, 3vw, 44px);
+  margin-top: clamp(28px, 3vw, 44px);
+}
+
+.nl-press-also {
+  border-top: 1px solid var(--hairline-strong);
+  margin-top: clamp(28px, 3vw, 44px);
+  padding-top: clamp(8px, 1.2vw, 16px);
+}
+
+/* These "also" rows carry a leading arrow, so they need an explicit
+   three-column track (arrow / text / date). Without it the arrow takes
+   the 1fr track, shoves the text to the right edge, and drops the date
+   onto a second row. */
+.nl-press-also .nl-press-item {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 6px 18px;
+}
+.nl-press-also .nl-press-num {
+  align-self: start;
+  padding-top: 3px;
+}
+
+@media (max-width: 900px) {
+  .nl-press-also .nl-press-item {
+    grid-template-columns: auto minmax(0, 1fr);
   }
-  .nl-ev--herotop .nl-ev-note .nl-ev-note-label, .nl-ev--stack .nl-ev-note .nl-ev-note-label {
-    display: block; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; color: var(--text);
+  .nl-press-also .nl-press-date {
+    grid-column: 2;
+    text-align: left;
+    margin-top: 2px;
   }
-  .nl-ev--herotop .nl-ev-note p, .nl-ev--stack .nl-ev-note p { margin: 0; max-width: 62ch; }
 }

@@ -21,9 +21,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/scroll-narrative.css?v=20260611-ripple-v7">
-  <link rel="stylesheet" href="/scroll-pages.css?v=20260612-hero-deck">
-  <link rel="stylesheet" href="/tttb-redesign.css?v=20260531-ds">
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260614-link-fix">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260615-bp2-related">
+  <link rel="stylesheet" href="/work-gallery.css?v=20260614-spgallery9">
+  <link rel="stylesheet" href="/tttb-redesign.css?v=20260615-tttb-cleanup3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,10 +36,7 @@
     "artMedium": "Interactive installation, dynamic digital artworks, augmented reality, blockchain-linked edition",
     "url": "https://shavonnewong.art/works/the-ties-that-bind/",
     "image": "https://shavonnewong.art/assets/the-ties-that-bind/og-image.jpg",
-    "description": "Interactive digital and physical artworks where virtual bodies respond to identity, time, perception, suspension, and shared burden.",
-    "exhibitionEvent": [
-      { "@type": "Event", "name": "The Ties That Bind solo exhibition", "startDate": "2023-03-17", "location": { "@type": "Place", "name": "UltraSuperNew Gallery, Singapore" } }
-    ],
+    "description": "A blend of storytelling, art, and technology. Each artwork exists in two versions, one shown in the physical exhibition and one on the blockchain.",
     "hasPart": [
       { "@type": "VisualArtwork", "name": "The Duality of ETH - Introvert" },
       { "@type": "VisualArtwork", "name": "The Duality of ETH - Extrovert" },
@@ -89,12 +87,11 @@
   </header>
 
   <nav class="sp-subnav" aria-label="Page sections">
-    <a href="#overview">Overview</a>
-    <a href="#work">Works</a>
-    <a href="#process">Process</a>
-    <a href="#statement">Statement</a>
-    <a href="#supporting-texts">Reading</a>
-    <a href="#exhibitions">Exhibitions</a>
+    <a href="#duality">Duality of Self</a>
+    <a href="#invisible-march">The Invisible March of Time</a>
+    <a href="#beyond-the-surface">Beyond the Surface</a>
+    <a href="#in-suspension">In Suspension</a>
+    <a href="#weight-of-the-world">The Weight of the World</a>
   </nav>
 
   <main id="main-content" class="sp-main sp-project-main">
@@ -102,18 +99,9 @@
       <div class="sp-project-hero-copy">
         <div class="sp-kicker">Interactive digital and physical art &middot; 2023</div>
         <h1 class="sp-title">The Ties <em>That Bind.</em></h1>
-        <p class="sp-project-line">I wanted presence, attention, and collection to become part of the story.</p>
-        <p class="sp-intro">This project is a blend of my love for storytelling, virtual models, physical installation, sensors, augmented reality, and blockchain dynamics across six 1/1 works and one editioned work.</p>
-        <dl class="tttb-hero-facts">
-          <div><dt>Year</dt><dd>2023</dd></div>
-          <div><dt>Exhibition</dt><dd>Solo &middot; UltraSuperNew, Singapore</dd></div>
-          <div><dt>Medium</dt><dd>Installation &middot; AR &middot; blockchain-linked works</dd></div>
-          <div><dt>Catalogue</dt><dd>6 1/1s &middot; 1 edition</dd></div>
-        </dl>
-        <div class="sp-project-actions">
-          <a href="#work" class="sn-section-link">View works &rarr;</a>
-          <a href="/works/" class="sn-section-link">Back to works</a>
-        </div>
+        <p class="sp-project-line">A blend of my love for storytelling, art, and technology.</p>
+        <p class="sp-intro">Each artwork is a virtual model brought to life, telling human stories in ways that push the boundaries of what art can be.</p>
+        <div class="sp-project-actions"><a href="#duality" class="sn-section-link">View works &rarr;</a></div>
       </div>
       <figure class="sp-project-hero-media">
         <img fetchpriority="high" decoding="async" src="/assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.webp" alt="The Ties That Bind exhibition installation view" />
@@ -121,276 +109,115 @@
       </figure>
     </section>
 
-    <section class="sp-section sp-project-grid" id="overview">
-      <div><h2 class="sp-kicker">Overview</h2></div>
-      <div class="sp-text-stack">
-        <p class="sp-copy">The Ties That Bind grew from my belief that technology can enhance storytelling without becoming the spectacle itself. I built each artwork around a virtual model and a human condition: identity, time, perception, suspended life, and shared burden.</p>
-        <p class="sp-copy">Each piece existed in two versions: one that lived in the physical exhibition, and one that was born in the digital realm of the blockchain. In the room, I experimented with footfall sensors, augmented reality, responsive displays, and real-time systems so visitors could experience the works in a more active way.</p>
-        <p class="sp-copy">The idea followed from my earlier experiments with dynamic artworks, especially the moment I realized a digital artwork could stay alive after release. When I was offered a two-week exhibition venue in March 2023, I wanted to push that further between a gallery, a body, and a blockchain system.</p>
-        <p class="sp-copy">Creating this project was both fun and challenging. It gave me space to explore a fusion of physical and digital art, where the same work could be encountered in the room and on-chain, and where interaction could make emotional states more visible.</p>
-        <div class="tttb-overview-media" aria-label="The Ties That Bind exhibition overview media">
-          <figure><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/02-asset-1-copy.webp" alt="The Ties That Bind title artwork"><figcaption>Project identity</figcaption></figure>
-          <figure><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/04-20230317-tttb-exhibition-002.webp" alt="The Ties That Bind opening installation wall"><figcaption>Exhibition entry</figcaption></figure>
+    <section class="sp-section sp-project-grid" id="duality">
+      <div><h2 class="sp-kicker">Duality of Self</h2></div>
+      <div class="sp-text-stack tttb-work">
+        <p class="sp-copy">&ldquo;Duality of Self&rdquo; is a piece very close to my heart. It&rsquo;s a journey into the complex essence of human identity, an exploration of how our introverted and extroverted sides interact and shape us. This artwork was born out of my fascination with the contradictory yet co-existing sides of our personalities. It was a challenge to represent this duality visually, but the dynamic nature of digital art offered a perfect platform.</p>
+        <div class="tttb-fig-row">
+          <figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/one-of-ones/duality-of-eth-introvert.jpg" alt="The Duality of ETH - Introvert artwork still"><figcaption>The Duality of ETH, Introvert</figcaption></figure>
+          <figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/one-of-ones/duality-of-eth-extrovert.jpg" alt="The Duality of ETH - Extrovert artwork still"><figcaption>The Duality of ETH, Extrovert</figcaption></figure>
         </div>
+        <h3 class="tttb-work-sub">Physical Exhibition Version</h3>
+        <p class="sp-copy">When creating the physical exhibition version of &ldquo;Duality of Self&rdquo;, I wanted visitors to feel engaged, to feel a part of the art. I worked with the team at Serial Co to have a customised footfall sensor system built in order to make the artwork respond to the number of people in the space. This interactive installation had two distinct pieces that switched between each other, symbolising the extroverted and introverted sides of our personalities.</p>
+        <p class="sp-copy">As the piece switched from one side to the other, it was as if the artwork was in a dialogue with the visitors, responding to their presence. It was a real thrill to see people experiencing and interacting with the art, examining their own personalities and reflecting on how they express themselves in different social contexts.</p>
+        <div class="tttb-fig-row">
+          <figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/04-20230317-tttb-exhibition-002.webp" alt="Duality of Self physical exhibition version with two screens"><figcaption>Duality of Self, physical exhibition version</figcaption></figure>
+        </div>
+        <h3 class="tttb-work-sub">NFT Version</h3>
+        <p class="sp-copy">For the NFT version, titled &ldquo;The Duality of ETH&rdquo;, I wanted to capture the essence of the physical piece while adding a digital twist. Here, I used Ethereum traffic to decide which stage of the piece was displayed, the introvert or the extrovert. This dynamic change was based on the fluctuating traffic on the Ethereum blockchain, personifying the cryptocurrency as an active participant in the artwork.</p>
+        <p class="sp-copy">I was really excited by this concept of the blockchain directly interacting with the artwork. It offered a whole new layer of engagement for the viewers, inviting them to reflect on the duality of their personalities within the digital realm. It was more than just a visual representation of self-duality, it was a statement on the unpredictable and ever-changing landscape of cryptocurrency.</p>
+        <p class="sp-copy">Creating &ldquo;Duality of Self&rdquo; was a remarkable experience. It was a blend of introspective exploration and technological innovation, and the lessons I learned from it continue to influence my work today.</p>
+        <p class="tttb-work-links"><span class="tttb-work-links-label">NFT links</span> <a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---introvert-1" target="_blank" rel="noreferrer">The Duality of ETH - Introvert (sold)</a> <a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2" target="_blank" rel="noreferrer">The Duality of ETH - Extrovert</a></p>
       </div>
     </section>
 
-    <section class="sp-section sp-project-grid" id="work">
-      <div><h2 class="sp-kicker">Works</h2></div>
-      <div class="tttb-works">
-        <p class="sp-copy tttb-works-intro">I made six 1/1 works and one editioned work, each built around a virtual model, a human condition, and a technical system: <em>identity, time, perception, suspension, and shared burden</em>. Every piece lived twice, once in the gallery room and once on-chain.</p>
-
-        <div class="sp-work-cluster tttb-chapter">
-          <div class="tttb-chapter-head"><span class="tttb-chapter-num">I</span><div class="tttb-chapter-text"><h3 class="tttb-chapter-theme">Identity, <em>the dual self</em></h3><p class="tttb-chapter-lede">I wanted to explore the contradictory parts of personality, the introverted and extroverted sides that coexist in us and change depending on who is around.</p></div></div>
-        <article class="sp-plate" id="duality-introvert">
-          <figure class="sp-plate-media"><img loading="lazy" decoding="async" src="/assets/one-of-ones/duality-of-eth-introvert.jpg" alt="The Duality of ETH - Introvert artwork still"><span class="sp-plate-duration">dynamic work</span></figure>
-          <div class="sp-plate-caption">
-            <div class="sp-plate-num">01.</div>
-            <h3 class="sp-plate-title">The Duality of ETH - Introvert</h3>
-            <div class="sp-plate-meta"><span class="sp-plate-year">2023</span><span class="sp-plate-medium">Dynamic digital artwork &middot; 1/1 &middot; responsive state</span></div>
-            <div class="sp-plate-status">1/1 &middot; sold</div>
-            <p class="sp-plate-body">I made the introvert state as one half of a responsive portrait of personality. In the exhibition, the physical work shifted with the number of people in the room, moving between private and social states. For the digital 1/1, I translated that same idea into Ethereum traffic, letting the chain become the force that affected the figure's inner and outer selves.</p>
-            <div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20The%20Duality%20of%20ETH%20Introvert">studio@shavonnewong.art</a> &middot; <a href="/contact/?type=Acquisition&amp;work=The%20Duality%20of%20ETH%20Introvert">enquire via form</a></p><p class="sp-plate-market"><a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---introvert-1">SuperRare record &rarr;</a><a href="https://etherscan.io/token/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82">Etherscan &rarr;</a><span>Ethereum</span></p></div>
-          </div>
-        </article>
-
-        <article class="sp-plate tttb-plate-flip" id="duality-extrovert">
-          <figure class="sp-plate-media"><img loading="lazy" decoding="async" src="/assets/one-of-ones/duality-of-eth-extrovert.jpg" alt="The Duality of ETH - Extrovert artwork still"><span class="sp-plate-duration">dynamic work</span></figure>
-          <div class="sp-plate-caption">
-            <div class="sp-plate-num">02.</div>
-            <h3 class="sp-plate-title">The Duality of ETH - Extrovert</h3>
-            <div class="sp-plate-meta"><span class="sp-plate-year">2023</span><span class="sp-plate-medium">Dynamic digital artwork &middot; 1/1 &middot; responsive state</span></div>
-            <div class="sp-plate-status">1/1 &middot; available &middot; 6 ETH</div>
-            <p class="sp-plate-body">I made the extrovert state as the companion to the introvert work. I was interested in how the social self appears only in relation to other people, so the physical version changed with the density of visitors in the space. In the digital version, I kept that movement alive through Ethereum activity, making personality feel less fixed and more relational.</p>
-            <div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20The%20Duality%20of%20ETH%20Extrovert">studio@shavonnewong.art</a> &middot; <a href="/contact/?type=Acquisition&amp;work=The%20Duality%20of%20ETH%20Extrovert">enquire via form</a></p><p class="sp-plate-market"><a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2">SuperRare &rarr;</a><a href="https://etherscan.io/token/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82">Etherscan &rarr;</a><span>Ethereum</span></p></div>
-          </div>
-        </article>
-
-        <div class="tttb-work-notes">
-          <article>
-            <h4>Introduction</h4>
-            <p>Duality of Self came from my fascination with the contradictory sides of personality: the inward self and the outward self. I wanted the work to feel less like a fixed portrait and more like a living negotiation between solitude and social presence.</p>
-          </article>
-          <article>
-            <h4>Physical exhibition version</h4>
-            <p>For the gallery version, I worked with Serial Co on a custom footfall sensor system. As the number of people in the room changed, the installation switched between introverted and extroverted states, so visitors became part of the artwork's behavior.</p>
-          </article>
-          <article>
-            <h4>NFT version</h4>
-            <p>For the blockchain version, I reframed that duality through Ethereum traffic. Instead of visitors in a room, network activity determined which state appeared, making the chain itself an active participant in the artwork.</p>
-            <p class="tttb-link-row"><a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---introvert-1">Introvert on SuperRare</a><a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-duality-of-eth---extrovert-2">Extrovert on SuperRare</a></p>
-          </article>
+    <section class="sp-section sp-project-grid" id="invisible-march">
+      <div><h2 class="sp-kicker">The Invisible March of Time</h2></div>
+      <div class="sp-text-stack tttb-work">
+        <p class="sp-copy">&ldquo;The Invisible March of Time&rdquo; is an artwork that delves into the passing of time and our perceptions of it. It&rsquo;s a piece that&rsquo;s close to my heart, as it speaks to our collective experience of time&rsquo;s relentless march. We often feel like time is crawling when we&rsquo;re in the midst of daily life. But whether we notice it or not, time is always moving. The changes can be subtle and hard to see day by day, but they accumulate. The next thing we know, years have passed. This piece serves as a reminder of our mortality, our limited time, and the importance of being present in each moment.</p>
+        <div class="tttb-age-row">
+          <figure class="tttb-fig tttb-age-pair">
+            <span class="tttb-age-frame">
+              <img class="tttb-age-young" loading="lazy" decoding="async" src="/assets/one-of-ones/the-invisible-march-of-time-i-young.jpg" alt="The Invisible March of Time I younger state artwork still">
+              <img class="tttb-age-old" loading="lazy" decoding="async" src="/assets/one-of-ones/the-invisible-march-of-time-i-old.jpg" alt="The Invisible March of Time I older state artwork still">
+            </span>
+            <figcaption>The Invisible March of Time I</figcaption>
+          </figure>
+          <figure class="tttb-fig tttb-age-pair">
+            <span class="tttb-age-frame">
+              <img class="tttb-age-young" loading="lazy" decoding="async" src="/assets/one-of-ones/the-invisible-march-of-time-ii-young.jpg" alt="The Invisible March of Time II younger state artwork still">
+              <img class="tttb-age-old" loading="lazy" decoding="async" src="/assets/one-of-ones/the-invisible-march-of-time-ii-old.jpg" alt="The Invisible March of Time II older state artwork still">
+            </span>
+            <figcaption>The Invisible March of Time II</figcaption>
+          </figure>
         </div>
-        <div class="tttb-media-strip" aria-label="Duality of Self supporting media">
-          <figure><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/15-20230317-tttb-exhibition-003.webp" alt="Gallery visitors viewing Duality of Self"></figure>
-        </div>
-
-        </div>
-
-        <div class="sp-work-cluster tttb-chapter">
-          <div class="tttb-chapter-head"><span class="tttb-chapter-num">II</span><div class="tttb-chapter-text"><h3 class="tttb-chapter-theme">Time, <em>the march we can&rsquo;t feel</em></h3><p class="tttb-chapter-lede">I wanted to make time visible in the way we usually experience it: almost impossible to notice day by day, but undeniable when we return later.</p></div></div>
-        <article class="sp-plate" id="invisible-march-i">
-          <figure class="sp-plate-media"><img loading="lazy" decoding="async" src="/assets/one-of-ones/the-invisible-march-of-time-i.jpg" alt="The Invisible March of Time I artwork still"><span class="sp-plate-duration">30:00 cycle</span></figure>
-          <div class="sp-plate-caption">
-            <div class="sp-plate-num">03.</div>
-            <h3 class="sp-plate-title">The Invisible March of Time I</h3>
-            <div class="sp-plate-meta"><span class="sp-plate-year">2023</span><span class="sp-plate-medium">Single-channel dynamic video &middot; 30:00 cycle &middot; 1/1</span></div>
-            <div class="sp-plate-status">1/1 &middot; sold</div>
-            <p class="sp-plate-body">I made this work to show aging as something almost imperceptible. A woman changes over a thirty-minute cycle, slowly enough that viewers might doubt anything is happening until they return later. I wanted that quiet transformation to hold the strange mismatch between daily life and accumulated time.</p>
-            <div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20The%20Invisible%20March%20of%20Time%20I">studio@shavonnewong.art</a> &middot; <a href="/contact/?type=Acquisition&amp;work=The%20Invisible%20March%20of%20Time%20I">enquire via form</a></p><p class="sp-plate-market"><a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-i-4">SuperRare record &rarr;</a><a href="https://etherscan.io/token/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82">Etherscan &rarr;</a><span>Ethereum</span></p></div>
-          </div>
-        </article>
-
-        <article class="sp-plate tttb-plate-flip" id="invisible-march-ii">
-          <figure class="sp-plate-media"><img loading="lazy" decoding="async" src="/assets/one-of-ones/the-invisible-march-of-time-ii.jpg" alt="The Invisible March of Time II artwork still"><span class="sp-plate-duration">30:00 cycle</span></figure>
-          <div class="sp-plate-caption">
-            <div class="sp-plate-num">04.</div>
-            <h3 class="sp-plate-title">The Invisible March of Time II</h3>
-            <div class="sp-plate-meta"><span class="sp-plate-year">2023</span><span class="sp-plate-medium">Single-channel dynamic video &middot; 30:00 cycle &middot; 1/1</span></div>
-            <div class="sp-plate-status">1/1 &middot; sold</div>
-            <p class="sp-plate-body">I made the second aging work as a companion, so two figures could hold time differently in the same exhibition environment. Together, they ask viewers to wait, return, and notice changes that are too subtle to catch immediately. I wanted looking itself to slow down.</p>
-            <div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20The%20Invisible%20March%20of%20Time%20II">studio@shavonnewong.art</a> &middot; <a href="/contact/?type=Acquisition&amp;work=The%20Invisible%20March%20of%20Time%20II">enquire via form</a></p><p class="sp-plate-market"><a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-ii-3">SuperRare record &rarr;</a><a href="https://etherscan.io/token/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82">Etherscan &rarr;</a><span>Ethereum</span></p></div>
-          </div>
-        </article>
-
-        <div class="tttb-work-notes">
-          <article>
-            <h4>Introduction</h4>
-            <p>The Invisible March of Time came from thinking about how time keeps moving even when it feels still. The daily changes in a face are almost impossible to see, yet they accumulate into years. I wanted the work to remind viewers of mortality, change, and the urgency of being present with the people they love.</p>
-          </article>
-          <article>
-            <h4>Physical exhibition version</h4>
-            <p>In the gallery, I presented two independent figures aging over thirty minutes. The transformation was deliberately gradual: viewers could stay and watch the subtle movement, or return later and encounter the accumulated difference.</p>
-          </article>
-          <article>
-            <h4>NFT version</h4>
-            <p>On-chain, I made the aging logic personal and cyclical. The figures age in relation to my own age, and when the cycle reaches one hundred, I let the artwork fade and begin again, echoing impermanence and renewal.</p>
-            <p class="tttb-link-row"><a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-i-4">Time I on SuperRare</a><a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-ii-3">Time II on SuperRare</a></p>
-          </article>
-        </div>
-
-        </div>
-
-        <div class="sp-work-cluster tttb-chapter">
-          <div class="tttb-chapter-head"><span class="tttb-chapter-num">III</span><div class="tttb-chapter-text"><h3 class="tttb-chapter-theme">Perception, <em>looking as an act</em></h3><p class="tttb-chapter-lede">I wanted this work to challenge how quickly we judge from the outside, and to reward the viewer only when they choose to look deeper.</p></div></div>
-        <article class="sp-plate" id="beyond-the-surface">
-          <figure class="sp-plate-media"><img loading="lazy" decoding="async" src="/assets/one-of-ones/beyond-the-surface.jpg" alt="Beyond the Surface artwork still"><span class="sp-plate-duration">AR reveal</span></figure>
-          <div class="sp-plate-caption">
-            <div class="sp-plate-num">05.</div>
-            <h3 class="sp-plate-title">Beyond the Surface</h3>
-            <div class="sp-plate-meta"><span class="sp-plate-year">2023</span><span class="sp-plate-medium">Augmented reality image &middot; interactive digital artwork &middot; 1/1</span></div>
-            <div class="sp-plate-status">1/1 &middot; sold</div>
-            <p class="sp-plate-body">I made Beyond the Surface begin as a still image and open through interaction. In the exhibition, an Instagram AR filter transformed the printed figure into a moving mirror, revealing hidden layers only when viewers came closer. For the digital version, I carried that same reveal into an interactive NFT, where looking became an action rather than a passive state.</p>
-            <div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20Beyond%20the%20Surface">studio@shavonnewong.art</a> &middot; <a href="/contact/?type=Acquisition&amp;work=Beyond%20the%20Surface">enquire via form</a></p><p class="sp-plate-market"><a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/beyond-the-surface-6">SuperRare record &rarr;</a><a href="https://etherscan.io/token/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82">Etherscan &rarr;</a><span>Ethereum</span></p></div>
-          </div>
-        </article>
-
-        <div class="tttb-work-notes">
-          <article>
-            <h4>Introduction</h4>
-            <p>Beyond the Surface came from wanting to challenge the instinct to judge from the outside. I started with a quiet seated figure and used interaction to reveal that what first appears still or simple has a deeper interior life.</p>
-          </article>
-          <article>
-            <h4>Physical exhibition version</h4>
-            <p>In the room, I presented the work as a print with an Instagram AR filter. When viewers engaged with the QR code and camera view, the still portrait opened into a moving reflection with rippling water, flowers, and a cool blue atmosphere.</p>
-          </article>
-          <article>
-            <h4>NFT version</h4>
-            <p>For the digital version, I kept the same invitation to look deeper. On desktop, interaction unlocked the animated state; on mobile, touching the figure's eyes triggered the reveal. I wanted the act of looking to become the mechanism that changed the work.</p>
-            <p class="tttb-link-row"><a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/beyond-the-surface-6">Beyond the Surface on SuperRare</a></p>
-          </article>
-        </div>
-        <div class="tttb-media-strip tttb-media-strip-two" aria-label="Beyond the Surface supporting media">
-          <figure><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/09-20230317-tttb-exhibition-005.webp" alt="Beyond the Surface printed work with AR filter label"></figure>
-          <figure><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/10-20230317-tttb-exhibition-022.webp" alt="Viewer using a phone to activate Beyond the Surface AR"></figure>
-        </div>
-
-        </div>
-
-        <div class="sp-work-cluster tttb-chapter">
-          <div class="tttb-chapter-head"><span class="tttb-chapter-num">IV</span><div class="tttb-chapter-text"><h3 class="tttb-chapter-theme">Suspension, <em>held while life moves</em></h3><p class="tttb-chapter-lede">I made this from the feeling of being suspended in time, especially during difficult seasons, while life keeps moving around you.</p></div></div>
-        <article class="sp-plate tttb-plate-flip" id="in-suspension">
-          <figure class="sp-plate-media"><img loading="lazy" decoding="async" src="/assets/one-of-ones/in-suspension.jpg" alt="In Suspension artwork still"><span class="sp-plate-duration">dynamic work</span></figure>
-          <div class="sp-plate-caption">
-            <div class="sp-plate-num">06.</div>
-            <h3 class="sp-plate-title">In Suspension</h3>
-            <div class="sp-plate-meta"><span class="sp-plate-year">2023</span><span class="sp-plate-medium">Interactive installation &middot; dynamic digital artwork &middot; 1/1</span></div>
-            <div class="sp-plate-status">1/1 &middot; available &middot; 8 ETH</div>
-            <p class="sp-plate-body">In Suspension holds a solitary figure in stillness while light changes around her. In the gallery, I used visitor presence to affect the speed of those light changes, making time feel responsive without releasing the figure from her pause. I wanted the work to feel quiet, but emotionally heavy: a moment of being held in place while life continues to move.</p>
-            <div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20In%20Suspension">studio@shavonnewong.art</a> &middot; <a href="/contact/?type=Acquisition&amp;work=In%20Suspension">enquire via form</a></p><p class="sp-plate-market"><a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5">SuperRare &rarr;</a><a href="https://etherscan.io/token/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82">Etherscan &rarr;</a><span>Ethereum</span></p></div>
-          </div>
-        </article>
-
-        <div class="tttb-work-notes">
-          <article>
-            <h4>Introduction</h4>
-            <p>In Suspension came from my reflections on life, difficulty, and the moments where it feels like everything is passing by while you are stuck in one place. The seated figure is quiet and almost still, but the changing light around her suggests time passing and pressure shifting.</p>
-          </article>
-          <article>
-            <h4>Physical exhibition version</h4>
-            <p>For the installation, I used footfall sensing so visitors could influence the speed of the light transitions. People in the room could sit with the figure, and their presence affected the pace of the environment without breaking the work's stillness.</p>
-          </article>
-          <article>
-            <h4>NFT version</h4>
-            <p>For the NFT version, I extended the same idea into attention itself. The longer a viewer remains with the work, the more its state can evolve, making quiet engagement part of the artwork's emotional and technical structure.</p>
-            <p class="tttb-link-row"><a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5">In Suspension on SuperRare</a></p>
-          </article>
-        </div>
-        <div class="tttb-media-strip tttb-media-strip-two" aria-label="In Suspension supporting media">
-          <figure><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/01-in-suspension-night.webp" alt="In Suspension night state"></figure>
-          <figure><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/14-20230317-tttb-exhibition-018.webp" alt="In Suspension installed in the gallery"></figure>
-        </div>
-
-        </div>
-
-        <div class="sp-work-cluster tttb-chapter">
-          <div class="tttb-chapter-head"><span class="tttb-chapter-num">V</span><div class="tttb-chapter-text"><h3 class="tttb-chapter-theme">Shared burden, <em>weight, divided</em></h3><p class="tttb-chapter-lede">I wanted the closing edition to make support visible: the more it was collected, the lighter the load became.</p></div></div>
-        <article class="sp-plate sp-edition-summary" id="weight-of-the-world">
-          <figure class="sp-plate-media"><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/17-weightoftheworld-1.webp" alt="The Weight of the World artwork still"><span class="sp-plate-duration">dynamic edition</span></figure>
-          <div class="sp-plate-caption">
-            <div class="sp-plate-num">07.</div>
-            <h3 class="sp-plate-title">The Weight of the World - edition</h3>
-            <div class="sp-plate-meta"><span class="sp-plate-year">2023</span><span class="sp-plate-medium">Dynamic digital artwork &middot; blockchain-linked edition</span></div>
-            <div class="sp-plate-status">Edition of 50 &middot; listed on OpenSea</div>
-            <p class="sp-plate-body">I made this edition to close the project with the idea of shared burden. A woman carries an overwhelming weight, and the image changes as the edition is collected. In the physical exhibition, the gallery version responded to the digital work in real time, turning collecting into a visible act of support.</p>
-            <div class="sp-plate-acquire"><p>For acquisitions: <a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20The%20Weight%20of%20the%20World">studio@shavonnewong.art</a> &middot; <a href="/contact/?type=Acquisition&amp;work=The%20Weight%20of%20the%20World">enquire via form</a></p><p class="sp-plate-market"><a href="https://opensea.io/collection/the-weight-of-the-world-1">OpenSea listings &rarr;</a><a href="https://etherscan.io/token/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82">Etherscan &rarr;</a><span>Ethereum</span></p></div>
-          </div>
-        </article>
-        <div class="tttb-work-notes">
-          <article>
-            <h4>Introduction</h4>
-            <p>The Weight of the World is about the burdens we carry and the relief that can come through community. I wanted the figure's heavy load to make emotional responsibility visible.</p>
-          </article>
-          <article>
-            <h4>Physical exhibition version</h4>
-            <p>During the exhibition, I linked the gallery work to the digital edition. As collectors purchased the NFT version, I let the burden carried by the woman in the physical work lighten in real time, turning support into an observable transformation.</p>
-          </article>
-          <article>
-            <h4>NFT version</h4>
-            <p>With the edition, I wanted collecting to become part of the artwork's meaning. Each purchase reduced the woman's load, shifting the image from isolation toward shared resilience and making the collector's action visible inside the work.</p>
-            <p class="tttb-link-row"><a href="https://opensea.io/collection/the-weight-of-the-world-1">The Weight of the World on OpenSea</a></p>
-          </article>
-        </div>
-        <div class="tttb-media-strip tttb-media-strip-two" aria-label="The Weight of the World supporting media">
-          <figure><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/11-20230317-tttb-exhibition-023.webp" alt="The Weight of the World screen in the gallery"></figure>
-          <figure><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/16-20230317-tttb-exhibition-025.webp" alt="The Weight of the World installation detail"></figure>
-        </div>
-        </div>
+        <h3 class="tttb-work-sub">Physical Exhibition Version</h3>
+        <p class="sp-copy">At the exhibition, &ldquo;The Invisible March of Time&rdquo; presented viewers with a deeply moving digital artwork. It consisted of two independent pieces, each depicting a woman who ages over the course of 30 minutes. The transformation was gradual and almost imperceptible, mirroring how we often perceive aging in real life.</p>
+        <p class="sp-copy">Guests could stand before it, observing the subtle changes as they happened, or return later to see the significant difference. It was an emotional experience, inviting contemplation on the passage of time, the certainty of change, and the fleeting nature of life.</p>
+        <p class="sp-copy">The artwork was designed to encourage viewers to acknowledge that aging is unavoidable and to appreciate the wonder and complexity of life, along with the value of cherishing the time we spend with our loved ones.</p>
+        <h3 class="tttb-work-sub">NFT Version</h3>
+        <p class="sp-copy">On the blockchain, &ldquo;The Invisible March of Time&rdquo; took on a new dynamic. In the NFT version, the age of the woman in the artwork corresponded with my own age, changing every year. This unique feature added a personal touch and a heightened sense of connection with the viewers.</p>
+        <p class="sp-copy">When I reach the age of 100, the artwork will fade away and then restart, mirroring the cyclical nature of life and the inevitability of starting anew. This design was chosen to echo the themes of time&rsquo;s relentless march, the inevitability of change, and the impermanence of everything around us.</p>
+        <p class="sp-copy">Creating and observing this piece was a personal and poignant journey for me, one that I hope resonated with viewers as well. Through &ldquo;The Invisible March of Time,&rdquo; I hoped to invite others to connect more deeply with their own experiences of time, change, and the preciousness of the present.</p>
+        <p class="tttb-work-links"><span class="tttb-work-links-label">NFT links</span> <a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-i-4" target="_blank" rel="noreferrer">The Invisible March of Time I (sold)</a> <a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-ii-3" target="_blank" rel="noreferrer">The Invisible March of Time II (sold)</a></p>
       </div>
     </section>
 
-    <section class="sp-section tttb-interlude" aria-label="Project statement">
-      <p class="tttb-interlude-line">Technology was never the subject for me. It was the system that let each <em>human story</em> unfold.</p>
-      <p class="tttb-interlude-cap">The Ties That Bind &middot; Solo exhibition, 2023</p>
-    </section>
-
-    <section class="sp-section sp-project-grid" id="process">
-      <div><h2 class="sp-kicker">Process</h2></div>
-      <div class="sp-text-stack">
-        <div class="sp-section-media">
-          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.webp" alt="The Ties That Bind entrance wall and exhibition text"><figcaption>Entrance wall</figcaption></figure>
-          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/08-20230317-tttb-exhibition-021.webp" alt="Visitors with The Invisible March of Time installation"><figcaption>Audience encounter</figcaption></figure>
+    <section class="sp-section sp-project-grid" id="beyond-the-surface">
+      <div><h2 class="sp-kicker">Beyond the Surface</h2></div>
+      <div class="sp-text-stack tttb-work">
+        <p class="sp-copy">&ldquo;Beyond the Surface&rdquo; is a personal journey into understanding and acknowledging the layers within each individual. We often form snap judgments about people based on their outward appearance and demeanor. This piece challenges that tendency, encouraging viewers to look beyond initial impressions and uncover the rich depth of character that lies within. Every person has their unique history, their story, this artwork invites viewers to take a step closer and engage more deeply, reminding us that there is always more to a person than what first meets the eye.</p>
+        <figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/one-of-ones/beyond-the-surface.jpg" alt="Beyond the Surface artwork still"><figcaption>Beyond the Surface</figcaption></figure>
+        <h3 class="tttb-work-sub">Physical Exhibition Version</h3>
+        <p class="sp-copy">In the physical exhibition, &ldquo;Beyond the Surface&rdquo; began as a simple print of a woman sitting at a table. But the true essence of the artwork unveiled itself only when viewers interacted with it via an Instagram AR filter. The interaction triggered a mesmerizing video that transformed the still image into a moving mirror, with rippling waves that distorted the woman&rsquo;s reflection. This captivating, otherworldly effect was surrounded by a bouquet of flowers and cool blue tones, adding to the immersive experience.</p>
+        <p class="sp-copy">This moment of discovery underlined the artwork&rsquo;s central idea, the invitation to move beyond the surface, to engage more deeply, and to see past the superficial. With the aid of AR technology, this piece not only created an immersive experience but also highlighted the importance of broadening our perspectives and taking the time to understand the layers within each individual.</p>
+        <div class="tttb-fig-row">
+          <figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/09-20230317-tttb-exhibition-005.webp" alt="Beyond the Surface printed work with AR filter label"><figcaption>Beyond the Surface, printed work</figcaption></figure>
+          <figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/10-20230317-tttb-exhibition-022.webp" alt="Viewer using a phone to activate Beyond the Surface AR"><figcaption>Beyond the Surface, AR activation</figcaption></figure>
+          <figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/11-20230317-tttb-exhibition-023.webp" alt="Beyond the Surface gallery screen"><figcaption>Beyond the Surface, gallery screen</figcaption></figure>
         </div>
-        <p class="sp-copy">I used footfall sensors, AR, dynamic display systems, and blockchain-linked logic, but I never wanted the technology to take center stage. I used it to support emotional behavior: how a room changes a person, how time quietly accumulates, how attention opens an image, and how support can alter the weight someone carries.</p>
-        <p class="sp-copy">I showed the works through physical prints, portrait-format displays, wide screens, QR-enabled labels, and sensor-linked systems. This range of presentation formats mattered to me because each artwork needed a different relationship between visitor, body, and interface.</p>
+        <h3 class="tttb-work-sub">NFT Version</h3>
+        <p class="sp-copy">The NFT version of &ldquo;Beyond the Surface&rdquo; carried this exploration into the digital realm. It started with the same static image of a woman at a table, but viewers could unlock its depths by simply interacting with it. On a computer, this meant clicking on the image and typing &ldquo;beyond&rdquo;, while on mobile devices, a click on the woman&rsquo;s eyes would suffice.</p>
+        <p class="sp-copy">Upon interaction, the image transformed into a mesmerizing video, offering a mirror with rippling waves that beckoned the viewer into an otherworldly atmosphere. Just like the physical version, this digital rendition urged viewers to look deeper, to move beyond the surface, and to see beyond first impressions.</p>
+        <p class="sp-copy">In both its physical and digital forms, &ldquo;Beyond the Surface&rdquo; served as a poignant reminder of the complexity of human nature, urging viewers to engage in thoughtful exploration and to truly see the people they encounter. It stands as a testament to the idea that everyone has depth, a story, a history that&rsquo;s waiting to be discovered if only we take the time to look beyond the surface.</p>
+        <p class="tttb-work-links"><span class="tttb-work-links-label">NFT links</span> <a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/beyond-the-surface-6" target="_blank" rel="noreferrer">Beyond the Surface (sold)</a></p>
       </div>
     </section>
 
-    <section class="sp-section sp-project-grid" id="statement">
-      <div><h2 class="sp-kicker">Artist statement</h2></div>
-      <div class="sp-text-stack">
-        <p class="sp-copy">With The Ties That Bind, I treated technology as a narrative material, not as spectacle. I used technical structures to make human conditions visible: dual selves, aging, hidden depth, suspended time, and communal responsibility. I wanted viewers to notice how their own presence could change the story.</p>
+    <section class="sp-section sp-project-grid" id="in-suspension">
+      <div><h2 class="sp-kicker">In Suspension</h2></div>
+      <div class="sp-text-stack tttb-work">
+        <p class="sp-copy">&ldquo;In Suspension&rdquo; is an artwork born from reflections on life and its fleeting nature. This piece is about those moments in life where we feel suspended in time, especially during challenging times. It explores how sometimes it feels like life just passes us by, slipping through our fingers like grains of sand. This sensation can be particularly overpowering when we&rsquo;re going through a hard time, finding it difficult to remain grounded in reality.</p>
+        <div class="tttb-fig-row"><figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/one-of-ones/in-suspension.jpg" alt="In Suspension artwork still"><figcaption>In Suspension</figcaption></figure><figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/01-in-suspension-night.webp" alt="In Suspension night state"><figcaption>In Suspension, night state</figcaption></figure></div><h3 class="tttb-work-sub">Physical Exhibition Version</h3><p class="sp-copy">In the physical version of &ldquo;In Suspension&rdquo;, the viewers come face-to-face with a solitary individual sitting at a table, surrounded by a shifting spectacle of light, a symbol of the relentless march of time. This piece was designed to be interactive, using a customized footfall sensor system. The presence and movement of visitors in the exhibition space dictated the speed of the light changes, creating an immersive experience that&rsquo;s unique to each visitor.</p><p class="sp-copy">This artwork isn&rsquo;t just an observation but an invitation. It asks viewers to sit, to stay, and to share a moment of peace with the figure. In the stillness, the subtle movements of the figure bring forth a sense of suspension, a feeling of being stuck in a single moment. Yet the ever-changing lights remind us of time&rsquo;s continuous march. This dichotomy invites viewers to reflect on their own lives, the power of connection, and the comfort that comes from shared understanding and support.</p><figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/14-20230317-tttb-exhibition-018.webp" alt="In Suspension installed in the gallery"><figcaption>In Suspension, gallery view</figcaption></figure><h3 class="tttb-work-sub">NFT Version</h3><p class="sp-copy">The digital counterpart, the NFT version of &ldquo;In Suspension&rdquo;, continues the exploration of the theme but in the boundless space of the blockchain. Just like in the physical version, the artwork features an individual in a state of suspension, surrounded by the shifting states of light that mark the passage of time.</p><p class="sp-copy">The unique aspect of this digital piece is its dynamism. The artwork evolves based on how long a viewer engages with it. It encourages viewers to sit and be present with the figure, just like its physical counterpart. This engagement not only provides a moment of introspective peace for the viewer but also subtly changes the artwork itself.</p><p class="sp-copy">The gentle movements of the character in this state of suspension stimulate introspection and deep inner exploration. The power of connection and human support is amplified in this digital space, reinforcing the concept that no matter how alone we may feel, we are part of a community that shares and understands our experiences.</p><p class="tttb-work-links"><span class="tttb-work-links-label">NFT links</span> <a href="https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/in-suspension-5" target="_blank" rel="noreferrer">In Suspension</a></p>
       </div>
     </section>
 
-    <section class="sp-section sp-project-grid" id="supporting-texts">
-      <div><h2 class="sp-kicker">Supporting texts</h2></div>
-      <div class="sp-text-stack">
-        <p class="sp-copy">This project extends my earlier experiments with dynamic artwork and asks how digital systems can carry intimacy without reducing the work to novelty. I was drawing from installation art, responsive media, performance, and the social language of blockchain collecting.</p>
-      </div>
-    </section>
-
-    <section class="sp-section sp-project-grid" id="exhibitions">
-      <div><h2 class="sp-kicker">Exhibitions</h2></div>
-      <div class="sp-text-stack">
-        <dl class="sp-detail-grid">
-          <dt>2023</dt><dd>The Ties That Bind solo exhibition, UltraSuperNew Gallery, Singapore. Shown works: full interactive installation suite and related dynamic digital works.</dd>
-        </dl>
-      </div>
-    </section>
-
-    <section class="sp-section sp-project-grid" id="related">
-      <div><h2 class="sp-kicker">Related projects</h2></div>
-      <div class="sp-text-stack">
-        <nav class="sp-prev-next" aria-label="Project navigation">
-          <a class="sp-prev" href="/works/meet-eva-here/">&larr; Meet Eva Here</a>
-          <a class="sp-next" href="/works/whirlwind-of-the-waking-dream/">Whirlwind of the Waking Dream &rarr;</a>
-        </nav>
-        <div class="sp-related-grid">
-          <article class="sp-related-card"><figure><img loading="lazy" decoding="async" src="/assets/meet-eva-here/06-dsc00661.webp" alt="Meet Eva Here"></figure><h3>Meet Eva Here</h3><p>Interactive AI and exhibition design.</p><a href="/works/meet-eva-here/">View project</a></article>
-          <article class="sp-related-card"><figure><img loading="lazy" decoding="async" src="/assets/videos/whirlwind-cover.webp" alt="Whirlwind of the Waking Dream"></figure><h3>Whirlwind of the Waking Dream</h3><p>3D video as single work.</p><a href="/works/whirlwind-of-the-waking-dream/">View work</a></article>
-          <article class="sp-related-card"><figure><img loading="lazy" decoding="async" src="/assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy"></figure><h3>By Proxy</h3><p>CGI, photography, and memory.</p><a href="/works/by-proxy/">View project</a></article>
+    <section class="sp-section sp-project-grid" id="weight-of-the-world">
+      <div><h2 class="sp-kicker">The Weight of the World</h2></div>
+      <div class="sp-text-stack tttb-work">
+        <p class="sp-copy">&ldquo;The Weight of the World&rdquo; is an artwork very close to my heart. It&rsquo;s a reflection of the human experience, our struggles, our challenges, and the weight of responsibilities we all carry in life. But more importantly, it&rsquo;s about the power of community and sharing our burdens with others.</p>
+        <figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/17-weightoftheworld-1.webp" alt="The Weight of the World artwork still"><figcaption>The Weight of the World</figcaption></figure>
+        <h3 class="tttb-work-sub">Physical Exhibition Version</h3>
+        <p class="sp-copy">At the physical exhibition, viewers saw an image of a woman shouldering heavy burdens, visually representing the challenges and struggles we all face in life. The idea was to embody how the world&rsquo;s weight can sometimes feel overwhelming and almost insurmountable. But the magic of this piece was its real-time connection with its digital counterpart on the blockchain.</p>
+        <p class="sp-copy">As the two-week exhibition went on, and more collectors purchased the NFT version of the piece, something amazing happened. The heavy burdens the woman was carrying in the physical artwork began to lighten in real time. It was a stunning visual representation of the transformative power of community and shared struggles.</p>
+        <div class="tttb-fig-row">
+          <figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/15-20230317-tttb-exhibition-003.webp" alt="The Weight of the World gallery screen"><figcaption>The Weight of the World, gallery screen</figcaption></figure>
+          <figure class="tttb-fig"><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/16-20230317-tttb-exhibition-025.webp" alt="The Weight of the World installation detail"><figcaption>The Weight of the World, installation detail</figcaption></figure>
         </div>
+        <h3 class="tttb-work-sub">NFT Version</h3>
+        <p class="sp-copy">The NFT version of &ldquo;The Weight of the World&rdquo; was an integral part of the overall concept. Each time the artwork was purchased, the woman&rsquo;s load became visibly lighter. This transformation offered a powerful message: we don&rsquo;t have to carry all our burdens alone. By reaching out for support and sharing our struggles with others, we can find relief, feel lighter, and perhaps even find the strength to overcome.</p>
+        <p class="sp-copy">Seeing the changes happening in real time as more collectors engaged with the piece was a beautiful manifestation of this concept. It emphasized that even when the world&rsquo;s weight feels unbearable, we&rsquo;re not alone, a reminder that speaks volumes beyond the digital realm, into our lives.</p>
+        <p class="sp-copy">In the end, &ldquo;The Weight of The World&rdquo; is not just an artwork. It&rsquo;s a symbol of human struggle, resilience, and the power of community. I hope it serves as a reminder to us all that it&rsquo;s okay to share our burdens, reach out for support, and face our struggles together.</p>
+        <p class="tttb-work-links"><span class="tttb-work-links-label">NFT links</span> <a href="https://opensea.io/collection/the-weight-of-the-world-1" target="_blank" rel="noreferrer">The Weight of the World on OpenSea</a></p>
+      </div>
+    </section>
+
+    <section class="sp-section sp-related-section" id="related">
+      <h2 class="sp-kicker">More works</h2>
+      <div class="sp-related-grid">
+        <a class="sp-related-card" href="/works/conditional/"><figure><img loading="lazy" decoding="async" src="/assets/conditional/compliance-reality.webp" alt="Conditional installation view showing viewers facing the screen"></figure><h3>Conditional</h3><p>A mirror that renders the room in full but erases every human from it.</p></a>
+        <a class="sp-related-card" href="/works/meet-eva-here/"><figure><img loading="lazy" decoding="async" src="/assets/meet-eva-here/06-dsc00661.webp" alt="Meet Eva Here installation"></figure><h3>Meet Eva Here</h3><p>An AI companion that received thousands of confessions and the hundred conversations made public.</p></a>
+        <a class="sp-related-card" href="/works/after-ophelia/"><figure><img loading="lazy" decoding="async" src="/assets/after-ophelia/01-ophelia-reassembled-print.webp" alt="After Ophelia"></figure><h3>After Ophelia</h3><p>A figure described by strangers and rebuilt from what they got wrong.</p></a>
       </div>
     </section>
 
@@ -400,10 +227,12 @@
       </div>
     </footer>
   </main>
-<script src="/assets/js/plate-status.js?v=20260527-plate-status"></script>
+  <script src="/assets/js/plate-status.js?v=20260527-plate-status"></script>
   <script src="/assets/js/sustainability.js?v=20260527-works-catalog"></script>
   <script src="/assets/js/subnav.js?v=20260527-subnav"></script>
-  <script src="/site-header.js?v=20260606-footer"></script><script src="/site-i18n.js?v=20260604-fix"></script>
+  <script src="/site-header.js?v=20260606-footer"></script>
+  <script src="/site-i18n.js?v=20260604-fix"></script>
   <script src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              

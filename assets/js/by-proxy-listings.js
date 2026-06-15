@@ -67,6 +67,11 @@
   async function applyListings() {
     resetListedState();
 
+    if (['localhost', '127.0.0.1'].includes(window.location.hostname)) {
+      setBanner('Live listing check unavailable.', COLLECTION_URL, 'View OpenSea');
+      return;
+    }
+
     try {
       const payload = await loadListings();
       const listings = Array.isArray(payload?.listings) ? payload.listings : [];
