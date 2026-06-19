@@ -4,21 +4,24 @@
     <loc>https://www.shavonnewong.art/</loc>
     <lastmod>2026-06-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.shavonnewong.art/?lang=zh-Hans"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shavonnewong.art/?lang=zh-Hant"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.shavonnewong.art/?lang=ja"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.shavonnewong.art/?lang=ko"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://www.shavonnewong.art/?lang=th"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.shavonnewong.art/?lang=fr"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.shavonnewong.art/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.shavonnewong.art/?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.shavonnewong.art/?lang=it"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/"/>
   </url>
+  <!-- i18n:about-urls:start -->
   <url>
     <loc>https://www.shavonnewong.art/about/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.shavonnewong.art/zh-hans/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/about/"/>
   </url>
+  <url>
+    <loc>https://www.shavonnewong.art/zh-hans/about/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.shavonnewong.art/zh-hans/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/about/"/>
+  </url>
+<!-- i18n:about-urls:end -->
   <url>
     <loc>https://www.shavonnewong.art/contact/</loc>
     <lastmod>2026-06-04</lastmod>

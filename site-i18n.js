@@ -3,18 +3,18 @@
 
   const storageKey = 'sw-language';
   const fallbackLanguage = 'en';
+  // Active (tier-1) languages. Each carries a pathSlug used for the localized
+  // URL prefix (e.g. /zh-hans/about/). en lives at the root with no prefix.
   const languages = [
-    { code: 'en', htmlLang: 'en', label: 'English', short: 'EN' },
-    { code: 'zh-Hans', htmlLang: 'zh-Hans', label: '简体中文', short: '简' },
-    { code: 'zh-Hant', htmlLang: 'zh-Hant', label: '繁體中文', short: '繁' },
-    { code: 'ja', htmlLang: 'ja', label: '日本語', short: '日' },
-    { code: 'ko', htmlLang: 'ko', label: '한국어', short: 'KO' },
-    { code: 'th', htmlLang: 'th', label: 'ไทย', short: 'TH' },
-    { code: 'fr', htmlLang: 'fr', label: 'Français', short: 'FR' },
-    { code: 'es', htmlLang: 'es', label: 'Español', short: 'ES' },
-    { code: 'de', htmlLang: 'de', label: 'Deutsch', short: 'DE' },
-    { code: 'it', htmlLang: 'it', label: 'Italiano', short: 'IT' }
+    { code: 'en', htmlLang: 'en', label: 'English', short: 'EN', pathSlug: '' },
+    { code: 'zh-Hans', htmlLang: 'zh-Hans', label: '简体中文', short: '简', pathSlug: 'zh-hans' },
+    { code: 'zh-Hant', htmlLang: 'zh-Hant', label: '繁體中文', short: '繁', pathSlug: 'zh-hant' },
+    { code: 'fr', htmlLang: 'fr', label: 'Français', short: 'FR', pathSlug: 'fr' },
+    { code: 'th', htmlLang: 'th', label: 'ไทย', short: 'TH', pathSlug: 'th' }
   ];
+  // Tier-2 languages (ja, ko, es, de, it) are parked until phase 2. Their
+  // dictionaries remain defined below but are not offered in the switcher
+  // until a reviewed static build exists for them.
 
   const en = {
     'meta.indexTitle': 'Shavonne Wong | New media artist (AI, 3D, interactive installation)',
@@ -154,18 +154,19 @@
       'home.heroMedia.meetEva.meta': '2024-2025 / AI 伴侣 / 装置',
       'home.heroMedia.ties.meta': '2022 / 3D 影像装置',
       'home.heroMedia.proxy.meta': '2022 / 3D 影像系列',
-      'home.heroMedia.whirlwind.label': 'Whirlwind of the Waking Dream - video generativo 3D',
-      'home.heroMedia.afterOphelia.label': 'Impresi?n After Ophelia',
-      'home.heroMedia.meetEva.label': 'Instalaci?n Meet Eva Here',
-      'home.heroMedia.ties.label': 'Exposici?n The Ties That Bind',
-      'home.heroMedia.proxy.label': 'Imagen fija By Proxy',
-      'home.heroMedia.whirlwind.label': 'Whirlwind of the Waking Dream - 3D ?????',
-      'home.heroMedia.afterOphelia.label': 'After Ophelia ??',
-      'home.heroMedia.meetEva.label': 'Meet Eva Here ??',
-      'home.heroMedia.ties.label': 'The Ties That Bind ??',
-      'home.heroMedia.proxy.label': 'By Proxy ??',
+      'home.heroMedia.whirlwind.label': 'Whirlwind of the Waking Dream，3D 生成影像',
+      'home.heroMedia.afterOphelia.label': 'After Ophelia 版画',
+      'home.heroMedia.meetEva.label': 'Meet Eva Here 装置',
+      'home.heroMedia.ties.label': 'The Ties That Bind 展览',
+      'home.heroMedia.proxy.label': 'By Proxy 静帧',
       'home.eras.kicker': '实践',
       'home.eras.title': '三个阶段',
+      'home.eras.lede': '我从<em>时尚摄影</em>起步。自 2020 年起，我投入 <em>3D 与虚拟人类</em>的创作，并自 2023 年起也开始制作让观众成为作品一部分的<em>互动装置</em>。',
+      'home.eras.act3dEyebrow': '自 2020 年 · 持续中',
+      'home.eras.act3dTitle': '3D 与虚拟人类',
+      'home.eras.actAiEyebrow': '自 2023 年 · 持续中',
+      'home.eras.actAiTitle': '互动 AI',
+      'home.eras.seeWorks': '查看作品 ->',
       'home.eras.photography': '摄影',
       'home.eras.virtualHumans': '3D 与虚拟人类',
       'home.eras.interactiveAi': '互动 AI',
@@ -223,16 +224,16 @@
       'home.contact.socialAria': '在其他平台找到我'
     },
     'zh-Hant': {
-      'home.heroMedia.whirlwind.meta': '2024 / 3D / ???',
-      'home.heroMedia.afterOphelia.meta': '2025 / ?? AI / ????',
-      'home.heroMedia.meetEva.meta': '2024-2025 / AI ?? / ??',
-      'home.heroMedia.ties.meta': '2022 / 3D ????',
-      'home.heroMedia.proxy.meta': '2022 / 3D ????',
-      'home.heroMedia.whirlwind.label': 'Whirlwind of the Waking Dream - 3D ?????',
-      'home.heroMedia.afterOphelia.label': 'After Ophelia ??',
-      'home.heroMedia.meetEva.label': 'Meet Eva Here ??',
-      'home.heroMedia.ties.label': 'The Ties That Bind ??',
-      'home.heroMedia.proxy.label': 'By Proxy ??',
+      'home.heroMedia.whirlwind.meta': '2024 / 3D / 生成式',
+      'home.heroMedia.afterOphelia.meta': '2025 / 互動 AI / 版畫系列',
+      'home.heroMedia.meetEva.meta': '2024-2025 / AI 伴侶 / 裝置',
+      'home.heroMedia.ties.meta': '2022 / 3D 影像裝置',
+      'home.heroMedia.proxy.meta': '2022 / 3D 影像系列',
+      'home.heroMedia.whirlwind.label': 'Whirlwind of the Waking Dream，3D 生成影像',
+      'home.heroMedia.afterOphelia.label': 'After Ophelia 版畫',
+      'home.heroMedia.meetEva.label': 'Meet Eva Here 裝置',
+      'home.heroMedia.ties.label': 'The Ties That Bind 展覽',
+      'home.heroMedia.proxy.label': 'By Proxy 靜幀',
       'ui.languageLabel': '語言',
       'ui.displayOptions': '顯示選項',
       'nav.home': '首頁',
@@ -257,6 +258,12 @@
       'home.hero.subtitle': '3D、AI 與互動裝置。',
       'home.eras.kicker': '實踐',
       'home.eras.title': '三個階段',
+      'home.eras.lede': '我從<em>時尚攝影</em>起步。自 2020 年起，我投入 <em>3D 與虛擬人類</em>的創作，並自 2023 年起也開始製作讓觀眾成為作品一部分的<em>互動裝置</em>。',
+      'home.eras.act3dEyebrow': '自 2020 年 · 持續中',
+      'home.eras.act3dTitle': '3D 與虛擬人類',
+      'home.eras.actAiEyebrow': '自 2023 年 · 持續中',
+      'home.eras.actAiTitle': '互動 AI',
+      'home.eras.seeWorks': '查看作品 ->',
       'home.eras.photography': '攝影',
       'home.eras.virtualHumans': '3D 與虛擬人類',
       'home.eras.interactiveAi': '互動 AI',
@@ -496,16 +503,16 @@
       'home.contact.socialAria': '다른 곳에서 찾기'
     },
     th: {
-      'home.heroMedia.whirlwind.meta': '2024 / 3D / ??????????',
-      'home.heroMedia.afterOphelia.meta': '2025 / AI ????????? / ???????????',
-      'home.heroMedia.meetEva.meta': '2024-2025 / ?????? AI / ??????????',
-      'home.heroMedia.ties.meta': '2022 / ???????????????? 3D',
-      'home.heroMedia.proxy.meta': '2022 / ????????? 3D',
-      'home.heroMedia.whirlwind.label': 'Whirlwind of the Waking Dream - ?????? 3D ??????????',
-      'home.heroMedia.afterOphelia.label': '???????? After Ophelia',
-      'home.heroMedia.meetEva.label': '?????????? Meet Eva Here',
-      'home.heroMedia.ties.label': '????????? The Ties That Bind',
-      'home.heroMedia.proxy.label': '??????? By Proxy',
+      'home.heroMedia.whirlwind.meta': '2024 / 3D / เจเนอเรทีฟ',
+      'home.heroMedia.afterOphelia.meta': '2025 / AI แบบโต้ตอบ / ชุดภาพพิมพ์',
+      'home.heroMedia.meetEva.meta': '2024-2025 / เพื่อน AI / งานติดตั้ง',
+      'home.heroMedia.ties.meta': '2022 / งานติดตั้งวิดีโอ 3D',
+      'home.heroMedia.proxy.meta': '2022 / ชุดวิดีโอ 3D',
+      'home.heroMedia.whirlwind.label': 'Whirlwind of the Waking Dream วิดีโอ 3D เจเนอเรทีฟ',
+      'home.heroMedia.afterOphelia.label': 'ภาพพิมพ์ After Ophelia',
+      'home.heroMedia.meetEva.label': 'งานติดตั้ง Meet Eva Here',
+      'home.heroMedia.ties.label': 'นิทรรศการ The Ties That Bind',
+      'home.heroMedia.proxy.label': 'ภาพนิ่ง By Proxy',
       'ui.languageLabel': 'ภาษา',
       'ui.displayOptions': 'ตัวเลือกการแสดงผล',
       'nav.home': 'หน้าแรก',
@@ -530,6 +537,12 @@
       'home.hero.subtitle': '3D, AI และงานติดตั้งแบบโต้ตอบ',
       'home.eras.kicker': 'แนวปฏิบัติ',
       'home.eras.title': 'สามยุค',
+      'home.eras.lede': 'ฉันเริ่มต้นจาก<em>การถ่ายภาพแฟชั่น</em> ตั้งแต่ปี 2020 ฉันสร้างงานด้าน <em>3D และมนุษย์เสมือน</em> และตั้งแต่ปี 2023 ก็เริ่มทำ<em>งานติดตั้งแบบโต้ตอบ</em>ที่ให้ผู้ชมกลายเป็นส่วนหนึ่งของผลงาน',
+      'home.eras.act3dEyebrow': 'ตั้งแต่ 2020 · ต่อเนื่อง',
+      'home.eras.act3dTitle': '3D และมนุษย์เสมือน',
+      'home.eras.actAiEyebrow': 'ตั้งแต่ 2023 · ต่อเนื่อง',
+      'home.eras.actAiTitle': 'AI แบบโต้ตอบ',
+      'home.eras.seeWorks': 'ดูผลงาน ->',
       'home.eras.photography': 'ภาพถ่าย',
       'home.eras.virtualHumans': '3D และมนุษย์เสมือน',
       'home.eras.interactiveAi': 'AI แบบโต้ตอบ',
@@ -587,12 +600,12 @@
       'home.contact.socialAria': 'พบฉันได้ที่อื่น'
     },
     fr: {
-      'home.heroMedia.whirlwind.meta': '2024 / 3D / g?n?ratif',
-      'home.heroMedia.afterOphelia.meta': '2025 / IA interactive / s?rie d?impressions',
+      'home.heroMedia.whirlwind.meta': '2024 / 3D / génératif',
+      'home.heroMedia.afterOphelia.meta': '2025 / IA interactive / série d’impressions',
       'home.heroMedia.meetEva.meta': '2024-2025 / compagne IA / installation',
-      'home.heroMedia.ties.meta': '2022 / installation vid?o 3D',
-      'home.heroMedia.proxy.meta': '2022 / s?rie vid?o 3D',
-      'home.heroMedia.whirlwind.label': 'Whirlwind of the Waking Dream - vid?o g?n?rative 3D',
+      'home.heroMedia.ties.meta': '2022 / installation vidéo 3D',
+      'home.heroMedia.proxy.meta': '2022 / série vidéo 3D',
+      'home.heroMedia.whirlwind.label': 'Whirlwind of the Waking Dream, vidéo générative 3D',
       'home.heroMedia.afterOphelia.label': 'Tirage After Ophelia',
       'home.heroMedia.meetEva.label': 'Installation Meet Eva Here',
       'home.heroMedia.ties.label': 'Exposition The Ties That Bind',
@@ -621,6 +634,12 @@
       'home.hero.subtitle': '3D, IA et installations interactives.',
       'home.eras.kicker': 'Pratique',
       'home.eras.title': 'Trois périodes',
+      'home.eras.lede': 'J’ai commencé par la <em>photographie de mode</em>. Depuis 2020, je travaille en <em>3D et humains virtuels</em>, et depuis 2023 je crée aussi des <em>installations interactives</em> où le spectateur fait partie de l’œuvre.',
+      'home.eras.act3dEyebrow': 'Depuis 2020 · en cours',
+      'home.eras.act3dTitle': '3D et humains virtuels',
+      'home.eras.actAiEyebrow': 'Depuis 2023 · en cours',
+      'home.eras.actAiTitle': 'IA interactive',
+      'home.eras.seeWorks': 'Voir les œuvres ->',
       'home.eras.photography': 'Photographie',
       'home.eras.virtualHumans': '3D et humains virtuels',
       'home.eras.interactiveAi': 'IA interactive',
@@ -1091,6 +1110,21 @@
     }
   }
 
+  // Localized pages live under a path prefix (e.g. /zh-hans/about/). Infer the
+  // language from the first path segment so static localized URLs render in
+  // their language with no query string. This is the end-state mechanism the
+  // localized build relies on.
+  function readPathLanguage() {
+    try {
+      const seg = (window.location.pathname.split('/').filter(Boolean)[0] || '').toLowerCase();
+      if (!seg) return null;
+      const match = languages.find((language) => language.pathSlug && language.pathSlug === seg);
+      return match ? match.code : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
   function isHomepage() {
     const path = window.location.pathname.replace(/index\.html$/, '');
     return path === '/' || path === '';
@@ -1131,7 +1165,8 @@
     if (initialized) return;
     initialized = true;
     const fromUrl = readUrlLanguage();
-    currentLanguage = fromUrl || readStoredLanguage();
+    const fromPath = readPathLanguage();
+    currentLanguage = fromUrl || fromPath || readStoredLanguage();
     setLanguage(currentLanguage, { persist: Boolean(fromUrl) });
   }
 

@@ -13,6 +13,7 @@ const root = process.cwd();
 
 const cleanRoutes = {
   "/about/": "about.html",
+  "/zh-hans/about/": "zh-hans-about.html",
   "/contact/": "contact.html",
   "/press/": "press.html",
   "/writing/": "writing.html",

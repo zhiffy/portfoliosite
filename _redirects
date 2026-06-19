@@ -163,13 +163,19 @@
 /nfts/v/the-illusion-of-connection-i https://foundation.app/@shavonnewong/shasha/12 301!
 /nfts/v/the-illusion-of-connection-i/ https://foundation.app/@shavonnewong/shasha/12 301!
 /nfts/v/the-invisible-march-of-time-i https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-i-4 301!
-/nfts/v/the-invisible-march-of-time-i/ https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisi
+/nfts/v/the-invisible-march-of-time-i/ https://superrare.com/artwork/eth/0xafc2862fd0fb2ebe5da762ccc957f51cc4612f82/the-invisible-march-of-time-i-4 301!
 
 # Clean routes for standalone pages (mirror of the Works pattern).
 /about/ /about.html 200
 /contact/ /contact.html 200
 /press/ /press.html 200
 /writing/ /writing.html 200
+
+# i18n:localized-routes:start
+/zh-hans/about/ /zh-hans-about.html 200
+/zh-hans-about.html /zh-hans/about/ 301!
+# i18n:localized-routes:end
+
 /update2023jan/ /update2023jan.html 200
 /update2023june/ /update2023june.html 200
 /update2024jan/ /update2024jan.html 200
@@ -208,14 +214,4 @@
 # Catch-all safety nets so no legacy /nfts or /projects URL can 404 (specific rules above win first).
 /nfts/v/* /works/#tab=single 301!
 /nfts/* /works/available/ 301!
-/projects/* /works/ 301!
-
-# Legacy Squarespace top-level pages still receiving impressions, with no prior mapping.
-/art /works/ 301!
-/art/ /works/ 301!
-/links / 301!
-/links/ / 301!
-/11x / 301!
-/11x/ / 301!
-/main / 301!
-/main/ / 301!
+/projects
