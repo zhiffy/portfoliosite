@@ -3,8 +3,8 @@
 
   const storageKey = 'sw-language';
   const fallbackLanguage = 'en';
-  // Active (tier-1) languages. Each carries a pathSlug used for the localized
-  // URL prefix (e.g. /zh-hans/about/). en lives at the root with no prefix.
+  // Active (tier-1) languages. Each carries a pathSlug used for page-first
+  // localized URLs (e.g. /about/zh-hans/). en lives at the page root.
   const languages = [
     { code: 'en', htmlLang: 'en', label: 'English', short: 'EN', pathSlug: '' },
     { code: 'zh-Hans', htmlLang: 'zh-Hans', label: '简体中文', short: '简', pathSlug: 'zh-hans' },
@@ -1116,13 +1116,13 @@
     }
   }
 
-  // Localized pages live under a path prefix (e.g. /zh-hans/about/). Infer the
-  // language from the first path segment so static localized URLs render in
-  // their language with no query string. This is the end-state mechanism the
-  // localized build relies on.
+  // Localized pages are page-first: /<page>/<lang>/ (e.g. /about/zh-hans/).
+  // Infer the language from the LAST path segment so static localized URLs
+  // render in their language with no query string.
   function readPathLanguage() {
     try {
-      const seg = (window.location.pathname.split('/').filter(Boolean)[0] || '').toLowerCase();
+      const segs = window.location.pathname.split('/').filter(Boolean);
+      const seg = (segs[segs.length - 1] || '').toLowerCase();
       if (!seg) return null;
       const match = languages.find((language) => language.pathSlug && language.pathSlug === seg);
       return match ? match.code : null;
@@ -1155,8 +1155,6 @@
 
   function localPreviewPath(pathname) {
     if (!isLocalPreviewHost()) return pathname;
-    const aboutMatch = pathname.match(/^\/(zh-hans|zh-hant)\/about\/?$/i);
-    if (aboutMatch) return '/' + aboutMatch[1].toLowerCase() + '-about.html';
     return pathname;
   }
 
@@ -1180,6 +1178,10 @@
   function isAboutUrl(url) {
     const path = url.pathname.toLowerCase();
     return /^\/about(?:\.html|\/)?$/.test(path)
+      || /^\/about\/zh-hans\/?$/.test(path)
+      || /^\/about\/zh-hant\/?$/.test(path)
+      || /^\/about-zh-hans\.html$/.test(path)
+      || /^\/about-zh-hant\.html$/.test(path)
       || /^\/zh-hans\/about\/?$/.test(path)
       || /^\/zh-hant\/about\/?$/.test(path)
       || /^\/zh-hans-about\.html$/.test(path)
@@ -1204,7 +1206,7 @@
       if (!meta || code === fallbackLanguage) {
         target.pathname = '/about/';
       } else {
-        target.pathname = '/' + meta.pathSlug + '/about/';
+        target.pathname = '/about/' + meta.pathSlug + '/';
       }
       target.search = '';
       return localizeHref(target.href);

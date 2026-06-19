@@ -54,8 +54,13 @@ const lang = (code) => cfg.languages.find((l) => l.code === code);
 const readStatus = () => (existsSync(STATUS_PATH) ? JSON.parse(readFileSync(STATUS_PATH, 'utf8')) : {});
 const writeStatus = (s) => writeFileSync(STATUS_PATH, JSON.stringify(s, null, 2) + '\n');
 const bodyPath = (page, code) => path.join(BODIES, `${page}.${code}.html`);
-const outFile = (page, code) => (code === 'en' ? cfg.pages[page].enSource : `${lang(code).slug}-${page}.html`);
-const urlPath = (page, code) => (code === 'en' ? `/${page}/` : `/${lang(code).slug}/${page}/`);
+const outFile = (page, code) => (code === 'en'
+  ? cfg.pages[page].enSource
+  : `${cfg.pages[page].enSource.replace(/\.html$/, '')}-${lang(code).slug}.html`);
+// Page-first URL shape: /<page-path>/<lang>/ (e.g. /about/zh-hans/). en is the base.
+const urlPath = (page, code) => (code === 'en'
+  ? cfg.pages[page].urlBase
+  : `${cfg.pages[page].urlBase}${lang(code).slug}/`);
 const url = (page, code) => cfg.origin + urlPath(page, code);
 
 // localized langs (non-en) that have a body file on disk
@@ -175,30 +180,80 @@ function header(page, code) {
   ].join('\n');
 }
 
+// Transform-in-place: localize the English page rather than rebuild it, so each
+// page keeps its own head, stylesheets, scripts, JSON-LD and og:image. Works on
+// any page template; per-page config is just enSource, urlBase, body anchors,
+// and the localized title/description.
 function assemble(page, code, status) {
   const p = cfg.pages[page];
+  let html = readFileSync(path.join(ROOT, p.enSource), 'utf8');
+  const start = html.indexOf(p.bodyStart);
+  const end = html.indexOf(p.bodyEnd, start + 1);
+  if (start < 0 || end < 0) throw new Error(`body anchors not found in ${p.enSource} for "${page}"`);
   const body = readFileSync(bodyPath(page, code), 'utf8').replace(/\s+$/, '');
-  const scripts = p.scripts.map((s) => {
-    const attr = s.includes('site-header.js') && page === 'about' ? ' data-about-toggle' : '';
-    return `  <script src="${s}"${attr}></script>`;
-  }).join('\n');
-  return [
-    '<!doctype html>',
-    `<html lang="${lang(code).htmlLang}" data-theme="light">`,
-    '<head>',
-    head(page, code, status),
-    '</head>',
-    `<body class="${p.bodyClass}">`,
-    `  <a class="sn-skip-link" href="#main-content">${cfg.nav.skip[code]}</a>`,
-    header(page, code),
-    '',
-    body,
-    '',
-    scripts,
-    '</body>',
-    '</html>',
-    ''
-  ].join('\n');
+  html = html.slice(0, start) + body + html.slice(end);
+  return localizeNav(localizeHead(html, page, code, status), page, code, status);
+}
+
+function localizeHead(html, page, code, status) {
+  const L = lang(code);
+  const adv = advertisedLangs(page, status);
+  const noindex = !adv.includes(code);
+  const m = cfg.pages[page].meta || {};
+  const title = m.title && m.title[code];
+  const desc = m.description && m.description[code];
+  const ogdesc = (m.ogDescription && m.ogDescription[code]) || desc;
+  const self = url(page, code);
+  if (title) {
+    html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`);
+    html = html.replace(/(<meta property="og:title" content=")[^"]*(">)/, `$1${title}$2`);
+    html = html.replace(/(<meta name="twitter:title" content=")[^"]*(">)/, `$1${title}$2`);
+  }
+  if (desc) html = html.replace(/(<meta name="description" content=")[^"]*(">)/, `$1${desc}$2`);
+  if (ogdesc) {
+    html = html.replace(/(<meta property="og:description" content=")[^"]*(">)/, `$1${ogdesc}$2`);
+    html = html.replace(/(<meta name="twitter:description" content=")[^"]*(">)/, `$1${ogdesc}$2`);
+  }
+  html = html.replace(/(<link rel="canonical" href=")[^"]*(">)/, `$1${self}$2`);
+  html = html.replace(/(<meta property="og:url" content=")[^"]*(">)/, `$1${self}$2`);
+  // drop any hreflang / og:locale the English page already carries
+  html = html.replace(/[ \t]*<!-- i18n:hreflang -->[\s\S]*?<!-- \/i18n:hreflang -->\n?/g, '');
+  html = html.replace(/[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n?/g, '');
+  html = html.replace(/[ \t]*<meta property="og:locale[^>]*>\n?/g, '');
+  // inject this page's own hreflang cluster + locale + noindex after the canonical
+  const inject = [];
+  if (noindex) inject.push('<meta name="robots" content="noindex">');
+  for (const c of adv) inject.push(`<link rel="alternate" hreflang="${lang(c).htmlLang}" href="${url(page, c)}">`);
+  inject.push(`<link rel="alternate" hreflang="x-default" href="${url(page, 'en')}">`);
+  inject.push(`<meta property="og:locale" content="${L.ogLocale}">`);
+  if (code !== 'en') inject.push('<meta property="og:locale:alternate" content="en_US">');
+  html = html.replace(/(<link rel="canonical" href="[^"]*">)/, `$1\n  ${inject.join('\n  ')}`);
+  // the localized font CSS loads last so its --sans/--serif override wins
+  if (L.font) html = html.replace('</head>', `  <link rel="stylesheet" href="${L.font}">\n</head>`);
+  return html;
+}
+
+function hasAdvertisedLocalizedPage(page, code, status) {
+  return page && code !== 'en' && advertisedLangs(page, status).includes(code);
+}
+
+function localizeNav(html, page, code, status) {
+  const n = cfg.nav;
+  html = html.replace(/<html lang="[^"]*"/, `<html lang="${lang(code).htmlLang}"`);
+  html = html.replace(/(<a class="sn-skip-link" href="#main-content">)[^<]*(<\/a>)/, `$1${n.skip[code]}$2`);
+  html = html.replace(/(data-i18n="ui.languageLabel">)[^<]*(<)/g, `$1${n.languageLabel[code]}$2`);
+  for (const key of n.order) {
+    const label = n.labels[key][code];
+    const pageOf = n.page[key];
+    const localized = hasAdvertisedLocalizedPage(pageOf, code, status);
+    if (localized) {
+      html = html.replace(new RegExp(`<a href="[^"]*"([^>]*?)data-i18n="nav.${key}">[^<]*<`),
+        `<a href="${urlPath(pageOf, code)}"$1data-i18n="nav.${key}">${label}<`);
+    } else {
+      html = html.replace(new RegExp(`(data-i18n="nav.${key}">)[^<]*(<)`), `$1${label}$2`);
+    }
+  }
+  return html;
 }
 
 function replaceBlock(file, start, end, inner) {
@@ -210,31 +265,56 @@ function replaceBlock(file, start, end, inner) {
   writeFileSync(file, next);
 }
 
-function updateManaged(page, status) {
-  const adv = advertisedLangs(page, status); // en + reviewed
-  // 1) about.html hreflang block
-  const hl = [...adv.map((c) => `  <link rel="alternate" hreflang="${lang(c).htmlLang}" href="${url(page, c)}">`),
-    `  <link rel="alternate" hreflang="x-default" href="${url(page, 'en')}">`].join('\n');
-  replaceBlock(path.join(ROOT, cfg.pages[page].enSource), '<!-- i18n:hreflang -->', '<!-- /i18n:hreflang -->', hl);
-  // 2) _redirects localized routes (every built page, so previews resolve)
+function upsertBlock(file, start, end, inner, afterPattern) {
+  let text = readFileSync(file, 'utf8');
+  if (text.includes(start) && text.includes(end)) {
+    const i = text.indexOf(start), j = text.indexOf(end);
+    text = text.slice(0, i + start.length) + '\n' + inner + '\n' + text.slice(j);
+  } else if (afterPattern.test(text)) {
+    text = text.replace(afterPattern, (mm) => `${mm}\n  ${start}\n${inner}\n  ${end}`);
+  } else {
+    console.log(`  ! cannot place ${start} in ${path.basename(file)} (anchor missing)`); return;
+  }
+  writeFileSync(file, text);
+}
+
+// Regenerate every generator-owned region across ALL configured pages: each
+// English page's hreflang block (managed in its head), the shared localized
+// redirects, and the shared localized sitemap entries. hreflang lives in the
+// heads; the sitemap just lists the localized URLs so they get crawled.
+function updateManagedAll(status) {
+  const pages = Object.keys(cfg.pages);
+  for (const page of pages) {
+    const adv = advertisedLangs(page, status);
+    const hl = [...adv.map((c) => `  <link rel="alternate" hreflang="${lang(c).htmlLang}" href="${url(page, c)}">`),
+      `  <link rel="alternate" hreflang="x-default" href="${url(page, 'en')}">`].join('\n');
+    upsertBlock(path.join(ROOT, cfg.pages[page].enSource), '<!-- i18n:hreflang -->', '<!-- /i18n:hreflang -->',
+      hl, /<link rel="canonical" href="[^"]*">/);
+  }
   const routes = [];
-  for (const c of builtLangs(page)) {
-    routes.push(`/${lang(c).slug}/${page}/ /${lang(c).slug}-${page}.html 200`);
-    routes.push(`/${lang(c).slug}-${page}.html /${lang(c).slug}/${page}/ 301!`);
+  for (const page of pages) {
+    for (const c of builtLangs(page)) {
+      const slug = lang(c).slug, base = cfg.pages[page].urlBase, file = outFile(page, c);
+      routes.push(`${base}${slug}/ /${file} 200`);
+      routes.push(`/${file} ${base}${slug}/ 301!`);
+      routes.push(`/${slug}/${page}/ ${base}${slug}/ 301!`);
+      routes.push(`/${slug}-${page}.html ${base}${slug}/ 301!`);
+    }
   }
-  replaceBlock(path.join(ROOT, '_redirects'), '# i18n:localized-routes:start', '# i18n:localized-routes:end', routes.join('\n') || '# (none yet)');
-  // 3) sitemap about region: en entry with advertised alternates + one entry per reviewed lang
-  const altLines = [...adv.map((c) => `    <xhtml:link rel="alternate" hreflang="${lang(c).htmlLang}" href="${url(page, c)}"/>`),
-    `    <xhtml:link rel="alternate" hreflang="x-default" href="${url(page, 'en')}"/>`].join('\n');
+  replaceBlock(path.join(ROOT, '_redirects'), '# i18n:localized-routes:start', '# i18n:localized-routes:end',
+    routes.join('\n') || '# (none yet)');
   const entries = [];
-  for (const c of adv) {
-    entries.push('  <url>');
-    entries.push(`    <loc>${url(page, c)}</loc>`);
-    entries.push('    <lastmod>2026-06-19</lastmod>');
-    entries.push(altLines);
-    entries.push('  </url>');
+  for (const page of pages) {
+    for (const c of advertisedLangs(page, status)) {
+      if (c === 'en') continue;
+      entries.push('  <url>');
+      entries.push(`    <loc>${url(page, c)}</loc>`);
+      entries.push('    <lastmod>2026-06-19</lastmod>');
+      entries.push('  </url>');
+    }
   }
-  replaceBlock(path.join(ROOT, 'sitemap.xml'), '<!-- i18n:about-urls:start -->', '<!-- i18n:about-urls:end -->', entries.join('\n'));
+  replaceBlock(path.join(ROOT, 'sitemap.xml'), '<!-- i18n:localized-urls:start -->', '<!-- i18n:localized-urls:end -->',
+    entries.join('\n'));
 }
 
 function ensureFonts() {
@@ -245,22 +325,22 @@ function ensureFonts() {
   }
 }
 
-function build(page) {
+function build() {
   ensureFonts();
   const status = readStatus();
-  let built = 0;
-  for (const c of builtLangs(page)) {
-    writeFileSync(path.join(ROOT, outFile(page, c)), assemble(page, c, status));
-    const st = (status[page] && status[page][c]) || {};
-    const reviewed = st.status === 'reviewed';
-    const fresh = isFresh(page, c, status);
-    if (reviewed && !fresh) console.log(`  !! STALE: ${page}.${c} is reviewed but its English source changed since translation. Held to noindex until re-translated and re-reviewed.`);
-    const state = reviewed && fresh ? 'indexed' : reviewed && !fresh ? 'noindex (stale)' : 'noindex until reviewed';
-    console.log(`build: ${outFile(page, c)}  (${c}, ${state})`);
-    built++;
+  for (const page of Object.keys(cfg.pages)) {
+    for (const c of builtLangs(page)) {
+      writeFileSync(path.join(ROOT, outFile(page, c)), assemble(page, c, status));
+      const st = (status[page] && status[page][c]) || {};
+      const reviewed = st.status === 'reviewed';
+      const fresh = isFresh(page, c, status);
+      if (reviewed && !fresh) console.log(`  !! STALE: ${page}.${c} is reviewed but its English source changed since translation. Held to noindex until re-translated and re-reviewed.`);
+      const state = reviewed && fresh ? 'indexed' : reviewed && !fresh ? 'noindex (stale)' : 'noindex until reviewed';
+      console.log(`build: ${outFile(page, c)}  (${c}, ${state})`);
+    }
   }
-  updateManaged(page, status);
-  console.log(`build: ${page} done (${built} localized page(s)); managed hreflang/redirects/sitemap refreshed`);
+  updateManagedAll(status);
+  console.log('build: managed hreflang, redirects, and sitemap refreshed across all pages');
 }
 
 function check(page) {
@@ -276,8 +356,10 @@ function check(page) {
   if (!stale) console.log(`check: ${page} all translations current`);
 }
 
-const [cmd = 'all', page = 'about'] = process.argv.slice(2);
-const run = { extract, build, check };
-if (cmd === 'all') { extract(page); build(page); check(page); }
-else if (run[cmd]) run[cmd](page);
-else { console.log('usage: build-i18n.mjs [extract|build|check|all] [page]'); process.exit(1); }
+const [cmd = 'all', page] = process.argv.slice(2);
+const allPages = () => Object.keys(cfg.pages);
+if (cmd === 'all') { allPages().forEach(extract); build(); allPages().forEach(check); }
+else if (cmd === 'build') build();
+else if (cmd === 'extract') (page ? [page] : allPages()).forEach(extract);
+else if (cmd === 'check') (page ? [page] : allPages()).forEach(check);
+else { console.log('usage: build-i18n.mjs [all|build|extract|check] [page]'); process.exit(1); }

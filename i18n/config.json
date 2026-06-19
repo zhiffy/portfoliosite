@@ -11,7 +11,7 @@
   "nav": {
     "order": ["home", "about", "works", "writing", "press", "contact"],
     "hrefs": { "home": "/#hero", "about": "/about/", "works": "/works/", "writing": "/writing/", "press": "/press/", "contact": "/contact/" },
-    "page":  { "home": null, "about": "about", "works": null, "writing": null, "press": null, "contact": null },
+    "page":  { "home": null, "about": "about", "works": "works", "writing": "writing", "press": "press", "contact": "contact" },
     "labels": {
       "home":    { "en": "Home",    "zh-Hans": "首页", "zh-Hant": "首頁", "fr": "Accueil",  "th": "หน้าแรก" },
       "about":   { "en": "About",   "zh-Hans": "关于", "zh-Hant": "關於", "fr": "À propos", "th": "เกี่ยวกับ" },
@@ -26,6 +26,7 @@
   "pages": {
     "about": {
       "enSource": "about.html",
+      "urlBase": "/about/",
       "bodyStart": "<nav class=\"abv-rail",
       "bodyEnd": "<script src=\"/assets/js/subnav.js",
       "bodyClass": "sn-page-body ab-body",
@@ -60,6 +61,39 @@
           "zh-Hans": "新媒体艺术家，作品涉及 AI、3D 与互动装置。曾于 Venice Biennale、ArtScience Museum、Paris Photo、ART SG 与 Taipei Dangdai 展出。",
           "zh-Hant": "新媒體藝術家，作品涉及 AI、3D 與互動裝置。曾於 Venice Biennale、ArtScience Museum、Paris Photo、ART SG 與 Taipei Dangdai 展出。"
         }
+      }
+    },
+    "contact": {
+      "enSource": "contact.html",
+      "urlBase": "/contact/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "<script src=\"/site-header.js",
+      "meta": {
+        "title": { "en": "Contact | Shavonne Wong", "zh-Hans": "联系 | Shavonne Wong", "zh-Hant": "聯絡 | Shavonne Wong" },
+        "description": { "en": "Contact Shavonne Wong's studio for acquisitions, commissions, exhibitions, press, and collaborations.", "zh-Hans": "联系 Shavonne Wong 工作室，洽询收藏、委托创作、展览、媒体与合作。", "zh-Hant": "聯絡 Shavonne Wong 工作室，洽詢收藏、委託創作、展覽、媒體與合作。" },
+        "ogDescription": { "en": "Contact the studio for acquisitions, commissions, exhibitions, press, and collaborations.", "zh-Hans": "联系工作室，洽询收藏、委托创作、展览、媒体与合作。", "zh-Hant": "聯絡工作室，洽詢收藏、委託創作、展覽、媒體與合作。" }
+      }
+    },
+    "writing": {
+      "enSource": "writing.html",
+      "urlBase": "/writing/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "<script src=\"/site-header.js",
+      "meta": {
+        "title": { "en": "Writing | Shavonne Wong", "zh-Hans": "文字 | Shavonne Wong", "zh-Hant": "文字 | Shavonne Wong" },
+        "description": { "en": "Studio notes from Shavonne Wong, twice-yearly updates from the studio on exhibitions, new work, and where to see it in person.", "zh-Hans": "Shavonne Wong 的工作室札记，每年两次，分享展览、新作品以及可以亲身观看的地点。", "zh-Hant": "Shavonne Wong 的工作室札記，每年兩次，分享展覽、新作品以及可以親身觀看的地點。" },
+        "ogDescription": { "en": "Studio notes, twice-yearly updates on exhibitions, new work, and where to see it in person.", "zh-Hans": "工作室札记，每年两次，分享展览、新作品以及可以亲身观看的地点。", "zh-Hant": "工作室札記，每年兩次，分享展覽、新作品以及可以親身觀看的地點。" }
+      }
+    },
+    "press": {
+      "enSource": "press.html",
+      "urlBase": "/press/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": { "en": "Press | Shavonne Wong", "zh-Hans": "媒体 | Shavonne Wong", "zh-Hant": "媒體 | Shavonne Wong" },
+        "description": { "en": "Selected press, profiles, interviews, and features on Shavonne Wong across art, technology, fashion, and culture.", "zh-Hans": "关于 Shavonne Wong 的精选媒体报道、专访、访谈与特写，涵盖艺术、科技、时尚与文化。", "zh-Hant": "關於 Shavonne Wong 的精選媒體報導、專訪、訪談與特寫，涵蓋藝術、科技、時尚與文化。" },
+        "ogDescription": { "en": "Selected press, profiles, interviews, and features across art, technology, fashion, and culture.", "zh-Hans": "精选媒体报道、专访、访谈与特写，涵盖艺术、科技、时尚与文化。", "zh-Hant": "精選媒體報導、專訪、訪談與特寫，涵蓋藝術、科技、時尚與文化。" }
       }
     }
   }

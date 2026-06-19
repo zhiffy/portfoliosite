@@ -7,6 +7,14 @@
       "destination": "/contact.html"
     },
     {
+      "source": "/contact/zh-hans/",
+      "destination": "/contact-zh-hans.html"
+    },
+    {
+      "source": "/contact/zh-hant/",
+      "destination": "/contact-zh-hant.html"
+    },
+    {
       "source": "/works/",
       "destination": "/works.html"
     },
@@ -55,48 +63,44 @@
       "destination": "/by-proxy.html"
     },
     {
-      "source": "/works/meet-eva-here/chatbot/",
-      "destination": "/meet-eva-here-chatbot.html"
-    },
-    {
-      "source": "/works/meet-eva-here/diary/",
-      "destination": "/meet-eva-here-diary.html"
-    },
-    {
-      "source": "/works/after-ophelia/ophelia-retold/",
-      "destination": "/after-ophelia-ophelia-retold.html"
-    },
-    {
-      "source": "/works/after-ophelia/ophelia-reassembled/",
-      "destination": "/after-ophelia-ophelia-reassembled.html"
-    },
-    {
       "source": "/works/echoes-of-identity/",
       "destination": "/echoes-of-identity.html"
-    },
-    {
-      "source": "/works/meet-eva-here/hello-eva/",
-      "destination": "/meet-eva-here-hello-eva.html"
     },
     {
       "source": "/about/",
       "destination": "/about.html"
     },
     {
-      "source": "/zh-hans/about/",
-      "destination": "/zh-hans-about.html"
+      "source": "/about/zh-hans/",
+      "destination": "/about-zh-hans.html"
     },
     {
-      "source": "/zh-hant/about/",
-      "destination": "/zh-hant-about.html"
+      "source": "/about/zh-hant/",
+      "destination": "/about-zh-hant.html"
     },
     {
       "source": "/press/",
       "destination": "/press.html"
     },
     {
+      "source": "/press/zh-hans/",
+      "destination": "/press-zh-hans.html"
+    },
+    {
+      "source": "/press/zh-hant/",
+      "destination": "/press-zh-hant.html"
+    },
+    {
       "source": "/writing/",
       "destination": "/writing.html"
+    },
+    {
+      "source": "/writing/zh-hans/",
+      "destination": "/writing-zh-hans.html"
+    },
+    {
+      "source": "/writing/zh-hant/",
+      "destination": "/writing-zh-hant.html"
     },
     {
       "source": "/update2023jan/",
@@ -134,13 +138,123 @@
       "permanent": true
     },
     {
+      "source": "/contact-zh-hans.html",
+      "destination": "/contact/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-zh-hant.html",
+      "destination": "/contact/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans/contact/",
+      "destination": "/contact/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant/contact/",
+      "destination": "/contact/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans-contact.html",
+      "destination": "/contact/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant-contact.html",
+      "destination": "/contact/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/writing-zh-hans.html",
+      "destination": "/writing/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/writing-zh-hant.html",
+      "destination": "/writing/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans/writing/",
+      "destination": "/writing/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant/writing/",
+      "destination": "/writing/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans-writing.html",
+      "destination": "/writing/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant-writing.html",
+      "destination": "/writing/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/press-zh-hans.html",
+      "destination": "/press/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/press-zh-hant.html",
+      "destination": "/press/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans/press/",
+      "destination": "/press/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant/press/",
+      "destination": "/press/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans-press.html",
+      "destination": "/press/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant-press.html",
+      "destination": "/press/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/about-zh-hans.html",
+      "destination": "/about/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/about-zh-hant.html",
+      "destination": "/about/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans/about/",
+      "destination": "/about/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant/about/",
+      "destination": "/about/zh-hant/",
+      "permanent": true
+    },
+    {
       "source": "/zh-hans-about.html",
-      "destination": "/zh-hans/about/",
+      "destination": "/about/zh-hans/",
       "permanent": true
     },
     {
       "source": "/zh-hant-about.html",
-      "destination": "/zh-hant/about/",
+      "destination": "/about/zh-hant/",
       "permanent": true
     },
     {
@@ -239,23 +353,53 @@
       "permanent": true
     },
     {
+      "source": "/works/meet-eva-here/chatbot/",
+      "destination": "/works/meet-eva-here/#chatbot",
+      "permanent": true
+    },
+    {
+      "source": "/works/meet-eva-here/diary/",
+      "destination": "/works/meet-eva-here/#diary",
+      "permanent": true
+    },
+    {
+      "source": "/works/meet-eva-here/hello-eva/",
+      "destination": "/works/meet-eva-here/#hello-eva",
+      "permanent": true
+    },
+    {
+      "source": "/works/after-ophelia/ophelia-retold/",
+      "destination": "/works/after-ophelia/#ophelia-retold",
+      "permanent": true
+    },
+    {
+      "source": "/works/after-ophelia/ophelia-reassembled/",
+      "destination": "/works/after-ophelia/#ophelia-reassembled",
+      "permanent": true
+    },
+    {
       "source": "/meet-eva-here-chatbot.html",
-      "destination": "/works/meet-eva-here/chatbot/",
+      "destination": "/works/meet-eva-here/#chatbot",
       "permanent": true
     },
     {
       "source": "/meet-eva-here-diary.html",
-      "destination": "/works/meet-eva-here/diary/",
+      "destination": "/works/meet-eva-here/#diary",
+      "permanent": true
+    },
+    {
+      "source": "/meet-eva-here-hello-eva.html",
+      "destination": "/works/meet-eva-here/#hello-eva",
       "permanent": true
     },
     {
       "source": "/after-ophelia-ophelia-retold.html",
-      "destination": "/works/after-ophelia/ophelia-retold/",
+      "destination": "/works/after-ophelia/#ophelia-retold",
       "permanent": true
     },
     {
       "source": "/after-ophelia-ophelia-reassembled.html",
-      "destination": "/works/after-ophelia/ophelia-reassembled/",
+      "destination": "/works/after-ophelia/#ophelia-reassembled",
       "permanent": true
     },
     {

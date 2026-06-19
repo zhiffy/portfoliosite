@@ -1,0 +1,110 @@
+  <main id="main-content" class="ct-main">
+    <div class="ct-layout">
+
+      <div class="ct-top">
+        <h1 class="ct-title" id="contact-title">聯絡<em>.</em></h1>
+        <a class="ct-direct" href="mailto:studio@shavonnewong.art?subject=Studio%20enquiry">studio@shavonnewong.art</a>
+      </div>
+
+      <div class="ct-body">
+        <aside class="ct-notes" aria-label="工作室聯絡方式">
+          <div class="ct-links">
+            <span class="ct-note-label">其他平臺</span>
+            <ul class="ct-link-list">
+              <li><a href="https://www.instagram.com/shavonne.wong/" target="_blank" rel="noreferrer"><span>Instagram</span><span>@shavonne.wong</span></a></li>
+              <li><a href="https://x.com/shavonnewong_" target="_blank" rel="noreferrer"><span>X</span><span>@shavonnewong_</span></a></li>
+              <li><a href="https://sg.linkedin.com/in/shavonnew" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>/in/shavonnew</span></a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Shavonne_Wong" target="_blank" rel="noreferrer"><span>Wikipedia</span><span>/Shavonne_Wong</span></a></li>
+            </ul>
+          </div>
+          <div class="ct-sub">
+            <span class="ct-note-label">工作室通訊</span>
+            <p class="ct-sub-tagline">新作品、展覽與限量發行，每年數次。</p>
+            <p class="ct-feedback ct-feedback--success" data-fs-success role="status" aria-live="polite"></p>
+            <p class="ct-feedback ct-feedback--error" data-fs-error role="alert"></p>
+            <form class="ct-sub-form" data-newsletter-form action="/api/newsletter-subscribe" method="POST">
+              <input class="ct-sub-input" type="email" name="email" autocomplete="email" inputmode="email" required placeholder="you@example.com" aria-label="電子郵箱">
+              <button class="ct-sub-btn" type="submit">訂閱</button>
+            </form>
+          </div>
+        </aside>
+
+        <div class="ct-form-wrap">
+          <p class="ct-feedback ct-feedback--success" data-fs-success role="status" aria-live="polite"></p>
+          <p class="ct-feedback ct-feedback--error" data-fs-error role="alert"></p>
+          <form class="ct-form" data-contact-form action="/api/contact" method="POST">
+            <input type="hidden" name="_subject" value="Website contact enquiry">
+            <label class="ct-honey">請勿填寫此欄 <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+            <div class="ct-grid">
+              <label class="ct-field">
+                <span class="ct-label">姓名</span>
+                <input class="ct-input" type="text" name="name" autocomplete="name" required>
+              </label>
+              <label class="ct-field">
+                <span class="ct-label">電子郵箱</span>
+                <input class="ct-input" type="email" name="email" autocomplete="email" inputmode="email" required>
+              </label>
+            </div>
+            <label class="ct-field">
+              <span class="ct-label">諮詢型別</span>
+              <select class="ct-select" name="enquiry_type" required>
+                <option value="">請選擇</option>
+                <option>收藏</option>
+                <option>委託創作</option>
+                <option>展覽</option>
+                <option>媒體</option>
+                <option>合作</option>
+                <option>其他</option>
+              </select>
+            </label>
+            <label class="ct-field">
+              <span class="ct-label">留言</span>
+              <textarea class="ct-textarea" name="message" required></textarea>
+            </label>
+            <button class="ct-submit" type="submit">傳送留言</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="sw-page-footer" data-site-footer>
+      <div class="sw-page-footer__inner">
+        <button class="sw-page-footer__top" type="button" data-site-back-top>返回頂部</button>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+  // Prefill the enquiry form from deep-links like /contact/?type=Acquisition&work=Hello%20Eva
+  (function () {
+    try {
+      var params = new URLSearchParams(location.search);
+      var type = params.get('type');
+      var work = params.get('work');
+      var form = document.querySelector('[data-contact-form]');
+      if (!form || (!type && !work)) return;
+      if (type) {
+        var select = form.querySelector('select[name="enquiry_type"]');
+        if (select) {
+          for (var i = 0; i < select.options.length; i++) {
+            if (select.options[i].text.toLowerCase() === type.toLowerCase()) {
+              select.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+      if (work) {
+        var message = form.querySelector('textarea[name="message"]');
+        if (message && !message.value) {
+          message.value = '我想了解“' + work + '”。\n\n';
+        }
+        var subject = form.querySelector('input[name="_subject"]');
+        if (subject) subject.value = (type || '諮詢') + ' - ' + work;
+      }
+      var name = form.querySelector('input[name="name"]');
+      if (name) name.focus();
+    } catch (e) {}
+  })();
+  </script>

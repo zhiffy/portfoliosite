@@ -11,5 +11,44 @@
       "status": "reviewed",
       "src": "e88da82b87a553d4"
     }
+  },
+  "contact": {
+    "en": {
+      "hash": "e45000679508ce0c"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "e45000679508ce0c"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "e45000679508ce0c"
+    }
+  },
+  "writing": {
+    "en": {
+      "hash": "cbf73f26aee8350e"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "cbf73f26aee8350e"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "cbf73f26aee8350e"
+    }
+  },
+  "press": {
+    "en": {
+      "hash": "d64bb70704541f20"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "d64bb70704541f20"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "d64bb70704541f20"
+    }
   }
 }

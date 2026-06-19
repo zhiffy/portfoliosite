@@ -13,10 +13,17 @@ const root = process.cwd();
 
 const cleanRoutes = {
   "/about/": "about.html",
-  "/zh-hans/about/": "zh-hans-about.html",
+  "/about/zh-hans/": "about-zh-hans.html",
+  "/about/zh-hant/": "about-zh-hant.html",
   "/contact/": "contact.html",
+  "/contact/zh-hans/": "contact-zh-hans.html",
+  "/contact/zh-hant/": "contact-zh-hant.html",
   "/press/": "press.html",
+  "/press/zh-hans/": "press-zh-hans.html",
+  "/press/zh-hant/": "press-zh-hant.html",
   "/writing/": "writing.html",
+  "/writing/zh-hans/": "writing-zh-hans.html",
+  "/writing/zh-hant/": "writing-zh-hant.html",
   "/update2023jan/": "update2023jan.html",
   "/update2023june/": "update2023june.html",
   "/update2024jan/": "update2024jan.html",
@@ -28,21 +35,43 @@ const cleanRoutes = {
   "/works/available/": "works-available.html",
   "/works/conditional/": "conditional.html",
   "/works/after-ophelia/": "after-ophelia.html",
-  "/works/after-ophelia/ophelia-retold/": "after-ophelia-ophelia-retold.html",
-  "/works/after-ophelia/ophelia-reassembled/": "after-ophelia-ophelia-reassembled.html",
   "/works/the-bubble-we-call-home/": "the-bubble-we-call-home.html",
   "/works/by-proxy/": "by-proxy.html",
   "/works/love-is-love/": "love-is-love.html",
   "/works/meet-eva-here/": "meet-eva-here.html",
-  "/works/meet-eva-here/chatbot/": "meet-eva-here-chatbot.html",
-  "/works/meet-eva-here/diary/": "meet-eva-here-diary.html",
-  "/works/meet-eva-here/hello-eva/": "meet-eva-here-hello-eva.html",
   "/works/6529-meme-card/": "6529-meme-card.html",
   "/works/the-ties-that-bind/": "the-ties-that-bind.html",
   "/works/echoes-of-identity/": "echoes-of-identity.html",
   "/works/vogue-singapore/": "vogue-singapore.html",
   "/works/whirlwind-of-the-waking-dream/": "whirlwind-of-the-waking-dream.html",
   "/works/whirlwind-of-the-waking-world/": "whirlwind-of-the-waking-dream.html",
+};
+
+const cleanRedirects = {
+  "/about-zh-hans.html": "/about/zh-hans/",
+  "/about-zh-hant.html": "/about/zh-hant/",
+  "/zh-hans/about/": "/about/zh-hans/",
+  "/zh-hant/about/": "/about/zh-hant/",
+  "/zh-hans-about.html": "/about/zh-hans/",
+  "/zh-hant-about.html": "/about/zh-hant/",
+  "/contact-zh-hans.html": "/contact/zh-hans/",
+  "/contact-zh-hant.html": "/contact/zh-hant/",
+  "/zh-hans/contact/": "/contact/zh-hans/",
+  "/zh-hant/contact/": "/contact/zh-hant/",
+  "/zh-hans-contact.html": "/contact/zh-hans/",
+  "/zh-hant-contact.html": "/contact/zh-hant/",
+  "/writing-zh-hans.html": "/writing/zh-hans/",
+  "/writing-zh-hant.html": "/writing/zh-hant/",
+  "/zh-hans/writing/": "/writing/zh-hans/",
+  "/zh-hant/writing/": "/writing/zh-hant/",
+  "/zh-hans-writing.html": "/writing/zh-hans/",
+  "/zh-hant-writing.html": "/writing/zh-hant/",
+  "/press-zh-hans.html": "/press/zh-hans/",
+  "/press-zh-hant.html": "/press/zh-hant/",
+  "/zh-hans/press/": "/press/zh-hans/",
+  "/zh-hant/press/": "/press/zh-hant/",
+  "/zh-hans-press.html": "/press/zh-hans/",
+  "/zh-hant-press.html": "/press/zh-hant/",
 };
 
 function rewriteCleanRoute(request) {
@@ -66,6 +95,17 @@ function rewriteCleanRoute(request) {
   if (assetPath.startsWith(root) && existsSync(assetPath)) {
     request.url = `/${nestedAsset}${url.search}${url.hash}`;
   }
+}
+
+function redirectCleanRoute(request, response) {
+  if (!request.url) return false;
+  const url = new URL(request.url, "http://local.preview");
+  const target = cleanRedirects[url.pathname] || cleanRedirects[`${url.pathname}/`];
+  if (!target) return false;
+  response.statusCode = 301;
+  response.setHeader("Location", target);
+  response.end();
+  return true;
 }
 
 async function handleNewsletterSignup(request, response) {
@@ -163,6 +203,7 @@ function cleanRouteDevServer() {
     configureServer(server) {
       server.middlewares.use(async (request, response, next) => {
         if (await handleNewsletterSignup(request, response)) return;
+        if (redirectCleanRoute(request, response)) return;
         rewriteCleanRoute(request);
         next();
       });
@@ -170,6 +211,7 @@ function cleanRouteDevServer() {
     configurePreviewServer(server) {
       server.middlewares.use(async (request, response, next) => {
         if (await handleNewsletterSignup(request, response)) return;
+        if (redirectCleanRoute(request, response)) return;
         rewriteCleanRoute(request);
         next();
       });

@@ -32,24 +32,25 @@ const contentTypes = {
 const routes = {
   "/": "index.html",
   "/about/": "about.html",
-  "/zh-hans/about/": "zh-hans-about.html",
-  "/zh-hant/about/": "zh-hant-about.html",
+  "/about/zh-hans/": "about-zh-hans.html",
+  "/about/zh-hant/": "about-zh-hant.html",
   "/contact/": "contact.html",
+  "/contact/zh-hans/": "contact-zh-hans.html",
+  "/contact/zh-hant/": "contact-zh-hant.html",
   "/press/": "press.html",
+  "/press/zh-hans/": "press-zh-hans.html",
+  "/press/zh-hant/": "press-zh-hant.html",
   "/writing/": "writing.html",
+  "/writing/zh-hans/": "writing-zh-hans.html",
+  "/writing/zh-hant/": "writing-zh-hant.html",
   "/works/": "works.html",
   "/works/after-ophelia/": "after-ophelia.html",
-  "/works/after-ophelia/ophelia-retold/": "after-ophelia-ophelia-retold.html",
-  "/works/after-ophelia/ophelia-reassembled/": "after-ophelia-ophelia-reassembled.html",
   "/works/the-bubble-we-call-home/": "the-bubble-we-call-home.html",
   "/works/available/": "works-available.html",
   "/works/by-proxy/": "by-proxy.html",
   "/works/conditional/": "conditional.html",
   "/works/love-is-love/": "love-is-love.html",
   "/works/meet-eva-here/": "meet-eva-here.html",
-  "/works/meet-eva-here/chatbot/": "meet-eva-here-chatbot.html",
-  "/works/meet-eva-here/diary/": "meet-eva-here-diary.html",
-  "/works/meet-eva-here/hello-eva/": "meet-eva-here-hello-eva.html",
   "/works/6529-meme-card/": "6529-meme-card.html",
   "/works/the-ties-that-bind/": "the-ties-that-bind.html",
   "/works/echoes-of-identity/": "echoes-of-identity.html",
@@ -63,6 +64,33 @@ const routes = {
   "/update2025jan/": "update2025jan.html",
   "/update2025jun/": "update2025jun.html",
   "/update2026jun/": "update2026jun.html",
+};
+
+const redirects = {
+  "/about-zh-hans.html": "/about/zh-hans/",
+  "/about-zh-hant.html": "/about/zh-hant/",
+  "/zh-hans/about/": "/about/zh-hans/",
+  "/zh-hant/about/": "/about/zh-hant/",
+  "/zh-hans-about.html": "/about/zh-hans/",
+  "/zh-hant-about.html": "/about/zh-hant/",
+  "/contact-zh-hans.html": "/contact/zh-hans/",
+  "/contact-zh-hant.html": "/contact/zh-hant/",
+  "/zh-hans/contact/": "/contact/zh-hans/",
+  "/zh-hant/contact/": "/contact/zh-hant/",
+  "/zh-hans-contact.html": "/contact/zh-hans/",
+  "/zh-hant-contact.html": "/contact/zh-hant/",
+  "/writing-zh-hans.html": "/writing/zh-hans/",
+  "/writing-zh-hant.html": "/writing/zh-hant/",
+  "/zh-hans/writing/": "/writing/zh-hans/",
+  "/zh-hant/writing/": "/writing/zh-hant/",
+  "/zh-hans-writing.html": "/writing/zh-hans/",
+  "/zh-hant-writing.html": "/writing/zh-hant/",
+  "/press-zh-hans.html": "/press/zh-hans/",
+  "/press-zh-hant.html": "/press/zh-hant/",
+  "/zh-hans/press/": "/press/zh-hans/",
+  "/zh-hant/press/": "/press/zh-hant/",
+  "/zh-hans-press.html": "/press/zh-hans/",
+  "/zh-hant-press.html": "/press/zh-hant/",
 };
 
 async function handleNewsletterSignup(request, response) {
@@ -138,6 +166,15 @@ const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url || "/", `http://${host}:${port}`);
     if (await handleNewsletterSignup(request, response)) return;
+    const redirectTarget = redirects[url.pathname] || redirects[`${url.pathname}/`];
+    if (redirectTarget) {
+      response.writeHead(301, {
+        "Cache-Control": "no-store",
+        "Location": redirectTarget,
+      });
+      response.end();
+      return;
+    }
 
     const filePath = resolveFile(decodeURIComponent(url.pathname));
 

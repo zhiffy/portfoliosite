@@ -16,11 +16,12 @@
 /works/vogue-singapore/ /vogue-singapore.html 200
 /works/6529-meme-card/ /6529-meme-card.html 200
 /works/by-proxy/ /by-proxy.html 200
-/works/meet-eva-here/chatbot/ /meet-eva-here-chatbot.html 200
-/works/meet-eva-here/diary/ /meet-eva-here-diary.html 200
-/works/meet-eva-here/hello-eva/ /meet-eva-here-hello-eva.html 200
-/works/after-ophelia/ophelia-retold/ /after-ophelia-ophelia-retold.html 200
-/works/after-ophelia/ophelia-reassembled/ /after-ophelia-ophelia-reassembled.html 200
+# Child work pages consolidated into their parent project pages (2026-06-19).
+/works/meet-eva-here/chatbot/ /works/meet-eva-here/#chatbot 301!
+/works/meet-eva-here/diary/ /works/meet-eva-here/#diary 301!
+/works/meet-eva-here/hello-eva/ /works/meet-eva-here/#hello-eva 301!
+/works/after-ophelia/ophelia-retold/ /works/after-ophelia/#ophelia-retold 301!
+/works/after-ophelia/ophelia-reassembled/ /works/after-ophelia/#ophelia-reassembled 301!
 
 # Retired temporary notes routes.
 /works/after-ophelia/notes/ /works/after-ophelia/#process 301!
@@ -43,11 +44,11 @@
 /vogue-singapore.html /works/vogue-singapore/ 301!
 /6529-meme-card.html /works/6529-meme-card/ 301!
 /by-proxy.html /works/by-proxy/ 301!
-/meet-eva-here-chatbot.html /works/meet-eva-here/chatbot/ 301!
-/meet-eva-here-diary.html /works/meet-eva-here/diary/ 301!
-/meet-eva-here-hello-eva.html /works/meet-eva-here/hello-eva/ 301!
-/after-ophelia-ophelia-retold.html /works/after-ophelia/ophelia-retold/ 301!
-/after-ophelia-ophelia-reassembled.html /works/after-ophelia/ophelia-reassembled/ 301!
+/meet-eva-here-chatbot.html /works/meet-eva-here/#chatbot 301!
+/meet-eva-here-diary.html /works/meet-eva-here/#diary 301!
+/meet-eva-here-hello-eva.html /works/meet-eva-here/#hello-eva 301!
+/after-ophelia-ophelia-retold.html /works/after-ophelia/#ophelia-retold 301!
+/after-ophelia-ophelia-reassembled.html /works/after-ophelia/#ophelia-reassembled 301!
 
 # Existing Squarespace project URLs.
 /digital-art-catalog /works/ 301!
@@ -172,10 +173,38 @@
 /writing/ /writing.html 200
 
 # i18n:localized-routes:start
-/zh-hans/about/ /zh-hans-about.html 200
-/zh-hans-about.html /zh-hans/about/ 301!
-/zh-hant/about/ /zh-hant-about.html 200
-/zh-hant-about.html /zh-hant/about/ 301!
+/about/zh-hans/ /about-zh-hans.html 200
+/about-zh-hans.html /about/zh-hans/ 301!
+/zh-hans/about/ /about/zh-hans/ 301!
+/zh-hans-about.html /about/zh-hans/ 301!
+/about/zh-hant/ /about-zh-hant.html 200
+/about-zh-hant.html /about/zh-hant/ 301!
+/zh-hant/about/ /about/zh-hant/ 301!
+/zh-hant-about.html /about/zh-hant/ 301!
+/contact/zh-hans/ /contact-zh-hans.html 200
+/contact-zh-hans.html /contact/zh-hans/ 301!
+/zh-hans/contact/ /contact/zh-hans/ 301!
+/zh-hans-contact.html /contact/zh-hans/ 301!
+/contact/zh-hant/ /contact-zh-hant.html 200
+/contact-zh-hant.html /contact/zh-hant/ 301!
+/zh-hant/contact/ /contact/zh-hant/ 301!
+/zh-hant-contact.html /contact/zh-hant/ 301!
+/writing/zh-hans/ /writing-zh-hans.html 200
+/writing-zh-hans.html /writing/zh-hans/ 301!
+/zh-hans/writing/ /writing/zh-hans/ 301!
+/zh-hans-writing.html /writing/zh-hans/ 301!
+/writing/zh-hant/ /writing-zh-hant.html 200
+/writing-zh-hant.html /writing/zh-hant/ 301!
+/zh-hant/writing/ /writing/zh-hant/ 301!
+/zh-hant-writing.html /writing/zh-hant/ 301!
+/press/zh-hans/ /press-zh-hans.html 200
+/press-zh-hans.html /press/zh-hans/ 301!
+/zh-hans/press/ /press/zh-hans/ 301!
+/zh-hans-press.html /press/zh-hans/ 301!
+/press/zh-hant/ /press-zh-hant.html 200
+/press-zh-hant.html /press/zh-hant/ 301!
+/zh-hant/press/ /press/zh-hant/ 301!
+/zh-hant-press.html /press/zh-hant/ 301!
 # i18n:localized-routes:end
 
 /update2023jan/ /update2023jan.html 200

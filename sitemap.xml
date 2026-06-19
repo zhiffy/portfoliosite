@@ -6,32 +6,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/"/>
   </url>
-  <!-- i18n:about-urls:start -->
   <url>
     <loc>https://www.shavonnewong.art/about/</loc>
     <lastmod>2026-06-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/about/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.shavonnewong.art/zh-hans/about/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shavonnewong.art/zh-hant/about/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/about/"/>
+  </url>
+  <!-- i18n:localized-urls:start -->
+  <url>
+    <loc>https://www.shavonnewong.art/about/zh-hans/</loc>
+    <lastmod>2026-06-19</lastmod>
   </url>
   <url>
-    <loc>https://www.shavonnewong.art/zh-hans/about/</loc>
+    <loc>https://www.shavonnewong.art/about/zh-hant/</loc>
     <lastmod>2026-06-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/about/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.shavonnewong.art/zh-hans/about/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shavonnewong.art/zh-hant/about/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/about/"/>
   </url>
-  <url>
-    <loc>https://www.shavonnewong.art/zh-hant/about/</loc>
-    <lastmod>2026-06-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/about/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.shavonnewong.art/zh-hans/about/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shavonnewong.art/zh-hant/about/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/about/"/>
-  </url>
-<!-- i18n:about-urls:end -->
+<!-- i18n:localized-urls:end -->
   <url>
     <loc>https://www.shavonnewong.art/contact/</loc>
     <lastmod>2026-06-04</lastmod>
@@ -54,15 +42,7 @@
   </url>
   <url>
     <loc>https://www.shavonnewong.art/works/after-ophelia/</loc>
-    <lastmod>2026-06-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.shavonnewong.art/works/after-ophelia/ophelia-retold/</loc>
-    <lastmod>2026-06-02</lastmod>
-  </url>
-  <url>
-    <loc>https://www.shavonnewong.art/works/after-ophelia/ophelia-reassembled/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-19</lastmod>
   </url>
   <url>
     <loc>https://www.shavonnewong.art/works/the-bubble-we-call-home/</loc>
@@ -70,19 +50,7 @@
   </url>
   <url>
     <loc>https://www.shavonnewong.art/works/meet-eva-here/</loc>
-    <lastmod>2026-06-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.shavonnewong.art/works/meet-eva-here/chatbot/</loc>
-    <lastmod>2026-06-02</lastmod>
-  </url>
-  <url>
-    <loc>https://www.shavonnewong.art/works/meet-eva-here/diary/</loc>
-    <lastmod>2026-06-02</lastmod>
-  </url>
-  <url>
-    <loc>https://www.shavonnewong.art/works/meet-eva-here/hello-eva/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-19</lastmod>
   </url>
   <url>
     <loc>https://www.shavonnewong.art/works/the-ties-that-bind/</loc>
