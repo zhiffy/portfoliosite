@@ -966,11 +966,15 @@
   let initialized = false;
 
   function readStoredLanguage() {
+    return readStoredLanguagePreference() || fallbackLanguage;
+  }
+
+  function readStoredLanguagePreference() {
     try {
       const stored = window.localStorage.getItem(storageKey);
-      return supportedCodes.has(stored) ? stored : fallbackLanguage;
+      return supportedCodes.has(stored) ? stored : null;
     } catch (error) {
-      return fallbackLanguage;
+      return null;
     }
   }
 
@@ -1094,6 +1098,7 @@
     syncHreflang();
     setupLanguageSelects();
     applyTranslations(document);
+    syncLocalizedInternalLinks(document);
     emitChange();
   }
 
@@ -1167,6 +1172,66 @@
     }
   }
 
+  function isHomeUrl(url) {
+    const path = url.pathname.replace(/index\.html$/, '');
+    return path === '/' || path === '';
+  }
+
+  function isAboutUrl(url) {
+    const path = url.pathname.toLowerCase();
+    return /^\/about(?:\.html|\/)?$/.test(path)
+      || /^\/zh-hans\/about\/?$/.test(path)
+      || /^\/zh-hant\/about\/?$/.test(path)
+      || /^\/zh-hans-about\.html$/.test(path)
+      || /^\/zh-hant-about\.html$/.test(path);
+  }
+
+  function localizedUrlFor(url, code) {
+    if (!supportedCodes.has(code)) code = fallbackLanguage;
+    const target = new URL(url.href);
+
+    if (isHomeUrl(target)) {
+      if (code === fallbackLanguage) {
+        target.searchParams.delete('lang');
+      } else {
+        target.searchParams.set('lang', code);
+      }
+      return target.href;
+    }
+
+    if (isAboutUrl(target)) {
+      const meta = getLanguageMeta(code);
+      if (!meta || code === fallbackLanguage) {
+        target.pathname = '/about/';
+      } else {
+        target.pathname = '/' + meta.pathSlug + '/about/';
+      }
+      target.search = '';
+      return localizeHref(target.href);
+    }
+
+    return '';
+  }
+
+  function syncLocalizedInternalLinks(scope) {
+    if (!scope || typeof scope.querySelectorAll !== 'function') return;
+    scope.querySelectorAll('a[href]').forEach((link) => {
+      const rawHref = link.getAttribute('href') || '';
+      if (!rawHref || rawHref.charAt(0) === '#' || /^(mailto|tel|sms):/i.test(rawHref)) return;
+      if (link.hasAttribute('download') || link.target && link.target !== '_self') return;
+
+      if (!link.dataset.i18nHrefOriginal) link.dataset.i18nHrefOriginal = rawHref;
+      try {
+        const original = new URL(link.dataset.i18nHrefOriginal, window.location.href);
+        if (original.origin !== window.location.origin) return;
+        const localized = localizedUrlFor(original, currentLanguage);
+        link.setAttribute('href', localized || link.dataset.i18nHrefOriginal);
+      } catch (error) {
+        // Leave unusual links untouched.
+      }
+    });
+  }
+
   function alternateUrlFor(code) {
     const meta = getLanguageMeta(code);
     if (!meta || !document.head) return '';
@@ -1198,6 +1263,32 @@
     writeStoredLanguage(code);
     window.location.assign(next.href);
     return true;
+  }
+
+  function bindLocalizedLinkNavigation() {
+    document.addEventListener('click', (event) => {
+      if (event.defaultPrevented || event.button !== 0 || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      const link = event.target && event.target.closest ? event.target.closest('a[href]') : null;
+      if (!link || link.hasAttribute('download') || link.target && link.target !== '_self') return;
+      const rawHref = link.dataset.i18nHrefOriginal || link.getAttribute('href') || '';
+      if (!rawHref || rawHref.charAt(0) === '#' || /^(mailto|tel|sms):/i.test(rawHref)) return;
+
+      try {
+        const url = new URL(rawHref, window.location.href);
+        if (url.origin !== window.location.origin) return;
+        const localized = localizedUrlFor(url, currentLanguage);
+        if (!localized) return;
+
+        const current = new URL(window.location.href);
+        const next = new URL(localized, window.location.href);
+        if (current.pathname === next.pathname && current.search === next.search && current.hash === next.hash) return;
+
+        event.preventDefault();
+        window.location.assign(next.href);
+      } catch (error) {
+        // Let the browser handle unusual links normally.
+      }
+    });
   }
 
   function upsertHeadLink(key, rel, hreflang, href) {
@@ -1237,9 +1328,17 @@
     const fromUrl = readUrlLanguage();
     const fromPath = readPathLanguage();
     const fromDocument = readDocumentLanguage();
+    const fromStorage = readStoredLanguagePreference();
     currentLanguage = isHomepage()
-      ? (fromUrl || readStoredLanguage())
-      : (fromPath || fromDocument || fallbackLanguage);
+      ? (fromUrl || fromStorage || fallbackLanguage)
+      : (fromPath || fromStorage || fromDocument || fallbackLanguage);
+
+    if (!isHomepage() && !fromPath && fromStorage && fromStorage !== fromDocument && alternateUrlFor(fromStorage)) {
+      currentLanguage = fromStorage;
+      if (navigateToLanguage(fromStorage)) return;
+    }
+
+    bindLocalizedLinkNavigation();
     setLanguage(currentLanguage, { persist: false });
   }
 
