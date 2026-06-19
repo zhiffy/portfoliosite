@@ -87,6 +87,10 @@
       "destination": "/zh-hans-about.html"
     },
     {
+      "source": "/zh-hant/about/",
+      "destination": "/zh-hant-about.html"
+    },
+    {
       "source": "/press/",
       "destination": "/press.html"
     },
@@ -132,6 +136,11 @@
     {
       "source": "/zh-hans-about.html",
       "destination": "/zh-hans/about/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant-about.html",
+      "destination": "/zh-hant/about/",
       "permanent": true
     },
     {

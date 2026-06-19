@@ -62,9 +62,14 @@ const url = (page, code) => cfg.origin + urlPath(page, code);
 const builtLangs = (page) =>
   cfg.languages.filter((l) => l.code !== 'en' && existsSync(bodyPath(page, l.code))).map((l) => l.code);
 
-// langs cleared for indexing: en plus any built lang marked reviewed
+// current English source hash for a page (the drift baseline)
+const enHash = (page) => (existsSync(bodyPath(page, 'en')) ? sha(readFileSync(bodyPath(page, 'en'), 'utf8')) : null);
+const isFresh = (page, code, status) =>
+  Boolean(status[page] && status[page][code] && status[page][code].src === enHash(page));
+// langs cleared for indexing: en plus any built lang that is reviewed AND not stale
 const advertisedLangs = (page, status) =>
-  ['en', ...builtLangs(page).filter((c) => status[page] && status[page][c] && status[page][c].status === 'reviewed')];
+  ['en', ...builtLangs(page).filter((c) => status[page] && status[page][c]
+    && status[page][c].status === 'reviewed' && isFresh(page, c, status))];
 
 function sliceBody(html, page) {
   const p = cfg.pages[page];
@@ -246,8 +251,12 @@ function build(page) {
   let built = 0;
   for (const c of builtLangs(page)) {
     writeFileSync(path.join(ROOT, outFile(page, c)), assemble(page, c, status));
-    const reviewed = status[page][c] && status[page][c].status === 'reviewed';
-    console.log(`build: ${outFile(page, c)}  (${c}, ${reviewed ? 'indexed' : 'noindex until reviewed'})`);
+    const st = (status[page] && status[page][c]) || {};
+    const reviewed = st.status === 'reviewed';
+    const fresh = isFresh(page, c, status);
+    if (reviewed && !fresh) console.log(`  !! STALE: ${page}.${c} is reviewed but its English source changed since translation. Held to noindex until re-translated and re-reviewed.`);
+    const state = reviewed && fresh ? 'indexed' : reviewed && !fresh ? 'noindex (stale)' : 'noindex until reviewed';
+    console.log(`build: ${outFile(page, c)}  (${c}, ${state})`);
     built++;
   }
   updateManaged(page, status);

@@ -32,6 +32,9 @@ FONTS = {
     'zh-Hans': dict(pkg='@fontsource/noto-sans-sc', family='Noto Sans SC',
                     weights=[400, 700], outdir='assets/fonts/noto',
                     prefix='noto-sans-sc', css='assets/fonts/noto/noto-sans-sc.css'),
+    'zh-Hant': dict(pkg='@fontsource/noto-sans-tc', family='Noto Sans TC',
+                    weights=[400, 700], outdir='assets/fonts/noto',
+                    prefix='noto-sans-tc', css='assets/fonts/noto/noto-sans-tc.css'),
 }
 
 

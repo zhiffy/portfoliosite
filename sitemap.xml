@@ -12,6 +12,7 @@
     <lastmod>2026-06-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/about/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.shavonnewong.art/zh-hans/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shavonnewong.art/zh-hant/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/about/"/>
   </url>
   <url>
@@ -19,6 +20,15 @@
     <lastmod>2026-06-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/about/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.shavonnewong.art/zh-hans/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shavonnewong.art/zh-hant/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/about/"/>
+  </url>
+  <url>
+    <loc>https://www.shavonnewong.art/zh-hant/about/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.shavonnewong.art/zh-hans/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shavonnewong.art/zh-hant/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/about/"/>
   </url>
 <!-- i18n:about-urls:end -->
