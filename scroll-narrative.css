@@ -795,6 +795,9 @@ html.sn-vertical-mode .sn-eras {
   padding: 0;
   overflow: visible;
 }
+html.sn-vertical-mode .sn-eras-frame {
+  transform: none !important;
+}
 html.sn-vertical-mode .sn-panel.sn-about,
 html.sn-vertical-mode .sn-about {
   grid-template-columns: minmax(0, 1fr);
@@ -1602,6 +1605,7 @@ html.sn-vertical-mode .sn-ticker {
 .sn-eras {
   width: clamp(480px, 50vw, 720px);
   background: var(--bg-warm);
+  --eras-copy-y: 0px;
   padding: 0;
   display: flex;
   align-items: stretch;
@@ -1641,6 +1645,8 @@ html.sn-vertical-mode .sn-ticker {
   grid-template-columns: 1fr;
   align-items: center;
   gap: clamp(42px, 6vw, 96px);
+  transform: translate3d(0, var(--eras-copy-y), 0);
+  will-change: transform;
 }
 .sn-eras-head {
   display: flex;
@@ -3197,7 +3203,7 @@ html.sn-vertical-mode .sn-ticker {
     min-height: auto;
   }
   .sn-hero-frame {
-    --hero-media-w: calc(100% + (var(--pad) * 2));
+    --hero-media-w: 100%;
     --hero-frame-x-pad: var(--pad);
     --hero-frame-top: 0px;
     --hero-frame-bottom: 0px;
@@ -3249,7 +3255,7 @@ html.sn-vertical-mode .sn-ticker {
     width: var(--hero-media-w);
     right: auto;
     bottom: auto;
-    margin: clamp(42px, 8vh, 72px) calc(var(--pad) * -1) 0;
+    margin: clamp(42px, 8vh, 72px) 0 0;
     max-height: none;
   }
   .sn-hero-plate { left: 6%; right: auto; bottom: auto; width: 88%; height: 38%; top: 30%; }
@@ -3467,7 +3473,7 @@ html.sn-vertical-mode .sn-ticker {
 
 @media (max-width: 560px) {
   .sn-hero-frame {
-    --hero-media-w: calc(100% + (var(--pad) * 2));
+    --hero-media-w: 100%;
     --hero-media-bottom: 0px;
     --hero-media-h: auto;
     --hero-media-left: 0px;

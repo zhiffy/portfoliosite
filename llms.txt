@@ -3,25 +3,34 @@
 > Shavonne Wong (b. 1990, Singapore) is a Singaporean new media artist, AI artist, and interactive installation artist working in AI, 3D rendering, and participatory installation, based between Singapore and Bangkok. Her work examines identity, image systems, and human-AI relationships. She has exhibited at the Venice Biennale, ArtScience Museum Singapore, Art SG, Taipei Dangdai, Art Central Hong Kong, and Paris Photo. Recognition includes Forbes 30 Under 30 Asia (2020) and Prestige 40 Under 40 (2023). She co-founded NFT Asia and is a member of the artist collective BLOOM.
 
 ## Key facts
+- Canonical site: https://www.shavonnewong.art/
+- Sitemap: https://www.shavonnewong.art/sitemap.xml
 - Practice: interactive AI installation, 3D virtual humans, single-channel video, generative editions.
 - Current work: Conditional (2026), a real-time installation that renders the room with every person removed; viewers reappear only by holding still and accepting colour correction.
 - Best-known projects: Meet Eva Here (2024-25, AI companion installation), After Ophelia (2025, AI video diptych), Love is Love (2021, generative edition collected by Idris Elba).
 - Works are available to collect as unique pieces and editions; enquiries: studio@shavonnewong.art.
 
 ## Key pages
-- [About](https://shavonnewong.art/about/): Biography, artist statement, full exhibition history, collaborations, recognition, talks and press.
-- [CV (PDF)](https://shavonnewong.art/assets/cv/shavonne-wong-cv.pdf): Downloadable artist CV with full exhibition, press, awards, and talks history.
-- [Works](https://shavonnewong.art/works/): Catalogue of projects, single works, editions, and commissions.
-- [Available works](https://shavonnewong.art/works/available/): Collector-focused inventory of available works with edition and provenance details.
-- [Conditional](https://shavonnewong.art/works/conditional/): Current work, 2026. A real-time generative AI installation in which a screen shows a live feed of the room with the viewer continuously removed; holding still lets you fade back, colour-shifted, as a version the scene will accept.
-- [The Bubble We Call Home](https://shavonnewong.art/works/the-bubble-we-call-home/): Unique 1/1 single-channel video commission for Artist's Proof: Singapore at 60 (AP60), commissioned by Mr Chong, 2025.
-- [Meet Eva Here](https://shavonnewong.art/works/meet-eva-here/): Interactive AI companion artwork shown at ArtScience Museum, Art SG, and Taipei Dangdai.
-- [After Ophelia](https://shavonnewong.art/works/after-ophelia/): Two-part AI video work on identity and inherited interpretation, Paris Photo 2025.
-- [The Ties That Bind](https://shavonnewong.art/works/the-ties-that-bind/): Solo exhibition of seven dynamic digital works, Singapore, 2023.
-- [By Proxy](https://shavonnewong.art/works/by-proxy/): Series of 60 unique CGI and photography works with Lenne Chai, 2022.
-- [Love is Love](https://shavonnewong.art/works/love-is-love/): Generative digital artwork with a 500-piece edition, collected by Idris Elba, 2021.
-- [Press](https://shavonnewong.art/press/): Selected press, profiles, and features.
-- [Writing](https://shavonnewong.art/writing/): Studio notes, published twice a year.
+- [About](https://www.shavonnewong.art/about/): Biography, artist statement, full exhibition history, collaborations, recognition, talks and press.
+- [CV (PDF)](https://www.shavonnewong.art/assets/cv/shavonne-wong-cv.pdf): Downloadable artist CV with full exhibition, press, awards, and talks history.
+- [Works](https://www.shavonnewong.art/works/): Catalogue of projects, single works, editions, and commissions.
+- [Available works](https://www.shavonnewong.art/works/available/): Collector-focused inventory of available works with edition and provenance details.
+- [Conditional](https://www.shavonnewong.art/works/conditional/): Current work, 2026. A real-time generative AI installation in which a screen shows a live feed of the room with the viewer continuously removed; holding still lets you fade back, colour-shifted, as a version the scene will accept.
+- [The Bubble We Call Home](https://www.shavonnewong.art/works/the-bubble-we-call-home/): Unique 1/1 single-channel video commission for Artist's Proof: Singapore at 60 (AP60), commissioned by Mr Chong, 2025.
+- [Meet Eva Here](https://www.shavonnewong.art/works/meet-eva-here/): Interactive AI companion artwork shown at ArtScience Museum, Art SG, and Taipei Dangdai.
+- [After Ophelia](https://www.shavonnewong.art/works/after-ophelia/): Two-part AI video work on identity and inherited interpretation, Paris Photo 2025.
+- [The Ties That Bind](https://www.shavonnewong.art/works/the-ties-that-bind/): Solo exhibition of seven dynamic digital works, Singapore, 2023.
+- [By Proxy](https://www.shavonnewong.art/works/by-proxy/): Series of 60 unique CGI and photography works with Lenne Chai, 2022.
+- [Love is Love](https://www.shavonnewong.art/works/love-is-love/): Generative digital artwork with a 500-piece edition, collected by Idris Elba, 2021.
+- [Press](https://www.shavonnewong.art/press/): Press coverage, features, and media mentions.
+- [Writing](https://www.shavonnewong.art/writing/): Studio update letters from 2023 to present.
+- [Contact](https://www.shavonnewong.art/contact/): Studio contact and booking.
 
-## Contact
-- Studio enquiries: studio@shavonnewong.art
+## Studio updates
+- [June 2026: Goodbye to Eva, into the mirror](https://www.shavonnewong.art/update2026jun/): Closing the Meet Eva Here project and beginning work on Conditional.
+- [June 2025: Public rooms](https://www.shavonnewong.art/update2025jun/): Paris Photo, studio practice, and public exhibition notes.
+- [January 2025: Eva goes public](https://www.shavonnewong.art/update2025jan/): Meet Eva Here opens at ArtScience Museum Singapore.
+- [June 2024: A win, and a move](https://www.shavonnewong.art/update2024jun/): Forbes recognition and studio relocation notes.
+- [January 2024: Closing out the year](https://www.shavonnewong.art/update2024jan/): Solo exhibition at NFT Factory Paris and year in review.
+- [June 2023: My first solo](https://www.shavonnewong.art/update2023june/): The Ties That Bind solo exhibition, Singapore.
+- [January 2023: A year of firsts](https://www.shavonnewong.art/update2023jan/): Venice Biennale, Art SG, and first year in new media.

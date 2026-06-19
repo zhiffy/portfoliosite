@@ -123,16 +123,25 @@
 }
 
 @media (min-width: 901px) {
-  html.sn-vertical-mode .sn-eras { padding: clamp(96px, 13vh, 168px) 0 !important; }
+  html.sn-vertical-mode .sn-eras {
+    padding: clamp(96px, 13vh, 168px) 0 clamp(46px, 7vh, 86px) !important;
+  }
   html.sn-vertical-mode .sn-eras-frame {
     max-width: var(--sn-vertical-max, 1180px);
     margin: 0 auto;
     padding: 0 clamp(40px, 6vw, 96px);
+    transform: none !important;
   }
   html.sn-vertical-mode .sn-eras-head { max-width: none; }
   /* Override scroll-narrative's 820px cap — era lede fills its container */
   html.sn-vertical-mode .sn-eras-lede { max-width: none; }
 }
+@media (min-width: 901px) {
+  html.sn-vertical-mode .sn-works.sn-works-v2 {
+    padding-top: clamp(58px, 8vh, 92px) !important;
+  }
+}
+
 html.sn-vertical-mode .sn-eras-lede em { color: var(--accent-deep); font-style: italic; font-weight: 300; }
 
 /* reveal layer sits behind the text */

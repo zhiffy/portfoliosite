@@ -27,5 +27,5 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# See llms.txt for a curated reading list for language models.
-Sitemap: https://shavonnewong.art/sitemap.xml
+# See https://www.shavonnewong.art/llms.txt for a curated reading list for language models.
+Sitemap: https://www.shavonnewong.art/sitemap.xml

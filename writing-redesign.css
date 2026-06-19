@@ -70,7 +70,7 @@
   align-items: baseline;
   gap: clamp(20px, 2.4vw, 40px);
   flex-wrap: wrap;
-  border-top: 1px dotted var(--hairline-strong);
+  border-top: 1px solid var(--hairline-strong);
   padding-top: 14px;
 }
 .wr-meta-row li {
@@ -140,7 +140,7 @@
   font-size: 15px;
   color: var(--accent-deep);
   padding-bottom: 8px;
-  border-bottom: 1px dotted var(--hairline);
+  border-bottom: 1px solid var(--hairline);
 }
 .wr-card-thumb {
   margin: 0;

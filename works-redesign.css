@@ -363,7 +363,7 @@
   justify-content: space-between;
   gap: 10px;
   padding-top: 10px;
-  border-top: 1px dotted var(--hairline);
+  border-top: 1px solid var(--hairline);
 }
 .wk-tag {
   font-family: var(--sans);
@@ -737,7 +737,7 @@
 .av-provenance {
   grid-column: 1 / -1;
   margin-top: 8px;
-  border-top: 1px dashed var(--hairline-strong);
+  border-top: 1px solid var(--hairline-strong);
   padding-top: 10px;
 }
 .av-provenance-summary {
@@ -1580,7 +1580,7 @@
   justify-content: center;
   aspect-ratio: 1 / 1;
   background: var(--surface);
-  border: 1px dashed var(--hairline-strong);
+  border: 1px solid var(--hairline-strong);
   text-decoration: none;
   color: inherit;
   transition: background .25s ease, border-color .25s ease, color .25s ease;

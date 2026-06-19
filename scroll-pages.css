@@ -2494,8 +2494,8 @@ main > .sp-section:last-of-type {
   line-height: 1.7;           /* was 1.75 */
   color: var(--text);         /* Slate — was Fog grey (--text-2) */
 }
-.sp-copy { max-width: 64ch; }
-.sp-text-stack .sp-copy { max-width: 64ch; }   /* was 760px (~85ch) */
+.sp-copy { max-width: none; }
+.sp-text-stack .sp-copy { max-width: none; }   /* prose fills its column — no ch cap on paragraphs (rule 2a) */
 .sp-text-stack { gap: 20px; }
 
 .sp-intro { color: var(--text); line-height: 1.65; }  /* was Fog */

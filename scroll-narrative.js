@@ -560,6 +560,7 @@
       strip.style.transform = '';
       totalScroll = 0;
       pinSections = [];
+      if (erasPanel) erasPanel.style.setProperty('--eras-copy-y', '0px');
       setAboutProgress(1);
       applyHeroMediaLayout();
       return;
@@ -570,14 +571,29 @@
     stripWidth = strip.scrollWidth;
     baseTotalScroll = Math.max(0, stripWidth - vw);
 
-    // Keep the homepage's desktop scroll on the document only. Earlier builds
-    // pinned the Practice/Era panel and drove its internal scrollTop, which can
-    // feel like a snag with trackpads when momentum reverses inside that panel.
-    const erasScrollable = 0;
-    erasPinDistance = 0;
+    const erasFrame = erasPanel ? erasPanel.querySelector('.sn-eras-frame') : null;
+    const erasFrameStyle = erasFrame ? window.getComputedStyle(erasFrame) : null;
+    const erasContentBottom = erasFrame
+      ? Array.from(erasFrame.children).reduce((max, child) => {
+          return Math.max(max, child.offsetTop + child.offsetHeight);
+        }, 0) + (parseFloat(erasFrameStyle.paddingBottom) || 0)
+      : 0;
+    const erasScrollable = erasFrame
+      ? Math.max(
+          0,
+          erasFrame.scrollHeight - erasFrame.clientHeight,
+          erasContentBottom - erasFrame.clientHeight
+        )
+      : 0;
+    erasPinDistance = erasScrollable > 1
+      ? Math.max(erasScrollable * 1.35, Math.min(vh * 0.9, 820))
+      : 0;
     erasPinStart = erasPanel
       ? clamp(erasPanel.offsetLeft, 0, baseTotalScroll)
       : 0;
+    if (erasPanel && erasPinDistance <= 0) {
+      erasPanel.style.setProperty('--eras-copy-y', '0px');
+    }
 
     aboutPinDistance = aboutPanel ? Math.max(vh * 3.2, 2600) : 0;
     aboutPinStart = aboutPanel
@@ -616,11 +632,8 @@
         x: erasPinStart,
         distance: erasPinDistance,
         apply(progress) {
-          const erasScrollMax = Math.max(0, erasPanel.scrollHeight - erasPanel.clientHeight);
-          const scrollPhase = erasScrollMax > 0
-            ? clamp(erasScrollMax / Math.max(1, erasPinDistance))
-            : 1;
-          erasPanel.scrollTop = clamp(progress / Math.max(0.001, scrollPhase)) * erasScrollMax;
+          const shift = -erasScrollable * easeInOut(clamp(progress));
+          erasPanel.style.setProperty('--eras-copy-y', shift.toFixed(2) + 'px');
         }
       } : null,
       aboutPanel && aboutPinDistance > 0 ? {

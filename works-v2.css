@@ -450,7 +450,7 @@ html.sn-ripple-filter-on .wk2-panels { filter: url(#snWebglRippleDisplace); }
 
 /* Availability dot */
 .wk2-dot {
-  display: inline-flex;
+  display: none;
   align-items: center;
   gap: 8px;
   font-size: 11px;
@@ -458,6 +458,9 @@ html.sn-ripple-filter-on .wk2-panels { filter: url(#snWebglRippleDisplace); }
   text-transform: uppercase;
   color: var(--text-3);
   font-feature-settings: "tnum";
+}
+.wk2-show-availability .wk2-dot {
+  display: inline-flex;
 }
 .wk2-dot::before {
   content: "";

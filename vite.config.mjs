@@ -41,6 +41,7 @@ const cleanRoutes = {
   "/works/echoes-of-identity/": "echoes-of-identity.html",
   "/works/vogue-singapore/": "vogue-singapore.html",
   "/works/whirlwind-of-the-waking-dream/": "whirlwind-of-the-waking-dream.html",
+  "/works/whirlwind-of-the-waking-world/": "whirlwind-of-the-waking-dream.html",
 };
 
 function rewriteCleanRoute(request) {

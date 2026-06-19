@@ -1,6 +1,6 @@
 # Website Working Rules and Shavonne's Design Preferences
 
-Read this before any design, layout, or copy work on this site. It records what Shavonne has approved and rejected in practice. The writing-style rules from the vault CLAUDE.md (no em dashes, no en dashes, no colons as prose separators, no "gap", sentence case for public copy, etc.) apply to ALL site copy, captions, and meta text.
+Read this before any design, layout, or copy work on this site. It records what Shavonne has approved and rejected in practice. The writing-style rules from the vault AGENTS.md (no em dashes, no en dashes, no colons as prose separators, no "gap", sentence case for public copy, etc.) apply to ALL site copy, captions, and meta text.
 
 ## Core standing rules (apply to every page, read these first)
 
@@ -35,7 +35,7 @@ C10. **Every interior page must load `site-header.js` and `site-i18n.js`.** Thes
 
 ## Conditional page specifics
 
-10. **Conditional is a format with multiple stagings.** The correct format-level description is: "a digital mirror that renders the room in full and erases the people in it." The work is presented as an ongoing series whose Conditions section frames the variables as research questions, never as a product feature list. Named stagings in order: The Waiting Room (first physical configuration, set in a waiting room) and The Mirror (next physical configuration, a mirror prototype, as of 2026). Schema is CreativeWorkSeries with hasPart.
+10. **Conditional is a format with multiple stagings.** The correct format-level description is: "a digital mirror that renders the room in full and erases the people in it." The work is presented as an ongoing series whose Conditions section frames the variables as research questions, never as a product feature list. Public page order is The Mirror above The Waiting Room, even though The Waiting Room remains the first physical configuration. Schema is CreativeWorkSeries with hasPart.
 
 11. **Do not invert the concept in the sub-headline.** "The viewer becomes part of the work" states the opposite of what Conditional does — the system erases people. The correct sub-headline or descriptive line is something like "A digital mirror that renders the room in full and erases the people in it." The comply-to-reappear / colour-corrected mechanic is a Waiting Room variable, not a format-level feature. Do not foreground it as the defining description.
 
@@ -135,7 +135,7 @@ W5. **Works tab filter state preserves in the URL.** When a visitor toggles a ta
 ## About page (`about.html`)
 
 A1. **The about page is an argument, not a CV.** A curator, press contact, or collector landing on it should understand what the work is and why it matters within 15 seconds. If the page only proves the artist is active and recognized, it has failed. Show the work; do not merely describe it.
-A2. **White background, not gray.** A gray or off-white background reads as a CMS default and was repeatedly flagged as wrong. The page uses a white base.
+A2. **Haze gray background is approved for the About page.** Earlier notes called for white, but Shavonne approved keeping the current Haze gray base on 2026-06-18. Do not change the About page background to white unless she asks for it again.
 A3. **The numbered section system (01, 02...) is correct.** Keep it. The italic serif on the artist name/surname is the right typographic gesture; carry it through as a system element (section pull-quotes, featured labels) not just a one-off in the hero.
 A4. **Exhibitions: selected highlights, not an exhaustive list.** The exhibitions section should contain 10–12 curated entries maximum, each with clear hierarchy (exhibition title, venue and city, year) and generous vertical spacing between entries. A wall of left-aligned text with right-aligned venues is a spreadsheet, not a webpage. Never have two text-wall sections back to back (e.g. Exhibitions followed immediately by Talks & Panels at the same density).
 A5. **Collaboration cards must include visuals.** Each card in the collaborations grid must show the campaign or project image — not just a brand name and text description. The Shu Uemura campaign, Vogue Singapore cover, Bang & Olufsen work, and Hong Kong Tatler cover all have striking imagery and should show it. A 2–3 column image grid with brand name and brief note below each is the right treatment.
@@ -175,7 +175,7 @@ V4. **Newsletter subscribe copy: broad value proposition.** The subscribe block 
 ## Factual record (do not contradict these without verification)
 
 F1. **Meet Eva Here** concluded November 3, 2025 at 100 Instagram diary posts and 2,363 recorded conversations across five venues plus the online chatbot. It is now sealed as a time capsule. The project ran August 2024 to November 2025.
-F2. **Conditional** has two named stagings as of 2026: The Waiting Room (first physical configuration, a room with chairs, mannequins, screen) and The Mirror (next physical configuration, a smaller mirror prototype in build in the studio). Both are in development; neither has been permanently installed at a venue.
+F2. **Conditional** has two named stagings as of 2026: The Waiting Room (first physical configuration, a room with chairs, mannequins, screen) and The Mirror (next physical configuration, a smaller mirror prototype in build in the studio). The public page presents The Mirror above The Waiting Room. Both are in development; neither has been permanently installed at a venue.
 F3. **After Ophelia** has two child works (Ophelia, Retold and Ophelia, Reassembled), both available for acquisition. The parent project page links to both individual pages.
 F4. **shavonnewong.com** redirects to shavonnewong.art. Keep the .com registration to prevent someone else from claiming it.
 F5. **Netlify environment variables required for the site to function:** `OPENSEA_API_KEY` (3D single works marketplace counts), `MAILERLITE_API_KEY` (newsletter signup), `CONTACT_SHEET_WEBHOOK_URL` (contact form to Google Sheets).

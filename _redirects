@@ -9,6 +9,8 @@
 /works/the-ties-that-bind/ /the-ties-that-bind.html 200
 /works/echoes-of-identity/ /echoes-of-identity.html 200
 /works/whirlwind-of-the-waking-dream/ /whirlwind-of-the-waking-dream.html 200
+/works/whirlwind-of-the-waking-world /works/whirlwind-of-the-waking-dream/ 301!
+/works/whirlwind-of-the-waking-world/ /works/whirlwind-of-the-waking-dream/ 301!
 /works/3d-single-works/ /works/#tab=single 301!
 /works/love-is-love/ /love-is-love.html 200
 /works/vogue-singapore/ /vogue-singapore.html 200
@@ -58,6 +60,10 @@
 /projects/after-ophelia/ /works/after-ophelia/ 301!
 /projects/the-bubble-we-call-home /works/the-bubble-we-call-home/ 301!
 /projects/the-bubble-we-call-home/ /works/the-bubble-we-call-home/ 301!
+/projects/whirlwind-of-the-waking-dream /works/whirlwind-of-the-waking-dream/ 301!
+/projects/whirlwind-of-the-waking-dream/ /works/whirlwind-of-the-waking-dream/ 301!
+/projects/whirlwind-of-the-waking-world /works/whirlwind-of-the-waking-dream/ 301!
+/projects/whirlwind-of-the-waking-world/ /works/whirlwind-of-the-waking-dream/ 301!
 /projects/meet-eva-here /works/meet-eva-here/ 301!
 /projects/meet-eva-here/ /works/meet-eva-here/ 301!
 /projects/the-ties-that-bind /works/the-ties-that-bind/ 301!
