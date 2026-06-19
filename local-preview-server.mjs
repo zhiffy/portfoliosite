@@ -32,6 +32,8 @@ const contentTypes = {
 const routes = {
   "/": "index.html",
   "/about/": "about.html",
+  "/zh-hans/about/": "zh-hans-about.html",
+  "/zh-hant/about/": "zh-hant-about.html",
   "/contact/": "contact.html",
   "/press/": "press.html",
   "/writing/": "writing.html",

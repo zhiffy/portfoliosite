@@ -1051,7 +1051,7 @@
           return option;
         }));
         select.dataset.languageReady = 'true';
-        select.addEventListener('change', () => setLanguage(select.value));
+        select.addEventListener('change', () => setLanguage(select.value, { navigate: true }));
       }
       select.value = currentLanguage;
       select.setAttribute('aria-label', t('ui.languageLabel'));
@@ -1087,6 +1087,7 @@
 
   function setLanguage(code, options) {
     if (!supportedCodes.has(code)) code = fallbackLanguage;
+    if (options && options.navigate && navigateToLanguage(code)) return;
     currentLanguage = code;
     if (!options || options.persist !== false) writeStoredLanguage(code);
     syncDocumentLanguage();
@@ -1125,9 +1126,78 @@
     }
   }
 
+  function readDocumentLanguage() {
+    try {
+      const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+      if (!htmlLang) return null;
+      const match = languages.find((language) => {
+        return language.htmlLang.toLowerCase() === htmlLang || language.code.toLowerCase() === htmlLang;
+      });
+      return match ? match.code : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
   function isHomepage() {
     const path = window.location.pathname.replace(/index\.html$/, '');
     return path === '/' || path === '';
+  }
+
+  function isLocalPreviewHost() {
+    return ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+  }
+
+  function localPreviewPath(pathname) {
+    if (!isLocalPreviewHost()) return pathname;
+    const aboutMatch = pathname.match(/^\/(zh-hans|zh-hant)\/about\/?$/i);
+    if (aboutMatch) return '/' + aboutMatch[1].toLowerCase() + '-about.html';
+    return pathname;
+  }
+
+  function localizeHref(href) {
+    try {
+      const target = new URL(href, window.location.href);
+      target.protocol = window.location.protocol;
+      target.host = window.location.host;
+      target.pathname = localPreviewPath(target.pathname);
+      return target.href;
+    } catch (error) {
+      return href;
+    }
+  }
+
+  function alternateUrlFor(code) {
+    const meta = getLanguageMeta(code);
+    if (!meta || !document.head) return '';
+    const selector = 'link[rel~="alternate"][hreflang="' + meta.htmlLang + '"]';
+    const link = document.head.querySelector(selector);
+    if (!link) return '';
+    return localizeHref(link.getAttribute('href') || '');
+  }
+
+  function navigateToLanguage(code) {
+    let target = '';
+    if (isHomepage()) {
+      const url = new URL(window.location.href);
+      if (code === fallbackLanguage) {
+        url.searchParams.delete('lang');
+      } else {
+        url.searchParams.set('lang', code);
+      }
+      target = url.href;
+    } else {
+      target = alternateUrlFor(code);
+    }
+    if (!target) return false;
+
+    const current = new URL(window.location.href);
+    const next = new URL(target, window.location.href);
+    if (current.pathname === next.pathname && current.search === next.search && current.hash === next.hash) return false;
+
+    writeStoredLanguage(code);
+    window.location.assign(next.href);
+    return true;
   }
 
   function upsertHeadLink(key, rel, hreflang, href) {
@@ -1166,8 +1236,11 @@
     initialized = true;
     const fromUrl = readUrlLanguage();
     const fromPath = readPathLanguage();
-    currentLanguage = fromUrl || fromPath || readStoredLanguage();
-    setLanguage(currentLanguage, { persist: Boolean(fromUrl) });
+    const fromDocument = readDocumentLanguage();
+    currentLanguage = isHomepage()
+      ? (fromUrl || readStoredLanguage())
+      : (fromPath || fromDocument || fallbackLanguage);
+    setLanguage(currentLanguage, { persist: false });
   }
 
   window.SW_I18N = {
