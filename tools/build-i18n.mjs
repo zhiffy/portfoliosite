@@ -13,9 +13,10 @@
  *   node tools/build-i18n.mjs check   [page]   report which translations have drifted from English
  *   node tools/build-i18n.mjs all              extract, build, check
  *
- * Review gate: a localized page is built with <meta robots noindex> and is left
- * OUT of hreflang and the sitemap until its status is "reviewed" in status.json.
- * Flip status to "reviewed" and rebuild to advertise it to search.
+ * Index gate: a localized page is built with <meta robots noindex> and is left
+ * OUT of hreflang and the sitemap until it is current and has a status that may
+ * be indexed. Both "machine" and "reviewed" translations are indexable because
+ * the live site discloses AI translation to visitors.
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
@@ -71,10 +72,11 @@ const builtLangs = (page) =>
 const enHash = (page) => (existsSync(bodyPath(page, 'en')) ? sha(readFileSync(bodyPath(page, 'en'), 'utf8')) : null);
 const isFresh = (page, code, status) =>
   Boolean(status[page] && status[page][code] && status[page][code].src === enHash(page));
-// langs cleared for indexing: en plus any built lang that is reviewed AND not stale
+const indexableStatuses = new Set(['machine', 'reviewed']);
+// langs cleared for indexing: en plus any built lang that is indexable AND not stale
 const advertisedLangs = (page, status) =>
   ['en', ...builtLangs(page).filter((c) => status[page] && status[page][c]
-    && status[page][c].status === 'reviewed' && isFresh(page, c, status))];
+    && indexableStatuses.has(status[page][c].status) && isFresh(page, c, status))];
 
 function sliceBody(html, page) {
   const p = cfg.pages[page];
@@ -314,7 +316,7 @@ function updateManagedAll(status) {
       if (c === 'en') continue;
       entries.push('  <url>');
       entries.push(`    <loc>${url(page, c)}</loc>`);
-      entries.push('    <lastmod>2026-06-19</lastmod>');
+      entries.push('    <lastmod>2026-06-20</lastmod>');
       entries.push('  </url>');
     }
   }
@@ -350,10 +352,10 @@ function build() {
     for (const c of builtLangs(page)) {
       writeFileSync(path.join(ROOT, outFile(page, c)), assemble(page, c, status));
       const st = (status[page] && status[page][c]) || {};
-      const reviewed = st.status === 'reviewed';
+      const indexable = indexableStatuses.has(st.status);
       const fresh = isFresh(page, c, status);
-      if (reviewed && !fresh) console.log(`  !! STALE: ${page}.${c} is reviewed but its English source changed since translation. Held to noindex until re-translated and re-reviewed.`);
-      const state = reviewed && fresh ? 'indexed' : reviewed && !fresh ? 'noindex (stale)' : 'noindex until reviewed';
+      if (indexable && !fresh) console.log(`  !! STALE: ${page}.${c} is ${st.status} but its English source changed since translation. Held to noindex until refreshed.`);
+      const state = indexable && fresh ? `indexed (${st.status})` : indexable && !fresh ? 'noindex (stale)' : 'noindex until indexable';
       console.log(`build: ${outFile(page, c)}  (${c}, ${state})`);
     }
   }
