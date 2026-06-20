@@ -193,11 +193,13 @@ const htmlEntries = Object.fromEntries(
 function copyStaticFiles() {
   const copyTargets = [
     "assets",
+    "c7d8ef3c9a2b4f56b8d1e0a93c4f5276.txt",
     "contact.css",
     "uploads",
     "fluid-renderer.js",
     "favicon.ico",
     "lightbox.js",
+    "llms.txt",
     "press-hover.js",
     "robots.txt",
     "scroll-narrative.js",

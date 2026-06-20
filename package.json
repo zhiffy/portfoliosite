@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
+    "indexnow": "node tools/submit-indexnow.mjs",
     "prepare:nft-media": "node tools/prepare-nft-media.mjs",
     "preview": "vite preview --host 127.0.0.1"
   },
