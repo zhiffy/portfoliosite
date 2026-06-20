@@ -141,6 +141,8 @@ A4. **Exhibitions: selected highlights, not an exhaustive list.** The exhibition
 A5. **Collaboration cards must include visuals.** Each card in the collaborations grid must show the campaign or project image — not just a brand name and text description. The Shu Uemura campaign, Vogue Singapore cover, Bang & Olufsen work, and Hong Kong Tatler cover all have striking imagery and should show it. A 2–3 column image grid with brand name and brief note below each is the right treatment.
 A6. **At least one image of actual work per major section.** No section should be purely text unless it is a deliberate typographic moment. The artist statement can be text-only if it has visual breathing room; everything else should have imagery.
 
+A7. **The Digital Rhythm show (Digital Art Fair, Ora-Ora, Hong Kong) must always stay in the Selected set on the exhibitions ledger.** Its `<li class="abv-exh-entry">` must carry `data-selected` so it shows under "Selected only". Apply this across every language version (`about.html`, `about-zh-hans.html`, `about-zh-hant.html`) and the i18n source bodies (`i18n/bodies/about.en.html`, `about.zh-Hans.html`, `about.zh-Hant.html`), and never drop it on a rebuild. (Standing request from Shavonne, 2026-06-20.)
+
 ## Homepage (`index.html`)
 
 H1. **One bio, not two.** The homepage introduces the artist briefly in the hero. The full bio, statement, and CV live on the About page. Do not introduce the artist again mid-page with a second portrait and a second full paragraph — the reader has not forgotten who the page is about. The "double bio" pattern was flagged as the central structural problem.
