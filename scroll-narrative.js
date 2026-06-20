@@ -49,6 +49,13 @@
   // Width-only check: the hero overlap + inverted blend should run in desktop
   // vertical-scroll mode too, but NOT on phones (which keep the stacked hero).
   const isMobileViewport = () => window.matchMedia('(max-width: 900px)').matches;
+  const prefersReducedMotion = () => {
+    try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+    catch (error) { return false; }
+  };
+  // Hero pin budget as a fraction of viewport height. Set to 0 to disable the
+  // pinned-hero sweep entirely (kill switch).
+  const HERO_PIN_VH = 0.45;
   const i18n = () => window.SW_I18N;
   const text = (key, fallback, vars) => {
     const api = i18n();
@@ -133,6 +140,10 @@
   let writingPinDistance = 0;
   let pressPinStart = 0;
   let pressPinDistance = 0;
+  let heroPinStart = 0;
+  let heroPinDistance = 0;
+  let heroPinned = false;
+  let heroSweepGeom = null;
   let pinSections = [];
   let currentX = 0;
   let vw = window.innerWidth;
@@ -300,6 +311,7 @@
   }
 
   function syncHeroInvertClip() {
+    if (heroPinned) return;
     if (!heroFrameEl || !heroTypeInvert || !heroMediaTile || isMobileViewport()) return;
     const mediaRect = heroMediaTile.getBoundingClientRect();
     const invertRect = heroTypeInvert.getBoundingClientRect();
@@ -340,6 +352,85 @@
       const baseClipRight = Math.max(0, baseRect.right - mediaRect.left);
       heroFrameEl.style.setProperty('--hero-base-clip-right', baseClipRight.toFixed(2) + 'px');
     }
+  }
+
+  function captureHeroSweepGeom() {
+    if (!heroFrameEl || !heroMediaTile || !heroTypeInvert) return null;
+    const tileRect = heroMediaTile.getBoundingClientRect();
+    const invertRect = heroTypeInvert.getBoundingClientRect();
+    if (!tileRect.width || !invertRect.width) return null;
+    const baseRect = heroTypeBase ? heroTypeBase.getBoundingClientRect() : invertRect;
+    const baseW = parseFloat(getComputedStyle(heroFrameEl).getPropertyValue('--hero-media-w')) || tileRect.width;
+    return {
+      rightEdge: tileRect.right,     // media panel right edge, kept anchored (no gap)
+      frameLeft: heroFrameEl.getBoundingClientRect().left, // target: page/content left edge
+      baseW: baseW,                  // original media width, restored on release
+      invertLeft0: invertRect.left,  // invert layer left, for clip-left inset math
+      baseRight0: baseRect.right     // base layer right, for base-clip-right inset math
+    };
+  }
+
+  // Hero pin sweep: while the hero is pinned full-screen, the invert/base boundary
+  // travels left across the name so the inverted blend covers progressively more of
+  // it (ending at ~90%), then the pin releases and the strip carries the hero away.
+  // Geometry is captured ONCE at pin entry; per-frame cost is two style writes only.
+  function setHeroPinTransitions(disable) {
+    // .sn-hero-media has "transition: width/height .45s" and the type layers have
+    // "transition: all" — these animate the scroll-driven width/clip changes over
+    // time, which lags the sweep and (on release) freezes a half-swept clip. Suppress
+    // them inline while pinned; restore (empty string) on release.
+    const value = disable ? 'none' : '';
+    const fig = heroMediaTile ? heroMediaTile.parentElement : null;
+    [fig, heroMediaTile, heroTypeBase, heroTypeInvert].forEach((el) => {
+      if (el) el.style.transition = value;
+    });
+  }
+
+  function setHeroSweep(progress) {
+    if (!heroFrameEl) return;
+    const p = clamp(progress);
+    if (p <= 0) {
+      if (heroPinned) {
+        const g = heroSweepGeom;
+        if (heroMediaTile) heroMediaTile.style.transform = '';
+        if (g) {
+          // Commit rest clip instantly while transitions are still suppressed, so
+          // nothing animates back from a swept value and leaves a stuck clip.
+          const restBoundary = g.rightEdge - g.baseW;
+          heroFrameEl.style.setProperty('--hero-invert-clip-left', Math.max(0, restBoundary - g.invertLeft0).toFixed(2) + 'px');
+          heroFrameEl.style.setProperty('--hero-base-clip-right', Math.max(0, g.baseRight0 - restBoundary).toFixed(2) + 'px');
+          void heroFrameEl.offsetWidth;
+        }
+        heroPinned = false;
+        heroSweepGeom = null;
+        heroFrameEl.classList.remove('is-hero-pinned');
+        setHeroPinTransitions(false);
+        syncHeroInvertClip();
+      }
+      return;
+    }
+    if (!heroSweepGeom) heroSweepGeom = captureHeroSweepGeom();
+    const g = heroSweepGeom;
+    if (!g) return;
+    if (!heroPinned) setHeroPinTransitions(true);
+    heroPinned = true;
+    heroFrameEl.classList.add('is-hero-pinned');
+    // Scale the media panel UP uniformly (right + top edges anchored) so it reaches
+    // the page's left edge with no gap and WITHOUT changing aspect ratio — the video
+    // keeps its framing (faces aren't cropped) and simply bleeds off the bottom. The
+    // invert/base boundary tracks the scaled panel's left edge so the inverted blend
+    // sweeps across and covers the whole name as the panel grows.
+    const sMax = g.baseW > 0 ? (g.rightEdge - g.frameLeft) / g.baseW : 1;
+    const s = 1 + easeInOut(p) * Math.max(0, sMax - 1);
+    if (heroMediaTile) {
+      heroMediaTile.style.transformOrigin = 'top right';
+      heroMediaTile.style.transform = 'scale(' + s.toFixed(4) + ')';
+    }
+    const boundary = g.rightEdge - g.baseW * s;
+    const invertLeft = Math.max(0, boundary - g.invertLeft0);
+    const baseRight = Math.max(0, g.baseRight0 - boundary);
+    heroFrameEl.style.setProperty('--hero-invert-clip-left', invertLeft.toFixed(2) + 'px');
+    heroFrameEl.style.setProperty('--hero-base-clip-right', baseRight.toFixed(2) + 'px');
   }
 
   function applyHeroMediaLayout() {
@@ -560,6 +651,10 @@
       strip.style.transform = '';
       totalScroll = 0;
       pinSections = [];
+      heroPinned = false;
+      heroSweepGeom = null;
+      heroPinDistance = 0;
+      setHeroPinTransitions(false);
       if (erasPanel) erasPanel.style.setProperty('--eras-copy-y', '0px');
       setAboutProgress(1);
       applyHeroMediaLayout();
@@ -567,9 +662,19 @@
     }
 
     applyHeroMediaLayout();
+    heroSweepGeom = null;
 
     stripWidth = strip.scrollWidth;
     baseTotalScroll = Math.max(0, stripWidth - vw);
+
+    // Hero pin: hold the hero full-screen for a short budget while the inverted
+    // blend sweeps across the name, then release. Desktop horizontal only —
+    // disabled under reduced-motion (accessibility guard); narrow viewports never
+    // reach here (handled by the early return above).
+    heroPinStart = 0;
+    heroPinDistance = (heroPanel && !prefersReducedMotion() && HERO_PIN_VH > 0)
+      ? Math.round(vh * HERO_PIN_VH)
+      : 0;
 
     const erasFrame = erasPanel ? erasPanel.querySelector('.sn-eras-frame') : null;
     const erasFrameStyle = erasFrame ? window.getComputedStyle(erasFrame) : null;
@@ -627,6 +732,14 @@
       : 0;
 
     pinSections = [
+      heroPanel && heroPinDistance > 0 ? {
+        id: 'hero',
+        x: heroPinStart,
+        distance: heroPinDistance,
+        apply(progress) {
+          setHeroSweep(progress);
+        }
+      } : null,
       erasPanel && erasPinDistance > 0 ? {
         id: 'eras',
         x: erasPinStart,
@@ -1208,12 +1321,12 @@
       return;
     }
     if (id === 'about' && aboutPanel && aboutPinDistance > 0) {
-      window.scrollTo({ top: aboutPinStart + aboutPinDistance * 0.45, behavior: 'smooth' });
+      window.scrollTo({ top: scrollTargetForPanel(aboutPanel) + aboutPinDistance * 0.45, behavior: 'smooth' });
       return;
     }
     if (id === 'statement' && aboutPanel && aboutPinDistance > 0) {
       window.scrollTo({
-        top: aboutPinStart + aboutPinDistance + statementPinDistance * 0.42,
+        top: scrollTargetForPanel(aboutPanel) + aboutPinDistance + statementPinDistance * 0.42,
         behavior: 'smooth'
       });
       return;

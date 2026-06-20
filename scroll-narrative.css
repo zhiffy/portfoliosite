@@ -1292,6 +1292,11 @@ html.sn-vertical-mode .sn-ticker {
    The invert effect is the text characters only — the original video
    shows through the transparent invert layer between and around the letters. */
 .sn-hero-invert-bg { display: none; }
+/* The brand period after "Wong." lands on the video tile's left edge. In the invert
+   (difference-blend) layer it renders as a stray white square over the dark video.
+   Suppress it in the invert layer only; the base-layer period still shows when it
+   falls on the cream column. */
+.sn-hero-type-invert .sn-hero-dot { visibility: hidden; }
 .sn-hero-overline {
   display: flex; align-items: center; gap: 14px;
   flex-wrap: wrap;

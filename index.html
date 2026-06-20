@@ -61,7 +61,7 @@
       } catch (error) {}
     })();
   </script>
-  <link rel="stylesheet" href="/scroll-narrative.css?v=20260618-mobile-gutters">
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260620-hero-dot">
   <link rel="stylesheet" href="/works-home-redesign.css?v=20260615-detrack">
   <link rel="stylesheet" href="/home-vertical-v2.css?v=20260608-eras">
   <link rel="stylesheet" href="/contact.css?v=20260615-detrack">
@@ -135,7 +135,7 @@
             <p class="sn-hero-sub">
               <em data-i18n="home.hero.subtitle">3D, AI and interactive installations.</em>
             </p>
-            <p class="sn-hero-cred">Exhibited at <strong>Venice Biennale</strong>, ART SG, ArtScience Museum, Taipei Dangdai</p>
+            <p class="sn-hero-cred" data-i18n-html="home.hero.cred">Exhibited at <strong>Venice Biennale</strong>, ART SG, ArtScience Museum, Taipei Dangdai</p>
           </div>
           <div class="sn-hero-type sn-hero-type-invert" data-parallax="-0.10" aria-hidden="true">
             <figure class="sn-hero-invert-bg" aria-hidden="true" data-hero-invert-bg></figure>
@@ -148,7 +148,7 @@
             <p class="sn-hero-sub">
               <em data-i18n="home.hero.subtitle">3D, AI and interactive installations.</em>
             </p>
-            <p class="sn-hero-cred">Exhibited at <strong>Venice Biennale</strong>, ART SG, ArtScience Museum, Taipei Dangdai</p>
+            <p class="sn-hero-cred" data-i18n-html="home.hero.cred">Exhibited at <strong>Venice Biennale</strong>, ART SG, ArtScience Museum, Taipei Dangdai</p>
           </div>
 
           <!-- RIGHT: media tile (dark-tolerant) -->
@@ -534,14 +534,14 @@
           <div class="ct-layout" aria-labelledby="home-contact-title">
 
             <div class="ct-top">
-              <h2 class="ct-title" id="home-contact-title">Contact<em>.</em></h2>
+              <h2 class="ct-title" id="home-contact-title" data-i18n-html="home.contact.title">Contact<em>.</em></h2>
               <a class="ct-direct" href="mailto:studio@shavonnewong.art?subject=Studio%20enquiry">studio@shavonnewong.art</a>
             </div>
 
             <div class="ct-body">
-              <aside class="ct-notes" aria-label="Studio contact links">
+              <aside class="ct-notes" aria-label="Studio contact links" data-i18n-aria-label="home.contact.linksAria">
                 <div class="ct-links">
-                  <span class="ct-note-label">Elsewhere</span>
+                  <span class="ct-note-label" data-i18n="home.contact.elsewhere">Elsewhere</span>
                   <ul class="ct-link-list">
                     <li><a href="https://www.instagram.com/shavonne.wong/" target="_blank" rel="noreferrer"><span>Instagram</span><span>@shavonne.wong</span></a></li>
                     <li><a href="https://x.com/shavonnewong_" target="_blank" rel="noreferrer"><span>X</span><span>@shavonnewong_</span></a></li>
@@ -550,13 +550,13 @@
                   </ul>
                 </div>
                 <div class="ct-sub">
-                  <span class="ct-note-label">Studio notes</span>
-                  <p class="ct-sub-tagline">New work, exhibitions, and drops, a few times a year.</p>
+                  <span class="ct-note-label" data-i18n="home.contact.studioNotes">Studio notes</span>
+                  <p class="ct-sub-tagline" data-i18n="home.contact.subTagline">New work, exhibitions, and drops, a few times a year.</p>
                   <p class="ct-feedback ct-feedback--success" data-fs-success role="status" aria-live="polite"></p>
                   <p class="ct-feedback ct-feedback--error" data-fs-error role="alert"></p>
                   <form class="ct-sub-form" data-newsletter-form action="/api/newsletter-subscribe" method="POST">
-                    <input class="ct-sub-input" type="email" name="email" autocomplete="email" inputmode="email" required placeholder="you@example.com" aria-label="Email address">
-                    <button class="ct-sub-btn" type="submit">Subscribe</button>
+                    <input class="ct-sub-input" type="email" name="email" autocomplete="email" inputmode="email" required placeholder="you@example.com" aria-label="Email address" data-i18n-aria-label="home.contact.emailAria">
+                    <button class="ct-sub-btn" type="submit" data-i18n="home.contact.subscribe">Subscribe</button>
                   </form>
                 </div>
               </aside>
@@ -566,34 +566,34 @@
                 <p class="ct-feedback ct-feedback--error" data-fs-error role="alert"></p>
                 <form class="ct-form" data-contact-form action="/api/contact" method="POST">
                   <input type="hidden" name="_subject" value="Website contact enquiry">
-                  <label class="ct-honey">Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+                  <label class="ct-honey"><span data-i18n="home.contact.honey">Leave this field empty</span> <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
                   <div class="ct-grid">
                     <label class="ct-field">
-                      <span class="ct-label">Name</span>
+                      <span class="ct-label" data-i18n="home.contact.name">Name</span>
                       <input class="ct-input" type="text" name="name" autocomplete="name" required>
                     </label>
                     <label class="ct-field">
-                      <span class="ct-label">Email</span>
+                      <span class="ct-label" data-i18n="home.contact.email">Email</span>
                       <input class="ct-input" type="email" name="email" autocomplete="email" inputmode="email" required>
                     </label>
                   </div>
                   <label class="ct-field">
-                    <span class="ct-label">Enquiry type</span>
+                    <span class="ct-label" data-i18n="home.contact.enquiryType">Enquiry type</span>
                     <select class="ct-select" name="enquiry_type" required>
-                      <option value="">Select one</option>
-                      <option>Acquisition</option>
-                      <option>Commission</option>
-                      <option>Exhibition</option>
-                      <option>Press</option>
-                      <option>Collaboration</option>
-                      <option>Other</option>
+                      <option value="" data-i18n="home.contact.selectOne">Select one</option>
+                      <option data-i18n="home.contact.acquisition">Acquisition</option>
+                      <option data-i18n="home.contact.commission">Commission</option>
+                      <option data-i18n="home.contact.exhibition">Exhibition</option>
+                      <option data-i18n="home.contact.press">Press</option>
+                      <option data-i18n="home.contact.collaboration">Collaboration</option>
+                      <option data-i18n="home.contact.other">Other</option>
                     </select>
                   </label>
                   <label class="ct-field">
-                    <span class="ct-label">Message</span>
+                    <span class="ct-label" data-i18n="home.contact.message">Message</span>
                     <textarea class="ct-textarea" name="message" required></textarea>
                   </label>
-                  <button class="ct-submit" type="submit">Send message</button>
+                  <button class="ct-submit" type="submit" data-i18n="home.contact.send">Send message</button>
                 </form>
               </div>
             </div>
@@ -605,8 +605,8 @@
     </div>
   </main>
 
-  <script src="/site-i18n.js?v=20260620-i18n-rebuild"></script>
-  <script src="/scroll-narrative.js?v=20260531-novideo"></script>
+  <script src="/site-i18n.js?v=20260620-home-i18n"></script>
+  <script src="/scroll-narrative.js?v=20260620-hero-scale"></script>
   <script src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
   <script src="/subscribe.js?v=20260618-forms"></script>
 </body>
