@@ -11,6 +11,11 @@
   <meta name="description" content="By Proxy, a 60-work CGI and photography series by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images.">
   <meta name="author" content="Shavonne Wong">
   <link rel="canonical" href="https://www.shavonnewong.art/works/by-proxy/">
+  <meta property="og:url" content="https://www.shavonnewong.art/works/by-proxy/">
+  <!-- i18n:hreflang -->
+  <link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/works/by-proxy/">
+  <link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/works/by-proxy/">
+<!-- /i18n:hreflang -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="By Proxy | Shavonne Wong">
   <meta property="og:description" content="A 60-work CGI and photography series by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images.">
@@ -511,6 +516,14 @@
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
     <!-- End Cloudflare Web Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9KCWXRT7E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L9KCWXRT7E');
+    </script>
 </head>
 <body>
   <a class="sn-skip-link" href="#main">Skip to content</a>
@@ -518,12 +531,12 @@
   <header class="sn-nav" data-page-nav>
     <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="/assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
-      <a href="/#hero">Home</a>
-      <a href="/about/">About</a>
-      <a href="/works/" class="is-active">Works</a>
-      <a href="/writing/">Writing</a>
-      <a href="/press/">Press</a>
-      <a href="/contact/">Contact</a>
+      <a href="/#hero" data-i18n="nav.home">Home</a>
+      <a href="/about/" data-i18n="nav.about">About</a>
+      <a href="/works/" class="is-active" data-i18n="nav.works">Works</a>
+      <a href="/writing/" data-i18n="nav.writing">Writing</a>
+      <a href="/press/" data-i18n="nav.press">Press</a>
+      <a href="/contact/" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="sn-meta-right"></div>
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
@@ -1238,7 +1251,7 @@
   </script>
   <script src="/assets/js/by-proxy-listings.js?v=20260616-multi-collection"></script>
   <script src="/site-header.js?v=20260618-cta"></script>
-  <script src="/site-i18n.js?v=20260619-i18n-sticky"></script>
+  <script src="/site-i18n.js?v=20260620-i18n-rebuild"></script>
   <script src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
 </body>
 </html>

@@ -5,14 +5,14 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/assets/fonts/noto/noto-sans-sc-400.woff2?v=7ee1914c') format('woff2');
+  src: url('/assets/fonts/noto/noto-sans-sc-400.woff2?v=35e306ff') format('woff2');
 }
 @font-face {
   font-family: 'Noto Sans SC';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/assets/fonts/noto/noto-sans-sc-700.woff2?v=7ee1914c') format('woff2');
+  src: url('/assets/fonts/noto/noto-sans-sc-700.woff2?v=35e306ff') format('woff2');
 }
 
 /* Append the CJK face to the type tokens. Loaded after the page

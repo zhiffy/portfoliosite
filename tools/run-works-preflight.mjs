@@ -190,8 +190,10 @@ function checkSitemap(files) {
   const routeMap = routeMapFromRedirects();
 
   for (const file of files) {
-    const canonical = linkValue(read(file), 'canonical');
-    if (canonical && !urls.has(canonical)) fail(file, `canonical is absent from sitemap: ${canonical}`);
+    const html = read(file);
+    const canonical = linkValue(html, 'canonical');
+    const isNoindex = /<meta\s+name=["']robots["']\s+content=["'][^"']*\bnoindex\b/i.test(html);
+    if (canonical && !isNoindex && !urls.has(canonical)) fail(file, `canonical is absent from sitemap: ${canonical}`);
   }
 
   for (const url of urls) {

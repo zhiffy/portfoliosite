@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>Conditional 一面抹去你的鏡子 | Shavonne Wong</title>
+  <meta name="description" content="Conditional 是一個持續進行的裝置系列，建立在同一個前提之上，一面抹去你的鏡子。螢幕實時而忠實地渲染場景，卻移除了其中每一個人。每一次搭建都以不同的方式設定這場抹去的條件。" />
+  <meta name="author" content="Shavonne Wong">
+  <link rel="canonical" href="https://www.shavonnewong.art/works/conditional/zh-hant/" />
+  <meta name="robots" content="noindex">
+  <link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/works/conditional/">
+  <link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/works/conditional/">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.shavonnewong.art/works/conditional/zh-hant/" />
+  <meta property="og:title" content="Conditional 一面抹去你的鏡子 | Shavonne Wong" />
+  <meta property="og:description" content="一個持續進行的裝置系列，建立在同一個前提之上，一面抹去你的鏡子。每一次搭建都以不同的方式設定條件。為了被看見，你願意交出多少自己？" />
+  <meta property="og:image" content="https://www.shavonnewong.art/assets/conditional/compliance-reality.jpg" />
+  <meta property="og:image:width" content="1760" />
+  <meta property="og:image:height" content="1100" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Conditional 一面抹去你的鏡子 | Shavonne Wong" />
+  <meta name="twitter:description" content="一個持續進行的裝置系列，建立在同一個前提之上，一面抹去你的鏡子。每一次搭建都以不同的方式設定條件。為了被看見，你願意交出多少自己？" />
+  <meta name="twitter:image" content="https://www.shavonnewong.art/assets/conditional/compliance-reality.jpg" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/mulish/mulish-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260618-mobile-gutters">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260616-prose-fix">
+  <link rel="stylesheet" href="/work-gallery.css?v=20260614-spgallery9">
+  <style>
+    .sp-conditional-page .sp-project-hero .sp-title { font-size: clamp(46px, 6vw, 92px); overflow-wrap: anywhere; }
+    @media (max-width: 760px) { .sp-conditional-page .sp-project-hero .sp-title { font-size: clamp(40px, 12vw, 64px); } }
+
+    .sp-conditional-page .sp-project-hero { align-items: center; min-height: clamp(420px, 56vh, 620px); }
+    .sp-conditional-page .sp-project-hero .sp-project-line { font-size: clamp(22px, 2.1vw, 32px); line-height: 1.35; max-width: 26ch; }
+    .sp-conditional-page .sp-project-hero .sp-intro { max-width: 56ch; }
+
+    /* Single blocks, kicker above. A hairline opens each section so this
+       text-heavy page reads as distinct parts; whitespace alone is not enough
+       separation here. */
+    .sp-conditional-page .sp-section.sp-project-grid {
+      display: block;
+      border-top: 1px solid var(--hairline);
+      margin-top: clamp(24px, 2.4vw, 36px);
+      padding-top: clamp(18px, 1.8vw, 28px);
+    }
+    .sp-conditional-page .sp-section.sp-project-grid > div:first-child { position: static; margin: 0 0 18px; }
+    /* The hero already closes with a rule, so the first section opens without its own. */
+    .sp-conditional-page #overview { border-top: 0; margin-top: clamp(28px, 3vw, 44px); padding-top: clamp(6px, 1vw, 14px); }
+
+    /* Single-column prose at a readable measure. No side-by-side text panels. */
+    .sp-conditional-page .sp-text-stack > .sp-copy { max-width: none; }
+
+    /* The surveillance line closes the Overview, reading-plus italic (Mulish). */
+    .sp-conditional-page .sp-cond-aside {
+      font-family: var(--sans); font-style: italic; color: var(--text);
+      font-size: clamp(19px, 1.4vw, 23px); line-height: 1.55; max-width: none; margin: 6px 0 0;
+    }
+    /* The Mirror / The Waiting Room: text left, media right, media scrolls with
+       the page (no sticky). The Mirror keeps its assembly clip under the text. */
+    .sp-conditional-page .sp-cond-split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.52fr) minmax(0, 0.48fr);
+      column-gap: clamp(40px, 4vw, 80px);
+      align-items: start;
+    }
+    .sp-conditional-page .sp-cond-text { display: grid; gap: 18px; align-content: start; min-width: 0; }
+    .sp-conditional-page .sp-cond-text .sp-copy { max-width: none; }
+    .sp-conditional-page .sp-cond-text .sp-image-card { margin: 8px 0 0; max-width: 100%; }
+    .sp-conditional-page .sp-cond-media { display: grid; gap: 22px; align-content: start; min-width: 0; }
+    .sp-conditional-page .sp-cond-split .sp-image-card { margin: 0; max-width: none; width: 100%; grid-column: auto; }
+    .sp-conditional-page .sp-cond-split .sp-image-card img,
+    .sp-conditional-page .sp-cond-split .sp-image-card video { display: block; width: 100%; height: auto; }
+    .sp-conditional-page .sp-cond-generated-grid {
+      margin: clamp(22px, 2.4vw, 34px) 0 0;
+      max-width: none;
+      width: 100%;
+      grid-column: auto;
+    }
+    .sp-conditional-page .sp-cond-generated-grid img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .sp-conditional-page .sp-detail-grid { display: grid; grid-template-columns: minmax(120px, 0.22fr) minmax(0, 0.78fr); column-gap: clamp(24px, 3vw, 56px); row-gap: 14px; max-width: 1000px; }
+    .sp-conditional-page .sp-detail-grid dt { color: var(--text-2); font-size: 13px; letter-spacing: 0.04em; }
+    .sp-conditional-page .sp-detail-grid dd { margin: 0; max-width: 70ch; }
+
+    @media (max-width: 900px) {
+      .sp-conditional-page .sp-cond-split { grid-template-columns: 1fr; row-gap: 22px; }
+      .sp-conditional-page .sp-detail-grid { grid-template-columns: 1fr; row-gap: 4px; }
+      .sp-conditional-page .sp-detail-grid dd { margin: 0 0 12px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWorkSeries",
+    "name": "Conditional",
+    "creator": { "@type": "Person", "name": "Shavonne Wong", "sameAs": "https://en.wikipedia.org/wiki/Shavonne_Wong" },
+    "dateCreated": "2026",
+    "datePublished": "2026",
+    "artMedium": "Real-time generative AI installation, single- or multi-channel screen, live camera capture",
+    "url": "https://www.shavonnewong.art/works/conditional/",
+    "image": "https://www.shavonnewong.art/assets/conditional/compliance-reality.jpg",
+    "description": "An ongoing series of real-time installations in which a screen renders the scene in front of it faithfully, with every person erased by generative AI. Each staging sets the conditions of the erasure differently and is developed as its own work.",
+    "hasPart": [
+      {
+        "@type": "CreativeWork",
+        "name": "The Mirror (working title)",
+        "creativeWorkStatus": "Prototype in build",
+        "image": "https://www.shavonnewong.art/assets/conditional/mirror-frame-render.webp",
+        "description": "A screen disguised as a framed mirror. The viewer appears at first, as any mirror would show them, then is removed for good. No condition returns them. The frame's final form is generated as a composite of the whole ornate mirror category, grand from a distance and settling into no real tradition up close. The baroque frame shown now is a stand-in for the prototype."
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "The Waiting Room",
+        "creativeWorkStatus": "In development",
+        "image": "https://www.shavonnewong.art/assets/conditional/compliance-reality.jpg",
+        "description": "An institutional waiting area in which visitors vanish from a live feed of the room and reappear only by holding still, color-corrected into a version the scene will accept."
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.shavonnewong.art/" },
+      { "@type": "ListItem", "position": 2, "name": "Works", "item": "https://www.shavonnewong.art/works/" },
+      { "@type": "ListItem", "position": 3, "name": "Conditional", "item": "https://www.shavonnewong.art/works/conditional/" }
+    ]
+  }
+  </script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+
+  <script src="/site-header.js?v=20260618-cta" defer></script>
+  <script src="/site-i18n.js?v=20260620-i18n-rebuild" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9KCWXRT7E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L9KCWXRT7E');
+    </script>
+  <link rel="stylesheet" href="/assets/fonts/noto/noto-sans-tc.css?v=20260620">
+</head>
+<body class="sn-page-body sp-conditional-page">
+  <a class="sn-skip-link" href="#main-content">跳到內容</a>
+  <header class="sn-nav" data-page-nav>
+    <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="/assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
+    <nav class="sn-links">
+      <a href="/#hero" data-i18n="nav.home">首頁</a>
+      <a href="/about/zh-hant/" data-i18n="nav.about">關於</a>
+      <a href="/works/" class="is-active" data-i18n="nav.works">作品</a>
+      <a href="/writing/" data-i18n="nav.writing">文字</a>
+      <a href="/press/" data-i18n="nav.press">媒體</a>
+      <a href="/contact/" data-i18n="nav.contact">聯絡</a>
+    </nav>
+    <div class="sn-meta-right">
+      <label class="sn-lang-switcher" data-language-switcher>
+        <span class="sn-lang-kicker" data-i18n="ui.languageLabel">語言</span>
+        <select class="sn-lang-select" data-language-select aria-label="Language" data-i18n-aria-label="ui.languageLabel" title="Language"></select>
+      </label>
+    </div>
+    <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
+  </header>
+
+  <nav class="sp-subnav" aria-label="Page sections">
+    <a href="#overview">Overview</a>
+    <a href="#conditions">Conditions</a>
+    <a href="#mirror">The Mirror</a>
+    <a href="#waiting-room">The Waiting Room</a>
+    <a href="#research">Still thinking</a>
+  </nav>
+
+  <main id="main-content" class="sp-main sp-project-main">
+
+    <!-- ================= HERO ================= -->
+    <section class="sp-project-hero" aria-label="Conditional 概覽">
+      <div class="sp-project-hero-copy">
+        <h1 class="sp-title">Conditional<em>.</em></h1>
+        <p class="sp-project-line">一面抹去你的鏡子。</p>
+        <p class="sp-intro">作為一個社會，我們從未被如此完整地記錄，卻依然覺得沒有被看見。</p>
+      </div>
+      <figure class="sp-project-hero-media">
+        <img fetchpriority="high" decoding="async" src="/assets/conditional/compliance-reality.webp" alt="Conditional 概念渲染圖，觀眾站在房間裡，面對著一塊把房間渲染出來卻沒有他們的螢幕" />
+      </figure>
+    </section>
+
+    <!-- ================= OVERVIEW ================= -->
+    <section class="sp-section sp-project-grid" id="overview">
+      <div><h2 class="sp-kicker">概覽</h2></div>
+      <div class="sp-text-stack">
+        <p class="sp-copy">Conditional 是一個持續進行的裝置系列，建立在同一個前提之上，一面抹去你的鏡子。螢幕呈現它面前的場景，轉動的風扇，走動的時鐘，一切都被實時而忠實地渲染出來，唯獨沒有人。你就在那裡，而螢幕呈現的是沒有你的那個地方。</p>
+        <p class="sp-copy">螢幕呈現的不是事先錄下的空房間的回放。系統藉助實時生成式 AI，主動去想象沒有你時場景會是什麼樣子，一幀一幀地製造出你的缺席。螢幕上的世界從未被空著拍攝下來，它在被不斷地虛構出來，只為了不把你包含在內。</p>
+        <p class="sp-copy">每一次搭建都以各自的方式設定這場抹去的條件，並作為獨立的作品發展。目前有兩個搭建正在創作之中，The Mirror 與 The Waiting Room。</p>
+        <p class="sp-cond-aside">技術過去的問題在於監視，如今的問題在於它根本看不見你。</p>
+      </div>
+    </section>
+
+    <!-- ================= CONDITIONS ================= -->
+    <section class="sp-section sp-project-grid" id="conditions">
+      <div><h2 class="sp-kicker">條件</h2></div>
+      <div class="sp-text-stack">
+        <p class="sp-copy">Conditional 的每一次搭建都以各自的方式回答同樣的問題。你是在到達的那一刻就消失，還是慢慢淡去，慢到足以看著自己離開？你究竟能不能回來，又要付出什麼代價？回來的又是什麼，是本來的你，是場景願意接納的經過調色的版本，是一個更接近人體模特而非真人的身影，還是什麼都沒有？</p>
+        <p class="sp-copy">這些不是一件成品上的設定，而是這個系列之所以存在所要檢驗的問題。每一次搭建都為其所處的語境而創作，並為那個場域設定條件。下面這兩次搭建是最初的回答。</p>
+      </div>
+    </section>
+
+    <!-- ================= THE MIRROR ================= -->
+    <section class="sp-section sp-project-grid" id="mirror">
+      <div><h2 class="sp-kicker">The Mirror</h2></div>
+      <div class="sp-text-stack sp-cond-split">
+        <div class="sp-cond-text">
+          <p class="sp-project-onview">暫定名 &middot; 首個實體原型製作中 &middot; 2026</p>
+          <p class="sp-copy">一塊偽裝成帶框鏡子的螢幕，掛在原本會掛鏡子的地方。你走上前，期待看見自己的倒影，起初你確實看到了，但接著系統慢慢把你移除，無論你做什麼都無法讓自己回來。在這裡，條件是絕對的。</p>
+          <p class="sp-copy">鏡子只有一個職責，就是把你呈現出來。一面忠實地渲染房間卻把你排除在外的鏡子，違背了一份比任何技術都更古老的契約。整整一天，房間漸漸坐滿了人，倒影裡的人卻越來越少，到了閉館時分，鏡子呈現的是一個沒有任何活人的地方。</p>
+          <p class="sp-copy">畫框是作品的一部分，而不是圍繞它的裝飾，它的最終形態是被生成出來的，而非被挑選出來的。一個模型同時綜合了整個華麗鏡子的類別，於是隔著房間望去，這個框顯得宏大而繁複，等你走近，它卻落不進任何真實的年代或傳統。它是機器對鏡子的想象，而非任何曾經存在過的鏡子，出自一個對這個類別足夠熟悉、能把它渲染得宏大，卻永遠不夠熟悉、無法把它變得真實的系統。</p>
+          <p class="sp-copy">這正是螢幕已經施加在觀眾身上的邏輯，被識別得足夠清楚以致被移除，卻永遠不夠清楚以致被留下。這裡呈現的白色巴洛克畫框是在那個形態尚在發展時的替代物，是原型的佔位之物，並非最終的成品。</p>
+          <figure class="sp-image-card"><video autoplay muted loop playsinline preload="metadata" poster="/assets/conditional/mirror-chassis-assembly-poster.webp" src="/assets/conditional/mirror-chassis-assembly.mp4" style="display:block;width:100%;height:auto;" aria-label="3D 列印鏡子外殼的組裝動畫"></video><figcaption>The Mirror 原型，3D 列印外殼，組裝過程，2026 年 6 月</figcaption></figure>
+        </div>
+        <div class="sp-cond-media">
+          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/mirror-frame-render.webp" alt="一個白色繁複的巴洛克畫框，作為 The Mirror 原型的替代物，頂飾中藏著一個小攝像頭"><figcaption>The Mirror，原型所用的替代巴洛克畫框，2026。最終的畫框正在被生成。</figcaption></figure>
+        </div>
+      </div>
+      <figure class="sp-image-card sp-cond-generated-grid">
+        <img loading="lazy" decoding="async" src="/assets/conditional/mirror-generation-grid.jpg" alt="為 Conditional 生成的華麗鏡子研究圖網格">
+        <figcaption>為 The Mirror 生成的鏡子研究圖，2026</figcaption>
+      </figure>
+    </section>
+
+    <!-- ================= THE WAITING ROOM ================= -->
+    <section class="sp-section sp-project-grid" id="waiting-room">
+      <div><h2 class="sp-kicker">The Waiting Room</h2></div>
+      <div class="sp-text-stack sp-cond-split">
+        <div class="sp-cond-text">
+          <p class="sp-project-onview">創作中 &middot; 2026</p>
+          <p class="sp-copy">一處機構式的等候區，成排的椅子，穿西裝的人體模特，滴答作響的掛鐘，一臺來回擺頭的檯扇。那種本就要你坐下等待的空間。在這裡，條件是可以商量的。你一到達就消失，而如果你保持不動，你會開始重新出現，但並不完整，你的色彩被改動，以貼合場景的色調。回來的是房間願意接納的那個版本的你。再一動，你又不見了。</p>
+          <p class="sp-copy">人體模特始終可見，它們什麼都不必做。活生生的身體卻要去掙得人體模特天生就被賦予的東西。</p>
+          <p class="sp-copy">當房間裡有多個人時，每個人都能看到誰在試圖配合，誰沒有。房間另一頭有人保持不動，慢慢顯現為一個被改了色彩的自己。他們也能看到你正在決定要不要照做。可見與自我妥協之間的拉扯正在實時上演，發生在陌生人之間，而螢幕把這一切都呈現了出來。</p>
+          <p class="sp-copy">這次搭建會產出一系列限量版畫，由系統的配合資料計算而來。在一場有組織的、持續一整天的活動中，五十位參與者隨自己的意願前來，想停留多久就停留多久。額外的攝像機從多個角度捕捉他們的活動，生成長曝光合成圖像。保持不動的身體顯得清晰而分明。動過的身體則在畫面裡被塗抹開來。這些版畫是系統對誰配合、誰沒有的記錄，它們也可以獨立展出。</p>
+          <p class="sp-copy"><a href="https://www.dropbox.com/scl/fi/xwa22gr8sn3elfkjtb9rd/demovid.mp4?rlkey=ttr44azad158ef39r7qa364cp&amp;dl=0" target="_blank" rel="noreferrer" class="sn-section-link">觀看抹去演示 &rarr;</a></p>
+        </div>
+        <div class="sp-cond-media">
+          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/compliance-reality.webp" alt="The Waiting Room 概念渲染圖，人們站在房間裡面對螢幕"><figcaption>現實中，這個房間，有你在其中</figcaption></figure>
+          <figure class="sp-image-card"><img loading="lazy" decoding="async" src="/assets/conditional/compliance-on-screen.webp" alt="等候室在螢幕上的檢視，觀眾已被移除"><figcaption>螢幕上，這個房間，沒有你在其中</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESEARCH ================= -->
+    <section class="sp-section sp-project-grid" id="research">
+      <div><h2 class="sp-kicker">仍在思索</h2></div>
+      <div class="sp-text-stack">
+        <p class="sp-copy">這其中的大部分，我還沒有答案，這也是作品不斷分裂成新作品的原因之一。以下是我在創作過程中反覆琢磨的問題。</p>
+        <p class="sp-copy">站在一個房間裡卻沒有出現在其中，那是什麼感覺？隱形在什麼時候是一種解脫，又在什麼時候開始讓人難受？</p>
+        <p class="sp-copy">鏡子只有一個職責，就是把你呈現出來。那麼當鏡子把你排除在外，每天瞥一眼鏡子、確認自己還在那裡這個小小的習慣，會變成什麼樣？還有，看自己和為所有人表演自己，是從什麼時候開始變成同一件事的？</p>
+        <p class="sp-copy">當你長成大人站在鏡子前，身體與倒影之間的默契早已不是你會去想的事。你抬手，倒影也抬手。The Mirror 不只是打破這份默契，它是把它懸置起來。它是一個讓你不被呈現的決定。</p>
+        <p class="sp-copy">有一個版本的 The Mirror，會在框中的你身上留下一個小記號，只有當你靠近時才會注意到。你走近去看，而靠得更近，就是走進鏡子把你徹底移除的那片區域。你去尋找的東西，在你到達的那一刻就消失了。這呼應的是對黑猩猩進行的鏡像自我識別測試，用來檢驗它們是否具備視覺上的自我識別能力。</p>
+        <p class="sp-copy">為了被重新放進來，我們交出了多少自己，在線上，也在大多數別的地方？為什麼被認出會讓人覺得是一種如此基本的需要，我們又為什麼會奉上一個更整潔、更容易被接受的自己來換取它？</p>
+        <p class="sp-copy">還有一個樸素的問題，機器究竟有沒有看見我們。它能把一個人辨認得足夠清楚，從而把他移除，再虛構出他留下的那塊空間，卻始終不知道他是誰。那算是識別，還是不過是一組編號代替了一張臉？</p>
+        <p class="sp-copy">為了在線上保持可見，我們大多數人每天都要做幾十次小小的交易。我們勾選方框，允許 cookie，交出位置，而這些都不像是決定。它們太快了。沒有任何把東西交出去的身體體驗。這件作品讓同樣的交易在一個房間裡發生，用你的身體。你可以看著自己決定配合。系統擁有追蹤你所需的一切，而它把這些資料完全用來讓你消失。這究竟讓它成為一個獨裁者還是一個守護者，作品並不給出定論。</p>
+        <p class="sp-copy">還有那個一直縈繞著我的問題。為什麼比以往任何時候都更緊密相連，卻讓這麼多人覺得沒有被看見？過去的擔憂是被看得太多。新的擔憂是被一眼看穿、視若無物。</p>
+      </div>
+    </section>
+
+    <!-- ================= RELATED ================= -->
+    <section class="sp-section sp-related-section" id="related">
+      <h2 class="sp-kicker">更多作品</h2>
+      <div class="sp-related-grid">
+        <a class="sp-related-card" href="/works/meet-eva-here/"><figure><img loading="lazy" decoding="async" src="/assets/meet-eva-here/06-dsc00661.webp" alt="Meet Eva Here 裝置"></figure><h3>Meet Eva Here</h3><p>一個 AI 陪伴者，收下了成千上萬次傾訴，其中一百段對話被公開。</p></a>
+        <a class="sp-related-card" href="/works/the-ties-that-bind/"><figure><img loading="lazy" decoding="async" src="/assets/the-ties-that-bind/03-20230317-tttb-exhibition-001.webp" alt="The Ties That Bind 裝置"></figure><h3>The Ties That Bind</h3><p>當有人走得足夠近、觸發它們時，會做出回應的 3D 身體。</p></a>
+      </div>
+    </section>
+
+    <footer class="sw-page-footer" data-site-footer>
+      <div class="sw-page-footer__inner">
+        <button class="sw-page-footer__top" type="button" data-site-back-top>回到頂部</button>
+      </div>
+    </footer>
+  </main>
+<script src="/assets/js/plate-status.js?v=20260527-plate-status"></script>
+  <script src="/assets/js/sustainability.js?v=20260527-works-catalog"></script>
+  <script src="/assets/js/subnav.js?v=20260527-subnav"></script>
+  <script src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<main id="main-content">
+
+    <!-- ============================================================
+         CATALOG. Title + tabbed surface + filters.
+         ============================================================ -->
+    <section class="wk2-catalog">
+      <header class="wk2-cat-head">
+        <div>
+          <h1 class="wk2-cat-title">作品</h1>
+        </div>
+      </header>
+
+      <!-- sentinel above the tabbar so we can detect "scrolled past hero" -->
+      <div class="wk2-sticky-sentinel" aria-hidden="true"></div>
+
+      <div class="wk2-tabbar" data-tabbar>
+        <div class="wk2-tabs" role="tablist" aria-label="作品目錄分區">
+          <button type="button" class="wk2-tab" role="tab" aria-selected="true" data-tab="projects" aria-controls="panel-projects" id="tab-projects">
+            <span class="wk2-tab-num">01</span>專案
+          </button>
+          <button type="button" class="wk2-tab" role="tab" aria-selected="false" data-tab="single" aria-controls="panel-single" id="tab-single">
+            <span class="wk2-tab-num">02</span>單件作品
+          </button>
+          <button type="button" class="wk2-tab" role="tab" aria-selected="false" data-tab="editions" aria-controls="panel-editions" id="tab-editions">
+            <span class="wk2-tab-num">03</span>版數作品
+          </button>
+          <button type="button" class="wk2-tab" role="tab" aria-selected="false" data-tab="commissions" aria-controls="panel-commissions" id="tab-commissions">
+            <span class="wk2-tab-num">04</span>委託創作
+          </button>
+          <button type="button" class="wk2-tab" role="tab" aria-selected="false" data-tab="available" aria-controls="panel-available" id="tab-available">
+            <span class="wk2-tab-num">05</span>可購藏
+          </button>
+        </div>
+
+        <div class="wk2-filters" role="group" aria-label="篩選">
+          <span class="wk2-filter">
+            <select aria-label="按年份篩選" data-filter="year">
+              <option value="">全部年份</option>
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+            </select>
+          </span>
+          <span class="wk2-filter">
+            <select aria-label="按媒材篩選" data-filter="medium">
+              <option value="">全部媒材</option>
+              <option value="installation">裝置</option>
+              <option value="video">影像</option>
+              <option value="ai">AI</option>
+              <option value="3d">3D</option>
+              <option value="photography">攝影</option>
+            </select>
+          </span>
+          <span class="wk2-filter">
+            <select aria-label="按狀態篩選" data-filter="availability">
+              <option value="">全部狀態</option>
+              <option value="available">可購</option>
+              <option value="edition">版數可購</option>
+              <option value="sold">已售</option>
+            </select>
+          </span>
+          <button type="button" class="wk2-filter-clear" data-filter-clear hidden>重置</button>
+        </div>
+      </div>
+
+      <div class="wk2-panels">
+
+        <!-- ====================== PANEL. PROJECTS ====================== -->
+        <section class="wk2-panel is-active" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" data-panel="projects">
+          <div class="wk2-grid wk2-grid--projects" data-grid>
+
+            <a class="wk2-tile wk2-tile--in-progress" href="/works/conditional/"
+               data-year="2026" data-medium="installation ai video" data-availability="available">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/conditional/compliance-reality.webp" alt="Conditional concept render showing viewers facing the screen" loading="eager">
+                <div class="wk2-tile-overlay">Conditional. 進行中。</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">Conditional</h3>
+                <span class="wk2-tile-year">進行中 / 2026</span>
+                <div class="wk2-tile-medium">實時裝置，渲染整個房間卻抹去你。</div>
+                <div class="wk2-tile-context">限量版長曝光列印。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--progress">進行中</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/works/after-ophelia/"
+               data-year="2025" data-medium="ai video" data-availability="available">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/after-ophelia/04-ophelia-retold-000101.webp" alt="After Ophelia, rendered portrait in water" loading="eager">
+                <div class="wk2-tile-overlay">Ophelia, Retold.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">After Ophelia</h3>
+                <span class="wk2-tile-year">2025</span>
+                <div class="wk2-tile-medium">兩段 AI 影像，關於身份與被繼承的詮釋。</div>
+                <div class="wk2-tile-context">Artverse Paris、Paris Photo。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--available">2 件作品可購</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/works/meet-eva-here/"
+               data-year="2024 2025" data-medium="ai installation video" data-availability="available">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/meet-eva-here/05-taipei-dangdai.webp" alt="Meet Eva Here installation view, visitors before the synthetic figure on screen" loading="lazy">
+                <div class="wk2-tile-overlay">Hello Eva.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">Meet Eva Here</h3>
+                <span class="wk2-tile-year">2024 / 2025</span>
+                <div class="wk2-tile-medium">由觀眾對話塑造的 AI 伴侶。</div>
+                <div class="wk2-tile-context">ArtScience Museum、ART SG、Taipei Dangdai。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--available">3 件作品可購</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/works/echoes-of-identity/"
+               data-year="2023" data-medium="ai" data-availability="edition">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/echoes-of-identity/echoes-of-identity-poster.webp" alt="Echoes of Identity, soft-focus AI portrait" loading="lazy">
+                <div class="wk2-tile-overlay">PROOF Grails IV。</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">Echoes of Identity</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">關於分身自我的限量版肖像系列。</div>
+                <div class="wk2-tile-context">PROOF Grails IV。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--edition">二級市場</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/works/the-ties-that-bind/"
+               data-year="2023" data-medium="installation video 3d" data-availability="edition">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/the-ties-that-bind/04-20230317-tttb-exhibition-002.webp" alt="The Ties That Bind exhibition installation" loading="lazy">
+                <div class="wk2-tile-overlay">UltraSuperNew, Singapore.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">The Ties That Bind</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">七件關於傳承與聯結的動態作品。</div>
+                <div class="wk2-tile-context">個展，附一個開放版數。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--edition">版數可購</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/works/by-proxy/"
+               data-year="2022" data-medium="3d photography" data-availability="available">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy, CGI portrait still" loading="lazy">
+                <div class="wk2-tile-overlay">By Proxy, 2022.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">By Proxy</h3>
+                <span class="wk2-tile-year">2022</span>
+                <div class="wk2-tile-medium">與 Lenne Chai 合作的 CGI 與攝影系列。</div>
+                <div class="wk2-tile-context">60 件獨版作品。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--available">1 件作品可購</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/works/love-is-love/"
+               data-year="2021" data-medium="3d ai" data-availability="edition">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/one-of-ones/the-kiss.webp" alt="The Kiss, the sold 1/1 work from Love is Love" loading="lazy">
+                <div class="wk2-tile-overlay">The Kiss, 2021.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">Love is Love</h3>
+                <span class="wk2-tile-year">2021</span>
+                <div class="wk2-tile-medium">關於愛之平等與自我認同的生成專案。</div>
+                <div class="wk2-tile-context">500 個版數 + The Kiss，已售 1/1。由 Idris Elba 收藏。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--edition">18 個版數在售</span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </section>
+
+        <!-- ====================== PANEL. SINGLE WORKS ====================== -->
+        <section class="wk2-panel" id="panel-single" role="tabpanel" aria-labelledby="tab-single" data-panel="single" hidden>
+          <div class="wk2-grid wk2-grid--single" data-grid data-single-grid>
+            <!-- Tiles rendered from assets/data/3d-single-works.json -->
+            <div class="wk2-single-loading" data-single-loading>正在載入 45 件作品。</div>
+          </div>
+        </section>
+
+        <!-- ====================== PANEL. EDITIONS ====================== -->
+        <section class="wk2-panel" id="panel-editions" role="tabpanel" aria-labelledby="tab-editions" data-panel="editions" hidden>
+          <div class="wk2-grid wk2-grid--editions" data-grid>
+
+            <a class="wk2-tile" href="/works/6529-meme-card/"
+               data-year="2023" data-medium="3d" data-availability="sold">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/6529-meme-card/02-freedom-to-transact-still.webp" alt="Faces of Freedom by Shavonne Wong" loading="lazy">
+                <div class="wk2-tile-overlay">Faces of Freedom.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">6529 Meme Card</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">為 The Memes by 6529 創作的限量版 Meme Card。</div>
+                <div class="wk2-tile-context">委託作品，亦為版數發行。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--edition">版數</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/works/the-ties-that-bind/#weight-of-the-world"
+               data-year="2023" data-medium="3d installation" data-availability="edition">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/the-ties-that-bind/17-weightoftheworld-1.webp" alt="The Weight of the World artwork still" loading="lazy">
+                <div class="wk2-tile-overlay">The Weight of the World.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">The Weight of the World</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">出自 The Ties That Bind 的限量版作品。</div>
+                <div class="wk2-tile-context">50 版。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--edition">版數在售</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/works/love-is-love/"
+               data-year="2021" data-medium="3d ai" data-availability="edition">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/love-is-love/samples/edition-637.webp" alt="Love is Love, edition sample" loading="lazy">
+                <div class="wk2-tile-overlay">版數樣本。</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">Love is Love</h3>
+                <span class="wk2-tile-year">2021</span>
+                <div class="wk2-tile-medium">以太坊上的 500 個生成版數。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--edition">18 個版數在售</span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </section>
+
+        <!-- ====================== PANEL. COMMISSIONS ====================== -->
+        <section class="wk2-panel" id="panel-commissions" role="tabpanel" aria-labelledby="tab-commissions" data-panel="commissions" hidden>
+          <div class="wk2-grid wk2-grid--commissions" data-grid>
+
+            <a class="wk2-tile" href="/works/the-bubble-we-call-home/"
+               data-year="2025" data-medium="3d video commission" data-availability="sold">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/the-bubble-we-call-home/poster.webp" alt="The Bubble We Call Home by Shavonne Wong" loading="lazy">
+                <div class="wk2-tile-overlay">AP60 委託。</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">The Bubble We Call Home</h3>
+                <span class="wk2-tile-year">2025</span>
+                <div class="wk2-tile-medium">獨一無二的 1/1 單頻影像委託。</div>
+                <div class="wk2-tile-context">受 Mr Chong 委託，為 Artist's Proof: Singapore at 60 創作。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--commission">委託</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/works/vogue-singapore/"
+               data-year="2021" data-medium="3d photography" data-availability="archive">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt="Vogue Singapore NFT cover" loading="lazy">
+                <div class="wk2-tile-overlay">The RenaiXance Rising.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">Vogue Singapore NFT Cover</h3>
+                <span class="wk2-tile-year">2021</span>
+                <div class="wk2-tile-medium">為 Vogue Singapore 創作的數位封面委託。</div>
+                <div class="wk2-tile-context">2021 年 9 月。1/1 NFT 封面作品。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--commission">委託</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/works/6529-meme-card/"
+               data-year="2023" data-medium="3d" data-availability="sold">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/6529-meme-card/02-freedom-to-transact-still.webp" alt="Faces of Freedom by Shavonne Wong" loading="lazy">
+                <div class="wk2-tile-overlay">Faces of Freedom.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">6529 Meme Card</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">為 The Memes by 6529 委託創作的卡片。</div>
+                <div class="wk2-tile-context">Freedom to Transact。亦為限量版發行。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--commission">委託 + 版數</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="https://foundation.app/mint/eth/0x72e991768e09D8d82BdE9334cCCD7f4beC8c433D/9" target="_blank" rel="noreferrer"
+               data-year="2023" data-medium="3d video" data-availability="available">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/one-of-ones/natures-muse.webp" alt="Nature's Muse by Shavonne Wong" loading="lazy">
+                <div class="wk2-tile-overlay">Marie Claire Arabia.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">Nature's Muse</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">為 Marie Claire Arabia 創作的委託。</div>
+                <div class="wk2-tile-context">編輯類數位作品，1/1 NFT。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--commission">委託</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="/contact/?type=Acquisition&amp;work=Stargazer%E2%80%99s%20Dream"
+               data-year="2023" data-medium="3d video" data-availability="available">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/one-of-ones/stargazers-dream.jpg" alt="Stargazer's Dream by Shavonne Wong" loading="lazy">
+                <div class="wk2-tile-overlay">Marie Claire Arabia.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">Stargazer's Dream</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">為 Marie Claire Arabia 創作的委託。</div>
+                <div class="wk2-tile-context">編輯類數位作品，1/1 NFT。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--commission">委託</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="wk2-tile" href="https://foundation.app/@shavonnewong/shasha/11" target="_blank" rel="noreferrer"
+               data-year="2023" data-medium="3d video" data-availability="sold">
+              <div class="wk2-tile-media">
+                <img decoding="async" src="/assets/one-of-ones/oceans-whisper.webp" alt="Ocean's Whisper by Shavonne Wong" loading="lazy">
+                <div class="wk2-tile-overlay">Marie Claire Arabia.</div>
+              </div>
+              <div class="wk2-tile-meta">
+                <h3 class="wk2-tile-title">Ocean's Whisper</h3>
+                <span class="wk2-tile-year">2023</span>
+                <div class="wk2-tile-medium">為 Marie Claire Arabia 創作的委託。</div>
+                <div class="wk2-tile-context">編輯類數位作品，1/1 NFT。</div>
+                <div class="wk2-tile-foot">
+                  <span class="wk2-dot wk2-dot--commission">委託</span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </section>
+
+        <!-- ====================== PANEL. AVAILABLE ====================== -->
+        <!-- Populated by JS from any tile across the catalog with availability available or edition. -->
+        <section class="wk2-panel" id="panel-available" role="tabpanel" aria-labelledby="tab-available" data-panel="available" hidden>
+          <div class="wk2-grid wk2-grid--available" data-grid data-available-grid>
+            <!-- Cloned tiles inserted here on tab activation. -->
+          </div>
+        </section>
+
+        <div class="wk2-empty" data-empty hidden>沒有符合當前篩選條件的作品。請嘗試清除篩選或切換標籤頁。</div>
+
+      </div>
+
+      <dialog class="wk2-work-modal" data-single-modal aria-labelledby="single-modal-title">
+        <div class="wk2-work-modal-shell">
+          <button type="button" class="wk2-work-modal-close" data-single-modal-close aria-label="關閉作品詳情">&times;</button>
+          <figure class="wk2-work-modal-media">
+            <video data-single-modal-video controls controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture disableremoteplayback autoplay muted loop playsinline hidden></video>
+            <img data-single-modal-image alt="">
+          </figure>
+          <div class="wk2-work-modal-copy">
+            <div class="wk2-work-modal-kicker" data-single-modal-meta></div>
+            <h2 id="single-modal-title" data-single-modal-title></h2>
+            <p data-single-modal-description></p>
+            <div class="wk2-work-modal-details">
+              <span data-single-modal-edition></span>
+              <span data-single-modal-status></span>
+            </div>
+            <div class="wk2-work-modal-actions">
+              <a class="wk2-work-modal-link wk2-work-modal-link--primary" data-single-modal-project href="#" target="_blank" rel="noreferrer">檢視專案頁面</a>
+              <a class="wk2-work-modal-link" data-single-modal-marketplace href="#" target="_blank" rel="noreferrer">檢視交易平臺</a>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="wk2-work-modal-nav wk2-work-modal-prev" data-single-modal-prev aria-label="上一件作品">&#8249;</button>
+        <button type="button" class="wk2-work-modal-nav wk2-work-modal-next" data-single-modal-next aria-label="下一件作品">&#8250;</button>
+        <div class="wk2-work-modal-count" data-single-modal-count aria-live="polite"></div>
+      </dialog>
+    </section>
+
+    <footer class="sw-page-footer" data-site-footer>
+      <div class="sw-page-footer__inner">
+        <button class="sw-page-footer__top" type="button" data-site-back-top>返回頂部</button>
+      </div>
+    </footer>
+  </main>

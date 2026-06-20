@@ -2,26 +2,125 @@
   "origin": "https://www.shavonnewong.art",
   "profilePhoto": "https://www.shavonnewong.art/assets/profile/profilephoto.png",
   "languages": [
-    { "code": "en",      "slug": "",        "htmlLang": "en",      "ogLocale": "en_US", "font": null },
-    { "code": "zh-Hans", "slug": "zh-hans", "htmlLang": "zh-Hans", "ogLocale": "zh_CN", "font": "/assets/fonts/noto/noto-sans-sc.css?v=20260619" },
-    { "code": "zh-Hant", "slug": "zh-hant", "htmlLang": "zh-Hant", "ogLocale": "zh_TW", "font": "/assets/fonts/noto/noto-sans-tc.css?v=20260619" },
-    { "code": "fr",      "slug": "fr",      "htmlLang": "fr",      "ogLocale": "fr_FR", "font": null },
-    { "code": "th",      "slug": "th",      "htmlLang": "th",      "ogLocale": "th_TH", "font": null }
+    {
+      "code": "en",
+      "slug": "",
+      "htmlLang": "en",
+      "ogLocale": "en_US",
+      "font": null
+    },
+    {
+      "code": "zh-Hans",
+      "slug": "zh-hans",
+      "htmlLang": "zh-Hans",
+      "ogLocale": "zh_CN",
+      "font": "/assets/fonts/noto/noto-sans-sc.css?v=20260620"
+    },
+    {
+      "code": "zh-Hant",
+      "slug": "zh-hant",
+      "htmlLang": "zh-Hant",
+      "ogLocale": "zh_TW",
+      "font": "/assets/fonts/noto/noto-sans-tc.css?v=20260620"
+    },
+    {
+      "code": "fr",
+      "slug": "fr",
+      "htmlLang": "fr",
+      "ogLocale": "fr_FR",
+      "font": null
+    },
+    {
+      "code": "th",
+      "slug": "th",
+      "htmlLang": "th",
+      "ogLocale": "th_TH",
+      "font": null
+    }
   ],
   "nav": {
-    "order": ["home", "about", "works", "writing", "press", "contact"],
-    "hrefs": { "home": "/#hero", "about": "/about/", "works": "/works/", "writing": "/writing/", "press": "/press/", "contact": "/contact/" },
-    "page":  { "home": null, "about": "about", "works": "works", "writing": "writing", "press": "press", "contact": "contact" },
-    "labels": {
-      "home":    { "en": "Home",    "zh-Hans": "首页", "zh-Hant": "首頁", "fr": "Accueil",  "th": "หน้าแรก" },
-      "about":   { "en": "About",   "zh-Hans": "关于", "zh-Hant": "關於", "fr": "À propos", "th": "เกี่ยวกับ" },
-      "works":   { "en": "Works",   "zh-Hans": "作品", "zh-Hant": "作品", "fr": "Œuvres",   "th": "ผลงาน" },
-      "writing": { "en": "Writing", "zh-Hans": "文字", "zh-Hant": "文字", "fr": "Textes",   "th": "บันทึก" },
-      "press":   { "en": "Press",   "zh-Hans": "媒体", "zh-Hant": "媒體", "fr": "Presse",   "th": "สื่อ" },
-      "contact": { "en": "Contact", "zh-Hans": "联系", "zh-Hant": "聯絡", "fr": "Contact",  "th": "ติดต่อ" }
+    "order": [
+      "home",
+      "about",
+      "works",
+      "writing",
+      "press",
+      "contact"
+    ],
+    "hrefs": {
+      "home": "/#hero",
+      "about": "/about/",
+      "works": "/works/",
+      "writing": "/writing/",
+      "press": "/press/",
+      "contact": "/contact/"
     },
-    "languageLabel": { "en": "Language", "zh-Hans": "语言", "zh-Hant": "語言", "fr": "Langue", "th": "ภาษา" },
-    "skip": { "en": "Skip to content", "zh-Hans": "跳到内容", "zh-Hant": "跳到內容", "fr": "Aller au contenu", "th": "ข้ามไปยังเนื้อหา" }
+    "page": {
+      "home": null,
+      "about": "about",
+      "works": "works",
+      "writing": "writing",
+      "press": "press",
+      "contact": "contact"
+    },
+    "labels": {
+      "home": {
+        "en": "Home",
+        "zh-Hans": "首页",
+        "zh-Hant": "首頁",
+        "fr": "Accueil",
+        "th": "หน้าแรก"
+      },
+      "about": {
+        "en": "About",
+        "zh-Hans": "关于",
+        "zh-Hant": "關於",
+        "fr": "À propos",
+        "th": "เกี่ยวกับ"
+      },
+      "works": {
+        "en": "Works",
+        "zh-Hans": "作品",
+        "zh-Hant": "作品",
+        "fr": "Œuvres",
+        "th": "ผลงาน"
+      },
+      "writing": {
+        "en": "Writing",
+        "zh-Hans": "文字",
+        "zh-Hant": "文字",
+        "fr": "Textes",
+        "th": "บันทึก"
+      },
+      "press": {
+        "en": "Press",
+        "zh-Hans": "媒体",
+        "zh-Hant": "媒體",
+        "fr": "Presse",
+        "th": "สื่อ"
+      },
+      "contact": {
+        "en": "Contact",
+        "zh-Hans": "联系",
+        "zh-Hant": "聯絡",
+        "fr": "Contact",
+        "th": "ติดต่อ"
+      }
+    },
+    "languageLabel": {
+      "en": "Language",
+      "zh-Hans": "语言",
+      "zh-Hant": "語言",
+      "fr": "Langue",
+      "th": "ภาษา"
+    },
+    "skip": {
+      "en": "Skip to content",
+      "zh-Hans": "跳到内容",
+      "zh-Hant": "跳到內容",
+      "fr": "Aller au contenu",
+      "th": "ข้ามไปยังเนื้อหา"
+    }
   },
   "pages": {
     "about": {
@@ -41,7 +140,7 @@
       "scripts": [
         "/assets/js/subnav.js?v=20260605-rail-current",
         "/site-header.js?v=20260618-cta",
-        "/site-i18n.js?v=20260619-i18n-sticky",
+        "/site-i18n.js?v=20260620-i18n-sticky",
         "/fluid-renderer.js?v=20260611-ripple-v7",
         "/press-hover.js?v=20260616-genai"
       ],
@@ -69,9 +168,21 @@
       "bodyStart": "<main id=\"main-content\"",
       "bodyEnd": "<script src=\"/site-header.js",
       "meta": {
-        "title": { "en": "Contact | Shavonne Wong", "zh-Hans": "联系 | Shavonne Wong", "zh-Hant": "聯絡 | Shavonne Wong" },
-        "description": { "en": "Contact Shavonne Wong's studio for acquisitions, commissions, exhibitions, press, and collaborations.", "zh-Hans": "联系 Shavonne Wong 工作室，洽询收藏、委托创作、展览、媒体与合作。", "zh-Hant": "聯絡 Shavonne Wong 工作室，洽詢收藏、委託創作、展覽、媒體與合作。" },
-        "ogDescription": { "en": "Contact the studio for acquisitions, commissions, exhibitions, press, and collaborations.", "zh-Hans": "联系工作室，洽询收藏、委托创作、展览、媒体与合作。", "zh-Hant": "聯絡工作室，洽詢收藏、委託創作、展覽、媒體與合作。" }
+        "title": {
+          "en": "Contact | Shavonne Wong",
+          "zh-Hans": "联系 | Shavonne Wong",
+          "zh-Hant": "聯絡 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Contact Shavonne Wong's studio for acquisitions, commissions, exhibitions, press, and collaborations.",
+          "zh-Hans": "联系 Shavonne Wong 工作室，洽询收藏、委托创作、展览、媒体与合作。",
+          "zh-Hant": "聯絡 Shavonne Wong 工作室，洽詢收藏、委託創作、展覽、媒體與合作。"
+        },
+        "ogDescription": {
+          "en": "Contact the studio for acquisitions, commissions, exhibitions, press, and collaborations.",
+          "zh-Hans": "联系工作室，洽询收藏、委托创作、展览、媒体与合作。",
+          "zh-Hant": "聯絡工作室，洽詢收藏、委託創作、展覽、媒體與合作。"
+        }
       }
     },
     "writing": {
@@ -80,9 +191,21 @@
       "bodyStart": "<main id=\"main-content\"",
       "bodyEnd": "<script src=\"/site-header.js",
       "meta": {
-        "title": { "en": "Writing | Shavonne Wong", "zh-Hans": "文字 | Shavonne Wong", "zh-Hant": "文字 | Shavonne Wong" },
-        "description": { "en": "Studio notes from Shavonne Wong, twice-yearly updates from the studio on exhibitions, new work, and where to see it in person.", "zh-Hans": "Shavonne Wong 的工作室札记，每年两次，分享展览、新作品以及可以亲身观看的地点。", "zh-Hant": "Shavonne Wong 的工作室札記，每年兩次，分享展覽、新作品以及可以親身觀看的地點。" },
-        "ogDescription": { "en": "Studio notes, twice-yearly updates on exhibitions, new work, and where to see it in person.", "zh-Hans": "工作室札记，每年两次，分享展览、新作品以及可以亲身观看的地点。", "zh-Hant": "工作室札記，每年兩次，分享展覽、新作品以及可以親身觀看的地點。" }
+        "title": {
+          "en": "Writing | Shavonne Wong",
+          "zh-Hans": "文字 | Shavonne Wong",
+          "zh-Hant": "文字 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Studio notes from Shavonne Wong, twice-yearly updates from the studio on exhibitions, new work, and where to see it in person.",
+          "zh-Hans": "Shavonne Wong 的工作室札记，每年两次，分享展览、新作品以及可以亲身观看的地点。",
+          "zh-Hant": "Shavonne Wong 的工作室札記，每年兩次，分享展覽、新作品以及可以親身觀看的地點。"
+        },
+        "ogDescription": {
+          "en": "Studio notes, twice-yearly updates on exhibitions, new work, and where to see it in person.",
+          "zh-Hans": "工作室札记，每年两次，分享展览、新作品以及可以亲身观看的地点。",
+          "zh-Hant": "工作室札記，每年兩次，分享展覽、新作品以及可以親身觀看的地點。"
+        }
       }
     },
     "press": {
@@ -91,9 +214,481 @@
       "bodyStart": "<main id=\"main-content\"",
       "bodyEnd": "</main>",
       "meta": {
-        "title": { "en": "Press | Shavonne Wong", "zh-Hans": "媒体 | Shavonne Wong", "zh-Hant": "媒體 | Shavonne Wong" },
-        "description": { "en": "Selected press, profiles, interviews, and features on Shavonne Wong across art, technology, fashion, and culture.", "zh-Hans": "关于 Shavonne Wong 的精选媒体报道、专访、访谈与特写，涵盖艺术、科技、时尚与文化。", "zh-Hant": "關於 Shavonne Wong 的精選媒體報導、專訪、訪談與特寫，涵蓋藝術、科技、時尚與文化。" },
-        "ogDescription": { "en": "Selected press, profiles, interviews, and features across art, technology, fashion, and culture.", "zh-Hans": "精选媒体报道、专访、访谈与特写，涵盖艺术、科技、时尚与文化。", "zh-Hant": "精選媒體報導、專訪、訪談與特寫，涵蓋藝術、科技、時尚與文化。" }
+        "title": {
+          "en": "Press | Shavonne Wong",
+          "zh-Hans": "媒体 | Shavonne Wong",
+          "zh-Hant": "媒體 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Selected press, profiles, interviews, and features on Shavonne Wong across art, technology, fashion, and culture.",
+          "zh-Hans": "关于 Shavonne Wong 的精选媒体报道、专访、访谈与特写，涵盖艺术、科技、时尚与文化。",
+          "zh-Hant": "關於 Shavonne Wong 的精選媒體報導、專訪、訪談與特寫，涵蓋藝術、科技、時尚與文化。"
+        },
+        "ogDescription": {
+          "en": "Selected press, profiles, interviews, and features across art, technology, fashion, and culture.",
+          "zh-Hans": "精选媒体报道、专访、访谈与特写，涵盖艺术、科技、时尚与文化。",
+          "zh-Hant": "精選媒體報導、專訪、訪談與特寫，涵蓋藝術、科技、時尚與文化。"
+        }
+      }
+    },
+    "works": {
+      "enSource": "works.html",
+      "urlBase": "/works/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Works | Shavonne Wong",
+          "zh-Hans": "作品 | Shavonne Wong",
+          "zh-Hant": "作品 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Projects, single works, editions, and commissions by Shavonne Wong across installation, video, AI, and 3D figuration.",
+          "zh-Hans": "Shavonne Wong 的项目、单件作品、版数与委托创作，涵盖装置、影像、AI 与 3D 形象。",
+          "zh-Hant": "Shavonne Wong 的專案、單件作品、版數與委託創作，涵蓋裝置、影像、AI 與 3D 形象。"
+        },
+        "ogDescription": {
+          "en": "Projects, single works, editions, and commissions across installation, video, AI, and 3D figuration.",
+          "zh-Hans": "项目、单件作品、版数与委托创作，涵盖装置、影像、AI 与 3D 形象。",
+          "zh-Hant": "專案、單件作品、版數與委託創作，涵蓋裝置、影像、AI 與 3D 形象。"
+        }
+      }
+    },
+    "conditional": {
+      "enSource": "conditional.html",
+      "urlBase": "/works/conditional/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Conditional | Shavonne Wong",
+          "zh-Hans": "Conditional 一面抹去你的镜子 | Shavonne Wong",
+          "zh-Hant": "Conditional 一面抹去你的鏡子 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Conditional, an ongoing series of installations built on one premise, a mirror that erases you. A screen renders the scene faithfully in real time with every person removed. Each staging sets the conditions of the erasure differently.",
+          "zh-Hans": "Conditional 是一个持续进行的装置系列，建立在同一个前提之上，一面抹去你的镜子。屏幕实时而忠实地渲染场景，却移除了其中每一个人。每一次搭建都以不同的方式设定这场抹去的条件。",
+          "zh-Hant": "Conditional 是一個持續進行的裝置系列，建立在同一個前提之上，一面抹去你的鏡子。螢幕實時而忠實地渲染場景，卻移除了其中每一個人。每一次搭建都以不同的方式設定這場抹去的條件。"
+        },
+        "ogDescription": {
+          "en": "An ongoing series of installations built on one premise, a mirror that erases you. Each staging sets the conditions differently. How much of yourself are you willing to give up just to be seen?",
+          "zh-Hans": "一个持续进行的装置系列，建立在同一个前提之上，一面抹去你的镜子。每一次搭建都以不同的方式设定条件。为了被看见，你愿意交出多少自己？",
+          "zh-Hant": "一個持續進行的裝置系列，建立在同一個前提之上，一面抹去你的鏡子。每一次搭建都以不同的方式設定條件。為了被看見，你願意交出多少自己？"
+        }
+      }
+    },
+    "after-ophelia": {
+      "enSource": "after-ophelia.html",
+      "urlBase": "/works/after-ophelia/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "After Ophelia | Shavonne Wong",
+          "zh-Hans": "After Ophelia AI 与 3D 影像 | Shavonne Wong",
+          "zh-Hant": "After Ophelia AI 與 3D 影像 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Two AI and 3D video works revisiting Ophelia through image inheritance, online misdescription, and machine interpretation.",
+          "zh-Hans": "两件 AI 与 3D 影像作品，借由图像的继承、网络上的错误描述与机器的诠释，重新审视 Ophelia。",
+          "zh-Hant": "兩件 AI 與 3D 影像作品，藉由圖像的繼承、網路上的錯誤描述與機器的詮釋，重新審視 Ophelia。"
+        },
+        "ogDescription": {
+          "en": "Two AI and 3D video works revisiting Ophelia through image inheritance, online misdescription, and machine interpretation.",
+          "zh-Hans": "两件 AI 与 3D 影像作品，借由图像的继承、网络上的错误描述与机器的诠释，重新审视 Ophelia。",
+          "zh-Hant": "兩件 AI 與 3D 影像作品，藉由圖像的繼承、網路上的錯誤描述與機器的詮釋，重新審視 Ophelia。"
+        }
+      }
+    },
+    "meet-eva-here": {
+      "enSource": "meet-eva-here.html",
+      "urlBase": "/works/meet-eva-here/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Meet Eva Here | Shavonne Wong",
+          "zh-Hans": "Meet Eva Here AI 伴侣项目 | Shavonne Wong",
+          "zh-Hant": "Meet Eva Here AI 伴侶專案 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Meet Eva Here, Shavonne Wong's interactive AI companion project, public diary archive, chatbot, and video work documenting 2,363 conversations with synthetic listeners in 2024 to 2025.",
+          "zh-Hans": "Meet Eva Here，Shavonne Wong 的互动式 AI 陪伴者项目，包含公开日记档案、聊天机器人与影像作品，记录了 2024 至 2025 年间与合成倾听者进行的 2,363 段对话。",
+          "zh-Hant": "Meet Eva Here，Shavonne Wong 的互動式 AI 陪伴者專案，包含公開日記檔案、聊天機器人與影像作品，記錄了 2024 至 2025 年間與合成傾聽者進行的 2,363 段對話。"
+        },
+        "ogDescription": {
+          "en": "An interactive AI companion, chatbot, public diary archive, and video work documenting 2,363 conversations with synthetic listeners in 2024 to 2025.",
+          "zh-Hans": "一个互动式 AI 陪伴者，包含聊天机器人、公开日记档案与影像作品，记录了 2024 至 2025 年间与合成倾听者进行的 2,363 段对话。",
+          "zh-Hant": "一個互動式 AI 陪伴者，包含聊天機器人、公開日記檔案與影像作品，記錄了 2024 至 2025 年間與合成傾聽者進行的 2,363 段對話。"
+        }
+      }
+    },
+    "the-ties-that-bind": {
+      "enSource": "the-ties-that-bind.html",
+      "urlBase": "/works/the-ties-that-bind/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "The Ties That Bind | Shavonne Wong",
+          "zh-Hans": "The Ties That Bind 3D 影像装置个展 | Shavonne Wong",
+          "zh-Hant": "The Ties That Bind 3D 影像裝置個展 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Interactive digital and physical artworks where virtual bodies respond to identity, time, perception, suspension, and shared burden.",
+          "zh-Hans": "一组互动式的数字与实体作品，虚拟的身体回应着身份、时间、感知、悬置，以及共担的重负。",
+          "zh-Hant": "一組互動式的數位與實體作品，虛擬的身體回應著身份、時間、感知、懸置，以及共擔的重負。"
+        },
+        "ogDescription": {
+          "en": "Interactive digital and physical artworks where virtual bodies respond to identity, time, perception, suspension, and shared burden.",
+          "zh-Hans": "一组互动式的数字与实体作品，虚拟的身体回应着身份、时间、感知、悬置，以及共担的重负。",
+          "zh-Hant": "一組互動式的數位與實體作品，虛擬的身體回應著身份、時間、感知、懸置，以及共擔的重負。"
+        }
+      }
+    },
+    "the-bubble-we-call-home": {
+      "enSource": "the-bubble-we-call-home.html",
+      "urlBase": "/works/the-bubble-we-call-home/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "The Bubble We Call Home | Shavonne Wong",
+          "zh-Hans": "The Bubble We Call Home 单频影像委托 | Shavonne Wong",
+          "zh-Hant": "The Bubble We Call Home 單頻影像委託 | Shavonne Wong"
+        },
+        "description": {
+          "en": "The Bubble We Call Home is a unique 1/1 single-channel video commission by Shavonne Wong for AP60, commissioned by Mr Chong.",
+          "zh-Hans": "The Bubble We Call Home 是 Shavonne Wong 为 AP60 创作的一件独一无二的 1/1 单频影像委托作品，由 Mr Chong 委托。",
+          "zh-Hant": "The Bubble We Call Home 是 Shavonne Wong 為 AP60 創作的一件獨一無二的 1/1 單頻影像委託作品，由 Mr Chong 委託。"
+        },
+        "ogDescription": {
+          "en": "A unique 1/1 single-channel video commission for Artist's Proof: Singapore at 60 (AP60), commissioned by Mr Chong.",
+          "zh-Hans": "一件为 Artist's Proof: Singapore at 60（AP60）创作的独一无二的 1/1 单频影像委托作品，由 Mr Chong 委托。",
+          "zh-Hant": "一件為 Artist's Proof: Singapore at 60（AP60）創作的獨一無二的 1/1 單頻影像委託作品，由 Mr Chong 委託。"
+        }
+      }
+    },
+    "echoes-of-identity": {
+      "enSource": "echoes-of-identity.html",
+      "urlBase": "/works/echoes-of-identity/",
+      "bodyStart": "<main id=\"main\" class=\"bp2-main\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Echoes of Identity | Shavonne Wong",
+          "zh-Hans": "Echoes of Identity 限量版肖像系列 | Shavonne Wong",
+          "zh-Hant": "Echoes of Identity 限量版肖像系列 | Shavonne Wong"
+        },
+        "description": {
+          "en": "A 2023 editioned portrait series by Shavonne Wong, made for PROOF Grails IV. A blurred placeholder and a question that resolves into one of three revealed variations.",
+          "zh-Hans": "Shavonne Wong 于 2023 年为 PROOF Grails IV 创作的一组限量版肖像系列。一段模糊的占位影像与一个问题，揭晓成三种变体之一。",
+          "zh-Hant": "Shavonne Wong 於 2023 年為 PROOF Grails IV 創作的一組限量版肖像系列。一段模糊的佔位影像與一個問題，揭曉成三種變體之一。"
+        },
+        "ogDescription": {
+          "en": "A 2023 editioned portrait series by Shavonne Wong, made for PROOF Grails IV. A blurred placeholder and a question that resolves into one of three revealed variations.",
+          "zh-Hans": "Shavonne Wong 于 2023 年为 PROOF Grails IV 创作的一组限量版肖像系列。一段模糊的占位影像与一个问题，揭晓成三种变体之一。",
+          "zh-Hant": "Shavonne Wong 於 2023 年為 PROOF Grails IV 創作的一組限量版肖像系列。一段模糊的佔位影像與一個問題，揭曉成三種變體之一。"
+        }
+      }
+    },
+    "whirlwind-of-the-waking-dream": {
+      "enSource": "whirlwind-of-the-waking-dream.html",
+      "urlBase": "/works/whirlwind-of-the-waking-dream/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Whirlwind of the Waking Dream | Shavonne Wong",
+          "zh-Hans": "Whirlwind of the Waking Dream 1/1 3D 生成影像 | Shavonne Wong",
+          "zh-Hant": "Whirlwind of the Waking Dream 1/1 3D 生成影像 | Shavonne Wong"
+        },
+        "description": {
+          "en": "A 2024 1/1 3D generative video by Shavonne Wong, sold on Manifold for 5 ETH and collected by Sebastien Borget / The Sandbox.",
+          "zh-Hans": "Shavonne Wong 于 2024 年创作的 1/1 3D 生成视频，在 Manifold 上以 5 ETH 售出，由 The Sandbox 的 Sebastien Borget 收藏。",
+          "zh-Hant": "Shavonne Wong 於 2024 年創作的 1/1 3D 生成影片，在 Manifold 上以 5 ETH 售出，由 The Sandbox 的 Sebastien Borget 收藏。"
+        },
+        "ogDescription": {
+          "en": "A 2024 1/1 3D generative video by Shavonne Wong, sold on Manifold for 5 ETH and collected by Sebastien Borget / The Sandbox.",
+          "zh-Hans": "Shavonne Wong 于 2024 年创作的 1/1 3D 生成视频，在 Manifold 上以 5 ETH 售出，由 The Sandbox 的 Sebastien Borget 收藏。",
+          "zh-Hant": "Shavonne Wong 於 2024 年創作的 1/1 3D 生成影片，在 Manifold 上以 5 ETH 售出，由 The Sandbox 的 Sebastien Borget 收藏。"
+        }
+      }
+    },
+    "love-is-love": {
+      "enSource": "love-is-love.html",
+      "urlBase": "/works/love-is-love/",
+      "bodyStart": "<main id=\"main\" class=\"bp2-main\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Love is Love | Shavonne Wong",
+          "zh-Hans": "Love is Love NFT 生成项目 | Shavonne Wong",
+          "zh-Hant": "Love is Love NFT 生成專案 | Shavonne Wong"
+        },
+        "description": {
+          "en": "A 2021 NFT project about love equality, self-identification, and chosen recognition, with 500 editions and one sold 1/1 work.",
+          "zh-Hans": "Love is Love 是 2021 年的一个 NFT 项目，关于爱的平等、自我认同与被选择的认可，包含 500 个版本以及一件已售出的 1/1 作品。",
+          "zh-Hant": "Love is Love 是 2021 年的一個 NFT 專案，關於愛的平等、自我認同與被選擇的認可，包含 500 個版本以及一件已售出的 1/1 作品。"
+        },
+        "ogDescription": {
+          "en": "A 2021 NFT project on love equality, with 500 editions and one sold 1/1 work.",
+          "zh-Hans": "2021 年的一个 NFT 项目，关于爱的平等，包含 500 个版本以及一件已售出的 1/1 作品。",
+          "zh-Hant": "2021 年的一個 NFT 專案，關於愛的平等，包含 500 個版本以及一件已售出的 1/1 作品。"
+        }
+      }
+    },
+    "by-proxy": {
+      "enSource": "by-proxy.html",
+      "urlBase": "/works/by-proxy/",
+      "bodyStart": "<main id=\"main\" class=\"bp2-main\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "By Proxy | Shavonne Wong",
+          "zh-Hans": "By Proxy CGI 与摄影系列 | Shavonne Wong",
+          "zh-Hant": "By Proxy CGI 與攝影系列 | Shavonne Wong"
+        },
+        "description": {
+          "en": "By Proxy, a 60-work CGI and photography series by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images.",
+          "zh-Hans": "By Proxy 是 Shavonne Wong 与 Lenne Chai 合作的 60 件 CGI 与摄影系列，关于记忆、青春期与被建构的图像。",
+          "zh-Hant": "By Proxy 是 Shavonne Wong 與 Lenne Chai 合作的 60 件 CGI 與攝影系列，關於記憶、青春期與被建構的圖像。"
+        },
+        "ogDescription": {
+          "en": "A 60-work CGI and photography series by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images.",
+          "zh-Hans": "Shavonne Wong 与 Lenne Chai 合作的 60 件 CGI 与摄影系列，关于记忆、青春期与被建构的图像。",
+          "zh-Hant": "Shavonne Wong 與 Lenne Chai 合作的 60 件 CGI 與攝影系列，關於記憶、青春期與被建構的圖像。"
+        }
+      }
+    },
+    "vogue-singapore": {
+      "enSource": "vogue-singapore.html",
+      "urlBase": "/works/vogue-singapore/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Vogue Singapore NFT Cover | Shavonne Wong",
+          "zh-Hans": "Vogue Singapore NFT Cover 数字时尚作品 | Shavonne Wong",
+          "zh-Hant": "Vogue Singapore NFT Cover 數位時尚作品 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Vogue Singapore's first digital NFT cover, co-created by Shavonne Wong and The Fabricant for the September 2021 issue.",
+          "zh-Hans": "Vogue Singapore 的首个数字 NFT 封面，由 Shavonne Wong 与 The Fabricant 为 2021 年 9 月号共同创作。",
+          "zh-Hant": "Vogue Singapore 的首個數位 NFT 封面，由 Shavonne Wong 與 The Fabricant 為 2021 年 9 月號共同創作。"
+        },
+        "ogDescription": {
+          "en": "Vogue Singapore's first digital NFT cover, co-created by Shavonne Wong and The Fabricant for the September 2021 issue.",
+          "zh-Hans": "Vogue Singapore 的首个数字 NFT 封面，由 Shavonne Wong 与 The Fabricant 为 2021 年 9 月号共同创作。",
+          "zh-Hant": "Vogue Singapore 的首個數位 NFT 封面，由 Shavonne Wong 與 The Fabricant 為 2021 年 9 月號共同創作。"
+        }
+      }
+    },
+    "6529-meme-card": {
+      "enSource": "6529-meme-card.html",
+      "urlBase": "/works/6529-meme-card/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "6529 Meme Card | Shavonne Wong",
+          "zh-Hans": "6529 Meme Card 数字艺术 | Shavonne Wong",
+          "zh-Hant": "6529 Meme Card 數位藝術 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Faces of Freedom, Shavonne Wong's Meme Card for The Memes by 6529 on the theme Freedom to Transact.",
+          "zh-Hans": "Faces of Freedom，Shavonne Wong 为 The Memes by 6529 创作的 Meme Card，主题是 Freedom to Transact。",
+          "zh-Hant": "Faces of Freedom，Shavonne Wong 為 The Memes by 6529 創作的 Meme Card，主題是 Freedom to Transact。"
+        },
+        "ogDescription": {
+          "en": "Faces of Freedom, Shavonne Wong's Meme Card for The Memes by 6529 on the theme Freedom to Transact.",
+          "zh-Hans": "Faces of Freedom，Shavonne Wong 为 The Memes by 6529 创作的 Meme Card，主题是 Freedom to Transact。",
+          "zh-Hant": "Faces of Freedom，Shavonne Wong 為 The Memes by 6529 創作的 Meme Card，主題是 Freedom to Transact。"
+        }
+      }
+    },
+    "works-available": {
+      "enSource": "works-available.html",
+      "urlBase": "/works/available/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Available works | Shavonne Wong",
+          "zh-Hans": "可洽购作品 | Shavonne Wong",
+          "zh-Hant": "可洽購作品 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Collector-focused inventory of available and recently sold works by Shavonne Wong, organized by edition structure.",
+          "zh-Hans": "Shavonne Wong 可洽购及近期已售作品的藏家导向清单，按版本结构整理。",
+          "zh-Hant": "Shavonne Wong 可洽購及近期已售作品的藏家導向清單，按版本結構整理。"
+        },
+        "ogDescription": {
+          "en": "Collector-focused inventory of available and recently sold works by Shavonne Wong, organized by edition structure.",
+          "zh-Hans": "Shavonne Wong 可洽购及近期已售作品的藏家导向清单，按版本结构整理。",
+          "zh-Hant": "Shavonne Wong 可洽購及近期已售作品的藏家導向清單，按版本結構整理。"
+        }
+      }
+    },
+    "update2026jun": {
+      "enSource": "update2026jun.html",
+      "urlBase": "/update2026jun/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Goodbye to Eva, into the mirror, studio notes June 2026 | Shavonne Wong",
+          "zh-Hans": "告别 Eva，走进镜子，2026 年 6 月工作室手记 | Shavonne Wong",
+          "zh-Hant": "告別 Eva，走進鏡子，2026 年 6 月工作室手記 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Shavonne Wong's mid-2026 studio update. Closing Meet Eva Here after 2,363 conversations, showing After Ophelia at Paris Photo, and a new direction.",
+          "zh-Hans": "Shavonne Wong 的 2026 年年中工作室通讯。在 2,363 段对话之后为 Meet Eva Here 收尾，在 Paris Photo 展出 After Ophelia，并走向一个新的方向。",
+          "zh-Hant": "Shavonne Wong 的 2026 年年中工作室通訊。在 2,363 段對話之後為 Meet Eva Here 收尾，在 Paris Photo 展出 After Ophelia，並走向一個新的方向。"
+        },
+        "ogDescription": {
+          "en": "Closing Meet Eva Here after 2,363 conversations, Paris Photo, Singapore at 60, new collaborations, Conditional, and the redesigned site.",
+          "zh-Hans": "在 2,363 段对话之后为 Meet Eva Here 收尾，Paris Photo、Singapore at 60、新的合作、Conditional，以及重新设计的网站。",
+          "zh-Hant": "在 2,363 段對話之後為 Meet Eva Here 收尾，Paris Photo、Singapore at 60、新的合作、Conditional，以及重新設計的網站。"
+        }
+      }
+    },
+    "update2025jun": {
+      "enSource": "update2025jun.html",
+      "urlBase": "/update2025jun/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Public rooms, studio notes June 2025 | Shavonne Wong",
+          "zh-Hans": "公共的房间，2025 年 6 月工作室手记 | Shavonne Wong",
+          "zh-Hant": "公共的房間，2025 年 6 月工作室手記 | Shavonne Wong"
+        },
+        "description": {
+          "en": "June 2025 studio note, a half-year recap across Digital Rhythm, ART SG, Taipei Dangdai, and Art Central, and the public life of Eva.",
+          "zh-Hans": "2025 年 6 月工作室手记，半年回顾，走过 Digital Rhythm、ART SG、Taipei Dangdai 与 Art Central，以及 Eva 的公共生活。",
+          "zh-Hant": "2025 年 6 月工作室手記，半年回顧，走過 Digital Rhythm、ART SG、Taipei Dangdai 與 Art Central，以及 Eva 的公共生活。"
+        },
+        "ogDescription": {
+          "en": "Studio note, a half-year recap across Digital Rhythm, ART SG, Taipei Dangdai, and Art Central, and the public life of Eva.",
+          "zh-Hans": "工作室手记，半年回顾，走过 Digital Rhythm、ART SG、Taipei Dangdai 与 Art Central，以及 Eva 的公共生活。",
+          "zh-Hant": "工作室手記，半年回顧，走過 Digital Rhythm、ART SG、Taipei Dangdai 與 Art Central，以及 Eva 的公共生活。"
+        }
+      }
+    },
+    "update2025jan": {
+      "enSource": "update2025jan.html",
+      "urlBase": "/update2025jan/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Eva goes public, studio notes January 2025 | Shavonne Wong",
+          "zh-Hans": "Eva 走向公众，2025 年 1 月工作室手记 | Shavonne Wong",
+          "zh-Hant": "Eva 走向公眾，2025 年 1 月工作室手記 | Shavonne Wong"
+        },
+        "description": {
+          "en": "January 2025 studio note on Meet Eva Here's debut at ArtScience Museum and ART SG, and the launch of Eva's chatbot.",
+          "zh-Hans": "2025 年 1 月工作室手记，记录 Meet Eva Here 在 ArtScience Museum 与 ART SG 的首次亮相，以及 Eva 聊天机器人的上线。",
+          "zh-Hant": "2025 年 1 月工作室手記，記錄 Meet Eva Here 在 ArtScience Museum 與 ART SG 的首次亮相，以及 Eva 聊天機器人的上線。"
+        },
+        "ogDescription": {
+          "en": "Studio note on Meet Eva Here's debut at ArtScience Museum and ART SG, and the launch of Eva's chatbot.",
+          "zh-Hans": "工作室手记，记录 Meet Eva Here 在 ArtScience Museum 与 ART SG 的首次亮相，以及 Eva 聊天机器人的上线。",
+          "zh-Hant": "工作室手記，記錄 Meet Eva Here 在 ArtScience Museum 與 ART SG 的首次亮相，以及 Eva 聊天機器人的上線。"
+        }
+      }
+    },
+    "update2024jun": {
+      "enSource": "update2024jun.html",
+      "urlBase": "/update2024jun/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "A win, and a move, studio notes June 2024 | Shavonne Wong",
+          "zh-Hans": "一场胜利，一次迁移，2024 年 6 月工作室随笔 | Shavonne Wong",
+          "zh-Hant": "一場勝利，一次遷移，2024 年 6 月工作室隨筆 | Shavonne Wong"
+        },
+        "description": {
+          "en": "A June 2024 recap covering a Bang &amp; Olufsen solo showcase, an award win, exhibitions in London and Paris, media features, speaking engagements, and the first look at Eva.",
+          "zh-Hans": "2024 年 6 月回顾，涵盖 Bang &amp; Olufsen 个人展示、一座奖项、伦敦与巴黎的展览、媒体报道、演讲活动，以及 Eva 的初次亮相。",
+          "zh-Hant": "2024 年 6 月回顧，涵蓋 Bang &amp; Olufsen 個人展示、一座獎項、倫敦與巴黎的展覽、媒體報道、演講活動，以及 Eva 的初次亮相。"
+        },
+        "ogDescription": {
+          "en": "A June 2024 recap covering a Bang &amp; Olufsen solo showcase, an award win, exhibitions in London and Paris, media features, speaking engagements, and the first look at Eva.",
+          "zh-Hans": "2024 年 6 月回顾，涵盖 Bang &amp; Olufsen 个人展示、一座奖项、伦敦与巴黎的展览、媒体报道、演讲活动，以及 Eva 的初次亮相。",
+          "zh-Hant": "2024 年 6 月回顧，涵蓋 Bang &amp; Olufsen 個人展示、一座獎項、倫敦與巴黎的展覽、媒體報道、演講活動，以及 Eva 的初次亮相。"
+        }
+      }
+    },
+    "update2024jan": {
+      "enSource": "update2024jan.html",
+      "urlBase": "/update2024jan/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Closing out the year, studio notes January 2024 | Shavonne Wong",
+          "zh-Hans": "为这一年收尾，2024 年 1 月工作室随笔 | Shavonne Wong",
+          "zh-Hant": "為這一年收尾，2024 年 1 月工作室隨筆 | Shavonne Wong"
+        },
+        "description": {
+          "en": "January 2024 studio note on exhibitions in Paris, New York, and Beijing, and the projects moving between screens and rooms.",
+          "zh-Hans": "2024 年 1 月工作室随笔，记录在巴黎、纽约与北京的展览，以及那些在屏幕与房间之间流转的项目。",
+          "zh-Hant": "2024 年 1 月工作室隨筆，記錄在巴黎、紐約與北京的展覽，以及那些在螢幕與房間之間流轉的專案。"
+        },
+        "ogDescription": {
+          "en": "Studio note on exhibitions in Paris, New York, and Beijing, and the projects moving between screens and rooms.",
+          "zh-Hans": "工作室随笔，记录在巴黎、纽约与北京的展览，以及那些在屏幕与房间之间流转的项目。",
+          "zh-Hant": "工作室隨筆，記錄在巴黎、紐約與北京的展覽，以及那些在螢幕與房間之間流轉的專案。"
+        }
+      }
+    },
+    "update2023june": {
+      "enSource": "update2023june.html",
+      "urlBase": "/update2023june/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "My first solo, studio notes June 2023 | Shavonne Wong",
+          "zh-Hans": "我的首场个展，2023年6月工作室手记 | Shavonne Wong",
+          "zh-Hant": "我的首場個展，2023年6月工作室手記 | Shavonne Wong"
+        },
+        "description": {
+          "en": "June 2023 studio note on The Ties That Bind solo exhibition in Singapore, recent shows, and work in progress.",
+          "zh-Hans": "2023年6月工作室手记，记录在新加坡的 The Ties That Bind 个展、近期展出与进行中的作品。",
+          "zh-Hant": "2023年6月工作室手記，記錄在新加坡的 The Ties That Bind 個展、近期展出與進行中的作品。"
+        },
+        "ogDescription": {
+          "en": "Studio note on The Ties That Bind solo exhibition in Singapore, recent shows, and work in progress.",
+          "zh-Hans": "工作室手记，关于在新加坡的 The Ties That Bind 个展、近期展出与进行中的作品。",
+          "zh-Hant": "工作室手記，關於在新加坡的 The Ties That Bind 個展、近期展出與進行中的作品。"
+        }
+      }
+    },
+    "update2023jan": {
+      "enSource": "update2023jan.html",
+      "urlBase": "/update2023jan/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "A year of firsts, studio notes January 2023 | Shavonne Wong",
+          "zh-Hans": "万事起头之年，2023年1月工作室手记 | Shavonne Wong",
+          "zh-Hant": "萬事起頭之年，2023年1月工作室手記 | Shavonne Wong"
+        },
+        "description": {
+          "en": "January 2023 studio note on the Venice Biennale Cameroon Pavilion, the By Proxy series with Lenne Chai, and the exhibitions opening the year.",
+          "zh-Hans": "2023年1月工作室手记，记录 Venice Biennale 喀麦隆国家馆、与 Lenne Chai 合作的 By Proxy 系列，以及开启这一年的展览。",
+          "zh-Hant": "2023年1月工作室手記，記錄 Venice Biennale 喀麥隆國家館、與 Lenne Chai 合作的 By Proxy 系列，以及開啟這一年的展覽。"
+        },
+        "ogDescription": {
+          "en": "Studio note on the Venice Biennale Cameroon Pavilion and the By Proxy series with Lenne Chai.",
+          "zh-Hans": "工作室手记，关于 Venice Biennale 喀麦隆国家馆与 Lenne Chai 合作的 By Proxy 系列。",
+          "zh-Hant": "工作室手記，關於 Venice Biennale 喀麥隆國家館與 Lenne Chai 合作的 By Proxy 系列。"
+        }
       }
     }
   }

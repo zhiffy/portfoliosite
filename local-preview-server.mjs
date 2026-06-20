@@ -1,4 +1,4 @@
-import { createReadStream, existsSync, statSync } from "node:fs";
+import { createReadStream, existsSync, readFileSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import path from "node:path";
 import {
@@ -92,6 +92,16 @@ const redirects = {
   "/zh-hans-press.html": "/press/zh-hans/",
   "/zh-hant-press.html": "/press/zh-hant/",
 };
+
+if (existsSync("_redirects")) {
+  for (const raw of readFileSync("_redirects", "utf8").split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line || line.startsWith("#")) continue;
+    const [source, destination, status] = line.split(/\s+/);
+    if (status === "200") routes[source] = destination.replace(/^\/+/, "");
+    if (status && status.startsWith("301")) redirects[source] = destination;
+  }
+}
 
 async function handleNewsletterSignup(request, response) {
   if (request.url !== "/api/newsletter-subscribe") return false;

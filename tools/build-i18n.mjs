@@ -20,7 +20,7 @@
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-import { execSync } from 'node:child_process';
+import { execFileSync, execSync } from 'node:child_process';
 import path from 'node:path';
 
 const ROOT = process.cwd();
@@ -81,7 +81,8 @@ function sliceBody(html, page) {
   const start = html.indexOf(p.bodyStart);
   const end = html.indexOf(p.bodyEnd, start + 1);
   if (start < 0 || end < 0) throw new Error(`body anchors not found in source for "${page}" (file may be truncated)`);
-  const region = html.slice(start, end).replace(/\s+$/, '') + '\n';
+  const bodyEnd = p.bodyEnd === '</main>' ? end + p.bodyEnd.length : end;
+  const region = html.slice(start, bodyEnd).replace(/\s+$/, '') + '\n';
   if (!region.includes('</main>') || region.length < 1000) throw new Error(`extracted "${page}" body looks truncated`);
   return region;
 }
@@ -151,6 +152,9 @@ function head(page, code, status) {
   lines.push('  ' + JSON.stringify(ld, null, 2).split('\n').join('\n  '));
   lines.push('  </script>');
   lines.push('  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{"token": "ed11192c01f44bf2b6d068d312a11534"}\'></script>');
+  lines.push('  <!-- Google tag (gtag.js) -->');
+  lines.push('  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9KCWXRT7E"></script>');
+  lines.push('  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag(\'js\',new Date());gtag(\'config\',\'G-L9KCWXRT7E\');</script>');
   return lines.join('\n');
 }
 
@@ -190,8 +194,9 @@ function assemble(page, code, status) {
   const start = html.indexOf(p.bodyStart);
   const end = html.indexOf(p.bodyEnd, start + 1);
   if (start < 0 || end < 0) throw new Error(`body anchors not found in ${p.enSource} for "${page}"`);
+  const bodyEnd = p.bodyEnd === '</main>' ? end + p.bodyEnd.length : end;
   const body = readFileSync(bodyPath(page, code), 'utf8').replace(/\s+$/, '');
-  html = html.slice(0, start) + body + html.slice(end);
+  html = html.slice(0, start) + body + html.slice(bodyEnd);
   return localizeNav(localizeHead(html, page, code, status), page, code, status);
 }
 
@@ -206,19 +211,19 @@ function localizeHead(html, page, code, status) {
   const self = url(page, code);
   if (title) {
     html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`);
-    html = html.replace(/(<meta property="og:title" content=")[^"]*(">)/, `$1${title}$2`);
-    html = html.replace(/(<meta name="twitter:title" content=")[^"]*(">)/, `$1${title}$2`);
+    html = html.replace(/(<meta property="og:title" content=")[^"]*("\s*\/?>)/, `$1${title}$2`);
+    html = html.replace(/(<meta name="twitter:title" content=")[^"]*("\s*\/?>)/, `$1${title}$2`);
   }
-  if (desc) html = html.replace(/(<meta name="description" content=")[^"]*(">)/, `$1${desc}$2`);
+  if (desc) html = html.replace(/(<meta name="description" content=")[^"]*("\s*\/?>)/, `$1${desc}$2`);
   if (ogdesc) {
-    html = html.replace(/(<meta property="og:description" content=")[^"]*(">)/, `$1${ogdesc}$2`);
-    html = html.replace(/(<meta name="twitter:description" content=")[^"]*(">)/, `$1${ogdesc}$2`);
+    html = html.replace(/(<meta property="og:description" content=")[^"]*("\s*\/?>)/, `$1${ogdesc}$2`);
+    html = html.replace(/(<meta name="twitter:description" content=")[^"]*("\s*\/?>)/, `$1${ogdesc}$2`);
   }
-  html = html.replace(/(<link rel="canonical" href=")[^"]*(">)/, `$1${self}$2`);
-  html = html.replace(/(<meta property="og:url" content=")[^"]*(">)/, `$1${self}$2`);
+  html = html.replace(/(<link rel="canonical" href=")[^"]*("\s*\/?>)/, `$1${self}$2`);
+  html = html.replace(/(<meta property="og:url" content=")[^"]*("\s*\/?>)/, `$1${self}$2`);
   // drop any hreflang / og:locale the English page already carries
   html = html.replace(/[ \t]*<!-- i18n:hreflang -->[\s\S]*?<!-- \/i18n:hreflang -->\n?/g, '');
-  html = html.replace(/[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n?/g, '');
+  html = html.replace(/[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*"\s*\/?>\n?/g, '');
   html = html.replace(/[ \t]*<meta property="og:locale[^>]*>\n?/g, '');
   // inject this page's own hreflang cluster + locale + noindex after the canonical
   const inject = [];
@@ -227,7 +232,7 @@ function localizeHead(html, page, code, status) {
   inject.push(`<link rel="alternate" hreflang="x-default" href="${url(page, 'en')}">`);
   inject.push(`<meta property="og:locale" content="${L.ogLocale}">`);
   if (code !== 'en') inject.push('<meta property="og:locale:alternate" content="en_US">');
-  html = html.replace(/(<link rel="canonical" href="[^"]*">)/, `$1\n  ${inject.join('\n  ')}`);
+  html = html.replace(/(<link rel="canonical" href="[^"]*"\s*\/?>)/, `$1\n  ${inject.join('\n  ')}`);
   // the localized font CSS loads last so its --sans/--serif override wins
   if (L.font) html = html.replace('</head>', `  <link rel="stylesheet" href="${L.font}">\n</head>`);
   return html;
@@ -289,7 +294,7 @@ function updateManagedAll(status) {
     const hl = [...adv.map((c) => `  <link rel="alternate" hreflang="${lang(c).htmlLang}" href="${url(page, c)}">`),
       `  <link rel="alternate" hreflang="x-default" href="${url(page, 'en')}">`].join('\n');
     upsertBlock(path.join(ROOT, cfg.pages[page].enSource), '<!-- i18n:hreflang -->', '<!-- /i18n:hreflang -->',
-      hl, /<link rel="canonical" href="[^"]*">/);
+      hl, /<link rel="canonical" href="[^"]*"\s*\/?>/);
   }
   const routes = [];
   for (const page of pages) {
@@ -318,11 +323,24 @@ function updateManagedAll(status) {
 }
 
 function ensureFonts() {
-  try {
-    execSync('python3 tools/subset-cjk.py', { cwd: ROOT, stdio: 'inherit' });
-  } catch (e) {
-    console.log('  ! CJK font subset skipped (need python3 + fonttools, and npm install). Run tools/subset-cjk.py manually.');
+  const candidates = [
+    process.env.CJK_PYTHON,
+    process.env.LOCALAPPDATA && path.join(process.env.LOCALAPPDATA, 'Programs', 'Python', 'Python312', 'python.exe'),
+    'python3',
+    'python'
+  ].filter(Boolean);
+  const tried = [];
+  for (const python of [...new Set(candidates)]) {
+    if (python.endsWith('.exe') && !existsSync(python)) continue;
+    try {
+      const output = execFileSync(python, ['tools/subset-cjk.py'], { cwd: ROOT, encoding: 'utf8' });
+      if (output) process.stdout.write(output);
+      return;
+    } catch (e) {
+      tried.push(python);
+    }
   }
+  console.log(`  ! CJK font subset skipped (need Python + fonttools + brotli). Tried: ${tried.join(', ')}. Run tools/subset-cjk.py manually.`);
 }
 
 function build() {

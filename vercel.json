@@ -129,6 +129,166 @@
     {
       "source": "/update2026jun/",
       "destination": "/update2026jun.html"
+    },
+    {
+      "source": "/works/zh-hans/",
+      "destination": "/works-zh-hans.html"
+    },
+    {
+      "source": "/works/zh-hant/",
+      "destination": "/works-zh-hant.html"
+    },
+    {
+      "source": "/works/conditional/zh-hans/",
+      "destination": "/conditional-zh-hans.html"
+    },
+    {
+      "source": "/works/conditional/zh-hant/",
+      "destination": "/conditional-zh-hant.html"
+    },
+    {
+      "source": "/works/after-ophelia/zh-hans/",
+      "destination": "/after-ophelia-zh-hans.html"
+    },
+    {
+      "source": "/works/after-ophelia/zh-hant/",
+      "destination": "/after-ophelia-zh-hant.html"
+    },
+    {
+      "source": "/works/meet-eva-here/zh-hans/",
+      "destination": "/meet-eva-here-zh-hans.html"
+    },
+    {
+      "source": "/works/meet-eva-here/zh-hant/",
+      "destination": "/meet-eva-here-zh-hant.html"
+    },
+    {
+      "source": "/works/the-ties-that-bind/zh-hans/",
+      "destination": "/the-ties-that-bind-zh-hans.html"
+    },
+    {
+      "source": "/works/the-ties-that-bind/zh-hant/",
+      "destination": "/the-ties-that-bind-zh-hant.html"
+    },
+    {
+      "source": "/works/the-bubble-we-call-home/zh-hans/",
+      "destination": "/the-bubble-we-call-home-zh-hans.html"
+    },
+    {
+      "source": "/works/the-bubble-we-call-home/zh-hant/",
+      "destination": "/the-bubble-we-call-home-zh-hant.html"
+    },
+    {
+      "source": "/works/echoes-of-identity/zh-hans/",
+      "destination": "/echoes-of-identity-zh-hans.html"
+    },
+    {
+      "source": "/works/echoes-of-identity/zh-hant/",
+      "destination": "/echoes-of-identity-zh-hant.html"
+    },
+    {
+      "source": "/works/whirlwind-of-the-waking-dream/zh-hans/",
+      "destination": "/whirlwind-of-the-waking-dream-zh-hans.html"
+    },
+    {
+      "source": "/works/whirlwind-of-the-waking-dream/zh-hant/",
+      "destination": "/whirlwind-of-the-waking-dream-zh-hant.html"
+    },
+    {
+      "source": "/works/love-is-love/zh-hans/",
+      "destination": "/love-is-love-zh-hans.html"
+    },
+    {
+      "source": "/works/love-is-love/zh-hant/",
+      "destination": "/love-is-love-zh-hant.html"
+    },
+    {
+      "source": "/works/by-proxy/zh-hans/",
+      "destination": "/by-proxy-zh-hans.html"
+    },
+    {
+      "source": "/works/by-proxy/zh-hant/",
+      "destination": "/by-proxy-zh-hant.html"
+    },
+    {
+      "source": "/works/vogue-singapore/zh-hans/",
+      "destination": "/vogue-singapore-zh-hans.html"
+    },
+    {
+      "source": "/works/vogue-singapore/zh-hant/",
+      "destination": "/vogue-singapore-zh-hant.html"
+    },
+    {
+      "source": "/works/6529-meme-card/zh-hans/",
+      "destination": "/6529-meme-card-zh-hans.html"
+    },
+    {
+      "source": "/works/6529-meme-card/zh-hant/",
+      "destination": "/6529-meme-card-zh-hant.html"
+    },
+    {
+      "source": "/works/available/zh-hans/",
+      "destination": "/works-available-zh-hans.html"
+    },
+    {
+      "source": "/works/available/zh-hant/",
+      "destination": "/works-available-zh-hant.html"
+    },
+    {
+      "source": "/update2026jun/zh-hans/",
+      "destination": "/update2026jun-zh-hans.html"
+    },
+    {
+      "source": "/update2026jun/zh-hant/",
+      "destination": "/update2026jun-zh-hant.html"
+    },
+    {
+      "source": "/update2025jun/zh-hans/",
+      "destination": "/update2025jun-zh-hans.html"
+    },
+    {
+      "source": "/update2025jun/zh-hant/",
+      "destination": "/update2025jun-zh-hant.html"
+    },
+    {
+      "source": "/update2025jan/zh-hans/",
+      "destination": "/update2025jan-zh-hans.html"
+    },
+    {
+      "source": "/update2025jan/zh-hant/",
+      "destination": "/update2025jan-zh-hant.html"
+    },
+    {
+      "source": "/update2024jun/zh-hans/",
+      "destination": "/update2024jun-zh-hans.html"
+    },
+    {
+      "source": "/update2024jun/zh-hant/",
+      "destination": "/update2024jun-zh-hant.html"
+    },
+    {
+      "source": "/update2024jan/zh-hans/",
+      "destination": "/update2024jan-zh-hans.html"
+    },
+    {
+      "source": "/update2024jan/zh-hant/",
+      "destination": "/update2024jan-zh-hant.html"
+    },
+    {
+      "source": "/update2023june/zh-hans/",
+      "destination": "/update2023june-zh-hans.html"
+    },
+    {
+      "source": "/update2023june/zh-hant/",
+      "destination": "/update2023june-zh-hant.html"
+    },
+    {
+      "source": "/update2023jan/zh-hans/",
+      "destination": "/update2023jan-zh-hans.html"
+    },
+    {
+      "source": "/update2023jan/zh-hant/",
+      "destination": "/update2023jan-zh-hant.html"
     }
   ],
   "redirects": [

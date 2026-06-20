@@ -1,0 +1,192 @@
+[
+  {
+    "match": "straitstimes.com/singapore/community/what-does-the-rise-of-genai-mean-for-singapores-creative-arts",
+    "preview": "/assets/press/previews/straitstimes-genai-singapore-creative-arts-2026.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "culture3.com/posts/stepping-across-the-uncanny-valley-with-shavonne-wong",
+    "preview": "/assets/press/previews/culture3-stepping-across-the-uncanny-valley-with-shavonne-wong.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "straitstimes.com/life/arts/chat-with-an-ai-influencer-view-van-gogh-high-end-works-at-art-sg-s-e-a-focus-and-sothebys-show",
+    "preview": "/assets/press/previews/straitstimes-com-chat-with-an-ai-influencer-view-van-gogh-high-end-works.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "cntrfld.art/in-conversation-shavonne-wong",
+    "preview": "/assets/press/previews/cntrfldart-shavonne-wong-inside-the-bubble.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "vogue.it/news/article/shavonne-wong-3d-makeup",
+    "preview": "/assets/press/previews/vogue-italia-make-up-3d-abbiamo-incontrato-shavonne-wong-lartista-digitale-che-esplora.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "coindesk.com/consensus-magazine/2024/04/23/web3-artist-shavonne-wong-on-the-future-of-nfts",
+    "preview": "/assets/press/previews/coindesk-web3-artist-shavonne-wong-on-the-future-of-nfts.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "cnalifestyle.channelnewsasia.com/entertainment/singapore-nft-artist-shavonne-wong-hollywood-actor-idris-elba-307356",
+    "preview": "/assets/press/previews/cna-lifestyle-the-story-behind-how-this-singaporean-artist-sold-hollywood-star-idris-elb.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "brandinginasia.com/shavonne-wong-each-medium-has-taught-me-something-different-about-creativity-itself",
+    "preview": "/assets/press/previews/branding-in-asia-shavonne-wong-each-medium-has-taught-me-something-different-about-creativi.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "verymulan.com/story",
+    "preview": "/assets/press/previews/verymulan-ai-nft-new-world.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "iconsingapore.com/beauty/shavonne-wong-shu-umemura-makeup-collection-art",
+    "preview": "/assets/press/previews/iconsingapore-com-shavonne-wong-x-shu-uemura-3d.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "nylon.com.sg/shu-uemura-releases-collab-with-acclaimed-new-media-artist-shavonne-wong",
+    "preview": "/assets/press/previews/nylon-shu-uemura-releases-collab-with-acclaimed-new-media-artist-shavonne-wong.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "herworld.com/pov/shavonne-wong-new-media-artist-blurring-line-between-reality-and-surreal",
+    "preview": "/assets/press/previews/herworld-com-shavonne-wong-the-new-media-artist-blurring-the-line-betwee.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "grazia.sg/culture/grazia-game-changers-shavonne-wong-digital-art-fashion-photography",
+    "preview": "/assets/press/previews/grazia-sg-grazia-game-changers-shavonne-wong-on-making-the-nft-world-more-inclusive.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "nftnow.com/features/shavonne-wong-on-art-and-fostering-diversity-in-web3",
+    "preview": "/assets/press/previews/nftnow-com-shavonne-wong-on-art-and-fostering-diversity-in-web3.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "adobe.com/uk/creativecloud/nft-art/best-nft-artists.html",
+    "preview": "/assets/press/previews/adobe-com-the-best-nft-artists-and-coolest-nfts-around-right-now.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "iconsingapore.com/people/photographer-turned-digital-artist-shavonne-wong-is-making-waves-in-the-region",
+    "preview": "/assets/features/icon-singapore-feature.webp",
+    "status": "curated-fallback",
+    "note": "Article page may require login; using editorial feature image"
+  },
+  {
+    "match": "nftculture.com/newsletter/beyond-the-gallery-5-women-revolutionizing-the-art-world-through-nfts",
+    "preview": "/assets/press/previews/nft-culture-beyond-the-gallery-5-women-revolutionizing-the-art-world-through-nfts.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "straitstimes.com/life/arts/arts-picks-new-works-by-nobel-laureate-and-digital-artist-on-show",
+    "preview": "/assets/features/the-ties-that-bind-article.webp",
+    "status": "curated-fallback",
+    "note": "ST paywall; using exhibition image that appeared in the article"
+  },
+  {
+    "match": "prestigeonline.com/id/pursuits/asian-artists-to-watch-this-2023",
+    "preview": "/assets/features/prestige-asia-artists-to-watch-2023.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "vogue.sg/metaverse-shavonne-wong",
+    "preview": "/assets/press/previews/vogue-singapore-in-the-era-of-digital-art-what-does-it-take-to-be-a-successful-nft-artist.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "mens-folio.com/style/a-conversation-in-meta-shavonne-wong",
+    "preview": "/assets/press/previews/mens-folio-a-conversation-in-meta-with-3d-virtual-model-creator-and-nft-artist-shavon.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "tatlerasia.com/lifestyle/arts/singaporean-fashion-photographer-shavonne-wong-nft",
+    "preview": "/assets/press/previews/tatlerasia-com-singaporean-fashion-photographer-shavonne-wong-makes-a-sp.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "fliphtml5.com/grzod/pvmy/basic",
+    "preview": "/assets/features/tatler-hong-kong-model-persona-feature.webp",
+    "status": "curated-fallback",
+    "note": "FlipHTML5 embed; using print feature scan"
+  },
+  {
+    "match": "vogue.sg/singaporean-nft-artists",
+    "preview": "/assets/press/previews/vogue-singapore-notable-singaporean-nft-artists-to-know-of-so-far.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "vogue.sg/the-noteworthy-nfts-displayed-at-the-venice-biennale-2022",
+    "preview": "/assets/press/previews/vogue-singapore-the-noteworthy-nfts-displayed-at-the-venice-biennale-2022.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "femalemag.com.sg/gallery/culture/what-is-an-nft-singapore-digital-artists",
+    "preview": "/assets/press/previews/female-magazine-what-exactly-is-an-nft-4-singapore-visual-artists-give-you-the-lowdown.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "straitstimes.com/life/arts/how-to-collect-young-artists-start-with-these-eight-hot-names",
+    "preview": "/assets/press/previews/the-straits-times-how-to-collect-young-artists-start-with-these-eight-hot-names.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "news.artnet.com/art-world/venice-biennale-nft-cameroon-pavilion-2075164",
+    "preview": "/assets/press/previews/news-artnet-com-the-venice-biennale-is-getting-its-first-nft-art-exhibit.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "lifestyleasia.com/bk/culture/art/contemporary-asian-artists-nfts",
+    "preview": "/assets/press/previews/lifestyleasia-com-7-contemporary-asian-artists-and-their-creative-unique.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "lifestyleasia.com/hk/tech/contemporary-asian-artists-and-their-nfts",
+    "preview": "/assets/press/previews/lifestyleasia-com-contemporary-asian-artists-and-their-nft-creations-you.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "tatlerasia.com/lifestyle/arts/idris-elba-buys-first-nft-from-singaporean-artist-shavonne-wong",
+    "preview": "/assets/press/previews/tatlerasia-com-this-singaporean-artist-s-nft-was-just-snapped-up-by-holl.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "forbes.com/sites/biancasalonga/2021/09/06/nfts-find-its-place-on-the-cover-of-vogue-as-a-new-fragrance-and-as-part-of-balmains-retail-experience",
+    "preview": "/assets/press/previews/forbes-nfts-find-a-place-on-the-cover-of-vogue-as-a-new-fragrance-and-as-part-of.webp",
+    "status": "reviewed"
+  },
+  {
+    "match": "aisdc.aisingapore.org/main-stage",
+    "preview": "/assets/features/ap60-artist-proof-singapore-at-60.webp",
+    "status": "curated-fallback"
+  },
+  {
+    "match": "artcentralhongkong.com/programme/2025-performance",
+    "preview": "/assets/meet-eva-here/14-art-central-landscape.jpg",
+    "status": "curated-fallback"
+  },
+  {
+    "match": "artsg.com/wp-content/uploads/2025/01/ART-SG-2025-Opening-Release_EN.pdf",
+    "preview": "/assets/features/art-sg-meet-eva-here-shavonne-wong-2025.webp",
+    "status": "curated-fallback",
+    "note": "PDF link; using editorial feature image"
+  },
+  {
+    "match": "bacc.or.th/en/events/90389",
+    "preview": "/assets/features/art-sg-meet-eva-here-shavonne-wong-2025.webp",
+    "status": "curated-fallback"
+  },
+  {
+    "match": "bloomberg.com/digitaloriginals",
+    "preview": "/assets/features/bloomberg-quicktake-tweet.webp",
+    "status": "curated-fallback",
+    "note": "Bloomberg landing page; using social card image"
+  }
+]

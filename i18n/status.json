@@ -1,15 +1,15 @@
 {
   "about": {
     "en": {
-      "hash": "e88da82b87a553d4"
+      "hash": "e02b582d3d51f3a7"
     },
     "zh-Hans": {
       "status": "reviewed",
-      "src": "e88da82b87a553d4"
+      "src": "e02b582d3d51f3a7"
     },
     "zh-Hant": {
       "status": "reviewed",
-      "src": "e88da82b87a553d4"
+      "src": "e02b582d3d51f3a7"
     }
   },
   "contact": {
@@ -40,15 +40,275 @@
   },
   "press": {
     "en": {
-      "hash": "d64bb70704541f20"
+      "hash": "4bf9f7d4c020bc62"
     },
     "zh-Hans": {
       "status": "machine",
-      "src": "d64bb70704541f20"
+      "src": "4bf9f7d4c020bc62"
     },
     "zh-Hant": {
       "status": "machine",
-      "src": "d64bb70704541f20"
+      "src": "4bf9f7d4c020bc62"
+    }
+  },
+  "works": {
+    "en": {
+      "hash": "48960de732f059f0"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "48960de732f059f0"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "48960de732f059f0"
+    }
+  },
+  "conditional": {
+    "en": {
+      "hash": "8d254c08ae6fe7b7"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "8d254c08ae6fe7b7"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "8d254c08ae6fe7b7"
+    }
+  },
+  "after-ophelia": {
+    "en": {
+      "hash": "7c8d4ffcf1a9c05d"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "7c8d4ffcf1a9c05d"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "7c8d4ffcf1a9c05d"
+    }
+  },
+  "meet-eva-here": {
+    "en": {
+      "hash": "03fe56ab9f07cda6"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "03fe56ab9f07cda6"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "03fe56ab9f07cda6"
+    }
+  },
+  "the-ties-that-bind": {
+    "en": {
+      "hash": "68d4e92f8e50d36a"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "68d4e92f8e50d36a"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "68d4e92f8e50d36a"
+    }
+  },
+  "the-bubble-we-call-home": {
+    "en": {
+      "hash": "dff1a5be7c83bfb9"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "dff1a5be7c83bfb9"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "dff1a5be7c83bfb9"
+    }
+  },
+  "echoes-of-identity": {
+    "en": {
+      "hash": "be3c5e441a554b01"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "be3c5e441a554b01"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "be3c5e441a554b01"
+    }
+  },
+  "whirlwind-of-the-waking-dream": {
+    "en": {
+      "hash": "2e7d927dc6680a79"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "2e7d927dc6680a79"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "2e7d927dc6680a79"
+    }
+  },
+  "love-is-love": {
+    "en": {
+      "hash": "b325587f7edbb971"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "b325587f7edbb971"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "b325587f7edbb971"
+    }
+  },
+  "by-proxy": {
+    "en": {
+      "hash": "d3b8c14c4c20c410"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "d3b8c14c4c20c410"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "d3b8c14c4c20c410"
+    }
+  },
+  "vogue-singapore": {
+    "en": {
+      "hash": "b5b54eff92efb2d3"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "b5b54eff92efb2d3"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "b5b54eff92efb2d3"
+    }
+  },
+  "6529-meme-card": {
+    "en": {
+      "hash": "6b59063cee3b82fc"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "6b59063cee3b82fc"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "6b59063cee3b82fc"
+    }
+  },
+  "works-available": {
+    "en": {
+      "hash": "582e426d42aad45c"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "582e426d42aad45c"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "582e426d42aad45c"
+    }
+  },
+  "update2026jun": {
+    "en": {
+      "hash": "35f7eb18972fafa1"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "35f7eb18972fafa1"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "35f7eb18972fafa1"
+    }
+  },
+  "update2025jun": {
+    "en": {
+      "hash": "1c1049163b3659e0"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "1c1049163b3659e0"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "1c1049163b3659e0"
+    }
+  },
+  "update2025jan": {
+    "en": {
+      "hash": "acd38110cada8d06"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "acd38110cada8d06"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "acd38110cada8d06"
+    }
+  },
+  "update2024jun": {
+    "en": {
+      "hash": "8eb6916825181d8e"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "8eb6916825181d8e"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "8eb6916825181d8e"
+    }
+  },
+  "update2024jan": {
+    "en": {
+      "hash": "3fe8ad5a3387562d"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "3fe8ad5a3387562d"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "3fe8ad5a3387562d"
+    }
+  },
+  "update2023june": {
+    "en": {
+      "hash": "14efe255bdb69d57"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "14efe255bdb69d57"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "14efe255bdb69d57"
+    }
+  },
+  "update2023jan": {
+    "en": {
+      "hash": "201f0bb2ea9dd4e8"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "201f0bb2ea9dd4e8"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "201f0bb2ea9dd4e8"
     }
   }
 }

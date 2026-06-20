@@ -11,6 +11,11 @@
   <meta name="description" content="A 2023 editioned portrait series by Shavonne Wong, made for PROOF Grails IV. A blurred placeholder and a question that resolves into one of three revealed variations.">
   <meta name="author" content="Shavonne Wong">
   <link rel="canonical" href="https://www.shavonnewong.art/works/echoes-of-identity/">
+  <meta property="og:url" content="https://www.shavonnewong.art/works/echoes-of-identity/">
+  <!-- i18n:hreflang -->
+  <link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/works/echoes-of-identity/">
+  <link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/works/echoes-of-identity/">
+<!-- /i18n:hreflang -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="Echoes of Identity | Shavonne Wong">
   <meta property="og:description" content="A 2023 editioned portrait series by Shavonne Wong, made for PROOF Grails IV. A blurred placeholder and a question that resolves into one of three revealed variations.">
@@ -238,7 +243,15 @@
     <!-- End Cloudflare Web Analytics -->
 
   <script src="/site-header.js?v=20260618-cta" defer></script>
-  <script src="/site-i18n.js?v=20260619-i18n-sticky" defer></script>
+  <script src="/site-i18n.js?v=20260620-i18n-rebuild" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9KCWXRT7E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L9KCWXRT7E');
+    </script>
 </head>
 <body>
   <a class="sn-skip-link" href="#main">Skip to content</a>
@@ -246,12 +259,12 @@
   <header class="sn-nav" data-page-nav>
     <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="/assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
-      <a href="/#hero">Home</a>
-      <a href="/about/">About</a>
-      <a href="/works/" class="is-active">Works</a>
-      <a href="/writing/">Writing</a>
-      <a href="/press/">Press</a>
-      <a href="/contact/">Contact</a>
+      <a href="/#hero" data-i18n="nav.home">Home</a>
+      <a href="/about/" data-i18n="nav.about">About</a>
+      <a href="/works/" class="is-active" data-i18n="nav.works">Works</a>
+      <a href="/writing/" data-i18n="nav.writing">Writing</a>
+      <a href="/press/" data-i18n="nav.press">Press</a>
+      <a href="/contact/" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="sn-meta-right"></div>
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>

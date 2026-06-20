@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>Love is Love NFT 生成專案 | Shavonne Wong</title>
+  <meta name="description" content="Love is Love 是 2021 年的一個 NFT 專案，關於愛的平等、自我認同與被選擇的認可，包含 500 個版本以及一件已售出的 1/1 作品。">
+  <meta name="author" content="Shavonne Wong">
+  <link rel="canonical" href="https://www.shavonnewong.art/works/love-is-love/zh-hant/">
+  <meta name="robots" content="noindex">
+  <link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/works/love-is-love/">
+  <link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/works/love-is-love/">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:url" content="https://www.shavonnewong.art/works/love-is-love/zh-hant/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Love is Love NFT 生成專案 | Shavonne Wong">
+  <meta property="og:description" content="2021 年的一個 NFT 專案，關於愛的平等，包含 500 個版本以及一件已售出的 1/1 作品。">
+  <meta property="og:image" content="https://www.shavonnewong.art/assets/love-is-love/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Love is Love NFT 生成專案 | Shavonne Wong">
+  <meta name="twitter:description" content="2021 年的一個 NFT 專案，關於愛的平等，包含 500 個版本以及一件已售出的 1/1 作品。">
+  <meta name="twitter:image" content="https://www.shavonnewong.art/assets/love-is-love/og-image.jpg">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/mulish/mulish-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260618-mobile-gutters">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260616-prose-fix">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Love is Love",
+    "creator": { "@type": "Person", "name": "Shavonne Wong", "sameAs": "https://en.wikipedia.org/wiki/Shavonne_Wong" },
+    "dateCreated": "2021",
+    "datePublished": "2021",
+    "artMedium": "Generative digital artwork, 500 editions and one 1/1 NFT",
+    "url": "https://www.shavonnewong.art/works/love-is-love/",
+    "image": "https://www.shavonnewong.art/assets/love-is-love/og-image.jpg",
+    "description": "Love is Love, a 2021 digital project about love equality, self-identification, and chosen recognition, released as 500 editions plus one sold 1/1 work and collected by Idris Elba.",
+    "isPartOf": { "@type": "CollectionPage", "name": "Works", "url": "https://www.shavonnewong.art/works/" }
+  }
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#18192B', fog: '#595E78', mist: '#9094AB', iris: '#545C9E',
+            hair: 'rgba(24,25,43,0.10)', hairStrong: 'rgba(24,25,43,0.22)'
+          },
+          fontFamily: { sans: ['Mulish', 'Helvetica Neue', 'Arial', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Mulish', 'Helvetica Neue', Arial, sans-serif; color: #18192B; background: var(--bg); }
+    /* The page sits beneath the site nav (fixed at top, 56px tall). */
+    main { padding-top: 56px; }
+    .bp2-eyebrow { font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: #595E78; }
+    .bp2-rule { height: 1px; background: rgba(24,25,43,0.10); }
+
+    /* Hero */
+    .bp2-hero { padding: clamp(80px,12vh,140px) clamp(24px,5vw,80px) clamp(48px,7vh,96px); }
+    .bp2-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px,5vw,72px); align-items: end; max-width: var(--site-max); margin: 0 auto; }
+    .bp2-hero-title { font-size: clamp(56px, 9vw, 144px); line-height: 0.9; letter-spacing: -0.025em; margin: 0; font-weight: 300; }
+    .bp2-hero-title em { font-style: italic; color: #545C9E; font-weight: 300; }
+    .bp2-hero-tag { font-style: italic; font-weight: 300; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.35; color: #18192B; margin: 28px 0 0; max-width: 32ch; }
+    .bp2-hero-meta { margin: 28px 0 0; font-size: 12px; color: #595E78; letter-spacing: 0.02em; }
+    .bp2-hero-meta strong { font-weight: 500; color: #18192B; }
+    .bp2-hero-desc { margin: 28px 0 0; font-size: 15px; line-height: 1.65; color: #18192B; max-width: 56ch; }
+    .bp2-hero-cover {
+      position: relative;
+      max-height: 80vh;
+      background: #EDEDF4;
+      overflow: visible;
+    }
+    .bp2-hero-cover img { width: 100%; height: auto; object-fit: contain; display: block; }
+    .bp2-hero-cover figcaption {
+      position: absolute; left: 16px; bottom: 16px;
+      font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase;
+      color: #FFFFFF; background: rgba(24,25,43,0.7); padding: 6px 10px;
+    }
+
+    /* Sticky project sub-nav. Sits BELOW the global site nav. */
+    .bp2-stick {
+      position: fixed; top: 56px; left: 0; right: 0; z-index: 60;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(24,25,43,0.10);
+      transform: translateY(-110%);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .bp2-stick.is-visible { transform: translateY(0); }
+    .bp2-stick-inner {
+      max-width: var(--site-max); margin: 0 auto;
+      display: grid; grid-template-columns: auto 1fr auto;
+      align-items: center; gap: 16px;
+      padding: 12px clamp(24px,5vw,80px);
+    }
+    .bp2-stick-title { font-size: 13px; font-weight: 500; color: #18192B; }
+    .bp2-stick-title em { font-style: italic; font-weight: 300; color: #545C9E; }
+    .bp2-stick-current { font-size: 12px; color: #595E78; font-style: italic; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .bp2-stick-current-prefix { font-style: normal; color: #9094AB; margin-right: 8px; letter-spacing: 0.04em; text-transform: uppercase; font-size: 10px; }
+    .bp2-stick-back {
+      font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: #18192B;
+      border: 1px solid rgba(24,25,43,0.22); padding: 8px 14px;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      cursor: pointer;
+    }
+    .bp2-stick-back:hover, .bp2-stick-back:focus-visible { background: #18192B; color: #FFFFFF; border-color: #18192B; outline: 0; }
+
+    /* Contact sheet */
+    .bp2-index { max-width: var(--site-max); margin: 0 auto; padding: clamp(40px,6vh,80px) clamp(24px,5vw,80px) clamp(56px,8vh,112px); }
+    .bp2-index-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: clamp(20px, 3vh, 32px); flex-wrap: wrap; }
+    .bp2-index-title { font-style: italic; font-weight: 300; font-size: clamp(22px, 2.4vw, 30px); margin: 0; }
+    .bp2-index-help { font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: #9094AB; }
+    .bp2-sheet { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
+    .bp2-cell {
+      position: relative;
+      background: #EDEDF4;
+      overflow: visible;
+    }
+    .bp2-cell img { width: 100%; height: auto; object-fit: contain; display: block; }
+    .bp2-cell-overlay {
+      position: absolute; inset: 0;
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 4px;
+      padding: 6px 8px;
+      background: linear-gradient(180deg, rgba(24,25,43,0) 45%, rgba(24,25,43,0.78) 100%);
+      color: #FFFFFF; opacity: 0; transition: opacity 0.2s ease;
+      font-size: 10px; letter-spacing: 0.04em;
+    }
+    .bp2-cell:hover .bp2-cell-overlay, .bp2-cell:focus-visible .bp2-cell-overlay { opacity: 1; }
+    .bp2-cell:focus-visible { outline: 2px solid #545C9E; outline-offset: 2px; }
+    .bp2-cell-num { font-feature-settings: "tnum"; opacity: 0.8; }
+    .bp2-cell-title { flex: 1; padding: 0 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+    .bp2-cell-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; align-self: flex-end; margin-bottom: 2px; }
+    .bp2-cell-dot--available { background: #2E7D5B; }
+
+    .bp2-sheet-foot { margin-top: 16px; font-size: 12px; color: #595E78; }
+    .bp2-sheet-foot a { color: #545C9E; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Live-page narrative */
+    .bp2-context {
+      max-width: var(--site-max); margin: 0 auto;
+      padding: clamp(48px,7vh,96px) clamp(24px,5vw,80px);
+      border-top: 1px solid rgba(24,25,43,0.10);
+    }
+    .bp2-context-grid {
+      display: grid; grid-template-columns: clamp(120px, 11vw, 150px) minmax(0, 1fr);
+      gap: clamp(24px, 5vw, 64px);
+      align-items: start;
+    }
+    .bp2-prose { max-width: none; }
+    .bp2-prose p { margin: 0; font-size: 16px; line-height: 1.75; color: #18192B; }
+    .bp2-prose p + p { margin-top: 18px; }
+    .bp2-launch-list {
+      list-style: none; padding: 0; margin: 28px 0 0;
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .bp2-launch-list li {
+      border-top: 1px solid rgba(24,25,43,0.18);
+      padding-top: 12px;
+      font-size: 13px;
+      line-height: 1.45;
+      color: #18192B;
+    }
+    .bp2-launch-list strong {
+      display: block; font-size: 11px; letter-spacing: 0.04em;
+      text-transform: uppercase; color: #9094AB; font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .bp2-link-row {
+      margin-top: 26px;
+      display: flex; gap: 18px; flex-wrap: wrap;
+      font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .bp2-link-row a { color: #545C9E; text-decoration: underline; text-underline-offset: 4px; }
+    .bp2-index-availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 4px;
+      padding: 9px 12px;
+      border: 1px solid rgba(46, 125, 91, 0.34);
+      color: #1F5F45;
+      background: rgba(46, 125, 91, 0.06);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .bp2-index-availability strong {
+      color: #18192B;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+    .bp2-index-availability::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #2E7D5B;
+      box-shadow: 0 0 0 4px rgba(46, 125, 91, 0.12);
+      flex: 0 0 auto;
+    }
+    .bp2-index-availability:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+    .bp2-tweet {
+      margin-top: 28px;
+      border-left: 2px solid #545C9E;
+      padding-left: 18px;
+      max-width: 58ch;
+    }
+    .bp2-tweet p { font-size: 15px; line-height: 1.6; }
+    .bp2-tweet cite {
+      display: block; margin-top: 12px;
+      font-size: 12px; color: #595E78; font-style: normal;
+    }
+
+    /* Featured sequence */
+    .bp2-seq { display: grid; gap: clamp(80px, 12vh, 160px); padding: clamp(40px,6vh,80px) clamp(24px,5vw,80px) clamp(80px,12vh,140px); max-width: var(--site-max); margin: 0 auto; }
+    .bp2-work { scroll-margin-top: 80px; display: grid; gap: clamp(24px, 3vh, 40px); }
+    .bp2-work-full { grid-template-columns: 1fr; justify-items: center; }
+    .bp2-work-full .bp2-cap { justify-self: start; }
+    .bp2-work-cap-above .bp2-cap { order: -1; justify-self: start; }
+    .bp2-work-half { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; gap: clamp(32px, 5vw, 72px); }
+    .bp2-work-half-reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+    .bp2-work-half-reverse .bp2-cap { order: -1; }
+    .bp2-work-half .bp2-cap { padding-top: clamp(8px, 3vh, 24px); }
+
+    .bp2-fig { margin: 0; display: block; text-align: center; }
+    .bp2-fig img { display: inline-block; width: auto; height: auto; max-width: 100%; max-height: 92vh; }
+    .bp2-fig-full { width: 100%; }
+    .bp2-fig-half img { max-height: 88vh; }
+    .bp2-diptych { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(8px, 1.5vw, 16px); align-items: start; }
+    .bp2-diptych .bp2-fig img { max-height: 78vh; }
+
+    .bp2-cap { max-width: 52ch; }
+    .bp2-cap-num { font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: #9094AB; margin-bottom: 14px; font-feature-settings: "tnum"; }
+    .bp2-cap-title { font-style: italic; font-weight: 300; font-size: clamp(22px, 2.6vw, 32px); margin: 0; line-height: 1.15; letter-spacing: -0.01em; }
+    .bp2-cap-body { font-size: 15px; line-height: 1.6; color: #18192B; margin: 14px 0 0; }
+    .bp2-badges { margin-top: 18px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .bp2-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border: 1px solid rgba(24,25,43,0.22); font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: #18192B; }
+    .bp2-badge::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #545C9E; }
+
+    /* Highlight callout. Love is Love has a unique highlight piece next to the
+       500 editions; this block calls it out as a sibling note inside the
+       sequence (no image, since the only available image of it is the hero). */
+    .bp2-highlight {
+      max-width: var(--site-max); margin: 0 auto;
+      padding: clamp(48px,6vh,72px) clamp(24px,5vw,80px);
+      border-top: 1px solid rgba(24,25,43,0.10);
+      border-bottom: 1px solid rgba(24,25,43,0.10);
+    }
+    .bp2-highlight-grid { display: grid; grid-template-columns: 200px 1fr; gap: clamp(24px, 5vw, 64px); }
+    .bp2-highlight-body { max-width: 60ch; }
+    .bp2-highlight-body h3 { font-style: italic; font-weight: 300; font-size: clamp(22px, 2.4vw, 30px); margin: 0 0 14px; line-height: 1.15; }
+    .bp2-highlight-body p { margin: 0; font-size: 15px; line-height: 1.65; color: #18192B; }
+    .bp2-highlight-body p + p { margin-top: 12px; }
+
+    /* Related */
+    .bp2-related { max-width: var(--site-max); margin: 0 auto; padding: clamp(56px,8vh,112px) clamp(24px,5vw,80px) clamp(56px,8vh,96px); border-top: 1px solid rgba(24,25,43,0.10); }
+    .bp2-related-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: clamp(28px, 4vh, 44px); }
+    .bp2-related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 36px); }
+    .bp2-related-card { display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: inherit; }
+    .bp2-related-fig { overflow: visible; background: #EDEDF4; }
+    .bp2-related-fig img { width: 100%; height: auto; object-fit: contain; display: block; }
+    .bp2-related-card h3 { font-size: 16px; font-weight: 500; margin: 0; }
+    .bp2-related-card:hover h3 { color: #545C9E; }
+    .bp2-related-card p { font-size: 12px; color: #595E78; margin: 0; }
+
+    /* Details */
+    .bp2-colo { max-width: var(--site-max); margin: 0 auto; padding: clamp(40px,6vh,72px) clamp(24px,5vw,80px) clamp(80px,12vh,140px); border-top: 1px solid rgba(24,25,43,0.10); }
+    .bp2-colo-grid { display: grid; grid-template-columns: 160px 1fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
+    .bp2-colo-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(160px, 1fr));
+      gap: 24px 36px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: #18192B;
+      max-width: none;
+    }
+    .bp2-colo-list dt { font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: #9094AB; margin: 0 0 8px; }
+    .bp2-colo-list dd { margin: 0; }
+    .bp2-colo-item { min-width: 0; }
+    .bp2-colo-list a { color: #545C9E; text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 900px) {
+      .bp2-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .bp2-stick-current { display: none; }
+      .bp2-context-grid, .bp2-highlight-grid, .bp2-colo-grid { grid-template-columns: 1fr; gap: 16px; }
+      .bp2-colo-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; }
+      .bp2-sheet { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .bp2-work-half, .bp2-work-half-reverse { grid-template-columns: 1fr; }
+      .bp2-related-grid { grid-template-columns: 1fr; }
+      .bp2-seq { gap: 72px; }
+    }
+    @media (max-width: 540px) {
+      .bp2-stick-back { padding: 7px 10px; font-size: 10px; letter-spacing: 0.04em; }
+      .bp2-launch-list { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 1180px) {
+      .bp2-stick { display: none !important; }
+      body:has(.sp-subnav) .bp2-hero,
+      body:has(.sp-subnav) .bp2-context,
+      body:has(.sp-subnav) .bp2-related,
+      body:has(.sp-subnav) .bp2-colo,
+      body:has(.sp-subnav) .bp2-highlight,
+      body:has(.sp-subnav) .bp2-seq,
+      body:has(.sp-subnav) .bp2-index {
+        padding-left: max(clamp(24px,5vw,80px), calc(230px - max(0px, (100vw - var(--site-max)) / 2)));
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.shavonnewong.art/" },
+      { "@type": "ListItem", "position": 2, "name": "Works", "item": "https://www.shavonnewong.art/works/" },
+      { "@type": "ListItem", "position": 3, "name": "Love is Love", "item": "https://www.shavonnewong.art/works/love-is-love/" }
+    ]
+  }
+  </script>
+  <style>
+    /* 1/1 video hero + compact edition strip (The Kiss redesign) */
+    .bp2-hero-cover--video { max-height: 78vh; background: #0c0c12; }
+    .bp2-hero-cover--video video { width: 100%; height: auto; object-fit: contain; display: block; }
+    .bp2-edition-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 22px 0 26px; max-width: 640px; }
+    .bp2-edition-strip figure { margin: 0; overflow: visible; background: #EDEDF4; border-radius: 2px; }
+    .bp2-edition-strip img { width: 100%; height: auto; object-fit: contain; display: block; }
+    @media (max-width: 560px) { .bp2-edition-strip { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+    
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9KCWXRT7E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L9KCWXRT7E');
+    </script>
+  <link rel="stylesheet" href="/assets/fonts/noto/noto-sans-tc.css?v=20260620">
+</head>
+<body>
+  <a class="sn-skip-link" href="#main">Skip to content</a>
+
+  <header class="sn-nav" data-page-nav>
+    <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="/assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
+    <nav class="sn-links">
+      <a href="/#hero" data-i18n="nav.home">首頁</a>
+      <a href="/about/zh-hant/" data-i18n="nav.about">關於</a>
+      <a href="/works/" class="is-active" data-i18n="nav.works">作品</a>
+      <a href="/writing/" data-i18n="nav.writing">文字</a>
+      <a href="/press/" data-i18n="nav.press">媒體</a>
+      <a href="/contact/" data-i18n="nav.contact">聯絡</a>
+    </nav>
+    <div class="sn-meta-right"></div>
+    <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
+  </header>
+
+  <nav class="sp-subnav" aria-label="Page sections">
+    <a href="#overview">Overview</a>
+    <a href="#project">Project text</a>
+    <a href="#edition">Editions</a>
+    <a href="#statement">Statement</a>
+    <a href="#related">Related</a>
+    <a href="#details">Details</a>
+  </nav>
+
+  <main id="main" class="bp2-main">
+
+    <!-- HERO ====================================================== -->
+    <section class="bp2-hero" id="overview" aria-label="Love is Love overview">
+      <div class="bp2-hero-grid">
+        <div>
+          <h1 class="bp2-hero-title">Love <em>is Love.</em></h1>
+          <p class="bp2-hero-tag">一份宣言，一種信念，也是對每一種形態的愛的禮讚。</p>
+          <p class="bp2-hero-meta">
+            <strong>2021</strong> . 500 個版本 . The Kiss，1/1 已售 . Ethereum
+          </p>
+          <p class="bp2-hero-desc">
+            專案中的 1/1 作品是 <em>The Kiss</em>，一件承載著整個主題的動態單品，兩個身影停駐在親密的臨界之處，並不要求任何人去為這段關係排出高下。圍繞它的是一組 500 個版本，於 2021 年 11 月釋出並被廣泛收藏，收藏者包括 Idris Elba。
+          </p>
+        </div>
+        <figure class="bp2-hero-cover bp2-hero-cover--video"
+                data-theatre
+                data-theatre-src="/assets/one-of-ones/videos/the-kiss.mp4"
+                data-theatre-poster="/assets/one-of-ones/the-kiss.webp"
+                data-theatre-title="The Kiss"
+                data-theatre-meta="2021 · Single-channel video · 1/1 sold"
+                data-theatre-loop="true"
+                data-theatre-href="/works/love-is-love/">
+          <video src="/assets/one-of-ones/videos/the-kiss.mp4" poster="/assets/one-of-ones/the-kiss.webp" autoplay muted loop playsinline preload="metadata" aria-label="The Kiss，Love is Love 中已售出的 1/1 作品"></video>
+          <button class="sp-plate-play-btn" type="button" aria-label="觀看 The Kiss">&#9654;</button>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PROJECT NARRATIVE ======================================== -->
+    <section class="bp2-context" id="project" aria-label="Project narrative">
+      <div class="bp2-context-grid">
+        <p class="bp2-eyebrow">專案文字</p>
+        <div class="bp2-prose">
+          <p>在 2021 年 11 月 NFT 浪潮的中心，在 pfp 專案的狂熱之中，我藉由生成式圖層找到了一個藝術表達的入口。我被這項技術深深吸引，卻並不完全認同它當時大多被使用的方式，於是我把它塑造成更私人的東西，一個能夠呼應我的信念、情感與關懷之心的系統。</p>
+          <p>Love is Love 不只是一系列生成式藝術作品。我把它做成一份宣言、一種信念，以及對各種形態與色彩之愛的禮讚，一種為愛的平等發聲、同時讓生成式藝術那抽象的語言變得有溫度的方式。</p>
+          <p>那些細節把這份柔情帶進了發售的機制裡。我把鑄造價格設為 0.05683 ETH，因為在老式手機鍵盤上，5683 對應著 L-O-V-E。</p>
+          <p>專案在一小時內售罄，並觸及到加密原生受眾之外的收藏者，其中包括 Idris Elba，他把三件 Love is Love NFT 作為自己的第一批 NFT 收入囊中。</p>
+          <p>這也是我初次涉足生成式藝術，它開啟了一條把藝術與技術結合、化作一種視覺詩的道路。</p>
+          <ul class="bp2-launch-list" aria-label="釋出細節">
+            <li><strong>發售</strong>2021 年 11 月 5 日</li>
+            <li><strong>版本</strong>500 個版本 + 一件 1/1</li>
+            <li><strong>反響</strong>一小時內售罄</li>
+          </ul>
+          <div class="bp2-link-row" aria-label="專案連結">
+            <a href="https://loveislove.io/" target="_blank" rel="noreferrer">網站</a>
+            <a href="https://opensea.io/collection/love-is-love-shavonnewong?status=listed" target="_blank" rel="noreferrer">OpenSea</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE EDITION (compact) ================================== -->
+    <section class="bp2-context" id="edition" aria-label="The generative edition">
+      <div class="bp2-context-grid">
+        <p class="bp2-eyebrow">版本</p>
+        <div class="bp2-prose">
+          <p>在已售出的 1/1 作品 <em>The Kiss</em> 之外，我還發布了 500 個生成式版本。系統會把相同的人物與配色重新組合，因此每一件都是對同一個想法的變奏，而非彼此獨立的作品。這裡展示了其中幾件，完整的一組則儲存在鏈上。</p>
+          <div class="bp2-edition-strip" aria-label="500 個版本中的部分作品">
+            <figure><img decoding="async" src="/assets/love-is-love/samples/edition-032.webp" alt="Love is Love，生成式版本作品" loading="lazy"></figure>
+            <figure><img decoding="async" src="/assets/love-is-love/samples/edition-041.webp" alt="Love is Love，生成式版本作品" loading="lazy"></figure>
+            <figure><img decoding="async" src="/assets/love-is-love/samples/edition-069.webp" alt="Love is Love，生成式版本作品" loading="lazy"></figure>
+            <figure><img decoding="async" src="/assets/love-is-love/samples/edition-112.webp" alt="Love is Love，生成式版本作品" loading="lazy"></figure>
+          </div>
+          <a class="bp2-index-availability" href="https://opensea.io/collection/love-is-love-shavonnewong?status=listed" target="_blank" rel="noreferrer" data-bp-listing-banner data-bp-listings-endpoint="/api/by-proxy-listings?collection=love-is-love-shavonnewong" data-bp-collection-url="https://opensea.io/collection/love-is-love-shavonnewong?status=listed" data-bp-listing-singular="listed edition" data-bp-listing-plural="listed editions" aria-live="polite">正在查詢當前的掛單。</a>
+          <div class="bp2-link-row" aria-label="版本連結">
+            <a href="https://opensea.io/collection/love-is-love-shavonnewong?status=listed" target="_blank" rel="noreferrer">在 OpenSea 上瀏覽掛單中的版本</a>
+            <a href="https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/28474" target="_blank" rel="noreferrer">在 SuperRare 上檢視已售出的 1/1</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATEMENT ================================================= -->
+    <section class="bp2-context" id="statement" aria-label="Statement and reception">
+      <div class="bp2-context-grid">
+        <p class="bp2-eyebrow">自述</p>
+        <div class="bp2-prose">
+          <p>愛，無論是柏拉圖式的、浪漫的，還是自我之愛，都是人類經驗中本就內在的一部分。如此多的歡樂與痛苦皆源於愛，我也不斷追問，為什麼會有人的經歷該被否定，或被告知他們所擁有的愛是錯的。</p>
+          <p>生活本就可能充滿痛苦，世界也可能嚴酷。無論一個人的性別或種族如何，我都堅守一份簡單的善念，人應當能夠選擇與誰一同走過這一切。愛就是愛，對每一個尋得它的人而言皆是如此。</p>
+          <blockquote class="bp2-tweet">
+            <p>天哪。IDRIS ELBA 剛剛買下了他的第一批 NFT，而且來自我的 #LoveisLoveNFT 專案！@idriselba 謝謝你?！</p>
+            <cite>Shavonne Wong，2022 年 1 月 13 日</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED =================================================== -->
+    
+    <!-- DETAILS ================================================== -->
+    <section class="bp2-colo" id="details" aria-label="Details">
+      <div class="bp2-colo-grid">
+        <p class="bp2-eyebrow">詳情</p>
+        <dl class="bp2-colo-list">
+          <div class="bp2-colo-item"><dt>年份</dt><dd>2021</dd></div>
+          <div class="bp2-colo-item"><dt>發售日期</dt><dd>2021 年 11 月 5 日。一小時內售罄。</dd></div>
+          <div class="bp2-colo-item"><dt>型別</dt><dd>生成式數位藝術作品。NFT 版本，外加一件 1/1 NFT。</dd></div>
+          <div class="bp2-colo-item"><dt>版本</dt><dd>500 個生成式版本，外加 The Kiss，即專案中已售出的 1/1 作品。</dd></div>
+          <div class="bp2-colo-item"><dt>可獲取性</dt><dd>二級市場的掛單會在 OpenSea 上實時查詢。1/1 作品 The Kiss 已售出，未在掛單中。</dd></div>
+          <div class="bp2-colo-item"><dt>鑄造</dt><dd>0.05683 ETH。數位 5683 在手機鍵盤上對應著 L-O-V-E。</dd></div>
+          <div class="bp2-colo-item"><dt>鏈</dt><dd>Ethereum</dd></div>
+          <div class="bp2-colo-item"><dt>知名收藏者</dt><dd>Idris Elba</dd></div>
+          <div class="bp2-colo-item"><dt>連結</dt><dd><a href="https://loveislove.io/" target="_blank" rel="noreferrer">專案網站</a> . <a href="https://opensea.io/collection/love-is-love-shavonnewong?status=listed" target="_blank" rel="noreferrer">在 OpenSea 上瀏覽掛單中的版本</a> . <a href="https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/28474" target="_blank" rel="noreferrer">在 SuperRare 上檢視 The Kiss</a> . <a href="https://etherscan.io/address/0x30de3508e1f826910a254719258346570b27627e" target="_blank" rel="noreferrer">在 Etherscan 上驗證</a></dd></div>
+          <div class="bp2-colo-item"><dt>收藏洽詢</dt><dd><a href="mailto:studio@shavonnewong.art?subject=Acquisition%20-%20Love%20is%20Love">studio@shavonnewong.art</a> &middot; <a href="/contact/?type=Acquisition&amp;work=Love%20is%20Love">透過表單諮詢</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sp-section sp-related-section" id="related">
+      <h2 class="sp-kicker">更多作品</h2>
+      <div class="sp-related-grid">
+        <a class="sp-related-card" href="/works/vogue-singapore/"><figure><img loading="lazy" decoding="async" src="/assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" style="object-position: center 15%;" alt="Vogue Singapore NFT 封面"></figure><h3>Vogue Singapore NFT Cover</h3><p>Vogue Singapore 的首個數位 NFT 封面，與 The Fabricant 合作打造。</p></a>
+        <a class="sp-related-card" href="/works/6529-meme-card/"><figure><img loading="lazy" decoding="async" src="/assets/6529-meme-card/01-faces-of-freedom-card.webp" alt="6529 Meme Card，Faces of Freedom"></figure><h3>6529 Meme Card</h3><p>為 The Memes by 6529 製作的一張政治 meme 卡，主題是自由交易的權利。</p></a>
+        <a class="sp-related-card" href="/works/by-proxy/"><figure><img loading="lazy" decoding="async" src="/assets/by-proxy/01-1920px-web-len-4101.webp" alt="By Proxy"></figure><h3>By Proxy</h3><p>六十個場景，攝影與 CGI 在其中變得彼此難以分辨。</p></a>
+      </div>
+    </section>
+
+    <footer class="sw-page-footer" data-site-footer>
+      <div class="sw-page-footer__inner">
+        <button class="sw-page-footer__top" type="button" data-site-back-top>回到頂部</button>
+      </div>
+    </footer>
+  </main>
+
+  <dialog class="sp-theatre" id="sp-theatre" aria-label="Watch work">
+    <div class="sp-theatre-inner">
+      <button class="sp-theatre-close" type="button" data-theatre-close aria-label="Close">&times;</button>
+      <div class="sp-theatre-stage" data-theatre-stage></div>
+      <div class="sp-theatre-bar">
+        <div class="sp-theatre-label">
+          <p class="sp-theatre-title" data-theatre-label-title></p>
+          <p class="sp-theatre-meta" data-theatre-label-meta></p>
+        </div>
+        <div class="sp-theatre-actions">
+          <button class="sp-theatre-again" type="button" data-theatre-again>Watch again</button>
+          <button class="sp-theatre-read" type="button" data-theatre-read>&#8595; About this work</button>
+          <a class="sp-theatre-full" data-theatre-full href="#">Full work page &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+<script>
+    (function () {
+      const stick = document.querySelector('[data-stick]');
+      const currentLabel = document.querySelector('[data-stick-current-label]');
+      const hero = document.querySelector('.bp2-hero');
+      const works = Array.from(document.querySelectorAll('[data-work]'));
+
+      function syncStick() {
+        if (!hero || !stick) return;
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        const visible = heroBottom < 8;
+        stick.classList.toggle('is-visible', visible);
+        stick.setAttribute('aria-hidden', visible ? 'false' : 'true');
+      }
+      syncStick();
+      window.addEventListener('scroll', syncStick, { passive: true });
+      window.addEventListener('resize', syncStick);
+
+      function syncCurrent() {
+        if (!currentLabel || !works.length) return;
+        const anchor = window.innerHeight * 0.33;
+        let active = works[0];
+        let bestDist = Infinity;
+        for (const w of works) {
+          const top = w.getBoundingClientRect().top;
+          if (top < anchor + 1) {
+            const dist = anchor - top;
+            if (dist < bestDist) { bestDist = dist; active = w; }
+          }
+        }
+        const title = active && active.dataset.title;
+        if (title && currentLabel.textContent !== title) {
+          currentLabel.textContent = title;
+        }
+      }
+      syncCurrent();
+      window.addEventListener('scroll', syncCurrent, { passive: true });
+      window.addEventListener('resize', syncCurrent);
+    })();
+  </script>
+  <script src="/site-header.js?v=20260618-cta"></script>
+  <script src="/site-i18n.js?v=20260620-i18n-rebuild"></script>
+  <script src="/assets/js/by-proxy-listings.js?v=20260616-multi-collection"></script>
+  <script src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
+<script>
+(function () {
+  var dialog = document.getElementById('sp-theatre');
+  if (!dialog) return;
+  var stage = dialog.querySelector('[data-theatre-stage]');
+  var labelTitle = dialog.querySelector('[data-theatre-label-title]');
+  var labelMeta = dialog.querySelector('[data-theatre-label-meta]');
+  var againBtn = dialog.querySelector('[data-theatre-again]');
+  var readBtn = dialog.querySelector('[data-theatre-read]');
+  var fullLink = dialog.querySelector('[data-theatre-full]');
+  var closeBtn = dialog.querySelector('[data-theatre-close]');
+  var currentVideo = null;
+  var triggerEl = null;
+  function showPostWatch() { againBtn.classList.add('is-visible'); readBtn.classList.add('is-visible'); }
+  function hidePostWatch() { againBtn.classList.remove('is-visible'); readBtn.classList.remove('is-visible'); }
+  function openTheatre(plate) {
+    var src = plate.dataset.theatreSrc;
+    var poster = plate.dataset.theatrePoster;
+    var title = plate.dataset.theatreTitle;
+    var meta = plate.dataset.theatreMeta;
+    var loop = plate.dataset.theatreLoop === 'true';
+    var href = plate.dataset.theatreHref;
+    var video = document.createElement('video');
+    video.src = src;
+    video.poster = poster;
+    video.muted = false;
+    video.loop = loop;
+    video.setAttribute('playsinline', '');
+    video.setAttribute('disablepictureinpicture', '');
+    video.setAttribute('controlslist', 'nodownload noplaybackrate noremoteplayback');
+    stage.innerHTML = '';
+    stage.appendChild(video);
+    currentVideo = video;
+    labelTitle.textContent = title;
+    labelMeta.textContent = meta;
+    if (href) fullLink.href = href;
+    hidePostWatch();
+    if (!loop) {
+      video.addEventListener('ended', showPostWatch);
+      video.addEventListener('timeupdate', function () {
+        if (video.duration && video.currentTime >= video.duration - 0.3) showPostWatch();
+      });
+    }
+    document.documentElement.classList.add('sp-theatre-open');
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+    else dialog.setAttribute('open', '');
+    video.play().catch(function () {});
+    triggerEl = plate.querySelector('.sp-plate-play-btn') || plate;
+  }
+  function closeTheatre() {
+    if (currentVideo) { currentVideo.pause(); currentVideo.removeAttribute('src'); currentVideo.load(); stage.innerHTML = ''; currentVideo = null; }
+    document.documentElement.classList.remove('sp-theatre-open');
+    if (typeof dialog.close === 'function' && dialog.open) dialog.close();
+    else dialog.removeAttribute('open');
+    if (triggerEl) { triggerEl.focus(); triggerEl = null; }
+  }
+  document.querySelectorAll('[data-theatre]').forEach(function (plate) {
+    var playBtn = plate.querySelector('.sp-plate-play-btn');
+    if (playBtn) {
+      playBtn.addEventListener('click', function (e) { e.stopPropagation(); openTheatre(plate); });
+    }
+    var fig = plate.querySelector('.sp-plate-media');
+    if (fig) {
+      fig.addEventListener('click', function (e) { if (e.target.closest('.sp-plate-play-btn')) return; openTheatre(plate); });
+      fig.style.cursor = 'pointer';
+    }
+  });
+  againBtn.addEventListener('click', function () { if (!currentVideo) return; hidePostWatch(); currentVideo.currentTime = 0; currentVideo.play().catch(function () {}); });
+  readBtn.addEventListener('click', function () { closeTheatre(); var t = document.querySelector('#project'); if (t) t.scrollIntoView({ behavior: 'smooth' }); });
+  closeBtn.addEventListener('click', closeTheatre);
+  dialog.addEventListener('click', function (e) { if (e.target === dialog) closeTheatre(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dialog.open) closeTheatre(); });
+  dialog.addEventListener('close', function () { document.documentElement.classList.remove('sp-theatre-open'); if (currentVideo) { currentVideo.pause(); stage.innerHTML = ''; currentVideo = null; } });
+})();
+</script>
+</body>
+</html>

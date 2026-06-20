@@ -7,10 +7,8 @@
   // localized URLs (e.g. /about/zh-hans/). en lives at the page root.
   const languages = [
     { code: 'en', htmlLang: 'en', label: 'English', short: 'EN', pathSlug: '' },
-    { code: 'zh-Hans', htmlLang: 'zh-Hans', label: '简体中文', short: '简', pathSlug: 'zh-hans' },
-    { code: 'zh-Hant', htmlLang: 'zh-Hant', label: '繁體中文', short: '繁', pathSlug: 'zh-hant' },
-    { code: 'fr', htmlLang: 'fr', label: 'Français', short: 'FR', pathSlug: 'fr' },
-    { code: 'th', htmlLang: 'th', label: 'ไทย', short: 'TH', pathSlug: 'th' }
+    { code: 'zh-Hans', htmlLang: 'zh-Hans', label: '简体中文', short: '简', pathSlug: 'zh-hans', aiNote: '(AI 翻译)', aiNoteTitle: '本页面由 AI 翻译，原文为英文' },
+    { code: 'zh-Hant', htmlLang: 'zh-Hant', label: '繁體中文', short: '繁', pathSlug: 'zh-hant', aiNote: '(AI 翻譯)', aiNoteTitle: '本頁面由 AI 翻譯，原文為英文' }
   ];
   // Tier-2 languages (ja, ko, es, de, it) are parked until phase 2. Their
   // dictionaries remain defined below but are not offered in the switcher
@@ -57,7 +55,7 @@
     'home.heroMedia.proxy.label': 'By Proxy still',
     'home.eras.kicker': 'Practice',
     'home.eras.title': 'Three eras',
-    'home.eras.lede': 'I started in <em>fashion photography</em>. Since 2020 I have been building in <em>3D and virtual humans</em>, and since 2023 also making <em>interactive installations</em> where the viewer becomes part of the work.',
+    'home.eras.lede': 'I started in <span class="sn-era-term" data-era="fashion"><em>fashion photography</em></span>. Since 2020 I have been building in <span class="sn-era-term" data-era="3d"><em>3D and virtual humans</em></span>, and since 2023 also making <span class="sn-era-term" data-era="ai"><em>interactive installations</em></span> about how we are seen, recorded, and erased by machines.',
     'home.eras.act3dEyebrow': 'Since 2020 · ongoing',
     'home.eras.act3dTitle': '3D & Virtual Humans',
     'home.eras.actAiEyebrow': 'Since 2023 · ongoing',
@@ -109,14 +107,14 @@
     'home.writing.noteAria': 'Show writing note {n}',
     'home.writing.fullLink': 'Full writing ->',
     'home.writing.date1': '1. June 2026',
-    'home.writing.title1': 'Goodbye to Eva, Paris Photo, and AP60.',
-    'home.writing.excerpt1': 'Closing Meet Eva Here after 2,363 conversations, showing After Ophelia at Paris Photo, and joining Artist\'s Proof: Singapore at 60.',
+    'home.writing.title1': 'Goodbye to Eva, into the mirror.',
+    'home.writing.excerpt1': 'A studio update on After Ophelia, Meet Eva Here, and the shift from public companions to reflective systems.',
     'home.writing.date2': '2. June 2025',
-    'home.writing.title2': 'Public rooms.',
-    'home.writing.excerpt2': 'Meet Eva Here across Digital Rhythm, ART SG, Taipei Dangdai, Art Central, and the project\'s expanding public life.',
+    'home.writing.title2': 'Meet Eva Here, new exhibitions, and a half-year studio recap.',
+    'home.writing.excerpt2': 'A recap across Digital Rhythm, ART SG, Taipei Dangdai, Art Central, and the evolving public life of Eva.',
     'home.writing.date3': '3. January 2025',
-    'home.writing.title3': 'Eva goes public.',
-    'home.writing.excerpt3': 'Eva\'s first public moments at ArtScience Museum and ART SG, plus the launch of her chatbot and diary.',
+    'home.writing.title3': 'Meet Eva Here debuts at ArtScience Museum and Art SG.',
+    'home.writing.excerpt3': 'A look back at Eva\'s first public moments, the launch of her chatbot, and the exhibitions opening the year.',
     'home.writing.readUpdate': 'Read update ->',
     'home.contact.kicker': 'Contact',
     'home.contact.title': 'Contact',
@@ -161,7 +159,7 @@
       'home.heroMedia.proxy.label': 'By Proxy 静帧',
       'home.eras.kicker': '实践',
       'home.eras.title': '三个阶段',
-      'home.eras.lede': '我从<em>时尚摄影</em>起步。自 2020 年起，我投入 <em>3D 与虚拟人类</em>的创作，并自 2023 年起也开始制作让观众成为作品一部分的<em>互动装置</em>。',
+      'home.eras.lede': '我从<span class="sn-era-term" data-era="fashion"><em>时尚摄影</em></span>起步。自 2020 年起，我投入 <span class="sn-era-term" data-era="3d"><em>3D 与虚拟人类</em></span>的创作，并自 2023 年起也开始制作探讨我们如何被机器看见、记录与抹去的<span class="sn-era-term" data-era="ai"><em>互动装置</em></span>。',
       'home.eras.act3dEyebrow': '自 2020 年 · 持续中',
       'home.eras.act3dTitle': '3D 与虚拟人类',
       'home.eras.actAiEyebrow': '自 2023 年 · 持续中',
@@ -208,15 +206,15 @@
       'home.writing.notesAria': '写作札记',
       'home.writing.noteAria': '显示写作札记 {n}',
       'home.writing.fullLink': '完整文字 ->',
-      'home.writing.date1': '1. June 2026',
-      'home.writing.title1': 'Goodbye to Eva, Paris Photo, and AP60.',
-      'home.writing.excerpt1': 'Closing Meet Eva Here after 2,363 conversations, showing After Ophelia at Paris Photo, and joining Artist\'s Proof: Singapore at 60.',
-      'home.writing.date2': '2. June 2025',
-      'home.writing.title2': 'Public rooms.',
-      'home.writing.excerpt2': 'Meet Eva Here across Digital Rhythm, ART SG, Taipei Dangdai, Art Central, and the project\'s expanding public life.',
-      'home.writing.date3': '3. January 2025',
-      'home.writing.title3': 'Eva goes public.',
-      'home.writing.excerpt3': 'Eva\'s first public moments at ArtScience Museum and ART SG, plus the launch of her chatbot and diary.',
+      'home.writing.date1': '1. 2026 年 6 月',
+      'home.writing.title1': '告别 Eva，走进镜子。',
+      'home.writing.excerpt1': '一则工作室近况，关于 After Ophelia、Meet Eva Here，以及从公共陪伴到映照系统的转变。',
+      'home.writing.date2': '2. 2025 年 6 月',
+      'home.writing.title2': 'Meet Eva Here、新展览，以及半年工作室回顾。',
+      'home.writing.excerpt2': '回顾 Digital Rhythm、ART SG、Taipei Dangdai、Art Central，以及 Eva 不断展开的公共生活。',
+      'home.writing.date3': '3. 2025 年 1 月',
+      'home.writing.title3': 'Meet Eva Here 在 ArtScience Museum 与 Art SG 首次亮相。',
+      'home.writing.excerpt3': '回顾 Eva 最初的公开时刻、她的聊天机器人上线，以及为这一年揭开序幕的展览。',
       'home.writing.readUpdate': '阅读更新 ->',
       'home.contact.kicker': '联系',
       'home.contact.title': '欢迎联系！',
@@ -258,7 +256,7 @@
       'home.hero.subtitle': '3D、AI 與互動裝置。',
       'home.eras.kicker': '實踐',
       'home.eras.title': '三個階段',
-      'home.eras.lede': '我從<em>時尚攝影</em>起步。自 2020 年起，我投入 <em>3D 與虛擬人類</em>的創作，並自 2023 年起也開始製作讓觀眾成為作品一部分的<em>互動裝置</em>。',
+      'home.eras.lede': '我從<span class="sn-era-term" data-era="fashion"><em>時尚攝影</em></span>起步。自 2020 年起，我投入 <span class="sn-era-term" data-era="3d"><em>3D 與虛擬人類</em></span>的創作，並自 2023 年起也開始製作探討我們如何被機器看見、記錄與抹去的<span class="sn-era-term" data-era="ai"><em>互動裝置</em></span>。',
       'home.eras.act3dEyebrow': '自 2020 年 · 持續中',
       'home.eras.act3dTitle': '3D 與虛擬人類',
       'home.eras.actAiEyebrow': '自 2023 年 · 持續中',
@@ -305,15 +303,15 @@
       'home.writing.notesAria': '寫作札記',
       'home.writing.noteAria': '顯示寫作札記 {n}',
       'home.writing.fullLink': '完整文字 ->',
-      'home.writing.date1': '1. June 2026',
-      'home.writing.title1': 'Goodbye to Eva, Paris Photo, and AP60.',
-      'home.writing.excerpt1': 'Closing Meet Eva Here after 2,363 conversations, showing After Ophelia at Paris Photo, and joining Artist\'s Proof: Singapore at 60.',
-      'home.writing.date2': '2. June 2025',
-      'home.writing.title2': 'Public rooms.',
-      'home.writing.excerpt2': 'Meet Eva Here across Digital Rhythm, ART SG, Taipei Dangdai, Art Central, and the project\'s expanding public life.',
-      'home.writing.date3': '3. January 2025',
-      'home.writing.title3': 'Eva goes public.',
-      'home.writing.excerpt3': 'Eva\'s first public moments at ArtScience Museum and ART SG, plus the launch of her chatbot and diary.',
+      'home.writing.date1': '1. 2026 年 6 月',
+      'home.writing.title1': '告別 Eva，走進鏡子。',
+      'home.writing.excerpt1': '一則工作室近況，關於 After Ophelia、Meet Eva Here，以及從公共陪伴到映照系統的轉變。',
+      'home.writing.date2': '2. 2025 年 6 月',
+      'home.writing.title2': 'Meet Eva Here、新展覽，以及半年工作室回顧。',
+      'home.writing.excerpt2': '回顧 Digital Rhythm、ART SG、Taipei Dangdai、Art Central，以及 Eva 不斷展開的公共生活。',
+      'home.writing.date3': '3. 2025 年 1 月',
+      'home.writing.title3': 'Meet Eva Here 在 ArtScience Museum 與 Art SG 首次亮相。',
+      'home.writing.excerpt3': '回顧 Eva 最初的公開時刻、她的聊天機器人上線，以及為這一年揭開序幕的展覽。',
       'home.writing.readUpdate': '閱讀更新 ->',
       'home.contact.kicker': '聯絡',
       'home.contact.title': '歡迎聯絡！',
@@ -1089,6 +1087,28 @@
     }));
   }
 
+  // A small "AI translated" badge beside the language selector, shown only when
+  // a non-English (machine-translated) language is active and worded in that
+  // language. Makes the machine translation transparent to visitors.
+  function syncAiNotes() {
+    const meta = getLanguageMeta(currentLanguage);
+    const text = (currentLanguage !== fallbackLanguage && meta && meta.aiNote) ? meta.aiNote : '';
+    const title = (meta && meta.aiNoteTitle) || '';
+    document.querySelectorAll('[data-language-select]').forEach((select) => {
+      const anchor = select.closest('[data-language-switcher]') || select;
+      let el = anchor.parentElement && anchor.parentElement.querySelector('[data-ai-note]');
+      if (!el) {
+        el = document.createElement('span');
+        el.setAttribute('data-ai-note', '');
+        el.className = 'sn-ai-note';
+        el.style.cssText = 'font-size:11px;line-height:1.2;color:var(--text-2,#595e78);letter-spacing:0.02em;white-space:nowrap;align-self:center;margin-right:8px;';
+        anchor.insertAdjacentElement('beforebegin', el);
+      }
+      if (text) { el.textContent = text; if (title) el.title = title; el.hidden = false; el.style.display = ''; }
+      else { el.hidden = true; el.style.display = 'none'; }
+    });
+  }
+
   function setLanguage(code, options) {
     if (!supportedCodes.has(code)) code = fallbackLanguage;
     if (options && options.navigate && navigateToLanguage(code)) return;
@@ -1097,6 +1117,7 @@
     syncDocumentLanguage();
     syncHreflang();
     setupLanguageSelects();
+    syncAiNotes();
     applyTranslations(document);
     syncLocalizedInternalLinks(document);
     emitChange();
@@ -1175,17 +1196,34 @@
     return path === '/' || path === '';
   }
 
-  function isAboutUrl(url) {
-    const path = url.pathname.toLowerCase();
-    return /^\/about(?:\.html|\/)?$/.test(path)
-      || /^\/about\/zh-hans\/?$/.test(path)
-      || /^\/about\/zh-hant\/?$/.test(path)
-      || /^\/about-zh-hans\.html$/.test(path)
-      || /^\/about-zh-hant\.html$/.test(path)
-      || /^\/zh-hans\/about\/?$/.test(path)
-      || /^\/zh-hant\/about\/?$/.test(path)
-      || /^\/zh-hans-about\.html$/.test(path)
-      || /^\/zh-hant-about\.html$/.test(path);
+  // Clean base paths (trailing slash) that have static localized pages built.
+  // The switcher navigates to <base><slug>/ for these; the homepage uses
+  // ?lang, and anything not listed is left to the in-place dictionary.
+  const LOCALIZED_BASES = {
+    '/about/': 1, '/contact/': 1, '/writing/': 1, '/press/': 1, '/works/': 1,
+    '/works/available/': 1, '/works/conditional/': 1, '/works/after-ophelia/': 1,
+    '/works/meet-eva-here/': 1, '/works/the-ties-that-bind/': 1,
+    '/works/the-bubble-we-call-home/': 1, '/works/echoes-of-identity/': 1,
+    '/works/whirlwind-of-the-waking-dream/': 1, '/works/love-is-love/': 1,
+    '/works/by-proxy/': 1, '/works/vogue-singapore/': 1, '/works/6529-meme-card/': 1,
+    '/update2026jun/': 1, '/update2025jun/': 1, '/update2025jan/': 1,
+    '/update2024jun/': 1, '/update2024jan/': 1, '/update2023june/': 1, '/update2023jan/': 1
+  };
+
+  // Languages that actually have static content pages built. Other tier-1
+  // languages (fr, th) only translate the homepage and shared chrome, so we
+  // never route a content page to a slug that would 404.
+  const STATIC_CONTENT_LANGS = { 'zh-Hans': 1, 'zh-Hant': 1 };
+
+  // Normalize a pathname to its canonical clean base, dropping any trailing
+  // language slug (e.g. /works/conditional/zh-hans/ -> /works/conditional/).
+  function canonicalBase(pathname) {
+    const segs = pathname.toLowerCase().replace(/\/+$/, '').split('/').filter(Boolean);
+    if (segs.length) {
+      const last = segs[segs.length - 1];
+      if (languages.some((l) => l.pathSlug && l.pathSlug === last)) segs.pop();
+    }
+    return '/' + (segs.length ? segs.join('/') + '/' : '');
   }
 
   function localizedUrlFor(url, code) {
@@ -1201,18 +1239,17 @@
       return target.href;
     }
 
-    if (isAboutUrl(target)) {
-      const meta = getLanguageMeta(code);
-      if (!meta || code === fallbackLanguage) {
-        target.pathname = '/about/';
-      } else {
-        target.pathname = '/about/' + meta.pathSlug + '/';
-      }
-      target.search = '';
-      return localizeHref(target.href);
+    const base = canonicalBase(target.pathname);
+    if (!LOCALIZED_BASES[base]) return '';
+    if (code !== fallbackLanguage && !STATIC_CONTENT_LANGS[code]) return '';
+    const meta = getLanguageMeta(code);
+    if (!meta || code === fallbackLanguage || !meta.pathSlug) {
+      target.pathname = base;
+    } else {
+      target.pathname = base + meta.pathSlug + '/';
     }
-
-    return '';
+    target.search = '';
+    return localizeHref(target.href);
   }
 
   function syncLocalizedInternalLinks(scope) {
@@ -1244,18 +1281,7 @@
   }
 
   function navigateToLanguage(code) {
-    let target = '';
-    if (isHomepage()) {
-      const url = new URL(window.location.href);
-      if (code === fallbackLanguage) {
-        url.searchParams.delete('lang');
-      } else {
-        url.searchParams.set('lang', code);
-      }
-      target = url.href;
-    } else {
-      target = alternateUrlFor(code);
-    }
+    const target = localizedUrlFor(new URL(window.location.href), code);
     if (!target) return false;
 
     const current = new URL(window.location.href);

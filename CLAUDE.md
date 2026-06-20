@@ -74,7 +74,7 @@ L5. **Footer seam: one line only.** The last section's bottom border and the foo
 25. **Every live page must appear in `sitemap.xml`.** When a new page is created or a URL changes, add the entry before shipping. Check after any restructure. Missing pages as of 2026-06-15 (now fixed): `/press/` and `/works/meet-eva-here/hello-eva/`.
 26. **All pages need full social card meta.** Every page — work pages, update letters, all of them — should carry `twitter:card`, `twitter:title`, `twitter:description`, and `twitter:image`. Reuse the page's Open Graph values. Without these, sharing on X produces a bare link instead of a rich card. Batch-applied to all work pages and immersive sub-pages 2026-06-15.
 27. **`llms.txt` must be complete and not truncated.** It is the AI answer-engine reading list and is part of the AEO investment. If it is cut off mid-entry, re-save the full version. Check it after any large file-management session.
-28a. **`press-hover.js` provides the floating image effect on press pages.** It must be loaded via `<script src="/press-hover.js?v=...">` before `</body>` on `press.html` and any page using `.nl-press-item a`, `.pr-row`, or `[data-press-img]` elements. The file contains a `pressPreviewMap` object mapping article URLs to preview image paths under `/assets/press/previews/`. If the file is ever truncated, reconstruct the missing entries by listing `/assets/press/previews/` and matching filenames against the press article hrefs in `press.html`. The DOM logic attaches to `.nl-press-item a, .pr-row, [data-press-img]` elements and follows the cursor using `requestAnimationFrame`.
+28a. **`press-hover.js` provides the floating image effect on press pages.** It must be loaded via `<script src="/press-hover.js?v=...">` before `</body>` on `press.html` and any page using `.nl-press-item a`, `.pr-row`, or `[data-press-img]` elements. **The URL→preview mapping now lives in `assets/data/press-previews.json`** — edit that file to add, remove, or update previews; do NOT hardcode URLs back into `press-hover.js`. `press-hover.js` fetches the JSON at runtime and builds the map from it. The `exhibitionPreviewMap` (text-content matches for exhibition rows) stays in `press-hover.js` because it matches by text, not URL. Run `node tools/validate-press-previews.mjs` after any press page, JSON, or preview-image change — it checks every row has a JSON entry, every JSON entry's image file exists, and no URL entries have drifted back into the JS. The DOM logic attaches to `.nl-press-item a, .pr-row, .abv-exh-entry, [data-press-img]` elements and follows the cursor using `requestAnimationFrame`.
 
 28. **Contact form routes to Google Sheets via Netlify function.** The form posts to `/api/contact` (a Netlify function at `netlify/functions/contact.js`), which relays to the Google Sheet via `CONTACT_SHEET_WEBHOOK_URL` (an env var in Netlify). Do not reintroduce Formspree. Newsletter signup routes to `/api/newsletter-subscribe` which writes to MailerLite via `MAILERLITE_API_KEY`.
 
@@ -174,8 +174,33 @@ V4. **Newsletter subscribe copy: broad value proposition.** The subscribe block 
 
 ## Factual record (do not contradict these without verification)
 
-F1. **Meet Eva Here** concluded November 3, 2025 at 100 Instagram diary posts and 2,363 recorded conversations across five venues plus the online chatbot. It is now sealed as a time capsule. The project ran August 2024 to November 2025.
+F1. **Meet Eva Here** concluded November 3, 2025 at 100 Instagram diary posts and 2,363 recorded conversations. It was presented across six exhibition sites (ArtScience Museum, ART SG, Taipei Dangdai, Art Central, The Columns Gallery, and Canal St Show, New York) plus the online chatbot, and is now sealed as a time capsule. The project ran August 2024 to November 2025. Always include Canal St Show in the six-site count, even though it was the smallest showing.
 F2. **Conditional** has two named stagings as of 2026: The Waiting Room (first physical configuration, a room with chairs, mannequins, screen) and The Mirror (next physical configuration, a smaller mirror prototype in build in the studio). Both are in development; neither has been permanently installed at a venue.
 F3. **After Ophelia** has two child works (Ophelia, Retold and Ophelia, Reassembled), both available for acquisition. The parent project page links to both individual pages.
+F3a. **After Ophelia canonical data point: "Ophelia speaks fewer than 60 times in Hamlet."** This is the approved and accurate figure. Never use "fewer than 400 words" or any other word-count framing — the line-count figure is what Shavonne uses. Apply this exact phrasing (or a natural-language equivalent using "60 times") across all pages, languages, and contexts that describe the After Ophelia project.
 F4. **shavonnewong.com** redirects to shavonnewong.art. Keep the .com registration to prevent someone else from claiming it.
 F5. **Netlify environment variables required for the site to function:** `OPENSEA_API_KEY` (3D single works marketplace counts), `MAILERLITE_API_KEY` (newsletter signup), `CONTACT_SHEET_WEBHOOK_URL` (contact form to Google Sheets).
+
+## Press page — Selected tier criteria
+
+The press page has two tiers: **Selected** (editorial shortlist, 6–8 articles max) and the **full ledger** (every article, year by year). These rules govern what belongs in Selected.
+
+**An article belongs in Selected if it passes at least three of these five tests, and must pass test 1 or test 3:**
+
+P1. **Conceptual engagement** — The piece engages with what the work is actually doing — its questions, approach, or ideas — not just its cultural novelty or the artist's biography. It should leave the reader understanding the practice, not just knowing about it.
+
+P2. **Publication of record** — This is the strongest or most authoritative outlet to cover this particular angle. If multiple outlets covered the same story or moment, only the best one belongs in Selected.
+
+P3. **Landmark moment** — The piece names or documents a genuine milestone: first significant international exposure, institutional recognition (Venice Biennale, ART SG Platform, solo gallery), or a work debut that defines a new direction in the practice.
+
+P4. **Practice-forward framing** — The framing positions her where the practice is now or where it is going. Articles that anchor her primarily in the NFT era, Web3 celebrity, or crypto commerce should stay in the full ledger unless they also pass P3 strongly.
+
+P5. **Her own voice** — The piece includes substantial direct quotes or interview depth that lets her articulate the work in her own register — not just reported facts, but her actual thinking.
+
+**Hard rules for Selected:**
+- Cap at 8 articles maximum. If a new piece earns Selected, review whether the weakest existing piece should be moved back to the ledger.
+- No duplicate functions. If two pieces compete for the same role (e.g. two Straits Times profiles, two pieces about the same project), only the stronger one stays.
+- Each era of the practice should have at least one representative in Selected if strong coverage exists. The NFT origin story, the AI companion/attachment work, the identity and body work — they are different chapters.
+- Ocula and Artnet coverage of her institutional work should be fast-tracked to Selected review; they carry weight with collectors and curators.
+- When a piece specifically about Meet Eva Here, After Ophelia, or Conditional runs at any credible outlet, it should immediately go to Selected review.
+- Selected is a curated argument about the practice as it stands today, not a greatest-hits reel from every era. NFT-origin pieces stay in the ledger as honest history; Selected should reflect the full arc but lean toward where the work has arrived.
