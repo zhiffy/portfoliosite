@@ -824,3 +824,29 @@
 }
 .pr-rows { position: relative; z-index: 3; }
 @media (prefers-reduced-motion: reduce) { .nl-press-preview { transition: opacity 80ms linear; } }
+
+/* Final press-page top rhythm. Keep this after shared compaction passes so
+   the standard hero min-height cannot reopen a blank band above the title. */
+body:has(.sp-press-hero) .sp-main {
+  padding-top: calc(var(--nav-h) + 24px);
+}
+
+.sp-press-hero {
+  min-height: 0;
+  display: block;
+  align-items: initial;
+  padding-top: 0;
+  padding-bottom: clamp(12px, 2.4vh, 24px);
+  border-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  body:has(.sp-press-hero) .sp-main {
+    padding-top: calc(var(--nav-h) + 24px);
+  }
+
+  .sp-press-hero {
+    min-height: 0;
+    padding-top: 0;
+  }
+}
