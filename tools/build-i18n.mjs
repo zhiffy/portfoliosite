@@ -37,7 +37,6 @@ const PERSON = {
   image: cfg.profilePhoto,
   jobTitle: 'New media artist',
   birthPlace: { '@type': 'Place', name: 'Singapore' },
-  homeLocation: [ { '@type': 'Place', name: 'Singapore' }, { '@type': 'Place', name: 'Bangkok' } ],
   knowsAbout: ['New media art', 'Artificial intelligence', '3D rendering', 'Interactive installation', 'Digital art'],
   email: 'mailto:studio@shavonnewong.art',
   sameAs: [

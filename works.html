@@ -31,24 +31,60 @@
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/mulish/mulish-variable.woff2" crossorigin>
   <link rel="stylesheet" href="/scroll-narrative.css?v=20260618-mobile-gutters">
   <link rel="stylesheet" href="/works-v2.css?v=20260616-availability-gate">
-  <script type="application/ld+json">
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Works",
     "url": "https://www.shavonnewong.art/works/",
     "description": "Projects, single works, editions, and commissions by Shavonne Wong across installation, video, AI, and 3D figuration.",
-    "about": { "@type": "Person", "name": "Shavonne Wong", "sameAs": "https://en.wikipedia.org/wiki/Shavonne_Wong" },
+    "about": {
+      "@type": "Person",
+      "name": "Shavonne Wong",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Shavonne_Wong"
+      ]
+    },
     "mainEntity": {
       "@type": "ItemList",
       "itemListOrder": "https://schema.org/ItemListOrderDescending",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "url": "https://www.shavonnewong.art/works/conditional/", "name": "Conditional" },
-        { "@type": "ListItem", "position": 2, "url": "https://www.shavonnewong.art/works/after-ophelia/", "name": "After Ophelia" },
-        { "@type": "ListItem", "position": 3, "url": "https://www.shavonnewong.art/works/meet-eva-here/", "name": "Meet Eva Here" },
-        { "@type": "ListItem", "position": 4, "url": "https://www.shavonnewong.art/works/the-ties-that-bind/", "name": "The Ties That Bind" },
-        { "@type": "ListItem", "position": 5, "url": "https://www.shavonnewong.art/works/by-proxy/", "name": "By Proxy" },
-        { "@type": "ListItem", "position": 6, "url": "https://www.shavonnewong.art/works/love-is-love/", "name": "Love is Love" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://www.shavonnewong.art/works/conditional/",
+          "name": "Conditional"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://www.shavonnewong.art/works/after-ophelia/",
+          "name": "After Ophelia"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://www.shavonnewong.art/works/meet-eva-here/",
+          "name": "Meet Eva Here"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://www.shavonnewong.art/works/the-ties-that-bind/",
+          "name": "The Ties That Bind"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://www.shavonnewong.art/works/by-proxy/",
+          "name": "By Proxy"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://www.shavonnewong.art/works/love-is-love/",
+          "name": "Love is Love"
+        }
       ]
     }
   }
@@ -846,11 +882,11 @@
         const h = Number(height);
         if (!singleModal || !w || !h) return;
         activeModalMediaRatio = Math.max(0.35, Math.min(2.4, w / h));
-        const maxDialogWidth = Math.min(window.innerWidth - 36, 1180);
+        const maxDialogWidth = Math.min(window.innerWidth - 36, 1340);
         const maxMediaHeight = Math.min(window.innerHeight * 0.76, 760);
         const shellPadding = window.innerWidth <= 760 ? 28 : 68;
         const shellGap = window.innerWidth <= 1080 ? 0 : 42;
-        const copyWidth = window.innerWidth <= 1080 ? 0 : 340;
+        const copyWidth = window.innerWidth <= 1080 ? 0 : 500;
         const availableWidth = Math.max(260, maxDialogWidth - shellPadding - shellGap - copyWidth);
         const mediaWidth = Math.max(260, Math.min(availableWidth, maxMediaHeight * activeModalMediaRatio));
         singleModal.style.setProperty('--wk2-modal-media-width', Math.round(mediaWidth) + 'px');
@@ -987,6 +1023,23 @@
         if (e.key === 'ArrowRight') { if (modalQueueIndex < modalQueue.length - 1) { modalQueueIndex++; openSingleWork(modalQueue[modalQueueIndex]); } }
         if (e.key === 'Escape') closeSingleWork();
       });
+      // Swipe to flip between works on touch devices, where the chevrons are
+      // hidden under 760px. Horizontal swipes only; mirrors the arrow keys.
+      let modalTouchX = null, modalTouchY = null;
+      singleModal?.addEventListener('touchstart', (e) => {
+        if (!e.changedTouches || !e.changedTouches.length) return;
+        modalTouchX = e.changedTouches[0].clientX;
+        modalTouchY = e.changedTouches[0].clientY;
+      }, { passive: true });
+      singleModal?.addEventListener('touchend', (e) => {
+        if (modalTouchX === null || !e.changedTouches || !e.changedTouches.length) return;
+        const dx = e.changedTouches[0].clientX - modalTouchX;
+        const dy = e.changedTouches[0].clientY - modalTouchY;
+        modalTouchX = modalTouchY = null;
+        if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy)) return;
+        if (dx > 0) { if (modalQueueIndex > 0) { modalQueueIndex--; openSingleWork(modalQueue[modalQueueIndex]); } }
+        else { if (modalQueueIndex < modalQueue.length - 1) { modalQueueIndex++; openSingleWork(modalQueue[modalQueueIndex]); } }
+      }, { passive: true });
       singleModal?.addEventListener('close', () => {
         document.documentElement.classList.remove('wk2-modal-open');
       });

@@ -850,3 +850,28 @@ body:has(.sp-press-hero) .sp-main {
     padding-top: 0;
   }
 }
+
+/* ============================================================
+   TITLE RAISE — ORDER-PROOF (2026-06-21)
+   The production build (Vite) bundles CSS in an order where
+   scroll-pages.css loads AFTER this file, so a plain
+   .sp-press-hero override (equal specificity, 0,1,0) loses to
+   scroll-pages' .sp-hero { min-height: 42vh; align-items: end },
+   which bottom-aligns the title inside a tall hero and reopens
+   the blank band above it. That is why every prior "compaction
+   pass" failed to keep the title raised. Winning by SPECIFICITY
+   (.sp-main .sp-press-hero = 0,2,0 > .sp-hero = 0,1,0) makes the
+   raise independent of bundle order, so it stays fixed for good.
+   Do not drop the .sp-main scope back to a bare .sp-press-hero.
+   ============================================================ */
+.sp-main .sp-press-hero {
+  min-height: 0;
+  display: block;
+  align-items: start;
+  padding-top: 0;
+  padding-bottom: clamp(12px, 2.4vh, 24px);
+  border-bottom: 0;
+}
+@media (max-width: 900px) {
+  .sp-main .sp-press-hero { padding-top: 0; }
+}

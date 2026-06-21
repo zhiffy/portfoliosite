@@ -1,0 +1,6 @@
+{
+  "files": [
+    "about.html"
+  ],
+  "note": "Files scanned by tools/check-copy-lock.mjs for <!-- copy-lock:KEY --> ... <!-- /copy-lock:KEY --> regions. To protect more copy, wrap it in a marker pair and add the file here (e.g. index.html, i18n/bodies/about.zh-Hans.html, work pages). After any INTENTIONAL copy change, re-lock with: node tools/check-copy-lock.mjs --update"
+}

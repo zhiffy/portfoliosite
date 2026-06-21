@@ -31,14 +31,23 @@
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/mulish/mulish-variable.woff2" crossorigin>
   <link rel="stylesheet" href="/scroll-narrative.css?v=20260618-mobile-gutters">
   <link rel="stylesheet" href="/scroll-pages.css?v=20260620-video-embed">
-  <script type="application/ld+json">
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     "name": "By Proxy",
     "creator": [
-      { "@type": "Person", "name": "Shavonne Wong", "sameAs": "https://en.wikipedia.org/wiki/Shavonne_Wong" },
-      { "@type": "Person", "name": "Lenne Chai" }
+      {
+        "@type": "Person",
+        "name": "Shavonne Wong",
+        "sameAs": [
+          "https://en.wikipedia.org/wiki/Shavonne_Wong"
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Lenne Chai"
+      }
     ],
     "dateCreated": "2022",
     "datePublished": "2022",
@@ -46,7 +55,11 @@
     "url": "https://www.shavonnewong.art/works/by-proxy/",
     "image": "https://www.shavonnewong.art/assets/by-proxy/og-image.jpg",
     "description": "By Proxy, a series of 60 unique CGI and photography works by Shavonne Wong and Lenne Chai about memory, adolescence, and constructed images.",
-    "isPartOf": { "@type": "CollectionPage", "name": "Works", "url": "https://www.shavonnewong.art/works/" }
+    "isPartOf": {
+      "@type": "CollectionPage",
+      "name": "Works",
+      "url": "https://www.shavonnewong.art/works/"
+    }
   }
   </script>
   <!-- Tailwind CDN removed June 2026. The page uses only custom bp2-* classes (no Tailwind utilities, no @apply), so the runtime CDN was unused. Styling lives in the inline style block below and the linked stylesheets. -->
@@ -535,7 +548,7 @@
     <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="/assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
       <a href="/#hero" data-i18n="nav.home">首頁</a>
-      <a href="/about/zh-hant/" data-i18n="nav.about">關於</a>
+      <a href="/about/" data-i18n="nav.about">關於</a>
       <a href="/works/zh-hant/" class="is-active" data-i18n="nav.works">作品</a>
       <a href="/writing/zh-hant/" data-i18n="nav.writing">文字</a>
       <a href="/press/zh-hant/" data-i18n="nav.press">媒體</a>

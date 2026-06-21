@@ -1,0 +1,7 @@
+{
+  "propertyId": "542403795",
+  "keyFile": "tools/ga-oauth.json",
+  "quotaProjectId": "core-chemist-500107-f4",
+  "days": 7,
+  "note": "Work-account route: keyless via an Internal OAuth app. Run `node tools/ga-auth.mjs` once to create tools/ga-oauth.json. propertyId is the numeric GA4 property id (Admin > Property settings), NOT the G-XXXX measurement id. quotaProjectId is your Google Cloud project id. See tools/ga-setup-guide.md."
+}

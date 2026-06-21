@@ -29,3 +29,6 @@ qa/
 .env.local
 .env.*.local
 !.env.example
+ga-service-account*.json
+ga-oauth*.json
+tools/ga-oauth*.json

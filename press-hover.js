@@ -1,13 +1,22 @@
 /* ============================================================
    press-hover.js  —  cursor-following image preview for the
-   press / talks list rows on the update letter pages.
+   press / talks / exhibition list rows.
 
-   Each .nl-press-item[data-press-img] reveals a small contextual
-   photo that tracks the cursor. Hover-capable pointers only; the
-   image loads on first hover and is reused after. Motion follows
-   the house easing (slow, controlled, no spring).
+   Each row reveals a small contextual photo that tracks the
+   cursor. Hover-capable pointers only; the image loads on first
+   hover and is reused after. Motion follows the house easing.
 
-   URL→preview mappings live in /assets/data/press-previews.json.
+   ROBUSTNESS (2026-06-21): this uses EVENT DELEGATION on the
+   document rather than binding listeners to each row at load.
+   That means the effect can never be detached by a layout change
+   (e.g. raising a page title), a DOM re-render, or rows that
+   appear after load (e.g. the About "Show all" exhibitions
+   toggle). The floating preview is a fixed-position child of
+   <body> with a very high z-index, so no ancestor can clip it.
+   Do not revert this to per-row attach(); that is the pattern
+   that kept breaking whenever the title was moved.
+
+   URL->preview mappings live in /assets/data/press-previews.json.
    Edit that file (not this one) to add, remove, or update previews.
    ============================================================ */
 (function () {
@@ -18,6 +27,8 @@
   try { canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches; }
   catch (e) { canHover = false; }
   if (!canHover) return;
+
+  var ROW_SELECTOR = '.nl-press-item a, .pr-row, .abv-exh-entry, [data-press-img]';
 
   // Exhibition entries stay here — they match by text content, not URL,
   // so they don't belong in the URL-keyed JSON.
@@ -50,20 +61,29 @@
   // Format after loading: [[urlSubstring, previewPath], ...]
   var pressPreviewMap = [];
 
-  // ---- floating preview element ----
+  // ---- floating preview element (fixed child of <body>, unclippable) ----
   var preview = document.createElement('div');
-  preview.style.cssText = 'position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:opacity 0.18s ease;opacity:0;';
+  preview.className = 'sn-press-hover-preview';
+  preview.style.cssText = 'position:fixed;top:0;left:0;pointer-events:none;z-index:99999;transition:opacity 0.18s ease;opacity:0;';
   var previewImg = document.createElement('img');
+  previewImg.alt = '';
+  previewImg.decoding = 'async';
   previewImg.style.cssText = 'display:block;width:320px;height:auto;max-height:232px;object-fit:contain;border-radius:3px;box-shadow:0 4px 24px rgba(0,0,0,0.18);background:var(--surface,#f5f5f6);transition:opacity 0.12s ease;';
   preview.appendChild(previewImg);
   document.body.appendChild(preview);
 
+  function ensureAttached() {
+    // Defensive: if anything ever detaches the preview, re-home it on <body>.
+    if (preview.parentNode !== document.body) document.body.appendChild(preview);
+  }
+
   var mouseX = 0, mouseY = 0, curX = 0, curY = 0;
   var raf = null;
   var active = false;
+  var currentEl = null;
   var previewCache = Object.create(null);
 
-  document.addEventListener('mousemove', function(e) {
+  document.addEventListener('mousemove', function (e) {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
@@ -102,10 +122,8 @@
     if (!src) return;
     preloadImg(src);
     if (previewImg.getAttribute('src') !== src) {
-      previewImg.onload = function() {
-        if (previewImg.getAttribute('src') === src) {
-          previewImg.style.opacity = '1';
-        }
+      previewImg.onload = function () {
+        if (previewImg.getAttribute('src') === src) previewImg.style.opacity = '1';
       };
       previewImg.style.opacity = '0';
       previewImg.src = src;
@@ -118,40 +136,50 @@
     previewImg.style.opacity = '1';
   }
 
-  function attach(el) {
+  function show(el) {
     var imgSrc = resolveImg(el);
     if (!imgSrc) return;
-    preloadImg(imgSrc);
-    el.addEventListener('mouseenter', function() {
-      setPreviewImg(imgSrc);
-      active = true;
-      preview.style.opacity = '1';
-      curX = mouseX + 18; curY = mouseY - 60;
-      raf = requestAnimationFrame(animate);
-    });
-    el.addEventListener('mouseleave', function() {
-      active = false;
-      preview.style.opacity = '0';
-      if (raf) { cancelAnimationFrame(raf); raf = null; }
-    });
+    currentEl = el;
+    ensureAttached();
+    setPreviewImg(imgSrc);
+    active = true;
+    preview.style.opacity = '1';
+    curX = mouseX + 18;
+    curY = mouseY - 60;
+    if (!raf) raf = requestAnimationFrame(animate);
   }
 
-  function init() {
-    // Attach to all press rows — nl-press-item and pr-row links with data-press-img or mapped hrefs
-    var rows = document.querySelectorAll('.nl-press-item a, .pr-row, .abv-exh-entry, [data-press-img]');
-    rows.forEach(function(el) { attach(el); });
+  function hide() {
+    currentEl = null;
+    active = false;
+    preview.style.opacity = '0';
+    if (raf) { cancelAnimationFrame(raf); raf = null; }
   }
 
-  // Load URL→preview map from JSON, then attach hover behaviour.
-  // Falls back gracefully (exhibition map still works, press rows silently skip).
+  // ---- delegation: listeners live on the document, never on the rows ----
+  document.addEventListener('mouseover', function (e) {
+    var el = e.target.closest && e.target.closest(ROW_SELECTOR);
+    if (!el || el === currentEl) return;
+    show(el);
+  });
+
+  document.addEventListener('mouseout', function (e) {
+    if (!currentEl) return;
+    var el = e.target.closest && e.target.closest(ROW_SELECTOR);
+    if (el !== currentEl) return;
+    // Ignore moves to a child still inside the same row.
+    if (e.relatedTarget && currentEl.contains(e.relatedTarget)) return;
+    hide();
+  });
+
+  // Load URL->preview map from JSON. Delegation is already live, so even if
+  // this fetch is slow or fails, exhibition rows (text-matched) keep working
+  // and press rows start working the moment the map resolves.
   fetch('/assets/data/press-previews.json')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      pressPreviewMap = data.map(function(e) { return [e.match, e.preview]; });
-      init();
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      pressPreviewMap = data.map(function (e) { return [e.match, e.preview]; });
     })
-    .catch(function() {
-      init();
-    });
+    .catch(function () {});
 
 }());
