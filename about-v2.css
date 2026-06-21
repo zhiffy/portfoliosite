@@ -484,7 +484,7 @@
 .abv-recognition { margin-top: clamp(20px, 3vh, 40px); }
 
 /* a single Iris threshold above Collaborations to mark the turn */
-.abv-collabs-section .abv-section-head { border-top-color: var(--accent-deep); }
+.abv-collabs-section .abv-section-head { border-top-color: var(--hairline-strong); }
 
 /* ---------- 03 EXHIBITIONS — selected/full toggle ---------- */
 .abv-section-head:has(.abv-exh-toggle) {

@@ -1,0 +1,7 @@
+{
+  "siteUrl": "https://www.shavonnewong.art/",
+  "keyFile": "tools/gsc-oauth.json",
+  "quotaProjectId": "core-chemist-500107-f4",
+  "days": 28,
+  "note": "Search Console digest. siteUrl must match the property exactly as it appears in Search Console (URL-prefix 'https://www.shavonnewong.art/' or domain 'sc-domain:shavonnewong.art'). Run `node tools/gsc-auth.mjs` once to create tools/gsc-oauth.json. GSC data lags ~2-3 days, so the digest reports a window ending 3 days ago. See tools/gsc-setup-guide.md."
+}

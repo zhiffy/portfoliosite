@@ -23,6 +23,7 @@ ds-preview/
 # QA artifacts — not site content (already-tracked files need `git rm -r --cached screenshots qa`)
 screenshots/
 qa/
+.codex-tmp/
 
 # local secrets
 .env
@@ -32,3 +33,5 @@ qa/
 ga-service-account*.json
 ga-oauth*.json
 tools/ga-oauth*.json
+gsc-oauth*.json
+tools/gsc-oauth*.json

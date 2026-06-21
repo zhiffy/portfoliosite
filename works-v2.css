@@ -787,6 +787,16 @@ html.sn-ripple-filter-on .wk2-panels { filter: url(#snWebglRippleDisplace); }
     gap: 14px;
     overflow: visible;
   }
+  /* Tabs wrap to all-visible rows on narrow viewports instead of scrolling
+     off-screen behind a hidden scrollbar (which reads as "cropped" on phones).
+     Scoped as .wk2-tabbar .wk2-tabs (0,2,0) so it beats the base
+     .wk2-tabs { overflow-x: auto } (0,1,0) no matter how the Vite build
+     orders the bundled CSS. That ordering is why this kept regressing. */
+  .wk2-tabbar .wk2-tabs {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    row-gap: 8px;
+  }
 }
 @media (max-width: 1080px) {
   .wk2-grid--projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
