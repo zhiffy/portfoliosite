@@ -38,7 +38,7 @@ const PERSON = {
   jobTitle: 'New media artist',
   birthPlace: { '@type': 'Place', name: 'Singapore' },
   knowsAbout: ['New media art', 'Artificial intelligence', '3D rendering', 'Interactive installation', 'Digital art'],
-  email: 'mailto:studio@shavonnewong.art',
+  email: 'studio@shavonnewong.art',
   sameAs: [
     'https://en.wikipedia.org/wiki/Shavonne_Wong',
     'https://www.instagram.com/shavonne.wong/',
