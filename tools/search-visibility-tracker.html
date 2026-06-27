@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AEO SEO GEO Tracker | Shavonne Wong</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
+<style>
+  :root{
+    color-scheme: light;
+    --bg:#f7f6fb; --card:#ffffff; --ink:#1e2330; --muted:#6c7384; --line:#e8e6f0;
+    --green:#1f9d6b; --greenbg:#e7f6ef; --amber:#bf7a12; --amberbg:#fbf1de; --red:#c0392b; --redbg:#fae9e7;
+    --grey:#9aa0ad; --greybg:#eef0f4; --accent:#6b5bd6; --accentsoft:#efecfb;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;font-size:15px}
+  .wrap{max-width:880px;margin:0 auto;padding:20px 18px 60px}
+  h1{font-size:22px;margin:0 0 2px}
+  .sub{color:var(--muted);font-size:13px;margin:0 0 16px}
+  .tabs{display:flex;gap:6px;margin:0 0 18px;border-bottom:1px solid var(--line)}
+  .tab{appearance:none;border:0;background:none;font:inherit;color:var(--muted);padding:9px 14px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+  .tab.on{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+  .panel{display:none}
+  .panel.on{display:block}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 14px}
+  .head{background:var(--accentsoft);border-color:#ddd7f6}
+  .head .lead{font-size:16px;margin:0 0 8px}
+  .head .meta{font-size:12px;color:var(--muted)}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 14px}
+  .tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .tile .n{font-size:26px;font-weight:700;letter-spacing:-.5px}
+  .tile .l{font-size:12px;color:var(--muted);margin-top:2px}
+  .tile .d{font-size:12px;margin-top:6px}
+  .up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--muted)}
+  .secti{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:18px 0 8px;font-weight:600}
+  .grp{font-size:13px;font-weight:700;margin:14px 0 6px;color:var(--ink)}
+  .grp:first-of-type{margin-top:2px}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:0}
+  .row .q{font-size:14px}
+  .row .when{font-size:11px;color:var(--muted);margin-top:1px}
+  .chip{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap}
+  .c-named{color:var(--green);background:var(--greenbg)}
+  .c-partial{color:var(--amber);background:var(--amberbg)}
+  .c-absent{color:var(--red);background:var(--redbg)}
+  .c-none{color:var(--grey);background:var(--greybg)}
+  .move{border-left:3px solid var(--accent)}
+  .move .l{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);font-weight:700;margin:0 0 6px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.03em}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .chartbox{position:relative;height:240px;margin:6px 0 2px}
+  .flags{display:flex;gap:10px;flex-wrap:wrap}
+  .flag{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+  .flag .l{font-size:12px;color:var(--muted)}
+  .flag .v{font-size:14px;font-weight:600;margin-top:2px}
+  .note{font-size:12px;color:var(--muted)}
+  details{margin-top:6px}
+  summary{cursor:pointer;font-size:14px;color:var(--accent);font-weight:600}
+  .qblock{margin:12px 0 4px}
+  .qrow{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+  .qrow:last-child{border-bottom:0}
+  .qtext{font-size:14px;-webkit-user-select:text;user-select:text}
+  .qbtn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--accent);font:inherit;font-size:12px;font-weight:600;padding:5px 13px;border-radius:7px;cursor:pointer;white-space:nowrap}
+  .qbtn:hover{background:var(--accentsoft)}
+  .qbtn.qall{margin:2px 0 8px;border-color:#d7d1f3}
+  .play{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+  .play:last-child{border-bottom:0}
+  .play input{margin-top:3px;width:16px;height:16px;flex:none;cursor:pointer;accent-color:#6b5bd6}
+  .play .pt{font-size:14px}
+  .play .pn{font-size:12px;color:var(--muted);margin-top:2px}
+  .play.done .pt{text-decoration:line-through;color:var(--muted)}
+  .pchip{font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;align-self:flex-start}
+  .pc-doing{color:var(--amber);background:var(--amberbg)}
+  .pc-todo{color:var(--grey);background:var(--greybg)}
+  .dots{display:flex;gap:3px;margin-top:5px}
+  .dot{width:7px;height:7px;border-radius:50%}
+  .dot-c{background:var(--green)} .dot-p{background:var(--amber)} .dot-w{background:var(--red)}
+  @media(max-width:560px){
+    .tiles{grid-template-columns:1fr 1fr}
+    .tile:last-child{grid-column:1 / -1}
+    .wrap{padding:16px 12px 50px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>AEO SEO GEO tracker</h1>
+  <p class="sub">How people and AI find your work. <span id="updated"></span></p>
+
+  <div class="tabs">
+    <button class="tab on" data-tab="now">Now</button>
+    <button class="tab" data-tab="trends">Trends</button>
+    <button class="tab" data-tab="detail">Detail</button>
+  </div>
+
+  <!-- NOW -->
+  <section class="panel on" id="now">
+    <div class="card head">
+      <p class="lead" id="takeaway"></p>
+      <div class="meta" id="checkmeta"></div>
+      <div class="meta" id="delta" style="margin-top:6px"></div>
+    </div>
+
+    <div class="secti">Google search (last full month)</div>
+    <div class="tiles" id="tiles"></div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">Where AI names you</div>
+      <div id="board"></div>
+    </div>
+
+    <div class="card move">
+      <p class="l">Your next move</p>
+      <p id="move" style="margin:0"></p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">This quarter's plays</div>
+      <div id="plays"></div>
+      <p class="note" id="playsnote" style="margin-top:8px"></p>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary>Run the monthly AI check (copy the questions)</summary>
+        <p class="note" style="margin:10px 0 2px">Ask each question in a fresh, empty AI chat (ChatGPT, Perplexity, Gemini, or Claude). Start a new chat for every discovery question, so an earlier answer does not prime the next one into naming you. Then paste all the answers back to me here and I will grade them and update the board.</p>
+        <div id="qcopy"></div>
+        <p class="note" style="margin-top:10px">If a Copy button does nothing, select the question text and press Ctrl+C. Google numbers refresh automatically each month; the board updates when you paste a month of answers to me.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- TRENDS -->
+  <section class="panel" id="trends">
+    <div class="card">
+      <div class="secti" style="margin-top:0">Google visits and appearances</div>
+      <div class="chartbox"><canvas id="cMain"></canvas></div>
+      <p class="note">Visits are clicks to your site. Appearances are how often you showed in results.</p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">Average ranking position</div>
+      <div class="chartbox"><canvas id="cPos"></canvas></div>
+      <p class="note">Lower is better. Position 1 is the top of the page.</p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">What people search to reach you</div>
+      <div class="chartbox"><canvas id="cSplit"></canvas></div>
+      <p class="note">Your name versus your works versus discovery terms (anything not your name or a work title). Discovery is the number to grow.</p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">AI mention score over time</div>
+      <div class="chartbox"><canvas id="cGeo"></canvas></div>
+      <p class="note">Each monthly AI check, scored out of 10. Named answer is 1 point, partial is half, absent is zero.</p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">How your work is landing (latest check)</div>
+      <div class="flags" id="flags"></div>
+      <p class="note">Whether assistants cite your own site, name your actual works, and reflect where your practice is now. These show whether your whole body of work registers, not just your name.</p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">AI check log</div>
+      <table id="geolog"><thead><tr><th>Date</th><th>Engine</th><th class="num">Score</th><th>Notes</th></tr></thead><tbody></tbody></table>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">Google search, month by month</div>
+      <table id="seotable"><thead><tr><th>Month</th><th class="num">Visits</th><th class="num">Appearances</th><th class="num">CTR %</th><th class="num">Position</th></tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <!-- DETAIL -->
+  <section class="panel" id="detail">
+    <p class="note" id="dwindow"></p>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">Name vs works vs discovery</div>
+      <div class="flags" id="dsplit"></div>
+      <p class="note">Of the clicks Google shows a query for, your name and a few work titles are nearly all of it. General discovery terms bring almost none. The rest are searches Google hides for privacy.</p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">Top searches that bring you clicks</div>
+      <div id="dq"></div>
+      <p class="note">Google hides low-volume queries, so listed clicks add up to less than your total.</p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">Searches for your works (not your name)</div>
+      <div id="dnn"></div>
+      <p class="note">Almost all of this is people looking for Eva or Ophelia by name. Note the cluster of "companion archive" and "ai companion" searches, people hunting for an AI companion app and landing on the Eva page.</p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">Top pages in search</div>
+      <div id="dp"></div>
+      <p class="note">Pages marked old still rank on the pre-revamp /projects or /nfts paths. The 301 redirects to /works are live, so this clears once Google recrawls.</p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">Where your search audience is</div>
+      <div id="dc"></div>
+      <p class="note">Singapore leads. The US shows a huge number of appearances but very few clicks, mostly the AI-companion confusion above.</p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">On your site (GA4)</div>
+      <div id="dga"></div>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">Share of voice vs other artists (Otterly)</div>
+      <p class="note" id="ostand" style="margin-top:0"></p>
+      <div class="flags" id="osplit"></div>
+      <div id="orank" style="margin-top:12px"></div>
+      <p class="note">The table is as Otterly counted it, so your row still includes the branded mentions. On discovery prompts alone you sit several places lower.</p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">Where AI pulls from (top cited pages)</div>
+      <div id="ocite"></div>
+      <p class="note">Get named on these pages, or cited by them. Otterly calls the citation list the ranking.</p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">Discovery prompts that name you (Otterly)</div>
+      <div id="ohit"></div>
+      <p class="note" id="obranded" style="margin-top:8px"></p>
+      <div class="grp">Prompts that miss you completely</div>
+      <p class="note" id="omiss" style="margin-top:4px"></p>
+    </div>
+
+    <div class="card">
+      <div class="secti" style="margin-top:0">Answer engines (AEO)</div>
+      <div class="flags" id="daeo"></div>
+      <p class="note">GA4 already logs visits from AI assistants. Bing Copilot citations live in Bing Webmaster, and Google AI Overviews need a manual look for now. Say the word and I will wire these in.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+/* ---- DATA (baked, no browser storage) ---- */
+/* SEO: refreshed automatically each month by tools/svt-sync.mjs. Do not hand-edit the array shape. */
+var AUTO_SEO = /*SVT_SEO_START*/[
+    {"month":"2025-12","clicks":28,"impressions":729,"ctr":3.8,"position":7.2,"name":16,"works":0,"discovery":0,"note":""},
+    {"month":"2026-01","clicks":37,"impressions":2079,"ctr":1.8,"position":7.8,"name":17,"works":0,"discovery":0,"note":""},
+    {"month":"2026-02","clicks":57,"impressions":2005,"ctr":2.8,"position":7.4,"name":27,"works":1,"discovery":1,"note":""},
+    {"month":"2026-03","clicks":67,"impressions":2575,"ctr":2.6,"position":6.6,"name":26,"works":0,"discovery":0,"note":""},
+    {"month":"2026-04","clicks":57,"impressions":3917,"ctr":1.5,"position":4.8,"name":27,"works":2,"discovery":1,"note":""},
+    {"month":"2026-05","clicks":49,"impressions":2350,"ctr":2.1,"position":7.1,"name":21,"works":3,"discovery":1,"note":""}
+  ]/*SVT_SEO_END*/;
+
+/* GEO: refreshed by Claude when you paste a month of AI answers. verdicts = per question 1..10, "c" named, "p" partial, "w" absent, "" not checked */
+var AUTO_GEO = /*SVT_GEO_START*/[
+    {"date":"2026-06-26","engine":"ChatGPT","score":3.5,"max":10,"citedSite":true,"namesWorks":true,"currentFraming":false,"verdicts":["c","p","c","c","w","w","w","w","w","w"],"summary":"Owns your name, your facts, and the Singapore slot, second behind Niceaunties. Absent on Southeast Asia, global, and every theme. Cites your site and names your earlier works, but frames you in the NFT and virtual-model era and misses your current direction, Conditional and The Mirror. Padded a couple of answers with works and venues not in your record."},
+    {"date":"2026-06-26","engine":"Gemini","score":3,"max":9,"citedSite":false,"namesWorks":true,"currentFraming":false,"verdicts":["c","","c","c","w","w","w","w","w","w"],"summary":"Named you FIRST among Singapore AI artists and described you accurately (virtual-modeling agency, After Ophelia, Meet Eva Here). Established and facts right, and more current than ChatGPT. Still absent on Southeast Asia, global, and every theme. The sharp part, it knows you pioneered virtual humans yet does not name you when the question is framed by virtual humans, interactive installations, identity, or being seen. Did not cite your site. Work question not asked this round."},
+    {"date":"2026-06-26","engine":"Perplexity","score":3,"max":4,"citedSite":true,"namesWorks":true,"currentFraming":false,"verdicts":["c","c","c","w","","","","","",""],"summary":"Locked out after 4 questions, so this scores only the easy ones. Strong and accurate on who you are, your work, and your exhibitions, and the most theme-aware description so far, naming interactive installation and 3D digital humans. Cites your site, Wikipedia, and Ocula. But did NOT name you among Singapore AI artists (it listed Niceaunties, AikBeng Chia, Steve Lawler, Jo Ho), so worse than ChatGPT and Gemini there. Same pattern, it knows you yet does not retrieve you by category."}
+  ]/*SVT_GEO_END*/;
+
+/* SEO DETAIL: refreshed monthly by tools/svt-deep.mjs */
+var AUTO_SEO_DETAIL = /*SVT_DETAIL_START*/{
+ "window":"90 days, 26 Mar to 23 Jun 2026",
+ "name":62,"works":9,"hidden":85,
+ "topQueries":[
+   ["shavonne wong",62,386,2.6],
+   ["meet eva",5,157,4.2],
+   ["meeting eva.com",2,43,5.5],
+   ["o.n.a 3d content artist",2,4,4.8]
+ ],
+ "nonName":[
+   ["meet eva",157,5,4.2],
+   ["meeteva",76,0,7.1],
+   ["meeting eva",58,0,8.1],
+   ["companion archive ai",44,0,9.5],
+   ["eva was here",36,0,2.9],
+   ["ophelia ai",28,0,9.3],
+   ["eva here",24,0,2.8],
+   ["shimmering veil",8,0,16.6]
+ ],
+ "pages":[
+   ["/",94,1270,3.9,false],
+   ["/projects/meet-eva-here",33,4882,7.6,true],
+   ["/about",12,868,6.1,false],
+   ["/projects/after-ophelia",10,745,7.0,true],
+   ["/projects/love-is-love",2,269,6.8,true],
+   ["/projects/by-proxy",2,121,7.6,true],
+   ["/update2025jun",2,697,5.8,false],
+   ["/nfts",0,35,4.8,true],
+   ["/art",1,110,7.0,true]
+ ],
+ "countries":[
+   ["Singapore",51,539],["Hong Kong",13,126],["United States",13,3250],
+   ["Australia",10,141],["Italy",7,107],["France",5,91],["United Kingdom",5,264],
+   ["Canada",4,253],["Japan",4,110],["Thailand",4,884],["Germany",3,112]
+ ],
+ "ga":{
+   "window":"last 7 days, 19 to 25 Jun 2026",
+   "pageviews":175,"visitors":114,"sessions":124,
+   "pages":[["/",55],["/works/meet-eva-here/",35],["/press/zh-hans/",11],["/about",9],["/contact",6]],
+   "countries":[["Singapore",58],["China",22],["United States",10],["South Korea",7],["Italy",4],["France",2]],
+   "sources":[["Direct",97],["Organic Search",12],["Unassigned",7],["Organic Social",4],["AI Assistant",2],["Referral",2]]
+ }
+}/*SVT_DETAIL_END*/;
+
+/* OTTERLY: multi-engine benchmark, refreshed quarterly from the Otterly export */
+var AUTO_OTTERLY = /*SVT_OTTERLY_START*/{
+ "window":"Singapore, all engines, 14 days to 26 Jun 2026",
+ "you":"Shavonne Wong",
+ "standing":"Your raw numbers are inflated by two prompts that named you. Of 68 mentions, 36 came from \"Who is Shavonne Wong\" and \"What is Conditional\", which guarantee a top spot, and only 32 came from discovery prompts. On discovery alone you sit around 6th, tied with Lawrence Lek and Memo Akten, not 3rd, and the 1.06 average position is pulled down by the branded prompts.",
+ "totalMentions":68,"brandedMentions":36,"discoveryMentions":32,
+ "branded":[["Who is Shavonne Wong and what is her art about?",18],["What is Shavonne Wong's project Conditional?",18]],
+ "ranking":[
+   ["Refik Anadol",113,33,17,1.40],
+   ["Sougwen",99,29,15,1.92],
+   ["Shavonne Wong",68,20,10,1.06],
+   ["Trevor Paglen",50,14,8,2.21],
+   ["Holly Herndon",39,11,6,3.30],
+   ["Mario Klingemann",39,11,6,2.93],
+   ["Lawrence Lek",32,9,5,2.19],
+   ["Memo Akten",32,9,5,3.01],
+   ["Stephanie Dinkins",26,8,4,null],
+   ["Ian Cheng",25,7,4,3.25]
+ ],
+ "citations":[
+   ["shavonnewong.art/about",31],
+   ["channelnewsasia.com (AI-art feature)",30],
+   ["aiartists.org",29],
+   ["nac.gov.sg (technology and arts)",25],
+   ["en.wikipedia.org/wiki/Shavonne_Wong",21],
+   ["artsy.net (6 artists feature)",18],
+   ["aiartists.org/ai-artist-founding-members",17],
+   ["leonardo.ai (50 top women AI artists)",17],
+   ["seads.adb.org (8 artists spearheading)",16]
+ ],
+ "promptsHit":[
+   ["Leading new media artists in Singapore",18],
+   ["Emerging AI artists to watch in Asia",6],
+   ["Singapore artists, art and technology",4],
+   ["Conversational AI and chatbot artworks",2],
+   ["3D rendering and AI imagery",1],
+   ["Southeast Asia AI artists",1]
+ ],
+ "promptsMissed":["Museum show on technology and humanity","Artists examining human and machine relationships","Interactive or immersive AI installations","Most influential AI artists today","AI and identity","Surveillance, visibility, being seen","Exhibition about AI and society"]
+}/*SVT_OTTERLY_END*/;
+
+var NOW_TAKEAWAY = /*SVT_TAKE_START*/"Across ChatGPT, Gemini, and Perplexity you own your name, your facts, and your works. Two of the three name you among Singapore artists, but all of them drop you on the theme questions, virtual humans, interactive AI installations, identity and the body, and being seen, which are exactly your strengths."/*SVT_TAKE_END*/;
+
+var NOW_MOVE = /*SVT_MOVE_START*/"Get named in theme writing, not only 'Singapore AI artist'. Conditional is your way into the visibility and being-seen conversation, Eva into interactive AI installations, and your virtual-models history into digital humans. Reframe your site and Wikipedia by theme so the assistants can place you there."/*SVT_MOVE_END*/;
+
+var NOW_DELTA = /*SVT_DELTA_START*/"Baseline set on 26 Jun across ChatGPT, Gemini, and Perplexity, plus your first Otterly export. From the next check on, this line shows what moved."/*SVT_DELTA_END*/;
+
+var AUTO_PLAYS = /*SVT_PLAYS_START*/[
+ {"id":"wiki-followup","task":"Send Taimur the Wikipedia follow-up (categories, the Singapore list, the two press links, Paris Photo, the photo)","status":"doing","note":"Draft saved in your Gmail, ready to send."},
+ {"id":"theme-roundups","task":"Pitch the theme roundups AI already cites, aiartists.org, Leonardo's 50 women in AI, Artsy, CNA, and SEADS","status":"todo","note":"These are the cited pages in the Detail tab. Lead each with the matching theme."},
+ {"id":"nlb-guide","task":"Ask the NLB to add you to the AI x Arts Singapore guide","status":"todo","note":"Maintained resource, takes inclusion requests."},
+ {"id":"directories","task":"Submit your profile to the AIArtists.org and AI-Arts.org directories","status":"todo","note":"Open submissions, quick win."},
+ {"id":"wikidata","task":"Confirm the Wikidata description, add Conditional and The Mirror as works once cited","status":"todo","note":""},
+ {"id":"theme-page","task":"Add one theme page to your site on visibility and being seen","status":"todo","note":"Needs your go-ahead, then I draft a text-only diff."},
+ {"id":"otterly-export","task":"Export Otterly before the trial ends on 5 Jul","status":"todo","note":"Reminder already set."}
+]/*SVT_PLAYS_END*/;
+
+/* ---- QUESTION MODEL ---- */
+var QFULL = [
+  "Who is Shavonne Wong?",
+  "Tell me about Shavonne Wong's work.",
+  "Is Shavonne Wong an established artist, and where has she exhibited?",
+  "Who are the notable AI or new media artists in Singapore?",
+  "Who are the notable AI or new media artists in Southeast Asia?",
+  "Name some internationally recognised artists working with AI and 3D.",
+  "Which artists make interactive AI installations?",
+  "Which artists work with virtual humans or 3D digital humans?",
+  "Which artists explore identity and the body through AI?",
+  "Which contemporary artists work on surveillance, visibility, or being seen through technology?"
+];
+var QSHORT = [
+  "Who you are","Your work and range","Established and where you exhibited",
+  "Singapore AI artists","Southeast Asia AI artists","International AI and 3D",
+  "Interactive AI installations","Virtual humans and digital humans","Identity and the body","Surveillance, visibility, being seen"
+];
+var GROUPS = [
+  {name:"About you (do they get you right)", qs:[0,1,2]},
+  {name:"By place (do they name you in the region)", qs:[3,4,5]},
+  {name:"By theme (do they name you for what you do)", qs:[6,7,8,9]}
+];
+
+/* ---- HELPERS ---- */
+var MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function fmtMonth(s){var p=s.split("-");return MON[+p[1]-1]+" "+p[0].slice(2);}
+function fmtDay(iso){var p=iso.split("-");return (+p[2])+" "+MON[+p[1]-1];}
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+function td(t,c){var d=document.createElement("td");if(c)d.className=c;d.textContent=t;return d;}
+function mkflag(l,v){var f=el("div","flag");f.appendChild(el("div","l",l));f.appendChild(el("div","v",v));return f;}
+function mktable(parent,heads,rows){
+  var tb=document.createElement("table");
+  var thead=document.createElement("thead"),htr=document.createElement("tr");
+  heads.forEach(function(h){var th=document.createElement("th");if(h.num)th.className="num";th.textContent=h.t;htr.appendChild(th);});
+  thead.appendChild(htr);tb.appendChild(thead);
+  var tbody=document.createElement("tbody");
+  rows.forEach(function(r){tbody.appendChild(r);});
+  tb.appendChild(tbody);parent.appendChild(tb);
+}
+
+/* ---- copy to clipboard (sandbox-safe) ---- */
+function copyStr(str, btn){
+  var done=false;
+  try{
+    var ta=document.createElement("textarea");
+    ta.value=str; ta.setAttribute("readonly","");
+    ta.style.position="fixed"; ta.style.top="-1000px"; ta.style.opacity="0";
+    document.body.appendChild(ta);
+    ta.focus(); ta.select(); try{ta.setSelectionRange(0,str.length);}catch(e){}
+    done=document.execCommand("copy");
+    document.body.removeChild(ta);
+  }catch(e){ done=false; }
+  btn.textContent = done ? "Copied" : "Select text, Ctrl+C";
+  setTimeout(function(){ btn.textContent="Copy"; }, 1800);
+}
+
+/* ---- NOW: copyable questions ---- */
+(function(){
+  var box=document.getElementById("qcopy");
+  if(!box)return;
+  function group(title, idxs, withAll){
+    var g=el("div","qblock");
+    g.appendChild(el("div","grp",title));
+    if(withAll){
+      var allbtn=el("button","qbtn qall","Copy all "+idxs.length);
+      allbtn.addEventListener("click",function(){copyStr(idxs.map(function(i){return QFULL[i];}).join("\n"), allbtn);});
+      g.appendChild(allbtn);
+    }
+    idxs.forEach(function(i){
+      var r=el("div","qrow");
+      var s=document.createElement("span"); s.className="qtext"; s.textContent=QFULL[i];
+      r.appendChild(s);
+      var b=el("button","qbtn","Copy");
+      b.addEventListener("click",function(){copyStr(QFULL[i], b);});
+      r.appendChild(b);
+      g.appendChild(r);
+    });
+    box.appendChild(g);
+  }
+  group("About you (these 3 can share one chat)", [0,1,2], true);
+  group("Discovery (use a fresh, empty chat for each one)", [3,4,5,6,7,8,9], false);
+})();
+
+/* ---- NOW: headline ---- */
+document.getElementById("takeaway").textContent=NOW_TAKEAWAY;
+document.getElementById("move").textContent=NOW_MOVE;
+var lastGeo=AUTO_GEO.length?AUTO_GEO[AUTO_GEO.length-1]:null;
+var lastSeo=AUTO_SEO.length?AUTO_SEO[AUTO_SEO.length-1]:null;
+document.getElementById("checkmeta").textContent=
+  (lastGeo?("Latest AI check: "+fmtDay(lastGeo.date)+" ("+lastGeo.engine+")"):"No AI check logged yet")+
+  (lastSeo?("  ·  Google data through "+fmtMonth(lastSeo.month)):"");
+document.getElementById("updated").textContent=lastSeo?("Updated "+fmtMonth(lastSeo.month)):"";
+
+/* ---- NOW: SEO tiles ---- */
+(function(){
+  var box=document.getElementById("tiles");
+  if(!lastSeo){box.innerHTML="<div class='note'>No Google data yet.</div>";return;}
+  var prev=AUTO_SEO.length>1?AUTO_SEO[AUTO_SEO.length-2]:null;
+  function dir(cur,old,lowerBetter){
+    if(old==null)return ["","flat"];
+    var diff=cur-old; if(diff===0)return ["no change","flat"];
+    var better=lowerBetter?diff<0:diff>0;
+    var arrow=diff>0?"▲":"▼";
+    var txt=arrow+" "+Math.abs(Math.round(diff*10)/10)+" vs prev month";
+    return [txt, better?"up":"down"];
+  }
+  var items=[
+    {n:lastSeo.clicks,l:"Visits to your site",d:dir(lastSeo.clicks,prev&&prev.clicks,false)},
+    {n:lastSeo.impressions.toLocaleString(),l:"Times you appeared",d:dir(lastSeo.impressions,prev&&prev.impressions,false)},
+    {n:lastSeo.position,l:"Average ranking",d:dir(lastSeo.position,prev&&prev.position,true)}
+  ];
+  items.forEach(function(it){
+    var t=el("div","tile");
+    t.appendChild(el("div","n",it.n));
+    t.appendChild(el("div","l",it.l));
+    t.appendChild(el("div","d "+it.d[1],it.d[0]));
+    box.appendChild(t);
+  });
+})();
+
+/* ---- NOW: board ---- */
+(function(){
+  var box=document.getElementById("board");
+  var rank={c:3,p:2,w:1};
+  function agg(i){
+    var maxd=null;
+    AUTO_GEO.forEach(function(c){if(c.verdicts&&c.verdicts[i]){if(!maxd||c.date>maxd)maxd=c.date;}});
+    if(!maxd)return null;
+    var best="",named=0,total=0;
+    AUTO_GEO.forEach(function(c){if(c.date===maxd&&c.verdicts&&c.verdicts[i]){var v=c.verdicts[i];total++;if(v==="c")named++;if(!best||rank[v]>rank[best])best=v;}});
+    return {v:best,date:maxd,named:named,total:total};
+  }
+  function hist(i){
+    var byDate={},order=[];
+    AUTO_GEO.forEach(function(c){var v=c.verdicts&&c.verdicts[i];if(!v)return;if(!(c.date in byDate)){byDate[c.date]="";order.push(c.date);}if(!byDate[c.date]||rank[v]>rank[byDate[c.date]])byDate[c.date]=v;});
+    order.sort();
+    return order.map(function(d){return byDate[d];});
+  }
+  var map={c:["Named","c-named"],p:["Partial","c-partial"],w:["Absent","c-absent"]};
+  GROUPS.forEach(function(g){
+    box.appendChild(el("div","grp",g.name));
+    g.qs.forEach(function(i){
+      var r=el("div","row");
+      var left=el("div");
+      left.appendChild(el("div","q",QSHORT[i]));
+      var b=agg(i);
+      var when=b?(b.total>1?("named by "+b.named+" of "+b.total+" engines, "+fmtDay(b.date)):("seen "+fmtDay(b.date))):"not checked yet";
+      left.appendChild(el("div","when",when));
+      var h=hist(i);
+      if(h.length>1){var dd=el("div","dots");h.slice(-6).forEach(function(v){dd.appendChild(el("span","dot dot-"+v));});left.appendChild(dd);}
+      r.appendChild(left);
+      var info=b?map[b.v]:["Not checked","c-none"];
+      r.appendChild(el("span","chip "+info[1],info[0]));
+      box.appendChild(r);
+    });
+  });
+})();
+
+/* ---- NOW: delta + plays ---- */
+(function(){
+  var d=document.getElementById("delta");
+  if(d&&typeof NOW_DELTA!=="undefined")d.textContent=NOW_DELTA;
+  var box=document.getElementById("plays");
+  if(!box||typeof AUTO_PLAYS==="undefined")return;
+  var saved={}; try{saved=JSON.parse(localStorage.getItem("svt_plays_v1")||"{}");}catch(e){}
+  function save(){try{localStorage.setItem("svt_plays_v1",JSON.stringify(saved));}catch(e){}}
+  var smap={doing:["In progress","pc-doing"],todo:["To do","pc-todo"],done:["Done","pc-todo"]};
+  AUTO_PLAYS.forEach(function(p){
+    var done=(p.id in saved)?saved[p.id]:(p.status==="done");
+    var row=el("div","play"+(done?" done":""));
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=done;
+    var chip=el("span","pchip "+((smap[p.status]||smap.todo)[1]),(smap[p.status]||smap.todo)[0]);
+    cb.addEventListener("change",function(){saved[p.id]=cb.checked;save();row.classList.toggle("done",cb.checked);chip.style.display=cb.checked?"none":"";});
+    row.appendChild(cb);
+    var mid=el("div");mid.style.flex="1";
+    mid.appendChild(el("div","pt",p.task));
+    if(p.note)mid.appendChild(el("div","pn",p.note));
+    row.appendChild(mid);
+    if(done)chip.style.display="none";
+    row.appendChild(chip);
+    box.appendChild(row);
+  });
+  var pn=document.getElementById("playsnote");
+  if(pn)pn.textContent="Tick these off as you go. When a move lands, paste me the new AI answers and I'll log what changed.";
+})();
+
+/* ---- TRENDS (lazy) ---- */
+var trendsBuilt=false;
+function buildTrends(){
+  if(trendsBuilt)return; trendsBuilt=true;
+  var labels=AUTO_SEO.map(function(r){return fmtMonth(r.month);});
+  var grid="#eceaf3", tick="#6c7384";
+  var common={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{boxWidth:12,font:{size:11}}}},scales:{x:{grid:{color:grid},ticks:{color:tick,font:{size:11}}},y:{grid:{color:grid},ticks:{color:tick,font:{size:11}}}}};
+
+  if(window.Chart){
+    new Chart(document.getElementById("cMain"),{type:"line",data:{labels:labels,datasets:[
+      {label:"Visits",data:AUTO_SEO.map(function(r){return r.clicks;}),borderColor:"#6b5bd6",backgroundColor:"#6b5bd6",tension:.3,yAxisID:"y"},
+      {label:"Appearances",data:AUTO_SEO.map(function(r){return r.impressions;}),borderColor:"#1f9d6b",backgroundColor:"#1f9d6b",tension:.3,yAxisID:"y1"}
+    ]},options:Object.assign({},common,{scales:{x:common.scales.x,
+      y:{position:"left",grid:{color:grid},ticks:{color:"#6b5bd6",font:{size:11}},title:{display:true,text:"Visits",color:"#6b5bd6",font:{size:10}}},
+      y1:{position:"right",grid:{drawOnChartArea:false},ticks:{color:"#1f9d6b",font:{size:11}},title:{display:true,text:"Appearances",color:"#1f9d6b",font:{size:10}}}}})});
+
+    new Chart(document.getElementById("cPos"),{type:"line",data:{labels:labels,datasets:[
+      {label:"Avg position",data:AUTO_SEO.map(function(r){return r.position;}),borderColor:"#bf7a12",backgroundColor:"#bf7a12",tension:.3}
+    ]},options:Object.assign({},common,{scales:{x:common.scales.x,y:{reverse:true,grid:{color:grid},ticks:{color:tick,font:{size:11}}}}})});
+
+    new Chart(document.getElementById("cSplit"),{type:"bar",data:{labels:labels,datasets:[
+      {label:"Your name",data:AUTO_SEO.map(function(r){return r.name;}),backgroundColor:"#6b5bd6"},
+      {label:"Your works",data:AUTO_SEO.map(function(r){return r.works;}),backgroundColor:"#1f9d6b"},
+      {label:"Discovery",data:AUTO_SEO.map(function(r){return r.discovery;}),backgroundColor:"#bf7a12"}
+    ]},options:Object.assign({},common,{scales:{x:Object.assign({stacked:true},common.scales.x),y:Object.assign({stacked:true},common.scales.y)}})});
+
+    var glabels=AUTO_GEO.map(function(c){return fmtDay(c.date)+" "+c.engine;});
+    new Chart(document.getElementById("cGeo"),{type:"line",data:{labels:glabels.length?glabels:["no checks"],datasets:[
+      {label:"Score / 10",data:AUTO_GEO.map(function(c){return Math.round((c.score/c.max)*100)/10;}),borderColor:"#6b5bd6",backgroundColor:"#6b5bd6",tension:.3,spanGaps:true}
+    ]},options:Object.assign({},common,{scales:{x:common.scales.x,y:Object.assign({min:0,max:10},common.scales.y)}})});
+  }
+
+  // signals
+  var fb=document.getElementById("flags");
+  if(lastGeo){
+    var cited=AUTO_GEO.filter(function(c){return c.citedSite;}).length;
+    fb.appendChild(mkflag("Cites your site",(lastGeo.citedSite?"Yes":"No")+" in latest ("+cited+" of "+AUTO_GEO.length+" checks)"));
+    fb.appendChild(mkflag("Names your actual works",lastGeo.namesWorks?"Yes":"No, only a general description"));
+    fb.appendChild(mkflag("Reflects your current direction",lastGeo.currentFraming?"Yes":"No, misses Conditional and The Mirror"));
+  }else{fb.appendChild(mkflag("No AI check yet","Paste a month of answers to Claude"));}
+
+  // geo log
+  var gt=document.querySelector("#geolog tbody");
+  AUTO_GEO.slice().reverse().forEach(function(c){
+    var tr=document.createElement("tr");
+    tr.appendChild(td(fmtDay(c.date)));
+    tr.appendChild(td(c.engine));
+    tr.appendChild(td(c.score+" / "+c.max,"num"));
+    tr.appendChild(td(c.summary||""));
+    gt.appendChild(tr);
+  });
+  if(!AUTO_GEO.length){var tr=document.createElement("tr");var c=td("No AI checks logged yet.");c.colSpan=4;tr.appendChild(c);gt.appendChild(tr);}
+
+  // seo table
+  var st=document.querySelector("#seotable tbody");
+  AUTO_SEO.slice().reverse().forEach(function(r){
+    var tr=document.createElement("tr");
+    tr.appendChild(td(fmtMonth(r.month)));
+    tr.appendChild(td(r.clicks,"num"));
+    tr.appendChild(td(r.impressions.toLocaleString(),"num"));
+    tr.appendChild(td(r.ctr,"num"));
+    tr.appendChild(td(r.position,"num"));
+    st.appendChild(tr);
+  });
+}
+
+/* ---- DETAIL (lazy) ---- */
+var detailBuilt=false;
+function buildDetail(){
+  if(detailBuilt)return; detailBuilt=true;
+  var D=AUTO_SEO_DETAIL;
+  document.getElementById("dwindow").textContent="Search Console, "+D.window+". On-site numbers from GA4 are in the GA4 card below.";
+
+  var sp=document.getElementById("dsplit");
+  sp.appendChild(mkflag("Your name",D.name+" clicks"));
+  sp.appendChild(mkflag("Your works",D.works+" clicks"));
+  sp.appendChild(mkflag("Hidden by Google",D.hidden+" clicks"));
+
+  mktable(document.getElementById("dq"),
+    [{t:"Search"},{t:"Clicks",num:1},{t:"Shown",num:1},{t:"Avg pos",num:1}],
+    D.topQueries.map(function(q){var tr=document.createElement("tr");tr.appendChild(td(q[0]));tr.appendChild(td(q[1],"num"));tr.appendChild(td(q[2].toLocaleString(),"num"));tr.appendChild(td(q[3],"num"));return tr;}));
+
+  mktable(document.getElementById("dnn"),
+    [{t:"Search"},{t:"Shown",num:1},{t:"Clicks",num:1},{t:"Avg pos",num:1}],
+    D.nonName.map(function(q){var tr=document.createElement("tr");tr.appendChild(td(q[0]));tr.appendChild(td(q[1].toLocaleString(),"num"));tr.appendChild(td(q[2],"num"));tr.appendChild(td(q[3],"num"));return tr;}));
+
+  mktable(document.getElementById("dp"),
+    [{t:"Page"},{t:"Clicks",num:1},{t:"Shown",num:1},{t:"Avg pos",num:1}],
+    D.pages.map(function(p){var tr=document.createElement("tr");var c=document.createElement("td");c.textContent=p[0]+(p[4]?"  (old)":"");tr.appendChild(c);tr.appendChild(td(p[1],"num"));tr.appendChild(td(p[2].toLocaleString(),"num"));tr.appendChild(td(p[3],"num"));return tr;}));
+
+  mktable(document.getElementById("dc"),
+    [{t:"Country"},{t:"Clicks",num:1},{t:"Shown",num:1}],
+    D.countries.map(function(c){var tr=document.createElement("tr");tr.appendChild(td(c[0]));tr.appendChild(td(c[1],"num"));tr.appendChild(td(c[2].toLocaleString(),"num"));return tr;}));
+
+  var ga=document.getElementById("dga"), g=D.ga;
+  var stat=el("div","flags");
+  stat.appendChild(mkflag("Visitors",String(g.visitors)));
+  stat.appendChild(mkflag("Page views",String(g.pageviews)));
+  stat.appendChild(mkflag("Sessions",String(g.sessions)));
+  ga.appendChild(stat);
+  ga.appendChild(el("div","grp","Where visitors came from"));
+  mktable(ga,[{t:"Source"},{t:"Visits",num:1}],g.sources.map(function(s){var tr=document.createElement("tr");tr.appendChild(td(s[0]));tr.appendChild(td(s[1],"num"));return tr;}));
+  ga.appendChild(el("div","grp","Most viewed pages"));
+  mktable(ga,[{t:"Page"},{t:"Views",num:1}],g.pages.map(function(s){var tr=document.createElement("tr");tr.appendChild(td(s[0]));tr.appendChild(td(s[1],"num"));return tr;}));
+  ga.appendChild(el("div","grp","Top countries"));
+  mktable(ga,[{t:"Country"},{t:"Visitors",num:1}],g.countries.map(function(s){var tr=document.createElement("tr");tr.appendChild(td(s[0]));tr.appendChild(td(s[1],"num"));return tr;}));
+  ga.appendChild(el("p","note","GA4 covers "+g.window+". Note the 2 visits tagged AI Assistant, your first measurable referrals from AI tools."));
+
+  var O=AUTO_OTTERLY;
+  if(O){
+    document.getElementById("ostand").textContent=O.window+". "+O.standing;
+    var os=document.getElementById("osplit");
+    if(os){os.appendChild(mkflag("Total mentions",String(O.totalMentions)));os.appendChild(mkflag("From prompts naming you",O.brandedMentions+", inflates the score"));os.appendChild(mkflag("From discovery prompts",String(O.discoveryMentions)));}
+    mktable(document.getElementById("orank"),
+      [{t:"Artist"},{t:"Mentions",num:1},{t:"Coverage %",num:1},{t:"Share %",num:1},{t:"Avg pos",num:1}],
+      O.ranking.map(function(a){var tr=document.createElement("tr");var n=document.createElement("td");n.textContent=a[0];if(a[0]===O.you)n.style.fontWeight="700";tr.appendChild(n);tr.appendChild(td(a[1],"num"));tr.appendChild(td(a[2],"num"));tr.appendChild(td(a[3],"num"));tr.appendChild(td(a[4]==null?"-":a[4],"num"));return tr;}));
+    mktable(document.getElementById("ocite"),
+      [{t:"Cited page"},{t:"Times",num:1}],
+      O.citations.map(function(c){var tr=document.createElement("tr");tr.appendChild(td(c[0]));tr.appendChild(td(c[1],"num"));return tr;}));
+    mktable(document.getElementById("ohit"),
+      [{t:"Prompt"},{t:"Your mentions",num:1}],
+      O.promptsHit.map(function(c){var tr=document.createElement("tr");tr.appendChild(td(c[0]));tr.appendChild(td(c[1],"num"));return tr;}));
+    var ob=document.getElementById("obranded");
+    if(ob&&O.branded){ob.textContent="Two prompts named you directly and are kept out of the discovery count. "+O.branded.map(function(b){return b[0]+" ("+b[1]+")";}).join("  ·  ");}
+    document.getElementById("omiss").textContent=O.promptsMissed.join("  ·  ");
+  }
+
+  var ae=document.getElementById("daeo");
+  ae.appendChild(mkflag("Visits from AI assistants (GA4)","2 in the last 7 days"));
+  ae.appendChild(mkflag("Bing Copilot citations","Not pulled yet (Bing Webmaster)"));
+  ae.appendChild(mkflag("Google AI Overviews","Check by hand for now"));
+}
+
+/* ---- TABS ---- */
+document.querySelectorAll(".tab").forEach(function(b){
+  b.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(x){x.classList.remove("on");});
+    document.querySelectorAll(".panel").forEach(function(x){x.classList.remove("on");});
+    b.classList.add("on");
+    document.getElementById(b.dataset.tab).classList.add("on");
+    if(b.dataset.tab==="trends")setTimeout(buildTrends,30);
+    if(b.dataset.tab==="detail")setTimeout(buildDetail,30);
+  });
+});
+</script>
+</body>
+</html>

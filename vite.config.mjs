@@ -1,5 +1,5 @@
 import { existsSync, readdirSync } from "node:fs";
-import { cp, mkdir } from "node:fs/promises";
+import { copyFile, mkdir, readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import { defineConfig } from "vite";
 import {
@@ -7,7 +7,7 @@ import {
   NEWSLETTER_HEADERS,
   readNodeJsonBody,
   subscribeToStudioUpdates,
-} from "./lib/mailerlite-subscribe.js";
+} from "./lib/brevo-subscribe.js";
 
 const root = process.cwd();
 
@@ -184,6 +184,7 @@ const htmlEntries = Object.fromEntries(
     .filter((file) => file.endsWith(".html"))
     .filter((file) => !file.includes(".tmp."))
     .filter((file) => !file.includes(" v1"))
+    .filter((file) => !/^newsletter-.*-email\.html$/i.test(file))
     .map((file) => [
       file.replace(/\.html$/, "").replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "") || "index",
       file,
@@ -226,17 +227,34 @@ function copyStaticFiles() {
         const source = path.resolve(root, target);
         if (!existsSync(source)) continue;
 
-        await cp(source, path.resolve(outDir, target), {
-          recursive: true,
-          force: true,
-          filter: (sourcePath) => {
-            const relative = path.relative(root, sourcePath);
-            return !excludedPathParts.some((excluded) => relative.startsWith(excluded));
-          },
+        await copyStaticPath(source, path.resolve(outDir, target), (sourcePath) => {
+          const relative = path.relative(root, sourcePath);
+          return !excludedPathParts.some((excluded) => relative.startsWith(excluded));
         });
       }
     },
   };
+}
+
+async function copyStaticPath(source, destination, filter) {
+  if (!filter(source)) return;
+
+  const info = await stat(source);
+  if (info.isDirectory()) {
+    await mkdir(destination, { recursive: true });
+    const entries = await readdir(source, { withFileTypes: true });
+    for (const entry of entries) {
+      await copyStaticPath(
+        path.join(source, entry.name),
+        path.join(destination, entry.name),
+        filter,
+      );
+    }
+    return;
+  }
+
+  await mkdir(path.dirname(destination), { recursive: true });
+  await copyFile(source, destination);
 }
 
 function cleanRouteDevServer() {

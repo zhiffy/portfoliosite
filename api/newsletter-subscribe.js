@@ -3,7 +3,7 @@ import {
   NEWSLETTER_HEADERS,
   readNodeJsonBody,
   subscribeToStudioUpdates,
-} from "../lib/mailerlite-subscribe.js";
+} from "../lib/brevo-subscribe.js";
 
 function sendJson(response, status, body) {
   response.status(status);
