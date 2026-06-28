@@ -212,3 +212,15 @@ P5. **Her own voice** — The piece includes substantial direct quotes or interv
 - Ocula and Artnet coverage of her institutional work should be fast-tracked to Selected review; they carry weight with collectors and curators.
 - When a piece specifically about Meet Eva Here, After Ophelia, or Conditional runs at any credible outlet, it should immediately go to Selected review.
 - Selected is a curated argument about the practice as it stands today, not a greatest-hits reel from every era. NFT-origin pieces stay in the ledger as honest history; Selected should reflect the full arc but lean toward where the work has arrived.
+
+## Email (Brevo studio letters and the welcome)
+
+The studio letters and the welcome email are built as standalone HTML in the repo (`newsletter-YYYYmon-email.html`, `welcome-email.html`), pasted into Brevo, and sent from the verified sender Shavonne Wong Studio (studio@shavonnewong.art). The list is single opt-in; the welcome is a Brevo automation template that fires on signup.
+
+E1. **Keep emails lean; cut anything that only decorates.** Shavonne strips elements that add nothing: eyebrow or kicker labels above a heading (no "Welcome", no "One more thing", no "Update" eyebrow when it can fold into the title), the right-side header tag ("Studio updates" or a date), item index counters on events ("01 / 04"), image captions that just restate the obvious, a redundant second call-to-action button (keep one), and redundant nav links in the footer (one footer link, not two). Let the wordmark, the writing, and whitespace carry it. When unsure whether a label earns its place, cut it.
+
+E2. **Email images are jpg or png, never webp.** Many clients (Outlook on Windows and others) do not render webp, so a webp logo or photo shows blank even though it works on the site. The site rightly uses webp for speed, so for every letter, convert each webp the email references to jpg (sized for email, longest side around 1200px), keep the jpg beside the webp in the same `/assets/` folder, and point the email at the jpg. New jpgs must be deployed before the email is sent, since email pulls images from the live site.
+
+E3. **Email logo is `/assets/brand/wordmark-slate.png`**, the slate wordmark on the Haze header, never the webp. A png alternate already sits beside the webp in `/assets/brand/`.
+
+E4. **Same voice and punctuation rules as all site copy** (V1): warm and understated, "Thank you" sign-off, no em or en dashes, sentence case, none of the banned words.

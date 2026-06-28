@@ -333,6 +333,28 @@
 
 
     <!-- ============================================================
+         STAY IN TOUCH — studio updates signup (pilot)
+         ============================================================ -->
+    <aside class="nl-subscribe nl-wrap" aria-label="Subscribe to studio updates">
+      <div class="nl-subscribe-copy">
+        <span class="nl-subscribe-eyebrow">Studio updates</span>
+        <h2 class="nl-subscribe-title">New work, exhibitions, and edition drops.</h2>
+        <p class="nl-subscribe-line">Subscribe to the studio letter and the next one comes straight to you.</p>
+      </div>
+      <div class="nl-subscribe-action">
+        <p class="nl-subscribe-feedback nl-subscribe-feedback--success" data-fs-success role="status" aria-live="polite"></p>
+        <p class="nl-subscribe-feedback nl-subscribe-feedback--error" data-fs-error role="alert"></p>
+        <form class="nl-subscribe-form" data-newsletter-form action="/api/newsletter-subscribe" method="POST">
+          <label class="nl-subscribe-field">
+            <span class="nl-subscribe-field-label">Email address</span>
+            <input class="nl-subscribe-input" type="email" name="email" inputmode="email" autocomplete="email" required placeholder="you@example.com" aria-label="Email address">
+          </label>
+          <button type="submit" class="nl-subscribe-submit">Subscribe</button>
+        </form>
+      </div>
+    </aside>
+
+    <!-- ============================================================
          06, FOOTER LINKS
          ============================================================ -->
     <nav class="nl-foot nl-wrap" aria-label="More">

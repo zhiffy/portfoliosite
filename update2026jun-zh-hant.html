@@ -32,6 +32,25 @@
   <link rel="stylesheet" href="/scroll-pages.css?v=20260620-video-embed">
   <link rel="stylesheet" href="/update2025jun-redesign.css?v=20260618-mobile-hero">
   <link rel="stylesheet" href="/update-archive.css?v=20260615-title-scale">
+  <!-- Studio-updates signup pilot (2026-06-27). Page-scoped; promote to update-archive.css on rollout. -->
+  <style>
+    .nl-archive-rich .nl-subscribe{margin-top:clamp(40px,5vw,80px);padding-top:clamp(30px,3.6vw,52px);border-top:1px solid var(--hairline-strong);display:grid;grid-template-columns:1fr;gap:clamp(20px,2.4vw,30px);}
+    .nl-archive-rich .nl-subscribe-eyebrow{display:block;font-size:12px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;color:var(--text-2);}
+    .nl-archive-rich .nl-subscribe-title{margin:clamp(12px,1.4vw,18px) 0 0;font-style:italic;font-weight:300;font-size:clamp(28px,3.2vw,44px);line-height:1.08;letter-spacing:-.01em;color:var(--text);text-wrap:balance;}
+    .nl-archive-rich .nl-subscribe-line{margin:clamp(10px,1.1vw,15px) 0 0;font-size:clamp(15px,1vw,17px);line-height:1.55;color:var(--text-2);max-width:46ch;}
+    .nl-archive-rich .nl-subscribe-form{display:flex;flex-wrap:wrap;gap:12px;align-items:end;}
+    .nl-archive-rich .nl-subscribe-field{flex:1 1 240px;display:grid;gap:8px;min-width:0;}
+    .nl-archive-rich .nl-subscribe-field-label{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-2);}
+    .nl-archive-rich .nl-subscribe-input{width:100%;box-sizing:border-box;padding:13px 14px;font:inherit;font-size:15px;color:var(--text);background:var(--bg);border:1px solid var(--hairline-strong);border-radius:0;}
+    .nl-archive-rich .nl-subscribe-input:focus{outline:none;border-color:var(--text);}
+    .nl-archive-rich .nl-subscribe-submit{flex:0 0 auto;min-height:48px;padding:0 26px;font:inherit;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--bg);background:var(--text);border:1px solid var(--text);cursor:pointer;transition:background 160ms ease,color 160ms ease;}
+    .nl-archive-rich .nl-subscribe-submit:hover{background:var(--bg);color:var(--text);}
+    .nl-archive-rich .nl-subscribe-feedback{margin:0 0 10px;font-size:14px;line-height:1.5;}
+    .nl-archive-rich .nl-subscribe-feedback:empty{display:none;}
+    .nl-archive-rich .nl-subscribe-feedback--error{color:#b3261e;}
+    @media (min-width:901px){.nl-archive-rich .nl-subscribe{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;column-gap:clamp(40px,5vw,96px);}}
+    @media (max-width:760px){.nl-archive-rich .nl-subscribe{padding-left:16px;padding-right:16px;}}
+  </style>
     <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -85,7 +104,7 @@
       <a href="/#hero" data-i18n="nav.home">首頁</a>
       <a href="/about/" data-i18n="nav.about">關於</a>
       <a href="/works/zh-hant/" data-i18n="nav.works">作品</a>
-      <a href="/writing/zh-hant/" class="is-active" data-i18n="nav.writing">文字</a>
+      <a href="/writing/" class="is-active" data-i18n="nav.writing">文字</a>
       <a href="/press/" data-i18n="nav.press">媒體</a>
       <a href="/contact/zh-hant/" data-i18n="nav.contact">聯絡</a>
     </nav>
@@ -439,5 +458,6 @@
   <script src="/press-hover.js?v=20260621-hover-delegation" defer></script>
   <script src="/fluid-renderer.js?v=20260611-ripple-v7" defer></script>
   <script src="/gallery-scroll.js?v=20260614-gallery2" defer></script>
+  <script src="/subscribe.js?v=20260618-forms"></script>
 </body>
 </html>

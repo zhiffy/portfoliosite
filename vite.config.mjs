@@ -184,7 +184,7 @@ const htmlEntries = Object.fromEntries(
     .filter((file) => file.endsWith(".html"))
     .filter((file) => !file.includes(".tmp."))
     .filter((file) => !file.includes(" v1"))
-    .filter((file) => !/^newsletter-.*-email\.html$/i.test(file))
+    .filter((file) => !/^(?:newsletter-.*-email|welcome-email)\.html$/i.test(file))
     .map((file) => [
       file.replace(/\.html$/, "").replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "") || "index",
       file,

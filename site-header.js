@@ -322,7 +322,7 @@
         '.sw-subscribe-cta__close{appearance:none;border:0;background:transparent;color:#D0D3EC;font:inherit;font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:8px 2px;cursor:pointer}' +
         '.sw-subscribe-cta__link:hover .sw-subscribe-cta__button{background:#EDEDF4;color:#18192B}' +
         '.sw-subscribe-cta__close:hover{color:#fff}' +
-        '@media(max-width:640px){.sw-subscribe-cta{display:none}}' +
+        '@media(max-width:640px){.sw-subscribe-cta{left:10px;right:10px;bottom:10px;max-width:none;padding:10px 12px;gap:10px}.sw-subscribe-cta__title{font-size:13px}.sw-subscribe-cta__kicker{font-size:9px}.sw-subscribe-cta__button{min-height:32px;padding:0 12px}}' +
         '@media(prefers-reduced-motion:reduce){.sw-subscribe-cta{transition:none}}';
       document.head.appendChild(style);
     }

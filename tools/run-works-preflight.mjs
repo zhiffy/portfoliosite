@@ -26,7 +26,7 @@ function warn(file, message) {
 function htmlFiles() {
   return fs.readdirSync(root)
     .filter((name) => name.endsWith('.html'))
-    .filter((name) => !/^newsletter-.*-email\.html$/i.test(name))
+    .filter((name) => !/^(?:newsletter-.*-email|welcome-email)\.html$/i.test(name))
     .sort();
 }
 
