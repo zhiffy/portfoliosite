@@ -657,10 +657,12 @@
       setHeroPinTransitions(false);
       if (erasPanel) erasPanel.style.setProperty('--eras-copy-y', '0px');
       setAboutProgress(1);
+      setWritingListMode();
       applyHeroMediaLayout();
       return;
     }
 
+    if (lastWritingIdx < 0) setActiveWriting(0);
     applyHeroMediaLayout();
     heroSweepGeom = null;
 
@@ -705,7 +707,7 @@
       ? clamp(aboutPanel.offsetLeft, 0, baseTotalScroll)
       : 0;
 
-    statementPinDistance = statementPanel ? Math.max(vh * 1.45, 1320) : 0;
+    statementPinDistance = statementPanel ? Math.max(vh * 1.15, 1080) : 0;
     statementPinStart = aboutPanel
       ? aboutPinStart
       : (statementPanel ? clamp(statementPanel.offsetLeft, 0, baseTotalScroll) : 0);
@@ -957,7 +959,7 @@
     const windowH = Math.max(1, statementBody.clientHeight || vh * 0.45);
     const contentH = Math.max(windowH, statementBody.scrollHeight || windowH);
     const startY = Math.max(64, windowH * 0.09);
-    const endY = windowH * 0.72 - contentH;
+    const endY = windowH * 0.88 - contentH;
     const y = lerp(startY, endY, local);
     statementPanel.style.setProperty('--statement-copy-y', y.toFixed(2) + 'px');
     statementPanel.style.setProperty('--statement-copy-progress', local.toFixed(4));
@@ -995,8 +997,30 @@
     update();
   }
 
+  function setWritingListMode() {
+    if (!writingEls.length) return;
+    if (writingPanel) delete writingPanel.dataset.writingDir;
+    writingEls.forEach((essay, index) => {
+      essay.classList.remove('is-on', 'is-entering', 'is-exiting');
+      essay.removeAttribute('role');
+      essay.removeAttribute('tabindex');
+      essay.removeAttribute('aria-label');
+      essay.setAttribute('aria-hidden', 'false');
+      essay.dataset.previewSlot = String(index + 1);
+    });
+    writingDots.forEach((dot) => {
+      dot.classList.remove('is-on');
+      dot.removeAttribute('aria-current');
+    });
+    lastWritingIdx = -1;
+  }
+
   function setActiveWriting(index) {
     if (!writingEls.length) return;
+    if (narrow) {
+      setWritingListMode();
+      return;
+    }
     const safeIndex = clamp(index, 0, writingEls.length - 1);
     if (safeIndex === lastWritingIdx) return;
     const previousIdx = lastWritingIdx;

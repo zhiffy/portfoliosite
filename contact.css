@@ -20,12 +20,30 @@
   background: #C7BFE9;
 }
 
+/* ── Shared content width ─────────────────────────────────
+   Single source of truth for how wide the contact block is.
+   Both the standalone page (.ct-main) and the homepage panel
+   (.ct-home-shell, see below) read this so they render identically. */
+:root { --ct-shell: 1560px; }
+
 /* ── Standalone page container ───────────────────────────── */
 .ct-main {
-  max-width: 1120px;
+  max-width: var(--ct-shell);
   margin: 0 auto;
   padding: calc(var(--nav-h) + 58px) var(--pad) clamp(36px, 5vh, 58px);
   min-height: 100vh;
+}
+
+/* ── Homepage panel parity ────────────────────────────────
+   The homepage contact panel reuses the same ct-* markup inside
+   .sn-contact > .sn-contact-inner.ct-home-shell. Match its width and
+   side gutters to the standalone page so the two read identically. */
+.sn-contact-inner.ct-home-shell {
+  max-width: var(--ct-shell);
+}
+.sn-contact:has(.ct-home-shell) {
+  padding-left: var(--pad);
+  padding-right: var(--pad);
 }
 
 /* ── Outer layout: stacks ct-top (full-width) then ct-body ─ */
@@ -79,8 +97,8 @@
 /* ── Two-column body: notes | form ──────────────────────── */
 .ct-body {
   display: grid;
-  grid-template-columns: minmax(200px, 0.52fr) minmax(320px, 1.48fr);
-  column-gap: clamp(42px, 6.5vw, 84px);
+  grid-template-columns: minmax(240px, 0.62fr) minmax(360px, 1.38fr);
+  column-gap: clamp(42px, 5vw, 76px);
   align-items: start;
 }
 
@@ -104,8 +122,8 @@
 
 /* ── Elsewhere links ─────────────────────────────────────── */
 .ct-links {
-  padding: 0 0 clamp(22px, 3vh, 32px);
-  border-bottom: 0.5px solid rgba(237, 237, 244, 0.09);
+  padding: 0 0 clamp(20px, 3vh, 30px);
+  border-bottom: 0; /* highlighted subscribe card below carries the separation */
 }
 
 .ct-link-list {
@@ -155,33 +173,42 @@
   color: #C7BFE9;
 }
 
-/* ── Studio Notes newsletter ─────────────────────────────── */
+/* ── Studio Notes newsletter (highlighted accent panel) ──── */
 .ct-sub {
-  padding: clamp(22px, 3vh, 32px) 0 0;
+  margin-top: clamp(20px, 2.6vh, 30px);
+  padding: clamp(18px, 1.5vw, 26px);
+  background: rgba(237, 237, 244, 0.055);
+  border: 0.5px solid rgba(237, 237, 244, 0.18);
+}
+
+/* lift the existing label so it reads as the panel's heading */
+.ct-sub .ct-note-label {
+  font-size: 10px;
+  color: rgba(237, 237, 244, 0.82);
 }
 
 .ct-sub-tagline {
-  margin: 0 0 13px;
+  margin: 0 0 14px;
   font-size: 13px;
   line-height: 1.6;
-  color: rgba(237, 237, 244, 0.46);
+  color: rgba(237, 237, 244, 0.6);
 }
 
 .ct-sub-form {
   display: flex;
-  border: 0.5px solid rgba(237, 237, 244, 0.18);
+  border: 0.5px solid rgba(237, 237, 244, 0.26);
   transition: border-color 200ms ease;
 }
 
 .ct-sub-form:focus-within {
-  border-color: rgba(199, 191, 233, 0.46);
+  border-color: rgba(199, 191, 233, 0.55);
 }
 
 .ct-sub-input {
   flex: 1 1 auto;
   min-width: 0;
   border: 0;
-  background: rgba(237, 237, 244, 0.04);
+  background: rgba(24, 25, 43, 0.5); /* recessed field against the raised card */
   color: #EDEDF4;
   padding: 11px 12px;
   font: inherit;
@@ -201,22 +228,21 @@
 .ct-sub-btn {
   flex: 0 0 auto;
   border: 0;
-  border-left: 0.5px solid rgba(237, 237, 244, 0.18);
-  background: transparent;
-  color: rgba(237, 237, 244, 0.62);
-  padding: 0 13px;
+  background: #EDEDF4; /* filled by default so the newsletter CTA stands out */
+  color: #18192B;
+  padding: 0 18px;
   font: inherit;
   font-size: 9px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: background 160ms ease, color 160ms ease;
 }
 
 .ct-sub-btn:hover,
 .ct-sub-btn:focus-visible {
-  background: #EDEDF4;
+  background: rgba(237, 237, 244, 0.78);
   color: #18192B;
   outline: 0;
 }
@@ -403,8 +429,6 @@
 
   .ct-sub-btn {
     min-height: 42px;
-    border-left: 0;
-    border-top: 0.5px solid rgba(237, 237, 244, 0.18);
   }
 
   .ct-submit {
