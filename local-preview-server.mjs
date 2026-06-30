@@ -6,7 +6,7 @@ import {
   NEWSLETTER_HEADERS,
   readNodeJsonBody,
   subscribeToStudioUpdates,
-} from "./lib/mailerlite-subscribe.js";
+} from "./lib/brevo-subscribe.js";
 
 const root = process.cwd();
 const port = Number(process.argv[2] || 4174);

@@ -5,8 +5,8 @@ Hosting-specific launch notes live in `HOSTING_HANDOFF.md`.
 
 ## Newsletter And Contact
 
-- Newsletter forms post to `/api/newsletter-subscribe`, which creates or updates the address in MailerLite's main subscriber list.
-- Set `MAILERLITE_API_KEY` in the deploy host environment before testing live newsletter signups.
+- Newsletter forms post to `/api/newsletter-subscribe`, which creates or updates the address in Brevo's studio list.
+- Set `BREVO_API_KEY` and `BREVO_LIST_ID` in the deploy host environment before testing live newsletter signups.
 - The contact page form posts to `/api/contact` (a Netlify function at `netlify/functions/contact.js`), which relays to Google Sheets via the `CONTACT_SHEET_WEBHOOK_URL` environment variable. Do not reintroduce Formspree.
 
 ## Quarterly
