@@ -2,7 +2,7 @@ import {
   NEWSLETTER_ALLOWED_METHODS,
   NEWSLETTER_HEADERS,
   subscribeToStudioUpdates,
-} from "../../lib/brevo-subscribe.js";
+} from "../../lib/mailerlite-subscribe.js";
 
 export default async (request) => {
   if (request.method === "OPTIONS") {
