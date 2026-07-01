@@ -119,7 +119,7 @@ const html = `<!doctype html>
 </head>
 <body>
   <div class="caption">
-    <span class="line-1">My website is also<br>newly revamped!</span>
+    <span class="line-1">My website is<br>newly revamped!</span>
     <span class="line-2">Subscribe to my soon to be<br>released newsletter at</span>
     <span class="site">shavonnewong.art <span class="sparkle">✨</span></span>
   </div>

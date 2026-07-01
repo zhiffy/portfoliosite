@@ -61,14 +61,14 @@ async function pageReady(page) {
   await page.waitForLoadState("domcontentloaded");
   await page.waitForLoadState("networkidle", { timeout: 900 }).catch(() => {});
   await page.evaluate(async () => {
-    const nearbyImages = Array.from(document.images).filter((img) => {
-      const rect = img.getBoundingClientRect();
-      return rect.top < window.innerHeight * 1.25;
+    document.querySelectorAll("img[loading='lazy']").forEach((img) => {
+      img.loading = "eager";
     });
+    const images = Array.from(document.images);
     await Promise.race([
       Promise.all([
         document.fonts?.ready || Promise.resolve(),
-        Promise.all(nearbyImages.map((img) => {
+        Promise.all(images.map((img) => {
           if (img.complete) return Promise.resolve();
           return new Promise((resolve) => {
             img.addEventListener("load", resolve, { once: true });
@@ -76,7 +76,7 @@ async function pageReady(page) {
           });
         })),
       ]),
-      new Promise((resolve) => setTimeout(resolve, 900)),
+      new Promise((resolve) => setTimeout(resolve, 1800)),
     ]);
     document.querySelectorAll("video").forEach((video) => {
       video.muted = true;
@@ -208,13 +208,11 @@ async function recordClip(browser, slug, action) {
 const clips = {
   async homepage(page) {
     await go(page, "/");
-    await sleep(500);
     await scrollWholePage(page, 15500, "linear");
   },
 
   async about(page) {
     await go(page, "/about/");
-    await sleep(500);
     const endY = await page.evaluate(() => {
       const brief = document.querySelector(".abv-brief");
       const maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
@@ -226,7 +224,6 @@ const clips = {
 
   async works(page) {
     await go(page, "/works/");
-    await sleep(550);
     await scrollToSelector(page, ".wk2-tabbar", 86, 2400);
     await clickAndWait(page, "#tab-single", 1100);
     await page.waitForSelector("#panel-single .wk2-tile[data-single-work-id]", { timeout: 8000 }).catch(() => {});
@@ -240,20 +237,17 @@ const clips = {
     await meetEvaTile.click({ force: true });
     await page.waitForURL("**/works/meet-eva-here/**", { timeout: 8000 }).catch(() => {});
     await pageReady(page);
-    await sleep(900);
     await scrollWholePage(page, 4800, "easeInOut");
   },
 
   async writing(page) {
     await go(page, "/writing/");
-    await sleep(550);
     const firstUpdate = await page.waitForSelector('.wr-card[href*="update2026jun"]', { timeout: 8000 });
     await scrollToElement(page, firstUpdate, 120, 1800);
     await sleep(650);
     await firstUpdate.click({ force: true });
     await page.waitForURL("**/update2026jun/**", { timeout: 8000 }).catch(() => {});
     await pageReady(page);
-    await sleep(850);
     await scrollWholePage(page, 7600, "easeInOut");
   },
 };

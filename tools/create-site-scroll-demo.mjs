@@ -46,8 +46,8 @@ const finalVideo = path.join(
 const edgePath = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
 
 const route = [
-  { path: "/", label: "Home", dwell: 450, scrollMs: 17000, easing: "linear" },
-  { path: "/about/", label: "About", dwell: 500 },
+  { path: "/", label: "Home", dwell: 0, scrollMs: 17000, easing: "linear" },
+  { path: "/about/", label: "About", dwell: 0 },
 ];
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -193,7 +193,6 @@ async function hoverExhibitions(page) {
 
 async function recordAboutPage(page) {
   await scrollToSelector(page, "#exhibitions", 100, 5200);
-  await sleep(350);
   await hoverExhibitions(page);
   const finalY = await page.evaluate(() => {
     const brief = document.querySelector(".abv-brief");
@@ -276,7 +275,6 @@ try {
     } else {
       await easeScroll(page, item.scrollMs, item.easing);
     }
-    await sleep(650);
   }
 
   const rawPathPromise = page.video().path();
