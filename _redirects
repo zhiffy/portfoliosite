@@ -50,6 +50,10 @@
 /after-ophelia-ophelia-retold.html /works/after-ophelia/#ophelia-retold 301!
 /after-ophelia-ophelia-reassembled.html /works/after-ophelia/#ophelia-reassembled 301!
 
+# Orphan legacy URLs with no live target (found 404/unindexed in GSC 2026-07-04).
+/main / 301!
+/cart / 301!
+
 # Existing Squarespace project URLs.
 /digital-art-catalog /works/ 301!
 /digital-art-catalog/ /works/ 301!
