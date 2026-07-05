@@ -405,7 +405,12 @@
 /nfts/v/the-loneliness-of-an-orchid https://superrare.com/0x6583afe5f8eda8178877fb819b63c6f605c4f692/the-loneliness-of-an-orchid-28 301!
 /nfts/v/the-mirror-world https://superchief.io/series/0x6d15a7192f8e9ad55a72b997df0986d712c31cbf/54 301!
 /nfts/v/uplift https://superrare.com/artwork-v2/uplift-25511 301!
+/nfts/v/year-of-the-tiger /works/#tab=single 301!
+/nfts/v/year-of-the-tiger/ /works/#tab=single 301!
 /nfts/v/year-of-the-tiger-2 https://tiger2.shavonnewong.art 301!
 /nfts/v/year-of-the-tiger-3 https://tiger3.shavonnewong.art 301!
 
 # Catch-all safety nets so no legacy /nfts or /projects URL can 404
+/nfts/v/* /works/#tab=single 301!
+/nfts/* /works/available/ 301!
+/projects/* /works/ 301!
