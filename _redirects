@@ -1,6 +1,6 @@
 # Clean Works routes. Netlify serves the backing static HTML files while
 # the browser and search engines keep the stable catalog URLs.
-/works/ /works.html 200
+/works/ /works.html 200!
 /works/available/ /works-available.html 200
 /works/conditional/ /conditional.html 200
 /works/after-ophelia/ /after-ophelia.html 200

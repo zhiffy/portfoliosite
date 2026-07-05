@@ -85,7 +85,7 @@ function routeMapFromRedirects() {
     const line = raw.trim();
     if (!line || line.startsWith('#')) continue;
     const parts = line.split(/\s+/);
-    if (parts.length >= 3 && parts[2] === '200') routes.set(parts[0], parts[1]);
+    if (parts.length >= 3 && /^200!?$/.test(parts[2])) routes.set(parts[0], parts[1]);
   }
   routes.set('/', '/index.html');
   return routes;
