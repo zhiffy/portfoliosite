@@ -408,7 +408,4 @@
 /nfts/v/year-of-the-tiger-2 https://tiger2.shavonnewong.art 301!
 /nfts/v/year-of-the-tiger-3 https://tiger3.shavonnewong.art 301!
 
-# Catch-all safety nets so no legacy /nfts or /projects URL can 404 (specific rules above win first).
-/nfts/v/* /works/#tab=single 301!
-/nfts/* /works/available/ 301!
-/projects
+# Catch-all safety nets so no legacy /nfts or /projects URL can 404
