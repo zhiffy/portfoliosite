@@ -359,3 +359,21 @@
     });
   })();
 })();
+
+/* Accessibility: honour prefers-reduced-motion for ambient autoplay
+   video loops on interior pages. Explicit user-initiated playback
+   (lightbox, theatre, play buttons) is unaffected. Added 2026-07-05. */
+(function () {
+  var mq;
+  try { mq = window.matchMedia('(prefers-reduced-motion: reduce)'); } catch (e) { return; }
+  function apply() {
+    if (!mq.matches) return;
+    document.querySelectorAll('video[autoplay]').forEach(function (v) {
+      v.removeAttribute('autoplay');
+      if (!v.paused) v.pause();
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply);
+  else apply();
+  if (typeof mq.addEventListener === 'function') mq.addEventListener('change', apply);
+})();
