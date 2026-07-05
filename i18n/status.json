@@ -1,15 +1,15 @@
 {
   "about": {
     "en": {
-      "hash": "0cb37003697cc865"
+      "hash": "abede7494dd8cee7"
     },
     "zh-Hans": {
       "status": "reviewed",
-      "src": "0cb37003697cc865"
+      "src": "abede7494dd8cee7"
     },
     "zh-Hant": {
       "status": "reviewed",
-      "src": "0cb37003697cc865"
+      "src": "abede7494dd8cee7"
     }
   },
   "contact": {
@@ -309,6 +309,32 @@
     "zh-Hant": {
       "status": "machine",
       "src": "201f0bb2ea9dd4e8"
+    }
+  },
+  "year-of-the-tiger": {
+    "en": {
+      "hash": "26e5d1ce6048fff1"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "26e5d1ce6048fff1"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "26e5d1ce6048fff1"
+    }
+  },
+  "shu-uemura": {
+    "en": {
+      "hash": "43e7cfb3045738f7"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "43e7cfb3045738f7"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "43e7cfb3045738f7"
     }
   }
 }

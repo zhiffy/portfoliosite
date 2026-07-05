@@ -15,6 +15,8 @@
 /works/love-is-love/ /love-is-love.html 200
 /works/vogue-singapore/ /vogue-singapore.html 200
 /works/6529-meme-card/ /6529-meme-card.html 200
+/works/year-of-the-tiger/ /year-of-the-tiger.html 200
+/works/shu-uemura/ /shu-uemura.html 200
 /works/by-proxy/ /by-proxy.html 200
 # Child work pages consolidated into their parent project pages (2026-06-19).
 /works/meet-eva-here/chatbot/ /works/meet-eva-here/#chatbot 301!
@@ -43,6 +45,8 @@
 /love-is-love.html /works/love-is-love/ 301!
 /vogue-singapore.html /works/vogue-singapore/ 301!
 /6529-meme-card.html /works/6529-meme-card/ 301!
+/year-of-the-tiger.html /works/year-of-the-tiger/ 301!
+/shu-uemura.html /works/shu-uemura/ 301!
 /by-proxy.html /works/by-proxy/ 301!
 /meet-eva-here-chatbot.html /works/meet-eva-here/#chatbot 301!
 /meet-eva-here-diary.html /works/meet-eva-here/#diary 301!
@@ -83,6 +87,10 @@
 /projects/vogue-singapore/ /works/vogue-singapore/ 301!
 /projects/6529-meme-card /works/6529-meme-card/ 301!
 /projects/6529-meme-card/ /works/6529-meme-card/ 301!
+/projects/yearofthetiger /works/year-of-the-tiger/ 301!
+/projects/yearofthetiger/ /works/year-of-the-tiger/ 301!
+/shuuemura /works/shu-uemura/ 301!
+/shuuemura/ /works/shu-uemura/ 301!
 
 # Existing Squarespace NFT catalog URLs from the live sitemap.
 /nfts /works/available/ 301!
@@ -371,6 +379,22 @@
 /update2023jan-zh-hant.html /update2023jan/zh-hant/ 301!
 /zh-hant/update2023jan/ /update2023jan/zh-hant/ 301!
 /zh-hant-update2023jan.html /update2023jan/zh-hant/ 301!
+/works/year-of-the-tiger/zh-hans/ /year-of-the-tiger-zh-hans.html 200
+/year-of-the-tiger-zh-hans.html /works/year-of-the-tiger/zh-hans/ 301!
+/zh-hans/year-of-the-tiger/ /works/year-of-the-tiger/zh-hans/ 301!
+/zh-hans-year-of-the-tiger.html /works/year-of-the-tiger/zh-hans/ 301!
+/works/year-of-the-tiger/zh-hant/ /year-of-the-tiger-zh-hant.html 200
+/year-of-the-tiger-zh-hant.html /works/year-of-the-tiger/zh-hant/ 301!
+/zh-hant/year-of-the-tiger/ /works/year-of-the-tiger/zh-hant/ 301!
+/zh-hant-year-of-the-tiger.html /works/year-of-the-tiger/zh-hant/ 301!
+/works/shu-uemura/zh-hans/ /shu-uemura-zh-hans.html 200
+/shu-uemura-zh-hans.html /works/shu-uemura/zh-hans/ 301!
+/zh-hans/shu-uemura/ /works/shu-uemura/zh-hans/ 301!
+/zh-hans-shu-uemura.html /works/shu-uemura/zh-hans/ 301!
+/works/shu-uemura/zh-hant/ /shu-uemura-zh-hant.html 200
+/shu-uemura-zh-hant.html /works/shu-uemura/zh-hant/ 301!
+/zh-hant/shu-uemura/ /works/shu-uemura/zh-hant/ 301!
+/zh-hant-shu-uemura.html /works/shu-uemura/zh-hant/ 301!
 # i18n:localized-routes:end
 
 /update2023jan/ /update2023jan.html 200
@@ -405,10 +429,10 @@
 /nfts/v/the-loneliness-of-an-orchid https://superrare.com/0x6583afe5f8eda8178877fb819b63c6f605c4f692/the-loneliness-of-an-orchid-28 301!
 /nfts/v/the-mirror-world https://superchief.io/series/0x6d15a7192f8e9ad55a72b997df0986d712c31cbf/54 301!
 /nfts/v/uplift https://superrare.com/artwork-v2/uplift-25511 301!
-/nfts/v/year-of-the-tiger /works/#tab=single 301!
-/nfts/v/year-of-the-tiger/ /works/#tab=single 301!
-/nfts/v/year-of-the-tiger-2 https://tiger2.shavonnewong.art 301!
-/nfts/v/year-of-the-tiger-3 https://tiger3.shavonnewong.art 301!
+/nfts/v/year-of-the-tiger /works/year-of-the-tiger/ 301!
+/nfts/v/year-of-the-tiger/ /works/year-of-the-tiger/ 301!
+/nfts/v/year-of-the-tiger-2 /works/year-of-the-tiger/ 301!
+/nfts/v/year-of-the-tiger-3 /works/year-of-the-tiger/ 301!
 
 # Catch-all safety nets so no legacy /nfts or /projects URL can 404
 /nfts/v/* /works/#tab=single 301!

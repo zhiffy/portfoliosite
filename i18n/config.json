@@ -690,6 +690,52 @@
           "zh-Hant": "工作室手記，關於 Venice Biennale 喀麥隆國家館與 Lenne Chai 合作的 By Proxy 系列。"
         }
       }
+    },
+    "year-of-the-tiger": {
+      "enSource": "year-of-the-tiger.html",
+      "urlBase": "/works/year-of-the-tiger/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "Year of the Tiger | Shavonne Wong",
+          "zh-Hans": "Year of the Tiger 虎年动态 NFT 系列 | Shavonne Wong",
+          "zh-Hant": "Year of the Tiger 虎年動態 NFT 系列 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Year of the Tiger, a 2022 collection of dynamic NFTs made in celebration of Lunar New Year, pairing the tiger with mythologies from Vietnam, China, Korea, and Singapore.",
+          "zh-Hans": "Year of the Tiger 是 2022 年为庆祝农历新年创作的动态 NFT 系列，将虎与越南、中国、韩国和新加坡的神话相连。",
+          "zh-Hant": "Year of the Tiger 是 2022 年為慶祝農曆新年創作的動態 NFT 系列，將虎與越南、中國、韓國和新加坡的神話相連。"
+        },
+        "ogDescription": {
+          "en": "A 2022 collection of dynamic NFTs made in celebration of Lunar New Year, pairing the tiger with mythologies from Vietnam, China, Korea, and Singapore.",
+          "zh-Hans": "2022 年为庆祝农历新年创作的动态 NFT 系列，将虎与越南、中国、韩国和新加坡的神话相连。",
+          "zh-Hant": "2022 年為慶祝農曆新年創作的動態 NFT 系列，將虎與越南、中國、韓國和新加坡的神話相連。"
+        }
+      }
+    },
+    "shu-uemura": {
+      "enSource": "shu-uemura.html",
+      "urlBase": "/works/shu-uemura/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "shu uemura x Shavonne Wong | Shavonne Wong",
+          "zh-Hans": "shu uemura x Shavonne Wong 联名系列 | Shavonne Wong",
+          "zh-Hant": "shu uemura x Shavonne Wong 聯名系列 | Shavonne Wong"
+        },
+        "description": {
+          "en": "The shu uemura x Shavonne Wong collaboration, a limited edition cosmetics collection for Spring/Summer 2025 built around her flowing wave motif and interpretation of optimism.",
+          "zh-Hans": "shu uemura x Shavonne Wong 联名合作，2025 春夏限量彩妆系列，以她的流动波浪图案与对乐观的诠释为核心。",
+          "zh-Hant": "shu uemura x Shavonne Wong 聯名合作，2025 春夏限量彩妝系列，以她的流動波浪圖案與對樂觀的詮釋為核心。"
+        },
+        "ogDescription": {
+          "en": "A limited edition cosmetics collection for Spring/Summer 2025 built around her flowing wave motif and interpretation of optimism.",
+          "zh-Hans": "2025 春夏限量彩妆系列，以她的流动波浪图案与对乐观的诠释为核心。",
+          "zh-Hant": "2025 春夏限量彩妝系列，以她的流動波浪圖案與對樂觀的詮釋為核心。"
+        }
+      }
     }
   }
 }

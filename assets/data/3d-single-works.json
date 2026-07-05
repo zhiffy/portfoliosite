@@ -428,9 +428,9 @@
     "edition_info": "1/1 NFT",
     "series_cluster": "stories-older-than-me",
     "series_position": 1,
-    "marketplace_url": "https://www.shavonnewong.art/projects/yearofthetiger",
+    "marketplace_url": "https://www.shavonnewong.art/works/year-of-the-tiger/",
     "chain": "Ethereum",
-    "project_url": null,
+    "project_url": "/works/year-of-the-tiger/",
     "mint_date": "2022-01-31"
   },
   {
@@ -448,7 +448,7 @@
     "series_position": 2,
     "marketplace_url": "https://tiger2.shavonnewong.art",
     "chain": "Ethereum",
-    "project_url": null,
+    "project_url": "/works/year-of-the-tiger/",
     "mint_date": "2022-01-31"
   },
   {
@@ -466,7 +466,7 @@
     "series_position": 3,
     "marketplace_url": "https://tiger3.shavonnewong.art",
     "chain": "Ethereum",
-    "project_url": null,
+    "project_url": "/works/year-of-the-tiger/",
     "mint_date": "2022-01-31"
   },
   {

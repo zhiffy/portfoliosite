@@ -59,6 +59,14 @@
       "destination": "/6529-meme-card.html"
     },
     {
+      "source": "/works/year-of-the-tiger/",
+      "destination": "/year-of-the-tiger.html"
+    },
+    {
+      "source": "/works/shu-uemura/",
+      "destination": "/shu-uemura.html"
+    },
+    {
       "source": "/works/by-proxy/",
       "destination": "/by-proxy.html"
     },
@@ -225,6 +233,22 @@
     {
       "source": "/works/6529-meme-card/zh-hant/",
       "destination": "/6529-meme-card-zh-hant.html"
+    },
+    {
+      "source": "/works/year-of-the-tiger/zh-hans/",
+      "destination": "/year-of-the-tiger-zh-hans.html"
+    },
+    {
+      "source": "/works/year-of-the-tiger/zh-hant/",
+      "destination": "/year-of-the-tiger-zh-hant.html"
+    },
+    {
+      "source": "/works/shu-uemura/zh-hans/",
+      "destination": "/shu-uemura-zh-hans.html"
+    },
+    {
+      "source": "/works/shu-uemura/zh-hant/",
+      "destination": "/shu-uemura-zh-hant.html"
     },
     {
       "source": "/works/available/zh-hans/",
