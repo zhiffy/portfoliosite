@@ -4,23 +4,39 @@
   // Public reCAPTCHA v3 site key (safe to expose client side; the secret key
   // stays server-side only, in the Netlify env var RECAPTCHA_SECRET_KEY).
   var RECAPTCHA_SITE_KEY = '6LcI-0ctAAAAACXTH_jVj2abUMKzod48s2MJWqVI';
-  var recaptchaLoadStarted = false;
+  var recaptchaLoadPromise = null;
 
   function loadRecaptcha() {
-    if (recaptchaLoadStarted) return;
-    if (!RECAPTCHA_SITE_KEY || RECAPTCHA_SITE_KEY.indexOf('PASTE_') === 0) return;
-    recaptchaLoadStarted = true;
-    var script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js?render=' + RECAPTCHA_SITE_KEY;
-    script.async = true;
-    document.head.appendChild(script);
+    if (recaptchaLoadPromise) return recaptchaLoadPromise;
+    if (!RECAPTCHA_SITE_KEY || RECAPTCHA_SITE_KEY.indexOf('PASTE_') === 0) return Promise.resolve(false);
+    recaptchaLoadPromise = new Promise(function (resolve) {
+      if (window.grecaptcha && window.grecaptcha.execute) {
+        resolve(true);
+        return;
+      }
+      var script = document.createElement('script');
+      var settled = false;
+      var done = function (ok) {
+        if (settled) return;
+        settled = true;
+        resolve(ok);
+      };
+      script.src = 'https://www.google.com/recaptcha/api.js?render=' + RECAPTCHA_SITE_KEY;
+      script.async = true;
+      script.onload = function () { done(true); };
+      script.onerror = function () { done(false); };
+      document.head.appendChild(script);
+      window.setTimeout(function () { done(Boolean(window.grecaptcha && window.grecaptcha.execute)); }, 3000);
+    });
+    return recaptchaLoadPromise;
   }
 
   function getRecaptchaToken() {
     if (!RECAPTCHA_SITE_KEY || RECAPTCHA_SITE_KEY.indexOf('PASTE_') === 0) {
       return Promise.resolve('');
     }
-    return new Promise(function (resolve) {
+    return loadRecaptcha().then(function () {
+      return new Promise(function (resolve) {
       if (!window.grecaptcha || !window.grecaptcha.execute) {
         resolve('');
         return;
@@ -31,6 +47,7 @@
           .then(resolve)
           .catch(function () { resolve(''); });
       });
+    });
     });
   }
 
