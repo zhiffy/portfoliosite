@@ -1,12 +1,74 @@
 /* Studio-notes newsletter and contact forms. Newsletter signups and contact
    messages go through private same-origin site endpoints. */
 (function () {
+  // Public reCAPTCHA v3 site key (safe to expose client side; the secret key
+  // stays server-side only, in the Netlify env var RECAPTCHA_SECRET_KEY).
+  var RECAPTCHA_SITE_KEY = '6LcI-0ctAAAAACXTH_jVj2abUMKzod48s2MJWqVI';
+  var recaptchaLoadStarted = false;
+
+  function loadRecaptcha() {
+    if (recaptchaLoadStarted) return;
+    if (!RECAPTCHA_SITE_KEY || RECAPTCHA_SITE_KEY.indexOf('PASTE_') === 0) return;
+    recaptchaLoadStarted = true;
+    var script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js?render=' + RECAPTCHA_SITE_KEY;
+    script.async = true;
+    document.head.appendChild(script);
+  }
+
+  function getRecaptchaToken() {
+    if (!RECAPTCHA_SITE_KEY || RECAPTCHA_SITE_KEY.indexOf('PASTE_') === 0) {
+      return Promise.resolve('');
+    }
+    return new Promise(function (resolve) {
+      if (!window.grecaptcha || !window.grecaptcha.execute) {
+        resolve('');
+        return;
+      }
+      window.grecaptcha.ready(function () {
+        window.grecaptcha
+          .execute(RECAPTCHA_SITE_KEY, { action: 'subscribe' })
+          .then(resolve)
+          .catch(function () { resolve(''); });
+      });
+    });
+  }
+
+  // Honeypot + time-trap: bots that fill hidden fields or submit within a
+  // couple seconds of the form appearing get quietly rejected server side.
+  function addSpamTraps(form) {
+    if (form.querySelector('[data-hp-field]')) return;
+
+    var wrap = document.createElement('div');
+    wrap.setAttribute('aria-hidden', 'true');
+    wrap.style.cssText = 'position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;';
+
+    var hp = document.createElement('input');
+    hp.type = 'text';
+    hp.name = 'website';
+    hp.setAttribute('data-hp-field', '');
+    hp.setAttribute('tabindex', '-1');
+    hp.setAttribute('autocomplete', 'off');
+    wrap.appendChild(hp);
+    form.appendChild(wrap);
+
+    var ts = document.createElement('input');
+    ts.type = 'hidden';
+    ts.name = 'ts';
+    ts.setAttribute('data-ts-field', '');
+    ts.value = String(Date.now());
+    form.appendChild(ts);
+
+    loadRecaptcha();
+  }
+
   function wireForm(form, options) {
     var scope = form.parentElement || document;
     var btn = form.querySelector('[type="submit"]');
     var ok = scope.querySelector('[data-fs-success]');
     var err = scope.querySelector('[data-fs-error]');
     var label = btn ? btn.textContent : options.defaultLabel;
+    if (options.newsletter) addSpamTraps(form);
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (err) err.textContent = '';
@@ -17,18 +79,25 @@
         method: 'POST',
         headers: { 'Accept': 'application/json' }
       };
-      if (options.json) {
-        var payload = {};
-        formData.forEach(function (value, key) {
-          payload[key] = value;
-        });
-        payload.page = window.location.pathname || '/';
-        request.headers['Content-Type'] = 'application/json';
-        request.body = JSON.stringify(payload);
-      } else {
-        request.body = formData;
-      }
-      fetch(form.action, request).then(function (res) {
+      var buildAndSend = function (recaptchaToken) {
+        if (options.json) {
+          var payload = {};
+          formData.forEach(function (value, key) {
+            payload[key] = value;
+          });
+          payload.page = window.location.pathname || '/';
+          if (recaptchaToken) payload.recaptchaToken = recaptchaToken;
+          request.headers['Content-Type'] = 'application/json';
+          request.body = JSON.stringify(payload);
+        } else {
+          request.body = formData;
+        }
+        sendRequest();
+      };
+      var sendRequest = function () {
+        fetch(form.action, request).then(handleResponse).catch(handleNetworkError);
+      };
+      function handleResponse(res) {
         if (res.ok) {
           form.style.display = 'none';
           if (ok) ok.textContent = options.successText;
@@ -47,10 +116,16 @@
             if (btn) { btn.disabled = false; btn.textContent = label; }
           });
         }
-      }).catch(function () {
+      }
+      function handleNetworkError() {
         if (err) err.textContent = 'Network error. Please try again.';
         if (btn) { btn.disabled = false; btn.textContent = label; }
-      });
+      }
+      if (options.newsletter) {
+        getRecaptchaToken().then(buildAndSend);
+      } else {
+        buildAndSend();
+      }
     });
   }
 
