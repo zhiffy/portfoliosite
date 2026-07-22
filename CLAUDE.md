@@ -224,3 +224,5 @@ E2. **Email images are jpg or png, never webp.** Many clients (Outlook on Window
 E3. **Email logo is `/assets/brand/wordmark-slate.png`**, the slate wordmark on the Haze header, never the webp. A png alternate already sits beside the webp in `/assets/brand/`.
 
 E4. **Same voice and punctuation rules as all site copy** (V1): warm and understated, "Thank you" sign-off, no em or en dashes, sentence case, none of the banned words.
+
+E5. **Every site link in a letter carries UTM tags.** Append `utm_source=newsletter&utm_medium=email&utm_campaign=[letter-id, e.g. 2026jul]` to every shavonnewong.art link in the email HTML before it is pasted into Brevo. Without these, newsletter visits read as Direct in GA4 and the letters look like they do nothing. The weekly Site Analytics system (vault `_AI_Drafts/Codex/site-metrics-history.md`) depends on this attribution. Added 2026-07-09 from the analytics roundtables; applies from the next letter onward.
