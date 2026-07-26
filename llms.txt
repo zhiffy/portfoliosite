@@ -15,7 +15,7 @@
 - [CV (PDF)](https://www.shavonnewong.art/assets/cv/shavonne-wong-cv.pdf): Downloadable artist CV with full exhibition, press, awards, and talks history.
 - [Works](https://www.shavonnewong.art/works/): Catalogue of projects, single works, editions, and commissions.
 - [Available works](https://www.shavonnewong.art/works/available/): Collector-focused inventory of available works with edition and provenance details.
-- [Conditional](https://www.shavonnewong.art/works/conditional/): Current work, 2026. A real-time generative AI installation and digital mirror that renders the room in full and erases the people in it.
+- [Conditional](https://www.shavonnewong.art/works/conditional/): Current work, 2026. A real-time generative AI installation and digital mirror that renders the room in full and erases the people in it. Presented as an ongoing series with two named stagings: The Waiting Room, the first physical configuration, and The Mirror, a prototype in build.
 - [The Bubble We Call Home](https://www.shavonnewong.art/works/the-bubble-we-call-home/): Unique 1/1 single-channel video commission for Artist's Proof: Singapore at 60 (AP60), commissioned by Mr Chong, 2025.
 - [Meet Eva Here](https://www.shavonnewong.art/works/meet-eva-here/): Interactive AI companion artwork shown at ArtScience Museum, Art SG, and Taipei Dangdai.
 - [After Ophelia](https://www.shavonnewong.art/works/after-ophelia/): Two-part AI video work on identity and inherited interpretation, Paris Photo 2025.
@@ -56,7 +56,7 @@
 - [June 2026: Goodbye to Eva, into the mirror](https://www.shavonnewong.art/update2026jun/): Closing the Meet Eva Here project and beginning work on Conditional.
 - [June 2025: Public rooms](https://www.shavonnewong.art/update2025jun/): Paris Photo, studio practice, and public exhibition notes.
 - [January 2025: Eva goes public](https://www.shavonnewong.art/update2025jan/): Meet Eva Here opens at ArtScience Museum Singapore.
-- [June 2024: A win, and a move](https://www.shavonnewong.art/update2024jun/): Forbes recognition and studio relocation notes.
+- [June 2024: A win, and a move](https://www.shavonnewong.art/update2024jun/): First prize in Optimism's We Love The Art competition, 1/1 category, and the move to Bangkok.
 - [January 2024: Closing out the year](https://www.shavonnewong.art/update2024jan/): Solo exhibition at NFT Factory Paris and year in review.
 - [June 2023: My first solo](https://www.shavonnewong.art/update2023june/): The Ties That Bind solo exhibition, Singapore.
 - [January 2023: A year of firsts](https://www.shavonnewong.art/update2023jan/): Venice Biennale, Art SG, and first year in new media.
