@@ -74,6 +74,21 @@
       gtag('js', new Date());
       gtag('config', 'G-L9KCWXRT7E');
     </script>
+  <style>
+    /* C9: long project line spans the full hero width as a single horizontal
+       line below the two columns, instead of wrapping at display scale inside
+       the half-width copy column. */
+    .sn-page-body .sp-project-hero > .sp-project-line {
+      grid-column: 1 / -1;
+      max-width: none;
+      font-size: clamp(17px, 1.6vw, 22px);
+      line-height: 1.4;
+      padding-top: 20px;
+      border-top: 1px solid var(--hairline);
+      margin: 0;
+      align-self: start;
+    }
+  </style>
   <link rel="stylesheet" href="/assets/fonts/noto/noto-sans-sc.css?v=20260620">
 </head>
 <body class="sn-page-body">
@@ -104,12 +119,12 @@
     <section class="sp-project-hero" aria-label="shu uemura x Shavonne Wong 概览">
       <div class="sp-project-hero-copy">
         <h1 class="sp-title">shu <em>uemura.</em></h1>
-        <p class="sp-project-line">一个围绕乐观浪潮而打造的限量版彩妆系列。</p>
         <p class="sp-intro">shu uemura x Shavonne Wong，品牌 2025 春夏艺术家合作系列。这场美妆企划将数字艺术与大胆前卫的未来感造型相融合，以虚拟模特与鲜活的质感，想象美在未来可能的模样，俏皮、实验、乐观。</p>
       </div>
       <figure class="sp-project-hero-media is-media-native" style="--sp-media-ratio: 1500 / 1000;">
         <img fetchpriority="high" decoding="async" src="/assets/newsletters/update2025jun/18.webp" alt="shu uemura x Shavonne Wong 合作系列视觉，带有流动波浪图案的彩妆盘与包装" />
       </figure>
+      <p class="sp-project-line">一个围绕乐观浪潮而打造的限量版彩妆系列。</p>
     </section>
 
     <section class="sp-section sp-project-grid" id="overview">
@@ -170,7 +185,7 @@
 <script src="/assets/js/sustainability.js?v=20260527-works-catalog"></script>
   <script src="/assets/js/subnav.js?v=20260527-subnav"></script>
   <script src="/gallery-scroll.js?v=20260614-scrolldriven4"></script>
-  <script src="/site-header.js?v=20260618-cta"></script><script src="/site-i18n.js?v=20260629-era-line"></script>
+  <script src="/site-header.js?v=20260618-cta"></script><script src="/site-i18n.js?v=20260726-copy-refresh"></script>
   <script src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
 </body>
 </html>

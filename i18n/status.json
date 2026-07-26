@@ -1,15 +1,15 @@
 {
   "about": {
     "en": {
-      "hash": "abede7494dd8cee7"
+      "hash": "366b58733096968f"
     },
     "zh-Hans": {
-      "status": "reviewed",
-      "src": "abede7494dd8cee7"
+      "status": "machine",
+      "src": "366b58733096968f"
     },
     "zh-Hant": {
-      "status": "reviewed",
-      "src": "abede7494dd8cee7"
+      "status": "machine",
+      "src": "366b58733096968f"
     }
   },
   "contact": {
@@ -40,28 +40,28 @@
   },
   "press": {
     "en": {
-      "hash": "53720961c6fcbfe6"
+      "hash": "aff405f306ab3ba4"
     },
     "zh-Hans": {
       "status": "machine",
-      "src": "53720961c6fcbfe6"
+      "src": "aff405f306ab3ba4"
     },
     "zh-Hant": {
       "status": "machine",
-      "src": "53720961c6fcbfe6"
+      "src": "aff405f306ab3ba4"
     }
   },
   "works": {
     "en": {
-      "hash": "48960de732f059f0"
+      "hash": "4a461544cac2bcf1"
     },
     "zh-Hans": {
       "status": "machine",
-      "src": "48960de732f059f0"
+      "src": "4a461544cac2bcf1"
     },
     "zh-Hant": {
       "status": "machine",
-      "src": "48960de732f059f0"
+      "src": "4a461544cac2bcf1"
     }
   },
   "conditional": {
@@ -105,15 +105,15 @@
   },
   "the-ties-that-bind": {
     "en": {
-      "hash": "fe002587df9cf9a6"
+      "hash": "561c0ee81337fb7e"
     },
     "zh-Hans": {
       "status": "machine",
-      "src": "fe002587df9cf9a6"
+      "src": "561c0ee81337fb7e"
     },
     "zh-Hant": {
       "status": "machine",
-      "src": "fe002587df9cf9a6"
+      "src": "561c0ee81337fb7e"
     }
   },
   "the-bubble-we-call-home": {
@@ -183,28 +183,28 @@
   },
   "vogue-singapore": {
     "en": {
-      "hash": "b5b54eff92efb2d3"
+      "hash": "37a59937c71503f1"
     },
     "zh-Hans": {
       "status": "machine",
-      "src": "b5b54eff92efb2d3"
+      "src": "37a59937c71503f1"
     },
     "zh-Hant": {
       "status": "machine",
-      "src": "b5b54eff92efb2d3"
+      "src": "37a59937c71503f1"
     }
   },
   "6529-meme-card": {
     "en": {
-      "hash": "6b59063cee3b82fc"
+      "hash": "8be314f70930a552"
     },
     "zh-Hans": {
       "status": "machine",
-      "src": "6b59063cee3b82fc"
+      "src": "8be314f70930a552"
     },
     "zh-Hant": {
       "status": "machine",
-      "src": "6b59063cee3b82fc"
+      "src": "8be314f70930a552"
     }
   },
   "works-available": {
@@ -261,28 +261,28 @@
   },
   "update2024jun": {
     "en": {
-      "hash": "8eb6916825181d8e"
+      "hash": "d5e64adc4d127360"
     },
     "zh-Hans": {
       "status": "machine",
-      "src": "8eb6916825181d8e"
+      "src": "d5e64adc4d127360"
     },
     "zh-Hant": {
       "status": "machine",
-      "src": "8eb6916825181d8e"
+      "src": "d5e64adc4d127360"
     }
   },
   "update2024jan": {
     "en": {
-      "hash": "3fe8ad5a3387562d"
+      "hash": "9870944cc33be86e"
     },
     "zh-Hans": {
       "status": "machine",
-      "src": "3fe8ad5a3387562d"
+      "src": "9870944cc33be86e"
     },
     "zh-Hant": {
       "status": "machine",
-      "src": "3fe8ad5a3387562d"
+      "src": "9870944cc33be86e"
     }
   },
   "update2023june": {
@@ -326,15 +326,15 @@
   },
   "shu-uemura": {
     "en": {
-      "hash": "43e7cfb3045738f7"
+      "hash": "8ac47926ef6e77a0"
     },
     "zh-Hans": {
       "status": "machine",
-      "src": "43e7cfb3045738f7"
+      "src": "8ac47926ef6e77a0"
     },
     "zh-Hant": {
       "status": "machine",
-      "src": "43e7cfb3045738f7"
+      "src": "8ac47926ef6e77a0"
     }
   }
 }

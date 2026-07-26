@@ -80,6 +80,21 @@
       gtag('js', new Date());
       gtag('config', 'G-L9KCWXRT7E');
     </script>
+  <style>
+    /* C9: long project line spans the full hero width as a single horizontal
+       line below the two columns, instead of wrapping at display scale inside
+       the half-width copy column. */
+    .sn-page-body .sp-project-hero > .sp-project-line {
+      grid-column: 1 / -1;
+      max-width: none;
+      font-size: clamp(17px, 1.6vw, 22px);
+      line-height: 1.4;
+      padding-top: 20px;
+      border-top: 1px solid var(--hairline);
+      margin: 0;
+      align-self: start;
+    }
+  </style>
   <link rel="stylesheet" href="/assets/fonts/noto/noto-sans-sc.css?v=20260620">
 </head>
 <body class="sn-page-body">
@@ -111,12 +126,12 @@
     <section class="sp-project-hero" aria-label="Vogue Singapore overview">
       <div class="sp-project-hero-copy">
         <h1 class="sp-title">Vogue <em>Singapore.</em></h1>
-        <p class="sp-project-line">一张时尚封面，一个数字人，以及 NFT 时代出版的一个新开端。</p>
         <p class="sp-intro">Vogue Singapore 的首个数字 NFT 封面，与 The Fabricant 合作，为 2021 年 9 月号 New Beginnings 专题而创作。</p>
       </div>
       <figure class="sp-project-hero-media is-media-native" style="--sp-media-ratio: 680 / 1020;">
         <img fetchpriority="high" decoding="async" src="/assets/vogue-singapore/01-vogue-singapore-nft-cover.webp" alt="Vogue Singapore NFT 封面作品 The RenaiXance Rising" />
       </figure>
+      <p class="sp-project-line">一张时尚封面，一个数字人，以及 NFT 时代出版的一个新开端。</p>
     </section>
 
     <section class="sp-section sp-project-grid" id="overview">
@@ -193,7 +208,7 @@
 <script src="/assets/js/sustainability.js?v=20260527-works-catalog"></script>
   <script src="/assets/js/subnav.js?v=20260527-subnav"></script>
   <script src="/gallery-scroll.js?v=20260614-scrolldriven4"></script>
-  <script src="/site-header.js?v=20260618-cta"></script><script src="/site-i18n.js?v=20260629-era-line"></script>
+  <script src="/site-header.js?v=20260618-cta"></script><script src="/site-i18n.js?v=20260726-copy-refresh"></script>
   <script src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
 </body>
 </html>
