@@ -1,0 +1,325 @@
+{
+  "regions": [
+    {
+      "id": "visibility-and-erasure",
+      "name": "Visibility and erasure",
+      "blurb": "Who gets rendered and who gets left out, and why that is usually a procedure rather than a decision."
+    },
+    {
+      "id": "attention-without-recognition",
+      "name": "Attention without recognition",
+      "blurb": "Being detected is not the same as being known. Machines that orient toward you without seeing you."
+    },
+    {
+      "id": "sentience-beyond-the-human",
+      "name": "Sentience beyond the human",
+      "blurb": "Plants, animals, and the possibility that awareness was never ours alone. Also how differently other things hold time."
+    },
+    {
+      "id": "memory-and-fabrication",
+      "name": "Memory and fabrication",
+      "blurb": "The composite self, built from other people's images and other people's accounts of you."
+    },
+    {
+      "id": "image-systems",
+      "name": "Image systems",
+      "blurb": "How pictures are made, who they serve, and the decade I spent inside the machine that makes them."
+    }
+  ],
+  "entries": [
+    {
+      "id": "han-absence",
+      "date": "2026-07-03",
+      "type": "reading",
+      "title": "Absence",
+      "byline": "Byung-Chul Han",
+      "note": "Han asks why we are exhausted by so much freedom. I keep circling a version of the same shape. Why do we feel so unseen while being so surveilled? And why does being unseen feel offensive?",
+      "regions": ["visibility-and-erasure"],
+      "works": ["conditional"],
+      "published": true
+    },
+    {
+      "id": "strickler-algorithm",
+      "date": "2026-07-24",
+      "type": "link",
+      "title": "On breaking the algorithm's picture of you",
+      "byline": "Yancey Strickler",
+      "note": "Once the algorithm knows you, how do you break its picture of you? How do you meet the things that might interest a future version of you, instead of feeding the one you already are?",
+      "regions": ["visibility-and-erasure", "memory-and-fabrication"],
+      "works": [],
+      "published": true
+    },
+    {
+      "id": "imperfect-work",
+      "date": "2026-07-24",
+      "type": "note",
+      "title": "On putting work out before it is ready",
+      "byline": "",
+      "note": "oh the agony of putting out imperfect work into the world, but if i never put it out, i can never improve from it",
+      "regions": ["image-systems"],
+      "works": [],
+      "published": true
+    },
+    {
+      "id": "face-embeddings-reversed",
+      "date": "2026-06-25",
+      "type": "note",
+      "title": "Face embeddings, run backwards",
+      "byline": "",
+      "note": "A face embeds as a list of numbers, a fingerprint rather than a photo. So running the numbers in reverse should grow a face close to yours. This is the third time it has come back, so I have started building it.",
+      "regions": ["visibility-and-erasure", "memory-and-fabrication"],
+      "works": ["conditional"],
+      "published": true
+    },
+    {
+      "id": "robots-that-turn",
+      "date": "2026-05-18",
+      "type": "note",
+      "title": "Robots that turn toward you",
+      "byline": "",
+      "note": "Small machines that orient toward the nearest warm body. The attention is real and the recognition is hollow. Being witnessed without being known.",
+      "regions": ["attention-without-recognition"],
+      "works": ["conditional"],
+      "published": true
+    },
+    {
+      "id": "imprints-of-a-city",
+      "date": "2026-06-30",
+      "type": "note",
+      "title": "Imprints of a city",
+      "byline": "",
+      "note": "Psychogeography says the city presses itself onto you. Reversed, the systems in a city take an imprint of you without asking. Mendieta pressed her body against glass and photographed what the pressure did. The imprint is shaped by the force, not the body.",
+      "regions": ["visibility-and-erasure", "image-systems"],
+      "works": [],
+      "published": true
+    },
+    {
+      "id": "greenland-sharks",
+      "date": "2026-05-30",
+      "type": "note",
+      "title": "Greenland sharks, and how a bird moves when you slow it down",
+      "byline": "",
+      "note": "A bird pecking looks random until you slow it down, and then it looks thoughtful. Plants look like they are dancing when you speed them up. Greenland sharks process time slowly in the deep cold and live a long while, so a long life must feel even longer to them.",
+      "regions": ["sentience-beyond-the-human"],
+      "works": [],
+      "published": true
+    },
+    {
+      "id": "apocaloptimist",
+      "date": "2026-05-23",
+      "type": "watching",
+      "title": "The AI Doc, or How I Became an Apocaloptimist",
+      "byline": "",
+      "note": "I liked the ending, which lands on agency and on being able to do something about the dread rather than only holding it.",
+      "regions": ["visibility-and-erasure"],
+      "works": [],
+      "published": true
+    },
+    {
+      "id": "cant-help-myself",
+      "date": "2026-05-18",
+      "type": "work",
+      "title": "Can't Help Myself",
+      "byline": "Sun Yuan and Peng Yu",
+      "note": "A machine that cannot stop containing itself.",
+      "regions": ["attention-without-recognition"],
+      "works": [],
+      "published": true
+    },
+    {
+      "id": "stranger-visions",
+      "date": "2026-05-18",
+      "type": "work",
+      "title": "Stranger Visions",
+      "byline": "Heather Dewey-Hagborg",
+      "note": "Portraits grown from DNA left behind on the street. A face assembled from someone without their knowing.",
+      "regions": ["visibility-and-erasure", "memory-and-fabrication"],
+      "works": [],
+      "published": true
+    },
+    {
+      "id": "my-little-piece-of-privacy",
+      "date": "2026-05-18",
+      "type": "work",
+      "title": "My Little Piece of Privacy",
+      "byline": "Niklas Roy",
+      "note": "A curtain that follows people as they pass, so the act of hiding is what draws the eye.",
+      "regions": ["visibility-and-erasure", "attention-without-recognition"],
+      "works": [],
+      "published": true
+    },
+    {
+      "id": "humanae",
+      "date": "2026-05-18",
+      "type": "work",
+      "title": "Humanæ",
+      "byline": "Angélica Dass",
+      "note": "Skin matched to a Pantone chip, one person at a time.",
+      "regions": ["image-systems", "visibility-and-erasure"],
+      "works": [],
+      "published": true
+    },
+    {
+      "id": "fly-revolver",
+      "date": "2026-05-18",
+      "type": "work",
+      "title": "Fly Revolver",
+      "byline": "David Bowen",
+      "note": "",
+      "regions": ["attention-without-recognition"],
+      "works": [],
+      "published": false
+    },
+    {
+      "id": "denial-still-life",
+      "date": "2026-05-18",
+      "type": "work",
+      "title": "Denial, and Still Life",
+      "byline": "Elmgreen & Dragset",
+      "note": "",
+      "regions": ["image-systems"],
+      "works": [],
+      "published": false
+    },
+    {
+      "id": "taking-stock",
+      "date": "2026-05-18",
+      "type": "work",
+      "title": "Taking Stock",
+      "byline": "Michael Mandiberg",
+      "note": "",
+      "regions": ["memory-and-fabrication"],
+      "works": [],
+      "published": false
+    },
+    {
+      "id": "facetune-portraits",
+      "date": "2026-05-18",
+      "type": "work",
+      "title": "Facetune Portraits",
+      "byline": "Gretchen Andrew",
+      "note": "",
+      "regions": ["image-systems", "memory-and-fabrication"],
+      "works": [],
+      "published": false
+    },
+    {
+      "id": "in-the-mothers-arms",
+      "date": "2026-05-18",
+      "type": "work",
+      "title": "In the Mother's Arms",
+      "byline": "Taisiya Krugovykh and Vasily Bogatov",
+      "note": "",
+      "regions": ["memory-and-fabrication"],
+      "works": [],
+      "published": false
+    },
+    {
+      "id": "vallor-ai-mirror",
+      "date": "2026-06-13",
+      "type": "reading",
+      "title": "The AI Mirror",
+      "byline": "Shannon Vallor",
+      "note": "",
+      "factual": "Vallor argues AI systems work as mirrors that hand back a distorted image of ourselves, shaped by training data and by whoever built them. Recommended to me while I was talking about The Mirror.",
+      "regions": ["visibility-and-erasure", "image-systems"],
+      "works": ["conditional"],
+      "published": false
+    },
+    {
+      "id": "a-world-appears",
+      "date": "2026-04-22",
+      "type": "reading",
+      "title": "A World Appears",
+      "byline": "",
+      "note": "",
+      "factual": "Integrated information theory and global workspace theory, and a maze experiment with plants that I have not stopped thinking about.",
+      "regions": ["sentience-beyond-the-human"],
+      "works": [],
+      "published": false
+    },
+    {
+      "id": "ways-of-seeing",
+      "date": "2026-05-01",
+      "type": "reading",
+      "title": "Ways of Seeing",
+      "byline": "John Berger",
+      "note": "",
+      "factual": "Every image carries a way of seeing inside it, including the photographs we mistake for neutral records.",
+      "regions": ["image-systems"],
+      "works": ["after-ophelia", "by-proxy"],
+      "published": false
+    },
+    {
+      "id": "levin-fridman",
+      "date": "2026-04-23",
+      "type": "link",
+      "title": "Michael Levin on consciousness and biology",
+      "byline": "",
+      "note": "",
+      "factual": "A long conversation about where awareness might begin.",
+      "regions": ["sentience-beyond-the-human"],
+      "works": [],
+      "published": false
+    },
+    {
+      "id": "artists-from-michelle",
+      "date": "2026-05-07",
+      "type": "note",
+      "title": "Five artists to look up",
+      "byline": "",
+      "note": "",
+      "factual": "Lu Zihan, Ray Langenbach, 72-13, Joyce Tsai, and Arthur Żmijewski, the last one described to me as work that makes you uncomfortable.",
+      "regions": ["image-systems"],
+      "works": [],
+      "published": false
+    },
+    {
+      "id": "books-from-benoit",
+      "date": "2026-04-14",
+      "type": "reading",
+      "title": "Three books on the internet",
+      "byline": "",
+      "note": "",
+      "factual": "The Dark Forest Anthology of the Internet, Other Internet, and Non Playable Characters.",
+      "regions": ["image-systems"],
+      "works": [],
+      "published": false
+    },
+    {
+      "id": "plant-sentience-piece",
+      "date": "2026-04-25",
+      "type": "note",
+      "title": "An awe piece, not a guilt piece",
+      "byline": "",
+      "note": "If people can feel awe at the possibility that a plant is aware, that changes the relationship to the world more than guilt does. I do not know yet what it looks like.",
+      "regions": ["sentience-beyond-the-human"],
+      "works": [],
+      "published": true
+    },
+    {
+      "id": "smaller-works",
+      "date": "2026-05-03",
+      "type": "note",
+      "title": "On only having large ideas",
+      "byline": "",
+      "note": "Every idea I have arrives ambitious and large-scale, and it means I make fewer things. I would like to be able to make small ones.",
+      "regions": ["image-systems"],
+      "works": [],
+      "published": true
+    },
+    {
+      "id": "cybernetics",
+      "date": "2026-07-02",
+      "type": "watching",
+      "title": "Cybernetics",
+      "byline": "",
+      "note": "",
+      "factual": "Working through talks on cybernetics, feedback and control.",
+      "regions": ["attention-without-recognition"],
+      "works": [],
+      "published": false
+    }
+  ],
+  "withheld": 14
+}

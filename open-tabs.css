@@ -1,0 +1,83 @@
+/* Open Tabs
+   Field + list views over one set of entries. The list is the source of truth in
+   the DOM; open-tabs.js reads it to build the field. No JS means the list still works.
+   Palette and rules per Shavonne Wong Design System: Haze page, Slate type, Fog
+   metadata, one Iris accent, hairlines only, nothing bounces. */
+
+.ot-main { padding-bottom: 0; }
+
+.ot-head { padding: 108px 0 26px; }
+.ot-title { font-size: clamp(34px, 5vw, 62px); line-height: 1.02; margin: 0 0 18px; font-weight: 400; }
+.ot-standfirst { font-size: clamp(16px, 1.5vw, 19px); line-height: 1.6; color: var(--text); margin: 0; max-width: none; }
+
+/* ---------- view toggle ---------- */
+.ot-controls {
+  display: flex; align-items: baseline; gap: 22px;
+  padding: 0 0 16px; border-bottom: 1px solid var(--hairline);
+}
+.ot-tab {
+  appearance: none; background: none; border: 0; padding: 0 0 3px; cursor: pointer;
+  font: inherit; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--text-2); border-bottom: 1px solid transparent;
+}
+.ot-tab[aria-selected="true"] { color: var(--text); border-bottom-color: var(--text); }
+.ot-count { margin-left: auto; font-size: 11px; letter-spacing: 0.04em; color: var(--text-3); }
+
+/* ---------- the field ---------- */
+.ot-field-wrap { position: relative; margin: 0; }
+.ot-field { display: block; width: 100%; height: auto; }
+.ot-field-note { font-size: 12.5px; color: var(--text-3); margin: 10px 0 0; }
+
+.ot-region-path { fill: none; stroke: var(--text); stroke-opacity: 0.15; stroke-width: 1; transition: stroke-opacity 900ms ease, stroke 900ms ease; }
+.ot-region.is-lit .ot-region-path { stroke: var(--accent-deep); stroke-opacity: 1; stroke-width: 0.5; }
+
+.ot-region-label { font-size: 10.5px; letter-spacing: 0.04em; fill: var(--text-2); text-transform: uppercase; transition: fill 900ms ease; }
+.ot-region.is-lit .ot-region-label { fill: var(--accent-deep); }
+
+.ot-node { cursor: pointer; }
+.ot-node-text { font-size: 11.5px; fill: var(--text); transition: fill 700ms ease; }
+.ot-node:hover .ot-node-text,
+.ot-node:focus-visible .ot-node-text { fill: var(--accent-deep); }
+.ot-node:focus-visible { outline: none; }
+.ot-node:focus-visible .ot-node-text { text-decoration: underline; }
+
+/* ---------- region legend ---------- */
+.ot-regions { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 26px 34px; margin: 30px 0 8px; }
+.ot-regions[hidden] { display: none; }
+.ot-group-head { margin: 0; cursor: pointer; border-top: 1px solid var(--hairline); padding-top: 14px; }
+.ot-group-head.is-off { opacity: 0.4; }
+.ot-group-head:focus-visible { outline: 1px solid var(--accent-deep); outline-offset: 4px; }
+
+/* ---------- list ---------- */
+.ot-list { margin: 0; padding: 0; list-style: none; }
+.ot-entry[hidden] { display: none; }
+.ot-group-name { font-size: clamp(19px, 2vw, 25px); font-weight: 400; margin: 0 0 6px; }
+.ot-group-blurb { font-size: 15px; line-height: 1.6; color: var(--text-2); margin: 0; }
+
+.ot-entry { border-top: 1px solid var(--hairline); padding: 17px 0; }
+.ot-entry:first-child { border-top: 0; }
+.ot-group-head + .ot-list .ot-entry:first-child { border-top: 1px solid var(--hairline); margin-top: 16px; }
+.ot-meta { font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-3); margin: 0 0 5px; }
+.ot-entry-title { font-size: 17px; line-height: 1.35; font-weight: 400; margin: 0 0 4px; }
+.ot-byline { color: var(--text-2); }
+.ot-note { font-size: 15.5px; line-height: 1.65; color: var(--text); margin: 0; }
+.ot-links { margin: 8px 0 0; font-size: 12.5px; color: var(--text-3); }
+.ot-links a { color: var(--text-2); border-bottom: 0.5px solid var(--hairline-strong); text-decoration: none; }
+.ot-links a:hover { color: var(--text); }
+
+/* ---------- withheld + invitation ---------- */
+.ot-withheld { margin: 40px 0 0; font-size: 12.5px; color: var(--text-3); }
+.ot-invite { margin: 30px 0 78px; padding: 24px 0 0; border-top: 1px solid var(--hairline); font-size: 16px; line-height: 1.65; }
+.ot-invite a { color: var(--text); border-bottom: 0.5px solid var(--accent-deep); text-decoration: none; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .ot-main { box-sizing: border-box; padding-left: 16px; padding-right: 16px; }
+  .ot-field-wrap, .ot-field-note { display: none; }
+  .ot-head { padding-top: 122px; }
+}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ot-region-path, .ot-region-label, .ot-node-text { transition: none; }
+}
