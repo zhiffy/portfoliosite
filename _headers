@@ -15,6 +15,11 @@
 /assets/data/*
   Cache-Control: public, max-age=300, must-revalidate
 
+/assets/cv/shavonne-wong-cv.pdf
+  Content-Type: application/pdf
+  Content-Disposition: inline; filename="Shavonne-Wong-CV.pdf"
+  Cache-Control: public, max-age=0, must-revalidate
+
 /assets/*.jpg
   Cache-Control: public, max-age=31536000, immutable
 

@@ -184,6 +184,9 @@
 /about/ /about.html 200
 /contact/ /contact.html 200
 /press/ /press.html 200
+/journal/ /writing.html 200
+/journal/open-tabs/ /open-tabs.html 200
+/open-tabs.html /journal/open-tabs/ 301!
 /writing/ /writing.html 200
 
 # i18n:localized-routes:start

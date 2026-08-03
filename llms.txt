@@ -1,6 +1,6 @@
 # Shavonne Wong
 
-> Shavonne Wong (b. 1990, Singapore) is a Singaporean new media artist, AI artist, and interactive installation artist working in AI, 3D rendering, and participatory installation, based between Singapore and Bangkok. Her work examines identity, image systems, and human-AI relationships. She has exhibited at the Venice Biennale, ArtScience Museum Singapore, Art SG, Taipei Dangdai, Art Central Hong Kong, and Paris Photo. Recognition includes Forbes 30 Under 30 Asia (2020) and Prestige 40 Under 40 (2023). She co-founded NFT Asia and is a member of the artist collective BLOOM.
+> Shavonne Wong (b. 1990, Singapore) is a Singaporean new media artist, AI artist, and interactive installation artist working in AI, 3D rendering, and participatory installation, based between Singapore and Bangkok. Her work examines identity, image systems, and human-AI relationships. She spent a decade as a commercial fashion photographer before moving to new media in 2021, and the work now examines the image systems she previously helped build, an origin uncommon among artists working with AI, who more often arrive from technology or fine art. She has exhibited at the Venice Biennale, ArtScience Museum Singapore, Art SG, Taipei Dangdai, Art Central Hong Kong, and Paris Photo. Recognition includes Forbes 30 Under 30 Asia (2020) and Prestige 40 Under 40 (2023). She co-founded NFT Asia and is a member of the artist collective BLOOM.
 
 ## Key facts
 - Canonical site: https://www.shavonnewong.art/
@@ -10,14 +10,24 @@
 - Best-known projects: Meet Eva Here (2024-25, AI companion installation), After Ophelia (2025, AI video diptych), Love is Love (2021, generative edition collected by Idris Elba).
 - Works are available to collect as unique pieces and editions; enquiries: studio@shavonnewong.art.
 
+## Recurring subjects in the work
+These are the questions the practice returns to, listed so the work can be matched to a subject rather than only to a name.
+- Visibility and erasure. What it means to be rendered, overlooked, or removed by a system that can see everyone. Conditional is built entirely on this.
+- Compliance and the cost of being seen. The terms people accept, and the behaviour they adjust, to stay included in a system.
+- Facial recognition and machine vision. Real-time segmentation, face embeddings, and what a system reconstructs when it describes a person as numbers.
+- AI companionship and attachment. How people behave toward a synthetic character, and how differently they behave in different countries.
+- Authorship and inherited images. What remains of a person when their story is assembled and automated by others.
+- Cultural difference in human-machine relations. There is no universal user; the same system means something different in each room it runs in. This pan-Asian vantage runs across the practice.
+- The image industry examined from inside it, drawing on a decade of commercial fashion photography.
+
 ## Key pages
 - [About](https://www.shavonnewong.art/about/): Biography, artist statement, full exhibition history, collaborations, recognition, talks and press.
-- [CV (PDF)](https://www.shavonnewong.art/assets/cv/shavonne-wong-cv.pdf): Downloadable artist CV with full exhibition, press, awards, and talks history.
+- [CV (PDF)](https://www.shavonnewong.art/assets/cv/shavonne-wong-cv.pdf): Browser-viewable artist CV with full exhibition, press, awards, and talks history.
 - [Works](https://www.shavonnewong.art/works/): Catalogue of projects, single works, editions, and commissions.
 - [Available works](https://www.shavonnewong.art/works/available/): Collector-focused inventory of available works with edition and provenance details.
 - [Conditional](https://www.shavonnewong.art/works/conditional/): Current work, 2026. A real-time generative AI installation and digital mirror that renders the room in full and erases the people in it. Presented as an ongoing series with two named stagings: The Waiting Room, the first physical configuration, and The Mirror, a prototype in build.
 - [The Bubble We Call Home](https://www.shavonnewong.art/works/the-bubble-we-call-home/): Unique 1/1 single-channel video commission for Artist's Proof: Singapore at 60 (AP60), commissioned by Mr Chong, 2025.
-- [Meet Eva Here](https://www.shavonnewong.art/works/meet-eva-here/): Interactive AI companion artwork shown at ArtScience Museum, Art SG, and Taipei Dangdai.
+- [Meet Eva Here](https://www.shavonnewong.art/works/meet-eva-here/): Interactive AI companion artwork, presented across six exhibition sites (ArtScience Museum Singapore, Art SG, Taipei Dangdai, Art Central Hong Kong, The Columns Gallery, and Canal St Show New York) plus an online chatbot. Ran August 2024 to November 2025 and concluded with 100 Instagram diary posts and 2,363 recorded conversations.
 - [After Ophelia](https://www.shavonnewong.art/works/after-ophelia/): Two-part AI video work on identity and inherited interpretation, Paris Photo 2025.
 - [The Ties That Bind](https://www.shavonnewong.art/works/the-ties-that-bind/): Solo exhibition of seven dynamic digital works, Singapore, 2023.
 - [By Proxy](https://www.shavonnewong.art/works/by-proxy/): Series of 60 unique CGI and photography works with Lenne Chai, 2022.

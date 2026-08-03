@@ -103,6 +103,14 @@
       "destination": "/writing.html"
     },
     {
+      "source": "/journal/",
+      "destination": "/writing.html"
+    },
+    {
+      "source": "/journal/open-tabs/",
+      "destination": "/open-tabs.html"
+    },
+    {
       "source": "/writing/zh-hans/",
       "destination": "/writing-zh-hans.html"
     },
@@ -359,6 +367,11 @@
     {
       "source": "/writing-zh-hant.html",
       "destination": "/writing/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/open-tabs.html",
+      "destination": "/journal/open-tabs/",
       "permanent": true
     },
     {
@@ -1267,6 +1280,23 @@
         {
           "key": "X-Frame-Options",
           "value": "SAMEORIGIN"
+        }
+      ]
+    },
+    {
+      "source": "/assets/cv/shavonne-wong-cv.pdf",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"Shavonne-Wong-CV.pdf\""
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     },
