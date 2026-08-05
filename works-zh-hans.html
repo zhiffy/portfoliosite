@@ -917,8 +917,8 @@
         if (!it || !singleModal) return;
         const cluster = '';
         const status = workStatusLabel(it.status);
-        const imageSrc = String(it.image || '').replace(/^\//, '');
-        const videoSrc = String(it.video_url || '').replace(/^\//, '');
+        const imageSrc = String(it.image || '');
+        const videoSrc = String(it.video_url || '');
         const marketUrl = String(it.marketplace_url || '');
         singleModal.style.removeProperty('--wk2-modal-media-width');
         singleModal.removeAttribute('data-media-orientation');
@@ -1068,8 +1068,8 @@
             const status = String(it.status || '').toLowerCase();
             card.dataset.availability = workAvailability(status);
             const cluster = '';
-            const imgSrc = String(it.image || '').replace(/^\//, '');
-            const previewSrc = String(it.video_url || '').replace(/^\//, '');
+            const imgSrc = String(it.image || '');
+            const previewSrc = String(it.video_url || '');
             const statusLabel = workStatusLabel(status);
             card.innerHTML =
               '<div class="wk2-tile-media">' +
