@@ -184,10 +184,19 @@
 /about/ /about.html 200
 /contact/ /contact.html 200
 /press/ /press.html 200
-/journal/ /writing.html 200
+/journal/ /journal.html 200
+/journal/there-is-no-universal-user/ /there-is-no-universal-user.html 200
 /journal/open-tabs/ /open-tabs.html 200
 /open-tabs.html /journal/open-tabs/ 301!
-/writing/ /writing.html 200
+/writing/ /journal/ 301!
+/writing/zh-hans/ /journal/zh-hans/ 301!
+/writing/zh-hant/ /journal/zh-hant/ 301!
+/writing-zh-hans.html /journal/zh-hans/ 301!
+/writing-zh-hant.html /journal/zh-hant/ 301!
+/zh-hans/writing/ /journal/zh-hans/ 301!
+/zh-hant/writing/ /journal/zh-hant/ 301!
+/zh-hans-writing.html /journal/zh-hans/ 301!
+/zh-hant-writing.html /journal/zh-hant/ 301!
 
 # i18n:localized-routes:start
 /about/zh-hans/ /about-zh-hans.html 200
@@ -206,14 +215,14 @@
 /contact-zh-hant.html /contact/zh-hant/ 301!
 /zh-hant/contact/ /contact/zh-hant/ 301!
 /zh-hant-contact.html /contact/zh-hant/ 301!
-/writing/zh-hans/ /writing-zh-hans.html 200
-/writing-zh-hans.html /writing/zh-hans/ 301!
-/zh-hans/writing/ /writing/zh-hans/ 301!
-/zh-hans-writing.html /writing/zh-hans/ 301!
-/writing/zh-hant/ /writing-zh-hant.html 200
-/writing-zh-hant.html /writing/zh-hant/ 301!
-/zh-hant/writing/ /writing/zh-hant/ 301!
-/zh-hant-writing.html /writing/zh-hant/ 301!
+/journal/zh-hans/ /journal-zh-hans.html 200
+/journal-zh-hans.html /journal/zh-hans/ 301!
+/zh-hans/journal/ /journal/zh-hans/ 301!
+/zh-hans-journal.html /journal/zh-hans/ 301!
+/journal/zh-hant/ /journal-zh-hant.html 200
+/journal-zh-hant.html /journal/zh-hant/ 301!
+/zh-hant/journal/ /journal/zh-hant/ 301!
+/zh-hant-journal.html /journal/zh-hant/ 301!
 /press/zh-hans/ /press-zh-hans.html 200
 /press-zh-hans.html /press/zh-hans/ 301!
 /zh-hans/press/ /press/zh-hans/ 301!
@@ -412,7 +421,7 @@
 /about.html /about/ 301!
 /contact.html /contact/ 301!
 /press.html /press/ 301!
-/writing.html /writing/ 301!
+/writing.html /journal/ 301!
 /update2023jan.html /update2023jan/ 301!
 /update2023june.html /update2023june/ 301!
 /update2024jan.html /update2024jan/ 301!

@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <title>Open Tabs, what I am reading and looking at | Shavonne Wong</title>
-  <meta name="description" content="A running record of what Shavonne Wong is reading, watching and circling, grouped by the subjects the practice keeps returning to. Visibility and erasure, attention without recognition, sentience beyond the human, memory and fabrication, image systems.">
+  <meta name="description" content="An interactive map of what Shavonne Wong is reading, watching and interested in, grouped by the subjects the practice keeps returning to.">
   <meta name="author" content="Shavonne Wong">
   <link rel="canonical" href="https://www.shavonnewong.art/journal/open-tabs/">
   <!-- i18n:hreflang -->
@@ -18,16 +18,17 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.shavonnewong.art/journal/open-tabs/">
   <meta property="og:title" content="Open Tabs, what I am reading and looking at | Shavonne Wong">
-  <meta property="og:description" content="What I am reading, watching and circling, grouped by the subjects the work keeps returning to.">
-  <meta property="og:image" content="https://www.shavonnewong.art/assets/conditional/render-3d.webp">
+  <meta property="og:description" content="An interactive map of what I am reading, watching and interested in.">
+  <meta property="og:image" content="https://www.shavonnewong.art/assets/conditional/mirror-frame-render.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Open Tabs, what I am reading and looking at | Shavonne Wong">
-  <meta name="twitter:description" content="What I am reading, watching and circling, grouped by the subjects the work keeps returning to.">
-  <meta name="twitter:image" content="https://www.shavonnewong.art/assets/conditional/render-3d.webp">
+  <meta name="twitter:description" content="An interactive map of what I am reading, watching and interested in.">
+  <meta name="twitter:image" content="https://www.shavonnewong.art/assets/conditional/mirror-frame-render.webp">
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/mulish/mulish-variable.woff2" crossorigin>
   <link rel="stylesheet" href="/scroll-narrative.css?v=20260629-era-scale">
   <link rel="stylesheet" href="/scroll-pages.css?v=20260620-video-embed">
-  <link rel="stylesheet" href="/open-tabs.css?v=20260803-open-tabs-v2">
+  <link rel="stylesheet" href="/open-tabs-map.css?v=20260814-constellation">
+  <script>document.documentElement.classList.add('otm-js');</script>
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
     <!-- End Cloudflare Web Analytics -->
@@ -40,7 +41,7 @@
       gtag('config', 'G-L9KCWXRT7E');
     </script>
 </head>
-<body class="sn-page-body ot-body">
+<body class="sn-page-body">
   <a class="sn-skip-link" href="#main-content">Skip to content</a>
 <header class="sn-nav" data-page-nav>
     <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="/assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
@@ -61,141 +62,149 @@
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
   </header>
 
-  <main id="main-content" class="ot-main" data-open-tabs data-withheld="12">
+  <main id="main-content" class="otm-page">
 
-    <header class="ot-head">
-      <h1 class="ot-title">Open tabs.</h1>
-      <p class="ot-standfirst">What I am reading, watching and circling, grouped by the things the work keeps returning to. If you are circling any of the same things, or you have something I should read, send it over.</p>
+    <header class="otm-hero">
+      <h1>Open tabs.</h1>
+      <p class="otm-standfirst">What I am reading, watching and find myself interested in. If you are thinking about any of the same things, or you have something I should read, please send it over!</p>
     </header>
 
-    <div class="ot-field-wrap" aria-hidden="true">
-      <svg class="ot-field" data-ot-field role="presentation"></svg>
-      <p class="ot-field-note">The regions overlap because the interests do. Everything in the field is listed below.</p>
+    <!-- Documentation images are shown small, credited, and linked for reference in a
+         non-commercial reading list. Any image is removed on request. -->
+
+    <div class="otm-split">
+      <section class="otm-map" aria-label="Map of open tabs">
+        <svg class="otm-svg" viewBox="0 40 1000 660" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Fourteen movable open tabs joined to five recurring subjects">
+          <defs>
+            <filter id="otm-blur" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="14"></feGaussianBlur>
+            </filter>
+          </defs>
+        </svg>
+        <div class="otm-map-tools">
+          <div class="otm-legend" aria-label="Kinds of open tabs"></div>
+          <p class="otm-peek" aria-live="polite">Click any tab or subject to open it. Drag to rearrange.</p>
+          <button class="otm-reset" type="button" hidden>Reset map</button>
+        </div>
+        <p class="otm-move-status otm-sr-only" aria-live="polite"></p>
+        <p class="otm-map-note">The threads cross because the interests do. Every tab is also in the plain list below.</p>
+      </section>
+
+      <section class="otm-panel" aria-label="Selected tab" aria-live="polite" hidden>
+        <button class="otm-panel-close" type="button" data-otm-close aria-label="Close details">Close</button>
+        <div class="otm-panel-inner"></div>
+      </section>
     </div>
 
-    <div class="ot-controls" role="tablist" aria-label="View">
-      <button class="ot-tab" type="button" role="tab" data-ot-tab="regions" aria-selected="true">By region</button>
-      <button class="ot-tab" type="button" role="tab" data-ot-tab="all" aria-selected="false">Newest first</button>
-      <span class="ot-count" data-ot-count>14 entries</span>
-    </div>
+    <div class="otm-accordion" aria-label="Open tabs by subject"></div>
 
-    <section class="ot-regions" aria-label="Recurring subjects">
-      <div data-region-def="visibility-and-erasure" data-region-name="Visibility and erasure" class="ot-group-head">
-        <h2 class="ot-group-name">Visibility and erasure</h2>
-        <p class="ot-group-blurb">Who gets rendered and who gets left out, and why that is usually a procedure rather than a decision.</p>
-      </div>
-      <div data-region-def="attention-without-recognition" data-region-name="Attention without recognition" class="ot-group-head">
-        <h2 class="ot-group-name">Attention without recognition</h2>
-        <p class="ot-group-blurb">Being detected is not the same as being known. Machines that orient toward you without seeing you.</p>
-      </div>
-      <div data-region-def="sentience-beyond-the-human" data-region-name="Sentience beyond the human" class="ot-group-head">
-        <h2 class="ot-group-name">Sentience beyond the human</h2>
-        <p class="ot-group-blurb">Plants, animals, and the possibility that awareness was never ours alone. Also how differently other things hold time.</p>
-      </div>
-      <div data-region-def="memory-and-fabrication" data-region-name="Memory and fabrication" class="ot-group-head">
-        <h2 class="ot-group-name">Memory and fabrication</h2>
-        <p class="ot-group-blurb">The composite self, built from other people's images and other people's accounts of you.</p>
-      </div>
-      <div data-region-def="image-systems" data-region-name="Image systems" class="ot-group-head">
-        <h2 class="ot-group-name">Image systems</h2>
-        <p class="ot-group-blurb">How pictures are made, who they serve, and the decade I spent inside the machine that makes them.</p>
-      </div>
+    <section class="otm-fallback" aria-label="All tabs, plain list">
+
+      <h2 id="region-visibility">01 · Visibility and erasure</h2>
+      <p class="otm-fb-blurb">Who gets rendered and who gets left out, and why that is usually a procedure rather than a decision.</p>
+
+      <article id="strickler">
+        <h3>On breaking the algorithm's picture of you <span class="otm-byline">· Yancey Strickler</span></h3>
+        <p class="otm-entry-meta">24 July 2026 · Link</p>
+        <p class="otm-entry-note">Once the algorithm knows you, how do you break its picture of you? How do you meet the things that might interest a future version of you, instead of feeding the one you already are?</p>
+      </article>
+
+      <article id="han">
+        <h3>Absence <span class="otm-byline">· Byung-Chul Han</span></h3>
+        <p class="otm-entry-meta">3 July 2026 · Book</p>
+        <p class="otm-entry-note">Han asks why we are exhausted by so much freedom. I keep circling a version of the same shape. Why do we feel so unseen while being so surveilled? And why does being unseen feel offensive?</p>
+        <p class="otm-entry-links">Alongside <a href="/works/conditional/">Conditional</a></p>
+      </article>
+
+      <article id="imprints">
+        <h3>Imprints of a city</h3>
+        <p class="otm-entry-meta">30 June 2026 · Note</p>
+        <p class="otm-entry-note">Psychogeography says the city presses itself onto you. Reversed, the systems in a city take an imprint of you without asking. Mendieta pressed her body against glass and photographed what the pressure did. The imprint is shaped by the force, not the body.</p>
+      </article>
+
+      <article id="face">
+        <h3>Face embeddings, run backwards</h3>
+        <p class="otm-entry-meta">25 June 2026 · Note</p>
+        <p class="otm-entry-note">A face embeds as a list of numbers, a fingerprint rather than a photo. So running the numbers in reverse should grow a face close to yours. This is the third time it has come back, so I have started building it.</p>
+        <p class="otm-entry-links">Alongside <a href="/works/conditional/">Conditional</a></p>
+      </article>
+
+      <article id="privacy">
+        <h3>My Little Piece of Privacy <span class="otm-byline">· Niklas Roy</span></h3>
+        <p class="otm-entry-meta">18 May 2026 · Artwork</p>
+        <p class="otm-entry-note">A curtain that follows people as they pass, so the act of hiding is what draws the eye.</p>
+      </article>
+
+      <article id="apocaloptimist">
+        <h3>The AI Doc, or How I Became an Apocaloptimist</h3>
+        <p class="otm-entry-meta">23 May 2026 · Film</p>
+        <p class="otm-entry-note">I liked the ending, which lands on agency and on being able to do something about the dread rather than only holding it.</p>
+      </article>
+
+      <h2 id="region-memory">02 · Memory and fabrication</h2>
+      <p class="otm-fb-blurb">The composite self, built from other people's images and other people's accounts of you.</p>
+
+      <article id="stranger">
+        <h3>Stranger Visions <span class="otm-byline">· Heather Dewey-Hagborg</span></h3>
+        <p class="otm-entry-meta">18 May 2026 · Artwork</p>
+        <p class="otm-entry-note">Portraits grown from DNA left behind on the street. A face assembled from someone without their knowing.</p>
+      </article>
+
+      <h2 id="region-attention">03 · Attention without recognition</h2>
+      <p class="otm-fb-blurb">Being detected is not the same as being known. Machines that orient toward you without seeing you.</p>
+
+      <article id="cant-help">
+        <h3>Can't Help Myself <span class="otm-byline">· Sun Yuan and Peng Yu</span></h3>
+        <p class="otm-entry-meta">18 May 2026 · Artwork</p>
+        <p class="otm-entry-note">A machine that cannot stop containing itself.</p>
+      </article>
+
+      <article id="robots">
+        <h3>Robots that turn toward you</h3>
+        <p class="otm-entry-meta">18 May 2026 · Note</p>
+        <p class="otm-entry-note">Small machines that orient toward the nearest warm body. The attention is real and the recognition is hollow. Being witnessed without being known.</p>
+        <p class="otm-entry-links">Alongside <a href="/works/conditional/">Conditional</a></p>
+      </article>
+
+      <h2 id="region-image">04 · Image systems</h2>
+      <p class="otm-fb-blurb">How pictures are made, who they serve, and the decade I spent inside the machine that makes them.</p>
+
+      <article id="humanae">
+        <h3>Humanæ <span class="otm-byline">· Angélica Dass</span></h3>
+        <p class="otm-entry-meta">18 May 2026 · Artwork</p>
+        <p class="otm-entry-note">Skin matched to a Pantone chip, one person at a time.</p>
+      </article>
+
+      <article id="imperfect">
+        <h3>On putting work out before it is ready</h3>
+        <p class="otm-entry-meta">24 July 2026 · Note</p>
+        <p class="otm-entry-note">oh the agony of putting out imperfect work into the world, but if i never put it out, i can never improve from it</p>
+      </article>
+
+      <article id="smaller">
+        <h3>On only having large ideas</h3>
+        <p class="otm-entry-meta">3 May 2026 · Note</p>
+        <p class="otm-entry-note">Every idea I have arrives ambitious and large-scale, and it means I make fewer things. I would like to be able to make small ones.</p>
+      </article>
+
+      <h2 id="region-sentience">05 · Sentience beyond the human</h2>
+      <p class="otm-fb-blurb">Plants, animals, and the possibility that awareness was never ours alone. Also how differently other things hold time.</p>
+
+      <article id="greenland">
+        <h3>Greenland sharks, and how a bird moves when you slow it down</h3>
+        <p class="otm-entry-meta">30 May 2026 · Note</p>
+        <p class="otm-entry-note">A bird pecking looks random until you slow it down, and then it looks thoughtful. Plants look like they are dancing when you speed them up. Greenland sharks process time slowly in the deep cold and live a long while, so a long life must feel even longer to them.</p>
+      </article>
+
+      <article id="awe">
+        <h3>An awe piece, not a guilt piece</h3>
+        <p class="otm-entry-meta">25 April 2026 · Note</p>
+        <p class="otm-entry-note">If people can feel awe at the possibility that a plant is aware, that changes the relationship to the world more than guilt does. I do not know yet what it looks like.</p>
+      </article>
+
     </section>
 
-    <ol class="ot-list" data-ot-list data-view="regions">
-
-      <li class="ot-entry" id="imperfect-work" data-regions="image-systems" data-short="Putting work out early">
-        <p class="ot-meta">24 July 2026 · Note</p>
-        <h3 class="ot-entry-title">On putting work out before it is ready</h3>
-        <p class="ot-note">oh the agony of putting out imperfect work into the world, but if i never put it out, i can never improve from it</p>
-      </li>
-
-      <li class="ot-entry" id="strickler-algorithm" data-regions="visibility-and-erasure memory-and-fabrication" data-short="Breaking the algorithm's picture">
-        <p class="ot-meta">24 July 2026 · Link</p>
-        <h3 class="ot-entry-title">On breaking the algorithm's picture of you <span class="ot-byline">· Yancey Strickler</span></h3>
-        <p class="ot-note">Once the algorithm knows you, how do you break its picture of you? How do you meet the things that might interest a future version of you, instead of feeding the one you already are?</p>
-      </li>
-
-      <li class="ot-entry" id="han-absence" data-regions="visibility-and-erasure" data-short="Han, Absence">
-        <p class="ot-meta">3 July 2026 · Reading</p>
-        <h3 class="ot-entry-title">Absence <span class="ot-byline">· Byung-Chul Han</span></h3>
-        <p class="ot-note">Han asks why we are exhausted by so much freedom. I keep circling a version of the same shape. Why do we feel so unseen while being so surveilled? And why does being unseen feel offensive?</p>
-        <p class="ot-links">Alongside <a href="/works/conditional/">Conditional</a></p>
-      </li>
-
-      <li class="ot-entry" id="imprints-of-a-city" data-regions="visibility-and-erasure image-systems" data-short="Imprints of a city">
-        <p class="ot-meta">30 June 2026 · Note</p>
-        <h3 class="ot-entry-title">Imprints of a city</h3>
-        <p class="ot-note">Psychogeography says the city presses itself onto you. Reversed, the systems in a city take an imprint of you without asking. Mendieta pressed her body against glass and photographed what the pressure did. The imprint is shaped by the force, not the body.</p>
-      </li>
-
-      <li class="ot-entry" id="face-embeddings-reversed" data-regions="visibility-and-erasure memory-and-fabrication" data-short="Face embeddings, backwards">
-        <p class="ot-meta">25 June 2026 · Note</p>
-        <h3 class="ot-entry-title">Face embeddings, run backwards</h3>
-        <p class="ot-note">A face embeds as a list of numbers, a fingerprint rather than a photo. So running the numbers in reverse should grow a face close to yours. This is the third time it has come back, so I have started building it.</p>
-        <p class="ot-links">Alongside <a href="/works/conditional/">Conditional</a></p>
-      </li>
-
-      <li class="ot-entry" id="greenland-sharks" data-regions="sentience-beyond-the-human" data-short="Greenland sharks and time">
-        <p class="ot-meta">30 May 2026 · Note</p>
-        <h3 class="ot-entry-title">Greenland sharks, and how a bird moves when you slow it down</h3>
-        <p class="ot-note">A bird pecking looks random until you slow it down, and then it looks thoughtful. Plants look like they are dancing when you speed them up. Greenland sharks process time slowly in the deep cold and live a long while, so a long life must feel even longer to them.</p>
-      </li>
-
-      <li class="ot-entry" id="apocaloptimist" data-regions="visibility-and-erasure" data-short="Apocaloptimist">
-        <p class="ot-meta">23 May 2026 · Watching</p>
-        <h3 class="ot-entry-title">The AI Doc, or How I Became an Apocaloptimist</h3>
-        <p class="ot-note">I liked the ending, which lands on agency and on being able to do something about the dread rather than only holding it.</p>
-      </li>
-
-      <li class="ot-entry" id="robots-that-turn" data-regions="attention-without-recognition" data-short="Robots that turn toward you">
-        <p class="ot-meta">18 May 2026 · Note</p>
-        <h3 class="ot-entry-title">Robots that turn toward you</h3>
-        <p class="ot-note">Small machines that orient toward the nearest warm body. The attention is real and the recognition is hollow. Being witnessed without being known.</p>
-        <p class="ot-links">Alongside <a href="/works/conditional/">Conditional</a></p>
-      </li>
-
-      <li class="ot-entry" id="cant-help-myself" data-regions="attention-without-recognition" data-short="Can't Help Myself">
-        <p class="ot-meta">18 May 2026 · Work</p>
-        <h3 class="ot-entry-title">Can't Help Myself <span class="ot-byline">· Sun Yuan and Peng Yu</span></h3>
-        <p class="ot-note">A machine that cannot stop containing itself.</p>
-      </li>
-
-      <li class="ot-entry" id="stranger-visions" data-regions="visibility-and-erasure memory-and-fabrication" data-short="Stranger Visions">
-        <p class="ot-meta">18 May 2026 · Work</p>
-        <h3 class="ot-entry-title">Stranger Visions <span class="ot-byline">· Heather Dewey-Hagborg</span></h3>
-        <p class="ot-note">Portraits grown from DNA left behind on the street. A face assembled from someone without their knowing.</p>
-      </li>
-
-      <li class="ot-entry" id="my-little-piece-of-privacy" data-regions="visibility-and-erasure attention-without-recognition" data-short="My Little Piece of Privacy">
-        <p class="ot-meta">18 May 2026 · Work</p>
-        <h3 class="ot-entry-title">My Little Piece of Privacy <span class="ot-byline">· Niklas Roy</span></h3>
-        <p class="ot-note">A curtain that follows people as they pass, so the act of hiding is what draws the eye.</p>
-      </li>
-
-      <li class="ot-entry" id="humanae" data-regions="image-systems visibility-and-erasure" data-short="Humanæ">
-        <p class="ot-meta">18 May 2026 · Work</p>
-        <h3 class="ot-entry-title">Humanæ <span class="ot-byline">· Angélica Dass</span></h3>
-        <p class="ot-note">Skin matched to a Pantone chip, one person at a time.</p>
-      </li>
-
-      <li class="ot-entry" id="smaller-works" data-regions="image-systems" data-short="Only having large ideas">
-        <p class="ot-meta">3 May 2026 · Note</p>
-        <h3 class="ot-entry-title">On only having large ideas</h3>
-        <p class="ot-note">Every idea I have arrives ambitious and large-scale, and it means I make fewer things. I would like to be able to make small ones.</p>
-      </li>
-
-      <li class="ot-entry" id="plant-sentience-piece" data-regions="sentience-beyond-the-human" data-short="An awe piece">
-        <p class="ot-meta">25 April 2026 · Note</p>
-        <h3 class="ot-entry-title">An awe piece, not a guilt piece</h3>
-        <p class="ot-note">If people can feel awe at the possibility that a plant is aware, that changes the relationship to the world more than guilt does. I do not know yet what it looks like.</p>
-      </li>
-
-    </ol>
-
-    <p class="ot-withheld" data-ot-withheld></p>
-
-    <p class="ot-invite">Recognise any of this? If you have a book, a work, or a thread I should be reading, <a href="/contact/?about=open-tabs">send it over</a>. I read everything that arrives.</p>
+    <p class="otm-invite">Recognise any of this? If you have a book, a work, or a thread I should be reading, <a href="/contact/?about=open-tabs">send it over</a>. I read everything that arrives.</p>
 
     <footer class="sw-page-footer" data-site-footer>
       <div class="sw-page-footer__inner">
@@ -203,8 +212,945 @@
       </div>
     </footer>
   </main>
-<script src="/site-header.js?v=20260618-cta"></script><script src="/site-i18n.js?v=20260726-copy-refresh"></script>
-  <script src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
-  <script src="/open-tabs.js?v=20260803-open-tabs"></script>
+
+<script type="application/json" id="otm-data">
+{
+  "regions": {
+    "visibility": { "num": "01", "name": "Visibility and erasure", "blurb": "Who gets rendered and who gets left out, and why that is usually a procedure rather than a decision." },
+    "memory": { "num": "02", "name": "Memory and fabrication", "blurb": "The composite self, built from other people's images and other people's accounts of you." },
+    "attention": { "num": "03", "name": "Attention without recognition", "blurb": "Being detected is not the same as being known. Machines that orient toward you without seeing you." },
+    "image": { "num": "04", "name": "Image systems", "blurb": "How pictures are made, who they serve, and the decade I spent inside the machine that makes them." },
+    "sentience": { "num": "05", "name": "Sentience beyond the human", "blurb": "Plants, animals, and the possibility that awareness was never ours alone. Also how differently other things hold time." }
+  },
+  "entries": [
+    { "id": "han", "title": "Absence", "byline": "Byung-Chul Han", "date": "3 July 2026", "type": "Reading", "regions": ["visibility"], "note": "Han asks why we are exhausted by so much freedom. I keep circling a version of the same shape. Why do we feel so unseen while being so surveilled? And why does being unseen feel offensive?", "links": "Alongside <a href=\"/works/conditional/\">Conditional</a>" },
+    { "id": "apocaloptimist", "title": "The AI Doc, or How I Became an Apocaloptimist", "byline": "", "date": "23 May 2026", "type": "Watching", "regions": ["visibility"], "note": "I liked the ending, which lands on agency and on being able to do something about the dread rather than only holding it.", "links": "" },
+    { "id": "imprints", "title": "Imprints of a city", "byline": "", "date": "30 June 2026", "type": "Note", "regions": ["visibility", "image"], "note": "Psychogeography says the city presses itself onto you. Reversed, the systems in a city take an imprint of you without asking. Mendieta pressed her body against glass and photographed what the pressure did. The imprint is shaped by the force, not the body.", "links": "" },
+    { "id": "face", "title": "Face embeddings, run backwards", "byline": "", "date": "25 June 2026", "type": "Note", "regions": ["visibility", "memory"], "note": "A face embeds as a list of numbers, a fingerprint rather than a photo. So running the numbers in reverse should grow a face close to yours. This is the third time it has come back, so I have started building it.", "links": "Alongside <a href=\"/works/conditional/\">Conditional</a>" },
+    { "id": "privacy", "title": "My Little Piece of Privacy", "byline": "Niklas Roy", "date": "18 May 2026", "type": "Work", "regions": ["visibility", "attention"], "note": "A curtain that follows people as they pass, so the act of hiding is what draws the eye.", "links": "" },
+    { "id": "strickler", "title": "On breaking the algorithm's picture of you", "byline": "Yancey Strickler", "date": "24 July 2026", "type": "Link", "regions": ["visibility", "memory"], "note": "Once the algorithm knows you, how do you break its picture of you? How do you meet the things that might interest a future version of you, instead of feeding the one you already are?", "links": "" },
+    { "id": "stranger", "title": "Stranger Visions", "byline": "Heather Dewey-Hagborg", "date": "18 May 2026", "type": "Work", "regions": ["memory", "visibility"], "note": "Portraits grown from DNA left behind on the street. A face assembled from someone without their knowing.", "links": "" },
+    { "id": "cant-help", "title": "Can't Help Myself", "byline": "Sun Yuan and Peng Yu", "date": "18 May 2026", "type": "Work", "regions": ["attention"], "note": "A machine that cannot stop containing itself.", "links": "" },
+    { "id": "robots", "title": "Robots that turn toward you", "byline": "", "date": "18 May 2026", "type": "Note", "regions": ["attention"], "note": "Small machines that orient toward the nearest warm body. The attention is real and the recognition is hollow. Being witnessed without being known.", "links": "Alongside <a href=\"/works/conditional/\">Conditional</a>" },
+    { "id": "humanae", "title": "Humanæ", "byline": "Angélica Dass", "date": "18 May 2026", "type": "Work", "regions": ["image", "visibility"], "note": "Skin matched to a Pantone chip, one person at a time.", "links": "" },
+    { "id": "imperfect", "title": "On putting work out before it is ready", "byline": "", "date": "24 July 2026", "type": "Note", "regions": ["image"], "note": "oh the agony of putting out imperfect work into the world, but if i never put it out, i can never improve from it", "links": "" },
+    { "id": "smaller", "title": "On only having large ideas", "byline": "", "date": "3 May 2026", "type": "Note", "regions": ["image"], "note": "Every idea I have arrives ambitious and large-scale, and it means I make fewer things. I would like to be able to make small ones.", "links": "" },
+    { "id": "greenland", "title": "Greenland sharks, and how a bird moves when you slow it down", "byline": "", "date": "30 May 2026", "type": "Note", "regions": ["sentience"], "note": "A bird pecking looks random until you slow it down, and then it looks thoughtful. Plants look like they are dancing when you speed them up. Greenland sharks process time slowly in the deep cold and live a long while, so a long life must feel even longer to them.", "links": "" },
+    { "id": "awe", "title": "An awe piece, not a guilt piece", "byline": "", "date": "25 April 2026", "type": "Note", "regions": ["sentience"], "note": "If people can feel awe at the possibility that a plant is aware, that changes the relationship to the world more than guilt does. I do not know yet what it looks like.", "links": "" }
+  ]
+}
+</script>
+
+<script>
+(function () {
+  'use strict';
+
+  var dataEl = document.getElementById('otm-data');
+  if (!dataEl) { return; }
+  var DATA = JSON.parse(dataEl.textContent);
+  var ENTRIES = {};
+  DATA.entries.forEach(function (e) { ENTRIES[e.id] = e; });
+
+  var REGION_ORDER = ['visibility', 'memory', 'attention', 'image', 'sentience'];
+  var HOME = {
+    visibility: ['strickler', 'han', 'imprints', 'face', 'privacy', 'apocaloptimist'],
+    memory: ['stranger'],
+    attention: ['cant-help', 'robots'],
+    image: ['humanae', 'imperfect', 'smaller'],
+    sentience: ['greenland', 'awe']
+  };
+  var HUBS = {
+    visibility: [255, 205],
+    memory: [735, 185],
+    attention: [770, 515],
+    image: [215, 490],
+    sentience: [505, 670]
+  };
+  var NODES = {
+    'han': { x: 190, y: 290, side: 'R', lead: true, label: 'Han, Absence' },
+    'stranger': { x: 900, y: 255, side: 'L', lead: true, label: 'Stranger Visions' },
+    'cant-help': { x: 900, y: 565, side: 'L', lead: true, label: "Can't Help Myself" },
+    'humanae': { x: 105, y: 420, side: 'R', lead: true, label: 'Humanæ' },
+    'greenland': { x: 425, y: 550, side: 'L', lead: true, label: 'Greenland sharks and time' },
+    'apocaloptimist': { x: 355, y: 255, side: 'R', label: 'Apocaloptimist' },
+    'strickler': { x: 430, y: 96, side: 'R', label: "Breaking the algorithm's picture" },
+    'face': { x: 555, y: 325, side: 'R', label: 'Face embeddings, backwards' },
+    'imprints': { x: 255, y: 360, side: 'R', label: 'Imprints of a city' },
+    'privacy': { x: 565, y: 410, side: 'R', label: 'My Little Piece of Privacy' },
+    'robots': { x: 915, y: 465, side: 'L', label: 'Robots that turn toward you' },
+    'imperfect': { x: 100, y: 585, side: 'R', label: 'Putting work out early' },
+    'smaller': { x: 285, y: 620, side: 'R', label: 'Only having large ideas' },
+    'awe': { x: 630, y: 610, side: 'R', label: 'An awe piece' }
+  };
+  Object.keys(NODES).forEach(function (id) {
+    NODES[id].originX = NODES[id].x;
+    NODES[id].originY = NODES[id].y;
+  });
+  var FORMATS = {
+    'Note': { key: 'note', label: 'Note' },
+    'Reading': { key: 'book', label: 'Book' },
+    'Watching': { key: 'film', label: 'Film' },
+    'Work': { key: 'artwork', label: 'Artwork' },
+    'Link': { key: 'link', label: 'Link' }
+  };
+  var IMAGES = {
+    'han': { src: '/assets/open-tabs/han.webp', width: 300, height: 450, alt: 'Cover of Absence by Byung-Chul Han', credit: 'Cover via <a href="https://www.wiley-vch.de/en/areas-interest/humanities-social-sciences/absence-978-1-5095-4619-0" rel="noopener">John Wiley &amp; Sons</a>' },
+    'apocaloptimist': { src: '/assets/open-tabs/apocaloptimist.webp', width: 540, height: 800, alt: 'Poster for The AI Doc, or How I Became an Apocaloptimist', credit: 'Poster via <a href="https://www.focusfeatures.com/the-ai-doc-or-how-i-became-an-apocaloptimist" rel="noopener">Focus Features</a>' },
+    'imprints': { src: '/assets/open-tabs/imprints.webp', width: 534, height: 800, alt: 'Ana Mendieta’s head and shoulders seen against a pane of glass', credit: '<a href="https://icamiami.org/artwork/ana-mendieta-untitled-glass-on-body-imprints-2/" rel="noopener">Ana Mendieta, via ICA Miami</a>' },
+    'stranger': { src: '/assets/open-tabs/stranger.jpg', width: 800, height: 533, alt: 'Stranger Visions, a wall of 3d printed portraits generated from found DNA', credit: 'Image via <a href="https://deweyhagborg.com/projects/stranger-visions" rel="noopener">Heather Dewey-Hagborg</a>' },
+    'cant-help': { src: '/assets/open-tabs/cant-help.jpg', width: 800, height: 463, alt: 'Can’t Help Myself, an industrial robot arm inside a clear enclosure', credit: '<a href="https://www.guggenheim.org/artwork/34812" rel="noopener">Sun Yuan and Peng Yu, via Guggenheim</a>' },
+    'humanae': { src: '/assets/open-tabs/humanae.jpg', width: 800, height: 571, alt: 'Humanæ, a grid of portraits on backgrounds matched to each sitter’s skin tone', credit: 'Image by <a href="https://angelicadass.com/photography/humanae/" rel="noopener">Angélica Dass</a>' },
+    'privacy': { src: '/assets/open-tabs/privacy.jpg', width: 800, height: 600, alt: 'My Little Piece of Privacy, a small curtain in a storefront window', credit: 'Image by <a href="https://www.niklasroy.com/project/88/my-little-piece-of-privacy" rel="noopener">Niklas Roy</a>' },
+    'face': { src: '/assets/open-tabs/face.jpg', width: 800, height: 450, alt: 'Concept render grid from the Mirror build', credit: 'Studio image' },
+    'robots': { src: '/assets/open-tabs/robots.webp', width: 800, height: 450, alt: 'Studio still from the Mirror chassis assembly', credit: 'Studio image' },
+    'strickler': { src: '/assets/open-tabs/strickler.webp', width: 256, height: 256, alt: 'Portrait of Yancey Strickler', credit: 'Portrait via <a href="https://ideaspace.ystrickler.com/p/data-is-fire-" rel="noopener">Yancey Strickler</a>' },
+    'imperfect': { src: '/assets/open-tabs/imperfect.webp', width: 800, height: 450, alt: 'A studio process render showing three unfinished digital faces', credit: 'Studio process image' },
+    'smaller': { src: '/assets/open-tabs/smaller.webp', width: 534, height: 800, alt: 'A small figure beneath a flowering bush and a passing bird', credit: 'Studio image from By Proxy' },
+    'greenland': { src: '/assets/open-tabs/greenland.webp', width: 800, height: 534, alt: 'Close view of a Greenland shark beneath Arctic water', credit: 'Photo by <a href="https://oceanservice.noaa.gov/facts/greenland-shark.html" rel="noopener">Hemming1952, via NOAA</a>' },
+    'awe': { src: '/assets/open-tabs/awe.webp', width: 506, height: 800, alt: 'The Loneliness of an Orchid, a figure held among pale orchid forms', credit: 'The Loneliness of an Orchid, studio image' }
+  };
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  var svg = document.querySelector('.otm-svg');
+  var split = document.querySelector('.otm-split');
+  var panel = document.querySelector('.otm-panel');
+  var panelInner = document.querySelector('.otm-panel-inner');
+  var panelClose = document.querySelector('[data-otm-close]');
+  var peekEl = document.querySelector('.otm-peek');
+  var moveStatus = document.querySelector('.otm-move-status');
+  var resetButton = document.querySelector('.otm-reset');
+  if (!svg || !split || !panel || !panelInner) { return; }
+
+  function mk(name, attrs, parent) {
+    var el = document.createElementNS(SVGNS, name);
+    if (attrs) { Object.keys(attrs).forEach(function (k) { el.setAttribute(k, attrs[k]); }); }
+    if (parent) { parent.appendChild(el); }
+    return el;
+  }
+  function homeRegion(id) { return ENTRIES[id].regions[0]; }
+  function formatFor(entry) { return FORMATS[entry.type] || { key: 'note', label: entry.type }; }
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  /* Build the map. Layers bottom to top are halos, edges, resonance, hubs, and nodes. */
+  var gHalos = mk('g', { 'class': 'otm-halos' }, svg);
+  var gEdges = mk('g', { 'class': 'otm-edges' }, svg);
+  var gResonance = mk('g', { 'class': 'otm-resonance' }, svg);
+  var resonancePath = mk('path', { 'class': 'otm-resonance-path' }, gResonance);
+  var gHubs = mk('g', { 'class': 'otm-hublabels' }, svg);
+  var gNodes = mk('g', { 'class': 'otm-nodegroup' }, svg);
+
+  var haloEls = {};
+  REGION_ORDER.forEach(function (rid) {
+    var h = HUBS[rid];
+    var g = mk('g', { 'class': 'otm-halo', 'data-region': rid, transform: 'translate(' + h[0] + ' ' + h[1] + ')' }, gHalos);
+    var ell = mk('ellipse', { cx: 0, cy: 0, rx: 150, ry: 92, filter: 'url(#otm-blur)' }, g);
+    haloEls[rid] = { g: g, ell: ell };
+  });
+
+  /* Edges are fanned per hub so parallel threads separate. */
+  var edgeEls = [];
+  var byHub = {};
+  DATA.entries.forEach(function (e) {
+    e.regions.forEach(function (r) {
+      (byHub[r] = byHub[r] || []).push(e.id);
+    });
+  });
+  function edgePath(id, rid, fanIndex) {
+    var hub = HUBS[rid];
+    var n = NODES[id];
+    var dx = n.x - hub[0], dy = n.y - hub[1];
+    var len = Math.hypot(dx, dy) || 1;
+    var ux = dx / len, uy = dy / len;
+    var sx = hub[0] + ux * 48, sy = hub[1] + uy * 48;
+    var ex = n.x - ux * 12, ey = n.y - uy * 12;
+    var mx = (sx + ex) / 2, my = (sy + ey) / 2;
+    var side = (fanIndex % 2 === 0) ? 1 : -1;
+    var mag = 30 + (fanIndex % 3) * 11;
+    var qx = mx + (-uy) * side * mag, qy = my + ux * side * mag;
+    return 'M' + sx.toFixed(1) + ' ' + sy.toFixed(1) + ' Q' + qx.toFixed(1) + ' ' + qy.toFixed(1) + ' ' + ex.toFixed(1) + ' ' + ey.toFixed(1);
+  }
+  Object.keys(byHub).forEach(function (rid) {
+    var hub = HUBS[rid];
+    var ids = byHub[rid].slice().sort(function (a, b) {
+      var aa = Math.atan2(NODES[a].y - hub[1], NODES[a].x - hub[0]);
+      var bb = Math.atan2(NODES[b].y - hub[1], NODES[b].x - hub[0]);
+      return aa - bb;
+    });
+    ids.forEach(function (id, i) {
+      var isHome = ENTRIES[id].regions[0] === rid;
+      var p = mk('path', {
+        'class': 'otm-edge' + (isHome ? ' otm-edge-home' : ''),
+        'data-entry': id,
+        'data-region': rid,
+        d: edgePath(id, rid, i)
+      }, gEdges);
+      edgeEls.push({ el: p, entry: id, region: rid, fanIndex: i });
+    });
+  });
+
+  function updateEdgesFor(id) {
+    edgeEls.forEach(function (edge) {
+      if (edge.entry === id) { edge.el.setAttribute('d', edgePath(id, edge.region, edge.fanIndex)); }
+    });
+  }
+
+  /* Hub labels, real links */
+  var hubEls = {};
+  REGION_ORDER.forEach(function (rid) {
+    var h = HUBS[rid];
+    var a = mk('a', { 'class': 'otm-hub', 'data-region': rid }, gHubs);
+    a.setAttribute('href', '#region-' + rid);
+    var t = mk('text', { x: h[0], y: h[1] }, a);
+    t.textContent = DATA.regions[rid].name.toUpperCase();
+    hubEls[rid] = a;
+  });
+
+  /* Two marks only. A solid dot is one of Shavonne's own notes. An open ring is
+     something she took in, a book, film, artwork, or link. Fine-grained type
+     lives in the peek line and the panel meta, not on the map. */
+  function markKindFor(entry) { return entry.type === 'Note' ? 'note' : 'external'; }
+  function drawMark(kind, parent, lead) {
+    if (kind === 'note') {
+      mk('circle', { 'class': 'otm-mark-fill', cx: 0, cy: 0, r: lead ? 5.8 : 4.6 }, parent);
+    } else {
+      mk('circle', { 'class': 'otm-mark-stroke', cx: 0, cy: 0, r: lead ? 7.4 : 6 }, parent);
+    }
+  }
+
+  /* Nodes remain real links. Their local coordinate system lets labels and marks move together. */
+  var nodeEls = {};
+  Object.keys(NODES).forEach(function (id) {
+    var n = NODES[id];
+    var format = formatFor(ENTRIES[id]);
+    var markKind = markKindFor(ENTRIES[id]);
+    var a = mk('a', {
+      'class': 'otm-node otm-type-' + markKind + (n.lead ? ' otm-lead' : ''),
+      'data-id': id,
+      transform: 'translate(' + n.x + ' ' + n.y + ')',
+      'aria-label': format.label + '. ' + ENTRIES[id].title + '. Drag to rearrange or click to open.'
+    }, gNodes);
+    a.setAttribute('href', '#' + id);
+    mk('circle', { 'class': 'otm-node-hit', cx: 0, cy: 0, r: 22 }, a);
+    mk('circle', { 'class': 'otm-node-selection-ring', cx: 0, cy: 0, r: 11 }, a);
+    mk('circle', { 'class': 'otm-node-focus-ring', cx: 0, cy: 0, r: 13 }, a);
+    var mark = mk('g', { 'class': 'otm-node-mark', 'aria-hidden': 'true' }, a);
+    drawMark(markKind, mark, !!n.lead);
+    var t = mk('text', { 'dominant-baseline': 'central' }, a);
+    if (n.side === 'R') {
+      t.setAttribute('x', 13); t.setAttribute('y', 0);
+      t.setAttribute('text-anchor', 'start');
+    } else {
+      t.setAttribute('x', -13); t.setAttribute('y', 0);
+      t.setAttribute('text-anchor', 'end');
+    }
+    t.textContent = n.label;
+    nodeEls[id] = { a: a, mark: mark, text: t, format: format };
+  });
+
+  function updateNodePosition(id) {
+    var n = NODES[id];
+    nodeEls[id].a.setAttribute('transform', 'translate(' + n.x.toFixed(1) + ' ' + n.y.toFixed(1) + ')');
+    updateEdgesFor(id);
+  }
+
+  /* The legend states the one distinction the map draws. */
+  var legend = document.querySelector('.otm-legend');
+  if (legend) {
+    [{ key: 'note', label: 'My notes' }, { key: 'external', label: "Other people's work" }].forEach(function (item) {
+      var span = document.createElement('span');
+      span.className = 'otm-legend-item otm-type-' + item.key;
+      var icon = document.createElementNS(SVGNS, 'svg');
+      icon.setAttribute('viewBox', '-13 -13 26 26');
+      icon.setAttribute('aria-hidden', 'true');
+      icon.setAttribute('class', 'otm-legend-icon');
+      var mark = mk('g', { 'class': 'otm-node-mark' }, icon);
+      drawMark(item.key, mark);
+      span.appendChild(icon);
+      span.appendChild(document.createTextNode(item.label));
+      legend.appendChild(span);
+    });
+  }
+
+  /* Hover focus. Related elements hold, everything else eases down */
+  function sharedRegions(a, b) {
+    return ENTRIES[a].regions.filter(function (rid) { return ENTRIES[b].regions.indexOf(rid) !== -1; });
+  }
+  function clearHot() {
+    svg.classList.remove('is-dim');
+    Array.prototype.forEach.call(svg.querySelectorAll('.is-hot, .is-hot-neighbor'), function (el) {
+      el.classList.remove('is-hot', 'is-hot-neighbor');
+    });
+  }
+  function hotEntry(id) {
+    svg.classList.add('is-dim');
+    nodeEls[id].a.classList.add('is-hot');
+    ENTRIES[id].regions.forEach(function (r) {
+      haloEls[r].g.classList.add('is-hot');
+      hubEls[r].classList.add('is-hot');
+    });
+    Object.keys(nodeEls).forEach(function (otherId) {
+      if (otherId !== id && sharedRegions(id, otherId).length) { nodeEls[otherId].a.classList.add('is-hot-neighbor'); }
+    });
+    edgeEls.forEach(function (edge) {
+      if (edge.entry === id) { edge.el.classList.add('is-hot'); }
+      else if (ENTRIES[id].regions.indexOf(edge.region) !== -1 && sharedRegions(id, edge.entry).length) {
+        edge.el.classList.add('is-hot-neighbor');
+      }
+    });
+  }
+  function hotRegion(rid) {
+    svg.classList.add('is-dim');
+    haloEls[rid].g.classList.add('is-hot');
+    hubEls[rid].classList.add('is-hot');
+    edgeEls.forEach(function (e) { if (e.region === rid) { e.el.classList.add('is-hot'); } });
+    (byHub[rid] || []).forEach(function (id) { nodeEls[id].a.classList.add('is-hot'); });
+  }
+
+  /* Panel templates */
+  function mediaHTML(id, small) {
+    var im = IMAGES[id];
+    if (im) {
+      return '<figure class="otm-entry-media"><img src="' + im.src + '" width="' + im.width + '" height="' + im.height + '" alt="' + esc(im.alt) + '" loading="' + (small ? 'lazy' : 'eager') + '">' +
+        '<figcaption class="otm-credit">' + im.credit + '</figcaption></figure>';
+    }
+    return '';
+  }
+  function titleHTML(e) {
+    return esc(e.title) + (e.byline ? ' <span class="otm-byline">· ' + esc(e.byline) + '</span>' : '');
+  }
+  function entryViewHTML(e) {
+    var home = e.regions[0];
+    var region = DATA.regions[home];
+    var arr = HOME[home];
+    var idx = arr.indexOf(e.id);
+    var M = arr.length;
+    var prevId = arr[(idx - 1 + M) % M];
+    var nextId = arr[(idx + 1) % M];
+    var html = '';
+    html += '<div class="otm-view otm-entry-view">';
+    html += '<p class="otm-crumb"><a href="#region-' + home + '" data-region-link="' + home + '">' + region.num + ' · ' + esc(region.name) + '</a></p>';
+    html += '<div class="otm-entry-grid">';
+    html += mediaHTML(e.id);
+    html += '<div class="otm-entry-copy">';
+    html += '<h2 class="otm-entry-title">' + titleHTML(e) + '</h2>';
+    html += '<p class="otm-entry-meta">' + esc(e.date) + ' · ' + esc(formatFor(e).label) + '</p>';
+    html += '<p class="otm-entry-note">' + esc(e.note) + '</p>';
+    if (e.links) { html += '<p class="otm-entry-links">' + e.links + '</p>'; }
+    html += '</div></div>';
+    html += '<div class="otm-entry-foot">';
+    html += '<a href="#' + prevId + '" data-select-entry="' + prevId + '">← Previous</a>';
+    html += '<a href="#' + nextId + '" data-select-entry="' + nextId + '">Next →</a>';
+    html += '<span class="otm-count">' + (idx + 1) + ' of ' + M + ' in this room</span>';
+    html += '</div></div>';
+    return html;
+  }
+  function regionViewHTML(rid) {
+    var r = DATA.regions[rid];
+    var connected = HOME[rid].slice();
+    DATA.entries.forEach(function (e) {
+      if (e.regions.indexOf(rid) > 0) { connected.push(e.id); }
+    });
+    var html = '';
+    html += '<div class="otm-view otm-region-view">';
+    html += '<div class="otm-region-head"><span class="otm-region-num">' + r.num + '</span><span class="otm-region-name">' + esc(r.name) + '</span></div>';
+    html += '<p class="otm-region-blurb">' + esc(r.blurb) + '</p>';
+    html += '<ul class="otm-region-list">';
+    connected.forEach(function (id) {
+      var e = ENTRIES[id];
+      html += '<li><a href="#' + id + '" data-select-entry="' + id + '">' + titleHTML(e) + '</a></li>';
+    });
+    html += '</ul></div>';
+    return html;
+  }
+
+  /* Panel swap with a short opacity ease */
+  var swapTimer = null;
+  function renderPanel(html) {
+    if (swapTimer) { clearTimeout(swapTimer); }
+    var opening = panel.hidden;
+    panel.hidden = false;
+    split.classList.add('is-panel-open');
+    if (reduced || opening) {
+      panelInner.innerHTML = html;
+      wirePanel();
+      return;
+    }
+    panelInner.classList.add('is-fading');
+    swapTimer = setTimeout(function () {
+      panelInner.innerHTML = html;
+      wirePanel();
+      panelInner.classList.remove('is-fading');
+    }, 250);
+  }
+  function wirePanel() {
+    Array.prototype.forEach.call(panelInner.querySelectorAll('[data-select-entry]'), function (a) {
+      a.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        selectEntry(a.getAttribute('data-select-entry'));
+      });
+    });
+    Array.prototype.forEach.call(panelInner.querySelectorAll('[data-region-link]'), function (a) {
+      a.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        selectRegion(a.getAttribute('data-region-link'));
+      });
+    });
+  }
+
+  /* Selection state, kept in sync between map, panel, and hash */
+  var state = { view: null, id: null };
+
+  function clearMapSelection() {
+    svg.classList.remove('has-selection');
+    Object.keys(nodeEls).forEach(function (id) {
+      var n = nodeEls[id];
+      n.a.classList.remove('is-selected', 'is-related', 'is-neighbor');
+    });
+    edgeEls.forEach(function (e) {
+      e.el.classList.remove('is-active', 'is-related', 'is-neighbor');
+      e.el.style.strokeDasharray = '';
+      e.el.style.strokeDashoffset = '';
+      e.el.style.transition = '';
+    });
+    REGION_ORDER.forEach(function (rid) {
+      haloEls[rid].g.classList.remove('is-related');
+      hubEls[rid].classList.remove('is-related');
+    });
+  }
+
+  function holdEntry(id) {
+    svg.classList.add('has-selection');
+    nodeEls[id].a.classList.add('is-selected', 'is-related');
+    ENTRIES[id].regions.forEach(function (rid) {
+      haloEls[rid].g.classList.add('is-related');
+      hubEls[rid].classList.add('is-related');
+    });
+    Object.keys(nodeEls).forEach(function (otherId) {
+      if (otherId !== id && sharedRegions(id, otherId).length) { nodeEls[otherId].a.classList.add('is-neighbor'); }
+    });
+    edgeEls.forEach(function (ed) {
+      if (ed.entry === id) { ed.el.classList.add('is-active', 'is-related'); }
+      else if (ENTRIES[id].regions.indexOf(ed.region) !== -1 && sharedRegions(id, ed.entry).length) {
+        ed.el.classList.add('is-neighbor');
+      }
+    });
+  }
+
+  function holdRegion(rid) {
+    svg.classList.add('has-selection');
+    haloEls[rid].g.classList.add('is-related');
+    hubEls[rid].classList.add('is-related');
+    edgeEls.forEach(function (ed) {
+      if (ed.region === rid) { ed.el.classList.add('is-related'); }
+    });
+    (byHub[rid] || []).forEach(function (id) { nodeEls[id].a.classList.add('is-related'); });
+  }
+
+  function pulseSelection(id) {
+    if (reduced || !NODES[id]) { return; }
+    var old = svg.querySelector('.otm-selection-ring');
+    if (old) { old.remove(); }
+    var n = NODES[id];
+    var ring = mk('circle', { 'class': 'otm-selection-ring', cx: n.x, cy: n.y, r: 10 }, svg);
+    ring.addEventListener('animationend', function () { ring.remove(); }, { once: true });
+  }
+
+  function traceEdges(id) {
+    if (reduced) { return; }
+    edgeEls.forEach(function (e) {
+      if (e.entry !== id) { return; }
+      var p = e.el;
+      var L = p.getTotalLength();
+      p.style.transition = 'none';
+      p.style.strokeDasharray = L + ' ' + L;
+      p.style.strokeDashoffset = L;
+      p.getBoundingClientRect();
+      p.style.transition = 'stroke-dashoffset .45s ease, stroke .4s ease';
+      p.style.strokeDashoffset = '0';
+      setTimeout(function () {
+        p.style.strokeDasharray = '';
+        p.style.strokeDashoffset = '';
+        p.style.transition = '';
+      }, 520);
+    });
+  }
+
+  function selectEntry(id, updateHash) {
+    var e = ENTRIES[id];
+    if (!e) { return; }
+    clearMapSelection();
+    holdEntry(id);
+    pulseSelection(id);
+    traceEdges(id);
+    renderPanel(entryViewHTML(e));
+    state = { view: 'entry', id: id };
+    if (updateHash !== false) { history.replaceState(null, '', '#' + id); }
+  }
+
+  function selectRegion(rid, updateHash) {
+    if (!DATA.regions[rid]) { return; }
+    clearMapSelection();
+    holdRegion(rid);
+    renderPanel(regionViewHTML(rid));
+    state = { view: 'region', id: rid };
+    if (updateHash !== false) { history.replaceState(null, '', '#region-' + rid); }
+  }
+
+  function closePanel(updateHash) {
+    if (swapTimer) { clearTimeout(swapTimer); swapTimer = null; }
+    clearHot();
+    clearMapSelection();
+    panelInner.classList.remove('is-fading');
+    panelInner.innerHTML = '';
+    panel.hidden = true;
+    split.classList.remove('is-panel-open');
+    state = { view: null, id: null };
+    if (peekEl) { peekEl.textContent = defaultPeek; }
+    if (updateHash !== false) { history.replaceState(null, '', location.pathname + location.search); }
+  }
+
+  if (panelClose) {
+    panelClose.addEventListener('click', function () { closePanel(); });
+  }
+
+  /* Map feedback, movement, and link wiring. */
+  var peekTimer = null;
+  var defaultPeek = 'Click any tab or subject to open it. Drag to rearrange.';
+  var dragState = null;
+  var moveMode = null;
+  var suppressClick = {};
+  var MAX_DRAG = 150;
+  function showEntryPeek(id, delayed) {
+    if (!peekEl) { return; }
+    if (peekTimer) { clearTimeout(peekTimer); }
+    var show = function () {
+      peekEl.textContent = ENTRIES[id].date + ' · ' + formatFor(ENTRIES[id]).label + ' · Click to open';
+    };
+    if (delayed && !reduced) { peekTimer = setTimeout(show, 120); }
+    else { show(); }
+  }
+  function showRegionPeek(rid) {
+    if (!peekEl) { return; }
+    peekEl.textContent = (byHub[rid] || []).length + ' tabs · Click to open';
+  }
+  function resetPeek() {
+    if (peekTimer) { clearTimeout(peekTimer); peekTimer = null; }
+    if (peekEl) { peekEl.textContent = defaultPeek; }
+  }
+
+  function announce(message) {
+    if (!moveStatus) { return; }
+    moveStatus.textContent = '';
+    setTimeout(function () { moveStatus.textContent = message; }, 20);
+  }
+
+  function clientToSvg(clientX, clientY) {
+    var point = svg.createSVGPoint();
+    point.x = clientX;
+    point.y = clientY;
+    return point.matrixTransform(svg.getScreenCTM().inverse());
+  }
+
+  function constrainedPosition(id, x, y) {
+    var n = NODES[id];
+    var dx = x - n.originX, dy = y - n.originY;
+    var distance = Math.hypot(dx, dy);
+    if (distance > MAX_DRAG) {
+      x = n.originX + dx / distance * MAX_DRAG;
+      y = n.originY + dy / distance * MAX_DRAG;
+    }
+    return { x: Math.max(65, Math.min(935, x)), y: Math.max(72, Math.min(650, y)) };
+  }
+
+  function setNodePosition(id, x, y) {
+    var next = constrainedPosition(id, x, y);
+    NODES[id].x = next.x;
+    NODES[id].y = next.y;
+    updateNodePosition(id);
+  }
+
+  function clearResonance() {
+    resonancePath.classList.remove('is-visible');
+    resonancePath.removeAttribute('d');
+    Array.prototype.forEach.call(svg.querySelectorAll('.is-resonant'), function (el) { el.classList.remove('is-resonant'); });
+  }
+
+  function updateResonance(id) {
+    clearResonance();
+    var n = NODES[id];
+    var nearest = null;
+    var nearestDistance = 126;
+    var nearestShared = [];
+    Object.keys(NODES).forEach(function (otherId) {
+      if (otherId === id) { return; }
+      var shared = sharedRegions(id, otherId);
+      if (!shared.length) { return; }
+      var other = NODES[otherId];
+      var distance = Math.hypot(n.x - other.x, n.y - other.y);
+      if (distance < nearestDistance) {
+        nearest = otherId;
+        nearestDistance = distance;
+        nearestShared = shared;
+      }
+    });
+    if (!nearest) {
+      if (peekEl) { peekEl.textContent = 'Moving ' + formatFor(ENTRIES[id]).label + ' · ' + ENTRIES[id].title; }
+      return;
+    }
+    var other = NODES[nearest];
+    var mx = (n.x + other.x) / 2;
+    var my = (n.y + other.y) / 2 - Math.min(34, nearestDistance * .18);
+    resonancePath.setAttribute('d', 'M' + n.x.toFixed(1) + ' ' + n.y.toFixed(1) + ' Q' + mx.toFixed(1) + ' ' + my.toFixed(1) + ' ' + other.x.toFixed(1) + ' ' + other.y.toFixed(1));
+    resonancePath.classList.add('is-visible');
+    nodeEls[id].a.classList.add('is-resonant');
+    nodeEls[nearest].a.classList.add('is-resonant');
+    if (peekEl) { peekEl.textContent = 'Shared thought · ' + DATA.regions[nearestShared[0]].name; }
+  }
+
+  function mapWasMoved() {
+    return Object.keys(NODES).some(function (id) {
+      return Math.abs(NODES[id].x - NODES[id].originX) > .1 || Math.abs(NODES[id].y - NODES[id].originY) > .1;
+    });
+  }
+
+  function syncResetButton() {
+    if (resetButton) { resetButton.hidden = !mapWasMoved(); }
+  }
+
+  function beginKeyboardMove(id) {
+    if (moveMode) { return; }
+    moveMode = { id: id, x: NODES[id].x, y: NODES[id].y };
+    nodeEls[id].a.classList.add('is-moving-keyboard');
+    svg.classList.add('is-dragging');
+    if (peekEl) { peekEl.textContent = 'Move with arrow keys. Enter sets the position. Escape cancels.'; }
+    announce('Moving ' + ENTRIES[id].title + '. Use arrow keys. Hold Shift for a larger step.');
+  }
+
+  function finishKeyboardMove(commit) {
+    if (!moveMode) { return; }
+    var moving = moveMode;
+    if (!commit) { setNodePosition(moving.id, moving.x, moving.y); }
+    nodeEls[moving.id].a.classList.remove('is-moving-keyboard');
+    svg.classList.remove('is-dragging');
+    clearResonance();
+    moveMode = null;
+    syncResetButton();
+    resetPeek();
+    announce(commit ? 'Position set for ' + ENTRIES[moving.id].title + '.' : 'Move cancelled.');
+  }
+
+  if (resetButton) {
+    resetButton.addEventListener('click', function () {
+      if (moveMode) { finishKeyboardMove(false); }
+      Object.keys(NODES).forEach(function (id) {
+        NODES[id].x = NODES[id].originX;
+        NODES[id].y = NODES[id].originY;
+        updateNodePosition(id);
+      });
+      clearResonance();
+      syncResetButton();
+      resetPeek();
+      announce('Map returned to its original arrangement.');
+    });
+  }
+
+  function finishPointerDrag(ev, cancelled) {
+    if (!dragState || dragState.pointerId !== ev.pointerId) { return; }
+    var moving = dragState;
+    var a = nodeEls[moving.id].a;
+    if (cancelled && moving.active) { setNodePosition(moving.id, moving.startX, moving.startY); }
+    if (moving.active && !cancelled) {
+      ev.preventDefault();
+      suppressClick[moving.id] = true;
+      setTimeout(function () { suppressClick[moving.id] = false; }, 350);
+      a.classList.add('is-settling');
+      syncResetButton();
+      announce('Position set for ' + ENTRIES[moving.id].title + '.');
+      setTimeout(function () { a.classList.remove('is-settling'); }, 260);
+    }
+    a.classList.remove('is-dragging');
+    svg.classList.remove('is-dragging');
+    clearResonance();
+    dragState = null;
+    resetPeek();
+  }
+  Object.keys(nodeEls).forEach(function (id) {
+    var a = nodeEls[id].a;
+    a.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      if (suppressClick[id]) {
+        suppressClick[id] = false;
+        return;
+      }
+      selectEntry(id);
+    });
+    a.addEventListener('keydown', function (ev) {
+      var isArrow = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].indexOf(ev.key) !== -1;
+      if (moveMode && moveMode.id === id) {
+        if (isArrow) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          var step = ev.shiftKey ? 24 : 8;
+          var x = NODES[id].x + (ev.key === 'ArrowLeft' ? -step : (ev.key === 'ArrowRight' ? step : 0));
+          var y = NODES[id].y + (ev.key === 'ArrowUp' ? -step : (ev.key === 'ArrowDown' ? step : 0));
+          setNodePosition(id, x, y);
+          updateResonance(id);
+          return;
+        }
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          ev.stopPropagation();
+          finishKeyboardMove(true);
+          return;
+        }
+        if (ev.key === 'Escape') {
+          ev.preventDefault();
+          ev.stopPropagation();
+          finishKeyboardMove(false);
+        }
+        return;
+      }
+      if (ev.key === ' ') {
+        ev.preventDefault();
+        ev.stopPropagation();
+        beginKeyboardMove(id);
+      } else if (ev.key === 'Enter') {
+        ev.preventDefault();
+        ev.stopPropagation();
+        selectEntry(id);
+      }
+    });
+    a.addEventListener('pointerdown', function (ev) {
+      if (ev.pointerType === 'mouse' && ev.button !== 0) { return; }
+      var point = clientToSvg(ev.clientX, ev.clientY);
+      dragState = {
+        id: id,
+        pointerId: ev.pointerId,
+        startClientX: ev.clientX,
+        startClientY: ev.clientY,
+        startPointX: point.x,
+        startPointY: point.y,
+        startX: NODES[id].x,
+        startY: NODES[id].y,
+        active: false
+      };
+      a.setPointerCapture(ev.pointerId);
+    });
+    a.addEventListener('pointermove', function (ev) {
+      if (!dragState || dragState.id !== id || dragState.pointerId !== ev.pointerId) { return; }
+      var pixels = Math.hypot(ev.clientX - dragState.startClientX, ev.clientY - dragState.startClientY);
+      if (!dragState.active && pixels >= 6) {
+        dragState.active = true;
+        clearHot();
+        a.classList.add('is-dragging');
+        svg.classList.add('is-dragging');
+        announce('Moving ' + ENTRIES[id].title + '.');
+      }
+      if (!dragState.active) { return; }
+      ev.preventDefault();
+      var point = clientToSvg(ev.clientX, ev.clientY);
+      setNodePosition(id, dragState.startX + point.x - dragState.startPointX, dragState.startY + point.y - dragState.startPointY);
+      updateResonance(id);
+    });
+    a.addEventListener('pointerup', function (ev) {
+      finishPointerDrag(ev, false);
+    });
+    a.addEventListener('pointercancel', function (ev) {
+      finishPointerDrag(ev, true);
+    });
+    a.addEventListener('mouseenter', function () {
+      if (dragState && dragState.active) { return; }
+      hotEntry(id);
+      showEntryPeek(id, true);
+    });
+    a.addEventListener('mouseleave', function () {
+      if (dragState && dragState.active) { return; }
+      clearHot();
+      resetPeek();
+    });
+    a.addEventListener('focus', function () { if (!moveMode) { hotEntry(id); showEntryPeek(id, false); } });
+    a.addEventListener('blur', function () { if (!moveMode) { clearHot(); resetPeek(); } });
+  });
+
+  svg.addEventListener('pointerup', function (ev) { finishPointerDrag(ev, false); });
+  svg.addEventListener('pointercancel', function (ev) { finishPointerDrag(ev, true); });
+  window.addEventListener('pointerup', function (ev) { finishPointerDrag(ev, false); });
+  window.addEventListener('pointercancel', function (ev) { finishPointerDrag(ev, true); });
+  REGION_ORDER.forEach(function (rid) {
+    var a = hubEls[rid];
+    a.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      selectRegion(rid);
+    });
+    a.addEventListener('keydown', function (ev) {
+      if (ev.key !== 'Enter') { return; }
+      ev.preventDefault();
+      selectRegion(rid);
+    });
+    a.addEventListener('mouseenter', function () { hotRegion(rid); showRegionPeek(rid); });
+    a.addEventListener('mouseleave', function () { clearHot(); resetPeek(); });
+    a.addEventListener('focus', function () { hotRegion(rid); showRegionPeek(rid); });
+    a.addEventListener('blur', function () { clearHot(); resetPeek(); });
+  });
+
+  window.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape' && state.view && !moveMode) { closePanel(); }
+  });
+
+  /* Keyboard sweep. Arrows move within and between regions */
+  svg.addEventListener('keydown', function (ev) {
+    if (moveMode) { return; }
+    var key = ev.key;
+    if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].indexOf(key) === -1) { return; }
+    if (!state.view) { return; }
+    ev.preventDefault();
+    var rid = state.view === 'entry' ? homeRegion(state.id) : (state.view === 'region' ? state.id : 'visibility');
+    var ridx = REGION_ORDER.indexOf(rid);
+    if (key === 'ArrowUp' || key === 'ArrowDown') {
+      var nidx = (ridx + (key === 'ArrowDown' ? 1 : -1) + REGION_ORDER.length) % REGION_ORDER.length;
+      selectEntry(HOME[REGION_ORDER[nidx]][0]);
+      return;
+    }
+    var arr = HOME[rid];
+    var i = state.view === 'entry' ? arr.indexOf(state.id) : 0;
+    if (i === -1) { i = 0; }
+    var j = (i + (key === 'ArrowRight' ? 1 : -1) + arr.length) % arr.length;
+    selectEntry(arr[j]);
+  });
+
+  /* Proximity response and halo breath, one rAF throttled pointermove. */
+  if (!reduced) {
+    var lastX = 0, lastY = 0, rafId = null, pointerIn = false, nearId = null;
+
+    function clearNear() {
+      Array.prototype.forEach.call(svg.querySelectorAll('.is-near'), function (el) { el.classList.remove('is-near'); });
+      nearId = null;
+    }
+
+    function setNear(id) {
+      if (nearId === id) { return; }
+      clearNear();
+      if (!id) { return; }
+      nearId = id;
+      nodeEls[id].a.classList.add('is-near');
+      ENTRIES[id].regions.forEach(function (rid) {
+        haloEls[rid].g.classList.add('is-near');
+        hubEls[rid].classList.add('is-near');
+      });
+      edgeEls.forEach(function (ed) { if (ed.entry === id) { ed.el.classList.add('is-near'); } });
+    }
+
+    var applyProximity = function () {
+      rafId = null;
+      if (!pointerIn || svg.classList.contains('is-dragging')) { return; }
+      var rect = svg.getBoundingClientRect();
+      if (!rect.width || !rect.height) { return; }
+      var s = Math.min(rect.width / 1000, rect.height / 660);
+      var ox = (rect.width - 1000 * s) / 2;
+      var oy = (rect.height - 660 * s) / 2;
+      var vx = (lastX - rect.left - ox) / s;
+      var vy = (lastY - rect.top - oy) / s + 40;
+      var nearest = null;
+      var nearestDistance = Infinity;
+      Object.keys(NODES).forEach(function (id) {
+        var n = NODES[id];
+        var d = Math.hypot(n.x - vx, n.y - vy);
+        if (d < nearestDistance) { nearest = id; nearestDistance = d; }
+      });
+      var hotNode = svg.querySelector('.otm-node.is-hot');
+      setNear(hotNode ? hotNode.getAttribute('data-id') : (nearestDistance < 150 ? nearest : null));
+      REGION_ORDER.forEach(function (rid) {
+        var h = HUBS[rid];
+        var dx = h[0] - vx, dy = h[1] - vy;
+        var d = Math.hypot(dx, dy) || 1;
+        var k = Math.max(0, 1 - d / 300);
+        var off = 8 * k;
+        haloEls[rid].ell.style.transform = off > 0.2
+          ? 'translate(' + ((dx / d) * off).toFixed(2) + 'px,' + ((dy / d) * off).toFixed(2) + 'px)'
+          : '';
+      });
+    };
+
+    svg.addEventListener('pointermove', function (ev) {
+      pointerIn = true;
+      lastX = ev.clientX;
+      lastY = ev.clientY;
+      if (!rafId) { rafId = requestAnimationFrame(applyProximity); }
+    });
+    svg.addEventListener('pointerleave', function () {
+      pointerIn = false;
+      clearNear();
+      REGION_ORDER.forEach(function (rid) { haloEls[rid].ell.style.transform = ''; });
+    });
+  }
+
+  /* Mobile accordion, one region open at a time */
+  var acc = document.querySelector('.otm-accordion');
+  if (acc) {
+    var accBodies = [];
+    var accHeads = [];
+    REGION_ORDER.forEach(function (rid, ri) {
+      var r = DATA.regions[rid];
+      var wrap = document.createElement('div');
+      wrap.className = 'otm-acc-region';
+      var head = document.createElement('button');
+      head.type = 'button';
+      head.className = 'otm-acc-head';
+      head.setAttribute('aria-expanded', ri === 0 ? 'true' : 'false');
+      head.innerHTML = '<span class="otm-acc-num">' + r.num + '</span><span class="otm-acc-name">' + esc(r.name) + '</span>';
+      var body = document.createElement('div');
+      body.className = 'otm-acc-body';
+      if (ri !== 0) { body.hidden = true; }
+      var bodyHTML = '';
+      HOME[rid].forEach(function (id) {
+        var e = ENTRIES[id];
+        bodyHTML += '<div class="otm-acc-entry">';
+        bodyHTML += mediaHTML(id, true);
+        bodyHTML += '<div class="otm-entry-copy">';
+        bodyHTML += '<h3 class="otm-entry-title">' + titleHTML(e) + '</h3>';
+        bodyHTML += '<p class="otm-entry-meta">' + esc(e.date) + ' · ' + esc(formatFor(e).label) + '</p>';
+        bodyHTML += '<p class="otm-entry-note">' + esc(e.note) + '</p>';
+        if (e.links) { bodyHTML += '<p class="otm-entry-links">' + e.links + '</p>'; }
+        bodyHTML += '</div></div>';
+      });
+      body.innerHTML = bodyHTML;
+      head.addEventListener('click', function () {
+        var isOpen = head.getAttribute('aria-expanded') === 'true';
+        accHeads.forEach(function (h) { h.setAttribute('aria-expanded', 'false'); });
+        accBodies.forEach(function (b) { b.hidden = true; });
+        if (!isOpen) {
+          head.setAttribute('aria-expanded', 'true');
+          body.hidden = false;
+        }
+      });
+      wrap.appendChild(head);
+      wrap.appendChild(body);
+      acc.appendChild(wrap);
+      accBodies.push(body);
+      accHeads.push(head);
+    });
+  }
+
+  /* Load a named view, otherwise leave the map open and unselected */
+  function initFromHash() {
+    var h = decodeURIComponent(location.hash.replace('#', ''));
+    if (h.indexOf('region-') === 0 && DATA.regions[h.slice(7)]) {
+      selectRegion(h.slice(7), false);
+    } else if (ENTRIES[h]) {
+      selectEntry(h, false);
+    } else {
+      closePanel(false);
+    }
+  }
+  window.addEventListener('hashchange', initFromHash);
+  initFromHash();
+})();
+</script>
+
+<script defer src="/site-header.js?v=20260813-journal"></script><script defer src="/site-i18n.js?v=20260813-journal"></script>
+  <script defer src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
 </body>
 </html>

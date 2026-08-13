@@ -43,7 +43,7 @@
       "home",
       "about",
       "works",
-      "writing",
+      "journal",
       "press",
       "contact"
     ],
@@ -51,7 +51,7 @@
       "home": "/#hero",
       "about": "/about/",
       "works": "/works/",
-      "writing": "/writing/",
+      "journal": "/journal/",
       "press": "/press/",
       "contact": "/contact/"
     },
@@ -59,7 +59,7 @@
       "home": null,
       "about": "about",
       "works": "works",
-      "writing": "writing",
+      "journal": "journal",
       "press": "press",
       "contact": "contact"
     },
@@ -85,11 +85,11 @@
         "fr": "Œuvres",
         "th": "ผลงาน"
       },
-      "writing": {
-        "en": "Writing",
-        "zh-Hans": "文字",
-        "zh-Hant": "文字",
-        "fr": "Textes",
+      "journal": {
+        "en": "Journal",
+        "zh-Hans": "日志",
+        "zh-Hant": "日誌",
+        "fr": "Journal",
         "th": "บันทึก"
       },
       "press": {
@@ -139,8 +139,8 @@
       ],
       "scripts": [
         "/assets/js/subnav.js?v=20260605-rail-current",
-        "/site-header.js?v=20260618-cta",
-        "/site-i18n.js?v=20260620-i18n-sticky",
+        "/site-header.js?v=20260813-journal",
+        "/site-i18n.js?v=20260813-journal",
         "/fluid-renderer.js?v=20260611-ripple-v7",
         "/press-hover.js?v=20260616-genai"
       ],
@@ -185,26 +185,26 @@
         }
       }
     },
-    "writing": {
-      "enSource": "writing.html",
-      "urlBase": "/writing/",
+    "journal": {
+      "enSource": "journal.html",
+      "urlBase": "/journal/",
       "bodyStart": "<main id=\"main-content\"",
-      "bodyEnd": "<script src=\"/site-header.js",
+      "bodyEnd": "<script defer src=\"/site-header.js",
       "meta": {
         "title": {
-          "en": "Writing | Shavonne Wong",
-          "zh-Hans": "文字 | Shavonne Wong",
-          "zh-Hant": "文字 | Shavonne Wong"
+          "en": "Journal | Shavonne Wong",
+          "zh-Hans": "日志 | Shavonne Wong",
+          "zh-Hant": "日誌 | Shavonne Wong"
         },
         "description": {
-          "en": "Studio notes from Shavonne Wong, twice-yearly updates from the studio on exhibitions, new work, and where to see it in person.",
-          "zh-Hans": "Shavonne Wong 的工作室札记，每年两次，分享展览、新作品以及可以亲身观看的地点。",
-          "zh-Hant": "Shavonne Wong 的工作室札記，每年兩次，分享展覽、新作品以及可以親身觀看的地點。"
+          "en": "Essays, a running list of what Shavonne Wong is reading and circling, and the studio letter archive. Thinking around the work, in one place.",
+          "zh-Hans": "Shavonne Wong 的文章、持续更新的阅读与关注清单，以及工作室通讯档案。围绕作品的思考，汇于一处。",
+          "zh-Hant": "Shavonne Wong 的文章、持續更新的閱讀與關注清單，以及工作室通訊檔案。圍繞作品的思考，匯於一處。"
         },
         "ogDescription": {
-          "en": "Studio notes, twice-yearly updates on exhibitions, new work, and where to see it in person.",
-          "zh-Hans": "工作室札记，每年两次，分享展览、新作品以及可以亲身观看的地点。",
-          "zh-Hant": "工作室札記，每年兩次，分享展覽、新作品以及可以親身觀看的地點。"
+          "en": "Essays, a running list of what I am reading and circling, and the studio letter archive.",
+          "zh-Hans": "文章、持续更新的阅读与关注清单，以及工作室通讯档案。",
+          "zh-Hant": "文章、持續更新的閱讀與關注清單，以及工作室通訊檔案。"
         }
       }
     },

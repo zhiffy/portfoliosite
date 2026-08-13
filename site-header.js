@@ -32,7 +32,7 @@
         { href: '/#hero', label: 'Home', key: 'nav.home', match: /^\/(?:index\.html)?$/ },
         { href: '/about/', label: 'About', key: 'nav.about', match: /^\/about(?:\.html|\/)?$/ },
         { href: '/works/', label: 'Works', key: 'nav.works', match: /^\/(?:works(?:\/.*)?|6529-meme-card|after-ophelia|after-ophelia-ophelia-reassembled|after-ophelia-ophelia-retold|by-proxy|conditional|love-is-love|meet-eva-here|meet-eva-here-chatbot|meet-eva-here-diary|meet-eva-here-hello-eva|the-bubble-we-call-home|the-ties-that-bind|vogue-singapore|whirlwind-of-the-waking-dream|works-available)(?:\.html|\/)?$/ },
-        { href: '/writing/', label: 'Writing', key: 'nav.writing', match: /^\/(?:writing|update20\d{2}(?:jan|june?))(?:\.html|\/)?$/ },
+        { href: '/journal/', label: 'Journal', key: 'nav.journal', match: /^\/(?:journal(?:\/.*)?|writing|update20\d{2}(?:jan|june?)|open-tabs|there-is-no-universal-user)(?:\.html|\/)?$/ },
         { href: '/press/', label: 'Press', key: 'nav.press', match: /^\/press(?:\.html|\/)?$/ },
         { href: '/contact/', label: 'Contact', key: 'nav.contact', match: /^\/contact(?:\.html|\/)?$/ }
       ];
@@ -304,6 +304,7 @@
   if (!isHome) (function () {
     var KEY = 'sw-subscribe-cta-dismissed';
     if (document.getElementById('sw-subscribe-cta')) return;
+    if (document.querySelector('[data-newsletter-form]')) return;
     try {
       if (window.localStorage.getItem(KEY) === 'yes') return;
     } catch (e) {}
@@ -333,7 +334,7 @@
         if (!form.id) form.id = 'sw-subscribe-form';
         return '#' + form.id;
       }
-      return 'writing.html#sw-subscribe-form';
+      return '/journal/#sw-subscribe-form';
     }
 
     var cta = document.createElement('aside');
@@ -342,8 +343,7 @@
     cta.setAttribute('aria-label', 'Subscribe to studio updates');
     cta.innerHTML =
       '<a class="sw-subscribe-cta__link" href="' + targetHref() + '">' +
-        '<span class="sw-subscribe-cta__kicker">Studio updates</span>' +
-        '<span class="sw-subscribe-cta__title">New work, exhibitions, and drops.</span>' +
+        '<span class="sw-subscribe-cta__title">New work, exhibitions, and studio notes.</span>' +
       '</a>' +
       '<a class="sw-subscribe-cta__button" href="' + targetHref() + '">Subscribe</a>' +
       '<button class="sw-subscribe-cta__close" type="button" aria-label="Dismiss subscribe prompt">Close</button>';

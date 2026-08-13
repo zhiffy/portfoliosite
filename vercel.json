@@ -99,24 +99,24 @@
       "destination": "/press-zh-hant.html"
     },
     {
-      "source": "/writing/",
-      "destination": "/writing.html"
+      "source": "/journal/",
+      "destination": "/journal.html"
     },
     {
-      "source": "/journal/",
-      "destination": "/writing.html"
+      "source": "/journal/zh-hans/",
+      "destination": "/journal-zh-hans.html"
+    },
+    {
+      "source": "/journal/zh-hant/",
+      "destination": "/journal-zh-hant.html"
+    },
+    {
+      "source": "/journal/there-is-no-universal-user/",
+      "destination": "/there-is-no-universal-user.html"
     },
     {
       "source": "/journal/open-tabs/",
       "destination": "/open-tabs.html"
-    },
-    {
-      "source": "/writing/zh-hans/",
-      "destination": "/writing-zh-hans.html"
-    },
-    {
-      "source": "/writing/zh-hant/",
-      "destination": "/writing-zh-hant.html"
     },
     {
       "source": "/update2023jan/",
@@ -325,6 +325,56 @@
   ],
   "redirects": [
     {
+      "source": "/writing/",
+      "destination": "/journal/",
+      "permanent": true
+    },
+    {
+      "source": "/writing.html",
+      "destination": "/journal/",
+      "permanent": true
+    },
+    {
+      "source": "/writing/zh-hans/",
+      "destination": "/journal/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/writing/zh-hant/",
+      "destination": "/journal/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/journal-zh-hans.html",
+      "destination": "/journal/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/journal-zh-hant.html",
+      "destination": "/journal/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans/journal/",
+      "destination": "/journal/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant/journal/",
+      "destination": "/journal/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans-journal.html",
+      "destination": "/journal/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant-journal.html",
+      "destination": "/journal/zh-hant/",
+      "permanent": true
+    },
+    {
       "source": "/contact.html",
       "destination": "/contact/",
       "permanent": true
@@ -361,12 +411,12 @@
     },
     {
       "source": "/writing-zh-hans.html",
-      "destination": "/writing/zh-hans/",
+      "destination": "/journal/zh-hans/",
       "permanent": true
     },
     {
       "source": "/writing-zh-hant.html",
-      "destination": "/writing/zh-hant/",
+      "destination": "/journal/zh-hant/",
       "permanent": true
     },
     {
@@ -376,22 +426,22 @@
     },
     {
       "source": "/zh-hans/writing/",
-      "destination": "/writing/zh-hans/",
+      "destination": "/journal/zh-hans/",
       "permanent": true
     },
     {
       "source": "/zh-hant/writing/",
-      "destination": "/writing/zh-hant/",
+      "destination": "/journal/zh-hant/",
       "permanent": true
     },
     {
       "source": "/zh-hans-writing.html",
-      "destination": "/writing/zh-hans/",
+      "destination": "/journal/zh-hans/",
       "permanent": true
     },
     {
       "source": "/zh-hant-writing.html",
-      "destination": "/writing/zh-hant/",
+      "destination": "/journal/zh-hant/",
       "permanent": true
     },
     {

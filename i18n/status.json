@@ -336,5 +336,18 @@
       "status": "machine",
       "src": "8ac47926ef6e77a0"
     }
+  },
+  "journal": {
+    "en": {
+      "hash": "6b931f15d1a36610"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "6b931f15d1a36610"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "6b931f15d1a36610"
+    }
   }
 }

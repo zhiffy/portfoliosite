@@ -6,6 +6,10 @@
   var RECAPTCHA_SITE_KEY = '6LcI-0ctAAAAACXTH_jVj2abUMKzod48s2MJWqVI';
   var recaptchaLoadPromise = null;
 
+  function isLocalPreviewHost() {
+    return window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '::1';
+  }
+
   function loadRecaptcha() {
     if (recaptchaLoadPromise) return recaptchaLoadPromise;
     if (!RECAPTCHA_SITE_KEY || RECAPTCHA_SITE_KEY.indexOf('PASTE_') === 0) return Promise.resolve(false);
@@ -32,7 +36,7 @@
   }
 
   function getRecaptchaToken() {
-    if (!RECAPTCHA_SITE_KEY || RECAPTCHA_SITE_KEY.indexOf('PASTE_') === 0) {
+    if (isLocalPreviewHost() || !RECAPTCHA_SITE_KEY || RECAPTCHA_SITE_KEY.indexOf('PASTE_') === 0) {
       return Promise.resolve('');
     }
     return loadRecaptcha().then(function () {
@@ -76,7 +80,6 @@
     ts.value = String(Date.now());
     form.appendChild(ts);
 
-    loadRecaptcha();
   }
 
   function wireForm(form, options) {

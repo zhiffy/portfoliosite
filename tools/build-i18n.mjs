@@ -344,10 +344,12 @@ function ensureFonts() {
   console.log(`  ! CJK font subset skipped (need Python + fonttools + brotli). Tried: ${tried.join(', ')}. Run tools/subset-cjk.py manually.`);
 }
 
-function build() {
-  ensureFonts();
+function build(onlyPage) {
+  if (onlyPage && !cfg.pages[onlyPage]) throw new Error(`unknown page: ${onlyPage}`);
+  if (!onlyPage) ensureFonts();
   const status = readStatus();
-  for (const page of Object.keys(cfg.pages)) {
+  const pages = onlyPage ? [onlyPage] : Object.keys(cfg.pages);
+  for (const page of pages) {
     for (const c of builtLangs(page)) {
       writeFileSync(path.join(ROOT, outFile(page, c)), assemble(page, c, status));
       const st = (status[page] && status[page][c]) || {};
@@ -358,8 +360,12 @@ function build() {
       console.log(`build: ${outFile(page, c)}  (${c}, ${state})`);
     }
   }
-  updateManagedAll(status);
-  console.log('build: managed hreflang, redirects, and sitemap refreshed across all pages');
+  if (!onlyPage) {
+    updateManagedAll(status);
+    console.log('build: managed hreflang, redirects, and sitemap refreshed across all pages');
+  } else {
+    console.log(`build: shared hreflang, redirects, and sitemap left unchanged for targeted ${onlyPage} build`);
+  }
 }
 
 function check(page) {
@@ -378,7 +384,7 @@ function check(page) {
 const [cmd = 'all', page] = process.argv.slice(2);
 const allPages = () => Object.keys(cfg.pages);
 if (cmd === 'all') { allPages().forEach(extract); build(); allPages().forEach(check); }
-else if (cmd === 'build') build();
+else if (cmd === 'build') build(page);
 else if (cmd === 'extract') (page ? [page] : allPages()).forEach(extract);
 else if (cmd === 'check') (page ? [page] : allPages()).forEach(check);
 else { console.log('usage: build-i18n.mjs [all|build|extract|check] [page]'); process.exit(1); }

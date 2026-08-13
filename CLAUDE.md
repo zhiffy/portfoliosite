@@ -49,6 +49,8 @@ C11. **Copy is frozen during formatting work, and the copy-lock guard enforces i
 
 13. **The design-system authority** is `Shavonne Wong Design System.pdf` (repo root) plus the CSS custom-property tokens defined in `scroll-narrative.css`: `--bg` Haze (page), `--text` Slate (type), `--text-2` Fog (metadata), `--accent-deep` / `--sw-iris` Iris (the single threshold accent), `--hairline` and `--hairline-strong` (rules). Type is Mulish only, no serif. Palette is Haze page / Slate type / Fog metadata / one Iris accent. No warm colors anywhere. Spend the Iris accent at most once per page (a 0.5px threshold line), never on utility chrome like nav arrows, gallery controls, or buttons.
 
+13b. **No numbered section labels ("01", "02", "03") and no middot separators (·) in section labels or teaser copy.** Standing rule from Shavonne, 2026-08-14, given while reworking the Journal page: she flagged the "01 · Essays" pattern and middot-separated title tickers as an AI design telltale sign. Section labels are plain words ("Essays", "Studio letters", "Open tabs"). Do not introduce this pattern on any new page or component. Note the tension with A3, which approves the existing numbered system on the About page; A3 stands for About as built until Shavonne says otherwise, but the pattern must not spread anywhere new.
+
 13a. **Letter-spacing on uppercase labels: subtle, not heavy.** Heavy tracking (0.14em to 0.34em) on uppercase text was a recurring problem — it looked like a design choice but read as a CMS default and was flagged as wrong. The correct value is 0.04em maximum for a subtle effect. Keep uppercase labels uppercase; just don't over-space them.
 
 ## Lines and dividers

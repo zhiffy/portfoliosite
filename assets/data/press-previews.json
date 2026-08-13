@@ -1,5 +1,35 @@
 [
   {
+    "match": "/update2025jun/",
+    "preview": "/assets/newsletters/update2025jun/02.webp",
+    "status": "curated-fallback"
+  },
+  {
+    "match": "/update2025jan/",
+    "preview": "/assets/newsletters/update2025jan/02.webp",
+    "status": "curated-fallback"
+  },
+  {
+    "match": "/update2024jun/",
+    "preview": "/assets/newsletters/update2024jun/02.webp",
+    "status": "curated-fallback"
+  },
+  {
+    "match": "/update2024jan/",
+    "preview": "/assets/newsletters/update2024jan/02.webp",
+    "status": "curated-fallback"
+  },
+  {
+    "match": "/update2023june/",
+    "preview": "/assets/newsletters/update2023june/02.webp",
+    "status": "curated-fallback"
+  },
+  {
+    "match": "/update2023jan/",
+    "preview": "/assets/newsletters/update2023jan/02.webp",
+    "status": "curated-fallback"
+  },
+  {
     "match": "fisheyeimmersive.com/article/shavonne-wong-rencontre-avec-une-artiste-qui-fabrique-linvisibilite",
     "preview": "/assets/press/previews/fisheye-immersive-shavonne-wong-rencontre-artiste-invisibilite.webp",
     "status": "reviewed"
