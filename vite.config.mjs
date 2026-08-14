@@ -211,6 +211,7 @@ function copyStaticFiles() {
     "c7d8ef3c9a2b4f56b8d1e0a93c4f5276.txt",
     "contact.css",
     "uploads",
+    "essay-scroll.js",
     "fluid-renderer.js",
     "favicon.ico",
     "lightbox.js",

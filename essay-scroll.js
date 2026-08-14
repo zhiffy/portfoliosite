@@ -12,17 +12,14 @@
    No pinning, no scroll-jacking, no parallax, no scaling of any
    image (site rule C1, no crop, no ratio change).
 
-   The `jr-js` class is set by a tiny inline script in the page
-   head, before first paint, so nothing flashes visible then hides.
-   If that inline script is absent, this file adds nothing and the
-   page renders fully static, which is a safe fallback.
+   This file adds the `jr-js` class only after it has successfully
+   prepared the reveal observer. If the script is missing or fails,
+   the page stays fully visible as a safe fallback.
    ============================================================ */
 (function () {
   'use strict';
 
   var root = document.documentElement;
-  if (!root.classList.contains('jr-js')) return;
-
   var essay = document.querySelector('.jr-essay');
   if (!essay) return;
 
@@ -31,9 +28,9 @@
   var targets = essay.querySelectorAll('[data-reveal]');
   if (!targets.length) return;
 
-  // No IntersectionObserver, or motion is not wanted: show everything.
+  // No IntersectionObserver, or motion is not wanted: leave everything
+  // visible and do not enable the hidden reveal state.
   if (reduce || !('IntersectionObserver' in window)) {
-    for (var i = 0; i < targets.length; i++) targets[i].classList.add('is-in');
     return;
   }
 
@@ -62,7 +59,17 @@
     threshold: 0.08
   });
 
-  for (var j = 0; j < targets.length; j++) observer.observe(targets[j]);
+  // Anything already in view must stay visible when reveal mode turns on.
+  // Observe only the remaining targets, then enable the CSS hidden state.
+  var viewportBottom = window.innerHeight || document.documentElement.clientHeight;
+  for (var j = 0; j < targets.length; j++) {
+    if (targets[j].getBoundingClientRect().top < viewportBottom) {
+      targets[j].classList.add('is-in');
+    } else {
+      observer.observe(targets[j]);
+    }
+  }
+  root.classList.add('jr-js');
 
   // Safety net: anything still hidden after load (a figure inside a
   // collapsed container, a very short page) is shown outright.
