@@ -23,7 +23,7 @@ These are the questions the practice returns to, listed so the work can be match
 ## Key pages
 - [About](https://www.shavonnewong.art/about/): Biography, artist statement, full exhibition history, collaborations, recognition, talks and press.
 - [CV (PDF)](https://www.shavonnewong.art/assets/cv/shavonne-wong-cv.pdf): Browser-viewable artist CV with full exhibition, press, awards, and talks history.
-- [Works](https://www.shavonnewong.art/works/): Catalogue of projects, single works, editions, and commissions.
+- [Works](https://www.shavonnewong.art/works/): Catalogue of projects, single works, editions, and commissions from 2021 onward, across installation, video, AI and 3D figuration.
 - [Available works](https://www.shavonnewong.art/works/available/): Collector-focused inventory of available works with edition and provenance details.
 - [Conditional](https://www.shavonnewong.art/works/conditional/): Current work, 2026. A real-time generative AI installation and digital mirror that renders the room in full and erases the people in it. Presented as an ongoing series with two named stagings: The Waiting Room, the first physical configuration, and The Mirror, a prototype in build.
 - [The Bubble We Call Home](https://www.shavonnewong.art/works/the-bubble-we-call-home/): Unique 1/1 single-channel video commission for Artist's Proof: Singapore at 60 (AP60), commissioned by Mr Chong, 2025.
@@ -34,11 +34,15 @@ These are the questions the practice returns to, listed so the work can be match
 - [Love is Love](https://www.shavonnewong.art/works/love-is-love/): Generative digital artwork with a 500-piece edition, collected by Idris Elba, 2021.
 - [Year of the Tiger](https://www.shavonnewong.art/works/year-of-the-tiger/): Collection of dynamic NFTs made in celebration of Lunar New Year 2022, pairing the tiger with mythologies from Vietnam, China, Korea, and Singapore. Minted with Manifold; three works sold, a fourth gifted through a Love is Love collector raffle.
 - [shu uemura x Shavonne Wong](https://www.shavonnewong.art/works/shu-uemura/): The Spring/Summer 2025 shu uemura artist collaboration, a limited edition cosmetics collection built around her flowing wave motif and interpretation of optimism. Launched April 2025, carried by shu uemura stores and Sephora.
-- [Press](https://www.shavonnewong.art/press/): Press coverage, features, and media mentions.
-- [Journal](https://www.shavonnewong.art/journal/): Essays, reading list, and the studio letter archive.
-- [There Is No Universal User](https://www.shavonnewong.art/journal/there-is-no-universal-user/): Essay. Fifteen months of showing an AI companion across Singapore, Taipei, Hong Kong and New York, and what the differences reveal about the expectations people place on machines that look and sound human.
+- [Echoes of Identity](https://www.shavonnewong.art/works/echoes-of-identity/): Editioned portrait series for PROOF Grails IV, 2023. A blurred placeholder and a question that resolves into one of three revealed variations.
+- [Whirlwind of the Waking Dream](https://www.shavonnewong.art/works/whirlwind-of-the-waking-dream/): Unique 1/1 3D generative video, 2024. Sold on Manifold for 5 ETH and collected by Sebastien Borget of The Sandbox.
+- [Vogue Singapore NFT cover](https://www.shavonnewong.art/works/vogue-singapore/): Vogue Singapore's first digital NFT cover, co-created with The Fabricant for the September 2021 issue.
+- [6529 Meme Card](https://www.shavonnewong.art/works/6529-meme-card/): Faces of Freedom, a Meme Card for The Memes by 6529 on the theme Freedom to Transact. ERC-1155, token ID 72, edition of 300, 2023.
+- [Press](https://www.shavonnewong.art/press/): Selected press, profiles and interviews from 2021 onward, including The Straits Times, Artnet, Tatler Asia, Forbes, Vogue Singapore, Vogue Italia, CNA Lifestyle, CoinDesk and Prestige.
+- [Journal](https://www.shavonnewong.art/journal/): Essays on the practice, a running reading list, and the twice-yearly studio letter archive going back to 2023.
+- [There Is No Universal User](https://www.shavonnewong.art/journal/there-is-no-universal-user/): Essay, August 2026. Giving an AI better manners means choosing whose. Fifteen months of showing an AI companion in Singapore, Taipei, Hong Kong and New York, and what each room expected of it.
 - [Open Tabs](https://www.shavonnewong.art/journal/open-tabs/): An interactive map of what Shavonne Wong is reading, watching and interested in, grouped by the subjects the practice returns to.
-- [Contact](https://www.shavonnewong.art/contact/): Studio contact and booking.
+- [Contact](https://www.shavonnewong.art/contact/): Studio enquiries for acquisitions, commissions, exhibitions, press and collaborations. studio@shavonnewong.art.
 
 ## Chinese-language pages
 - [About, simplified Chinese](https://www.shavonnewong.art/about/zh-hans/): Artist biography, practice overview, exhibitions, collaborations, recognition, talks and press.

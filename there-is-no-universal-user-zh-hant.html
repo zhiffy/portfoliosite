@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <title>沒有普適的用戶 | Shavonne Wong</title>
-  <meta name="description" content="世界各地的人會用同樣的方式對待 AI 嗎？一個 AI 伴侶在新加坡、台北、香港與紐約展出十五個月的經歷說明並非如此，而這些差異揭示出我們各自對那些外表像人的機器抱有什麼期待。">
+  <meta name="description" content="讓 AI 擁有更好的禮貌，就意味著要選擇誰的禮貌。一個 AI 伴侶在新加坡、台北、香港與紐約展出十五個月。">
   <meta name="author" content="Shavonne Wong">
   <link rel="canonical" href="https://www.shavonnewong.art/journal/there-is-no-universal-user/zh-hant/">
   <link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/journal/there-is-no-universal-user/">
@@ -20,37 +20,58 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.shavonnewong.art/journal/there-is-no-universal-user/zh-hant/">
   <meta property="og:title" content="沒有普適的用戶 | Shavonne Wong">
-  <meta property="og:description" content="一個 AI 伴侶在四座城市展出十五個月，這些差異揭示出我們各自對那些外表像人的機器抱有什麼期待。">
+  <meta property="og:description" content="讓 AI 擁有更好的禮貌，就意味著要選擇誰的禮貌。一個 AI 伴侶在新加坡、台北、香港與紐約展出十五個月。">
   <meta property="og:image" content="https://www.shavonnewong.art/assets/meet-eva-here/05-taipei-dangdai.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="沒有普適的用戶 | Shavonne Wong">
-  <meta name="twitter:description" content="一個 AI 伴侶在四座城市展出十五個月，這些差異揭示出我們各自對那些外表像人的機器抱有什麼期待。">
+  <meta name="twitter:description" content="讓 AI 擁有更好的禮貌，就意味著要選擇誰的禮貌。一個 AI 伴侶在新加坡、台北、香港與紐約展出十五個月。">
   <meta name="twitter:image" content="https://www.shavonnewong.art/assets/meet-eva-here/05-taipei-dangdai.png">
   <!-- BlogPosting, not Article. journal.html describes this same URL as a
        BlogPosting in its blogPost[] array, and two schema blocks giving
        one URL two different types is a confusion signal. Shapes here match
        the site conventions: mainEntityOfPage as an object with @id (as on
        every update page), isPartOf pointing at the Journal, author and
-       publisher carrying sameAs, and inLanguage declared. -->
+       publisher carrying the full sameAs list, and inLanguage declared.
+
+       `about` names the works this essay is about. `mentions` names the
+       real-world concepts it discusses, each anchored by sameAs to a
+       Wikipedia article, which is how a retrieval system ties the page to
+       entities it already knows. Only add a URL you have opened: a
+       mentions entry pointing at a redirect or a 404 is worse than no
+       entry. All three below were checked 2026-08-14. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "There Is No Universal User",
-    "description": "Fifteen months of showing an AI companion across Singapore, Taipei, Hong Kong and New York, and what the differences reveal about what we each expect from machines that look like us.",
+    "description": "Giving an AI better manners means choosing whose. Fifteen months of showing an AI companion in Singapore, Taipei, Hong Kong and New York.",
     "image": "https://www.shavonnewong.art/assets/meet-eva-here/05-taipei-dangdai.png",
     "inLanguage": "zh-Hant",
     "author": {
       "@type": "Person",
       "name": "Shavonne Wong",
       "url": "https://www.shavonnewong.art/",
-      "sameAs": ["https://en.wikipedia.org/wiki/Shavonne_Wong"]
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Shavonne_Wong",
+        "https://www.instagram.com/shavonne.wong/",
+        "https://x.com/shavonnewong_",
+        "https://sg.linkedin.com/in/shavonnew",
+        "https://ocula.com/artists/shavonne-wong/",
+        "https://seafocus.sg/artists/shavonne-wong/"
+      ]
     },
     "publisher": {
       "@type": "Person",
       "name": "Shavonne Wong",
       "url": "https://www.shavonnewong.art/",
-      "sameAs": ["https://en.wikipedia.org/wiki/Shavonne_Wong"]
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Shavonne_Wong",
+        "https://www.instagram.com/shavonne.wong/",
+        "https://x.com/shavonnewong_",
+        "https://sg.linkedin.com/in/shavonnew",
+        "https://ocula.com/artists/shavonne-wong/",
+        "https://seafocus.sg/artists/shavonne-wong/"
+      ]
     },
     "datePublished": "2026-08-13",
     "dateModified": "2026-08-14",
@@ -66,6 +87,11 @@
     "about": [
       { "@type": "CreativeWork", "name": "Meet Eva Here", "url": "https://www.shavonnewong.art/works/meet-eva-here/" },
       { "@type": "CreativeWorkSeries", "name": "Conditional", "url": "https://www.shavonnewong.art/works/conditional/" }
+    ],
+    "mentions": [
+      { "@type": "Thing", "name": "Korean honorifics", "sameAs": "https://en.wikipedia.org/wiki/Korean_honorifics" },
+      { "@type": "Thing", "name": "Chatbot", "sameAs": "https://en.wikipedia.org/wiki/Chatbot" },
+      { "@type": "Thing", "name": "Algorithmic bias", "sameAs": "https://en.wikipedia.org/wiki/Algorithmic_bias" }
     ]
   }
   </script>
@@ -84,7 +110,7 @@
   <link rel="stylesheet" href="/scroll-narrative.css?v=20260629-era-scale">
   <link rel="stylesheet" href="/scroll-pages.css?v=20260620-video-embed">
   <link rel="stylesheet" href="/journal.css?v=20260814-tabs-field">
-  <link rel="stylesheet" href="/essay.css?v=20260814-visual-essay-v11">
+  <link rel="stylesheet" href="/essay.css?v=20260814-visual-essay-v12">
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
     <!-- End Cloudflare Web Analytics -->
@@ -126,6 +152,7 @@
 
         <header class="jr-hero">
           <h1 class="jr-title">沒有普適的用戶</h1>
+          <p class="jr-deck">讓 AI 擁有更好的禮貌，就意味著要選擇誰的禮貌。一個 AI 伴侶在新加坡、台北、香港與紐約展出十五個月。</p>
           <p class="jr-essay-meta"><time datetime="2026-08">2026 年 8 月</time></p>
         </header>
 

@@ -234,10 +234,24 @@ body:has(.jr-essay) { overflow-x: clip; }
   text-wrap: balance;
 }
 
-/* A hook, not a summary. One short concrete line. The space above is
-   bigger than it looks like it needs, because the title's 0.95
-   line-height pulls its descenders down toward the deck. At the old
-   value the two were touching. */
+/* The standfirst, and it does two jobs at once.
+   For a reader it is the hook. For an answer engine it is the first
+   body text after the <h1>, which is the most-lifted position on the
+   page. So it is written as a CLAIM rather than a scene: a quotable
+   opening sentence that could stand alone in a search result, then a
+   second sentence carrying the specifics and the place names an index
+   can match on.
+
+   Do not lead it with the obvious reading of the essay. This piece
+   says outright that "different cultures use technology differently"
+   is the obvious version, so a standfirst built on that would get
+   lifted and get lifted as generic.
+
+   52ch rather than 40ch, because a line doing both jobs runs longer
+   than a pure hook and 40ch pushed it to four lines.
+
+   The space above is bigger than it looks like it needs, because the
+   title's 0.95 line-height pulls its descenders down toward it. */
 .jr-page.jr-essay p.jr-deck {
   grid-column: main-start / main-end;
   grid-row: 2;
@@ -246,7 +260,7 @@ body:has(.jr-essay) { overflow-x: clip; }
   line-height: 1.34;
   color: var(--text-2);
   margin: clamp(20px, 2vw, 34px) 0 0;
-  max-width: 40ch;
+  max-width: 52ch;
   text-wrap: pretty;
 }
 

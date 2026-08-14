@@ -36,6 +36,14 @@
         entity-based retrieval rewards.
     16. Keep dateModified and the sitemap lastmod current when you edit.
         Freshness is a real signal and both go stale silently.
+    17. Fill in `about` (the works the essay is about) and `mentions`
+        (the real-world concepts it discusses, each anchored by sameAs
+        to a Wikipedia article). This is how a retrieval system ties the
+        page to entities it already knows. OPEN every URL before using
+        it: a mentions entry pointing at a 404 is worse than no entry.
+    18. Run `npm run indexnow` after deploying. It reads sitemap.xml and
+        pings Bing, which is the search index behind ChatGPT. Deploy
+        first, or you are submitting URLs that 404.
 
      FOUR RULES THAT GOVERN THE LAYOUT
 
@@ -161,13 +169,27 @@
       "@type": "Person",
       "name": "Shavonne Wong",
       "url": "https://www.shavonnewong.art/",
-      "sameAs": ["https://en.wikipedia.org/wiki/Shavonne_Wong"]
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Shavonne_Wong",
+        "https://www.instagram.com/shavonne.wong/",
+        "https://x.com/shavonnewong_",
+        "https://sg.linkedin.com/in/shavonnew",
+        "https://ocula.com/artists/shavonne-wong/",
+        "https://seafocus.sg/artists/shavonne-wong/"
+      ]
     },
     "publisher": {
       "@type": "Person",
       "name": "Shavonne Wong",
       "url": "https://www.shavonnewong.art/",
-      "sameAs": ["https://en.wikipedia.org/wiki/Shavonne_Wong"]
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Shavonne_Wong",
+        "https://www.instagram.com/shavonne.wong/",
+        "https://x.com/shavonnewong_",
+        "https://sg.linkedin.com/in/shavonnew",
+        "https://ocula.com/artists/shavonne-wong/",
+        "https://seafocus.sg/artists/shavonne-wong/"
+      ]
     },
     "datePublished": "[[YYYY-MM-DD]]",
     "dateModified": "[[YYYY-MM-DD]]",
@@ -179,7 +201,13 @@
       "@type": "Blog",
       "name": "Journal | Shavonne Wong",
       "url": "https://www.shavonnewong.art/journal/"
-    }
+    },
+    "about": [
+      { "@type": "CreativeWork", "name": "[[Work the essay is about]]", "url": "https://www.shavonnewong.art/works/[[work-slug]]/" }
+    ],
+    "mentions": [
+      { "@type": "Thing", "name": "[[Real-world concept the essay discusses]]", "sameAs": "https://en.wikipedia.org/wiki/[[Article_Title]]" }
+    ]
   }
   </script>
   <script type="application/ld+json">
@@ -197,7 +225,7 @@
   <link rel="stylesheet" href="/scroll-narrative.css?v=20260629-era-scale">
   <link rel="stylesheet" href="/scroll-pages.css?v=20260620-video-embed">
   <link rel="stylesheet" href="/journal.css?v=20260814-tabs-field">
-  <link rel="stylesheet" href="/essay.css?v=20260814-visual-essay-v11">
+  <link rel="stylesheet" href="/essay.css?v=20260814-visual-essay-v12">
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
     <!-- End Cloudflare Web Analytics -->
