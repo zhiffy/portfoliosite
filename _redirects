@@ -223,6 +223,14 @@
 /journal-zh-hant.html /journal/zh-hant/ 301!
 /zh-hant/journal/ /journal/zh-hant/ 301!
 /zh-hant-journal.html /journal/zh-hant/ 301!
+/journal/there-is-no-universal-user/zh-hans/ /there-is-no-universal-user-zh-hans.html 200
+/there-is-no-universal-user-zh-hans.html /journal/there-is-no-universal-user/zh-hans/ 301!
+/zh-hans/there-is-no-universal-user/ /journal/there-is-no-universal-user/zh-hans/ 301!
+/zh-hans-there-is-no-universal-user.html /journal/there-is-no-universal-user/zh-hans/ 301!
+/journal/there-is-no-universal-user/zh-hant/ /there-is-no-universal-user-zh-hant.html 200
+/there-is-no-universal-user-zh-hant.html /journal/there-is-no-universal-user/zh-hant/ 301!
+/zh-hant/there-is-no-universal-user/ /journal/there-is-no-universal-user/zh-hant/ 301!
+/zh-hant-there-is-no-universal-user.html /journal/there-is-no-universal-user/zh-hant/ 301!
 /press/zh-hans/ /press-zh-hans.html 200
 /press-zh-hans.html /press/zh-hans/ 301!
 /zh-hans/press/ /press/zh-hans/ 301!

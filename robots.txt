@@ -27,5 +27,17 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+# Common Crawl. Its archive is a training and retrieval source for many
+# models, so allowing it is part of the same AEO bet as the agents above.
+User-agent: CCBot
+Allow: /
+
+# ByteDance. Named explicitly rather than left to the wildcard, so the
+# decision is on the record. Feeds Doubao and TikTok search, which is
+# worth having given the Asia presence. Flip to Disallow if it ever
+# costs bandwidth worth caring about.
+User-agent: Bytespider
+Allow: /
+
 # See https://www.shavonnewong.art/llms.txt for a curated reading list for language models.
 Sitemap: https://www.shavonnewong.art/sitemap.xml

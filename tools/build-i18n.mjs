@@ -222,6 +222,11 @@ function localizeHead(html, page, code, status) {
   }
   html = html.replace(/(<link rel="canonical" href=")[^"]*("\s*\/?>)/, `$1${self}$2`);
   html = html.replace(/(<meta property="og:url" content=")[^"]*("\s*\/?>)/, `$1${self}$2`);
+  // The English head's JSON-LD is inherited wholesale, so an "inLanguage"
+  // claim in it would follow a localized page and say "en". Rewrite it.
+  // Only pages whose schema declares the property are affected, so this is
+  // inert for every page that does not.
+  html = html.replace(/("inLanguage":\s*")[^"]*(")/g, `$1${L.htmlLang}$2`);
   // drop any hreflang / og:locale the English page already carries
   html = html.replace(/[ \t]*<!-- i18n:hreflang -->[\s\S]*?<!-- \/i18n:hreflang -->\n?/g, '');
   html = html.replace(/[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*"\s*\/?>\n?/g, '');

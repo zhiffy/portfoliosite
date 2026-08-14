@@ -1,0 +1,1029 @@
+/* ============================================================
+   ESSAY / VISUAL ESSAY SYSTEM
+   Scoped to .jr-essay. Loads AFTER journal.css and replaces the
+   five-rule starter block at the bottom of that file.
+
+   Design authority: Shavonne Wong Design System plus the tokens in
+   scroll-narrative.css. Mulish only. Haze page, Slate type, Fog
+   metadata, one Iris threshold line per page.
+
+   THREE RULES THAT GOVERN THIS FILE
+
+   1. ONE LEFT AXIS. Title, deck, date, every paragraph, every
+      figure, the pull quote, the closing note and read-next all
+      begin at the same x. Nothing is indented relative to anything
+      else, and nothing goes in a left rail. Three competing left
+      edges is what made an earlier version awkward to read.
+      Site rule 6, everything aligns to an axis.
+
+   2. NO VIEWPORT-HEIGHT IMAGE SIZING. Every figure is sized by the
+      width of its grid column, or by a max-height in PIXELS. `vh`
+      caps made an image a stamp on a short laptop window and a
+      billboard on a tall one, and they left holes beside the text
+      when a rail figure outgrew its paragraph. Predictable at every
+      screen size beats clever.
+
+   3. IMAGES GROUP INTO STRIPS. Two or three photos share one row at
+      a uniform height with a tight even gutter, rather than each
+      taking a full block of page height. This is where the vertical
+      space came from.
+
+   Per site rule 2a the prose measure lives on the GRID COLUMN,
+   never as a max-width on a body paragraph. Per site rule C1 no
+   image is ever cropped: every variant sets height auto or caps
+   height with width auto, so the natural ratio always survives.
+
+   SPECIFICITY (do not simplify these selectors)
+   journal.css carries `.jr-page.jr-essay p` at (0,3,1). Every rule
+   here is written `.jr-page.jr-essay ...` so it ties or beats that,
+   and wins on source order. Component classes that land on a <p>
+   are written `p.jr-class` to reach (0,4,1). Drop the `.jr-page`
+   prefix or the `p` qualifier and the rule silently stops working.
+   ============================================================ */
+
+/* Full-bleed figures escape the container. `clip`, not `hidden`, so
+   position: sticky keeps working. */
+body:has(.jr-essay) { overflow-x: clip; }
+
+/* ============================================================
+   NEVER CROP. NEVER CHANGE AN ASPECT RATIO. NEVER STRETCH.
+   Standing instruction, and the most-repeated note on this site
+   (site rule C1). Shavonne is a photographer; the frame is part of
+   the work, so a crop made for layout convenience alters the piece.
+
+   Allowed ways to control the size of an image:
+     cap HEIGHT with width: auto
+     cap WIDTH with height: auto
+     cap BOTH with max-width + max-height and both dimensions auto
+     set flex-grow to the image's own width/height ratio, which is
+       how .jr-strip puts several photos on one row at one height
+
+   Forbidden anywhere in this file:
+     object-fit: cover
+     object-position
+     a forced aspect-ratio
+     explicit width AND height together on an <img>
+
+   The guard below is deliberate. It is a no-op while width and
+   height are auto, and if a future rule ever forces both dimensions
+   the image will letterbox rather than crop, so the failure mode is
+   safe instead of destructive. Do not remove it.
+   ============================================================ */
+.jr-page.jr-essay img,
+.jr-page.jr-essay video { object-fit: contain; }
+
+/* Essays run narrower than the gallery pages. At the site's 1480 the
+   right rail became a canyon and the prose sat in a band with dead
+   space on both sides. Wide and bleed figures still reach past this,
+   so the page keeps its width where width earns something. */
+.jr-page.jr-essay {
+  max-width: 1240px;
+  padding: calc(var(--nav-h) + 26px) clamp(20px, 3vw, 64px) clamp(40px, 5vh, 76px);
+}
+
+/* ------------------------------------------------------------
+   1. TOKENS
+   ------------------------------------------------------------ */
+.jr-page.jr-essay {
+  /* MEASURE. Count characters, do not trust the unit. `ch` is the
+     advance of the digit zero, and Mulish's zero is about 0.6em, well
+     above its average lowercase width. So the earlier 72ch was
+     rendering roughly 95 characters per line, half again the
+     comfortable maximum. 54ch lands near 68 characters, which is the
+     target. If the typeface ever changes, re-count a rendered line
+     rather than keeping this number. */
+  --jr-measure: 54ch;
+
+  /* RAIL. Fixed-ish, so it cannot balloon at middle widths. The body
+     size shrinks with the viewport, which shrinks the measure, and a
+     percentage rail would then grow to swallow the difference. At
+     1440 the rail had reached the same width as the text column. */
+  --jr-rail: clamp(280px, 26vw, 430px);
+
+  /* ONE BODY SIZE. Shavonne's instruction, 2026-08-14: the body stays
+     one size everywhere and only quotes and display elements differ.
+     So a paragraph with nothing beside it spans BOTH columns (no rail
+     stands empty next to running text, site rule C2) and simply takes
+     fewer, longer lines. Its height adjusts; its size does not.
+
+     An earlier version scaled the type up in the wide column to hold
+     the character count near 85. That is the textbook move and it was
+     rejected, correctly: two body sizes in one essay reads as two
+     typefaces, and consistency is worth more here than the count.
+
+     Wide lines therefore run long, near 110 characters. The one thing
+     that compensates without touching size is leading, so the wide
+     register carries slightly more of it. That is a readability
+     adjustment, not a size change. To make it uniform, set
+     --jr-lh-wide to var(--jr-lh). */
+  --jr-fs:        clamp(17.5px, 1.12vw, 20.5px);
+  --jr-lh:        1.56;
+  --jr-fs-wide:   var(--jr-fs);
+  --jr-lh-wide:   1.68;
+
+  --jr-fs-title:  clamp(44px, 5.4vw, 88px);
+  --jr-fs-deck:   clamp(20px, 1.75vw, 29px);
+  --jr-fs-lede:   clamp(26px, 2.4vw, 40px);
+  --jr-fs-h2:     clamp(28px, 2.6vw, 46px);
+  --jr-fs-h3:     clamp(19px, 1.4vw, 25px);
+  --jr-fs-pull:   clamp(30px, 3.3vw, 58px);
+  --jr-fs-note:   clamp(13.5px, 0.92vw, 15.5px);
+  --jr-fs-micro:  12.5px;
+
+  --jr-gap:       clamp(20px, 2.3vw, 44px);   /* between grid columns */
+  --jr-gutter:    clamp(8px, 0.8vw, 14px);    /* between images in a group */
+  --jr-para:      clamp(16px, 1.15vw, 24px);  /* between paragraphs */
+  --jr-block:     clamp(26px, 2.6vw, 44px);   /* around big blocks */
+
+  --jr-track:     0.04em;                     /* max tracking, rule 13a */
+}
+
+/* ------------------------------------------------------------
+   2. THE GRID
+   ------------------------------------------------------------ */
+.jr-page.jr-essay .jr-flow {
+  display: grid;
+  grid-template-columns:
+    [full-start wide-start main-start] min(var(--jr-measure), 100%)
+    [main-end] minmax(0, 1fr)
+    [wide-end full-end];
+  column-gap: var(--jr-gap);
+  align-items: start;
+
+  /* The grid, not the page, owns the outer width, so the rail stays
+     the size of a rail at every viewport. Bleed figures still reach
+     the screen edges: their `calc(50% - 50vw)` works because this
+     block is centred, so its centre is the viewport centre. */
+  max-width: calc(var(--jr-measure) + var(--jr-gap) + var(--jr-rail));
+  margin-inline: auto;
+
+  /* `ch` on the column above resolves against THIS font-size, so the
+     measure and the body type must agree. Do not remove. */
+  font-size: var(--jr-fs);
+  line-height: var(--jr-lh);
+  color: var(--text);
+}
+
+.jr-page.jr-essay .jr-flow > * { grid-column: main-start / main-end; }
+
+/* Sections carry the named grid lines down so their children can
+   still reach the rail. */
+.jr-page.jr-essay .jr-sec {
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns: subgrid;
+  column-gap: var(--jr-gap);
+  align-items: start;
+}
+.jr-page.jr-essay .jr-sec > * { grid-column: main-start / main-end; }
+
+/* A paragraph and its margin note or rail figure on the same line. */
+.jr-page.jr-essay .jr-row {
+  grid-column: main-start / wide-end;
+  display: grid;
+  grid-template-columns: subgrid;
+  column-gap: var(--jr-gap);
+  align-items: start;
+}
+.jr-page.jr-essay .jr-row > p { grid-column: main-start / main-end; }
+.jr-page.jr-essay .jr-row > .jr-note { grid-column: main-end / wide-end; }
+
+@supports not (grid-template-columns: subgrid) {
+  .jr-page.jr-essay .jr-sec,
+  .jr-page.jr-essay .jr-row { display: block; }
+  .jr-page.jr-essay .jr-row > .jr-note { margin-top: var(--jr-para); }
+}
+
+/* ------------------------------------------------------------
+   3. HERO
+   Two rows. Title across both columns, then the deck in the measure
+   with the date beside it in the rail. One hairline closes the whole
+   block, like a masthead rule.
+
+   The date used to sit under the deck with its own hairline above it,
+   which read as a divider between the hook and the date and left the
+   date floating in a pocket of space. Moving it to the rail also
+   gives the hero's right side something to hold.
+   ------------------------------------------------------------ */
+.jr-page.jr-essay .jr-hero {
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns: subgrid;
+  column-gap: var(--jr-gap);
+  align-items: start;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: clamp(16px, 1.6vw, 26px);
+  margin: 0 0 clamp(24px, 2.4vw, 40px);
+}
+.jr-page.jr-essay .jr-hero > * { grid-column: main-start / main-end; }
+
+/* The essay <h1> previously fell through to the browser default
+   (bold, 28px). This is the canonical page-title register, matched
+   to .jr-index .jr-title and .abv-hero-title. It is allowed past the
+   measure because display type sets its own line breaks. */
+.jr-page.jr-essay .jr-title {
+  grid-column: main-start / wide-end;
+  font-weight: 300;
+  font-size: var(--jr-fs-title);
+  line-height: 0.95;
+  letter-spacing: -0.014em;
+  color: var(--text);
+  grid-row: 1;
+  margin: 0;
+  max-width: 15ch;
+  text-wrap: balance;
+}
+
+/* A hook, not a summary. One short concrete line. The space above is
+   bigger than it looks like it needs, because the title's 0.95
+   line-height pulls its descenders down toward the deck. At the old
+   value the two were touching. */
+.jr-page.jr-essay p.jr-deck {
+  grid-column: main-start / main-end;
+  grid-row: 2;
+  font-weight: 300;
+  font-size: var(--jr-fs-deck);
+  line-height: 1.34;
+  color: var(--text-2);
+  margin: clamp(20px, 2vw, 34px) 0 0;
+  max-width: 40ch;
+  text-wrap: pretty;
+}
+
+/* In the rail, on the deck's row, nudged so it sits on the deck's
+   first baseline. */
+.jr-page.jr-essay p.jr-essay-meta {
+  grid-column: main-end / wide-end;
+  grid-row: 2;
+  font-size: var(--jr-fs-micro);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: var(--jr-track);
+  text-transform: uppercase;
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+  margin: calc(clamp(20px, 2vw, 34px) + 0.6em) 0 0;
+  max-width: none;
+}
+
+/* No deck? The date comes back to the prose column under the title.
+   Left in the rail it would float at the right with an empty measure
+   beside it. This keeps the hero correct whether an essay has a deck
+   or not, so neither case needs remembering. */
+.jr-page.jr-essay .jr-hero:not(:has(p.jr-deck)) p.jr-essay-meta {
+  grid-column: main-start / main-end;
+  margin-top: clamp(14px, 1.5vw, 24px);
+}
+
+/* ------------------------------------------------------------
+   4. PROSE
+   ------------------------------------------------------------ */
+.jr-page.jr-essay .jr-flow p {
+  font-size: var(--jr-fs);
+  font-weight: 400;
+  line-height: var(--jr-lh);
+  color: var(--text);
+  margin: 0 0 var(--jr-para);
+  max-width: none;          /* measure is the column's job */
+  text-wrap: pretty;
+}
+
+/* WIDE REGISTER. A body paragraph with nothing in the rail beside it
+   spans both columns, so no rail ever stands empty next to running
+   text. Same size as every other paragraph, just fewer and longer
+   lines, with a little more leading to carry them.
+
+   `p:not([class])` is what selects a body paragraph: every other
+   paragraph in the system carries a class, and a paragraph that shares
+   a row with a rail figure is a child of .jr-row rather than a direct
+   child of .jr-sec, so it is excluded automatically and keeps the
+   measure. Add a rail figure to a paragraph and it narrows; take the
+   figure away and it widens. Nothing else to remember. */
+.jr-page.jr-essay .jr-flow > p:not([class]),
+.jr-page.jr-essay .jr-sec > p:not([class]),
+.jr-page.jr-essay .jr-flow > .jr-list,
+.jr-page.jr-essay .jr-sec > .jr-list,
+.jr-page.jr-essay .jr-flow p.jr-lede {
+  grid-column: main-start / wide-end;
+  font-size: var(--jr-fs-wide);
+  line-height: var(--jr-lh-wide);
+}
+
+/* Section marker. Reads in order, on the prose axis, above the
+   passage it names. Plain words only, never numbers (site rule 13b).
+   It used to sit in a sticky left rail; that broke the page's left
+   axis, which was worse than losing the sticky behaviour. */
+/* An <h2>, not a <p>. Retrieval systems chunk a document by its
+   headings, and at 780 words with a single <h1> the whole essay was one
+   undifferentiated block to them. Three headings give three citable
+   chunks, and each <section> carries an id so a passage can be linked
+   to directly. Visually unchanged. */
+.jr-page.jr-essay .jr-flow .jr-sec-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: var(--jr-track);
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin: var(--jr-block) 0 clamp(10px, 1vw, 15px);
+  max-width: none;
+}
+/* Grid items never collapse their margins, so a section label following
+   the hero or the threshold line was adding its own 44px on top of the
+   space those already provide. That stacked into a visible void before
+   the mirror section. */
+.jr-page.jr-essay .jr-hero + .jr-sec .jr-sec-label,
+.jr-page.jr-essay .jr-threshold + .jr-sec .jr-sec-label { margin-top: 0; }
+
+/* Optional standfirst. Only use this when the opening paragraph is
+   genuinely doing display work, because a small step (a 12% bump)
+   reads as a mistake rather than a decision. Either the opening is
+   clearly display or it is body text, never in between.
+   No drop cap on purpose: Mulish has no display cut, and a drop cap
+   in a geometric sans reads as decoration rather than structure. */
+.jr-page.jr-essay .jr-flow p.jr-lede {
+  font-size: var(--jr-fs-lede);
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: -0.006em;
+  color: var(--text);
+  margin-bottom: clamp(20px, 1.8vw, 32px);
+}
+
+.jr-page.jr-essay .jr-h {
+  font-size: var(--jr-fs-h2);
+  font-weight: 300;
+  line-height: 1.06;
+  letter-spacing: -0.008em;
+  color: var(--text);
+  margin: var(--jr-block) 0 clamp(14px, 1.4vw, 22px);
+  max-width: 22ch;
+  text-wrap: balance;
+}
+.jr-page.jr-essay .jr-sec > .jr-h:first-child,
+.jr-page.jr-essay .jr-flow > .jr-h:first-child { margin-top: 0; }
+
+.jr-page.jr-essay .jr-sub {
+  font-size: var(--jr-fs-h3);
+  font-weight: 500;
+  line-height: 1.28;
+  color: var(--text);
+  margin: clamp(24px, 2.4vw, 38px) 0 clamp(8px, 0.8vw, 14px);
+}
+
+.jr-page.jr-essay .jr-list {
+  font-size: var(--jr-fs);
+  line-height: var(--jr-lh);
+  margin: 0 0 var(--jr-para);
+  padding: 0;
+  list-style: none;
+}
+.jr-page.jr-essay .jr-list li {
+  position: relative;
+  padding-left: 26px;
+  margin: 0 0 8px;
+}
+.jr-page.jr-essay .jr-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(var(--jr-lh) * 0.5em);
+  width: 12px;
+  height: 1px;
+  background: var(--hairline-strong);
+}
+.jr-page.jr-essay ol.jr-list { counter-reset: jrl; }
+.jr-page.jr-essay ol.jr-list li { counter-increment: jrl; }
+.jr-page.jr-essay ol.jr-list li::before {
+  content: counter(jrl);
+  width: auto;
+  height: auto;
+  background: none;
+  top: 0;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-2);
+}
+
+/* ------------------------------------------------------------
+   5. EMPHASIS SET
+   The vocabulary for making a phrase carry more weight without
+   leaving the line.
+   ------------------------------------------------------------ */
+
+/* EMPHASIS IS A HIGHLIGHT, NEVER BOLD, NEVER A SIZE CHANGE.
+   Shavonne's instruction, 2026-08-14. A Ghost wash sits behind the
+   lower part of the line, so the phrase reads as marked by hand rather
+   than boxed or shouted, and the body weight and size never move.
+
+   Use the <mark> element. It is the correct element for text singled
+   out for reference, it needs no class, and some screen readers
+   announce it. <strong> and <b> still carry their meaning for search
+   and assistive tech, they just render as the same highlight instead
+   of getting heavier.
+
+   `box-decoration-break: clone` is what makes the wash repeat cleanly
+   when the phrase wraps across a line. */
+.jr-page.jr-essay .jr-flow mark,
+.jr-page.jr-essay .jr-flow strong,
+.jr-page.jr-essay .jr-flow b,
+.jr-page.jr-essay .jr-mark {
+  font-weight: inherit;
+  font-size: inherit;
+  color: var(--text);
+  background-color: transparent;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 26%,
+    rgba(208, 211, 236, 0.92) 26%,
+    rgba(208, 211, 236, 0.92) 94%,
+    transparent 94%
+  );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 0.14em;
+  margin: 0 -0.06em;
+}
+
+.jr-page.jr-essay .jr-flow em,
+.jr-page.jr-essay .jr-flow i { font-style: italic; }
+
+/* Retired. `.jr-lift` used to bold and slightly enlarge a phrase; both
+   of those are now against the rules above. Kept as an alias so any
+   older markup still renders as a highlight rather than silently
+   losing its emphasis. Do not use it in new pages. */
+.jr-page.jr-essay .jr-lift {
+  font-weight: inherit;
+  font-size: inherit;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 26%,
+    rgba(208, 211, 236, 0.92) 26%,
+    rgba(208, 211, 236, 0.92) 94%,
+    transparent 94%
+  );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 0.14em;
+  margin: 0 -0.06em;
+}
+
+/* Dropped back, for an aside inside a sentence. */
+.jr-page.jr-essay .jr-quiet { color: var(--text-2); }
+
+/* A single line given its own air, still near reading scale. */
+.jr-page.jr-essay .jr-flow p.jr-beat {
+  font-size: clamp(24px, 2vw, 34px);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--text);
+  margin: clamp(24px, 2.6vw, 42px) 0;
+  max-width: 34ch;
+}
+
+/* ------------------------------------------------------------
+   6. PULL QUOTE
+   Spans both columns so it resets the eye, but its first character
+   still lands on the prose axis.
+   ------------------------------------------------------------ */
+.jr-page.jr-essay .jr-pull {
+  grid-column: wide-start / wide-end;
+  margin: var(--jr-block) 0;
+  padding: 0;
+  border: 0;
+}
+.jr-page.jr-essay .jr-pull p {
+  font-size: var(--jr-fs-pull);
+  font-weight: 300;
+  line-height: 1.06;
+  letter-spacing: -0.016em;
+  color: var(--text);
+  margin: 0;
+  max-width: 26ch;
+  text-wrap: balance;
+}
+.jr-page.jr-essay .jr-pull p.jr-pull-attr {
+  font-size: var(--jr-fs-micro);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: var(--jr-track);
+  color: var(--text-2);
+  margin: 16px 0 0;
+  max-width: none;
+}
+
+/* ------------------------------------------------------------
+   7. MARGIN NOTE
+   ------------------------------------------------------------ */
+.jr-page.jr-essay .jr-note {
+  font-size: var(--jr-fs-note);
+  line-height: 1.5;
+  color: var(--text-2);
+  border-top: 1px solid var(--hairline-strong);
+  padding-top: 10px;
+  margin: 0.34em 0 var(--jr-para);
+}
+.jr-page.jr-essay .jr-note p {
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  color: inherit;
+  margin: 0 0 8px;
+  max-width: none;
+}
+.jr-page.jr-essay .jr-note p:last-child { margin-bottom: 0; }
+.jr-page.jr-essay .jr-note--sticky {
+  position: sticky;
+  top: calc(var(--nav-h) + 34px);
+}
+
+/* ------------------------------------------------------------
+   8. FIGURES
+   Sizing is deterministic. Full-column variants fill their column by
+   WIDTH with height auto. Constrained variants cap height in PIXELS
+   with width auto. Nothing uses vh, so an image is the same size on
+   a 13 inch laptop and a 27 inch monitor at the same window width.
+
+     default     the measure. Landscape and square.
+     --portrait  the measure, height-capped. For tall images.
+     --wide      both columns. Landscape only.
+     --side      the right rail, beside a paragraph. Portrait,
+                 square, or a small landscape.
+     --bleed     edge of screen to edge of screen. Needs a source at
+                 least 2400px wide.
+   ------------------------------------------------------------ */
+.jr-page.jr-essay .jr-figure {
+  grid-column: main-start / main-end;
+  margin: var(--jr-block) 0;
+}
+.jr-page.jr-essay .jr-figure img,
+.jr-page.jr-essay .jr-figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0;
+}
+.jr-page.jr-essay .jr-figcaption {
+  font-size: var(--jr-fs-micro);
+  letter-spacing: var(--jr-track);
+  line-height: 1.5;
+  color: var(--text-2);
+  margin-top: 10px;
+  text-align: left;
+  max-width: 52ch;
+}
+
+/* Tall image inside the measure. Height cap in px keeps it the same
+   on every window; width auto keeps the ratio. */
+.jr-page.jr-essay .jr-figure--portrait img {
+  width: auto;
+  max-height: 620px;
+}
+
+/* Both columns. */
+.jr-page.jr-essay .jr-figure--wide { grid-column: wide-start / wide-end; }
+
+/* The right rail, beside a paragraph. Both dimensions stay auto and
+   BOTH caps are set, which gives a contain-fit that preserves the
+   ratio exactly, at the same size on every screen. The height cap
+   keeps a tall image from outgrowing the paragraph next to it and
+   opening a hole in the text column, so pair a rail figure with a
+   long paragraph, not a short one. */
+.jr-page.jr-essay .jr-figure--side {
+  grid-column: main-end / wide-end;
+  margin: 0.34em 0 var(--jr-para);
+}
+.jr-page.jr-essay .jr-figure--side img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 380px;
+}
+
+/* Edge to edge. The one deliberate escape from the container. */
+.jr-page.jr-essay .jr-figure--bleed {
+  grid-column: full-start / full-end;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: clamp(34px, 3.4vw, 60px);
+  margin-bottom: clamp(34px, 3.4vw, 60px);
+}
+.jr-page.jr-essay .jr-figure--bleed .jr-figcaption {
+  padding: 0 clamp(20px, 3vw, 64px);
+  max-width: min(52ch, 100%);
+}
+
+/* ------------------------------------------------------------
+   8b. STRIP
+   Two or three photos on one row, uniform height, natural widths,
+   tight even gutter. Nothing cropped, no ratio forced, and a strip
+   costs a fraction of the page height that the same photos cost as
+   separate blocks.
+
+   HOW UNIFORM HEIGHT WORKS. Each figure's flex-grow is set to its
+   own aspect ratio via an inline `--ar` custom property, and
+   flex-basis is 0, so widths come out proportional to the ratios and
+   every image lands on the same height. Set --ar to width/height,
+   for example a 2500x1666 photo is --ar: 1.5 and a 900x1600 portrait
+   is --ar: 0.563. Omit it and the images share the row equally,
+   which is correct only when the ratios already match.
+
+   Strips do NOT stack on phones. Side by side is the point, and
+   stacking would give back the vertical space the strip just saved.
+   ------------------------------------------------------------ */
+.jr-page.jr-essay .jr-strip {
+  grid-column: wide-start / wide-end;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--jr-gutter);
+  margin: var(--jr-block) 0;
+}
+/* flex-basis is 0 and flex-grow is the ratio, so each width comes out
+   as ar / sum(ar) of the row and every height resolves to
+   available / sum(ar), identical for all. One caveat: if the ratios
+   ever sum to less than 1 (three tall portraits at 0.3 each) the row
+   will not fill its width, because grow factors below a total of 1
+   distribute only part of the free space. Add a fourth image or use
+   the default figure instead. */
+.jr-page.jr-essay .jr-strip > figure {
+  margin: 0;
+  flex: var(--ar, 1) 1 0;
+  min-width: 0;
+}
+.jr-page.jr-essay .jr-strip img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* A caption belongs to the strip, not to one image, so it breaks to
+   its own row. `max-width: none` is load-bearing: flex line-breaking
+   uses the hypothetical main size AFTER max-width is applied, so the
+   52ch cap inherited above would let the caption sit beside the
+   images as an extra column instead of wrapping. */
+.jr-page.jr-essay .jr-strip > .jr-figcaption {
+  flex: 1 0 100%;
+  max-width: none;
+  margin-top: 10px;
+}
+/* A strip inside the measure rather than across both columns. */
+.jr-page.jr-essay .jr-strip--text { grid-column: main-start / main-end; }
+
+/* ------------------------------------------------------------
+   8c. EMBED, and DUO
+   An Instagram reel, sized in PIXELS rather than by ratio, because
+   Instagram's own header and action bar are a fixed height while the
+   video area is 9:16. Ratio alone would either crop the video or leave
+   a band of empty chrome. One token drives both dimensions, so they
+   can never drift apart.
+
+   The card arrives with Instagram's own white ground, which will never
+   match Haze. It is bounded and small on purpose so it reads as a
+   quoted object from another platform rather than a design element.
+   It also loads a third-party frame, so it sets Instagram cookies for
+   anyone who opens the page.
+
+   .jr-duo puts one media item beside another when their ratios are too
+   different for a strip, or when one of them is an embed and has no
+   intrinsic ratio at all. The figure grows, the embed holds its width.
+   ------------------------------------------------------------ */
+.jr-page.jr-essay .jr-embed {
+  --jr-embed-w: clamp(258px, 22vw, 340px);
+  width: var(--jr-embed-w);
+  max-width: 100%;
+  margin: 0.34em 0 var(--jr-para);
+}
+
+/* THE TWO HEIGHTS, and why they differ.
+   Instagram renders a reel's media at 4:5, letterboxed, not at 9:16, so
+   the media box is `w * 1.25` tall. Around it sit fixed-height rows:
+   about 48px of header above, and about 202px below (the View more link,
+   the action icons, the like count, and the comment field).
+
+   The iframe is given the FULL height so nothing inside it scrolls. The
+   wrapper is given a SHORTER height with overflow hidden, which cuts the
+   comment field off the bottom. That is a crop of Instagram's chrome,
+   never of the video, which sits well above the cut.
+
+   Both numbers come off the same token, so they cannot drift apart. If
+   Instagram changes its embed chrome, the two constants are the only
+   things to re-measure. */
+.jr-page.jr-essay .jr-embed-frame {
+  overflow: hidden;
+  height: calc(var(--jr-embed-w) * 1.25 + 156px);
+}
+.jr-page.jr-essay .jr-embed-frame iframe {
+  display: block;
+  width: 100%;
+  height: calc(var(--jr-embed-w) * 1.25 + 250px);
+  border: 0;
+  background: var(--surface);
+}
+
+/* In the rail, beside a paragraph. It spans the rows of its .jr-row so
+   the taller embed does not push the text column's own content down and
+   leave a blank beneath the paragraph. */
+.jr-page.jr-essay .jr-row > .jr-embed {
+  grid-column: main-end / wide-end;
+  grid-row: 1 / span 20;
+  align-self: start;
+}
+
+.jr-page.jr-essay .jr-duo {
+  grid-column: wide-start / wide-end;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--jr-gap);
+  margin: var(--jr-block) 0;
+}
+.jr-page.jr-essay .jr-duo > * { margin: 0; min-width: 0; }
+.jr-page.jr-essay .jr-duo > figure { flex: 1 1 300px; }
+.jr-page.jr-essay .jr-duo > figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.jr-page.jr-essay .jr-duo > .jr-embed { flex: 0 0 auto; }
+
+/* ------------------------------------------------------------
+   9. BREAKS AND THE THRESHOLD
+   ------------------------------------------------------------ */
+
+/* Plain space. Whitespace separates first (site rule L1). */
+.jr-page.jr-essay .jr-break {
+  grid-column: wide-start / wide-end;
+  height: clamp(28px, 3vw, 56px);
+  border: 0;
+  margin: 0;
+}
+/* Space plus a single hairline, when space alone does not group. */
+.jr-page.jr-essay .jr-break--rule {
+  height: 0;
+  border-top: 1px solid var(--hairline);
+  margin: clamp(32px, 3.2vw, 56px) 0;
+}
+
+/* THE THRESHOLD. One per page. This is the page's single Iris spend
+   (design system rule 13), a 0.5px line that draws itself across at
+   the essay's turn. Never stack it against a hairline, never use
+   two, never spend Iris on chrome. */
+.jr-page.jr-essay .jr-threshold {
+  grid-column: full-start / full-end;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: clamp(22px, 2.2vw, 36px);
+  margin-bottom: clamp(22px, 2.2vw, 36px);
+  height: 0.5px;
+  background: var(--sw-iris);
+  border: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+html.jr-js .jr-page.jr-essay .jr-threshold.is-in {
+  animation: jr-draw 1100ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+html:not(.jr-js) .jr-page.jr-essay .jr-threshold { transform: none; }
+@keyframes jr-draw { to { transform: scaleX(1); } }
+
+/* ------------------------------------------------------------
+   10. LINKS
+   Matches the site-wide prose link rule in scroll-narrative.css.
+   ------------------------------------------------------------ */
+.jr-page.jr-essay .jr-flow a:not([class]),
+.jr-page.jr-essay .jr-essay-foot a:not([class]) {
+  color: var(--accent-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-thickness 140ms ease;
+}
+.jr-page.jr-essay .jr-flow a:not([class]):hover,
+.jr-page.jr-essay .jr-essay-foot a:not([class]):hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ------------------------------------------------------------
+   11. FOOT AND READ NEXT
+   ------------------------------------------------------------ */
+.jr-page.jr-essay .jr-essay-foot {
+  grid-column: main-start / wide-end;
+  border-top: 1px solid var(--hairline);
+  margin-top: clamp(28px, 2.8vw, 46px);
+  padding-top: 16px;
+}
+.jr-page.jr-essay .jr-essay-foot p {
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(16px, 1.1vw, 19px);
+  line-height: 1.5;
+  color: var(--text-2);
+  margin: 0;
+  max-width: none;
+}
+
+.jr-page.jr-essay .jr-next {
+  grid-column: wide-start / wide-end;
+  margin-top: clamp(30px, 3vw, 48px);
+  border-top: 1px solid var(--hairline-strong);
+  padding-top: 16px;
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: baseline;
+}
+.jr-page.jr-essay p.jr-next-label {
+  grid-column: main-start / main-end;
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: var(--jr-track);
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin: 0 0 8px;
+  max-width: none;
+}
+.jr-page.jr-essay .jr-next-link {
+  grid-column: main-start / main-end;
+  font-size: clamp(24px, 2.2vw, 36px);
+  font-weight: 300;
+  line-height: 1.08;
+  color: var(--text);
+  text-decoration: none;
+  justify-self: start;
+  border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease;
+}
+.jr-page.jr-essay .jr-next-link:hover { border-bottom-color: var(--hairline-strong); }
+
+@supports not (grid-template-columns: subgrid) {
+  .jr-page.jr-essay .jr-hero,
+  .jr-page.jr-essay .jr-next { display: block; }
+}
+
+/* ------------------------------------------------------------
+   12. SCROLL REVEAL
+   Deliberately NOT applied to body paragraphs. Text is present on
+   first paint, for reading, for print, with JS off, and to
+   crawlers. Only media, quotes, breaks and the threshold move.
+   ------------------------------------------------------------ */
+html.jr-js .jr-page.jr-essay [data-reveal] {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+html.jr-js .jr-page.jr-essay [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+html.jr-js .jr-page.jr-essay .jr-strip[data-reveal] > figure {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+html.jr-js .jr-page.jr-essay .jr-strip[data-reveal].is-in > figure {
+  opacity: 1;
+  transform: none;
+}
+/* The threshold animates its own scaleX, so it must not be moved. */
+html.jr-js .jr-page.jr-essay .jr-threshold[data-reveal] { transform: scaleX(0); }
+html.jr-js .jr-page.jr-essay .jr-threshold[data-reveal].is-in { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.jr-js .jr-page.jr-essay [data-reveal],
+  html.jr-js .jr-page.jr-essay .jr-strip[data-reveal] > figure {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  html.jr-js .jr-page.jr-essay .jr-threshold.is-in {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* ------------------------------------------------------------
+   13. NARROW SCREENS
+   One column. The rail collapses, so rail figures rejoin the flow
+   and become strips of one. Strips stay side by side.
+   ------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .jr-page.jr-essay {
+    --jr-measure: 100%;
+    /* One column means no rail can stand empty, so the two prose
+       registers collapse into one. */
+    --jr-fs-wide: var(--jr-fs);
+    --jr-lh-wide: var(--jr-lh);
+  }
+
+  .jr-page.jr-essay .jr-flow {
+    grid-template-columns:
+      [full-start wide-start main-start] minmax(0, 1fr) [main-end wide-end full-end];
+  }
+  .jr-page.jr-essay .jr-row { display: block; }
+
+  /* The hero's two-column, two-row placement has to be released here.
+     Listed element-by-element on purpose: `p.jr-deck` and
+     `p.jr-essay-meta` are (0,3,1), so a bare `.jr-hero > *` at (0,3,0)
+     does not out-rank them. Left unreleased, the date keeps
+     `main-end / wide-end`, and in this single-column grid those two
+     names sit on the SAME line, so the date collapses to zero width. */
+  .jr-page.jr-essay .jr-hero > *,
+  .jr-page.jr-essay .jr-title,
+  .jr-page.jr-essay p.jr-deck,
+  .jr-page.jr-essay p.jr-essay-meta {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .jr-page.jr-essay p.jr-essay-meta { margin-top: clamp(14px, 3vw, 20px); }
+
+  .jr-page.jr-essay .jr-title,
+  .jr-page.jr-essay p.jr-deck,
+  .jr-page.jr-essay .jr-h,
+  .jr-page.jr-essay .jr-pull p,
+  .jr-page.jr-essay .jr-flow p.jr-beat { max-width: 100%; }
+
+  .jr-page.jr-essay .jr-note,
+  .jr-page.jr-essay .jr-note--sticky {
+    position: static;
+    border-top: 0;
+    border-left: 1px solid var(--hairline-strong);
+    padding: 2px 0 2px 16px;
+    margin: 4px 0 var(--jr-para);
+  }
+
+  .jr-page.jr-essay .jr-figure,
+  .jr-page.jr-essay .jr-figure--side,
+  .jr-page.jr-essay .jr-figure--wide,
+  .jr-page.jr-essay .jr-strip,
+  .jr-page.jr-essay .jr-strip--text,
+  .jr-page.jr-essay .jr-duo,
+  .jr-page.jr-essay .jr-embed,
+  .jr-page.jr-essay .jr-row > .jr-embed,
+  .jr-page.jr-essay .jr-essay-foot,
+  .jr-page.jr-essay .jr-next { grid-column: 1 / -1; grid-row: auto; }
+
+  /* Centred, because the embed keeps a fixed width and would otherwise
+     sit hard left in a full-width column. */
+  .jr-page.jr-essay .jr-embed {
+    margin: var(--jr-block) auto;
+  }
+  .jr-page.jr-essay .jr-embed .jr-figcaption { text-align: center; }
+
+  /* A rail figure becomes an inline one, centred in the column so a
+     portrait does not sit awkwardly hard left. */
+  .jr-page.jr-essay .jr-figure--side {
+    margin: var(--jr-block) 0;
+  }
+  .jr-page.jr-essay .jr-figure--side img,
+  .jr-page.jr-essay .jr-figure--portrait img {
+    max-height: 68vh;         /* only here: a phone has one orientation */
+    margin-inline: auto;
+  }
+  .jr-page.jr-essay .jr-figure--side .jr-figcaption,
+  .jr-page.jr-essay .jr-figure--portrait .jr-figcaption {
+    text-align: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .jr-page.jr-essay { padding: calc(var(--nav-h) + 22px) 16px 52px; }
+  .jr-page.jr-essay .jr-figure--bleed,
+  .jr-page.jr-essay .jr-threshold {
+    width: calc(100% + 32px);
+    max-width: calc(100% + 32px);
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+  .jr-page.jr-essay .jr-figure--bleed .jr-figcaption { padding: 0 16px; }
+}
+
+/* ------------------------------------------------------------
+   14. PRINT
+   ------------------------------------------------------------ */
+@media print {
+  .sn-nav, .sw-page-footer, .sn-progress,
+  .jr-page.jr-essay .jr-next { display: none !important; }
+  .jr-page.jr-essay .jr-flow,
+  .jr-page.jr-essay .jr-hero { display: block; font-size: 11pt; }
+  .jr-page.jr-essay [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .jr-page.jr-essay .jr-threshold { transform: none !important; }
+  .jr-page.jr-essay .jr-figure img { max-height: 300px; width: auto; }
+  .jr-page.jr-essay .jr-note {
+    border-left: 1px solid #999;
+    border-top: 0;
+    padding-left: 12px;
+  }
+}

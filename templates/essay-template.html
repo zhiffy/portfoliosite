@@ -1,0 +1,426 @@
+<!doctype html>
+<!-- ============================================================
+     ESSAY TEMPLATE  (visual-essay system, journal essays)
+     Copy this file, rename it to the essay slug, fill it in.
+
+     CHECKLIST BEFORE SHIPPING A NEW ESSAY
+     1. Replace every [[ ... ]] placeholder. Search the file for "[["
+        to confirm none survive.
+     2. Title separator is a pipe in BOTH <title> and og:title
+        ("Essay title | Shavonne Wong"). Site rule S1.
+     3. All four twitter: tags present. Site rule S2.
+     4. Add the /journal/<slug>/ rewrite to _redirects.
+     5. Add the page to sitemap.xml. Site rule S3.
+     6. Add a card to journal.html (and its zh-hans / zh-hant twins).
+     7. Images: real alt text. A pre-venue image is a "concept
+        render", never an "installation view". Site rule S5.
+     8. No image is ever cropped and no aspect ratio is forced.
+        Site rule C1.
+     9. No numbered section labels and no middot separators.
+        Site rule 13b. Section labels are plain words.
+    10. Uppercase tracking stays at 0.04em. Site rule 13a.
+    11. Spend Iris ONCE, on the single .jr-threshold line. Delete it
+        if the essay has no real turn. Site rule 13.
+    12. Set --ar on every figure inside a .jr-strip. Without it the
+        row will not land on a single height.
+    13. Section markers are <h2>, and each <section> carries an id.
+        Retrieval systems chunk by heading, so an essay with only an
+        <h1> is one undifferentiated block to them.
+    14. Add a reciprocal link. Every work the essay discusses should
+        link BACK to it, or the essay is a link sink with one inbound
+        path. Use an "In the journal" section above the related grid on
+        the work page (see meet-eva-here.html and conditional.html).
+    15. Add the essay to llms.txt under ## Key pages, and keep the
+        wording consistent with the deck and the meta description.
+        One formulation across page, reading list and schema is what
+        entity-based retrieval rewards.
+    16. Keep dateModified and the sitemap lastmod current when you edit.
+        Freshness is a real signal and both go stale silently.
+
+     FOUR RULES THAT GOVERN THE LAYOUT
+
+     1. ONE LEFT AXIS. Everything starts at the same x. Nothing is
+        indented relative to anything else and nothing goes in a left
+        rail. Three competing left edges is what made an earlier
+        version awkward to read (site rule 6).
+
+     2. NO EMPTY RAIL BESIDE RUNNING TEXT. A body paragraph spans BOTH
+        columns by default. It narrows to the measure only when a rail
+        figure or a margin note sits beside it, which happens by
+        wrapping the pair in a .jr-row. So the rule is simply: put a
+        figure in the rail and that paragraph narrows, take it away and
+        the paragraph widens. Nothing to set by hand (site rule C2).
+
+        ONE BODY SIZE, everywhere. Do not scale the type up in the wide
+        column, even though the textbook says to: the wide paragraph
+        simply takes fewer, longer lines and its HEIGHT adjusts. Two
+        body sizes in one essay reads as two typefaces. Only quotes and
+        display elements get their own size. Standing instruction from
+        Shavonne, 2026-08-14.
+
+     3. NO VIEWPORT-HEIGHT IMAGE SIZING. Figures are sized by the
+        width of their column, or capped in PIXELS. Never vh, which
+        makes an image a stamp on a short window and a billboard on
+        a tall one.
+
+     4. GROUP PHOTOS INTO STRIPS. Two or three photos on one row beat
+        two or three separate blocks, both for the composition and
+        for the length of the page.
+
+     COMPONENT INDEX (all defined in /essay.css)
+       .jr-flow          the grid, wraps the hero AND the body
+       .jr-hero          title, deck, date. Lives INSIDE .jr-flow.
+       .jr-sec           a section
+       .jr-sec-label     a plain word above a section, on the prose
+                         axis. Never a number (site rule 13b).
+       .jr-lede          optional standfirst, display scale
+       .jr-h / .jr-sub   section heading / subheading
+       .jr-row           a paragraph with a note or rail figure beside
+       .jr-note          margin note, right rail (--sticky variant)
+       .jr-pull          pull quote across both columns
+       .jr-beat          one line given its own air
+       .jr-list          ul or ol
+       <mark>            EMPHASIS. The only emphasis. A Ghost highlight
+                         behind the phrase, no bold and no size change.
+                         Needs no class. <strong> and <b> render the
+                         same way, so use them when the emphasis is
+                         semantic. .jr-mark does the same on a span.
+                         .jr-lift is retired, do not use it.
+       .jr-quiet         a phrase dropped back to Fog
+       <em>              italic, the one non-highlight emphasis
+       .jr-figure        default, the measure. Landscape and square.
+         --portrait      the measure, height-capped. For tall images.
+         --wide          both columns. LANDSCAPE ONLY; a portrait
+                         here becomes a wall.
+         --side          the right rail, beside a paragraph. Best
+                         slot for a portrait or a square, and it
+                         costs the page no height at all.
+         --bleed         edge of screen to edge of screen. Needs a
+                         source at least 2400px wide.
+       .jr-strip         two or three photos on one row, uniform
+                         height, tight gutter (--text keeps it inside
+                         the measure). Set --ar per figure.
+       .jr-duo           one media item beside another when their
+                         ratios are too different for a strip, or when
+                         one is an embed with no intrinsic ratio.
+       .jr-embed         an Instagram reel. Needs an inner
+                         .jr-embed-frame div around the iframe: that
+                         wrapper is shorter than the iframe and clips
+                         Instagram's comment field off the bottom.
+                         Inside a .jr-row it sits in the rail and spans
+                         the row, so put a figure under the paragraph to
+                         fill the height beside it.
+       .jr-break         whitespace divider (--rule adds a hairline)
+       .jr-threshold     the single Iris line, one per page
+       .jr-essay-foot    closing note
+       .jr-next          read next
+
+     data-reveal moves a block gently as it enters view. Put it on
+     figures, pull quotes and the threshold ONLY. Never on a
+     paragraph, so prose is always readable on first paint.
+     ============================================================ -->
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>[[Essay title]] | Shavonne Wong</title>
+  <meta name="description" content="[[One or two sentences, plain, no colon as a separator.]]">
+  <meta name="author" content="Shavonne Wong">
+  <link rel="canonical" href="https://www.shavonnewong.art/journal/[[slug]]/">
+  <!-- i18n:hreflang -->
+  <link rel="alternate" hreflang="en" href="https://www.shavonnewong.art/journal/[[slug]]/">
+  <link rel="alternate" hreflang="x-default" href="https://www.shavonnewong.art/journal/[[slug]]/">
+<!-- /i18n:hreflang -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.shavonnewong.art/journal/[[slug]]/">
+  <meta property="og:title" content="[[Essay title]] | Shavonne Wong">
+  <meta property="og:description" content="[[Share description]]">
+  <meta property="og:image" content="https://www.shavonnewong.art/assets/[[folder]]/[[image]].png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[[Essay title]] | Shavonne Wong">
+  <meta name="twitter:description" content="[[Share description]]">
+  <meta name="twitter:image" content="https://www.shavonnewong.art/assets/[[folder]]/[[image]].png">
+  <!-- BlogPosting, matching what journal.html calls essays in its
+       blogPost[] array. Two schema blocks giving one URL two different
+       types is a confusion signal, so do not change this to Article.
+       Add an `about[]` array naming any work the essay discusses, with
+       @type CreativeWork or CreativeWorkSeries and the work's URL. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "[[Essay title]]",
+    "description": "[[Share description]]",
+    "image": "https://www.shavonnewong.art/assets/[[folder]]/[[image]].png",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Person",
+      "name": "Shavonne Wong",
+      "url": "https://www.shavonnewong.art/",
+      "sameAs": ["https://en.wikipedia.org/wiki/Shavonne_Wong"]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Shavonne Wong",
+      "url": "https://www.shavonnewong.art/",
+      "sameAs": ["https://en.wikipedia.org/wiki/Shavonne_Wong"]
+    },
+    "datePublished": "[[YYYY-MM-DD]]",
+    "dateModified": "[[YYYY-MM-DD]]",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.shavonnewong.art/journal/[[slug]]/"
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "Journal | Shavonne Wong",
+      "url": "https://www.shavonnewong.art/journal/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.shavonnewong.art/" },
+      { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://www.shavonnewong.art/journal/" },
+      { "@type": "ListItem", "position": 3, "name": "[[Essay title]]", "item": "https://www.shavonnewong.art/journal/[[slug]]/" }
+    ]
+  }
+  </script>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/mulish/mulish-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260629-era-scale">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260620-video-embed">
+  <link rel="stylesheet" href="/journal.css?v=20260814-tabs-field">
+  <link rel="stylesheet" href="/essay.css?v=20260814-visual-essay-v11">
+  <!-- Set before first paint so revealed blocks never flash in then hide. -->
+  <script>document.documentElement.classList.add('jr-js');</script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9KCWXRT7E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L9KCWXRT7E');
+    </script>
+</head>
+<body class="sn-page-body">
+  <a class="sn-skip-link" href="#main-content">Skip to content</a>
+<header class="sn-nav" data-page-nav>
+    <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="/assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
+    <nav class="sn-links">
+      <a href="/#hero" data-i18n="nav.home">Home</a>
+      <a href="/about/" data-i18n="nav.about">About</a>
+      <a href="/works/" data-i18n="nav.works">Works</a>
+      <a href="/journal/" class="is-active" data-i18n="nav.journal">Journal</a>
+      <a href="/press/" data-i18n="nav.press">Press</a>
+      <a href="/contact/" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="sn-meta-right">
+      <label class="sn-lang-switcher" data-language-switcher>
+              <span class="sn-lang-kicker" data-i18n="ui.languageLabel">Language</span>
+              <select class="sn-lang-select" data-language-select aria-label="Language" data-i18n-aria-label="ui.languageLabel" title="Language"></select>
+            </label>
+    </div>
+    <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
+  </header>
+
+  <main id="main-content" class="jr-page jr-essay">
+    <article>
+
+      <!-- ===== HERO ===================================================
+           Kicker, title, deck, date. The deck should match the dek on
+           the journal index card so the two never drift apart. -->
+      <div class="jr-flow">
+
+        <!-- ===== HERO ===================================================
+             Inside the grid, so the title sits on the same left axis as
+             the prose and the date rule stops at the measure instead of
+             running the full page width.
+
+             No eyebrow label above the title. The nav already says
+             Journal and the title does the rest.
+
+             The deck is a HOOK, not a summary. One short line that names
+             something concrete and leaves the reader wanting the piece.
+             A three-line abstract of what follows reads as a template,
+             and the meta description already does that job for search.
+             Delete the deck entirely if no honest one-liner exists. -->
+        <header class="jr-hero">
+          <h1 class="jr-title">[[Essay title]]</h1>
+          <p class="jr-deck">[[One short concrete line. Not a summary.]]</p>
+          <p class="jr-essay-meta">[[Month YYYY]]</p>
+        </header>
+
+        <!-- ===== SECTION ==============================================
+             A section groups paragraphs under one marker. The marker is
+             a plain word or short phrase, never a number, and it sits on
+             the prose axis so it reads in order. Drop the label if a
+             section does not need one. Do not open a section with a
+             figure, or the marker will look like it labels the image. -->
+        <section class="jr-sec">
+          <p class="jr-sec-label">[[Label]]</p>
+
+          <!-- Opening paragraph. Leave it as a plain <p> in most
+               essays. Add class="jr-lede" ONLY when the first
+               paragraph is genuinely doing display work, because a
+               small size step between paragraph one and two reads as
+               a mistake rather than a decision. -->
+          <p>[[Opening paragraph.]]</p>
+
+          <p>[[Body paragraph. Inline emphasis available inside any
+          paragraph: <span class="jr-mark">a marked phrase</span>,
+          <span class="jr-lift">a lifted phrase</span>,
+          <strong>a strong phrase</strong>, <em>an italic phrase</em>,
+          and <span class="jr-quiet">a phrase dropped back</span>.
+          Use at most one marked phrase per essay, or the mark stops
+          meaning anything.]]</p>
+
+          <!-- ===== PARAGRAPH WITH A MARGIN NOTE =====================
+               The note sits in the right rail, level with the top of
+               the paragraph. Add --sticky if you want it to hold while
+               a long passage scrolls past. On phones it becomes an
+               indented block with a rule down its left edge. -->
+          <div class="jr-row">
+            <p>[[Body paragraph.]]</p>
+            <aside class="jr-note">
+              <p>[[Aside, source, date, or a fact the paragraph does not
+              need to carry. Keep it short.]]</p>
+            </aside>
+          </div>
+
+          <!-- ===== FIGURE, DEFAULT ==================================
+               Text column through the right rail. Always give width
+               and height so the layout does not jump. -->
+          <figure class="jr-figure" data-reveal>
+            <img src="/assets/[[folder]]/[[image]].webp" alt="[[What the image actually shows.]]" width="[[w]]" height="[[h]]" loading="lazy" decoding="async">
+            <figcaption class="jr-figcaption">[[Caption.]]</figcaption>
+          </figure>
+        </section>
+
+        <!-- ===== HEADING ============================================== -->
+        <h2 class="jr-h">[[Section heading]]</h2>
+        <h3 class="jr-sub">[[Subheading]]</h3>
+
+        <!-- ===== LIST ================================================= -->
+        <ul class="jr-list">
+          <li>[[Item.]]</li>
+          <li>[[Item.]]</li>
+        </ul>
+
+        <!-- ===== PULL QUOTE ==========================================
+             Spans both rails and resets the eye. Lift a sentence that
+             is already in the essay, and place it just BEFORE the
+             paragraph it comes from so it reads as a signpost rather
+             than a repeat. Add --right to hang it off the right edge. -->
+        <blockquote class="jr-pull" data-reveal>
+          <p>[[The sentence.]]</p>
+          <!-- <p class="jr-pull-attr">[[Optional attribution]]</p> -->
+        </blockquote>
+
+        <!-- ===== BEAT =================================================
+             One line given its own air, still at reading scale. Use for
+             a short sentence that should land on its own. -->
+        <p class="jr-beat">[[One line.]]</p>
+
+        <!-- ===== FIGURE, FULL BLEED ==================================
+             Edge of screen to edge of screen. Only use it when the
+             source image is at least 2400px wide, otherwise it will
+             upscale and go soft. Nothing is cropped: the image is
+             contained, so it keeps its ratio at any width. -->
+        <figure class="jr-figure jr-figure--bleed" data-reveal>
+          <img src="/assets/[[folder]]/[[image]].webp" alt="[[Alt text.]]" width="[[w]]" height="[[h]]" loading="lazy" decoding="async">
+          <figcaption class="jr-figcaption">[[Caption.]]</figcaption>
+        </figure>
+
+        <!-- ===== STRIP ================================================
+             Two or three photos on one row at a uniform height, with a
+             tight even gutter. Mixed ratios are fine and often better
+             than matched ones.
+
+             --ar on each figure is that image's width DIVIDED BY its
+             height. It is what makes the row land on one height: the
+             widths come out proportional to the ratios, so nothing is
+             cropped and no ratio is forced. A 2500x1666 photo is
+             --ar: 1.5, a 900x1600 portrait is --ar: 0.563. Leave it
+             off only when every image in the strip has the same ratio.
+
+             Strips stay side by side on phones. Stacking them would
+             give back the vertical space the strip exists to save. Add
+             jr-strip--text to keep the strip inside the measure.
+             Four or more photos is a gallery, not a strip. -->
+        <div class="jr-strip" data-reveal>
+          <figure style="--ar: [[w/h]]">
+            <img src="/assets/[[folder]]/[[image-a]].webp" alt="[[Alt text.]]" width="[[w]]" height="[[h]]" loading="lazy" decoding="async">
+          </figure>
+          <figure style="--ar: [[w/h]]">
+            <img src="/assets/[[folder]]/[[image-b]].webp" alt="[[Alt text.]]" width="[[w]]" height="[[h]]" loading="lazy" decoding="async">
+          </figure>
+          <figcaption class="jr-figcaption">[[Caption for the row.]]</figcaption>
+        </div>
+
+        <!-- ===== THE THRESHOLD =======================================
+             The single Iris line, one per page, placed at the essay's
+             turn. Delete it if the essay has no turn. Never stack it
+             against a hairline and never use two. -->
+        <hr class="jr-threshold" data-reveal aria-hidden="true">
+
+        <section class="jr-sec">
+          <p class="jr-sec-label">[[Label]]</p>
+
+          <!-- A figure in the right rail, beside its paragraph. Pair it
+               with a LONG paragraph. A tall rail image next to a short
+               paragraph sets the grid row height and opens a hole in the
+               text column. -->
+          <div class="jr-row">
+            <p>[[Body paragraph.]]</p>
+            <figure class="jr-figure jr-figure--side" data-reveal>
+              <img src="/assets/[[folder]]/[[image]].webp" alt="[[Alt text.]]" width="[[w]]" height="[[h]]" loading="lazy" decoding="async">
+              <figcaption class="jr-figcaption">[[Caption.]]</figcaption>
+            </figure>
+          </div>
+
+          <p>[[Closing paragraph.]]</p>
+        </section>
+
+        <!-- Whitespace divider. Add --rule only when space alone fails
+             to separate two things. Site rules L1 and L2. -->
+        <!-- <hr class="jr-break"> -->
+
+        <div class="jr-essay-foot">
+          <p>[[Closing note. Usually a pointer to Open Tabs and an
+          invitation to write in.]]</p>
+        </div>
+
+        <!-- ===== READ NEXT ===========================================
+             ESSAY TO ESSAY ONLY. Never point this at a studio letter or
+             any other kind of page. Delete the whole block when there is
+             no sibling essay to send the reader to, which was the case
+             when the first essay shipped. -->
+        <nav class="jr-next" aria-label="Read next">
+          <p class="jr-next-label">Read next</p>
+          <a class="jr-next-link" href="[[/journal/other-essay-slug/]]">[[Title of the other essay]]</a>
+        </nav>
+
+      </div>
+    </article>
+
+    <footer class="sw-page-footer" data-site-footer>
+      <div class="sw-page-footer__inner">
+        <button class="sw-page-footer__top" type="button" data-site-back-top>Back to top</button>
+      </div>
+    </footer>
+  </main>
+<script defer src="/site-header.js?v=20260813-journal"></script><script defer src="/site-i18n.js?v=20260813-journal"></script>
+  <script defer src="/essay-scroll.js?v=20260814-visual-essay-v10"></script>
+  <script defer src="/fluid-renderer.js?v=20260611-ripple-v7"></script>
+</body>
+</html>

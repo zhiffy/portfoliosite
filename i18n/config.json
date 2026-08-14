@@ -208,6 +208,29 @@
         }
       }
     },
+    "there-is-no-universal-user": {
+      "enSource": "there-is-no-universal-user.html",
+      "urlBase": "/journal/there-is-no-universal-user/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "There Is No Universal User | Shavonne Wong",
+          "zh-Hans": "没有普适的用户 | Shavonne Wong",
+          "zh-Hant": "沒有普適的用戶 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Do people everywhere treat AI the same way? Fifteen months of showing an AI companion across Singapore, Taipei, Hong Kong and New York says no, and the differences reveal what each of us expects from machines that look like us.",
+          "zh-Hans": "世界各地的人会用同样的方式对待 AI 吗？一个 AI 伴侣在新加坡、台北、香港与纽约展出十五个月的经历说明并非如此，而这些差异揭示出我们各自对那些外表像人的机器抱有什么期待。",
+          "zh-Hant": "世界各地的人會用同樣的方式對待 AI 嗎？一個 AI 伴侶在新加坡、台北、香港與紐約展出十五個月的經歷說明並非如此，而這些差異揭示出我們各自對那些外表像人的機器抱有什麼期待。"
+        },
+        "ogDescription": {
+          "en": "Fifteen months of showing an AI companion across four cities, and what the differences reveal about what we each expect from machines that look like us.",
+          "zh-Hans": "一个 AI 伴侣在四座城市展出十五个月，这些差异揭示出我们各自对那些外表像人的机器抱有什么期待。",
+          "zh-Hant": "一個 AI 伴侶在四座城市展出十五個月，這些差異揭示出我們各自對那些外表像人的機器抱有什麼期待。"
+        }
+      }
+    },
     "press": {
       "enSource": "press.html",
       "urlBase": "/press/",

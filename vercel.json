@@ -115,6 +115,14 @@
       "destination": "/there-is-no-universal-user.html"
     },
     {
+      "source": "/journal/there-is-no-universal-user/zh-hans/",
+      "destination": "/there-is-no-universal-user-zh-hans.html"
+    },
+    {
+      "source": "/journal/there-is-no-universal-user/zh-hant/",
+      "destination": "/there-is-no-universal-user-zh-hant.html"
+    },
+    {
       "source": "/journal/open-tabs/",
       "destination": "/open-tabs.html"
     },
