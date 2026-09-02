@@ -1078,6 +1078,13 @@ main > .sp-section:last-of-type {
   font-size: 9px;
 }
 
+/* Pilot for site rule 13b: no middot separators. The Eva hero status line drops
+   the glyph and lets space do the separating (rule L1). Scoped to this page
+   until the pattern is approved for rollout. */
+.sp-meet-eva-page .sp-updated {
+  margin-left: 14px;
+}
+
 .sp-project-main .sp-plate {
   display: grid;
   grid-template-columns: 1fr;
@@ -3023,5 +3030,24 @@ html.sp-theatre-open { overflow: hidden; }
   font-size: 11px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  color: var(--text-2);
+}
+
+/* ============================================================
+   MEET EVA HERE — hero rhythm (2026-09-01). The diary note sits
+   under the standfirst as a footnote to it, and the question line
+   follows close beneath the copy instead of floating in the gap
+   left by the taller image column.
+   ============================================================ */
+.sp-meet-eva-page .sp-project-hero {
+  row-gap: clamp(18px, 2vw, 28px);
+  padding-bottom: 36px;
+}
+
+.sp-meet-eva-page .sp-project-hero-copy {
+  gap: 18px;
+}
+
+.sp-meet-eva-page .sp-project-hero-copy .sp-copy {
   color: var(--text-2);
 }

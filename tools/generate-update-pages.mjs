@@ -179,7 +179,7 @@ function renderPage(page) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/scroll-narrative.css?v=20260613-prose-links">
-  <link rel="stylesheet" href="/scroll-pages.css?v=20260613-touch-scroll">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260902-eva-hero">
   <link rel="stylesheet" href="/update2025jun-redesign.css?v=20260613-live-archive">
   <link rel="stylesheet" href="/update-archive.css?v=20260613-live-archive">
   <script type="application/ld+json">

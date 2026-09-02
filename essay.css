@@ -234,6 +234,57 @@ body:has(.jr-essay) { overflow-x: clip; }
   text-wrap: balance;
 }
 
+/* Title set as artwork rather than type, for essays that have a
+   drawn lockup. The <h1> keeps its element and the words survive in the
+   alt attribute, so the heading a crawler, an answer engine or a screen
+   reader reads is unchanged -- only the rendering is an image.
+
+   Sized off the grid column with height auto, never a vh cap, so the
+   lockup's ratio survives at every width and nothing is cropped
+   (rule 2 of this file, and site rule C1). The px ceiling stops it
+   growing into a billboard on a wide monitor; it is a title, not a
+   cover. line-height 0 removes the leading strut the <h1> would
+   otherwise add under the image.
+
+   The asset is black artwork on transparency rather than black on
+   white, because the page is Haze and a white plate would read as a
+   pasted-in rectangle. The invert rule below is dormant: the site has
+   no dark surface today, but <html> already carries data-theme, so
+   this is the hook that will catch it rather than a second asset. */
+.jr-page.jr-essay .jr-title--lockup {
+  grid-column: main-start / wide-end;
+  max-width: none;
+  margin: 0;
+  line-height: 0;
+}
+/* The wrapper is what sits ON the axis, and it is also what the negative
+   margins below resolve against: percentage margins resolve against the
+   CONTAINING BLOCK WIDTH, and because the image is width:100% of this
+   span, one percentage works at every viewport width. overflow:clip
+   catches the transparent overhang so it cannot open a horizontal
+   scrollbar on a phone. */
+.jr-page.jr-essay .jr-lockup {
+  display: block;
+  width: 100%;
+  max-width: 980px;
+  overflow: clip;
+}
+/* The artwork carries its own transparent margin -- roughly 10.9% of its
+   width on the left and 2% top and bottom -- so setting it flush would
+   leave the letterforms floating well right of the axis that the date and
+   every paragraph below sit on, which is rule 1 of this file. These
+   negative margins pull the INK onto the axis. The image itself is
+   untouched: not cropped, not stretched, ratio intact (site rule C1);
+   only its box is offset. The values are pulled in ~0.2% from the measured
+   bounding box so subpixel rounding can never shave a swash. */
+.jr-page.jr-essay .jr-lockup img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: -1.9% 0 -2.15% -10.7%;
+}
+[data-theme="dark"] .jr-page.jr-essay .jr-lockup img { filter: invert(1); }
+
 /* The standfirst, and it does two jobs at once.
    For a reader it is the hook. For an answer engine it is the first
    body text after the <h1>, which is the most-lifted position on the

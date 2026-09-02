@@ -19,7 +19,7 @@
  * the live site discloses AI translation to visitors.
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, statSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { execFileSync, execSync } from 'node:child_process';
 import path from 'node:path';
@@ -320,12 +320,24 @@ function updateManagedAll(status) {
       if (c === 'en') continue;
       entries.push('  <url>');
       entries.push(`    <loc>${url(page, c)}</loc>`);
-      entries.push('    <lastmod>2026-06-20</lastmod>');
+      entries.push(`    <lastmod>${localizedLastmod(page, c)}</lastmod>`);
       entries.push('  </url>');
     }
   }
   replaceBlock(path.join(ROOT, 'sitemap.xml'), '<!-- i18n:localized-urls:start -->', '<!-- i18n:localized-urls:end -->',
     entries.join('\n'));
+}
+
+// lastmod was hardcoded to the 2026-06-20 revamp date for every localized URL,
+// so a page translated months later still advertised itself as untouched since
+// June and Google had no reason to recrawl it. Read the date off the built file
+// instead, falling back to today if the file is not on disk yet.
+function localizedLastmod(page, code) {
+  try {
+    return statSync(path.join(ROOT, outFile(page, code))).mtime.toISOString().slice(0, 10);
+  } catch {
+    return new Date().toISOString().slice(0, 10);
+  }
 }
 
 function ensureFonts() {

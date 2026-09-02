@@ -133,7 +133,7 @@
       "jsonldType": "ProfilePage",
       "styles": [
         "/scroll-narrative.css?v=20260618-mobile-gutters",
-        "/scroll-pages.css?v=20260616-prose-fix",
+        "/scroll-pages.css?v=20260902-eva-hero",
         "/about-redesign.css?v=20260615-detrack",
         "/about-v2.css?v=20260615-detrack"
       ],
@@ -146,9 +146,9 @@
       ],
       "meta": {
         "title": {
-          "en": "About | Shavonne Wong",
-          "zh-Hans": "关于 | Shavonne Wong",
-          "zh-Hant": "關於 | Shavonne Wong"
+          "en": "About Shavonne Wong | Singaporean New Media Artist",
+          "zh-Hans": "关于 Shavonne Wong | 新加坡新媒体艺术家",
+          "zh-Hant": "關於 Shavonne Wong | 新加坡新媒體藝術家"
         },
         "description": {
           "en": "Shavonne Wong, new media artist working in AI, 3D and interactive installation. Biography, artist statement, exhibitions, collaborations, talks and press.",

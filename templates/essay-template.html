@@ -223,9 +223,9 @@
   </script>
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/mulish/mulish-variable.woff2" crossorigin>
   <link rel="stylesheet" href="/scroll-narrative.css?v=20260629-era-scale">
-  <link rel="stylesheet" href="/scroll-pages.css?v=20260620-video-embed">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260902-eva-hero">
   <link rel="stylesheet" href="/journal.css?v=20260814-tabs-field">
-  <link rel="stylesheet" href="/essay.css?v=20260814-visual-essay-v13">
+  <link rel="stylesheet" href="/essay.css?v=20260815-title-lockup">
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
     <!-- End Cloudflare Web Analytics -->
@@ -262,9 +262,6 @@
   <main id="main-content" class="jr-page jr-essay">
     <article>
 
-      <!-- ===== HERO ===================================================
-           Kicker, title, deck, date. The deck should match the dek on
-           the journal index card so the two never drift apart. -->
       <div class="jr-flow">
 
         <!-- ===== HERO ===================================================
@@ -272,17 +269,28 @@
              the prose and the date rule stops at the measure instead of
              running the full page width.
 
-             No eyebrow label above the title. The nav already says
-             Journal and the title does the rest.
+             TITLE AND DATE ONLY. No eyebrow label, and no visible
+             standfirst. The nav already says Journal and the title does
+             the rest.
 
-             The deck is a HOOK, not a summary. One short line that names
-             something concrete and leaves the reader wanting the piece.
-             A three-line abstract of what follows reads as a template,
-             and the meta description already does that job for search.
-             Delete the deck entirely if no honest one-liner exists. -->
+             The standfirst still exists, but only where machines read it
+             and visitors do not: the meta description, og:description,
+             twitter:description, the schema description and the llms.txt
+             entry, all the same sentence verbatim. Standing instruction
+             from Shavonne, 2026-08-14 — that line is for crawlers and
+             answer engines, not for the page.
+
+             Write it as a CLAIM, not a summary, and not the obvious
+             reading of the essay. It is the first body text after the
+             <h1> in the source, which is the most-lifted position for an
+             answer engine.
+
+             .jr-deck is still styled if a visible standfirst is ever
+             wanted back, and the CSS moves the date into the prose
+             column when there is no deck, so the hero is correct either
+             way. Do not add one without asking. -->
         <header class="jr-hero">
           <h1 class="jr-title">[[Essay title]]</h1>
-          <p class="jr-deck">[[One short concrete line. Not a summary.]]</p>
           <p class="jr-essay-meta">[[Month YYYY]]</p>
         </header>
 
