@@ -267,21 +267,18 @@ body:has(.jr-essay) { overflow-x: clip; }
   display: block;
   width: 100%;
   max-width: 980px;
+  margin-inline: auto;
   overflow: clip;
 }
-/* The artwork carries its own transparent margin -- roughly 10.9% of its
-   width on the left and 2% top and bottom -- so setting it flush would
-   leave the letterforms floating well right of the axis that the date and
-   every paragraph below sit on, which is rule 1 of this file. These
-   negative margins pull the INK onto the axis. The image itself is
-   untouched: not cropped, not stretched, ratio intact (site rule C1);
-   only its box is offset. The values are pulled in ~0.2% from the measured
-   bounding box so subpixel rounding can never shave a swash. */
+/* The artwork's horizontal transparent padding is nearly balanced, so the
+   centred wrapper also centres the visible lettering. Only the transparent
+   top and bottom padding is tightened here. The image itself is untouched:
+   not cropped, not stretched, ratio intact (site rule C1). */
 .jr-page.jr-essay .jr-lockup img {
   display: block;
   width: 100%;
   height: auto;
-  margin: -1.9% 0 -2.15% -10.7%;
+  margin: -1.9% 0 -2.15%;
 }
 [data-theme="dark"] .jr-page.jr-essay .jr-lockup img { filter: invert(1); }
 
