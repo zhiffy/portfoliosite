@@ -243,6 +243,9 @@ html.sn-vertical-mode .sn-eras-lede em { color: var(--accent-deep); font-style: 
 /* ---------- 05 CONTACT — italic closer ---------- */
 .sn-contact-title { font-style: italic; font-weight: 300; }
 
+/* Small supporting text needs stronger contrast on the About band. */
+.sn-panel.sn-about { --text-2: var(--text); }
+
 /* Studio-updates cards: a real, calm hover.
    The previous rule set the bg to haze-elev, which is already the card's base bg,
    so nothing happened. This lifts to white, darkens the hairline, and gently zooms the image. */
@@ -276,6 +279,12 @@ html.sn-vertical-mode .sn-eras-lede em { color: var(--accent-deep); font-style: 
 @media (max-width: 900px) {
   html.sn-vertical-mode .sn-hero {
     min-height: auto !important;
+  }
+
+  html.sn-vertical-mode .sn-hero-media {
+    width: calc(100% + var(--pad) + var(--pad) - 32px) !important;
+    margin-left: calc(16px - var(--pad)) !important;
+    margin-right: calc(16px - var(--pad)) !important;
   }
 
   html.sn-vertical-mode .sn-panel.sn-eras {

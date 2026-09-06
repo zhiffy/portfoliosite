@@ -135,11 +135,11 @@
         "/scroll-narrative.css?v=20260618-mobile-gutters",
         "/scroll-pages.css?v=20260902-eva-hero",
         "/about-redesign.css?v=20260615-detrack",
-        "/about-v2.css?v=20260615-detrack"
+        "/about-v2.css?v=20260906-audit-fixes-2"
       ],
       "scripts": [
         "/assets/js/subnav.js?v=20260605-rail-current",
-        "/site-header.js?v=20260813-journal",
+        "/site-header.js?v=20260906-audit-fixes",
         "/site-i18n.js?v=20260813-journal",
         "/fluid-renderer.js?v=20260611-ripple-v7",
         "/press-hover.js?v=20260616-genai"

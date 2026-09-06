@@ -28,6 +28,7 @@
 
 /* ── Standalone page container ───────────────────────────── */
 .ct-main {
+  --hairline-strong: rgba(237, 237, 244, 0.5);
   max-width: var(--ct-shell);
   margin: 0 auto;
   padding: calc(var(--nav-h) + 58px) var(--pad) clamp(36px, 5vh, 58px);

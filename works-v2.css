@@ -147,7 +147,7 @@
   z-index: 2;
 }
 .wk2-tab:hover .wk2-tab-num { color: var(--accent-deep); }
-.wk2-tab[aria-selected="true"] {
+.wk2-tab[data-active="true"] {
   color: #fff;
   background: var(--accent-deep);
   border-color: var(--accent-deep);
@@ -155,14 +155,14 @@
   box-shadow: 0 2px 10px rgba(24, 25, 43, 0.14);
   z-index: 1;
 }
-.wk2-tab[aria-selected="true"]:hover,
-.wk2-tab[aria-selected="true"]:focus-visible {
+.wk2-tab[data-active="true"]:hover,
+.wk2-tab[data-active="true"]:focus-visible {
   border-style: solid;
   box-shadow: 0 4px 14px rgba(24, 25, 43, 0.2);
   transform: translateY(-1px);
   z-index: 3;
 }
-.wk2-tab[aria-selected="true"] .wk2-tab-num { color: rgba(255, 255, 255, 0.7); }
+.wk2-tab[data-active="true"] .wk2-tab-num { color: #fff; }
 .wk2-tab.is-available-filter {
   border-style: dashed;
 }
@@ -684,8 +684,8 @@ html.sn-ripple-filter-on .wk2-panels { filter: url(#snWebglRippleDisplace); }
 }
 .wk2-work-modal-nav:hover,
 .wk2-work-modal-nav:focus-visible { color: #fff; outline: 0; }
-.wk2-work-modal-nav--prev { left: 18px; }
-.wk2-work-modal-nav--next { right: 18px; }
+.wk2-work-modal-prev { left: 18px; }
+.wk2-work-modal-next { right: 18px; }
 .wk2-work-modal-count {
   position: fixed;
   bottom: 18px;
@@ -696,7 +696,7 @@ html.sn-ripple-filter-on .wk2-panels { filter: url(#snWebglRippleDisplace); }
   font-size: 10px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: rgba(248, 248, 252, 0.45);
+  color: #fff;
   pointer-events: none;
 }
 /* gentle media cross-fade on flip */
@@ -715,6 +715,17 @@ html.sn-ripple-filter-on .wk2-panels { filter: url(#snWebglRippleDisplace); }
   .wk2-work-modal-media img,
   .wk2-work-modal-media video { transition: none; }
 }
+/* Keep the detail copy inside the dialog on tablets and phones. */
+@media (max-width: 1080px) {
+  .wk2-work-modal { max-height: calc(100dvh - 72px); }
+  .wk2-work-modal-shell {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 56px;
+  }
+  .wk2-work-modal-media { justify-self: center; }
+  .wk2-work-modal-copy { min-width: 0; overflow-wrap: anywhere; }
+}
+
 /* On touch/small screens, swipe replaces the side arrows and the two exits
    stack full-width. */
 @media (max-width: 760px) {

@@ -1,7 +1,8 @@
 import { existsSync, readdirSync } from "node:fs";
-import { copyFile, mkdir, readdir, stat } from "node:fs/promises";
+import { copyFile, mkdir, readdir, readFile, stat, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { defineConfig } from "vite";
+import { validateBuiltSite } from "./tools/validate-built-site.mjs";
 import {
   NEWSLETTER_ALLOWED_METHODS,
   NEWSLETTER_HEADERS,
@@ -10,6 +11,19 @@ import {
 } from "./lib/brevo-subscribe.js";
 
 const root = process.cwd();
+
+// Netlify derives slash normalization from the published file layout.
+// These canonical URLs need directory indexes, without competing flat files.
+const directoryPages = new Set([
+  'about', 'contact', 'press', 'journal',
+  'update2023jan', 'update2023june', 'update2024jan', 'update2024jun',
+  'update2025jan', 'update2025jun', 'update2026jun',
+]);
+
+function publishedPage(file) {
+  const name = file.replace(/^\//, '').replace(/\.html$/, '');
+  return directoryPages.has(name) ? `${name}/index.html` : file.replace(/^\//, '');
+}
 
 const cleanRoutes = {
   "/about/": "about.html",
@@ -128,12 +142,12 @@ const cleanRedirects = {
   "/zh-hant-press.html": "/press/zh-hant/",
 };
 
-function rewriteCleanRoute(request) {
+function rewriteCleanRoute(request, preview = false) {
   if (!request.url) return;
   const url = new URL(request.url, "http://local.preview");
   const target = cleanRoutes[url.pathname] || cleanRoutes[`${url.pathname}/`];
   if (target) {
-    request.url = `/${target}${url.search}${url.hash}`;
+    request.url = `/${preview ? publishedPage(target) : target}${url.search}${url.hash}`;
     return;
   }
 
@@ -214,6 +228,7 @@ function copyStaticFiles() {
     "essay-scroll.js",
     "fluid-renderer.js",
     "favicon.ico",
+    "gallery-scroll.js",
     "lightbox.js",
     "llms.txt",
     "open-tabs.js",
@@ -233,10 +248,13 @@ function copyStaticFiles() {
     path.join("assets", "videos", "everything-yet-nothing-scrub"),
   ];
 
+  let outDir;
   return {
     name: "copy-static-site-files",
+    configResolved(config) {
+      outDir = path.resolve(config.root, config.build.outDir);
+    },
     async closeBundle() {
-      const outDir = path.resolve(root, "dist");
       await mkdir(outDir, { recursive: true });
 
       for (const target of copyTargets) {
@@ -248,6 +266,21 @@ function copyStaticFiles() {
           return !excludedPathParts.some((excluded) => relative.startsWith(excluded));
         });
       }
+
+      for (const name of directoryPages) {
+        const flatFile = path.join(outDir, `${name}.html`);
+        const indexFile = path.join(outDir, name, 'index.html');
+        await mkdir(path.dirname(indexFile), { recursive: true });
+        await copyFile(flatFile, indexFile);
+        await unlink(flatFile);
+      }
+      const redirectsFile = path.join(outDir, '_redirects');
+      const redirects = await readFile(redirectsFile, 'utf8');
+      await writeFile(redirectsFile, redirects.replace(
+        /^(\S+\s+)\/(\S+\.html)(\s+200!?\s*)$/gm,
+        (_, source, file, status) => `${source}/${publishedPage(file)}${status}`,
+      ));
+      validateBuiltSite(outDir, Object.values(htmlEntries).map(publishedPage));
     },
   };
 }
@@ -288,7 +321,7 @@ function cleanRouteDevServer() {
       server.middlewares.use(async (request, response, next) => {
         if (await handleNewsletterSignup(request, response)) return;
         if (redirectCleanRoute(request, response)) return;
-        rewriteCleanRoute(request);
+        rewriteCleanRoute(request, true);
         next();
       });
     },
