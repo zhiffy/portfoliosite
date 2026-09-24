@@ -264,6 +264,13 @@ function localizeNav(html, page, code, status) {
       html = html.replace(new RegExp(`(data-i18n="nav.${key}">)[^<]*(<)`), `$1${label}$2`);
     }
   }
+  const subnavLabels = cfg.pages[page].subnav?.[code];
+  if (subnavLabels) {
+    html = html.replace(/(<nav class="sp-subnav"[^>]*>)([\s\S]*?)(<\/nav>)/, (_, open, links, close) => {
+      let index = 0;
+      return open + links.replace(/(<a href="#[^"]+">)[^<]*/g, (_, tag) => tag + (subnavLabels[index++] || '')) + close;
+    });
+  }
   return html;
 }
 

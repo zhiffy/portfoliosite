@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <title>Book a viewing of The Sitting Room | Shavonne Wong</title>
+  <meta name="description" content="Reserve a free viewing time for The Sitting Room open showcase on 2 October 2026 at NAC Arts x Tech Lab, Singapore.">
+  <link rel="canonical" href="https://www.shavonnewong.art/works/unsilvered/book/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.shavonnewong.art/works/unsilvered/book/">
+  <meta property="og:title" content="Book a viewing of The Sitting Room | Shavonne Wong">
+  <meta property="og:description" content="Reserve a free viewing time for The Sitting Room open showcase on 2 October 2026 at NAC Arts x Tech Lab, Singapore.">
+  <meta property="og:image" content="https://www.shavonnewong.art/assets/unsilvered/unsilvered-title-art.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Book a viewing of The Sitting Room | Shavonne Wong">
+  <meta name="twitter:description" content="Reserve a free viewing time for The Sitting Room open showcase on 2 October 2026 at NAC Arts x Tech Lab, Singapore.">
+  <meta name="twitter:image" content="https://www.shavonnewong.art/assets/unsilvered/unsilvered-title-art.png">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/mulish/mulish-variable.woff2" crossorigin>
+  <link rel="stylesheet" href="/scroll-narrative.css?v=20260629-era-scale">
+  <link rel="stylesheet" href="/scroll-pages.css?v=20260902-eva-hero">
+  <script src="/site-header.js?v=20260924-unsilvered" defer></script>
+  <script src="/site-i18n.js?v=20260924-unsilvered" defer></script>
+  <style>
+    .bk-page { width: min(100% - 2 * var(--pad), var(--site-max)); margin: 0 auto; padding: calc(var(--nav-h) + 54px) 0 0; }
+    .bk-back { display: inline-block; color: var(--text-2); font-size: 13px; text-decoration: none; margin-bottom: 38px; }
+    .bk-back:hover { color: var(--text); }
+    .bk-hero { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: clamp(32px, 5vw, 100px); padding-bottom: clamp(42px, 5vw, 76px); }
+    .bk-kicker, .bk-label { display: block; margin: 0 0 16px; color: var(--text-2); font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .bk-title { margin: 0 0 22px; font-size: clamp(48px, 6vw, 94px); font-weight: 300; line-height: 1.03; letter-spacing: -.055em; }
+    .bk-title em { font-weight: 300; }
+    .bk-lead { margin: 0 0 30px; font-size: clamp(18px, 1.6vw, 25px); line-height: 1.45; }
+    .bk-facts { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px 30px; }
+    .bk-facts p { margin: 0; line-height: 1.6; }
+    .bk-facts .bk-label { margin-bottom: 4px; }
+    .bk-hero figure { margin: 0; }
+    .bk-hero img { display: block; width: 100%; height: auto; max-height: 620px; object-fit: contain; }
+    .bk-hero figcaption { margin-top: 10px; color: var(--text-2); font-size: 12px; }
+    .bk-booking { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(310px, .7fr); column-gap: clamp(40px, 5vw, 96px); border-top: 1px solid var(--hairline-strong); padding: clamp(32px, 4vw, 60px) 0 90px; }
+    .bk-section-title { margin: 0 0 10px; font-size: clamp(26px, 2.5vw, 42px); font-weight: 400; line-height: 1.2; }
+    .bk-note { margin: 0 0 28px; color: var(--text-2); font-size: 15px; line-height: 1.6; }
+    .bk-status { min-height: 24px; margin: 0 0 16px; color: var(--text-2); font-size: 14px; }
+    .bk-status[data-kind="error"] { color: var(--text); }
+    .bk-slots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; border: 0; }
+    .bk-slots legend { padding: 0; margin-bottom: 14px; color: var(--text-2); font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .bk-slot { position: relative; display: block; min-width: 0; }
+    .bk-slot input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+    .bk-slot span { display: flex; justify-content: space-between; align-items: baseline; min-height: 70px; gap: 10px; padding: 17px 18px; border: 1px solid var(--hairline-strong); transition: border-color .2s, background-color .2s; cursor: pointer; }
+    .bk-slot strong { color: var(--text); font-size: clamp(17px, 1.4vw, 21px); font-weight: 500; white-space: nowrap; }
+    .bk-slot small { color: var(--text-2); font-size: 12px; text-align: right; }
+    .bk-slot input:checked + span { background: var(--sw-haze-elev); border-color: var(--text); }
+    .bk-slot input:focus-visible + span { outline: 2px solid var(--text); outline-offset: 3px; }
+    .bk-slot input:disabled + span { opacity: .52; cursor: not-allowed; }
+    .bk-break { grid-column: 1 / -1; color: var(--text-2); font-size: 13px; padding: 8px 0; }
+    .bk-details { align-self: start; }
+    .bk-form { display: grid; gap: 18px; }
+    .bk-field { display: grid; gap: 7px; font-size: 13px; font-weight: 600; }
+    .bk-field input, .bk-field select { width: 100%; height: 48px; padding: 0 14px; border: 1px solid var(--hairline-strong); border-radius: 0; background: var(--sw-haze-elev); color: var(--text); font: inherit; font-weight: 400; }
+    .bk-field input:focus-visible, .bk-field select:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+    .bk-help { margin: -7px 0 0; font-size: 12px; color: var(--text-2); }
+    .bk-submit { min-height: 52px; margin-top: 6px; padding: 12px 22px; border: 0; border-radius: 0; background: var(--sw-slate); color: var(--sw-haze); font: 700 12px var(--sans); letter-spacing: .04em; text-transform: uppercase; cursor: pointer; }
+    .bk-submit:hover:not(:disabled) { background: var(--text-2); }
+    .bk-submit:disabled { opacity: .48; cursor: not-allowed; }
+    .bk-result { margin: 0; font-size: 14px; line-height: 1.6; }
+    .bk-result[data-kind="error"] { color: var(--text); }
+    .bk-honey { position: absolute; left: -9999px; }
+    .bk-footer-note { margin: 18px 0 0; color: var(--text-2); font-size: 13px; line-height: 1.6; }
+    .bk-footer-note a { color: var(--text); }
+    @media (max-width: 900px) { .bk-hero, .bk-booking { grid-template-columns: 1fr; } .bk-hero img { max-height: 420px; } .bk-details { margin-top: 42px; } }
+    @media (max-width: 600px) { .bk-page { width: auto; margin: 0 16px; padding-top: calc(var(--nav-h) + 28px); } .bk-back { margin-bottom: 26px; } .bk-title { font-size: clamp(43px, 11vw, 65px); } .bk-facts { grid-template-columns: 1fr; } .bk-slots { grid-template-columns: 1fr; } .bk-slot span { min-height: 62px; } .bk-booking { padding-bottom: 56px; } }
+  </style>
+</head>
+<body class="sn-page-body bk-body">
+  <a class="sn-skip-link" href="#main-content">Skip to content</a>
+  <header class="sn-nav" data-page-nav>
+    <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="/assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
+    <nav class="sn-links">
+      <a href="/#hero" data-i18n="nav.home">Home</a>
+      <a href="/about/" data-i18n="nav.about">About</a>
+      <a href="/works/" class="is-active" data-i18n="nav.works">Works</a>
+      <a href="/journal/" data-i18n="nav.journal">Journal</a>
+      <a href="/press/" data-i18n="nav.press">Press</a>
+      <a href="/contact/" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="sn-meta-right">
+      <label class="sn-lang-switcher" data-language-switcher><span class="sn-lang-kicker" data-i18n="ui.languageLabel">Language</span><select class="sn-lang-select" data-language-select aria-label="Language" data-i18n-aria-label="ui.languageLabel" title="Language"></select></label>
+    </div>
+    <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
+  </header>
+  <main id="main-content" class="bk-page">
+    <a class="bk-back" href="/works/unsilvered/#showcase">← Back to Unsilvered</a>
+    <section class="bk-hero" aria-labelledby="bk-title">
+      <div>
+        <p class="bk-kicker">The Sitting Room, open showcase</p>
+        <h1 class="bk-title" id="bk-title">Book a time for<br><em>The Sitting Room.</em></h1>
+        <p class="bk-lead">Choose a free one-hour viewing time. Come at any point during that hour.</p>
+        <div class="bk-facts">
+          <p><span class="bk-label">When</span>Friday 2 October 2026<br>2 to 9:30 pm, Singapore time</p>
+          <p><span class="bk-label">Where</span>NAC Arts x Tech Lab, Aliwal Arts Centre<br>28 Aliwal Street, #02-05<br>Singapore 199918</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bk-booking" aria-labelledby="bk-times-title">
+      <div>
+        <h2 class="bk-section-title" id="bk-times-title">Choose a viewing time</h2>
+        <p class="bk-note">Each hour has room for eight people. You can arrive at any time within the hour you book. There is a break from 6 to 6:30 pm.</p>
+        <noscript><p class="bk-status">Please enable JavaScript to check live availability and reserve places.</p></noscript>
+        <p class="bk-status" data-booking-status role="status" aria-live="polite">Checking availability…</p>
+        <fieldset class="bk-slots" form="booking-form" data-slots>
+          <legend>Friday 2 October, Singapore time</legend>
+          <label class="bk-slot"><input type="radio" name="slot" value="14:00" form="booking-form" disabled><span><strong>2 to 3 pm</strong><small data-places>Checking…</small></span></label>
+          <label class="bk-slot"><input type="radio" name="slot" value="15:00" form="booking-form" disabled><span><strong>3 to 4 pm</strong><small data-places>Checking…</small></span></label>
+          <label class="bk-slot"><input type="radio" name="slot" value="16:00" form="booking-form" disabled><span><strong>4 to 5 pm</strong><small data-places>Checking…</small></span></label>
+          <label class="bk-slot"><input type="radio" name="slot" value="17:00" form="booking-form" disabled><span><strong>5 to 6 pm</strong><small data-places>Checking…</small></span></label>
+          <div class="bk-break">6 to 6:30 pm, break</div>
+          <label class="bk-slot"><input type="radio" name="slot" value="18:30" form="booking-form" disabled><span><strong>6:30 to 7:30 pm</strong><small data-places>Checking…</small></span></label>
+          <label class="bk-slot"><input type="radio" name="slot" value="19:30" form="booking-form" disabled><span><strong>7:30 to 8:30 pm</strong><small data-places>Checking…</small></span></label>
+          <label class="bk-slot"><input type="radio" name="slot" value="20:30" form="booking-form" disabled><span><strong>8:30 to 9:30 pm</strong><small data-places>Checking…</small></span></label>
+        </fieldset>
+      </div>
+      <div class="bk-details">
+        <h2 class="bk-section-title">Your places</h2>
+        <p class="bk-note">Choose one time for your group. We only need one name and email to hold the places.</p>
+        <form class="bk-form" id="booking-form" action="/api/unsilvered-booking" method="post" data-booking-form>
+          <label class="bk-honey">Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+          <label class="bk-field">Number of people<select name="quantity" required><option value="">Choose a party size</option><option value="1">1 person</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option><option value="5">5 people</option><option value="6">6 people</option><option value="7">7 people</option><option value="8">8 people</option></select></label>
+          <label class="bk-field">Name<input type="text" name="name" autocomplete="name" maxlength="120" required></label>
+          <label class="bk-field">Email<input type="email" name="email" autocomplete="email" inputmode="email" maxlength="254" required></label>
+          <p class="bk-help">We'll use this email only for your booking confirmation.</p>
+          <button class="bk-submit" type="submit" disabled>Reserve places</button>
+          <p class="bk-result" data-booking-result role="status" aria-live="polite"></p>
+        </form>
+        <p class="bk-footer-note">The showing will be filmed and photographed for documentation, which may be used in talks, on this site and on social media. If you would rather not appear, let us know when you arrive. The work itself saves no images of visitors.</p>
+        <p class="bk-footer-note">Need to change your plans? Email <a href="mailto:studio@shavonnewong.art?subject=The%20Sitting%20Room%20booking">studio@shavonnewong.art</a> so we can release your places.</p>
+      </div>
+    </section>
+    <footer class="sw-page-footer" data-site-footer><div class="sw-page-footer__inner"><button class="sw-page-footer__top" type="button" data-site-back-top>Back to top</button></div></footer>
+  </main>
+  <script>
+  (() => {
+    const form = document.querySelector('[data-booking-form]');
+    const status = document.querySelector('[data-booking-status]');
+    const result = document.querySelector('[data-booking-result]');
+    const button = form.querySelector('button[type="submit"]');
+    const quantity = form.elements.quantity;
+    const slots = [...document.querySelectorAll('.bk-slot input')];
+    let places = {};
+    let requestId = null;
+    let availableLoaded = false;
+
+    function updateChoices() {
+      if (!availableLoaded) return;
+      const wanted = Number(quantity.value) || 1;
+      slots.forEach((input) => {
+        const left = Number(places[input.value]) || 0;
+        input.disabled = left < wanted;
+        input.nextElementSibling.querySelector('[data-places]').textContent = left === 0 ? 'Full' : `${left} ${left === 1 ? 'place' : 'places'} left`;
+        if (input.disabled) input.checked = false;
+      });
+      button.disabled = !slots.some((input) => !input.disabled);
+    }
+
+    async function loadAvailability() {
+      try {
+        const response = await fetch('/api/unsilvered-booking', { cache: 'no-store' });
+        const data = await response.json().catch(() => ({}));
+        if (response.status === 410) throw new Error('Bookings for this event have closed.');
+        if (!response.ok || !data.slots) throw new Error('Viewing times are temporarily unavailable. Please try again later.');
+        places = data.slots;
+        availableLoaded = true;
+        status.textContent = 'Choose a time and the number of people coming with you.';
+        status.dataset.kind = '';
+        updateChoices();
+      } catch (error) {
+        places = {};
+        availableLoaded = false;
+        status.textContent = error.message;
+        status.dataset.kind = 'error';
+        slots.forEach((input) => { input.disabled = true; input.nextElementSibling.querySelector('[data-places]').textContent = 'Unavailable'; });
+        button.disabled = true;
+      }
+    }
+
+    quantity.addEventListener('change', updateChoices);
+    form.addEventListener('change', () => { requestId = null; });
+    slots.forEach((input) => input.addEventListener('change', () => { requestId = null; }));
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      result.textContent = '';
+      if (!form.reportValidity()) return;
+      const slot = slots.find((input) => input.checked)?.value;
+      if (!slot) { result.textContent = 'Please choose a viewing time.'; result.dataset.kind = 'error'; return; }
+      button.disabled = true;
+      button.textContent = 'Reserving…';
+      if (!requestId) requestId = crypto.randomUUID();
+      const payload = {
+        slot, quantity: Number(quantity.value), name: form.elements.name.value,
+        email: form.elements.email.value, _gotcha: form.elements._gotcha.value, requestId
+      };
+      form.querySelectorAll('input, select, button').forEach((control) => { control.disabled = true; });
+      slots.forEach((input) => { input.disabled = true; });
+      try {
+        const response = await fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.ok) throw new Error(data.error || 'Could not reserve your places. Please try again.');
+        const label = slots.find((input) => input.value === data.slot).nextElementSibling.querySelector('strong').textContent;
+        result.dataset.kind = 'success';
+        result.textContent = `${data.quantity} ${data.quantity === 1 ? 'place is' : 'places are'} confirmed for ${label} on Friday 2 October. ${data.emailSent ? 'Please check your email for the details.' : 'Your booking is saved, but the email could not be sent. Please keep a note of this time.'}`;
+        form.querySelectorAll('input, select, button').forEach((control) => { control.disabled = true; });
+        slots.forEach((input) => { input.disabled = true; });
+      } catch (error) {
+        result.dataset.kind = 'error';
+        result.textContent = error.message || 'Could not reserve your places. Please try again.';
+        form.querySelectorAll('input, select').forEach((control) => { control.disabled = false; });
+        await loadAvailability();
+      } finally {
+        button.textContent = 'Reserve places';
+      }
+    });
+    loadAvailability();
+  })();
+  </script>
+</body>
+</html>

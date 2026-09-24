@@ -277,26 +277,30 @@
         }
       }
     },
-    "conditional": {
-      "enSource": "conditional.html",
-      "urlBase": "/works/conditional/",
+    "unsilvered": {
+      "enSource": "unsilvered.html",
+      "urlBase": "/works/unsilvered/",
       "bodyStart": "<main id=\"main-content\"",
       "bodyEnd": "</main>",
+      "subnav": {
+        "zh-Hans": ["参观", "一路走来", "作品", "还在想"],
+        "zh-Hant": ["參觀", "一路走來", "作品", "還在想"]
+      },
       "meta": {
         "title": {
-          "en": "Conditional, a mirror installation that erases you | Shavonne Wong",
-          "zh-Hans": "Conditional 一面抹去你的镜子 | Shavonne Wong",
-          "zh-Hant": "Conditional 一面抹去你的鏡子 | Shavonne Wong"
+          "en": "Unsilvered, recorded without being reflected back | Shavonne Wong",
+          "zh-Hans": "Unsilvered 被记录，却不被映照 | Shavonne Wong",
+          "zh-Hant": "Unsilvered 被記錄，卻不被映照 | Shavonne Wong"
         },
         "description": {
-          "en": "Conditional is a digital mirror that renders the room in full and erases the people in it. An ongoing series where each staging sets the conditions differently.",
-          "zh-Hans": "Conditional 是一个持续进行的装置系列，建立在同一个前提之上，一面抹去你的镜子。屏幕实时而忠实地渲染场景，却移除了其中每一个人。每一次搭建都以不同的方式设定这场抹去的条件。",
-          "zh-Hant": "Conditional 是一個持續進行的裝置系列，建立在同一個前提之上，一面抹去你的鏡子。螢幕實時而忠實地渲染場景，卻移除了其中每一個人。每一次搭建都以不同的方式設定這場抹去的條件。"
+          "en": "Unsilvered is a body of work by Shavonne Wong about being recorded without being reflected back. Follow the ideas and questions behind The Sitting Room, then book a time to visit.",
+          "zh-Hans": "Unsilvered 是 Shavonne Wong 一组关于被记录，却没有被映照出来的作品。了解 The Sitting Room 背后的想法与问题，并预约参观时段。",
+          "zh-Hant": "Unsilvered 是 Shavonne Wong 一組關於被記錄，卻沒有被映照出來的作品。了解 The Sitting Room 背後的想法與問題，並預約參觀時段。"
         },
         "ogDescription": {
-          "en": "Conditional is a digital mirror that renders the room in full and erases the people in it. An ongoing series where each staging sets the conditions differently.",
-          "zh-Hans": "一个持续进行的装置系列，建立在同一个前提之上，一面抹去你的镜子。每一次搭建都以不同的方式设定条件。为了被看见，你愿意交出多少自己？",
-          "zh-Hant": "一個持續進行的裝置系列，建立在同一個前提之上，一面抹去你的鏡子。每一次搭建都以不同的方式設定條件。為了被看見，你願意交出多少自己？"
+          "en": "Unsilvered is a body of work by Shavonne Wong about being recorded without being reflected back. Follow the ideas and questions behind The Sitting Room, then book a time to visit.",
+          "zh-Hans": "Unsilvered 是 Shavonne Wong 一组关于被记录，却没有被映照出来的作品。了解 The Sitting Room 背后的想法与问题，并预约参观时段。",
+          "zh-Hant": "Unsilvered 是 Shavonne Wong 一組關於被記錄，卻沒有被映照出來的作品。了解 The Sitting Room 背後的想法與問題，並預約參觀時段。"
         }
       }
     },

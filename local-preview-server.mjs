@@ -48,7 +48,7 @@ const routes = {
   "/works/the-bubble-we-call-home/": "the-bubble-we-call-home.html",
   "/works/available/": "works-available.html",
   "/works/by-proxy/": "by-proxy.html",
-  "/works/conditional/": "conditional.html",
+  "/works/unsilvered/": "unsilvered.html",
   "/works/love-is-love/": "love-is-love.html",
   "/works/meet-eva-here/": "meet-eva-here.html",
   "/works/6529-meme-card/": "6529-meme-card.html",

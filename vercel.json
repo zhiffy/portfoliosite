@@ -23,8 +23,12 @@
       "destination": "/works-available.html"
     },
     {
-      "source": "/works/conditional/",
-      "destination": "/conditional.html"
+      "source": "/works/unsilvered/",
+      "destination": "/unsilvered.html"
+    },
+    {
+      "source": "/works/unsilvered/book/",
+      "destination": "/unsilvered-booking.html"
     },
     {
       "source": "/works/after-ophelia/",
@@ -163,12 +167,12 @@
       "destination": "/works-zh-hant.html"
     },
     {
-      "source": "/works/conditional/zh-hans/",
-      "destination": "/conditional-zh-hans.html"
+      "source": "/works/unsilvered/zh-hans/",
+      "destination": "/unsilvered-zh-hans.html"
     },
     {
-      "source": "/works/conditional/zh-hant/",
-      "destination": "/conditional-zh-hant.html"
+      "source": "/works/unsilvered/zh-hant/",
+      "destination": "/unsilvered-zh-hant.html"
     },
     {
       "source": "/works/after-ophelia/zh-hans/",
@@ -524,7 +528,27 @@
     },
     {
       "source": "/conditional.html",
-      "destination": "/works/conditional/",
+      "destination": "/works/unsilvered/",
+      "permanent": true
+    },
+    {
+      "source": "/works/conditional/",
+      "destination": "/works/unsilvered/",
+      "permanent": true
+    },
+    {
+      "source": "/works/conditional/zh-hans/",
+      "destination": "/works/unsilvered/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/works/conditional/zh-hant/",
+      "destination": "/works/unsilvered/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/unsilvered.html",
+      "destination": "/works/unsilvered/",
       "permanent": true
     },
     {
@@ -1309,12 +1333,12 @@
     },
     {
       "source": "/projects/conditional",
-      "destination": "/works/conditional/",
+      "destination": "/works/unsilvered/",
       "permanent": true
     },
     {
       "source": "/projects/conditional/",
-      "destination": "/works/conditional/",
+      "destination": "/works/unsilvered/",
       "permanent": true
     },
     {

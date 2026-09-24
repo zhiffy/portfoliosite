@@ -2,7 +2,11 @@
 # the browser and search engines keep the stable catalog URLs.
 /works/ /works.html 200!
 /works/available/ /works-available.html 200
-/works/conditional/ /conditional.html 200
+/works/unsilvered/ /unsilvered.html 200
+/works/unsilvered/book/ /unsilvered-booking.html 200
+/works/conditional/ /works/unsilvered/ 301!
+/works/conditional/zh-hans/ /works/unsilvered/zh-hans/ 301!
+/works/conditional/zh-hant/ /works/unsilvered/zh-hant/ 301!
 /works/after-ophelia/ /after-ophelia.html 200
 /works/the-bubble-we-call-home/ /the-bubble-we-call-home.html 200
 /works/meet-eva-here/ /meet-eva-here.html 200
@@ -32,7 +36,15 @@
 # Current V3 files to clean routes.
 /works.html /works/ 301!
 /works-available.html /works/available/ 301!
-/conditional.html /works/conditional/ 301!
+/unsilvered.html /works/unsilvered/ 301!
+/unsilvered-booking.html /works/unsilvered/book/ 301!
+/conditional.html /works/unsilvered/ 301!
+/conditional-zh-hans.html /works/unsilvered/zh-hans/ 301!
+/conditional-zh-hant.html /works/unsilvered/zh-hant/ 301!
+/zh-hans/conditional/ /works/unsilvered/zh-hans/ 301!
+/zh-hant/conditional/ /works/unsilvered/zh-hant/ 301!
+/zh-hans-conditional.html /works/unsilvered/zh-hans/ 301!
+/zh-hant-conditional.html /works/unsilvered/zh-hant/ 301!
 /after-ophelia.html /works/after-ophelia/ 301!
 /the-bubble-we-call-home.html /works/the-bubble-we-call-home/ 301!
 /after-ophelia-notes.html /works/after-ophelia/#process 301!
@@ -65,8 +77,8 @@
 /projects/ /works/ 301!
 /art /works/ 301!
 /art/ /works/ 301!
-/projects/conditional /works/conditional/ 301!
-/projects/conditional/ /works/conditional/ 301!
+/projects/conditional /works/unsilvered/ 301!
+/projects/conditional/ /works/unsilvered/ 301!
 /projects/after-ophelia /works/after-ophelia/ 301!
 /projects/after-ophelia/ /works/after-ophelia/ 301!
 /projects/the-bubble-we-call-home /works/the-bubble-we-call-home/ 301!
@@ -247,14 +259,14 @@
 /works-zh-hant.html /works/zh-hant/ 301!
 /zh-hant/works/ /works/zh-hant/ 301!
 /zh-hant-works.html /works/zh-hant/ 301!
-/works/conditional/zh-hans/ /conditional-zh-hans.html 200
-/conditional-zh-hans.html /works/conditional/zh-hans/ 301!
-/zh-hans/conditional/ /works/conditional/zh-hans/ 301!
-/zh-hans-conditional.html /works/conditional/zh-hans/ 301!
-/works/conditional/zh-hant/ /conditional-zh-hant.html 200
-/conditional-zh-hant.html /works/conditional/zh-hant/ 301!
-/zh-hant/conditional/ /works/conditional/zh-hant/ 301!
-/zh-hant-conditional.html /works/conditional/zh-hant/ 301!
+/works/unsilvered/zh-hans/ /unsilvered-zh-hans.html 200
+/unsilvered-zh-hans.html /works/unsilvered/zh-hans/ 301!
+/zh-hans/unsilvered/ /works/unsilvered/zh-hans/ 301!
+/zh-hans-unsilvered.html /works/unsilvered/zh-hans/ 301!
+/works/unsilvered/zh-hant/ /unsilvered-zh-hant.html 200
+/unsilvered-zh-hant.html /works/unsilvered/zh-hant/ 301!
+/zh-hant/unsilvered/ /works/unsilvered/zh-hant/ 301!
+/zh-hant-unsilvered.html /works/unsilvered/zh-hant/ 301!
 /works/after-ophelia/zh-hans/ /after-ophelia-zh-hans.html 200
 /after-ophelia-zh-hans.html /works/after-ophelia/zh-hans/ 301!
 /zh-hans/after-ophelia/ /works/after-ophelia/zh-hans/ 301!
