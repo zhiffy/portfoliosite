@@ -24,7 +24,13 @@ function bookingSheet_() {
 
 function bookingRows_(sheet) {
   var last = sheet.getLastRow();
-  return last < 2 ? [] : sheet.getRange(2, 1, last - 1, BOOKING_HEADERS.length).getValues();
+  if (last < 2) return [];
+  var timezone = sheet.getParent().getSpreadsheetTimeZone();
+  return sheet.getRange(2, 1, last - 1, BOOKING_HEADERS.length).getValues().map(function (row) {
+    // Sheets can convert a slot such as 14:00 into a Date automatically.
+    if (row[2] instanceof Date) row[2] = Utilities.formatDate(row[2], timezone, 'HH:mm');
+    return row;
+  });
 }
 
 function bookingAvailability_(rows) {

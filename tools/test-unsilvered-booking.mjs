@@ -8,7 +8,11 @@ const emails = [];
 let locked = false;
 const sheet = {
   getLastRow: () => rows.length,
-  appendRow: (row) => rows.push(row),
+  appendRow: (row) => {
+    if (/^\d{2}:\d{2}$/.test(row[2])) row[2] = new TestDate(`2026-09-23T${row[2]}:00+08:00`);
+    rows.push(row);
+  },
+  getParent: () => ({ getSpreadsheetTimeZone: () => 'Asia/Singapore' }),
   getRange: (start, column, count) => ({
     getValues: () => rows.slice(start - 1, start - 1 + count).map((row) => row.slice(column - 1)),
     setValue: (value) => { rows[start - 1][column - 1] = value; },
@@ -21,6 +25,9 @@ class TestDate extends RealDate {
 }
 const context = vm.createContext({
   Date: TestDate, JSON, Number, Object, String, console,
+  Utilities: { formatDate: (date, timezone) => new Intl.DateTimeFormat('en-GB', {
+    timeZone: timezone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
+  }).format(date) },
   ContentService: {
     MimeType: { JSON: 'json' },
     createTextOutput: (text) => ({ text, setMimeType() { return this; } }),
