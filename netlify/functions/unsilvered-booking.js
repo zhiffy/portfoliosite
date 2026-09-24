@@ -9,7 +9,7 @@ const HEADERS = {
 const SLOTS = new Set(["14:00", "15:00", "16:00", "17:00", "18:30", "19:30", "20:30"]);
 const EVENT_END = Date.parse("2026-10-02T21:30:00+08:00");
 const clean = (value) => typeof value === "string" ? value.trim() : "";
-const json = (body, status = 200) => new Response(JSON.stringify(body), { status, headers: HEADERS });
+const json = (body, status = 200, headers = {}) => new Response(JSON.stringify(body), { status, headers: { ...HEADERS, ...headers } });
 
 export default async (request) => {
   if (request.method !== "GET" && request.method !== "POST") {
@@ -58,7 +58,14 @@ export default async (request) => {
     }
     const status = [200, 400, 409, 410, 503].includes(data.status) ? data.status : 502;
     if (status !== 200) return json({ error: clean(data.error) || "Please try again." }, status);
-    if (request.method === "GET") return json({ slots: data.slots });
+    if (request.method === "GET") {
+      // Cache only public counts. Every reservation still checks live capacity.
+      const fresh = new URL(request.url).searchParams.has('fresh');
+      const ttl = Math.min(15, Math.floor((EVENT_END - Date.now()) / 1000));
+      return json({ slots: data.slots }, 200, !fresh && ttl > 0 ? {
+        "Netlify-CDN-Cache-Control": `public, durable, max-age=${ttl}, must-revalidate`,
+      } : {});
+    }
     return json({ ok: true, slot: data.slot, quantity: data.quantity, emailSent: data.emailSent === true });
   } catch {
     return json({ error: "Bookings are temporarily unavailable. Please try again." }, 502);

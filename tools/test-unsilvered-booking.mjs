@@ -105,6 +105,21 @@ try {
   const availability = await bookingEndpoint(new Request('https://example.com/api/unsilvered-booking'));
   assert.equal(availability.status, 200);
   assert.equal((await availability.json()).slots['14:00'], 0);
+  assert.match(availability.headers.get('Netlify-CDN-Cache-Control'), /max-age=15/);
+  assert.equal(availability.headers.get('Cache-Control'), 'no-store');
+  const fresh = await bookingEndpoint(new Request('https://example.com/api/unsilvered-booking?fresh=1'));
+  assert.equal(fresh.headers.get('Netlify-CDN-Cache-Control'), null);
+  // A visitor with an earlier count still cannot reserve an already full slot.
+  const full = await bookingEndpoint(new Request('https://example.com/api/unsilvered-booking', {
+    method: 'POST', body: JSON.stringify({ name: 'F', email: 'f@example.com', slot: '14:00', quantity: 1, requestId: id(8) }),
+  }));
+  assert.equal(full.status, 409);
+  assert.equal(full.headers.get('Netlify-CDN-Cache-Control'), null);
+  assert.equal(full.headers.get('Cache-Control'), 'no-store');
+  globalThis.fetch = async () => { throw new Error('Network unavailable'); };
+  const failed = await bookingEndpoint(new Request('https://example.com/api/unsilvered-booking'));
+  assert.equal(failed.status, 502);
+  assert.equal(failed.headers.get('Netlify-CDN-Cache-Control'), null);
 } finally {
   globalThis.fetch = originalFetch;
 }

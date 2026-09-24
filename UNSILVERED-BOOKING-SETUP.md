@@ -39,6 +39,7 @@ The seven windows are 2–3, 3–4, 4–5, 5–6, 6:30–7:30, 7:30–8:30 and 8
 ## Managing bookings
 
 - Each confirmed row occupies its **Places** count in its **Slot**. A `Cancelled` row releases those places.
+- Visitors can choose a time immediately while availability loads. Public counts are cached at Netlify for up to 15 seconds; the reservation itself always checks the live Sheet under its existing lock. A rejected reservation refreshes counts without the cache. Manual cancellations can take up to 15 seconds to appear in displayed counts.
 - One email can hold one active reservation per slot. The booking page asks for only one contact name and email per group.
 - A confirmation email is sent automatically after the reservation is saved. If Google cannot send it, the page still confirms the saved booking and tells the visitor to note their time.
 - Visitor confirmations include the event poster below the booking details, with a plain-text alternative. Replies go to the studio inbox.

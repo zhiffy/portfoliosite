@@ -106,7 +106,7 @@
         <h2 class="bk-section-title" id="bk-times-title">Choose a viewing time</h2>
         <p class="bk-note">Each hour has room for eight people. You can arrive at any time within the hour you book. There is a break from 6 to 6:30 pm.</p>
         <noscript><p class="bk-status">Please enable JavaScript to check live availability and reserve places.</p></noscript>
-        <p class="bk-status" data-booking-status role="status" aria-live="polite">Checking availability…</p>
+        <p class="bk-status" data-booking-status role="status" aria-live="polite">Choose a time while we check available places.</p>
         <fieldset class="bk-slots" form="booking-form" data-slots>
           <legend>Friday 2 October, Singapore time</legend>
           <label class="bk-slot"><input type="radio" name="slot" value="14:00" form="booking-form" disabled><span><strong>2 to 3 pm</strong><small data-places>Checking…</small></span></label>
@@ -148,23 +148,41 @@
     let places = {};
     let requestId = null;
     let availableLoaded = false;
+    let submitting = false;
+    let confirmed = false;
+    let availabilityVersion = 0;
+
+    // A selection holds no places. Submission always checks live capacity.
+    slots.forEach((input) => {
+      input.disabled = false;
+      input.nextElementSibling.querySelector('[data-places]').textContent = '';
+    });
+    button.disabled = false;
 
     function updateChoices() {
-      if (!availableLoaded) return;
+      if (!availableLoaded || submitting || confirmed) return;
       const wanted = Number(quantity.value) || 1;
+      let selectionUnavailable = false;
+      status.textContent = 'Choose a time and the number of people coming with you.';
       slots.forEach((input) => {
         const left = Number(places[input.value]) || 0;
         input.disabled = left < wanted;
         input.nextElementSibling.querySelector('[data-places]').textContent = left === 0 ? 'Full' : `${left} ${left === 1 ? 'place' : 'places'} left`;
-        if (input.disabled) input.checked = false;
+        if (input.disabled && input.checked) {
+          input.checked = false;
+          selectionUnavailable = true;
+        }
       });
       button.disabled = !slots.some((input) => !input.disabled);
+      if (selectionUnavailable) status.textContent = 'That time does not have enough places for your group. Please choose another.';
     }
 
-    async function loadAvailability() {
+    async function loadAvailability(fresh = false) {
+      const version = ++availabilityVersion;
       try {
-        const response = await fetch('/api/unsilvered-booking', { cache: 'no-store' });
+        const response = await fetch('/api/unsilvered-booking' + (fresh ? '?fresh=1' : ''));
         const data = await response.json().catch(() => ({}));
+        if (submitting || confirmed || version !== availabilityVersion) return;
         if (response.status === 410) throw new Error('Bookings for this event have closed.');
         if (!response.ok || !data.slots) throw new Error('Viewing times are temporarily unavailable. Please try again later.');
         places = data.slots;
@@ -173,6 +191,7 @@
         status.dataset.kind = '';
         updateChoices();
       } catch (error) {
+        if (submitting || confirmed || version !== availabilityVersion) return;
         places = {};
         availableLoaded = false;
         status.textContent = error.message;
@@ -187,10 +206,13 @@
     slots.forEach((input) => input.addEventListener('change', () => { requestId = null; }));
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
+      if (submitting || confirmed) return;
       result.textContent = '';
       if (!form.reportValidity()) return;
       const slot = slots.find((input) => input.checked)?.value;
       if (!slot) { result.textContent = 'Please choose a viewing time.'; result.dataset.kind = 'error'; return; }
+      submitting = true;
+      availabilityVersion++;
       button.disabled = true;
       button.textContent = 'Reserving…';
       if (!requestId) requestId = crypto.randomUUID();
@@ -204,16 +226,19 @@
         const response = await fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
         const data = await response.json().catch(() => ({}));
         if (!response.ok || !data.ok) throw new Error(data.error || 'Could not reserve your places. Please try again.');
+        confirmed = true;
+        status.textContent = 'Your viewing time is reserved.';
         const label = slots.find((input) => input.value === data.slot).nextElementSibling.querySelector('strong').textContent;
         result.dataset.kind = 'success';
         result.textContent = `${data.quantity} ${data.quantity === 1 ? 'place is' : 'places are'} confirmed for ${label} on Friday 2 October. ${data.emailSent ? 'Please check your email for the details.' : 'Your booking is saved, but the email could not be sent. Please keep a note of this time.'}`;
         form.querySelectorAll('input, select, button').forEach((control) => { control.disabled = true; });
         slots.forEach((input) => { input.disabled = true; });
       } catch (error) {
+        submitting = false;
         result.dataset.kind = 'error';
         result.textContent = error.message || 'Could not reserve your places. Please try again.';
         form.querySelectorAll('input, select').forEach((control) => { control.disabled = false; });
-        await loadAvailability();
+        await loadAvailability(true);
       } finally {
         button.textContent = 'Reserve places';
       }
