@@ -48,7 +48,8 @@ export default async (request) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ action: request.method === "GET" ? "availability" : "book", secret, ...payload }),
-      signal: AbortSignal.timeout(12000),
+      // Allow for Google Sheets and both emails during a cold Apps Script run.
+      signal: AbortSignal.timeout(45000),
     });
     if (!result.ok) return json({ error: "Bookings are temporarily unavailable. Please try again." }, 502);
     const data = await result.json();
