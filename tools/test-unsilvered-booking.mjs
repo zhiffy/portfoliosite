@@ -104,8 +104,11 @@ try {
   assert.equal(bad.status, 400);
   const availability = await bookingEndpoint(new Request('https://example.com/api/unsilvered-booking'));
   assert.equal(availability.status, 200);
-  assert.equal((await availability.json()).slots['14:00'], 0);
+  const snapshot = await availability.json();
+  assert.equal(snapshot.slots['14:00'], 0);
+  assert.ok(Number.isFinite(snapshot.checkedAt));
   assert.match(availability.headers.get('Netlify-CDN-Cache-Control'), /max-age=15/);
+  assert.match(availability.headers.get('Netlify-CDN-Cache-Control'), /stale-while-revalidate=300/);
   assert.equal(availability.headers.get('Cache-Control'), 'no-store');
   const fresh = await bookingEndpoint(new Request('https://example.com/api/unsilvered-booking?fresh=1'));
   assert.equal(fresh.headers.get('Netlify-CDN-Cache-Control'), null);

@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Start the slow availability request before styles, fonts and page scripts.
+    window.bookingAvailabilityRequest = fetch('/api/unsilvered-booking').catch(() => null);
+  </script>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <title>Book a viewing of The Sitting Room | Shavonne Wong</title>
   <meta name="description" content="Reserve a free viewing time for The Sitting Room open showcase on 2 October 2026 at NAC Arts x Tech Lab, Singapore.">
@@ -48,6 +52,9 @@
     .bk-slot span { display: flex; justify-content: space-between; align-items: baseline; min-height: 70px; gap: 10px; padding: 17px 18px; border: 1px solid var(--hairline-strong); transition: border-color .2s, background-color .2s; cursor: pointer; }
     .bk-slot strong { color: var(--text); font-size: clamp(17px, 1.4vw, 21px); font-weight: 500; white-space: nowrap; }
     .bk-slot small { color: var(--text-2); font-size: 12px; text-align: right; }
+    .bk-slot small[data-loading]::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 6px; border: 1px solid var(--hairline-strong); border-top-color: var(--text-2); border-radius: 50%; vertical-align: -1px; animation: bk-loading .9s linear infinite; }
+    @keyframes bk-loading { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .bk-slot small[data-loading]::before { animation: none; } }
     .bk-slot input:checked + span { background: var(--sw-haze-elev); border-color: var(--text); }
     .bk-slot input:focus-visible + span { outline: 2px solid var(--text); outline-offset: 3px; }
     .bk-slot input:disabled + span { opacity: .52; cursor: not-allowed; }
@@ -106,7 +113,7 @@
         <h2 class="bk-section-title" id="bk-times-title">Choose a viewing time</h2>
         <p class="bk-note">Each hour has room for eight people. You can arrive at any time within the hour you book. There is a break from 6 to 6:30 pm.</p>
         <noscript><p class="bk-status">Please enable JavaScript to check live availability and reserve places.</p></noscript>
-        <p class="bk-status" data-booking-status role="status" aria-live="polite">Choose a time while we check available places.</p>
+        <p class="bk-status" data-booking-status role="status" aria-live="polite">Loading places left. You can choose a time while we check.</p>
         <fieldset class="bk-slots" form="booking-form" data-slots>
           <legend>Friday 2 October, Singapore time</legend>
           <label class="bk-slot"><input type="radio" name="slot" value="14:00" form="booking-form" disabled><span><strong>2 to 3 pm</strong><small data-places>Checking…</small></span></label>
@@ -151,12 +158,19 @@
     let submitting = false;
     let confirmed = false;
     let availabilityVersion = 0;
+    let initialAvailability = window.bookingAvailabilityRequest;
+    delete window.bookingAvailabilityRequest;
+
+    function showLoading(loading) {
+      slots.forEach((input) => input.nextElementSibling.querySelector('[data-places]').toggleAttribute('data-loading', loading));
+    }
 
     // A selection holds no places. Submission always checks live capacity.
     slots.forEach((input) => {
       input.disabled = false;
-      input.nextElementSibling.querySelector('[data-places]').textContent = '';
+      input.nextElementSibling.querySelector('[data-places]').textContent = 'Loading…';
     });
+    showLoading(true);
     button.disabled = false;
 
     function updateChoices() {
@@ -179,14 +193,18 @@
 
     async function loadAvailability(fresh = false) {
       const version = ++availabilityVersion;
+      showLoading(true);
+      status.textContent = availableLoaded ? 'Updating places left. These are the most recent counts.' : 'Loading places left. You can choose a time while we check.';
+      let response;
       try {
         const url = '/api/unsilvered-booking' + (fresh ? '?fresh=1' : '');
-        let response;
         // Reading counts is safe to retry after a transient Google failure.
         // Never retry the reservation automatically.
         for (let attempt = 0; attempt < 2; attempt++) {
           try {
-            response = await fetch(url);
+            const earlyRequest = initialAvailability;
+            initialAvailability = null;
+            response = (!fresh && earlyRequest ? await earlyRequest : null) || await fetch(url);
             if (response.status < 500 || attempt === 1) break;
           } catch (error) {
             if (attempt === 1) throw error;
@@ -202,8 +220,20 @@
         status.textContent = 'Choose a time and the number of people coming with you.';
         status.dataset.kind = '';
         updateChoices();
+        if (!fresh && Number.isFinite(data.checkedAt) && Date.now() - data.checkedAt > 15000) {
+          // Recent counts appear immediately; replace them with a live check.
+          await loadAvailability(true);
+          return;
+        }
+        showLoading(false);
       } catch (error) {
         if (submitting || confirmed || version !== availabilityVersion) return;
+        showLoading(false);
+        if (availableLoaded && response?.status !== 410) {
+          status.textContent = 'Could not refresh places left. We will check your chosen time when you book.';
+          status.dataset.kind = 'error';
+          return;
+        }
         places = {};
         availableLoaded = false;
         status.textContent = error.message;
@@ -225,6 +255,7 @@
       if (!slot) { result.textContent = 'Please choose a viewing time.'; result.dataset.kind = 'error'; return; }
       submitting = true;
       availabilityVersion++;
+      showLoading(false);
       button.disabled = true;
       button.textContent = 'Reserving…';
       if (!requestId) requestId = crypto.randomUUID();

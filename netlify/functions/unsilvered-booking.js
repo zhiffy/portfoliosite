@@ -60,10 +60,14 @@ export default async (request) => {
     if (status !== 200) return json({ error: clean(data.error) || "Please try again." }, status);
     if (request.method === "GET") {
       // Cache only public counts. Every reservation still checks live capacity.
+      if (![...SLOTS].every(slot => Number.isInteger(data.slots?.[slot]) && data.slots[slot] >= 0 && data.slots[slot] <= 8)) {
+        return json({ error: "Viewing times are temporarily unavailable. Please try again." }, 502);
+      }
       const fresh = new URL(request.url).searchParams.has('fresh');
       const ttl = Math.min(15, Math.floor((EVENT_END - Date.now()) / 1000));
-      return json({ slots: data.slots }, 200, !fresh && ttl > 0 ? {
-        "Netlify-CDN-Cache-Control": `public, durable, max-age=${ttl}, must-revalidate`,
+      const stale = Math.max(0, Math.min(300, Math.floor((EVENT_END - Date.now()) / 1000) - ttl));
+      return json({ slots: data.slots, checkedAt: Date.now() }, 200, !fresh && ttl > 0 ? {
+        "Netlify-CDN-Cache-Control": `public, durable, max-age=${ttl}, stale-while-revalidate=${stale}`,
       } : {});
     }
     return json({ ok: true, slot: data.slot, quantity: data.quantity, emailSent: data.emailSent === true });
