@@ -34,7 +34,10 @@ The seven windows are 2–3, 3–4, 4–5, 5–6, 6:30–7:30, 7:30–8:30 and 8
 - Each confirmed row occupies its **Places** count in its **Slot**. A `Cancelled` row releases those places.
 - One email can hold one active reservation per slot. The booking page asks for only one contact name and email per group.
 - A confirmation email is sent automatically after the reservation is saved. If Google cannot send it, the page still confirms the saved booking and tells the visitor to note their time.
+- Visitor confirmations include the event poster below the booking details, with a plain-text alternative. Replies go to the studio inbox.
+- Each new booking also sends a separate notification to `studio@shavonnewong.art`, including the visitor details and a link to that row's Status cell. Replying to this notification addresses the visitor. Column I, **Studio notified**, records whether sending succeeded.
 - To handle a cancellation request, change that row's **Status** to `Cancelled`. Send any personal reply from the studio inbox if needed.
+- For a partial cancellation, reduce **Places** in column D to the number still attending. A whole-booking cancellation uses **Status** in column G. Keep the row as a record; cancellation itself does not send an email.
 - Google Apps Script has daily email limits. There are 56 places in total; cancellations and rebookings can generate additional confirmations.
 
 Run `node tools/test-unsilvered-booking.mjs` to check capacity, duplicate submissions, cancellations and the Netlify endpoint locally.

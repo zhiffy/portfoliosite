@@ -3,7 +3,9 @@
 // Bind this script to the bookings spreadsheet. Do not reuse the contact tab.
 
 var BOOKING_TAB = 'Unsilvered bookings';
-var BOOKING_HEADERS = ['Created at', 'Request ID', 'Slot', 'Places', 'Name', 'Email', 'Status', 'Email sent'];
+var BOOKING_HEADERS = ['Created at', 'Request ID', 'Slot', 'Places', 'Name', 'Email', 'Status', 'Email sent', 'Studio notified'];
+var BOOKING_STUDIO_EMAIL = 'studio@shavonnewong.art';
+var BOOKING_POSTER_URL = 'https://www.shavonnewong.art/assets/unsilvered/unsilvered-2026-showcase-poster-email.jpg';
 var BOOKING_SLOTS = {
   '14:00': '2 to 3 pm', '15:00': '3 to 4 pm', '16:00': '4 to 5 pm', '17:00': '5 to 6 pm',
   '18:30': '6:30 to 7:30 pm', '19:30': '7:30 to 8:30 pm', '20:30': '8:30 to 9:30 pm'
@@ -19,7 +21,39 @@ function bookingSheet_() {
   var book = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = book.getSheetByName(BOOKING_TAB) || book.insertSheet(BOOKING_TAB);
   if (sheet.getLastRow() === 0) sheet.appendRow(BOOKING_HEADERS);
+  else sheet.getRange(1, 9).setValue('Studio notified');
   return sheet;
+}
+
+function bookingEscape_(value) {
+  return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function bookingConfirmation_(name, email, slot, quantity) {
+  var places = quantity + (quantity === 1 ? ' place' : ' places');
+  return {
+    to: email,
+    name: 'Shavonne Wong Studio',
+    replyTo: BOOKING_STUDIO_EMAIL,
+    subject: 'Your viewing time for The Sitting Room',
+    body: 'Hello ' + name + ',\n\nYour places are confirmed for The Sitting Room open showcase.\n\n' +
+      BOOKING_DATE + '\n' + BOOKING_SLOTS[slot] + ' Singapore time\n' + places + '\n' +
+      'NAC Arts x Tech Lab, Aliwal Arts Centre\n28 Aliwal Street, #02-05, Singapore 199918\n\n' +
+      'You can arrive at any time during your reserved hour. Entry is free.\n\n' +
+      'If your plans change, reply to this email so the places can be released.\n\n' +
+      'View the event poster at ' + BOOKING_POSTER_URL + '\n\nShavonne Wong Studio',
+    htmlBody: '<!doctype html><html><body style="margin:0;padding:24px 16px;background:#EDEDF4;color:#18192B;">' +
+      '<div style="max-width:560px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.6;">' +
+      '<p>Hello ' + bookingEscape_(name) + ',</p><p>Your places are confirmed for <strong>The Sitting Room</strong> open showcase.</p>' +
+      '<p><strong>' + BOOKING_DATE + '<br>' + BOOKING_SLOTS[slot] + ' Singapore time<br>' + places + '</strong></p>' +
+      '<p>NAC Arts x Tech Lab, Aliwal Arts Centre<br>28 Aliwal Street, #02-05<br>Singapore 199918</p>' +
+      '<p>You can arrive at any time during your reserved hour. Entry is free.</p>' +
+      '<p>If your plans change, reply to this email so the places can be released.</p>' +
+      '<p>Shavonne Wong Studio</p>' +
+      '<a href="https://www.shavonnewong.art/works/unsilvered/" style="display:block;margin-top:28px;">' +
+      '<img src="' + BOOKING_POSTER_URL + '" width="560" alt="Unsilvered event poster. The Sitting Room, Friday 2 October 2026 at NAC Arts x Tech Lab, Aliwal Arts Centre." style="display:block;width:100%;max-width:560px;height:auto;border:0;"></a>' +
+      '</div></body></html>'
+  };
 }
 
 function bookingRows_(sheet) {
@@ -90,7 +124,7 @@ function doPost(e) {
       if (bookingAvailability_(rows)[slot] < quantity) {
         return bookingResponse_({ status: 409, error: 'There are not enough places left in that viewing time. Please choose another.' });
       }
-      sheet.appendRow([new Date(), requestId, slot, quantity, name, email, 'Confirmed', 'No']);
+      sheet.appendRow([new Date(), requestId, slot, quantity, name, email, 'Confirmed', 'No', 'No']);
       SpreadsheetApp.flush();
       rowNumber = sheet.getLastRow();
     } finally {
@@ -99,20 +133,32 @@ function doPost(e) {
 
     var emailSent = false;
     try {
-      MailApp.sendEmail({
-        to: email,
-        subject: 'Your viewing time for The Sitting Room',
-        body: 'Hello ' + name + ',\n\nYour places are confirmed for The Sitting Room open showcase.\n\n' +
-          BOOKING_DATE + '\n' + BOOKING_SLOTS[slot] + ' Singapore time\n' +
-          quantity + (quantity === 1 ? ' place' : ' places') + '\n' +
-          'NAC Arts x Tech Lab, Aliwal Arts Centre\n28 Aliwal Street, #02-05, Singapore 199918\n\n' +
-          'You can arrive at any time during your reserved hour. Entry is free.\n\n' +
-          'If your plans change, please email studio@shavonnewong.art so the places can be released.\n\nShavonne Wong Studio'
-      });
+      MailApp.sendEmail(bookingConfirmation_(name, email, slot, quantity));
       emailSent = true;
       sheet.getRange(rowNumber, 8).setValue('Yes');
     } catch (mailError) {
       console.error('Booking saved, confirmation email failed', mailError);
+    }
+    // Notify the studio independently, even if the visitor's confirmation fails.
+    try {
+      var rowUrl = sheet.getParent().getUrl() + '#gid=' + sheet.getSheetId() + '&range=G' + rowNumber;
+      MailApp.sendEmail({
+        to: BOOKING_STUDIO_EMAIL,
+        name: 'Unsilvered bookings',
+        replyTo: email,
+        subject: 'New booking for The Sitting Room - ' + BOOKING_SLOTS[slot] + ' - ' + quantity + (quantity === 1 ? ' person' : ' people'),
+        body: 'A new booking is confirmed.\n\n' +
+          'Name: ' + name + '\nEmail: ' + email + '\n' + BOOKING_DATE + '\n' +
+          BOOKING_SLOTS[slot] + ' Singapore time\n' + quantity + (quantity === 1 ? ' place' : ' places') + '\n\n' +
+          'Visitor confirmation email: ' + (emailSent ? 'sent' : 'could not be sent') + '\n\n' +
+          'Open this booking in the sheet:\n' + rowUrl + '\n\n' +
+          'To cancel the whole booking, change its Status in column G from Confirmed to Cancelled. ' +
+          'To release only some places, lower the number in Places, column D. Availability updates when the booking page is refreshed.\n\n' +
+          'Reply to this email to contact the visitor.'
+      });
+      sheet.getRange(rowNumber, 9).setValue('Yes');
+    } catch (studioMailError) {
+      console.error('Booking saved, studio notification failed', studioMailError);
     }
     return bookingResponse_({ status: 200, slot: slot, quantity: quantity, emailSent: emailSent });
   } catch (error) {
