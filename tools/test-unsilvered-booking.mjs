@@ -62,7 +62,7 @@ assert.equal(call({ action: 'book', slot: '14:00', quantity: 3, name: 'A', email
 assert.equal(rows.length, 3); // Header plus two reservations, no duplicate.
 assert.equal(emails.length, 4); // One visitor confirmation and one studio notice per new booking.
 assert.equal(emails[0].replyTo, 'studio@shavonnewong.art');
-assert.match(emails[0].htmlBody, /unsilvered-2026-showcase-poster-email\.jpg/);
+assert.match(emails[0].htmlBody, /unsilvered-2026-confirmation-poster\.jpg/);
 assert.equal(emails[1].to, 'studio@shavonnewong.art');
 assert.equal(emails[1].replyTo, 'a@example.com');
 assert.match(emails[1].body, /#gid=123&range=G2/);

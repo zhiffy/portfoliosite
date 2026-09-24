@@ -5,7 +5,7 @@
 var BOOKING_TAB = 'Unsilvered bookings';
 var BOOKING_HEADERS = ['Created at', 'Request ID', 'Slot', 'Places', 'Name', 'Email', 'Status', 'Email sent', 'Studio notified'];
 var BOOKING_STUDIO_EMAIL = 'studio@shavonnewong.art';
-var BOOKING_POSTER_URL = 'https://www.shavonnewong.art/assets/unsilvered/unsilvered-2026-showcase-poster-email.jpg';
+var BOOKING_POSTER_URL = 'https://www.shavonnewong.art/assets/unsilvered/unsilvered-2026-confirmation-poster.jpg';
 var BOOKING_SLOTS = {
   '14:00': '2 to 3 pm', '15:00': '3 to 4 pm', '16:00': '4 to 5 pm', '17:00': '5 to 6 pm',
   '18:30': '6:30 to 7:30 pm', '19:30': '7:30 to 8:30 pm', '20:30': '8:30 to 9:30 pm'
