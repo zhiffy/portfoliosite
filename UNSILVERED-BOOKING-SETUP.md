@@ -11,6 +11,13 @@ The booking page is live at https://www.shavonnewong.art/works/unsilvered/book/ 
 - The test row is marked `Cancelled`. All seven slots were verified back at eight available places.
 - Old Conditional URLs redirect to Unsilvered. Both Chinese project pages and their booking links work.
 
+### Poster and studio notification update
+
+- Apps Script version 3 is live. A one-person test produced both the visitor confirmation with its full poster and the separate studio notification, verified in the studio inbox.
+- The notification's management link selected the correct booking row. Both email delivery columns showed `Yes`.
+- Increased the server's Google response timeout after a slow response initially reported an error despite a successful reservation. The live retry returned HTTP 200 with the original booking.
+- The test reservation was then cancelled. Live availability for 8:30 pm returned from seven to eight places, while the existing 3 pm reservation remained untouched.
+
 ## One-time account setup
 
 1. In the Google account that should own the bookings, create a Google Sheet called **The Sitting Room bookings**. In **Extensions → Apps Script**, replace the starter code with the contents of `tools/unsilvered-booking-apps-script.gs` and save. The script creates its own **Unsilvered bookings** tab.
