@@ -180,7 +180,19 @@
     async function loadAvailability(fresh = false) {
       const version = ++availabilityVersion;
       try {
-        const response = await fetch('/api/unsilvered-booking' + (fresh ? '?fresh=1' : ''));
+        const url = '/api/unsilvered-booking' + (fresh ? '?fresh=1' : '');
+        let response;
+        // Reading counts is safe to retry after a transient Google failure.
+        // Never retry the reservation automatically.
+        for (let attempt = 0; attempt < 2; attempt++) {
+          try {
+            response = await fetch(url);
+            if (response.status < 500 || attempt === 1) break;
+          } catch (error) {
+            if (attempt === 1) throw error;
+          }
+          if (submitting || confirmed || version !== availabilityVersion) return;
+        }
         const data = await response.json().catch(() => ({}));
         if (submitting || confirmed || version !== availabilityVersion) return;
         if (response.status === 410) throw new Error('Bookings for this event have closed.');
