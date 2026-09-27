@@ -113,7 +113,7 @@
         <h2 class="bk-section-title" id="bk-times-title">Choose a viewing time</h2>
         <p class="bk-note">Each hour has room for eight people. You can arrive at any time within the hour you book. There is a break from 6 to 6:30 pm.</p>
         <noscript><p class="bk-status">Please enable JavaScript to check live availability and reserve places.</p></noscript>
-        <p class="bk-status" data-booking-status role="status" aria-live="polite">Loading places left. You can choose a time while we check.</p>
+        <p class="bk-status" data-booking-status role="status" aria-live="polite">Loading available places can take around 20 seconds. Thanks for your patience. You can choose a time while we check.</p>
         <fieldset class="bk-slots" form="booking-form" data-slots>
           <legend>Friday 2 October, Singapore time</legend>
           <label class="bk-slot"><input type="radio" name="slot" value="14:00" form="booking-form" disabled><span><strong>2 to 3 pm</strong><small data-places>Checking…</small></span></label>
@@ -194,7 +194,7 @@
     async function loadAvailability(fresh = false) {
       const version = ++availabilityVersion;
       showLoading(true);
-      status.textContent = availableLoaded ? 'Updating places left. These are the most recent counts.' : 'Loading places left. You can choose a time while we check.';
+      status.textContent = availableLoaded ? 'Updating places left. These are the most recent counts.' : 'Loading available places can take around 20 seconds. Thanks for your patience. You can choose a time while we check.';
       let response;
       try {
         const url = '/api/unsilvered-booking' + (fresh ? '?fresh=1' : '');
