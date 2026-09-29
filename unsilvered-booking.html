@@ -45,6 +45,9 @@
     .bk-note { margin: 0 0 28px; color: var(--text-2); font-size: 15px; line-height: 1.6; }
     .bk-status { min-height: 24px; margin: 0 0 16px; color: var(--text-2); font-size: 14px; }
     .bk-status[data-kind="error"] { color: var(--text); }
+    .bk-status[data-loading] { padding: 20px; border: 1px solid var(--hairline-strong); background: var(--sw-haze-elev); color: var(--text); font-size: 15px; line-height: 1.6; }
+    .bk-status strong { display: block; margin-bottom: 6px; font-size: 18px; font-weight: 600; }
+    .bk-status[data-loading] strong::before { content: ''; display: inline-block; width: 14px; height: 14px; margin-right: 10px; border: 2px solid var(--hairline-strong); border-top-color: var(--text); border-radius: 50%; vertical-align: -1px; animation: bk-loading .9s linear infinite; }
     .bk-slots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; border: 0; }
     .bk-slots legend { padding: 0; margin-bottom: 14px; color: var(--text-2); font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
     .bk-slot { position: relative; display: block; min-width: 0; }
@@ -54,7 +57,7 @@
     .bk-slot small { color: var(--text-2); font-size: 12px; text-align: right; }
     .bk-slot small[data-loading]::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 6px; border: 1px solid var(--hairline-strong); border-top-color: var(--text-2); border-radius: 50%; vertical-align: -1px; animation: bk-loading .9s linear infinite; }
     @keyframes bk-loading { to { transform: rotate(360deg); } }
-    @media (prefers-reduced-motion: reduce) { .bk-slot small[data-loading]::before { animation: none; } }
+    @media (prefers-reduced-motion: reduce) { .bk-slot small[data-loading]::before, .bk-status[data-loading] strong::before { animation: none; } }
     .bk-slot input:checked + span { background: var(--sw-haze-elev); border-color: var(--text); }
     .bk-slot input:focus-visible + span { outline: 2px solid var(--text); outline-offset: 3px; }
     .bk-slot input:disabled + span { opacity: .52; cursor: not-allowed; }
@@ -70,6 +73,14 @@
     .bk-submit:disabled { opacity: .48; cursor: not-allowed; }
     .bk-result { margin: 0; font-size: 14px; line-height: 1.6; }
     .bk-result[data-kind="error"] { color: var(--text); }
+    .bk-form[hidden], .bk-confirmation[hidden] { display: none; }
+    .bk-confirmation { padding: clamp(20px, 2.5vw, 32px); border: 1px solid var(--hairline-strong); background: var(--sw-haze-elev); scroll-margin-top: calc(var(--nav-h) + 24px); }
+    .bk-confirmation:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
+    .bk-confirmation .bk-section-title { font-size: clamp(26px, 2vw, 34px); }
+    .bk-confirmation p { margin: 16px 0 0; font-size: 15px; line-height: 1.6; }
+    .bk-confirmation .bk-confirmed-time { margin-top: 24px; font-size: 24px; font-weight: 500; }
+    .bk-confirmation .bk-confirmed-date { margin-top: 4px; }
+    .bk-confirmation .bk-confirmed-email { padding-top: 18px; border-top: 1px solid var(--hairline); overflow-wrap: anywhere; }
     .bk-honey { position: absolute; left: -9999px; }
     .bk-footer-note { margin: 18px 0 0; color: var(--text-2); font-size: 13px; line-height: 1.6; }
     .bk-footer-note a { color: var(--text); }
@@ -113,7 +124,7 @@
         <h2 class="bk-section-title" id="bk-times-title">Choose a viewing time</h2>
         <p class="bk-note">Each hour has room for eight people. You can arrive at any time within the hour you book. There is a break from 6 to 6:30 pm.</p>
         <noscript><p class="bk-status">Please enable JavaScript to check live availability and reserve places.</p></noscript>
-        <p class="bk-status" data-booking-status role="status" aria-live="polite">Loading available places can take around 20 seconds. Thanks for your patience. You can choose a time while we check.</p>
+        <div class="bk-status" data-booking-status data-loading role="status" aria-live="polite" aria-atomic="true"><strong>Loading available places</strong><span>The first check may take around 20 seconds. Thanks for your patience. You can choose a time and fill in your details while we check.</span></div>
         <fieldset class="bk-slots" form="booking-form" data-slots>
           <legend>Friday 2 October, Singapore time</legend>
           <label class="bk-slot"><input type="radio" name="slot" value="14:00" form="booking-form" disabled><span><strong>2 to 3 pm</strong><small data-places>Checking…</small></span></label>
@@ -127,8 +138,17 @@
         </fieldset>
       </div>
       <div class="bk-details">
-        <h2 class="bk-section-title">Your places</h2>
-        <p class="bk-note">Choose one time for your group. We only need one name and email to hold the places.</p>
+        <h2 class="bk-section-title" data-form-intro>Your places</h2>
+        <p class="bk-note" data-form-intro>Choose one time for your group. We only need one name and email to hold the places.</p>
+        <section class="bk-confirmation" data-booking-confirmation hidden tabindex="-1" aria-labelledby="bk-confirmed-title">
+          <h2 class="bk-section-title" id="bk-confirmed-title">Reservation confirmed</h2>
+          <p data-confirmed-places></p>
+          <p class="bk-confirmed-time" data-confirmed-time></p>
+          <p class="bk-confirmed-date">Friday 2 October 2026<br>Singapore time</p>
+          <p>NAC Arts x Tech Lab, Aliwal Arts Centre<br>28 Aliwal Street, #02-05</p>
+          <p>You can arrive at any time during your booked hour.</p>
+          <p class="bk-confirmed-email" data-confirmed-email></p>
+        </section>
         <form class="bk-form" id="booking-form" action="/api/unsilvered-booking" method="post" data-booking-form>
           <label class="bk-honey">Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
           <label class="bk-field">Number of people<select name="quantity" required><option value="">Choose a party size</option><option value="1">1 person</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option><option value="5">5 people</option><option value="6">6 people</option><option value="7">7 people</option><option value="8">8 people</option></select></label>
@@ -149,6 +169,7 @@
     const form = document.querySelector('[data-booking-form]');
     const status = document.querySelector('[data-booking-status]');
     const result = document.querySelector('[data-booking-result]');
+    const confirmation = document.querySelector('[data-booking-confirmation]');
     const button = form.querySelector('button[type="submit"]');
     const quantity = form.elements.quantity;
     const slots = [...document.querySelectorAll('.bk-slot input')];
@@ -162,6 +183,7 @@
     delete window.bookingAvailabilityRequest;
 
     function showLoading(loading) {
+      status.toggleAttribute('data-loading', loading);
       slots.forEach((input) => input.nextElementSibling.querySelector('[data-places]').toggleAttribute('data-loading', loading));
     }
 
@@ -194,7 +216,12 @@
     async function loadAvailability(fresh = false) {
       const version = ++availabilityVersion;
       showLoading(true);
-      status.textContent = availableLoaded ? 'Updating places left. These are the most recent counts.' : 'Loading available places can take around 20 seconds. Thanks for your patience. You can choose a time while we check.';
+      status.dataset.kind = '';
+      const loadingTitle = document.createElement('strong');
+      loadingTitle.textContent = availableLoaded ? 'Updating places left' : 'Loading available places';
+      const loadingNote = document.createElement('span');
+      loadingNote.textContent = availableLoaded ? 'These are the most recent counts. We are checking for updates.' : 'The first check may take around 20 seconds. Thanks for your patience. You can choose a time and fill in your details while we check.';
+      status.replaceChildren(loadingTitle, loadingNote);
       let response;
       try {
         const url = '/api/unsilvered-booking' + (fresh ? '?fresh=1' : '');
@@ -256,6 +283,9 @@
       submitting = true;
       availabilityVersion++;
       showLoading(false);
+      status.textContent = 'Reserving your places. Please keep this page open.';
+      result.dataset.kind = '';
+      result.textContent = 'Please wait while we confirm your reservation.';
       button.disabled = true;
       button.textContent = 'Reserving…';
       if (!requestId) requestId = crypto.randomUUID();
@@ -273,9 +303,19 @@
         status.textContent = 'Your viewing time is reserved.';
         const label = slots.find((input) => input.value === data.slot).nextElementSibling.querySelector('strong').textContent;
         result.dataset.kind = 'success';
-        result.textContent = `${data.quantity} ${data.quantity === 1 ? 'place is' : 'places are'} confirmed for ${label} on Friday 2 October. ${data.emailSent ? 'Please check your email for the details.' : 'Your booking is saved, but the email could not be sent. Please keep a note of this time.'}`;
+        confirmation.querySelector('[data-confirmed-places]').textContent = `${data.quantity} ${data.quantity === 1 ? 'place is' : 'places are'} reserved for you. You're all set.`;
+        confirmation.querySelector('[data-confirmed-time]').textContent = label;
+        confirmation.querySelector('[data-confirmed-email]').textContent = data.emailSent ? `A confirmation email has been sent to ${payload.email}. If you don't see it, check your spam folder.` : 'Your reservation is confirmed, but the confirmation email could not be sent. Please save these details. You do not need to book again.';
         form.querySelectorAll('input, select, button').forEach((control) => { control.disabled = true; });
-        slots.forEach((input) => { input.disabled = true; });
+        slots.forEach((input) => {
+          input.disabled = true;
+          input.nextElementSibling.querySelector('[data-places]').textContent = input.value === data.slot ? 'Reserved for you' : '';
+        });
+        document.querySelectorAll('[data-form-intro]').forEach((element) => { element.hidden = true; });
+        form.hidden = true;
+        confirmation.hidden = false;
+        confirmation.focus({ preventScroll: true });
+        confirmation.scrollIntoView({ block: 'start', behavior: 'instant' });
       } catch (error) {
         submitting = false;
         result.dataset.kind = 'error';
@@ -283,7 +323,7 @@
         form.querySelectorAll('input, select').forEach((control) => { control.disabled = false; });
         await loadAvailability(true);
       } finally {
-        button.textContent = 'Reserve places';
+        button.textContent = confirmed ? 'Reservation confirmed' : 'Reserve places';
       }
     });
     loadAvailability();
