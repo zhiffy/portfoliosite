@@ -7,8 +7,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <title>Unsilvered, recorded without being reflected back | Shavonne Wong</title>
-  <meta name="description" content="Unsilvered is a body of work by Shavonne Wong about being recorded without being reflected back. Follow the ideas and questions behind The Sitting Room, then book a time to visit." />
+  <title>Unsilvered | Shavonne Wong</title>
+  <meta name="description" content="A body of work by Shavonne Wong about being recorded without being reflected back, including The Sitting Room and its first public showing." />
   <meta name="author" content="Shavonne Wong">
   <link rel="canonical" href="https://www.shavonnewong.art/works/unsilvered/" />
   <!-- i18n:hreflang -->
@@ -19,14 +19,14 @@
 <!-- /i18n:hreflang -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.shavonnewong.art/works/unsilvered/" />
-  <meta property="og:title" content="Unsilvered, recorded without being reflected back | Shavonne Wong" />
-  <meta property="og:description" content="Unsilvered is a body of work by Shavonne Wong about being recorded without being reflected back. Follow the ideas and questions behind The Sitting Room, then book a time to visit." />
+  <meta property="og:title" content="Unsilvered | Shavonne Wong" />
+  <meta property="og:description" content="A body of work by Shavonne Wong about being recorded without being reflected back, including The Sitting Room and its first public showing." />
   <meta property="og:image" content="https://www.shavonnewong.art/assets/unsilvered/unsilvered-title-art.png" />
   <meta property="og:image:width" content="1774" />
   <meta property="og:image:height" content="887" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Unsilvered, recorded without being reflected back | Shavonne Wong" />
-  <meta name="twitter:description" content="Unsilvered is a body of work by Shavonne Wong about being recorded without being reflected back. Follow the ideas and questions behind The Sitting Room, then book a time to visit." />
+  <meta name="twitter:title" content="Unsilvered | Shavonne Wong" />
+  <meta name="twitter:description" content="A body of work by Shavonne Wong about being recorded without being reflected back, including The Sitting Room and its first public showing." />
   <meta name="twitter:image" content="https://www.shavonnewong.art/assets/unsilvered/unsilvered-title-art.png" />
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/mulish/mulish-variable.woff2" crossorigin>
   <link rel="stylesheet" href="/scroll-narrative.css?v=20260629-era-scale">
@@ -96,78 +96,173 @@
       .sp-conditional-page .uns-when { margin: 0; }
       .sp-conditional-page .uns-book { width: 100%; }
     }
+
+    /* First showing record. Scoped additions preserve the site's shared styling. */
+    .sp-conditional-page a,
+    .sp-conditional-page a:hover,
+    .sp-conditional-page a:focus-visible {
+      text-decoration-line: underline;
+      text-decoration-color: currentColor;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+    }
+    .sp-conditional-page .uns-development-image a:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
+    .sp-conditional-page .uns-lead { font-size: clamp(17px, 1.35vw, 21px); line-height: 1.65; }
+    .sp-conditional-page .uns-intro { font-size: clamp(16px, 1.2vw, 18px); }
+    .sp-conditional-page .uns-record h2 { font-size: clamp(30px, 3.2vw, 44px); font-weight: 300; line-height: 1.2; margin: 0 0 20px; }
+    .sp-conditional-page .uns-record p { font-size: clamp(16px, 1.3vw, 19px); line-height: 1.7; margin: 0 0 16px; }
+    .sp-conditional-page .uns-record .uns-work-status { font-size: 13px; }
+    .sp-conditional-page .uns-photo-pair { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 24px; margin-top: 30px; }
+    .sp-conditional-page .uns-credits { margin-top: 24px; }
+    .sp-conditional-page .uns-record .uns-credits p { margin: 0 0 6px; font-size: 14px; color: var(--text-2); }
+    .sp-conditional-page .uns-documentation { min-width: 0; margin: 0; }
+    .sp-conditional-page .uns-documentation img { display: block; width: 100%; height: auto; }
+    .sp-conditional-page .uns-lead-photo { max-width: 900px; margin: 28px auto 32px; }
+    .sp-conditional-page .uns-lead-photo img { width: auto; max-width: 100%; max-height: 600px; height: auto; margin-inline: auto; }
+    .sp-conditional-page .uns-documentation figcaption, .sp-conditional-page .uns-development-image figcaption { margin-top: 12px; font-size: 12px; line-height: 1.65; color: var(--text-2); }
+    .sp-conditional-page .uns-responses { margin-top: 36px; }
+    .sp-conditional-page .uns-responses h3 { font-size: clamp(23px, 2.1vw, 30px); font-weight: 300; margin: 0 0 18px; }
+    .sp-conditional-page .uns-development-image { margin: 26px 0 0; }
+    .sp-conditional-page .uns-development-image img { width: auto; height: auto; max-width: 100%; max-height: 430px; }
+    @media (max-width: 900px) {
+      .sp-conditional-page .uns-photo-pair { grid-template-columns: 1fr; gap: 28px; }
+      .sp-conditional-page .uns-documentation figcaption, .sp-conditional-page .uns-development-image figcaption { font-size: 13px; }
+    }
+
+      .sp-conditional-page .uns-documentation-film { width: min(100%, 1066.6667px); margin: 30px auto 36px; }
+    .sp-conditional-page .uns-documentation-film iframe { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; }
+    .sp-conditional-page .uns-documentation-film figcaption { margin-top: 12px; font-size: 13px; line-height: 1.65; color: var(--text-2); }
+      .sp-conditional-page .uns-restored-prototypes { display: flex; flex-wrap: wrap; align-items: start; gap: 24px; }
+    .sp-conditional-page .uns-note[id], .sp-conditional-page .uns-work[id] { scroll-margin-top: calc(var(--nav-h) + 46px); }
+    @media (max-width: 900px) { .sp-conditional-page .uns-restored-prototypes { display: grid; grid-template-columns: minmax(0, 1fr); } }
+    .sp-conditional-page .uns-restored-prototypes figure { margin: 0; min-width: 0; }
+    .sp-conditional-page .uns-restored-prototypes img,
+    .sp-conditional-page .uns-restored-prototypes video { display: block; width: auto; height: auto; max-width: 100%; max-height: 430px; }
+      .sp-conditional-page .uns-reading-notes { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 32px; margin: 0 0 40px; }
+    .sp-conditional-page .uns-reading-notes article { min-width: 0; }
+    .sp-conditional-page .uns-reading-notes h3 { margin: 0 0 14px; font-size: clamp(23px, 2.1vw, 30px); font-weight: 300; line-height: 1.25; }
+    .sp-conditional-page .uns-reading-notes p + p { margin-top: 14px; }
+
+    /* Film-led documentation and a single rhythm between sections. */
+    .sp-conditional-page .sp-project-hero { padding-bottom: 0; }
+    .sp-conditional-page .uns-section { margin: clamp(40px, 4vw, 64px) 0 0; padding: 0; }
+    .sp-conditional-page .uns-section > h2 { margin: 0 0 24px; font-size: clamp(28px, 2.6vw, 38px); line-height: 1.2; font-weight: 300; letter-spacing: normal; text-transform: none; color: var(--text); }
+    .sp-conditional-page .uns-notes { border-top: 0; }
+    .sp-conditional-page .uns-note:first-child { padding-top: 0; }
+    .sp-conditional-page .uns-note:last-child, .sp-conditional-page .uns-work:last-child { padding-bottom: 0; border-bottom: 0; }
+    .sp-conditional-page .uns-work { grid-template-columns: minmax(120px, .16fr) minmax(0, 1fr); column-gap: clamp(24px, 4vw, 74px); }
+    .sp-conditional-page .uns-work:first-of-type { padding-top: 0; border-top: 0; }
+    .sp-conditional-page .uns-thinking { border-top: 0; }
+    .sp-conditional-page .uns-questions { margin-bottom: 0; }
+    .sp-conditional-page .uns-note figure { margin-top: 28px; }
+    .sp-conditional-page .uns-restored-prototypes figure { margin: 0; }
+    .sp-conditional-page .uns-documentation-film { margin-top: 24px; margin-bottom: 28px; }
+    .sp-conditional-page .uns-credits { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 24px; margin-top: 32px; }
+    .sp-conditional-page .uns-tracker-detail { margin: 0; }
+    .sp-conditional-page .uns-tracker-detail img { display: block; width: auto; height: auto; max-width: 100%; max-height: 280px; }
+    @media (max-width: 900px) {
+      .sp-conditional-page .uns-note, .sp-conditional-page .uns-work { grid-template-columns: minmax(0, 1fr); row-gap: 12px; }
+      .sp-conditional-page .uns-credits { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    }
   </style>
     <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CreativeWorkSeries",
-    "name": "Unsilvered",
-    "alternateName": "Conditional",
-    "creator": {
-      "@type": "Person",
-      "name": "Shavonne Wong",
-      "sameAs": [
-        "https://en.wikipedia.org/wiki/Shavonne_Wong"
-      ]
-    },
-    "dateCreated": "2026",
-    "datePublished": "2026",
-    "url": "https://www.shavonnewong.art/works/unsilvered/",
-    "image": "https://www.shavonnewong.art/assets/unsilvered/unsilvered-title-art.png",
-    "description": "Unsilvered is a body of work by Shavonne Wong about being recorded without being reflected back. Follow the ideas and questions behind The Sitting Room, then book a time to visit.",
-    "hasPart": [
-      {
-        "@type": "CreativeWork",
-        "name": "The Sitting Room",
-        "creativeWorkStatus": "In development",
-        "description": "The first work from Unsilvered to be shown in person, at the NAC Arts x Tech Lab on 2 October 2026."
-      },
-      {
-        "@type": "CreativeWork",
-        "name": "The Mirror",
-        "creativeWorkStatus": "In development",
-        "image": "https://www.shavonnewong.art/assets/conditional/mirror-frame-studies.webp",
-        "description": "A framed object in development as part of Unsilvered."
-      },
-      {
-        "@type": "CreativeWork",
-        "name": "The Waiting Room",
-        "creativeWorkStatus": "Proposal",
-        "description": "A proposal for a different setting, with different conditions for how someone appears in the image."
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWorkSeries",
+  "name": "Unsilvered",
+  "alternateName": "Conditional",
+  "creator": {
+    "@type": "Person",
+    "name": "Shavonne Wong",
+    "sameAs": [
+      "https://en.wikipedia.org/wiki/Shavonne_Wong"
     ]
-  }
+  },
+  "url": "https://www.shavonnewong.art/works/unsilvered/",
+  "image": "https://www.shavonnewong.art/assets/unsilvered/unsilvered-title-art.png",
+  "description": "A body of work by Shavonne Wong about being recorded without being reflected back, including The Sitting Room and its first public showing.",
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "name": "The Sitting Room",
+      "creativeWorkStatus": "First shown on 2 October 2026",
+      "description": "The Sitting Room had its first public showing on 2 October 2026 at NAC Arts x Tech Lab, Aliwal Arts Centre, Singapore.",
+      "dateCreated": "2026"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Mirror",
+      "creativeWorkStatus": "In development",
+      "image": "https://www.shavonnewong.art/assets/conditional/mirror-frame-studies.webp",
+      "description": "A framed object in development as part of Unsilvered."
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Waiting Room",
+      "creativeWorkStatus": "Proposal",
+      "description": "A proposal for a different setting, with different conditions for how someone appears in the image."
+    }
+  ]
+}
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ExhibitionEvent",
-    "name": "The Sitting Room, open showcase",
-    "startDate": "2026-10-02T14:00:00+08:00",
-    "endDate": "2026-10-02T21:30:00+08:00",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "isAccessibleForFree": true,
-    "url": "https://www.shavonnewong.art/works/unsilvered/#showcase",
-    "location": {
-      "@type": "Place",
-      "name": "NAC Arts x Tech Lab, Aliwal Arts Centre",
-      "address": { "@type": "PostalAddress", "streetAddress": "28 Aliwal Street, #02-05", "addressLocality": "Singapore", "postalCode": "199918", "addressCountry": "SG" }
-    },
-    "organizer": { "@type": "Person", "name": "Shavonne Wong", "url": "https://www.shavonnewong.art/" },
-    "workFeatured": { "@type": "CreativeWork", "name": "The Sitting Room" }
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "ExhibitionEvent",
+  "name": "The Sitting Room, open showcase",
+  "startDate": "2026-10-02",
+  "endDate": "2026-10-02",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "isAccessibleForFree": true,
+  "url": "https://www.shavonnewong.art/works/unsilvered/#showcase",
+  "location": {
+    "@type": "Place",
+    "name": "NAC Arts x Tech Lab, Aliwal Arts Centre",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "28 Aliwal Street, #02-05",
+      "addressLocality": "Singapore",
+      "postalCode": "199918",
+      "addressCountry": "SG"
+    }
+  },
+  "organizer": {
+    "@type": "Person",
+    "name": "Shavonne Wong",
+    "url": "https://www.shavonnewong.art/"
+  },
+  "workFeatured": {
+    "@type": "CreativeWork",
+    "name": "The Sitting Room"
+  },
+  "description": "Record of the first public showing of The Sitting Room, 2026, from Unsilvered."
+}
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.shavonnewong.art/" },
-      { "@type": "ListItem", "position": 2, "name": "Works", "item": "https://www.shavonnewong.art/works/" },
-      { "@type": "ListItem", "position": 3, "name": "Unsilvered", "item": "https://www.shavonnewong.art/works/unsilvered/" }
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.shavonnewong.art/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Works",
+      "item": "https://www.shavonnewong.art/works/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Unsilvered",
+      "item": "https://www.shavonnewong.art/works/unsilvered/"
+    }
+  ]
+}
   </script>
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
@@ -205,67 +300,75 @@
     <div class="sn-progress"><div class="sn-progress-bar" style="width:100%"></div></div>
   </header>
 
-  <nav class="sp-subnav" aria-label="Page sections">
-    <a href="#showcase">Visit</a>
-    <a href="#along-the-way">Along the way</a>
-    <a href="#works">The works</a>
-    <a href="#research">Still thinking</a>
-  </nav>
+  <nav class="sp-subnav" aria-label="Page sections"><a href="#sitting-room">The Sitting Room</a><a href="#showcase">First showing</a><a href="#along-the-way">Along the way</a><a href="#works">Other works</a><a href="#research">Reading and questions</a></nav>
 
   <main id="main-content" class="sp-main sp-project-main">
     <section class="sp-project-hero" id="overview" aria-label="Unsilvered">
       <h1 class="uns-art-title"><picture><source srcset="/assets/unsilvered/unsilvered-title-art.webp" type="image/webp"><img fetchpriority="high" decoding="async" src="/assets/unsilvered/unsilvered-title-art.png" width="1774" height="887" alt="Unsilvered"></picture></h1>
       <div class="sp-project-hero-copy">
-        <p class="uns-lead">Unsilvered is a body of work about being recorded without being reflected back.</p>
-        <p class="uns-intro">Most of us have never spent much time thinking about what a mirror does. You just stand in front of it, and there you are. I wanted to see what would happen if that response stopped.</p>
+        <p class="uns-lead">Unsilvered is a body of work about being recorded without being reflected back. Each work builds a different system for a person to pass through, and each one takes that person in without returning them the way a mirror would. How it does that, and what it asks of them along the way, changes from one work to the next.</p>
       </div>
     </section>
 
-    <section class="uns-section uns-visit" id="showcase" aria-labelledby="uns-visit-title">
-      <div class="uns-visit-copy">
-        <h2 class="uns-section-title" id="uns-visit-title">Come see The Sitting Room</h2>
-        <p>The first public showing of The Sitting Room takes place on Friday 2 October 2026, from 2 to 9:30 pm.</p>
-        <address>NAC Arts x Tech Lab<br>Aliwal Arts Centre<br>28 Aliwal Street, #02-05<br>Singapore 199918</address>
-        <p class="uns-visit-note">Entry is free. Choose a one-hour viewing time and come at any point during that hour.</p>
-        <a class="uns-book" href="/works/unsilvered/book/">Book a time</a>
-      </div>
-      <figure class="uns-visit-poster">
-        <a href="/assets/unsilvered/unsilvered-2026-showcase-poster.png" target="_blank" rel="noopener" aria-label="View the full Unsilvered event poster">
-          <picture><source srcset="/assets/unsilvered/unsilvered-2026-showcase-poster.webp" type="image/webp"><img loading="lazy" decoding="async" src="/assets/unsilvered/unsilvered-2026-showcase-poster.png" width="3366" height="4206" alt="Unsilvered event poster on a reflective silver background, with details for the 2 October 2026 showing"></picture>
-          <figcaption>View full poster</figcaption>
-        </a>
+    <section class="uns-section uns-record" id="sitting-room" aria-labelledby="uns-sitting-title">
+      <h2 id="uns-sitting-title">The Sitting Room</h2>
+      <p class="uns-work-status">2026. Interactive AI installation.</p>
+      <figure class="uns-documentation-film">
+        <iframe src="https://player.vimeo.com/video/1233663718?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1" width="1920" height="1080" loading="eager" allow="fullscreen; picture-in-picture; encrypted-media" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Unsilvered (2026), documentation"></iframe>
+        <figcaption>Documentation film, 2 min 14 sec. <a href="https://vimeo.com/1233663718" target="_blank" rel="noopener">Watch on Vimeo</a></figcaption>
       </figure>
+      <p>Three stools sit in front of a projection of the room. When you move a stool, its digital counterpart moves too, but you don't appear in the image. You can see what you are doing to the room without seeing yourself doing it.</p>
+      <p>The system has to find you before it can leave you out.</p>
+      <div class="uns-photo-pair"><figure class="uns-documentation" aria-describedby="uns-sitting-title"><img loading="lazy" decoding="async" src="/assets/unsilvered/the-sitting-room-stool-and-projection.webp" width="1800" height="1200" alt="A participant holds a stool on the right while a projection on the left shows the stool without its holder."></figure><figure class="uns-documentation" aria-describedby="uns-sitting-title"><img loading="lazy" decoding="async" src="/assets/unsilvered/the-sitting-room-installation-overview.webp" width="1800" height="1200" alt="Three stools on a tracked floor mat face a large projection in the empty installation room."></figure></div>
+    </section>
+
+    <section class="uns-section uns-record" id="showcase" aria-labelledby="uns-showing-title">
+      <h2 id="uns-showing-title">First public showing</h2>
+      <p>The Sitting Room had its first public showing on <time datetime="2026-10-02">2 October 2026</time> at NAC Arts x Tech Lab, Aliwal Arts Centre, Singapore.</p>
+      <div class="uns-responses">
+        <h3>Audience reflections</h3>
+        <p>Some visitors told me it felt comforting not to see themselves. They described feeling more authentic and less performative as they sat on the floor and played with the stools. Others saw the missing reflection as a loss of identity, or connected it with censorship, erasure and anonymity. Surveillance and data transparency also came up in these conversations.</p>
+        <p>These were informal conversations with a small first audience. I was encouraged by how many different readings people brought to the work.</p>
+      </div>
+      <div class="uns-photo-pair"><figure class="uns-documentation" aria-describedby="uns-showing-title"><img loading="lazy" decoding="async" src="/assets/unsilvered/the-sitting-room-two-seated-participants.webp" width="1800" height="1200" alt="Two people sit facing a projected view of the room that shows the stools without them."></figure><figure class="uns-documentation" aria-describedby="uns-showing-title"><img loading="lazy" decoding="async" src="/assets/unsilvered/the-sitting-room-conversation.webp" width="1800" height="1200" alt="People sit among the stools and talk in the installation space."></figure></div>
+      <div class="uns-credits"><figure class="uns-tracker-detail"><img loading="lazy" decoding="async" src="/assets/unsilvered/antilatency-tracker-beneath-stool.webp" width="1000" height="667" alt="Close-up of the Antilatency tracker and its mount beneath a stool"></figure><div><p class="uns-technology-credit">Tracking technology by <a href="https://antilatency.com/">Antilatency</a>. The mirror system was developed on a Dell Pro Max T2 Tower.</p><p class="uns-photo-credit">Installation photographs by Alfred Tanuwidjaja.</p></div></div>
     </section>
 
     <section class="uns-section" id="along-the-way" aria-labelledby="uns-along-title">
       <h2 class="uns-section-title" id="uns-along-title">Along the way</h2>
       <div class="uns-notes">
-        <article class="uns-note"><p class="uns-when">Early 2026</p><div><h3>The first test</h3><p>I had thought about making a mirror that doesn't reflect people for a long time. Earlier this year, I finally got to test the idea through vibe coding. I knew going in to expect an interesting effect, but it was truly uncanny. The rest of the room looked completely ordinary, but I wasn't there.</p><figure class="uns-note-video"><video autoplay muted loop playsinline preload="metadata" poster="/assets/conditional/waiting-room-erasure-demo-poster.jpg" width="1920" height="1080" aria-label="Early mirror test with a waving hand disappearing from the live image"><source src="/assets/conditional/waiting-room-erasure-demo.mp4" type="video/mp4"></video><figcaption>Early mirror test, 2026.</figcaption></figure></div></article>
-        <article class="uns-note"><p class="uns-when">May</p><div><h3>What people might do</h3><p>I considered the idea of conditions for reappearance. A curator told me that people might do whatever the work asked of them out of curiosity, rather than because anything was at stake. I have kept thinking about that as the idea has developed into different works and directions. I'm very curious what people will actually do when they encounter one in person.</p></div></article>
-        <article class="uns-note"><p class="uns-when">June</p><div><h3>What a mirror usually does</h3><p>I wrote in my notes that a reflection is the universe’s immediate feedback. You lift your hand and the reflection lifts. It is such a reliable response that you do not normally give it much thought.</p></div></article>
-        <article class="uns-note"><p class="uns-when">June</p><div class="uns-note-physical-body"><div><h3>Making it physical</h3><p>I started thinking about what someone might do in front of the work, beyond looking at a screen. I wanted there to be something in the room they could approach, use and interact with.</p><p>That idea became The Sitting Room.</p></div><div class="uns-note-media-pair"><figure><picture><source srcset="/assets/unsilvered/the-mirror-3d-printed-frame.webp" type="image/webp"><img loading="lazy" decoding="async" src="/assets/unsilvered/the-mirror-3d-printed-frame.jpg" width="1200" height="1600" alt="Green 3D printed frame for The Mirror fitted around a screen"></picture><figcaption>3D printed frame for The Mirror, 2026.</figcaption></figure><figure class="uns-note-video"><video autoplay muted loop playsinline preload="metadata" poster="/assets/unsilvered/the-mirror-frame-prototype-poster.webp" width="720" height="1280" aria-label="The Mirror's green frame prototype showing the room in its screen"><source src="/assets/unsilvered/the-mirror-frame-prototype.mp4" type="video/mp4"></video><figcaption>The Mirror prototype in use, 2026.</figcaption></figure></div></div></article>
-        <article class="uns-note"><p class="uns-when">July</p><div><h3>What other people saw</h3><p>When friends saw an early prototype, some said I had made a vampire mirror, others saw a poltergeist. A few people read it as a work about surveillance.</p><p>I found the range of reactions interesting. Even though we were all looking at the same test, everyone brought very different things to it. I have my own thoughts about the work, though I would rather hear what someone sees in it before telling them mine.</p></div></article>
-        <article class="uns-note"><p class="uns-when">August</p><div><h3>Finding a frame</h3><p>I spent weeks generating studies for The Mirror’s frame, around a hundred of them. I want the frame to look grand from across the room, to be alluring and seductive to the passer by.</p><p>I am still working on it.</p><figure><img loading="lazy" decoding="async" src="/assets/conditional/mirror-frame-studies.webp" width="2400" height="1350" alt="A grid of around a hundred generated studies for The Mirror's ornate frame"><figcaption>Frame studies for The Mirror, 2026. Work in development.</figcaption></figure></div></article>
-        <article class="uns-note"><p class="uns-when">September</p><div><h3>Changing the name</h3><p>For most of this year, the project was called Conditional. That suited the previous idea, where conditions are part of the work, but it no longer described the other pieces as well.</p><p>Unsilvered takes the name back to the mirror. Glass without the metal backing still lets light through, but no longer gives you reflection.</p></div></article>
+        <article class="uns-note"><p class="uns-when">Early 2026</p><div><h3>The first test</h3><p>I had wanted to make a mirror that doesn't reflect people for a long time. In early 2026, I began testing the idea through vibe coding. It was uncanny to see the room looking ordinary, with my own reflection missing.</p><figure class="uns-note-video"><video autoplay muted loop playsinline preload="auto" poster="/assets/conditional/waiting-room-erasure-demo-poster.jpg" width="1920" height="1080" aria-label="Early mirror test from 2026, before the first showing"><source src="/assets/conditional/waiting-room-erasure-demo.mp4" type="video/mp4"></video></figure></div></article>
+        <article class="uns-note" id="making-it-physical"><p class="uns-when">June 2026</p><div><h3>Making it physical</h3><p>I wanted something in the room that people could use. Moving a chair would let them see the image respond to something they had done, even though they couldn't see themselves. That idea became part of The Sitting Room.</p><div class="uns-photo-pair uns-restored-prototypes"><figure><picture><source srcset="/assets/unsilvered/the-mirror-3d-printed-frame.webp" type="image/webp"><img loading="lazy" decoding="async" src="/assets/unsilvered/the-mirror-3d-printed-frame.jpg" width="1200" height="1600" alt="Green 3D printed frame for The Mirror fitted around a screen"></picture><figcaption>3D printed frame for The Mirror, 2026.</figcaption></figure><figure class="uns-note-video"><video autoplay muted loop playsinline preload="metadata" poster="/assets/unsilvered/the-mirror-frame-prototype-poster.webp" width="720" height="1280" aria-label="The Mirror's green frame prototype showing the room in its screen"><source src="/assets/unsilvered/the-mirror-frame-prototype.mp4" type="video/mp4"></video><figcaption>The Mirror prototype in use, 2026.</figcaption></figure></div></div></article>
+        <article class="uns-note"><p class="uns-when">September 2026</p><div><h3>Changing the name</h3><p>I named the body of work Unsilvered. Its earlier name, Conditional, fitted the idea of setting terms for reappearance, but no longer described all the works. Each work keeps its own title.</p></div></article>
       </div>
     </section>
 
     <section class="uns-section" id="works" aria-labelledby="uns-works-title">
-      <h2 class="uns-section-title" id="uns-works-title">The works taking shape</h2>
-      <div>
-        <article class="uns-work" id="sitting-room"><h3>The Sitting Room</h3><div><span class="uns-work-status">In development. First public showing on 2 October 2026.</span><p>The Sitting Room is the first work from Unsilvered that I am inviting people to experience in person. Until now, I have mainly seen how friends respond to tests and videos. I want to learn what happens when people spend time with the work itself.</p></div></article>
-        <article class="uns-work" id="mirror"><h3>The Mirror</h3><div><span class="uns-work-status">In development, 2026.</span><p>The Mirror takes the form of a framed object. I am working on both what it does and what someone expects from it before they get close enough to find out.</p></div></article>
-        <article class="uns-work" id="waiting-room"><h3>The Waiting Room</h3><div><span class="uns-work-status">Proposal, 2026.</span><p>The Waiting Room is a proposal for a different setting, with different conditions for how someone appears in the image. I am still working through those conditions.</p></div></article>
-      </div>
+      <h2 class="uns-section-title" id="uns-works-title">Other works in Unsilvered</h2>
+      <article class="uns-work" id="mirror"><h3>The Mirror</h3><div><span class="uns-work-status">In development. Working title.</span><p>The Mirror is a screen built into a frame so it looks like a mirror. I'm working on the frame and on what happens when someone comes looking for their reflection.</p><figure class="uns-development-image"><a href="/assets/conditional/mirror-frame-studies.webp" aria-label="View The Mirror's generated frame studies at full size. Work in development, 2026."><img loading="lazy" decoding="async" src="/assets/conditional/mirror-frame-studies.webp" width="2400" height="1350" alt="A grid of generated studies for The Mirror's ornate frame"></a><figcaption><a href="/assets/conditional/mirror-frame-studies.webp">Generated frame studies (full size)</a></figcaption></figure></div></article>
+      <article class="uns-work" id="waiting-room"><h3>The Waiting Room</h3><div><span class="uns-work-status">Proposal.</span><p>The Waiting Room is a proposal for a different setting, with conditions for how someone appears in the image. I'm still working through those conditions.</p><div class="uns-photo-pair"><figure class="uns-documentation"><img loading="lazy" decoding="async" src="/assets/conditional/compliance-reality.webp" width="1920" height="1080" alt="The Waiting Room concept render showing people in the room facing the screen"><figcaption>Concept render. The physical room.</figcaption></figure><figure class="uns-documentation"><img loading="lazy" decoding="async" src="/assets/conditional/compliance-on-screen.webp" width="1920" height="1080" alt="The Waiting Room concept render showing the screen view with people absent"><figcaption>Concept render. The screen view.</figcaption></figure></div></div></article>
     </section>
 
     <section class="uns-section uns-thinking" id="research" aria-labelledby="uns-thinking-title">
-      <h2 class="uns-section-title" id="uns-thinking-title">Still thinking</h2>
-      <div class="uns-questions"><p>What does it feel like to be missing from an image of a room you are standing in?</p><p>When might that feel like a relief, and when might it feel like a loss?</p></div>
-      <p class="uns-thinking-note">I do not have answers to most of this yet. That is part of why I want to show The Sitting Room and see what other people make of it. I will keep adding to this page as the work develops and after the showing.</p>
-      <a class="uns-last-book" href="/works/unsilvered/book/">See The Sitting Room on Friday 2 October. Book a time.</a>
+      <h2 class="uns-section-title" id="uns-thinking-title">Reading and questions</h2>
+      <div class="uns-reading-notes">
+        <p>In my notes from June, I described reflection as a kind of immediate feedback. You move, and the image moves with you. These readings open up different questions about what happens when that familiar response stops.</p>
+        <article>
+          <h3>An image to recognise yourself in</h3>
+          <p><a href="https://plato.stanford.edu/entries/lacan/#MirStaEgoSub">Jacques Lacan's account of the mirror stage</a> describes a child identifying with the whole, coordinated body they see in the mirror before they can move with that same ease. The image helps form a sense of self, but it is also something outside them. What are we expecting a reflection to confirm about us?</p>
+        </article>
+        <article>
+          <h3>Being recorded and feeling seen</h3>
+          <p>In July I was reading about Byung-Chul Han after coming across his book <a href="https://www.wiley-vch.de/en/areas-interest/humanities-social-sciences/absence-978-1-5095-4619-0"><em>Absence</em></a>. I wrote down a question. Why do we feel so unseen while being so surveilled?</p>
+          <p>The first showing complicated that question. Some people welcomed the missing reflection. Being absent from an image could also give them room to stop watching themselves.</p>
+        </article>
+        <article>
+          <h3>How the image is made</h3>
+          <p>In <a href="https://www.ways-of-seeing.com/ch1"><em>Ways of Seeing</em></a>, John Berger writes about images as choices made by their makers, and about viewers bringing their own ways of seeing. A room that looks ordinary on screen can still be showing a highly selective version of what is there. In The Sitting Room, the stools remain visible as they move, while the people moving them do not.</p>
+        </article>
+      </div>
+      <div class="uns-questions"><p>What does it feel like to see the effects of your actions in an image that leaves you out?</p></div>
     </section>
-
     <footer class="sw-page-footer" data-site-footer><div class="sw-page-footer__inner"><button class="sw-page-footer__top" type="button" data-site-back-top>Back to top</button></div></footer>
   </main>
   <script src="/assets/js/subnav.js?v=20260527-subnav"></script>

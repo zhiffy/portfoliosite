@@ -14,14 +14,14 @@
       "slug": "zh-hans",
       "htmlLang": "zh-Hans",
       "ogLocale": "zh_CN",
-      "font": "/assets/fonts/noto/noto-sans-sc.css?v=20260620"
+      "font": "/assets/fonts/noto/noto-sans-sc.css?v=20261008-unsilvered"
     },
     {
       "code": "zh-Hant",
       "slug": "zh-hant",
       "htmlLang": "zh-Hant",
       "ogLocale": "zh_TW",
-      "font": "/assets/fonts/noto/noto-sans-tc.css?v=20260620"
+      "font": "/assets/fonts/noto/noto-sans-tc.css?v=20261008-unsilvered"
     },
     {
       "code": "fr",
@@ -283,24 +283,36 @@
       "bodyStart": "<main id=\"main-content\"",
       "bodyEnd": "</main>",
       "subnav": {
-        "zh-Hans": ["参观", "一路走来", "作品", "还在想"],
-        "zh-Hant": ["參觀", "一路走來", "作品", "還在想"]
+        "zh-Hans": [
+          "The Sitting Room",
+          "首次展出",
+          "一路走来",
+          "其他作品",
+          "阅读与提问"
+        ],
+        "zh-Hant": [
+          "The Sitting Room",
+          "首次展出",
+          "一路走來",
+          "其他作品",
+          "閱讀與提問"
+        ]
       },
       "meta": {
         "title": {
-          "en": "Unsilvered, recorded without being reflected back | Shavonne Wong",
-          "zh-Hans": "Unsilvered 被记录，却不被映照 | Shavonne Wong",
-          "zh-Hant": "Unsilvered 被記錄，卻不被映照 | Shavonne Wong"
+          "en": "Unsilvered | Shavonne Wong",
+          "zh-Hans": "Unsilvered | Shavonne Wong",
+          "zh-Hant": "Unsilvered | Shavonne Wong"
         },
         "description": {
-          "en": "Unsilvered is a body of work by Shavonne Wong about being recorded without being reflected back. Follow the ideas and questions behind The Sitting Room, then book a time to visit.",
-          "zh-Hans": "Unsilvered 是 Shavonne Wong 一组关于被记录，却没有被映照出来的作品。了解 The Sitting Room 背后的想法与问题，并预约参观时段。",
-          "zh-Hant": "Unsilvered 是 Shavonne Wong 一組關於被記錄，卻沒有被映照出來的作品。了解 The Sitting Room 背後的想法與問題，並預約參觀時段。"
+          "en": "A body of work by Shavonne Wong about being recorded without being reflected back, including The Sitting Room and its first public showing.",
+          "zh-Hans": "Unsilvered 是 Shavonne Wong 一组关于被记录，却没有被映照出来的作品。本页记录 The Sitting Room 及其首次公开展出。",
+          "zh-Hant": "Unsilvered 是 Shavonne Wong 一組關於被記錄，卻沒有被映照出來的作品。本頁記錄 The Sitting Room 及其首次公開展出。"
         },
         "ogDescription": {
-          "en": "Unsilvered is a body of work by Shavonne Wong about being recorded without being reflected back. Follow the ideas and questions behind The Sitting Room, then book a time to visit.",
-          "zh-Hans": "Unsilvered 是 Shavonne Wong 一组关于被记录，却没有被映照出来的作品。了解 The Sitting Room 背后的想法与问题，并预约参观时段。",
-          "zh-Hant": "Unsilvered 是 Shavonne Wong 一組關於被記錄，卻沒有被映照出來的作品。了解 The Sitting Room 背後的想法與問題，並預約參觀時段。"
+          "en": "A body of work by Shavonne Wong about being recorded without being reflected back, including The Sitting Room and its first public showing.",
+          "zh-Hans": "Unsilvered 是 Shavonne Wong 一组关于被记录，却没有被映照出来的作品。本页记录 The Sitting Room 及其首次公开展出。",
+          "zh-Hant": "Unsilvered 是 Shavonne Wong 一組關於被記錄，卻沒有被映照出來的作品。本頁記錄 The Sitting Room 及其首次公開展出。"
         }
       }
     },
