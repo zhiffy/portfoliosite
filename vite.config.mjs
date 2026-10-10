@@ -12,19 +12,6 @@ import {
 
 const root = process.cwd();
 
-// Netlify derives slash normalization from the published file layout.
-// These canonical URLs need directory indexes, without competing flat files.
-const directoryPages = new Set([
-  'about', 'contact', 'press', 'journal',
-  'update2023jan', 'update2023june', 'update2024jan', 'update2024jun',
-  'update2025jan', 'update2025jun', 'update2026jun',
-]);
-
-function publishedPage(file) {
-  const name = file.replace(/^\//, '').replace(/\.html$/, '');
-  return directoryPages.has(name) ? `${name}/index.html` : file.replace(/^\//, '');
-}
-
 const cleanRoutes = {
   "/about/": "about.html",
   "/about/zh-hans/": "about-zh-hans.html",
@@ -89,6 +76,14 @@ const cleanRoutes = {
   "/works/vogue-singapore/zh-hant/": "vogue-singapore-zh-hant.html",
   "/works/6529-meme-card/zh-hans/": "6529-meme-card-zh-hans.html",
   "/works/6529-meme-card/zh-hant/": "6529-meme-card-zh-hant.html",
+  "/works/shu-uemura/": "shu-uemura.html",
+  "/works/shu-uemura/zh-hans/": "shu-uemura-zh-hans.html",
+  "/works/shu-uemura/zh-hant/": "shu-uemura-zh-hant.html",
+  "/works/year-of-the-tiger/": "year-of-the-tiger.html",
+  "/works/year-of-the-tiger/zh-hans/": "year-of-the-tiger-zh-hans.html",
+  "/works/year-of-the-tiger/zh-hant/": "year-of-the-tiger-zh-hant.html",
+  "/journal/there-is-no-universal-user/zh-hans/": "there-is-no-universal-user-zh-hans.html",
+  "/journal/there-is-no-universal-user/zh-hant/": "there-is-no-universal-user-zh-hant.html",
   "/update2026jun/zh-hans/": "update2026jun-zh-hans.html",
   "/update2026jun/zh-hant/": "update2026jun-zh-hant.html",
   "/update2025jun/zh-hans/": "update2025jun-zh-hans.html",
@@ -104,6 +99,23 @@ const cleanRoutes = {
   "/update2023jan/zh-hans/": "update2023jan-zh-hans.html",
   "/update2023jan/zh-hant/": "update2023jan-zh-hant.html",
 };
+
+// Netlify derives slash normalization from the published file layout: a page
+// published as a folder index gets an automatic 301 from the slashless address,
+// while a flat file behind a 200 rewrite answers at both addresses (which splits
+// analytics and creates duplicate URLs). So every clean route is published as a
+// directory index, without a competing flat file. When two routes share one file,
+// the first route listed is the canonical one.
+const directoryPages = new Map();
+for (const [route, file] of Object.entries(cleanRoutes)) {
+  if (route === "/" || directoryPages.has(file)) continue;
+  directoryPages.set(file, `${route.replace(/^\//, "")}index.html`);
+}
+
+function publishedPage(file) {
+  const name = file.replace(/^\//, '');
+  return directoryPages.get(name) || name;
+}
 
 const cleanRedirects = {
   "/about-zh-hans.html": "/about/zh-hans/",
@@ -268,9 +280,10 @@ function copyStaticFiles() {
         });
       }
 
-      for (const name of directoryPages) {
-        const flatFile = path.join(outDir, `${name}.html`);
-        const indexFile = path.join(outDir, name, 'index.html');
+      for (const [file, index] of directoryPages) {
+        const flatFile = path.join(outDir, file);
+        const indexFile = path.join(outDir, index);
+        if (!existsSync(flatFile)) continue;
         await mkdir(path.dirname(indexFile), { recursive: true });
         await copyFile(flatFile, indexFile);
         await unlink(flatFile);
