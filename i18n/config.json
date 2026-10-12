@@ -14,14 +14,14 @@
       "slug": "zh-hans",
       "htmlLang": "zh-Hans",
       "ogLocale": "zh_CN",
-      "font": "/assets/fonts/noto/noto-sans-sc.css?v=20261008-unsilvered"
+      "font": "/assets/fonts/noto/noto-sans-sc.css?v=20261012-zaobao"
     },
     {
       "code": "zh-Hant",
       "slug": "zh-hant",
       "htmlLang": "zh-Hant",
       "ogLocale": "zh_TW",
-      "font": "/assets/fonts/noto/noto-sans-tc.css?v=20261008-unsilvered"
+      "font": "/assets/fonts/noto/noto-sans-tc.css?v=20261012-zaobao"
     },
     {
       "code": "fr",

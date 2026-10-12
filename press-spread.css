@@ -1,0 +1,43 @@
+/* Scoped newspaper coverage and viewer. Shared site styles stay unchanged. */
+.sp-conditional-page .press-coverage { padding: clamp(32px,4vw,56px) 0; scroll-margin-top: 120px; }
+.sp-conditional-page .press-coverage h2 { margin: 0 0 20px; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--text-2); }
+.press-coverage .press-coverage-layout { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(24px,4vw,56px); align-items: center; }
+.press-coverage .press-coverage-copy { min-width: 0; }
+.press-coverage .press-coverage-copy h3 { margin: 0 0 10px; font-size: clamp(22px,2vw,30px); font-weight: 400; }
+.press-coverage .press-coverage-copy p { margin: 0 0 14px; font-size: clamp(17px,1.5vw,21px); line-height: 1.6; max-width: none; }
+.press-coverage time, .press-spread-note, .press-spread-actions { color: var(--text-2); font-size: 13px; line-height: 1.6; }
+.press-coverage .press-coverage-copy .press-spread-date { font-size: 13px; margin-bottom: 16px; }
+.press-spread-figure { margin: 0; min-width: 0; }
+.press-spread-figure > a { display: block; width: min(100%,calc(420px * 1414 / 977)); cursor: zoom-in; }
+.press-spread-figure img { display: block; width: 100%; height: auto; max-width: 100%; }
+.press-spread-figure figcaption { margin-top: 12px; }
+.press-spread-actions { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 12px; align-items: baseline; }
+.press-spread-link { padding: 0; background: none; border: 0; font: inherit; color: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.press-spread-note a { color: inherit; text-underline-offset: 3px; }
+.pr-ledger .press-spread-ledger-extra { padding: 0 0 14px; margin: 0; color: var(--text-2); }
+.pr-ledger .press-spread-ledger-extra .press-spread-actions { margin-top: 0; }
+.pr-ledger .press-spread-ledger-extra .press-spread-note { margin: 7px 0 0; }
+.press-spread-viewer { width: min(1600px,calc(100vw - 48px)); max-width: none; height: min(1000px,calc(100dvh - 48px)); max-height: none; margin: auto; padding: 24px; border: 1px solid var(--hairline-strong); background: var(--bg,#f4f4f6); color: var(--text,#252638); font-family: var(--sans,Mulish,sans-serif); overflow: hidden; }
+.press-spread-viewer::backdrop { background: rgba(24,25,43,.72); }
+.press-spread-viewer[open] { display: flex; flex-direction: column; gap: 14px; }
+.press-spread-viewer header { display: flex; align-items: start; justify-content: space-between; gap: 16px; flex: 0 0 auto; }
+.press-spread-viewer h2 { margin: 0 0 3px; font-size: 20px; font-weight: 400; }
+.press-spread-viewer .press-spread-source { margin: 0; font-size: 13px; color: var(--text-2); }
+.press-spread-viewer .press-spread-toolbar { display: flex; flex-wrap: wrap; gap: 8px; flex: 0 0 auto; }
+.press-spread-viewer button { padding: 8px 12px; background: transparent; border: 1px solid var(--hairline-strong); color: inherit; font: inherit; font-size: 13px; cursor: pointer; }
+.press-spread-viewer button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+.press-spread-viewer .press-spread-scroll { flex: 1 1 auto; min-height: 0; min-width: 0; overflow: auto; overscroll-behavior: contain; display: flex; align-items: center; justify-content: center; }
+.press-spread-viewer .press-spread-scroll img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; flex-shrink: 0; }
+.press-spread-viewer .press-spread-scroll.is-zoomed { display: block; }
+.press-spread-viewer .press-spread-scroll.is-zoomed img { width: 3200px; max-width: none; max-height: none; }
+.press-spread-viewer .press-spread-viewer-note { margin: 0; font-size: 13px; line-height: 1.5; color: var(--text-2); flex: 0 0 auto; }
+.press-spread-viewer footer { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; flex: 0 0 auto; }
+.press-spread-viewer a { color: inherit; text-underline-offset: 3px; }
+.press-spread-viewer :focus-visible, .press-spread-figure > a:focus-visible, .press-spread-link:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+@media(max-width:901px) {
+  .press-coverage .press-coverage-layout { grid-template-columns: minmax(0,1fr); gap: 20px; }
+  .press-spread-figure img { max-height: 420px; }
+  .press-spread-viewer { width: calc(100vw - 24px); height: calc(100dvh - 24px); padding: 16px; gap: 10px; }
+  .press-spread-viewer h2 { font-size: 18px; }
+  .press-spread-viewer button { padding: 7px 9px; font-size: 12px; }
+}
