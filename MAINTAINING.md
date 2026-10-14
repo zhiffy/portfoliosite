@@ -7,6 +7,8 @@ Hosting-specific launch notes live in `HOSTING_HANDOFF.md`.
 
 - Newsletter forms post to `/api/newsletter-subscribe`, which creates or updates the address in Brevo's studio list.
 - Set `BREVO_API_KEY` and `BREVO_LIST_ID` in the deploy host environment before testing live newsletter signups.
+- `netlify/functions/newsletter-connection-check.mjs` checks the configured Brevo list every Monday at 09:00 Bangkok time. Its successful read-only request keeps the signup key active during quiet periods (Brevo deactivates keys after 90 days of inactivity). It does not add contacts or send email.
+- After deploying, open the scheduled function in Netlify and use **Run now**. Confirm its log says the connection succeeded. Missing configuration, invalid keys, unavailable lists, and network errors fail visibly; repair those in the existing Netlify environment settings. Run its regression checks with `node --test tests/newsletter-connection-check.test.mjs`.
 - The contact page form posts to `/api/contact` (a Netlify function at `netlify/functions/contact.js`), which relays to Google Sheets via the `CONTACT_SHEET_WEBHOOK_URL` environment variable. Do not reintroduce Formspree.
 
 ## Quarterly
