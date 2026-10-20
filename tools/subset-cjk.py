@@ -40,7 +40,7 @@ FONTS = {
 
 def collect_glyphs(code):
     text = ''
-    for f in glob.glob(f'i18n/bodies/*.{code}.html'):
+    for f in glob.glob(f'i18n/bodies/*.{code}.html') + glob.glob(f'i18n/fragments/*.{code}.html'):
         text += open(f, encoding='utf-8').read()
     nav = CFG['nav']
     for k in nav['labels']:

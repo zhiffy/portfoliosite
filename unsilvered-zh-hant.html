@@ -265,7 +265,7 @@
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ed11192c01f44bf2b6d068d312a11534"}'></script>
     <!-- End Cloudflare Web Analytics -->
 
-  <script src="/site-header.js?v=20260924-unsilvered" defer></script>
+  <script src="/site-header.js?v=20261020-journal" defer></script>
   <script src="/site-i18n.js?v=20260924-unsilvered" defer></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9KCWXRT7E"></script>
@@ -275,7 +275,8 @@
       gtag('js', new Date());
       gtag('config', 'G-L9KCWXRT7E');
     </script>
-  <link rel="stylesheet" href="/assets/fonts/noto/noto-sans-tc.css?v=20261008-unsilvered">
+  <link rel="stylesheet" href="/press-spread.css?v=20261012-zaobao">
+  <link rel="stylesheet" href="/assets/fonts/noto/noto-sans-tc.css?v=20261012-zaobao">
 </head>
 <body class="sn-page-body sp-conditional-page">
   <a class="sn-skip-link" href="#main-content">跳到內容</a>
@@ -283,11 +284,11 @@
     <a href="/#hero" class="sn-mark"><img decoding="async" class="sn-mark-logo" src="/assets/brand/wordmark-slate.webp" alt="Shavonne Wong" width="120" height="42"></a>
     <nav class="sn-links">
       <a href="/#hero" data-i18n="nav.home">首頁</a>
-      <a href="/about/zh-hant/" data-i18n="nav.about">關於</a>
-      <a href="/works/zh-hant/" class="is-active" data-i18n="nav.works">作品</a>
-      <a href="/journal/zh-hant/" data-i18n="nav.journal">日誌</a>
+      <a href="/about/" data-i18n="nav.about">關於</a>
+      <a href="/works/" class="is-active" data-i18n="nav.works">作品</a>
+      <a href="/journal/" data-i18n="nav.journal">日誌</a>
       <a href="/press/zh-hant/" data-i18n="nav.press">媒體</a>
-      <a href="/contact/zh-hant/" data-i18n="nav.contact">聯絡</a>
+      <a href="/contact/" data-i18n="nav.contact">聯絡</a>
     </nav>
     <div class="sn-meta-right">
       <label class="sn-lang-switcher" data-language-switcher>
@@ -332,6 +333,15 @@
       <div class="uns-credits"><div><p class="uns-technology-credit">追蹤技術由 <a href="https://antilatency.com/">Antilatency</a>提供。鏡子系統在 Dell Pro Max T2 Tower 上開發。</p><p class="uns-photo-credit">裝置攝影由 Alfred Tanuwidjaja 拍攝。</p></div></div>
     </section>
 
+
+    <section class="press-coverage" id="press" aria-labelledby="uns-press-title">
+      <h2 id="uns-press-title">媒體報道</h2>
+      <div class="press-coverage-layout">
+        <div class="press-coverage-copy"><h3>聯合早報</h3><p class="press-spread-date"><time datetime="2026-10-11">2026 年 10 月 11 日</time></p><p>《聯合早報》在一篇討論藝術、AI 與科技如何「看見」人的報道中介紹了 Unsilvered。</p><div class="press-spread-actions"><a class="press-spread-link" href="/assets/press/zaobao/zaobao-print-original.jpg" data-open-press-spread>查看報紙版面</a><a href="https://www.zaobao.com.sg/lifestyle/tech-science/story20261011-9790383" target="_blank" rel="noreferrer">閱讀原文</a></div></div>
+        <figure class="press-spread-figure"><a href="/assets/press/zaobao/zaobao-print-original.jpg" data-open-press-spread aria-label="查看報紙版面"><img src="/assets/press/zaobao/zaobao-print-original-1414.webp" srcset="/assets/press/zaobao/zaobao-print-original-640.webp 640w, /assets/press/zaobao/zaobao-print-original-1414.webp 1414w" sizes="(max-width:901px) calc(100vw - 40px), 45vw" width="1414" height="977" loading="lazy" decoding="async" alt="2026 年 10 月 11 日《聯合早報》原始版面，包含對黃芷楓 Unsilvered 的報道。"></a><figcaption class="press-spread-note">原始報紙圖片。檢視器內另有明確標註的 AI 放大版本。 <a href="/assets/press/zaobao/zaobao-print-original.jpg" target="_blank" rel="noreferrer">查看原圖</a></figcaption></figure>
+      </div>
+    </section>
+
     <section class="uns-section" id="along-the-way" aria-labelledby="uns-along-title">
       <h2 class="uns-section-title" id="uns-along-title">一路走來</h2>
       <div class="uns-notes">
@@ -371,5 +381,15 @@
     <footer class="sw-page-footer" data-site-footer><div class="sw-page-footer__inner"><button class="sw-page-footer__top" type="button" data-site-back-top>返回頂部</button></div></footer>
   </main>
   <script src="/assets/js/subnav.js?v=20260527-subnav"></script>
+
+  <dialog class="press-spread-viewer" data-press-spread-dialog aria-labelledby="press-spread-dialog-title" data-ai-src="/assets/press/zaobao/zaobao-print-ai-3200.webp" data-original-src="/assets/press/zaobao/zaobao-print-original.jpg" data-ai-note="圖片經 AI 放大，用於展示。部分文字出現變形，請以原圖或報道原文為準。" data-original-note="原始報紙截圖，未經 AI 放大。">
+    <header><div><h2 id="press-spread-dialog-title">報紙版面</h2><p class="press-spread-source">聯合早報 · <time datetime="2026-10-11">2026 年 10 月 11 日</time></p></div><button type="button" data-spread-close>關閉</button></header>
+    <div class="press-spread-toolbar"><button type="button" data-spread-version="ai" aria-pressed="false">AI 放大圖</button><button type="button" data-spread-version="original" aria-pressed="true">原圖</button><button type="button" data-spread-zoom aria-pressed="false">放大</button><button type="button" data-spread-fit>適應視窗</button></div>
+    <div class="press-spread-scroll" data-spread-scroll tabindex="0" role="region" aria-label="報紙圖片。放大後可使用方向鍵移動查看。"><img data-spread-image alt="報紙版面 · 聯合早報 · 2026 年 10 月 11 日" width="3200" height="2211"></div>
+    <p class="press-spread-viewer-note" data-spread-note aria-live="polite">原始報紙截圖，未經 AI 放大。</p>
+    <footer><a href="https://www.zaobao.com.sg/lifestyle/tech-science/story20261011-9790383" target="_blank" rel="noreferrer">閱讀原文</a><a href="/assets/press/zaobao/zaobao-print-original.jpg" target="_blank" rel="noreferrer">查看原圖</a></footer>
+  </dialog>
+  <script src="/press-spread.js?v=20261012-zaobao" defer></script>
+
 </body>
 </html>

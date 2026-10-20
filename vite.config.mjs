@@ -247,6 +247,7 @@ function copyStaticFiles() {
     "llms.txt",
     "open-tabs.js",
     "press-hover.js",
+    "press-spread.js",
     "robots.txt",
     "scroll-narrative.js",
     "site-header.js",

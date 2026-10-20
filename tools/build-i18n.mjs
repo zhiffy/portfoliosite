@@ -198,6 +198,13 @@ function assemble(page, code, status) {
   const bodyEnd = p.bodyEnd === '</main>' ? end + p.bodyEnd.length : end;
   const body = readFileSync(bodyPath(page, code), 'utf8').replace(/\s+$/, '');
   html = html.slice(0, start) + body + html.slice(bodyEnd);
+  // This shared newspaper dialog lives outside main, so its localized copy
+  // is stored separately and survives regeneration of either owning page.
+  const pressDialog = path.join(I18N, 'fragments', `press-spread.${code}.html`);
+  if (html.includes('data-press-spread-dialog') && existsSync(pressDialog)) {
+    html = html.replace(/<dialog\b[^>]*data-press-spread-dialog[\s\S]*?<\/dialog>/,
+      () => readFileSync(pressDialog, 'utf8').trim());
+  }
   return localizeNav(localizeHead(html, page, code, status), page, code, status);
 }
 
