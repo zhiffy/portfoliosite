@@ -36,3 +36,6 @@ tools/ga-oauth*.json
 gsc-oauth*.json
 tools/gsc-oauth*.json
 _AI_Drafts/
+
+# scratch folder for files waiting to be deleted by hand (old previews, backups); never deploy
+_to_delete/

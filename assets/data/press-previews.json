@@ -1,5 +1,10 @@
 [
   {
+    "match": "zaobao.com.sg/lifestyle/tech-science/story20261011-9790383",
+    "preview": "/assets/unsilvered/the-sitting-room-stool-and-projection.webp",
+    "status": "curated-fallback"
+  },
+  {
     "match": "/update2025jun/",
     "preview": "/assets/newsletters/update2025jun/02.webp",
     "status": "curated-fallback"

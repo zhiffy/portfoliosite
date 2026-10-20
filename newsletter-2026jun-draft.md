@@ -100,7 +100,7 @@ Never as a society have we been so completely recorded, yet feel so unseen.
 
 The version shown here is set in a waiting room, one of a few I have in mind. Right now I am working on a smaller mirror prototype.
 
-→ [Read about Conditional](https://www.shavonnewong.art/works/conditional/)
+→ [Read about Conditional](https://www.shavonnewong.art/works/unsilvered/)
 
 ---
 

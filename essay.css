@@ -977,6 +977,57 @@ html.jr-js .jr-page.jr-essay .jr-threshold[data-reveal].is-in { opacity: 1; }
 }
 
 /* ------------------------------------------------------------
+   12b. SPACING GUARDS (2026-10-20)
+   Each rule closes a gap that showed up as "awkward spacing" on the
+   October essay. They apply to every essay, so new ones inherit them.
+   Run `node tools/check-spacing.mjs` before shipping any essay or
+   letter; it measures these same problems in a real browser.
+   ------------------------------------------------------------ */
+
+/* A rail figure starts level with the FIRST paragraph of its .jr-row
+   and runs beside every paragraph in the row, like the reel embed.
+   Without this it auto-placed beside whichever paragraph came last.
+   The fix for a hole beside a tall figure is more text in the row,
+   never a smaller or cropped image (site rule C1). */
+.jr-page.jr-essay .jr-row > .jr-figure--side {
+  grid-row: 1 / span 20;
+  align-self: start;
+}
+
+/* Section headings keep to one line where the column allows. The
+   22ch cap wrapped short titles like "It keeps track of what you move". */
+.jr-page.jr-essay .jr-h { max-width: none; }
+
+/* A heading that opens a later section needs air above it; the shared
+   first-child rule zeroed it and pressed each section into the last.
+   After the threshold line the line itself is the break, and after a
+   pull quote the quote already closes the section, so both get less. */
+.jr-page.jr-essay .jr-sec + .jr-sec > .jr-h:first-child { margin-top: clamp(48px, 5vw, 88px); }
+.jr-page.jr-essay .jr-threshold + .jr-sec > .jr-h:first-child { margin-top: 0; }
+.jr-page.jr-essay .jr-sec:has(> .jr-pull:last-child) + .jr-sec > .jr-h:first-child { margin-top: clamp(24px, 2.6vw, 48px); }
+
+/* A beat spans the full text width so it reads as one line, not a
+   stranded two-line block, with equal air above and below. */
+.jr-page.jr-essay .jr-flow p.jr-beat {
+  grid-column: main-start / wide-end;
+  max-width: none;
+  margin: var(--jr-para) 0 var(--jr-block);
+}
+
+/* A paragraph, or a row ending in one, already carries --jr-para below
+   it. A block that follows would add its full --jr-block on top, so the
+   space above it came out bigger than the space below. Trim the top. */
+.jr-page.jr-essay .jr-flow :is(p, .jr-row) + :is(.jr-strip, .jr-figure:not(.jr-figure--side), .jr-duo, .jr-pull) {
+  margin-top: calc(var(--jr-block) - var(--jr-para));
+}
+
+/* Two display blocks in a row (a strip then a pull quote, say) would
+   stack both margins, because grid items never collapse them. */
+.jr-page.jr-essay .jr-flow :is(.jr-strip, .jr-figure:not(.jr-figure--side), .jr-duo, .jr-pull) + :is(.jr-strip, .jr-figure:not(.jr-figure--side), .jr-duo, .jr-pull) {
+  margin-top: 0;
+}
+
+/* ------------------------------------------------------------
    13. NARROW SCREENS
    One column. The rail collapses, so rail figures rejoin the flow
    and become strips of one. Strips stay side by side.

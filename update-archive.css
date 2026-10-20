@@ -402,3 +402,20 @@
 @media (max-width: 760px) {
   .nl-archive-rich .nl-gallery-nav { display: none; }
 }
+
+/* ============================================================
+   SPACING GUARDS (2026-10-20) — found by tools/check-spacing.mjs.
+   1. A herotop lead image sat centred inside a 1120px box pinned to
+      the left, so it floated off every axis with dead space to its
+      right. It now centres on the full content width.
+   2. A two-up support row stopped at 920px and left the rest of the
+      line empty. It now spans the content width; each photo keeps its
+      natural ratio and the 460px height cap (rule C1, U4).
+   3. Same as 1 for a single image closing a stack event.
+   The sign-off photos beside .nl-sign are a designed rail; leave them.
+   ============================================================ */
+@media (min-width: 901px) {
+  .nl-archive-rich .nl-ev--herotop > .nl-ev-media { max-width: none; }
+  .nl-archive-rich .nl-ev--stack > .nl-ev-media:not(.nl-twoup):has(> .nl-fig:only-child) { max-width: none; }
+  .nl-archive-rich .nl-ev-support.nl-twoup { max-width: none; }
+}

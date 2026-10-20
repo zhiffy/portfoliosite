@@ -7,7 +7,7 @@
 - Sitemap: https://www.shavonnewong.art/sitemap.xml
 - Practice: interactive AI installation, 3D virtual humans, single-channel video, generative editions.
 - Current work: Unsilvered (2026, formerly titled Conditional), a body of work about being recorded without being reflected back. Its first works, The Sitting Room, The Mirror and The Waiting Room, render the room in full and in real time and leave out the people in it. The Waiting Room is a proposal.
-- Best-known projects: Meet Eva Here (2024-25, AI companion installation), After Ophelia (2025, AI video diptych), Love is Love (2021, generative edition collected by Idris Elba).
+- Best-known projects: Meet Eva Here (2024-25, AI companion installation), After Ophelia (2025 to 2026, two AI videos and Ophelia, Reframed, seven prints), Love is Love (2021, generative edition collected by Idris Elba).
 - Works are available to collect as unique pieces and editions; enquiries: studio@shavonnewong.art.
 
 ## Recurring subjects in the work
@@ -28,7 +28,7 @@ These are the questions the practice returns to, listed so the work can be match
 - [Unsilvered](https://www.shavonnewong.art/works/unsilvered/): A body of work by Shavonne Wong about being recorded without being reflected back, formerly titled Conditional. The Sitting Room, 2026, is an interactive AI installation with three tracked stools and a projection. First publicly shown at NAC Arts x Tech Lab, Aliwal Arts Centre, Singapore, on 2 October 2026. The page includes a documentation film, installation photographs, audience reflections, development history and reading notes. The Mirror is in development. The Waiting Room is a proposal.
 - [The Bubble We Call Home](https://www.shavonnewong.art/works/the-bubble-we-call-home/): Unique 1/1 single-channel video commission for Artist's Proof: Singapore at 60 (AP60), commissioned by Mr Chong, 2025.
 - [Meet Eva Here](https://www.shavonnewong.art/works/meet-eva-here/): Interactive AI companion artwork, presented across six exhibition sites (ArtScience Museum Singapore, Art SG, Taipei Dangdai, Art Central Hong Kong, The Columns Gallery, and Canal St Show New York) plus an online chatbot. Ran August 2024 to November 2025 and concluded with 100 Instagram diary posts and 2,363 recorded conversations.
-- [After Ophelia](https://www.shavonnewong.art/works/after-ophelia/): Two-part AI video work on identity and inherited interpretation, Paris Photo 2025.
+- [After Ophelia](https://www.shavonnewong.art/works/after-ophelia/): Two AI and 3D video works (Paris Photo 2025) and Ophelia, Reframed (2026), seven prints of 3D renders framed by an AI-operated virtual camera inside the scene, nothing generated, shown at ASIA NOW Paris 2026 with Gallery BYGRIDA.
 - [The Ties That Bind](https://www.shavonnewong.art/works/the-ties-that-bind/): Solo exhibition of seven dynamic digital works, Singapore, 2023.
 - [By Proxy](https://www.shavonnewong.art/works/by-proxy/): Series of 60 unique CGI and photography works with Lenne Chai, 2022.
 - [Love is Love](https://www.shavonnewong.art/works/love-is-love/): Generative digital artwork with a 500-piece edition, collected by Idris Elba, 2021.
@@ -40,6 +40,7 @@ These are the questions the practice returns to, listed so the work can be match
 - [6529 Meme Card](https://www.shavonnewong.art/works/6529-meme-card/): Faces of Freedom, a Meme Card for The Memes by 6529 on the theme Freedom to Transact. ERC-1155, token ID 72, edition of 300, 2023.
 - [Press](https://www.shavonnewong.art/press/): Selected press, profiles and interviews from 2021 onward, including The Straits Times, Artnet, Tatler Asia, Forbes, Vogue Singapore, Vogue Italia, CNA Lifestyle, CoinDesk and Prestige.
 - [Journal](https://www.shavonnewong.art/journal/): Essays on the practice, a running reading list, and the twice-yearly studio letter archive going back to 2023.
+- [A Mirror That Leaves You Out](https://www.shavonnewong.art/journal/a-mirror-that-leaves-you-out/): Essay, October 2026, from a talk at AI for ALL, Taiwan Festival 2026. A mirror that leaves you out can feel like a loss or a relief, and what it keeps is a record of the chairs you move. An essay on Unsilvered by Shavonne Wong. Covers the first public test of the mirror at the NAC Arts x Tech Lab in Singapore, how the system finds and removes people while tracking the stools they move, and what its log kept.
 - [There Is No Universal User](https://www.shavonnewong.art/journal/there-is-no-universal-user/): Essay, August 2026. Giving an AI better manners means choosing whose. Fifteen months of showing an AI companion in Singapore, Taipei, Hong Kong and New York, and what each room expected of it.
 - [Open Tabs](https://www.shavonnewong.art/journal/open-tabs/): An interactive map of what Shavonne Wong is reading, watching and interested in, grouped by the subjects the practice returns to.
 - [Contact](https://www.shavonnewong.art/contact/): Studio enquiries for acquisitions, commissions, exhibitions, press and collaborations. studio@shavonnewong.art.

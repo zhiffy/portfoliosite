@@ -119,6 +119,10 @@
       "destination": "/there-is-no-universal-user.html"
     },
     {
+      "source": "/journal/a-mirror-that-leaves-you-out/",
+      "destination": "/a-mirror-that-leaves-you-out.html"
+    },
+    {
       "source": "/journal/there-is-no-universal-user/zh-hans/",
       "destination": "/there-is-no-universal-user-zh-hans.html"
     },

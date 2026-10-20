@@ -401,8 +401,14 @@
     }
   }
 
+  // Artworks and full-screen viewers opt out with data-no-ripple-zone.
+  function inNoRippleZone(event) {
+    const t = event.target;
+    return !!(t && t.closest && t.closest('[data-no-ripple-zone]'));
+  }
+
   function handlePointerMove(event) {
-    if (!rippleEnabled) return;
+    if (!rippleEnabled || inNoRippleZone(event)) return;
     const dx = event.clientX - lastX;
     const dy = event.clientY - lastY;
     const speed = Math.hypot(dx, dy);
@@ -424,7 +430,7 @@
   }
 
   function handlePointerDown(event) {
-    if (!rippleEnabled) return;
+    if (!rippleEnabled || inNoRippleZone(event)) return;
     lastX = event.clientX;
     lastY = event.clientY;
     lastMove = performance.now();

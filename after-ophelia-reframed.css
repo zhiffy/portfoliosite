@@ -1,0 +1,142 @@
+/* after-ophelia-reframed.css
+   Ophelia, Reframed (2026) on the After Ophelia page. Scoped pilot (rule 18).
+   Works sit directly on the page background at their full 4:5 ratio:
+   no crop, no frame, no shadow, no hover effect (C1). */
+
+.sp-group {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px;
+  width: 100%; min-width: 0; scroll-margin-top: 140px;
+}
+.sp-group + .sp-group { margin-top: clamp(40px, 6vw, 88px); }
+.sp-group-head { display: grid; gap: 6px; }
+.sp-group-title {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: clamp(24px, 2.4vw, 32px); line-height: 1.15; margin: 0;
+}
+.sp-group-meta {
+  font-family: var(--sans); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-2); margin: 0;
+}
+
+.sp-rf-work { margin: 0; min-width: 0; scroll-margin-top: 140px; }
+.sp-rf-open {
+  display: block; width: 100%; padding: 0; margin: 0; border: 0;
+  background: none; cursor: zoom-in;
+}
+.sp-rf-open:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
+.sp-rf-work picture, .sp-rf-work img { display: block; width: 100%; height: auto; }
+.sp-rf-lead { width: 66.667%; }
+/* Cap Field by height so the whole work fits on screen; ratio is kept (C1). */
+.sp-rf-lead .sp-rf-open { width: fit-content; max-width: 100%; }
+.sp-rf-lead img { width: auto; max-width: 100%; max-height: calc(100vh - 150px); }
+.sp-rf-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(36px, 4vw, 56px) clamp(20px, 2.4vw, 32px);
+}
+.sp-rf-cap {
+  margin-top: 12px; font-family: var(--serif); font-size: 13px; line-height: 1.5;
+  color: var(--text-2);
+}
+.sp-rf-cap em { font-size: 15px; color: var(--text); }
+.sp-rf-series-line { margin: 0; }
+.sp-rf-series-line a { color: inherit; text-underline-offset: 3px; }
+
+.sp-project-pointer {
+  margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.4; color: var(--text-2);
+}
+.sp-project-pointer a { color: var(--text); text-underline-offset: 3px; }
+
+.sp-rf-film video { display: block; width: 100%; height: auto; background: var(--text); }
+
+/* Full-screen viewer, on the page background. */
+.sp-rf-viewer {
+  position: fixed; inset: 0; width: 100vw; height: 100vh; max-width: none; max-height: none;
+  margin: 0; padding: 0; border: 0; background: var(--bg); color: var(--text);
+}
+.sp-rf-viewer::backdrop { background: var(--bg); }
+.sp-rf-viewer[open] {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+}
+.sp-rf-viewer-img {
+  display: block; width: auto; height: auto;
+  max-width: calc(100vw - 32px); max-height: calc(100vh - 120px);
+}
+.sp-rf-viewer-cap {
+  margin: 0; padding: 0 16px; text-align: center;
+  font-family: var(--serif); font-size: 13px; line-height: 1.5; color: var(--text-2);
+}
+.sp-rf-viewer-cap em { font-size: 15px; color: var(--text); }
+.sp-rf-viewer button {
+  appearance: none; background: none; border: 0; padding: 12px; cursor: pointer;
+  color: var(--text-2); font: 300 30px/1 var(--sans);
+}
+.sp-rf-viewer button:hover, .sp-rf-viewer button:focus-visible { color: var(--text); outline: none; }
+.sp-rf-close { position: absolute; top: 10px; right: 14px; }
+.sp-rf-prev, .sp-rf-next { position: absolute; top: 50%; transform: translateY(-50%); }
+.sp-rf-prev { left: 6px; }
+.sp-rf-next { right: 6px; }
+.sp-rf-prev[hidden], .sp-rf-next[hidden] { display: none; }
+html.sp-rf-viewing { overflow: hidden; }
+
+@media (max-width: 900px) {
+  .sp-rf-lead { width: 100%; }
+  .sp-rf-grid { grid-template-columns: minmax(0, 1fr); }
+  .sp-rf-prev, .sp-rf-next { top: auto; bottom: 8px; transform: none; }
+  .sp-rf-viewer-img { max-height: calc(100vh - 150px); }
+}
+
+/* ASIA NOW booth pair: side by side on desktop, stacked on phones (U5). */
+@media (max-width: 900px) {
+  #asia-now-2026 { grid-template-columns: minmax(0, 1fr) !important; }
+  #asia-now-2026 .sp-image-card { grid-column: auto; }
+  #asia-now-2026 .sp-image-card img { width: 100%; height: auto; max-height: none; }
+}
+
+/* Exhibition posters as an even pair (both square), stacked on phones. */
+.sp-posters { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 820px; }
+.sp-posters .sp-image-card { grid-column: auto; }
+.sp-posters .sp-image-card img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
+@media (max-width: 900px) { .sp-posters { grid-template-columns: minmax(0, 1fr); } }
+
+/* Keep the booth photos and the all-seven room in proportion with the prints (C4): cap by height, ratio kept. */
+@media (min-width: 901px) {
+  #reframed .sp-section-media.is-single img,
+  #asia-now-2026 img { width: auto; max-width: 100%; max-height: min(68vh, 720px); }
+  .sp-text-stack .sp-section-media.sp-posters { width: min(100%, 880px); max-width: 880px; justify-self: start; }
+  .sp-posters .sp-image-card { width: auto !important; max-width: none; }
+}
+
+/* Booth photo and all-seven room side by side (both 3:2, so equal size). Stacked on phones. */
+.sp-rf-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.sp-rf-pair .sp-image-card { grid-column: auto; }
+.sp-rf-pair .sp-image-card img { width: 100%; height: auto; max-height: none; }
+@media (max-width: 900px) { .sp-rf-pair { grid-template-columns: minmax(0, 1fr); } }
+
+/* The hang: Field on the left at the height of two rows, the six in a 3 x 2 grid,
+   all at true relative scale (80 x 100 vs 40 x 50). With small width s and gap g,
+   Field width = 2s + 0.8g gives Field height = 2 x small height + g exactly. */
+.sp-rf-hang {
+  --g: clamp(14px, 1.6vw, 24px);
+  --s: calc((100% - 3.8 * var(--g)) / 5);
+  display: grid;
+  grid-template-columns: calc(2 * var(--s) + 0.8 * var(--g)) repeat(3, var(--s));
+  gap: var(--g);
+  align-items: start;
+}
+.sp-rf-hang .sp-rf-main { grid-row: span 2; }
+.sp-rf-hang .sp-rf-work img { width: 100%; height: auto; max-height: none; }
+.sp-rf-labels { display: grid; gap: 10px; }
+.sp-rf-labels-note { margin: 0; font-family: var(--sans); font-size: 12px; color: var(--text-2); }
+.sp-rf-label-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px 28px;
+  font-family: var(--serif); font-size: 13px; line-height: 1.5; color: var(--text-2);
+}
+.sp-rf-label-list em { font-size: 15px; color: var(--text); }
+.sp-rf-label-list a { color: inherit; text-decoration: none; }
+.sp-rf-label-list a:hover em, .sp-rf-label-list a:focus-visible em { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 900px) {
+  .sp-rf-hang { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sp-rf-hang .sp-rf-main { grid-column: 1 / -1; grid-row: auto; }
+}

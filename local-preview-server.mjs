@@ -13,6 +13,7 @@ const port = Number(process.argv[2] || 4174);
 const host = process.argv[3] || "127.0.0.1";
 
 const contentTypes = {
+  ".avif": "image/avif",
   ".css": "text/css; charset=utf-8",
   ".gif": "image/gif",
   ".html": "text/html; charset=utf-8",

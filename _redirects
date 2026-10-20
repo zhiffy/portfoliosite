@@ -198,6 +198,7 @@
 /press/ /press.html 200
 /journal/ /journal.html 200
 /journal/there-is-no-universal-user/ /there-is-no-universal-user.html 200
+/journal/a-mirror-that-leaves-you-out/ /a-mirror-that-leaves-you-out.html 200
 /journal/open-tabs/ /open-tabs.html 200
 /open-tabs.html /journal/open-tabs/ 301!
 /writing/ /journal/ 301!

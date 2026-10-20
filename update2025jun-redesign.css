@@ -39,7 +39,8 @@
    01 — SINGLE HEADER  (collapses the old double header)
    ============================================================ */
 .nl-hero {
-  padding: clamp(40px, 7vw, 96px) 0 clamp(34px, 4vw, 56px);
+  padding-top: clamp(40px, 7vw, 96px);
+  padding-bottom: clamp(34px, 4vw, 56px);
 }
 .nl-hero-kicker {
   display: none !important;
@@ -102,7 +103,10 @@
    SECTION SCAFFOLD
    ============================================================ */
 .nl-section {
-  padding: clamp(28px, 4vw, 64px) 0 0;
+  /* top only: a padding shorthand here wiped the .nl-wrap side gutter,
+     so below --site-max the letter text ran flush to the screen edge */
+  padding-top: clamp(28px, 4vw, 64px);
+  padding-bottom: 0;
 }
 .nl-section-head {
   display: flex;
@@ -869,7 +873,7 @@ main.nl-letter > .sw-page-footer { border-top: 0; }
    two. Hero spacing tightened so title, lead, and cover compose
    as one unit.
    ============================================================ */
-.nl-hero { padding: clamp(32px, 5vw, 64px) 0 clamp(24px, 3vw, 44px); }
+.nl-hero { padding-top: clamp(32px, 5vw, 64px); padding-bottom: clamp(24px, 3vw, 44px); }
 .nl-cover { margin: clamp(24px, 3.2vw, 44px) 0 0; }
 .nl-cover img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; display: block; }
 .nl-cover figcaption { margin-top: 10px; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 600; color: var(--text-2); }
