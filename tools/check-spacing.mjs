@@ -65,6 +65,7 @@ let total = 0;
 for (const file of files) {
   if (!existsSync(path.join(ROOT, file))) { console.log(`skip ${file} (not found)`); continue; }
   for (const [w, h] of WIDTHS) {
+    console.log(`check-spacing: checking ${file} @${w}px`);
     const page = await browser.newPage({ viewport: { width: w, height: h } });
     await page.goto(`http://127.0.0.1:${PORT}/${file}`, { waitUntil: 'networkidle', timeout: 60000 }).catch(() => {});
     // Show reveal-on-scroll blocks and load every lazy image, so we measure the page as a reader ends up seeing it.
