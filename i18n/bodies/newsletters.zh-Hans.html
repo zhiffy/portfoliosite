@@ -1,0 +1,54 @@
+<main id="main-content" class="jr-page jr-index">
+    <header class="jr-hero">
+      <h1 class="jr-title">通讯。</h1>
+      <p class="jr-intro">自 2023 年 1 月起的工作室来信。</p>
+    </header>
+
+    <div class="nw-body">
+      <section class="nw-sub" id="subscribe" aria-label="订阅">
+        <p class="nw-sub-lead">新作品、展览、限量发行与新文章，通过电子邮件送达。</p>
+        <div class="jr-strip-sub">
+          <p class="jr-subscribe-feedback jr-subscribe-feedback--success" data-fs-success role="status" aria-live="polite"></p>
+          <p class="jr-subscribe-feedback jr-subscribe-feedback--error" data-fs-error role="alert"></p>
+          <form id="sw-subscribe-form" class="jr-strip-form" data-newsletter-form action="/api/newsletter-subscribe" method="POST">
+            <label class="jr-strip-field">
+              <span class="jr-visually-hidden">电子邮箱</span>
+              <input class="jr-subscribe-input" type="email" id="sw-subscribe-email" name="email" inputmode="email" autocomplete="email" required placeholder="电子邮箱" data-fs-field>
+              <span class="jr-subscribe-error" data-fs-error="email"></span>
+            </label>
+            <button type="submit" class="jr-subscribe-submit" data-fs-submit-btn>订阅</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="nw-latest" aria-label="最新一期">
+        <p class="jr-num-label">最新一期</p>
+        <a class="jr-feature" href="/update2026jun/zh-hans/">
+          <div class="jr-feature-media">
+            <img decoding="async" src="/assets/after-ophelia/01-ophelia-reassembled-print.webp" width="1500" height="844" alt="Ophelia, Reassembled 作品静帧" loading="eager">
+          </div>
+          <p class="jr-feature-date">2026 年 6 月</p>
+          <h2 class="jr-feature-title">告别 Eva，走进镜子</h2>
+          <p class="jr-feature-dek">我欠你们一封双倍分量的通讯。我跳过了往常的一月通讯，所以这一封一路回溯到去年六月，而这些月份里有很大一部分，都花在了为我的 AI 陪伴项目 <em>Meet Eva Here</em> 收尾上。</p>
+        </a>
+      </section>
+
+      <section class="nw-archive" aria-label="往期通讯">
+        <p class="jr-num-label">往期通讯</p>
+        <ul class="jr-letters">
+          <li><a href="/update2025jun/zh-hans/" data-press-img><span class="jr-letter-date">2025 年 6 月</span><span class="jr-letter-title">公共的房间</span></a></li>
+          <li><a href="/update2025jan/zh-hans/" data-press-img><span class="jr-letter-date">2025 年 1 月</span><span class="jr-letter-title">Eva 走向公众</span></a></li>
+          <li><a href="/update2024jun/zh-hans/" data-press-img><span class="jr-letter-date">2024 年 6 月</span><span class="jr-letter-title">一场胜利，一次迁移</span></a></li>
+          <li><a href="/update2024jan/zh-hans/" data-press-img><span class="jr-letter-date">2024 年 1 月</span><span class="jr-letter-title">为这一年收尾</span></a></li>
+          <li><a href="/update2023june/zh-hans/" data-press-img><span class="jr-letter-date">2023 年 6 月</span><span class="jr-letter-title">我的首场个展</span></a></li>
+          <li><a href="/update2023jan/zh-hans/" data-press-img><span class="jr-letter-date">2023 年 1 月</span><span class="jr-letter-title">万事起头之年</span></a></li>
+        </ul>
+      </section>
+    </div>
+
+    <footer class="sw-page-footer" data-site-footer>
+      <div class="sw-page-footer__inner">
+        <button class="sw-page-footer__top" type="button" data-site-back-top>返回顶部</button>
+      </div>
+    </footer>
+  </main>

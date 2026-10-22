@@ -94,7 +94,14 @@ const redirects = {
   "/zh-hant-press.html": "/press/zh-hant/",
 };
 
-if (existsSync("_redirects")) {
+// _redirects is re-read whenever it changes, so pages added while the
+// preview window is open work without restarting it.
+let redirectsMtime = 0;
+function loadRedirects() {
+  if (!existsSync("_redirects")) return;
+  const mtime = statSync("_redirects").mtimeMs;
+  if (mtime === redirectsMtime) return;
+  redirectsMtime = mtime;
   for (const raw of readFileSync("_redirects", "utf8").split(/\r?\n/)) {
     const line = raw.trim();
     if (!line || line.startsWith("#")) continue;
@@ -103,6 +110,7 @@ if (existsSync("_redirects")) {
     if (status && status.startsWith("301")) redirects[source] = destination;
   }
 }
+loadRedirects();
 
 async function handleNewsletterSignup(request, response) {
   if (request.url !== "/api/newsletter-subscribe") return false;
@@ -176,6 +184,7 @@ function resolveFile(requestPath) {
 const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url || "/", `http://${host}:${port}`);
+    loadRedirects();
     if (await handleNewsletterSignup(request, response)) return;
     const redirectTarget = redirects[url.pathname] || redirects[`${url.pathname}/`];
     if (redirectTarget) {

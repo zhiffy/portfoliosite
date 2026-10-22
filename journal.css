@@ -1,6 +1,8 @@
-/* Journal section: index (journal.html) and essay pages. Scoped to .jr-page.
-   Index layout: mobile-first scrolling base; the locked no-scroll composition
-   applies only at >=901px width AND >=561px height. Hostile viewports scroll. */
+/* Journal section: the Journal index (journal.html), the Newsletters index
+   (newsletters.html) and the essay pages. Scoped to .jr-page.
+   Both index pages scroll normally at every size; the August 2026 locked
+   one-screen composition was retired on 2026-10-22 when the newsletters moved
+   to their own page. */
 
 .jr-page {
   max-width: var(--site-max);
@@ -10,54 +12,77 @@
   z-index: 2;
 }
 
-/* ---------- index, base (scrolling) ---------- */
+/* ---------- index pages, shared ---------- */
 
-.jr-index .jr-hero { padding-bottom: clamp(12px, 1.6vh, 18px); border-bottom: 1px solid var(--hairline-strong); margin: 0 0 36px; }
+.jr-index .jr-hero { padding-bottom: clamp(12px, 1.6vh, 18px); border-bottom: 1px solid var(--hairline-strong); margin: 0 0 clamp(24px, 3vh, 36px); }
 /* Canonical page-title register, same as .wr-title and .abv-hero-title. */
 .jr-index .jr-title { font-weight: 300; font-size: clamp(64px, 8vw, 118px); letter-spacing: 0; line-height: 0.98; margin: 0; color: var(--text); }
 
+.jr-index .jr-intro { font-size: clamp(16px, 1.25vw, 19px); font-weight: 300; line-height: 1.45; color: var(--text-2); margin: 12px 0 0; max-width: none; }
+
 .jr-index .jr-num-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-2); margin: 0 0 14px; font-variant-numeric: tabular-nums; }
 
-.jr-index .jr-zone { margin: 0 0 44px; min-width: 0; }
+/* ---------- Journal: one row, equal weight ---------- */
+/* Two essays and Open tabs sit side by side. Column widths come from
+   --jr-cols on the row (each image's width-to-height ratio), so every image
+   renders at the same height at its natural ratio, never cropped (rule C1).
+   Each piece is a four-row subgrid so dates, titles and descriptions line up
+   across the row even when one title wraps. */
+.jr-index .jr-lineup { display: grid; grid-template-columns: var(--jr-cols, 1fr 1fr 1fr); grid-template-rows: auto auto auto auto; column-gap: clamp(24px, 2.4vw, 44px); row-gap: 0; align-items: start; }
+.jr-index .jr-piece { display: grid; grid-row: span 4; grid-template-rows: subgrid; text-decoration: none; color: inherit; min-width: 0; }
+.jr-index .jr-piece-media { margin: 0 0 16px; }
+.jr-index .jr-piece-media img { display: block; width: 100%; height: auto; }
+/* The map is pale on a pale page; one hairline marks where the image ends. */
+.jr-index .jr-piece--map .jr-piece-media img { outline: 1px solid var(--hairline); outline-offset: -1px; }
+.jr-index .jr-piece-meta { display: flex; flex-wrap: wrap; column-gap: 10px; font-size: 12.5px; letter-spacing: 0.04em; color: var(--text-2); margin: 0 0 8px; font-variant-numeric: tabular-nums; }
+.jr-index .jr-piece-title { font-weight: 300; font-size: clamp(22px, 1.7vw, 30px); line-height: 1.12; letter-spacing: -0.01em; color: var(--text); margin: 0 0 10px; }
+.jr-index .jr-piece-dek { font-size: clamp(15px, 1vw, 16px); line-height: 1.55; color: var(--text-2); margin: 0; }
+.jr-index a.jr-piece:hover .jr-piece-title,
+.jr-index a.jr-piece:focus-visible .jr-piece-title { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.jr-index a.jr-piece:focus-visible { outline: 2px solid var(--text); outline-offset: 6px; }
+
+@supports not (grid-template-rows: subgrid) {
+  .jr-index .jr-piece { display: block; }
+}
+
+/* ---------- Newsletters: latest letter, sign-up, archive ---------- */
+.jr-index .nw-body { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 44px; }
+.jr-index .nw-sub-lead { font-size: clamp(19px, 1.8vw, 26px); font-weight: 300; line-height: 1.25; letter-spacing: -0.01em; color: var(--text); margin: 0 0 16px; }
+.jr-index .nw-sub .jr-strip-sub { flex: none; min-width: 0; }
+/* The sticky subscribe prompt links to #subscribe; land below the fixed header. */
+.jr-index .nw-sub { scroll-margin-top: calc(var(--nav-h) + 24px); }
+/* Here the form has a lead line right above it, so messages sit in the flow
+   under the form instead of floating over that line. */
+.jr-index .nw-sub .jr-strip-sub { display: flex; flex-direction: column; }
+.jr-index .nw-sub .jr-strip-form { order: 1; }
+.jr-index .nw-sub .jr-subscribe-feedback { position: static; order: 2; margin: 10px 0 0; padding: 0; background: none; }
 
 .jr-index .jr-feature { display: block; text-decoration: none; color: inherit; min-width: 0; }
-.jr-index .jr-feature-media img { display: block; width: auto; max-width: 100%; height: auto; max-height: 48svh; }
+.jr-index .jr-feature-media { margin: 0 0 18px; }
+.jr-index .jr-feature-media img { display: block; width: auto; max-width: 100%; height: auto; max-height: 62svh; }
 .jr-index .jr-feature-date { font-size: 12.5px; letter-spacing: 0.04em; color: var(--text-2); margin: 0 0 8px; font-variant-numeric: tabular-nums; }
-.jr-index .jr-feature-title { font-weight: 300; line-height: 1.12; letter-spacing: -0.01em; color: var(--text); margin: 0 0 10px; }
-.jr-index .jr-feature-dek { font-size: clamp(14px, 1vw, 16px); line-height: 1.55; color: var(--text-2); margin: 0; }
+.jr-index .jr-feature-title { font-weight: 300; font-size: clamp(26px, 3vw, 40px); line-height: 1.12; letter-spacing: -0.01em; color: var(--text); margin: 0 0 10px; }
+.jr-index .jr-feature-dek { font-size: clamp(15px, 1vw, 16px); line-height: 1.55; color: var(--text-2); margin: 0; }
 .jr-index a.jr-feature:hover .jr-feature-title { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
-
-.jr-index .jr-feature--essay .jr-feature-media { margin: 0 0 18px; }
-.jr-index .jr-feature--essay .jr-feature-title { font-size: clamp(26px, 3vw, 40px); }
-
-.jr-index .jr-feature--letter { display: grid; grid-template-columns: minmax(110px, 0.66fr) minmax(0, 1.34fr); column-gap: clamp(14px, 1.4vw, 22px); align-items: start; margin: 0 0 18px; }
-.jr-index .jr-feature--letter .jr-feature-media img { max-height: clamp(110px, 20vh, 200px); }
-.jr-index .jr-feature--letter .jr-feature-date { font-size: clamp(19px, 1.8vw, 26px); font-weight: 300; line-height: 1.12; letter-spacing: -0.01em; color: var(--text); margin: 0 0 6px; }
-.jr-index .jr-feature--letter .jr-feature-title { font-size: 12.5px; letter-spacing: 0.04em; font-weight: 400; color: var(--text-2); margin: 0; }
-.jr-index a.jr-feature--letter:hover .jr-feature-title { text-decoration: none; }
-.jr-index a.jr-feature--letter:hover .jr-feature-date { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 
 .jr-index .jr-letters { list-style: none; margin: 0; padding: 0; }
 .jr-index .jr-letters li { border-bottom: 1px solid var(--hairline); }
 .jr-index .jr-letters li:first-child { border-top: 1px solid var(--hairline-strong); }
 .jr-index .jr-letters li:last-child { border-bottom: 0; }
-.jr-index .jr-letters a { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; align-items: baseline; padding: clamp(7px, 1.1vh, 11px) 0; text-decoration: none; color: var(--text); font-size: 15px; }
+.jr-index .jr-letters a { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; align-items: baseline; padding: clamp(8px, 1.2vh, 12px) 0; text-decoration: none; color: var(--text); font-size: 15px; }
 .jr-index .jr-letters a:hover .jr-letter-date { text-decoration: underline; text-underline-offset: 3px; }
 .jr-index .jr-letter-date { font-size: 15px; color: var(--text); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .jr-index .jr-letter-title { font-size: 12.5px; letter-spacing: 0.04em; color: var(--text-2); text-align: right; min-width: 0; }
 
-/* Open tabs block, under the newsletters ledger. Label row, then a wide
-   detail of the field map at natural ratio, never cropped by CSS. */
-.jr-index .jr-tabs-block { margin: 28px 0 0; border-top: 1px solid var(--hairline); padding-top: 16px; }
-.jr-index .jr-tabs-mini { display: block; text-decoration: none; color: inherit; min-width: 0; }
-.jr-index .jr-tabs-mini-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; margin: 0 0 10px; }
-.jr-index .jr-tabs-mini-row .jr-num-label { margin: 0; }
-.jr-index .jr-tabs-mini img { display: block; width: auto; max-width: 100%; height: auto; }
-.jr-index .jr-tabs-mini-text { font-size: 14.5px; font-weight: 300; line-height: 1.5; color: var(--text); }
-.jr-index a.jr-tabs-mini:hover .jr-tabs-mini-text { text-decoration: underline; text-underline-offset: 3px; }
+@media (min-width: 901px) {
+  .jr-index .nw-body { grid-template-columns: minmax(0, 1.6fr) minmax(320px, 1fr); grid-template-rows: auto minmax(0, 1fr); grid-template-areas: "latest sub" "latest archive"; column-gap: clamp(28px, 3.5vw, 72px); row-gap: 0; align-items: start; }
+  .jr-index .nw-sub { grid-area: sub; margin: 0 0 clamp(18px, 3vh, 34px); }
+  .jr-index .nw-latest { grid-area: latest; }
+  .jr-index .nw-archive { grid-area: archive; }
+}
 
-/* Anchor strip: subscribe, one quiet band. */
-.jr-index .jr-strip { background: none; border-top: 1px solid var(--hairline); padding: clamp(12px, 1.8vh, 18px) 0 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; }
+/* ---------- subscribe strip (Journal foot, and the form on Newsletters) ---------- */
+.jr-index .jr-strip { background: none; border-top: 1px solid var(--hairline); margin-top: clamp(40px, 6vh, 72px); padding: clamp(12px, 1.8vh, 18px) 0 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; }
 .jr-index .jr-subscribe-lead { font-size: 12.5px; letter-spacing: 0.04em; color: var(--text-2); margin: 0; }
 .jr-index .jr-strip-sub { position: relative; flex: 0 1 340px; min-width: 240px; }
 .jr-index .jr-strip-form { display: flex; align-items: stretch; column-gap: 7px; }
@@ -70,89 +95,17 @@
 .jr-index .jr-subscribe-submit:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
 .jr-index .jr-subscribe-submit[disabled] { opacity: 0.55; cursor: progress; }
 
-/* Feedback overlays the strip instead of reflowing the composition. */
+/* Feedback overlays the form instead of reflowing the layout. */
 .jr-index .jr-subscribe-feedback { position: absolute; right: 0; bottom: calc(100% + 8px); margin: 0; font-size: 12.5px; line-height: 1.4; color: var(--text); background: var(--bg); padding: 3px 8px; }
 .jr-index .jr-subscribe-feedback--error { color: #8f221b; }
 .jr-index .jr-subscribe-error { position: absolute; top: calc(100% + 3px); left: 0; font-size: 11px; line-height: 1.4; color: #8f221b; }
 .jr-index .jr-subscribe-feedback:empty, .jr-index .jr-subscribe-error:empty { display: none; }
 
-/* ---------- index, locked no-scroll composition (real desktop only) ---------- */
-
-@media (min-width: 901px) and (min-height: 561px) {
-  body.jr-index-body { height: 100svh; overflow: hidden; overscroll-behavior: none; }
-
-  .jr-page.jr-index {
-    box-sizing: border-box;
-    height: 100svh;
-    overflow: hidden;
-    display: grid;
-    grid-template-rows: auto minmax(0, 1fr) auto;
-    row-gap: clamp(16px, 2.2vh, 26px);
-    padding: calc(var(--nav-h) + clamp(16px, 2.4vh, 28px)) clamp(20px, 3vw, 64px) clamp(14px, 2vh, 22px);
-  }
-  .jr-index .sw-page-footer { display: none; }
-
-  /* Zone 1: hero band, one strong hairline = top datum. */
-  .jr-index .jr-hero { margin: 0; }
-  /* Canonical size when height allows, compressed by viewport height when not. */
-  .jr-index .jr-title { margin: 0; font-size: min(clamp(64px, 8vw, 118px), 12vh); }
-
-  /* Zone 2: two columns, tops aligned to the datum. */
-  /* Overflow guard: zone content can never paint over the strip. */
-  .jr-index .jr-body { min-height: 0; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(300px, 1fr); column-gap: clamp(28px, 3.5vw, 72px); overflow: hidden; }
-  .jr-index .jr-zone { margin: 0; min-height: 0; display: flex; flex-direction: column; }
-
-  .jr-index .jr-zone--essay .jr-feature--essay { flex: 1 1 auto; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; row-gap: clamp(12px, 1.8vh, 20px); }
-  .jr-index .jr-feature--essay .jr-feature-media { min-height: 0; margin: 0; display: flex; align-items: flex-start; overflow: hidden; }
-  .jr-index .jr-feature--essay .jr-feature-media img { max-height: 100%; }
-  .jr-index .jr-feature--essay .jr-feature-title { font-size: clamp(26px, 3.6vh, 40px); }
-  .jr-index .jr-feature-dek { font-size: clamp(13.5px, 1.8vh, 15.5px); }
-
-  .jr-index .jr-feature--letter { margin-bottom: clamp(12px, 1.8vh, 20px); }
-  .jr-index .jr-feature--letter .jr-feature-media img { max-height: clamp(110px, 19vh, 190px); }
-  .jr-index .jr-feature--letter .jr-feature-date { font-size: clamp(19px, 2.6vh, 26px); }
-  .jr-index .jr-letters a { padding: clamp(5px, 1vh, 12px) 0; }
-
-  /* The ledger flexes and scrolls behind a thin quiet scrollbar, so the
-     Open tabs block below it can hold a larger map. Same scrollbar
-     treatment as the site's galleries. */
-  .jr-index .jr-zone--letters .jr-letters { flex: 1 1 auto; min-height: 90px; overflow-y: auto; padding-right: 10px; scrollbar-width: thin; scrollbar-color: var(--hairline-strong) transparent; }
-  .jr-index .jr-zone--letters .jr-letters::-webkit-scrollbar { width: 6px; }
-  .jr-index .jr-zone--letters .jr-letters::-webkit-scrollbar-thumb { background: var(--hairline-strong); border-radius: 3px; }
-  .jr-index .jr-zone--letters .jr-letters::-webkit-scrollbar-track { background: transparent; }
-
-  .jr-index .jr-tabs-block { flex: 0 0 auto; margin-top: clamp(12px, 1.8vh, 24px); }
-  .jr-index .jr-tabs-mini img { max-height: clamp(140px, 24vh, 260px); }
-
-  /* Zone 3: anchor strip = bottom datum. */
-}
-
-/* Squat desktop (768p laptops): both features go side by side so copy
-   fills the space beside the height-bound image. */
-@media (min-width: 901px) and (min-height: 561px) and (max-height: 899px) {
-  .jr-index .jr-zone--essay .jr-feature--essay { flex: 0 0 auto; grid-template-rows: none; grid-template-columns: minmax(0, 1.05fr) minmax(240px, 0.95fr); column-gap: clamp(20px, 2vw, 32px); align-items: start; }
-  .jr-index .jr-feature--essay .jr-feature-media { height: auto; }
-  .jr-index .jr-feature--essay .jr-feature-media img { max-height: 44vh; }
-  .jr-index .jr-feature--essay .jr-feature-title { font-size: clamp(24px, 3.4vh, 34px); }
-  /* Compact ledger and thumbnail so the column plus subscribe fits ~640px
-     inner height (a real 768p laptop). */
-  .jr-index .jr-letters a { padding: clamp(4px, 0.9vh, 9px) 0; }
-  .jr-index .jr-feature--letter .jr-feature-media img { max-height: clamp(90px, 15vh, 150px); }
-}
-
-/* Below ~800px inner height, compact chrome. */
-@media (min-width: 901px) and (min-height: 561px) and (max-height: 800px) {
-  .jr-index .jr-subscribe-input, .jr-index .jr-subscribe-submit { min-height: 32px; }
-  .jr-index .jr-letters a { padding: clamp(3px, 0.7vh, 7px) 0; }
-  .jr-index .jr-feature--letter .jr-feature-media img { max-height: clamp(70px, 11vh, 110px); }
-  .jr-index .jr-tabs-mini img { max-height: clamp(90px, 13vh, 150px); }
-  .jr-index .jr-tabs-block { margin-top: 8px; }
-}
-
-/* Below ~660px inner height the field thumbnail gives way to the text link. */
-@media (min-width: 901px) and (min-height: 561px) and (max-height: 660px) {
-  .jr-index .jr-tabs-mini { grid-template-columns: minmax(0, 1fr); }
-  .jr-index .jr-tabs-mini img { display: none; }
+/* Mobile: one column, essays and map stacked. */
+@media (max-width: 900px) {
+  .jr-index .nw-sub { scroll-margin-top: 124px; }
+  .jr-index .jr-lineup { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; row-gap: 44px; }
+  .jr-index .jr-piece { display: block; grid-row: auto; }
 }
 
 /* ---------- essay ---------- */

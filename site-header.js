@@ -32,7 +32,9 @@
         { href: '/#hero', label: 'Home', key: 'nav.home', match: /^\/(?:index\.html)?$/ },
         { href: '/about/', label: 'About', key: 'nav.about', match: /^\/about(?:\.html|\/)?$/ },
         { href: '/works/', label: 'Works', key: 'nav.works', match: /^\/(?:works(?:\/.*)?|6529-meme-card|after-ophelia|after-ophelia-ophelia-reassembled|after-ophelia-ophelia-retold|by-proxy|conditional|unsilvered|love-is-love|meet-eva-here|meet-eva-here-chatbot|meet-eva-here-diary|meet-eva-here-hello-eva|the-bubble-we-call-home|the-ties-that-bind|vogue-singapore|whirlwind-of-the-waking-dream|works-available)(?:\.html|\/)?$/ },
-        { href: '/journal/', label: 'Journal', key: 'nav.journal', match: /^\/(?:journal(?:\/.*)?|writing|update20\d{2}(?:jan|june?)|open-tabs|there-is-no-universal-user|a-mirror-that-leaves-you-out)(?:\.html|\/)?$/ },
+        // "Writing" opens to Journal and Newsletters; nav-writing.js turns this
+        // link into that menu (loaded below). Without it, the link still works.
+        { href: '/journal/', label: 'Writing', key: 'nav.writing', match: /^\/(?:journal(?:\/.*)?|newsletters?(?:\/.*)?|writing|update20\d{2}(?:jan|june?)(?:\/.*)?|open-tabs|there-is-no-universal-user|a-mirror-that-leaves-you-out)(?:\.html|\/)?$/ },
         { href: '/press/', label: 'Press', key: 'nav.press', match: /^\/press(?:\.html|\/)?$/ },
         { href: '/contact/', label: 'Contact', key: 'nav.contact', match: /^\/contact(?:\.html|\/)?$/ }
       ];
@@ -72,6 +74,15 @@
         if (item.match.test(path)) a.className = 'is-active';
         navLinks.appendChild(a);
       });
+
+      // Writing menu (Journal / Newsletters). One shared file, also used by
+      // the homepage, so the menu is defined in exactly one place.
+      if (!document.querySelector('script[data-nav-writing]')) {
+        var navWriting = document.createElement('script');
+        navWriting.src = '/nav-writing.js?v=20261022-writing-menu';
+        navWriting.setAttribute('data-nav-writing', '');
+        document.head.appendChild(navWriting);
+      }
 
       var meta = pageNav.querySelector('.sn-meta-right');
       if (!meta) {
@@ -335,7 +346,7 @@
         if (!form.id) form.id = 'sw-subscribe-form';
         return '#' + form.id;
       }
-      return '/journal/#sw-subscribe-form';
+      return '/newsletters/#subscribe';
     }
 
     var cta = document.createElement('aside');

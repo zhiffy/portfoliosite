@@ -891,6 +891,21 @@ html:not(.jr-js) .jr-page.jr-essay .jr-threshold { transform: none; }
   max-width: none;
 }
 
+/* Technology credit and partner hashtags under the closing line: small,
+   upright, Fog. Present but quiet, below the essay's own last word. */
+.jr-page.jr-essay .jr-essay-foot p.jr-essay-credits,
+.jr-page.jr-essay .jr-essay-foot p.jr-essay-tags {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--text-2);
+}
+.jr-page.jr-essay .jr-essay-foot p.jr-essay-credits { margin-top: 18px; }
+.jr-page.jr-essay .jr-essay-foot p.jr-essay-tags { margin-top: 2px; }
+.jr-page.jr-essay .jr-essay-foot p.jr-essay-credits a:not([class]) { color: inherit; }
+
 .jr-page.jr-essay .jr-next {
   grid-column: wide-start / wide-end;
   margin-top: clamp(30px, 3vw, 48px);

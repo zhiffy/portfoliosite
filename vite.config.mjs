@@ -25,6 +25,9 @@ const cleanRoutes = {
   "/journal/": "journal.html",
   "/journal/zh-hans/": "journal-zh-hans.html",
   "/journal/zh-hant/": "journal-zh-hant.html",
+  "/newsletters/": "newsletters.html",
+  "/newsletters/zh-hans/": "newsletters-zh-hans.html",
+  "/newsletters/zh-hant/": "newsletters-zh-hant.html",
   "/journal/there-is-no-universal-user/": "there-is-no-universal-user.html",
   "/journal/a-mirror-that-leaves-you-out/": "a-mirror-that-leaves-you-out.html",
   "/journal/open-tabs/": "open-tabs.html",
@@ -85,6 +88,8 @@ const cleanRoutes = {
   "/works/year-of-the-tiger/zh-hant/": "year-of-the-tiger-zh-hant.html",
   "/journal/there-is-no-universal-user/zh-hans/": "there-is-no-universal-user-zh-hans.html",
   "/journal/there-is-no-universal-user/zh-hant/": "there-is-no-universal-user-zh-hant.html",
+  "/journal/a-mirror-that-leaves-you-out/zh-hans/": "a-mirror-that-leaves-you-out-zh-hans.html",
+  "/journal/a-mirror-that-leaves-you-out/zh-hant/": "a-mirror-that-leaves-you-out-zh-hant.html",
   "/update2026jun/zh-hans/": "update2026jun-zh-hans.html",
   "/update2026jun/zh-hant/": "update2026jun-zh-hant.html",
   "/update2025jun/zh-hans/": "update2025jun-zh-hans.html",
@@ -119,6 +124,8 @@ function publishedPage(file) {
 }
 
 const cleanRedirects = {
+  "/newsletter/": "/newsletters/",
+  "/newsletters.html": "/newsletters/",
   "/about-zh-hans.html": "/about/zh-hans/",
   "/about-zh-hant.html": "/about/zh-hant/",
   "/zh-hans/about/": "/about/zh-hans/",
@@ -244,6 +251,7 @@ function copyStaticFiles() {
     "favicon.ico",
     "gallery-scroll.js",
     "lightbox.js",
+    "nav-writing.js",
     "llms.txt",
     "open-tabs.js",
     "press-hover.js",

@@ -131,8 +131,28 @@
       "destination": "/there-is-no-universal-user-zh-hant.html"
     },
     {
+      "source": "/journal/a-mirror-that-leaves-you-out/zh-hans/",
+      "destination": "/a-mirror-that-leaves-you-out-zh-hans.html"
+    },
+    {
+      "source": "/journal/a-mirror-that-leaves-you-out/zh-hant/",
+      "destination": "/a-mirror-that-leaves-you-out-zh-hant.html"
+    },
+    {
       "source": "/journal/open-tabs/",
       "destination": "/open-tabs.html"
+    },
+    {
+      "source": "/newsletters/",
+      "destination": "/newsletters.html"
+    },
+    {
+      "source": "/newsletters/zh-hans/",
+      "destination": "/newsletters-zh-hans.html"
+    },
+    {
+      "source": "/newsletters/zh-hant/",
+      "destination": "/newsletters-zh-hant.html"
     },
     {
       "source": "/update2023jan/",
@@ -388,6 +408,76 @@
     {
       "source": "/zh-hant-journal.html",
       "destination": "/journal/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter/",
+      "destination": "/newsletters/",
+      "permanent": true
+    },
+    {
+      "source": "/newsletters.html",
+      "destination": "/newsletters/",
+      "permanent": true
+    },
+    {
+      "source": "/newsletters-zh-hans.html",
+      "destination": "/newsletters/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/newsletters-zh-hant.html",
+      "destination": "/newsletters/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans/newsletters/",
+      "destination": "/newsletters/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant/newsletters/",
+      "destination": "/newsletters/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans-newsletters.html",
+      "destination": "/newsletters/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant-newsletters.html",
+      "destination": "/newsletters/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/a-mirror-that-leaves-you-out-zh-hans.html",
+      "destination": "/journal/a-mirror-that-leaves-you-out/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans/a-mirror-that-leaves-you-out/",
+      "destination": "/journal/a-mirror-that-leaves-you-out/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hans-a-mirror-that-leaves-you-out.html",
+      "destination": "/journal/a-mirror-that-leaves-you-out/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/a-mirror-that-leaves-you-out-zh-hant.html",
+      "destination": "/journal/a-mirror-that-leaves-you-out/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant/a-mirror-that-leaves-you-out/",
+      "destination": "/journal/a-mirror-that-leaves-you-out/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/zh-hant-a-mirror-that-leaves-you-out.html",
+      "destination": "/journal/a-mirror-that-leaves-you-out/zh-hant/",
       "permanent": true
     },
     {

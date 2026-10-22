@@ -14,14 +14,14 @@
       "slug": "zh-hans",
       "htmlLang": "zh-Hans",
       "ogLocale": "zh_CN",
-      "font": "/assets/fonts/noto/noto-sans-sc.css?v=20261012-zaobao"
+      "font": "/assets/fonts/noto/noto-sans-sc.css?v=20261022-writing"
     },
     {
       "code": "zh-Hant",
       "slug": "zh-hant",
       "htmlLang": "zh-Hant",
       "ogLocale": "zh_TW",
-      "font": "/assets/fonts/noto/noto-sans-tc.css?v=20261012-zaobao"
+      "font": "/assets/fonts/noto/noto-sans-tc.css?v=20261022-writing"
     },
     {
       "code": "fr",
@@ -105,6 +105,20 @@
         "zh-Hant": "聯絡",
         "fr": "Contact",
         "th": "ติดต่อ"
+      },
+      "writing": {
+        "en": "Writing",
+        "zh-Hans": "写作",
+        "zh-Hant": "寫作",
+        "fr": "Textes",
+        "th": "งานเขียน"
+      },
+      "newsletters": {
+        "en": "Newsletters",
+        "zh-Hans": "通讯",
+        "zh-Hant": "通訊",
+        "fr": "Lettres",
+        "th": "จดหมายข่าว"
       }
     },
     "languageLabel": {
@@ -139,8 +153,8 @@
       ],
       "scripts": [
         "/assets/js/subnav.js?v=20260605-rail-current",
-        "/site-header.js?v=20260906-audit-fixes",
-        "/site-i18n.js?v=20260813-journal",
+        "/site-header.js?v=20261022-writing-menu",
+        "/site-i18n.js?v=20261022-writing-menu",
         "/fluid-renderer.js?v=20260611-ripple-v7",
         "/press-hover.js?v=20260616-genai"
       ],
@@ -166,7 +180,7 @@
       "enSource": "contact.html",
       "urlBase": "/contact/",
       "bodyStart": "<main id=\"main-content\"",
-      "bodyEnd": "<script src=\"/site-header.js",
+      "bodyEnd": "<script src=\"/site-header.js?v=20261022-writing-menu",
       "meta": {
         "title": {
           "en": "Contact | Shavonne Wong",
@@ -189,22 +203,45 @@
       "enSource": "journal.html",
       "urlBase": "/journal/",
       "bodyStart": "<main id=\"main-content\"",
-      "bodyEnd": "<script defer src=\"/site-header.js",
+      "bodyEnd": "<script defer src=\"/site-header.js?v=20261022-writing-menu",
       "meta": {
         "title": {
-          "en": "Journal | Shavonne Wong",
-          "zh-Hans": "日志 | Shavonne Wong",
-          "zh-Hant": "日誌 | Shavonne Wong"
+          "en": "Journal, essays on art and AI | Shavonne Wong",
+          "zh-Hans": "日志，关于艺术与 AI 的文章 | Shavonne Wong",
+          "zh-Hant": "日誌，關於藝術與 AI 的文章 | Shavonne Wong"
         },
         "description": {
-          "en": "Essays, a running list of what Shavonne Wong is reading and circling, and the studio letter archive. Thinking around the work, in one place.",
-          "zh-Hans": "Shavonne Wong 的文章、持续更新的阅读与关注清单，以及工作室通讯档案。围绕作品的思考，汇于一处。",
-          "zh-Hant": "Shavonne Wong 的文章、持續更新的閱讀與關注清單，以及工作室通訊檔案。圍繞作品的思考，匯於一處。"
+          "en": "Essays, and a running list of what Shavonne Wong is reading and circling. Thinking around the work, in one place.",
+          "zh-Hans": "Shavonne Wong 的文章，以及持续更新的阅读与关注清单。围绕作品的思考，汇于一处。",
+          "zh-Hant": "Shavonne Wong 的文章，以及持續更新的閱讀與關注清單。圍繞作品的思考，匯於一處。"
         },
         "ogDescription": {
-          "en": "Essays, a running list of what I am reading and circling, and the studio letter archive.",
-          "zh-Hans": "Shavonne Wong 的文章、持续更新的阅读与关注清单，以及工作室通讯档案。围绕作品的思考，汇于一处。",
-          "zh-Hant": "Shavonne Wong 的文章、持續更新的閱讀與關注清單，以及工作室通訊檔案。圍繞作品的思考，匯於一處。"
+          "en": "Essays, and a running list of what I am reading and circling.",
+          "zh-Hans": "Shavonne Wong 的文章，以及持续更新的阅读与关注清单。围绕作品的思考，汇于一处。",
+          "zh-Hant": "Shavonne Wong 的文章，以及持續更新的閱讀與關注清單。圍繞作品的思考，匯於一處。"
+        }
+      }
+    },
+    "newsletters": {
+      "enSource": "newsletters.html",
+      "urlBase": "/newsletters/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "<script defer src=\"/site-header.js?v=20261022-writing-menu",
+      "meta": {
+        "title": {
+          "en": "Studio newsletters | Shavonne Wong",
+          "zh-Hans": "工作室通讯 | Shavonne Wong",
+          "zh-Hant": "工作室通訊 | Shavonne Wong"
+        },
+        "description": {
+          "en": "Studio letters from Shavonne Wong since 2023, and a sign-up for new work, exhibitions, edition releases and new essays by email.",
+          "zh-Hans": "Shavonne Wong 自 2023 年以来的工作室通讯，并可通过电子邮件订阅新作品、展览、限量发行与新文章。",
+          "zh-Hant": "Shavonne Wong 自 2023 年以來的工作室通訊，並可透過電子郵件訂閱新作品、展覽、限量發行與新文章。"
+        },
+        "ogDescription": {
+          "en": "Studio letters from Shavonne Wong since 2023, and a sign-up for new work, exhibitions, edition releases and new essays by email.",
+          "zh-Hans": "Shavonne Wong 自 2023 年以来的工作室通讯，并可通过电子邮件订阅新作品、展览、限量发行与新文章。",
+          "zh-Hant": "Shavonne Wong 自 2023 年以來的工作室通訊，並可透過電子郵件訂閱新作品、展覽、限量發行與新文章。"
         }
       }
     },
@@ -228,6 +265,29 @@
           "en": "Giving an AI better manners means choosing whose. Fifteen months of showing an AI companion in Singapore, Taipei, Hong Kong and New York.",
           "zh-Hans": "让 AI 拥有更好的礼貌，就意味着要选择谁的礼貌。一个 AI 伴侣在新加坡、台北、香港与纽约展出十五个月。",
           "zh-Hant": "讓 AI 擁有更好的禮貌，就意味著要選擇誰的禮貌。一個 AI 伴侶在新加坡、台北、香港與紐約展出十五個月。"
+        }
+      }
+    },
+    "a-mirror-that-leaves-you-out": {
+      "enSource": "a-mirror-that-leaves-you-out.html",
+      "urlBase": "/journal/a-mirror-that-leaves-you-out/",
+      "bodyStart": "<main id=\"main-content\"",
+      "bodyEnd": "</main>",
+      "meta": {
+        "title": {
+          "en": "A Mirror That Leaves You Out | Shavonne Wong",
+          "zh-Hans": "一面没有你的镜子 | Shavonne Wong",
+          "zh-Hant": "一面沒有你的鏡子 | Shavonne Wong"
+        },
+        "description": {
+          "en": "A mirror that leaves you out can feel like a loss or a relief, and what it keeps is a record of the chairs you move. An essay on Unsilvered by Shavonne Wong.",
+          "zh-Hans": "一面没有你的镜子，可能让人感到失落，也可能让人松一口气；它留下的，是你移动过的椅子的记录。Shavonne Wong 关于 Unsilvered 的文章。",
+          "zh-Hant": "一面沒有你的鏡子，可能讓人感到失落，也可能讓人鬆一口氣；它留下的，是你移動過的椅子的紀錄。Shavonne Wong 關於 Unsilvered 的文章。"
+        },
+        "ogDescription": {
+          "en": "A mirror that leaves you out can feel like a loss or a relief, and what it keeps is a record of the chairs you move. An essay on Unsilvered by Shavonne Wong.",
+          "zh-Hans": "一面没有你的镜子，可能让人感到失落，也可能让人松一口气；它留下的，是你移动过的椅子的记录。Shavonne Wong 关于 Unsilvered 的文章。",
+          "zh-Hant": "一面沒有你的鏡子，可能讓人感到失落，也可能讓人鬆一口氣；它留下的，是你移動過的椅子的紀錄。Shavonne Wong 關於 Unsilvered 的文章。"
         }
       }
     },

@@ -339,15 +339,15 @@
   },
   "journal": {
     "en": {
-      "hash": "7d22d6956604a78c"
+      "hash": "20ecf23888182cae"
     },
     "zh-Hans": {
       "status": "machine",
-      "src": "7d22d6956604a78c"
+      "src": "20ecf23888182cae"
     },
     "zh-Hant": {
       "status": "machine",
-      "src": "7d22d6956604a78c"
+      "src": "20ecf23888182cae"
     }
   },
   "there-is-no-universal-user": {
@@ -361,6 +361,32 @@
     "zh-Hant": {
       "status": "machine",
       "src": "97a466c18831028e"
+    }
+  },
+  "newsletters": {
+    "en": {
+      "hash": "00a92caa27437ebf"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "00a92caa27437ebf"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "00a92caa27437ebf"
+    }
+  },
+  "a-mirror-that-leaves-you-out": {
+    "en": {
+      "hash": "8bd47e17bd694c8e"
+    },
+    "zh-Hans": {
+      "status": "machine",
+      "src": "8bd47e17bd694c8e"
+    },
+    "zh-Hant": {
+      "status": "machine",
+      "src": "8bd47e17bd694c8e"
     }
   }
 }
