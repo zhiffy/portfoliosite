@@ -13,6 +13,7 @@
   font-family: var(--serif); font-style: italic; font-weight: 400;
   font-size: clamp(24px, 2.4vw, 32px); line-height: 1.15; margin: 0;
 }
+.sp-process-subhead { margin: clamp(40px, 5vw, 64px) 0 16px; }
 .sp-group-meta {
   font-family: var(--sans); font-size: 10px; font-weight: 600;
   letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-2); margin: 0;

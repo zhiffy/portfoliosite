@@ -15,9 +15,9 @@
     "price_display": null,
     "status": "available",
     "primary_action": {
-      "type": "inquire",
-      "label": "Talk to the artist directly",
-      "url": "mailto:studio@shavonnewong.art?subject=Acquisition%20%E2%80%94%20Ophelia%2C%20Retold"
+      "type": "marketplace",
+      "label": "View on Objkt through Gallery BYGRIDA",
+      "url": "https://objkt.com/exhibitions/faces-31564497"
     },
     "medium_tags": [
       "video",
@@ -41,9 +41,9 @@
     "price_display": null,
     "status": "available",
     "primary_action": {
-      "type": "inquire",
-      "label": "Talk to the artist directly",
-      "url": "mailto:studio@shavonnewong.art?subject=Acquisition%20%E2%80%94%20Ophelia%2C%20Reassembled"
+      "type": "marketplace",
+      "label": "View on Objkt through Gallery BYGRIDA",
+      "url": "https://objkt.com/exhibitions/faces-31564497"
     },
     "medium_tags": [
       "video",
