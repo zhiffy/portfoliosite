@@ -141,3 +141,6 @@ html.sp-rf-viewing { overflow: hidden; }
   .sp-rf-hang { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sp-rf-hang .sp-rf-main { grid-column: 1 / -1; grid-row: auto; }
 }
+
+/* One-line description under each print label. */
+.sp-rf-label-desc { display: block; font-family: var(--sans); font-size: 13px; color: var(--text-2); }
