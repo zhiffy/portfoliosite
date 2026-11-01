@@ -29,7 +29,10 @@ export default async function handler(request, response) {
 
   try {
     const payload = await readNodeJsonBody(request);
-    const result = await subscribeToStudioUpdates(payload);
+    const forwardedFor = String(request.headers?.["x-forwarded-for"] || "");
+    const result = await subscribeToStudioUpdates(payload, process.env, {
+      remoteIp: forwardedFor.split(",")[0].trim(),
+    });
     sendJson(response, result.status, result.body);
   } catch (error) {
     sendJson(response, 500, {

@@ -4,7 +4,7 @@ import {
   subscribeToStudioUpdates,
 } from "../../lib/brevo-subscribe.js";
 
-export default async (request) => {
+export default async (request, context) => {
   if (request.method === "OPTIONS") {
     return new Response(null, {
       status: 204,
@@ -21,7 +21,7 @@ export default async (request) => {
 
   try {
     const payload = await request.json().catch(() => ({}));
-    const result = await subscribeToStudioUpdates(payload);
+    const result = await subscribeToStudioUpdates(payload, process.env, { remoteIp: context?.ip });
     return new Response(JSON.stringify(result.body), {
       status: result.status,
       headers: NEWSLETTER_HEADERS,

@@ -1,58 +1,122 @@
 /* Studio-notes newsletter and contact forms. Newsletter signups and contact
    messages go through private same-origin site endpoints. */
 (function () {
-  // Public reCAPTCHA v3 site key (safe to expose client side; the secret key
-  // stays server-side only, in the Netlify env var RECAPTCHA_SECRET_KEY).
-  var RECAPTCHA_SITE_KEY = '6LcI-0ctAAAAACXTH_jVj2abUMKzod48s2MJWqVI';
-  var recaptchaLoadPromise = null;
+  // Cloudflare Turnstile guards the newsletter form. The site key is public;
+  // the secret stays server-side in the Netlify env var TURNSTILE_SECRET.
+  // The widget is invisible unless Cloudflare needs the visitor to tick a box.
+  var TURNSTILE_SITE_KEY = '0x4AAAAAAFvmLe4vG-qg2pj8';
+  // Cloudflare's always-pass test key, used only on local preview hosts.
+  var TURNSTILE_TEST_SITE_KEY = '1x00000000000000000000AA';
+  var TURNSTILE_ACTION = 'subscribe'; // must match lib/brevo-subscribe.js
+  var TURNSTILE_WAIT_MS = 20000;
+  var turnstileLoadPromise = null;
 
   function isLocalPreviewHost() {
     return window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '::1';
   }
 
-  function loadRecaptcha() {
-    if (recaptchaLoadPromise) return recaptchaLoadPromise;
-    if (!RECAPTCHA_SITE_KEY || RECAPTCHA_SITE_KEY.indexOf('PASTE_') === 0) return Promise.resolve(false);
-    recaptchaLoadPromise = new Promise(function (resolve) {
-      if (window.grecaptcha && window.grecaptcha.execute) {
+  function loadTurnstile() {
+    if (turnstileLoadPromise) return turnstileLoadPromise;
+    turnstileLoadPromise = new Promise(function (resolve) {
+      if (window.turnstile && window.turnstile.render) {
         resolve(true);
         return;
       }
+      window.__swTurnstileReady = function () { resolve(true); };
       var script = document.createElement('script');
-      var settled = false;
-      var done = function (ok) {
-        if (settled) return;
-        settled = true;
-        resolve(ok);
-      };
-      script.src = 'https://www.google.com/recaptcha/api.js?render=' + RECAPTCHA_SITE_KEY;
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=__swTurnstileReady';
       script.async = true;
-      script.onload = function () { done(true); };
-      script.onerror = function () { done(false); };
+      script.defer = true;
+      script.onerror = function () {
+        turnstileLoadPromise = null; // let a later attempt try again
+        resolve(false);
+      };
       document.head.appendChild(script);
-      window.setTimeout(function () { done(Boolean(window.grecaptcha && window.grecaptcha.execute)); }, 3000);
     });
-    return recaptchaLoadPromise;
+    return turnstileLoadPromise;
   }
 
-  function getRecaptchaToken() {
-    if (isLocalPreviewHost() || !RECAPTCHA_SITE_KEY || RECAPTCHA_SITE_KEY.indexOf('PASTE_') === 0) {
-      return Promise.resolve('');
-    }
-    return loadRecaptcha().then(function () {
-      return new Promise(function (resolve) {
-      if (!window.grecaptcha || !window.grecaptcha.execute) {
-        resolve('');
+  // One widget per form, rendered just after it so an interactive check
+  // never squeezes the input and button row.
+  function turnstileState(form) {
+    if (form._swTurnstile) return form._swTurnstile;
+    var container = document.createElement('div');
+    container.className = 'sw-turnstile';
+    // Out of the layout (no flex gap, no shift) until Cloudflare actually
+    // needs the visitor to see it.
+    container.style.position = 'absolute';
+    form.parentNode.insertBefore(container, form.nextSibling);
+    form._swTurnstile = { container: container, widgetId: null, rendering: false, token: '', waiters: [] };
+    return form._swTurnstile;
+  }
+
+  function showTurnstile(state, visible) {
+    state.container.style.position = visible ? '' : 'absolute';
+  }
+
+  function settleTurnstile(state, token) {
+    state.token = token || '';
+    var waiters = state.waiters;
+    state.waiters = [];
+    waiters.forEach(function (resolve) { resolve(state.token); });
+  }
+
+  // Started as soon as the visitor reaches for the form, so the token is
+  // usually ready by the time they press Subscribe.
+  function prepareTurnstile(form) {
+    var state = turnstileState(form);
+    if (state.widgetId !== null || state.rendering) return;
+    state.rendering = true;
+    loadTurnstile().then(function (loaded) {
+      state.rendering = false;
+      if (!loaded || !window.turnstile) {
+        settleTurnstile(state, '');
         return;
       }
-      window.grecaptcha.ready(function () {
-        window.grecaptcha
-          .execute(RECAPTCHA_SITE_KEY, { action: 'subscribe' })
-          .then(resolve)
-          .catch(function () { resolve(''); });
-      });
+      try {
+        state.widgetId = window.turnstile.render(state.container, {
+          sitekey: isLocalPreviewHost() ? TURNSTILE_TEST_SITE_KEY : TURNSTILE_SITE_KEY,
+          action: TURNSTILE_ACTION,
+          appearance: 'interaction-only',
+          'response-field': false,
+          callback: function (token) { settleTurnstile(state, token); },
+          'expired-callback': function () { state.token = ''; },
+          'before-interactive-callback': function () { showTurnstile(state, true); },
+          'after-interactive-callback': function () { showTurnstile(state, false); },
+          // Let the visitor see Cloudflare's message if the check cannot run.
+          'error-callback': function () { state.token = ''; showTurnstile(state, true); },
+          'unsupported-callback': function () { showTurnstile(state, true); }
+        });
+      } catch (e) {
+        settleTurnstile(state, '');
+      }
     });
+  }
+
+  function getTurnstileToken(form) {
+    var state = turnstileState(form);
+    if (state.token) return Promise.resolve(state.token);
+    prepareTurnstile(form);
+    return new Promise(function (resolve) {
+      var settled = false;
+      var finish = function (token) {
+        if (settled) return;
+        settled = true;
+        resolve(token || '');
+      };
+      state.waiters.push(finish);
+      window.setTimeout(function () { finish(state.token); }, TURNSTILE_WAIT_MS);
     });
+  }
+
+  // Tokens are single-use, so get a fresh one after every attempt.
+  function resetTurnstile(form) {
+    var state = form._swTurnstile;
+    if (!state) return;
+    state.token = '';
+    if (state.widgetId !== null && window.turnstile) {
+      try { window.turnstile.reset(state.widgetId); } catch (e) {}
+    }
   }
 
   // Honeypot + time-trap: bots that fill hidden fields or submit within a
@@ -88,7 +152,12 @@
     var ok = scope.querySelector('[data-fs-success]');
     var err = scope.querySelector('[data-fs-error]');
     var label = btn ? btn.textContent : options.defaultLabel;
-    if (options.newsletter) addSpamTraps(form);
+    if (options.newsletter) {
+      addSpamTraps(form);
+      var warmUp = function () { prepareTurnstile(form); };
+      form.addEventListener('focusin', warmUp);
+      form.addEventListener('pointerdown', warmUp);
+    }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (err) err.textContent = '';
@@ -99,14 +168,14 @@
         method: 'POST',
         headers: { 'Accept': 'application/json' }
       };
-      var buildAndSend = function (recaptchaToken) {
+      var buildAndSend = function (turnstileToken) {
         if (options.json) {
           var payload = {};
           formData.forEach(function (value, key) {
             payload[key] = value;
           });
           payload.page = window.location.pathname || '/';
-          if (recaptchaToken) payload.recaptchaToken = recaptchaToken;
+          if (turnstileToken) payload.turnstileToken = turnstileToken;
           request.headers['Content-Type'] = 'application/json';
           request.body = JSON.stringify(payload);
         } else {
@@ -115,7 +184,9 @@
         sendRequest();
       };
       var sendRequest = function () {
-        fetch(form.action, request).then(handleResponse).catch(handleNetworkError);
+        fetch(form.action, request).then(handleResponse).catch(handleNetworkError).then(function () {
+          if (options.newsletter) resetTurnstile(form);
+        });
       };
       function handleResponse(res) {
         if (res.ok) {
@@ -142,7 +213,7 @@
         if (btn) { btn.disabled = false; btn.textContent = label; }
       }
       if (options.newsletter) {
-        getRecaptchaToken().then(buildAndSend);
+        getTurnstileToken(form).then(buildAndSend);
       } else {
         buildAndSend();
       }
